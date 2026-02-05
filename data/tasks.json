@@ -145,7 +145,7 @@
       "id": "MC-004",
       "title": "VAPI Sarah — Expand Call Capacity",
       "description": "Sarah (VAPI voice AI) is qualifying leads. Current batch: 50 calls/session.\n\n**Completed today:** 10 calls (batch timed out)\n**Total contacted:** ~10\n**Remaining:** ~790 leads with phone numbers\n\nConsider: Increase batch size, add afternoon session, review call outcomes.",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "massdwell",
       "tags": [
         "vapi",
@@ -177,7 +177,8 @@
       "priority": "medium",
       "dod": "Clear call strategy with metrics and next batch scheduled",
       "comments": [],
-      "createdAt": "2026-02-05T19:50:00Z"
+      "createdAt": "2026-02-05T19:50:00Z",
+      "sortOrder": 0
     },
     {
       "id": "MC-005",
@@ -278,8 +279,16 @@
       "emoji": "📈"
     }
   ],
-  "lastUpdated": "2026-02-05T20:23:21.924Z",
+  "lastUpdated": "2026-02-05T20:23:24.237Z",
   "activities": [
+    {
+      "type": "moved",
+      "actor": "MassDwell",
+      "task": "VAPI Sarah — Expand Call Capacity",
+      "from": "backlog",
+      "to": "in_progress",
+      "time": "just now"
+    },
     {
       "type": "moved",
       "actor": "MassDwell",
