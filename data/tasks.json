@@ -4,7 +4,7 @@
     {
       "id": "MC-001",
       "title": "✅ Mission Control Setup Complete",
-      "description": "Mission Control has been deployed. This is your task management dashboard.\n\n**How it works:**\n1. Create tasks here or on the dashboard\n2. Move tasks to 'In Progress' — Clawson automatically starts working\n3. Clawson updates progress, marks subtasks done\n4. Task moves to 'Review' when complete\n5. You approve or send back for rework",
+      "description": "Mission Control has been deployed and configured.\n\n**How it works:**\n1. Create tasks here or drag existing to columns\n2. Move to **In Progress** → Clawson automatically starts working\n3. Clawson updates progress, marks subtasks done\n4. Task moves to **Review** when complete\n5. Approve or send back for rework",
       "status": "done",
       "project": "infrastructure",
       "tags": ["setup", "meta"],
@@ -12,7 +12,8 @@
         { "id": "sub_001", "title": "GitHub repo created", "done": true },
         { "id": "sub_002", "title": "GitHub Pages enabled", "done": true },
         { "id": "sub_003", "title": "Webhook configured", "done": true },
-        { "id": "sub_004", "title": "Tailscale Funnel enabled", "done": true }
+        { "id": "sub_004", "title": "Tailscale Funnel enabled", "done": true },
+        { "id": "sub_005", "title": "Dashboard customized for Clawson", "done": true }
       ],
       "priority": "high",
       "comments": [
@@ -26,47 +27,101 @@
     },
     {
       "id": "MC-002",
-      "title": "Complete MassDwell Finish Portal",
-      "description": "Add remaining finish categories to the customer design portal.\n\n**Current state:** 10/17 categories done\n**Missing:** Door Hardware, Cabinet Hardware, Kitchen Sink, Kitchen Faucet, Backsplash Grout, Bathroom Vanity, Bathroom Faucet, Appliances\n**Also needed:** Split Siding (Type/Color), Split Wall Color (Standard/Accent)",
+      "title": "Complete MassDwell Finish Portal — 17 Categories",
+      "description": "Add all remaining finish categories to the customer design portal at portal.massdwell.com\n\n**Current:** 10 categories live\n**Missing:** Door Hardware, Cabinet Hardware, Kitchen Sink, Kitchen Faucet, Backsplash Grout, Bathroom Vanity, Bathroom Faucet, Appliances\n**Also:** Split Siding (Type/Color), Split Wall Color (Standard/Accent)\n\n**Spec:** data/massdwell/finish-selections/portal-spec.md\n**Lookbook:** /tmp/lookbook/ (38 extracted pages)",
       "status": "backlog",
       "project": "massdwell",
       "tags": ["portal", "softr", "customer-facing"],
       "subtasks": [
-        { "id": "sub_001", "title": "Extract product images from lookbook", "done": false },
-        { "id": "sub_002", "title": "Add missing categories to Finish Options table", "done": false },
-        { "id": "sub_003", "title": "Add fields to Customer Selections table", "done": false },
-        { "id": "sub_004", "title": "Update form with new fields", "done": false },
-        { "id": "sub_005", "title": "Test and publish", "done": false }
+        { "id": "sub_001", "title": "Scan lookbook pages 20-25 for finish images", "done": false },
+        { "id": "sub_002", "title": "Crop individual product images", "done": false },
+        { "id": "sub_003", "title": "Add 8 missing categories to Finish Options table", "done": false },
+        { "id": "sub_004", "title": "Split Siding into Type + Color", "done": false },
+        { "id": "sub_005", "title": "Split Wall Color into Standard + Accent", "done": false },
+        { "id": "sub_006", "title": "Add fields to Customer Selections table", "done": false },
+        { "id": "sub_007", "title": "Update form and republish", "done": false }
       ],
       "priority": "high",
-      "dod": "All 17+ finish categories available on portal.massdwell.com/make-your-selections with accurate product images",
+      "dod": "All 17+ finish categories visible on portal.massdwell.com/make-your-selections with accurate product images",
       "comments": [],
       "createdAt": "2026-02-05T19:45:00Z"
     },
     {
       "id": "MC-003",
       "title": "Cold Lead Reengagement Campaign",
-      "description": "Execute the cold lead reengagement strategy using approved templates.\n\nTemplates at: data/massdwell/sales/follow-up-templates.md\n- Value Drop\n- Spring Schedule\n- Honest Reset",
+      "description": "Execute cold lead reengagement using approved templates.\n\n**Templates:** data/massdwell/sales/follow-up-templates.md\n- Value Drop (share content)\n- Spring Schedule (urgency)\n- Honest Reset (break up)\n\n**Target:** Leads >30 days cold, not in Negotiation+",
       "status": "backlog",
       "project": "massdwell",
-      "tags": ["sales", "email", "leads"],
+      "tags": ["sales", "email", "crm"],
       "subtasks": [
-        { "id": "sub_001", "title": "Identify cold leads (>30 days no activity)", "done": false },
-        { "id": "sub_002", "title": "Segment by last interaction type", "done": false },
-        { "id": "sub_003", "title": "Draft personalized emails using templates", "done": false },
-        { "id": "sub_004", "title": "Submit for approval", "done": false }
+        { "id": "sub_001", "title": "Query Kommo for cold leads (>30 days)", "done": false },
+        { "id": "sub_002", "title": "Segment by last interaction", "done": false },
+        { "id": "sub_003", "title": "Draft personalized emails", "done": false },
+        { "id": "sub_004", "title": "Submit batch for approval", "done": false }
       ],
       "priority": "medium",
-      "dod": "Draft emails ready for Steve's approval before sending",
+      "dod": "Draft emails ready for Steve's approval — no auto-send",
       "comments": [],
       "createdAt": "2026-02-05T19:45:00Z"
+    },
+    {
+      "id": "MC-004",
+      "title": "VAPI Sarah — Expand Call Capacity",
+      "description": "Sarah (VAPI voice AI) is qualifying leads. Current batch: 50 calls/session.\n\n**Completed today:** 10 calls (batch timed out)\n**Total contacted:** ~10\n**Remaining:** ~790 leads with phone numbers\n\nConsider: Increase batch size, add afternoon session, review call outcomes.",
+      "status": "backlog",
+      "project": "massdwell",
+      "tags": ["vapi", "calls", "automation"],
+      "subtasks": [
+        { "id": "sub_001", "title": "Review call outcomes from today's batch", "done": false },
+        { "id": "sub_002", "title": "Analyze pickup rate and conversion", "done": false },
+        { "id": "sub_003", "title": "Adjust script if needed", "done": false },
+        { "id": "sub_004", "title": "Schedule next batch", "done": false }
+      ],
+      "priority": "medium",
+      "dod": "Clear call strategy with metrics and next batch scheduled",
+      "comments": [],
+      "createdAt": "2026-02-05T19:50:00Z"
+    },
+    {
+      "id": "MC-005",
+      "title": "Trading: Monitor SPY 680P Position",
+      "description": "**Position:** 2x SPY 680P Feb 13 @ $9.67 entry\n**Thesis:** Bearish short-term\n**Days to expiry:** 6 trading days\n**Risk management:** 15% trailing stop via autonomous trader\n\nAutonomous trader running at trading/autonomous-trader.js",
+      "status": "permanent",
+      "project": "trading",
+      "tags": ["options", "monitoring"],
+      "subtasks": [
+        { "id": "sub_001", "title": "Check position value daily", "done": false },
+        { "id": "sub_002", "title": "Evaluate exit if thesis changes", "done": false },
+        { "id": "sub_003", "title": "Alert if 15% stop triggered", "done": false }
+      ],
+      "priority": "high",
+      "dod": "Position managed per thesis or exited per stop rules",
+      "comments": [],
+      "createdAt": "2026-02-05T19:50:00Z"
+    },
+    {
+      "id": "MC-006",
+      "title": "Follow Up: Carlos CAD Drawings",
+      "description": "Carlos is providing CAD drawings for GPI Models (3D visualization vendor).\n\nFollow up to get status and ETA.",
+      "status": "backlog",
+      "project": "massdwell",
+      "tags": ["vendor", "3d-models", "follow-up"],
+      "subtasks": [
+        { "id": "sub_001", "title": "Email Carlos for status", "done": false },
+        { "id": "sub_002", "title": "Get ETA for drawings", "done": false },
+        { "id": "sub_003", "title": "Forward to GPI when received", "done": false }
+      ],
+      "priority": "low",
+      "dod": "CAD drawings received and sent to GPI Models",
+      "comments": [],
+      "createdAt": "2026-02-05T19:50:00Z"
     }
   ],
   "projects": [
-    { "id": "massdwell", "name": "MassDwell", "color": "#22c55e" },
-    { "id": "atlantic", "name": "Atlantic Laser", "color": "#3b82f6" },
-    { "id": "alpine", "name": "Alpine Property", "color": "#64748b" },
-    { "id": "infrastructure", "name": "Infrastructure", "color": "#a855f7" },
-    { "id": "trading", "name": "Trading", "color": "#f59e0b" }
+    { "id": "massdwell", "name": "MassDwell", "color": "#22c55e", "emoji": "🏠" },
+    { "id": "atlantic", "name": "Atlantic Laser", "color": "#3b82f6", "emoji": "⚡" },
+    { "id": "alpine", "name": "Alpine Property", "color": "#64748b", "emoji": "🏔️" },
+    { "id": "infrastructure", "name": "Infrastructure", "color": "#a855f7", "emoji": "⚙️" },
+    { "id": "trading", "name": "Trading", "color": "#f59e0b", "emoji": "📈" }
   ]
 }
