@@ -245,6 +245,54 @@
       "comments": [],
       "createdAt": "2026-02-05T19:50:00Z",
       "sortOrder": 0
+    },
+    {
+      "id": "MC-007",
+      "title": "📧 Email-to-CRM Auto-Sync (Recurring)",
+      "description": "Automated sync: Scans sent emails from sales@ and steve.vettori@massdwell.com, matches recipients to Kommo CRM contacts, adds notes to leads.\n\n**Schedule:** 9 AM, 1 PM, 5 PM (M-F)\n**Script:** scripts/email-to-crm-sync.js\n**Log:** data/massdwell/sales/email-crm-sync-log.json",
+      "status": "done",
+      "project": "massdwell",
+      "tags": [
+        "automation",
+        "crm",
+        "recurring"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Script created and tested",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "sales@massdwell.com connected",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "steve.vettori@massdwell.com connected",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Crons scheduled (9 AM, 1 PM, 5 PM)",
+          "done": true
+        },
+        {
+          "id": "sub_005",
+          "title": "Initial sync run (11 matches, 8 notes)",
+          "done": true
+        }
+      ],
+      "priority": "medium",
+      "comments": [
+        {
+          "author": "Clawson",
+          "text": "Deployed Feb 5, 2026. First run matched 11 emails to CRM contacts.",
+          "timestamp": "2026-02-05T22:15:00Z"
+        }
+      ],
+      "createdAt": "2026-02-05T22:10:00Z"
     }
   ],
   "projects": [
