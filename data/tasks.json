@@ -214,7 +214,7 @@
       "id": "MC-006",
       "title": "Follow Up: Carlos CAD Drawings",
       "description": "Carlos is providing CAD drawings for GPI Models (3D visualization vendor).\n\nFollow up to get status and ETA.",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "massdwell",
       "tags": [
         "vendor",
@@ -241,7 +241,8 @@
       "priority": "low",
       "dod": "CAD drawings received and sent to GPI Models",
       "comments": [],
-      "createdAt": "2026-02-05T19:50:00Z"
+      "createdAt": "2026-02-05T19:50:00Z",
+      "sortOrder": 0
     }
   ],
   "projects": [
@@ -276,8 +277,16 @@
       "emoji": "📈"
     }
   ],
-  "lastUpdated": "2026-02-05T20:04:47.149Z",
+  "lastUpdated": "2026-02-05T20:04:56.700Z",
   "activities": [
+    {
+      "type": "moved",
+      "actor": "MassDwell",
+      "task": "Follow Up: Carlos CAD Drawings",
+      "from": "backlog",
+      "to": "in_progress",
+      "time": "just now"
+    },
     {
       "type": "moved",
       "actor": "MassDwell",
