@@ -852,6 +852,31 @@
         .task-comment-indicator svg {
             opacity: 0.7;
         }
+
+        /* Agent assignee indicator */
+        .task-assignee {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            background: rgba(139, 92, 246, 0.15);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--accent-purple);
+            flex-shrink: 0;
+        }
+
+        .task-assignee .assignee-emoji {
+            font-size: 0.8rem;
+        }
+
+        .task-assignee .assignee-name {
+            text-transform: capitalize;
+            max-width: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
         
         /* Processing indicator (agent working on task) */
         .task-processing {
@@ -3646,6 +3671,20 @@
                     <span>${commentsCount}</span>
                 </div>
             ` : '';
+
+            // Agent assignee indicator
+            const agentEmojis = {
+                clawson: '🦅', chief_of_staff: '📋', sales_followup: '📞',
+                marketing_content: '📣', finance_underwriting: '💰', massdwell_factory_ops: '🏭',
+                laser_sales_engineer: '⚡', alpine_property_mgmt: '🏠', alpine_permitting: '📜',
+                security_ciso: '🛡️', personal_life_cos: '🎯', doc_proposal: '📝', admin_assistant: '📎'
+            };
+            const assigneeIndicator = task.assignee ? `
+                <div class="task-assignee" title="Assigned to: ${task.assignee}">
+                    <span class="assignee-emoji">${agentEmojis[task.assignee] || '🤖'}</span>
+                    <span class="assignee-name">${task.assignee.replace(/_/g, ' ')}</span>
+                </div>
+            ` : '';
             
             // Processing spinner (shown when agent is working on this task)
             const isProcessing = (task.processingStartedAt || task.processing) && task.status === 'in_progress';
@@ -3701,6 +3740,7 @@
                         <div class="task-tags">
                             ${task.tags.map(tag => `<span class="task-tag ${tag}">${tag}</span>`).join('')}
                         </div>
+                        ${assigneeIndicator}
                         ${commentIndicator}
                     </div>
                     ${subtasksTotal > 0 ? `
