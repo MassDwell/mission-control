@@ -182,8 +182,8 @@
     },
     {
       "id": "MC-005",
-      "title": "Trading: Monitor SPY 680P Position",
-      "description": "**Position:** 2x SPY 680P Feb 13 @ $9.67 entry\n**Thesis:** Bearish short-term\n**Days to expiry:** 6 trading days\n**Risk management:** 15% trailing stop via autonomous trader\n\nAutonomous trader running at trading/autonomous-trader.js",
+      "title": "Trading: Monitor SPY 686C 0DTE",
+      "description": "**Position:** 1x SPY 686C 0DTE @ $2.02 entry\n**Current:** +13% (~$25 profit)\n**Target:** $3.00 (50% gain)\n**Stop:** $1.01 (50% loss)\n**Time Stop:** 2 PM EST\n\n**Prior trade (closed):** SPY 680P — lost $958 (-49.5%)\n\nAutonomous trader: trading/autonomous-trader.js",
       "status": "permanent",
       "project": "trading",
       "tags": [
