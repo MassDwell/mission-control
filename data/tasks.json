@@ -28,30 +28,31 @@
     },
     {
       "id": "MC-002",
-      "title": "Complete MassDwell Finish Portal — 17 Categories",
-      "description": "Add all remaining finish categories to the customer design portal at portal.massdwell.com\n\n**Current:** 10 categories live\n**Missing:** Door Hardware, Cabinet Hardware, Kitchen Sink, Kitchen Faucet, Backsplash Grout, Bathroom Vanity, Bathroom Faucet, Appliances\n**Also:** Split Siding (Type/Color), Split Wall Color (Standard/Accent)\n\n**Spec:** data/massdwell/finish-selections/portal-spec.md\n**Lookbook:** /tmp/lookbook/ (38 extracted pages)\n\n**Google Sheet:** https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw/edit",
+      "title": "Finish Selections Portal",
+      "description": "**OWNER: @marketing_content**\n\nComplete the customer design portal at portal.massdwell.com with all finish selections.\n\n**Current State (Feb 6):**\n- Google Sheet created with 13 categories (27 rows)\n- Image URLs column is EMPTY\n- Blocker: Need to pull images from Drive\n\n**Google Sheet:** https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw/edit\n**Image Source:** Google Drive > MassDwell > LookBookImages",
       "status": "in_progress",
       "project": "massdwell",
       "assignee": "marketing_content",
-      "tags": ["portal", "softr", "customer-facing"],
+      "tags": ["portal", "softr", "customer-facing", "priority"],
       "subtasks": [
         { "id": "sub_001", "title": "Pull images from Drive LookBookImages folder", "done": false },
         { "id": "sub_002", "title": "Add image URLs to Google Sheet column D", "done": false },
-        { "id": "sub_003", "title": "Add 8 missing categories to Finish Options table", "done": false },
-        { "id": "sub_004", "title": "Split Siding into Type + Color", "done": false },
-        { "id": "sub_005", "title": "Split Wall Color into Standard + Accent", "done": false },
-        { "id": "sub_006", "title": "Add fields to Customer Selections table", "done": false },
-        { "id": "sub_007", "title": "Update form and republish", "done": false },
-        { "id": "sub_008", "title": "Verify all 13+ categories on portal", "done": false },
-        { "id": "sub_009", "title": "Log completion", "done": false }
+        { "id": "sub_003", "title": "Verify all 13 categories have images", "done": false },
+        { "id": "sub_004", "title": "Test Softr integration", "done": false },
+        { "id": "sub_005", "title": "Steve confirms complete", "done": false }
       ],
       "priority": "high",
-      "dod": "All 17+ finish categories visible on portal.massdwell.com/make-your-selections with accurate product images. Steve confirms complete.",
+      "dod": "All finish categories on portal.massdwell.com with accurate images. Steve confirms complete.",
       "comments": [
         {
           "author": "Steve",
           "text": "You own this project. Do not consider complete until all selections are finalized and logged.",
           "timestamp": "2026-02-06T21:24:00Z"
+        },
+        {
+          "author": "Clawson",
+          "text": "Audit: Sheet exists with 13 categories but image URLs empty. Subtasks simplified. 0% progress is accurate.",
+          "timestamp": "2026-02-06T21:54:00Z"
         }
       ],
       "createdAt": "2026-02-05T19:45:00Z",
@@ -61,7 +62,7 @@
       "id": "MC-003",
       "title": "Cold Lead Reengagement Campaign",
       "description": "Execute cold lead reengagement using approved templates.\n\n**Templates:** data/massdwell/sales/follow-up-templates.md\n- Value Drop (share content)\n- Spring Schedule (urgency)\n- Honest Reset (break up)\n\n**Target:** Leads >30 days cold, not in Negotiation+",
-      "status": "in_progress",
+      "status": "backlog",
       "project": "massdwell",
       "assignee": "sales_followup",
       "tags": ["sales", "email", "crm"],
@@ -73,53 +74,71 @@
       ],
       "priority": "medium",
       "dod": "Draft emails ready for Steve's approval — no auto-send",
-      "comments": [],
+      "comments": [
+        {
+          "author": "Clawson",
+          "text": "Moved to backlog - was in_progress with 0% done. Ready to start when prioritized.",
+          "timestamp": "2026-02-06T21:54:00Z"
+        }
+      ],
       "createdAt": "2026-02-05T19:45:00Z",
       "sortOrder": 0
     },
     {
       "id": "MC-004",
-      "title": "VAPI Sarah — Expand Call Capacity",
-      "description": "Sarah (VAPI voice AI) is qualifying leads. Current batch: 50 calls/session.\n\n**Completed today:** 10 calls (batch timed out)\n**Total contacted:** ~10\n**Remaining:** ~790 leads with phone numbers\n\nConsider: Increase batch size, add afternoon session, review call outcomes.",
-      "status": "in_progress",
+      "title": "VAPI Sarah — Review & Next Steps",
+      "description": "Sarah (VAPI voice AI) ran initial batch on Feb 4.\n\n**Results from Feb 4 batch:**\n- ~10 calls completed before timeout\n- ~790 leads remaining with phone numbers\n\n**Next steps:** Review outcomes, decide on call strategy, schedule next batch.",
+      "status": "backlog",
       "project": "massdwell",
       "assignee": "sales_followup",
       "tags": ["vapi", "calls", "automation"],
       "subtasks": [
-        { "id": "sub_001", "title": "Review call outcomes from today's batch", "done": false },
+        { "id": "sub_001", "title": "Review Feb 4 call outcomes", "done": false },
         { "id": "sub_002", "title": "Analyze pickup rate and conversion", "done": false },
-        { "id": "sub_003", "title": "Adjust script if needed", "done": false },
-        { "id": "sub_004", "title": "Schedule next batch", "done": false }
+        { "id": "sub_003", "title": "Decide on call strategy", "done": false },
+        { "id": "sub_004", "title": "Schedule next batch if approved", "done": false }
       ],
       "priority": "medium",
-      "dod": "Clear call strategy with metrics and next batch scheduled",
-      "comments": [],
+      "dod": "Clear call strategy with metrics and next steps decided",
+      "comments": [
+        {
+          "author": "Clawson",
+          "text": "Updated description to reflect actual state. Moved to backlog pending review.",
+          "timestamp": "2026-02-06T21:54:00Z"
+        }
+      ],
       "createdAt": "2026-02-05T19:50:00Z",
       "sortOrder": 0
     },
     {
       "id": "MC-005",
-      "title": "Trading: Active Position Monitoring",
-      "description": "**Current Position:**\n- SOFI: 13 shares @ $21.26 (long-term hold)\n\n**Closed Today:**\n- SPY 680P: -$958 (-49.5%)\n- SPY 686C: +$153 (+75.7%)\n- Net: -$805\n\n**Account:** $3,658 net liq\n**Platform:** Interactive Brokers (TWS)\n\nAutonomous trader: trading/autonomous-trader.js",
+      "title": "Trading: Position Monitoring",
+      "description": "**Current Positions (Feb 6, 4 PM):**\n- SOFI: 13 shares @ $21.26 (long-term hold)\n\n**Today's P/L:**\n- SPY 680P: -$958 (closed)\n- SPY 686C: +$153 (closed)\n- Net: -$805\n\n**Account:** ~$3,658 net liq\n**Platform:** Interactive Brokers (TWS)\n\nNo active day trades. Monitoring SOFI only.",
       "status": "permanent",
       "project": "trading",
       "assignee": "clawson",
-      "tags": ["options", "monitoring"],
+      "tags": ["stocks", "monitoring"],
       "subtasks": [
-        { "id": "sub_001", "title": "Check position value daily", "done": false },
-        { "id": "sub_002", "title": "Evaluate exit if thesis changes", "done": false },
-        { "id": "sub_003", "title": "Scan X for sentiment/opportunities", "done": false }
+        { "id": "sub_001", "title": "Monitor SOFI position", "done": false },
+        { "id": "sub_002", "title": "Scan for new opportunities", "done": false },
+        { "id": "sub_003", "title": "Update when positions change", "done": false }
       ],
       "priority": "high",
-      "dod": "Position managed per thesis or exited per stop rules",
-      "comments": [],
+      "dod": "Positions managed per thesis",
+      "comments": [
+        {
+          "author": "Clawson",
+          "text": "Updated to reflect current state: Only SOFI position open. SPY trades closed.",
+          "timestamp": "2026-02-06T21:54:00Z"
+        }
+      ],
       "createdAt": "2026-02-05T19:50:00Z"
     },
     {
       "id": "MC-006",
       "title": "Follow Up: Carlos CAD Drawings",
-      "description": "Carlos is providing CAD drawings for GPI Models (3D visualization vendor).\n\nFollow up to get status and ETA.",
-      "status": "in_progress",
+      "description": "Carlos is providing CAD drawings for GPI Models (3D visualization vendor).\n\nNeed to follow up with Carlos to get status and ETA.",
+      "status": "backlog",
       "project": "massdwell",
       "assignee": "massdwell_factory_ops",
       "tags": ["vendor", "3d-models", "follow-up"],
@@ -130,7 +149,13 @@
       ],
       "priority": "low",
       "dod": "CAD drawings received and sent to GPI Models",
-      "comments": [],
+      "comments": [
+        {
+          "author": "Clawson",
+          "text": "Moved to backlog - no activity. Move to in_progress when ready to pursue.",
+          "timestamp": "2026-02-06T21:54:00Z"
+        }
+      ],
       "createdAt": "2026-02-05T19:50:00Z",
       "sortOrder": 0
     },
@@ -211,13 +236,13 @@
     { "id": "doc_proposal", "name": "Document & Proposal", "emoji": "📝", "level": "intern" },
     { "id": "admin_assistant", "name": "Admin Assistant", "emoji": "📎", "level": "intern" }
   ],
-  "lastUpdated": "2026-02-06T21:42:00Z",
+  "lastUpdated": "2026-02-06T21:54:00Z",
   "activities": [
     {
-      "type": "system",
+      "type": "audit",
       "actor": "Clawson",
-      "message": "Multi-agent routing enabled. Tasks now auto-route to assigned agent.",
-      "time": "2026-02-06T21:42:00Z"
+      "message": "Mission Control audit: Cleaned up stale tasks, updated descriptions, moved incomplete items to backlog.",
+      "time": "2026-02-06T21:54:00Z"
     }
   ]
 }
