@@ -2117,7 +2117,52 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-    </style>
+    
+        /* Status badges for active/idle */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-badge.active {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            animation: activePulse 2s ease-in-out infinite;
+        }
+        
+        .status-badge.idle {
+            background: rgba(100, 116, 139, 0.2);
+            color: #94a3b8;
+        }
+        
+        @keyframes activePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .task-processing, .task-idle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+            font-size: 0.75rem;
+        }
+        
+        .processing-agent {
+            color: var(--text-secondary);
+        }
+        
+        .processing-time {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+        }
+
+        </style>
 </head>
 <body>
     <!-- Login Required Screen (shown when not authenticated) -->
@@ -3712,14 +3757,21 @@
                 // Set card class for border effect
                 processingCardClass = isTimeout ? 'processing-timeout' : 'processing-active';
                 
-                // Different text for cron execution tasks
-                const spinnerText = task.isCronExecution ? 'Executing...' : 'Processing...';
+                // Agent name
+                const agentName = task.processingAgent || 'Agent';
                 
                 processingIndicator = `
-                    <div class="task-processing${isTimeout ? ' timeout-warning' : ''}" title="${isTimeout ? '⚠️ Processing for over 30 minutes!' : 'Jeannie is working on this task...'}">
-                        <div class="processing-spinner"></div>
-                        <span>${spinnerText}</span>
+                    <div class="task-processing${isTimeout ? ' timeout-warning' : ''}" title="${isTimeout ? '⚠️ Processing for over 30 minutes!' : agentName + ' is working on this task...'}">
+                        <div class="status-badge active">🟢 ACTIVE</div>
+                        <span class="processing-agent">${agentName}</span>
                         <span class="processing-time">(${timeDisplay})</span>
+                    </div>
+                `;
+            } else if (task.status === 'in_progress') {
+                // Show idle badge for in_progress tasks not being worked on
+                processingIndicator = `
+                    <div class="task-idle">
+                        <div class="status-badge idle">⚪ IDLE</div>
                     </div>
                 `;
             }
