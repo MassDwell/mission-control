@@ -399,7 +399,7 @@
       "createdAt": "2026-02-06T20:45:00Z"
     },
     {
-      "id": "MC-008",
+      "id": "MC-009",
       "title": "🎨 Finish Portal — Production Ready",
       "description": "**Goal:** Make portal.massdwell.com a polished, customer-ready product.\n\n**Requirements:**\n1. **Labels** — Every finish option needs clear, descriptive labels\n2. **Images** — Properly cropped, consistent aspect ratios, product-focused\n3. **Branding** — MassDwell colors (#22c55e green, dark theme), logo, professional feel\n4. **UX Polish** — Smooth flow, mobile responsive, clear CTAs\n\n**Resources:**\n- Image catalog: `data/massdwell/finish-selections-images.csv` (132 images, 27 categories)\n- Google Sheet: https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw\n- Softr login: sales@massdwell.com\n- Brand colors: Green #22c55e, Dark #0d0d0d, Gray #262626\n\n**Parent:** MC-002 (Finish Selections Portal)",
       "status": "in_progress",
