@@ -1,0 +1,24 @@
+# Credentials - NEVER commit these
+credentials/
+*.token.json
+*-token.json
+*.credentials.json
+
+# API keys
+.env
+.env.*
+*.key
+
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/tmp/
+
+# Local config
+.openclaw/
