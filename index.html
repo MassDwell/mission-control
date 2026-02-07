@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clawson Mission Control</title>
+    <title>Mission Control - MoltBot</title>
     <style>
         :root {
             --bg-primary: #0d0d0d;
@@ -852,31 +852,6 @@
         .task-comment-indicator svg {
             opacity: 0.7;
         }
-
-        /* Agent assignee indicator */
-        .task-assignee {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            padding: 2px 8px;
-            background: rgba(139, 92, 246, 0.15);
-            border-radius: 4px;
-            font-size: 0.7rem;
-            color: var(--accent-purple);
-            flex-shrink: 0;
-        }
-
-        .task-assignee .assignee-emoji {
-            font-size: 0.8rem;
-        }
-
-        .task-assignee .assignee-name {
-            text-transform: capitalize;
-            max-width: 80px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
         
         /* Processing indicator (agent working on task) */
         .task-processing {
@@ -1441,6 +1416,31 @@
             display: flex;
             gap: 0.75rem;
             font-size: 0.875rem;
+            padding: 0.75rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .activity-item:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .activity-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+        }
+        
+        .activity-empty {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
         }
 
         .activity-dot {
@@ -2117,52 +2117,7 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-    
-        /* Status badges for active/idle */
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .status-badge.active {
-            background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-            animation: activePulse 2s ease-in-out infinite;
-        }
-        
-        .status-badge.idle {
-            background: rgba(100, 116, 139, 0.2);
-            color: #94a3b8;
-        }
-        
-        @keyframes activePulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-        
-        .task-processing, .task-idle {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
-            font-size: 0.75rem;
-        }
-        
-        .processing-agent {
-            color: var(--text-secondary);
-        }
-        
-        .processing-time {
-            color: var(--text-secondary);
-            font-size: 0.7rem;
-        }
-
-        </style>
+    </style>
 </head>
 <body>
     <!-- Login Required Screen (shown when not authenticated) -->
@@ -2414,9 +2369,26 @@
         <aside class="activity" id="activity-sidebar">
             <div class="activity-header">
                 <span>ACTIVITY</span>
+                <span id="activity-status" style="font-size: 0.7rem; margin-left: 0.5rem;"></span>
                 <button class="activity-toggle" onclick="toggleActivity()" title="Hide Activity">
                     <span id="activity-toggle-icon">✕</span>
                 </button>
+            </div>
+            <div class="activity-filters" style="padding: 0.5rem; border-bottom: 1px solid var(--border); display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <select id="activity-filter-source" onchange="ActivityFeed.filters.source = this.value || null; ActivityFeed.render();" style="padding: 0.25rem; font-size: 0.75rem; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); border-radius: 4px;">
+                    <option value="">All Sources</option>
+                    <option value="clawson">🦅 Clawson</option>
+                    <option value="sales_followup">💼 Sales</option>
+                    <option value="marketing_content">📢 Marketing</option>
+                    <option value="system">⚙️ System</option>
+                </select>
+                <select id="activity-filter-type" onchange="ActivityFeed.filters.eventType = this.value || null; ActivityFeed.render();" style="padding: 0.25rem; font-size: 0.75rem; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); border-radius: 4px;">
+                    <option value="">All Types</option>
+                    <option value="agent_action">🤖 Agent</option>
+                    <option value="lead_event">👤 Lead</option>
+                    <option value="note">📝 Note</option>
+                    <option value="sync">🔄 Sync</option>
+                </select>
             </div>
             <div class="activity-list" id="activity-list"></div>
         </aside>
@@ -2444,7 +2416,7 @@
 
                 <h3 style="margin: 1rem 0 0.5rem;">Installation</h3>
                 <p style="color: var(--text-secondary); line-height: 1.6;">
-                    Add Mission Control to your existing Clawson workspace:
+                    Add Mission Control to your existing MoltBot workspace:
                 </p>
                 <ol style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
                     <li><strong>Fork</strong> this repository to your GitHub account</li>
@@ -2503,7 +2475,7 @@
 
                 <h3 style="margin: 1.5rem 0 0.5rem;">Comments</h3>
                 <p style="color: var(--text-secondary); line-height: 1.6;">
-                    Add comments to tasks for context or feedback. Comments on <strong>Review</strong> tasks trigger notifications to Clawson.
+                    Add comments to tasks for context or feedback. Comments on <strong>Review</strong> tasks trigger notifications to MoltBot.
                 </p>
 
                 <h3 style="margin: 1.5rem 0 0.5rem;">Projects & Tags</h3>
@@ -2513,18 +2485,18 @@
             </div>
 
             <div class="docs-section" style="margin-bottom: 2rem;">
-                <h2 style="color: var(--accent); margin-bottom: 1rem;">🦅 Clawson Integration</h2>
+                <h2 style="color: var(--accent); margin-bottom: 1rem;">🤖 MoltBot Integration</h2>
                 <p style="color: var(--text-secondary); line-height: 1.6;">
-                    Mission Control is connected to Clawson via webhooks. When you make changes:
+                    Mission Control is connected to MoltBot via webhooks. When you make changes:
                 </p>
                 <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
-                    <li><strong>Move task to "In Progress"</strong> → Clawson receives a work order and starts processing</li>
-                    <li><strong>Add comment on Review task</strong> → Clawson sees your feedback</li>
-                    <li><strong>Clawson completes work</strong> → Task moves to "Review" automatically</li>
+                    <li><strong>Move task to "In Progress"</strong> → MoltBot receives a work order and starts processing</li>
+                    <li><strong>Add comment on Review task</strong> → MoltBot sees your feedback</li>
+                    <li><strong>MoltBot completes work</strong> → Task moves to "Review" automatically</li>
                 </ul>
 
                 <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                    <strong>💡 Pro Tip:</strong> Write clear task descriptions and subtasks. The more detail you provide, the better Clawson can execute the task.
+                    <strong>💡 Pro Tip:</strong> Write clear task descriptions and subtasks. The more detail you provide, the better MoltBot can execute the task.
                 </div>
             </div>
 
@@ -3716,20 +3688,6 @@
                     <span>${commentsCount}</span>
                 </div>
             ` : '';
-
-            // Agent assignee indicator
-            const agentEmojis = {
-                clawson: '🦅', chief_of_staff: '📋', sales_followup: '📞',
-                marketing_content: '📣', finance_underwriting: '💰', massdwell_factory_ops: '🏭',
-                laser_sales_engineer: '⚡', alpine_property_mgmt: '🏠', alpine_permitting: '📜',
-                security_ciso: '🛡️', personal_life_cos: '🎯', doc_proposal: '📝', admin_assistant: '📎'
-            };
-            const assigneeIndicator = task.assignee ? `
-                <div class="task-assignee" title="Assigned to: ${task.assignee}">
-                    <span class="assignee-emoji">${agentEmojis[task.assignee] || '🤖'}</span>
-                    <span class="assignee-name">${task.assignee.replace(/_/g, ' ')}</span>
-                </div>
-            ` : '';
             
             // Processing spinner (shown when agent is working on this task)
             const isProcessing = (task.processingStartedAt || task.processing) && task.status === 'in_progress';
@@ -3757,21 +3715,14 @@
                 // Set card class for border effect
                 processingCardClass = isTimeout ? 'processing-timeout' : 'processing-active';
                 
-                // Agent name
-                const agentName = task.processingAgent || 'Agent';
+                // Different text for cron execution tasks
+                const spinnerText = task.isCronExecution ? 'Executing...' : 'Processing...';
                 
                 processingIndicator = `
-                    <div class="task-processing${isTimeout ? ' timeout-warning' : ''}" title="${isTimeout ? '⚠️ Processing for over 30 minutes!' : agentName + ' is working on this task...'}">
-                        <div class="status-badge active">🟢 ACTIVE</div>
-                        <span class="processing-agent">${agentName}</span>
+                    <div class="task-processing${isTimeout ? ' timeout-warning' : ''}" title="${isTimeout ? '⚠️ Processing for over 30 minutes!' : 'Jeannie is working on this task...'}">
+                        <div class="processing-spinner"></div>
+                        <span>${spinnerText}</span>
                         <span class="processing-time">(${timeDisplay})</span>
-                    </div>
-                `;
-            } else if (task.status === 'in_progress') {
-                // Show idle badge for in_progress tasks not being worked on
-                processingIndicator = `
-                    <div class="task-idle">
-                        <div class="status-badge idle">⚪ IDLE</div>
                     </div>
                 `;
             }
@@ -3792,7 +3743,6 @@
                         <div class="task-tags">
                             ${task.tags.map(tag => `<span class="task-tag ${tag}">${tag}</span>`).join('')}
                         </div>
-                        ${assigneeIndicator}
                         ${commentIndicator}
                     </div>
                     ${subtasksTotal > 0 ? `
@@ -7080,6 +7030,8 @@
         // Check auth on page load
         checkAuth();
     </script>
+<!-- Supabase Live Activity Feed -->
+<script src="activity-feed.js"></script>
 </body>
 </html>
 <!-- test Wed Jan 28 19:46:49 CET 2026 -->
