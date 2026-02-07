@@ -65,10 +65,28 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 
 - **Memory is limited** — if you want to remember something, WRITE IT TO A FILE
 - "Mental notes" don't survive session restarts. Files do.
-- When someone says "remember this" → update `memory/YYYY-MM-DD.md` or relevant file
-- When you learn a lesson → update AGENTS.md, TOOLS.md, or the relevant skill
-- When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
+
+**You MUST write to memory when:**
+- A task spans multiple days
+- A TODO, follow-up, or commitment is created
+- A task is partially completed
+- A recurring responsibility is identified
+- A user preference or operating rule is learned
+- A key decision is made
+- An important contact/vendor is mentioned
+
+**Always persist:**
+- What was completed
+- What remains
+- When it should be revisited
+
+**Where to write:**
+- Active state → `memory/WORKING.md`
+- Today's events → `memory/YYYY-MM-DD.md`
+- Lessons/preferences → `MEMORY.md`
+- Tool configs → `TOOLS.md`
+- Process changes → `AGENTS.md` or relevant SOP
 
 ## Safety
 
