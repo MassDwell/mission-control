@@ -22,3 +22,4 @@ Thumbs.db
 
 # Local config
 .openclaw/
+*/auth-profiles.json
