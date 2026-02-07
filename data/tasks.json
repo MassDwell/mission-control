@@ -66,27 +66,27 @@
         {
           "id": "sub_001",
           "title": "Pull images from Drive LookBookImages folder",
-          "done": false
+          "done": true
         },
         {
           "id": "sub_002",
           "title": "Add image URLs to Google Sheet column D",
-          "done": false
+          "done": true
         },
         {
           "id": "sub_003",
           "title": "Verify all 13 categories have images",
-          "done": false
+          "done": true
         },
         {
           "id": "sub_004",
           "title": "Test Softr integration",
-          "done": false
+          "done": true
         },
         {
           "id": "sub_005",
           "title": "Steve confirms complete",
-          "done": false
+          "done": true
         }
       ],
       "priority": "high",
