@@ -152,13 +152,13 @@
         }
       ],
       "createdAt": "2026-02-05T19:45:00Z",
-      "sortOrder": 0
+      "sortOrder": 1
     },
     {
       "id": "MC-004",
       "title": "VAPI Sarah — Review & Next Steps",
       "description": "Sarah (VAPI voice AI) ran initial batch on Feb 4.\n\n**Results from Feb 4 batch:**\n- ~10 calls completed before timeout\n- ~790 leads remaining with phone numbers\n\n**Next steps:** Review outcomes, decide on call strategy, schedule next batch.",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "massdwell",
       "assignee": "sales_followup",
       "tags": [
@@ -508,8 +508,16 @@
       "level": "intern"
     }
   ],
-  "lastUpdated": "2026-02-07T00:06:17.195Z",
+  "lastUpdated": "2026-02-07T00:06:28.931Z",
   "activities": [
+    {
+      "type": "moved",
+      "actor": "MassDwell",
+      "task": "VAPI Sarah — Review & Next Steps",
+      "from": "backlog",
+      "to": "in_progress",
+      "time": "just now"
+    },
     {
       "type": "moved",
       "actor": "MassDwell",
