@@ -2752,6 +2752,13 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label class="form-label">Assigned Agent(s)</label>
+                    <div id="agent-checkboxes" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 8px; background: var(--bg-secondary); border-radius: 6px; max-height: 150px; overflow-y: auto;">
+                        <!-- Populated dynamically -->
+                    </div>
+                    <div class="form-hint">Select one or more agents to work on this task</div>
+                </div>
+                <div class="form-group">
                     <label class="form-label">Tags</label>
                     <div id="tags-chips" class="tags-chips-container" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px;"></div>
                     <div style="display: flex; gap: 8px;">
@@ -2812,6 +2819,42 @@
             isLoading: false,
             gatewayUrl: null  // Set via config or auto-detected
         };
+
+        // === AGENTS LIST ===
+        const AGENTS = [
+            { id: 'clawson', name: 'Clawson', emoji: '🦅', level: 'Lead' },
+            { id: 'chief_of_staff', name: 'Chief of Staff', emoji: '📋', level: 'Specialist' },
+            { id: 'sales_followup', name: 'Sales Follow-up', emoji: '📞', level: 'Specialist' },
+            { id: 'marketing_content', name: 'Marketing & Content', emoji: '📣', level: 'Specialist' },
+            { id: 'personal_life_cos', name: 'Personal Life', emoji: '🎯', level: 'Specialist' },
+            { id: 'money_printer', name: 'Money Printer', emoji: '💵', level: 'Specialist' },
+            { id: 'admin_assistant', name: 'Admin Assistant', emoji: '📎', level: 'Intern' },
+            { id: 'security_ciso', name: 'Sentinel', emoji: '🛡️', level: 'Specialist' },
+            { id: 'finance_underwriting', name: 'Finance & Underwriting', emoji: '💰', level: 'Specialist' },
+            { id: 'doc_proposal', name: 'Document & Proposal', emoji: '📝', level: 'Intern' },
+            { id: 'alpine_permitting', name: 'Permitting', emoji: '📜', level: 'Specialist' },
+            { id: 'alpine_property_mgmt', name: 'Property Management', emoji: '🏠', level: 'Specialist' },
+            { id: 'massdwell_factory_ops', name: 'Factory Ops', emoji: '🏭', level: 'Specialist' },
+            { id: 'laser_sales_engineer', name: 'Laser Sales', emoji: '⚡', level: 'Specialist' }
+        ];
+
+        function renderAgentCheckboxes(selectedAgents = []) {
+            const container = document.getElementById('agent-checkboxes');
+            if (!container) return;
+            
+            container.innerHTML = AGENTS.map(agent => `
+                <label style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: var(--bg-card); border-radius: 4px; cursor: pointer; font-size: 0.8rem; border: 1px solid ${selectedAgents.includes(agent.id) ? 'var(--accent-blue)' : 'transparent'};">
+                    <input type="checkbox" name="task-agents" value="${agent.id}" ${selectedAgents.includes(agent.id) ? 'checked' : ''} style="cursor: pointer;">
+                    <span>${agent.emoji}</span>
+                    <span>${agent.name}</span>
+                </label>
+            `).join('');
+        }
+
+        function getSelectedAgents() {
+            const checkboxes = document.querySelectorAll('input[name="task-agents"]:checked');
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
 
         // === VERSION CHECK ===
         const VERSION_FILE = 'data/version.json';
@@ -3745,6 +3788,14 @@
                         </div>
                         ${commentIndicator}
                     </div>
+                    ${task.assignees && task.assignees.length > 0 ? `
+                        <div class="task-assignees" style="display: flex; gap: 4px; margin-top: 8px; flex-wrap: wrap;">
+                            ${task.assignees.map(agentId => {
+                                const agent = AGENTS.find(a => a.id === agentId);
+                                return agent ? `<span style="font-size: 0.7rem; padding: 2px 6px; background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); border-radius: 4px;" title="${agent.name}">${agent.emoji} ${agent.name.split(' ')[0]}</span>` : '';
+                            }).join('')}
+                        </div>
+                    ` : ''}
                     ${subtasksTotal > 0 ? `
                         <div class="task-subtasks">
                             <div class="subtask-progress">
@@ -4571,6 +4622,9 @@
             currentTaskTags = [...(task.tags || [])];
             renderTagChips();
 
+            // Render agent checkboxes
+            renderAgentCheckboxes(task.assignees || []);
+
             // Render subtasks
             renderSubtasks(task);
 
@@ -4853,6 +4907,9 @@
             currentTaskTags = [];
             renderTagChips();
 
+            // Reset agent checkboxes
+            renderAgentCheckboxes([]);
+
             // Clear subtasks and comments for new task
             document.getElementById('subtasks-list').innerHTML = '<div style="color: var(--text-secondary); font-size: 0.875rem;">No subtasks yet</div>';
             document.getElementById('comments-list').innerHTML = '<div style="color: var(--text-secondary); font-size: 0.875rem;">No comments yet</div>';
@@ -4873,6 +4930,7 @@
             const priority = document.getElementById('task-priority').value;
             const project = document.getElementById('task-project').value;
             const tags = currentTaskTags.length > 0 ? [...currentTaskTags] : [project];
+            const assignees = getSelectedAgents();
 
             if (!title) {
                 showToast('error', 'Title is required');
@@ -4888,6 +4946,7 @@
                     task.priority = priority;
                     task.project = project;
                     task.tags = tags.length > 0 ? tags : [project];
+                    task.assignees = assignees;
                     
                     if (isEditingTemplate) {
                         task.baseStatus = status; // Store the status to use when executing
@@ -4903,6 +4962,7 @@
                     description: description,
                     project: project,
                     tags: tags.length > 0 ? tags : [project],
+                    assignees: assignees,
                     subtasks: [],
                     priority: priority,
                     createdAt: new Date().toISOString()
