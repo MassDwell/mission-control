@@ -112,7 +112,7 @@
       "id": "MC-003",
       "title": "Cold Lead Reengagement Campaign",
       "description": "Execute cold lead reengagement using approved templates.\n\n**Templates:** data/massdwell/sales/follow-up-templates.md\n- Value Drop (share content)\n- Spring Schedule (urgency)\n- Honest Reset (break up)\n\n**Target:** Leads >30 days cold, not in Negotiation+",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "massdwell",
       "assignee": "sales_followup",
       "tags": [
@@ -508,8 +508,16 @@
       "level": "intern"
     }
   ],
-  "lastUpdated": "2026-02-07T00:05:20.991901Z",
+  "lastUpdated": "2026-02-07T00:06:17.195Z",
   "activities": [
+    {
+      "type": "moved",
+      "actor": "MassDwell",
+      "task": "Cold Lead Reengagement Campaign",
+      "from": "backlog",
+      "to": "in_progress",
+      "time": "just now"
+    },
     {
       "type": "audit",
       "actor": "Clawson",
