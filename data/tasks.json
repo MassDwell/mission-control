@@ -53,7 +53,7 @@
       "id": "MC-002",
       "title": "Finish Selections Portal",
       "description": "**OWNER: @marketing_content**\n\nComplete the customer design portal at portal.massdwell.com with all finish selections.\n\n**Current State (Feb 6):**\n- Google Sheet created with 13 categories (27 rows)\n- Image URLs column is EMPTY\n- Blocker: Need to pull images from Drive\n\n**Google Sheet:** https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw/edit\n**Image Source:** Google Drive > MassDwell > LookBookImages",
-      "status": "in_progress",
+      "status": "review",
       "project": "massdwell",
       "assignee": "marketing_content",
       "tags": [
@@ -101,12 +101,15 @@
           "author": "Clawson",
           "text": "Audit: Sheet exists with 13 categories but image URLs empty. Subtasks simplified. 0% progress is accurate.",
           "timestamp": "2026-02-06T21:54:00Z"
+        },
+        {
+          "author": "Clawson",
+          "text": "Populated 26 rows with image URLs from Google Drive. All 13 categories now have images. Sheet: https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw",
+          "timestamp": "2026-02-07T00:14:29.349212Z"
         }
       ],
       "createdAt": "2026-02-05T19:45:00Z",
-      "sortOrder": 0,
-      "processingStartedAt": "2026-02-07T00:11:03.242035Z",
-      "processingAgent": "Clawson"
+      "sortOrder": 0
     },
     {
       "id": "MC-003",
@@ -508,7 +511,7 @@
       "level": "intern"
     }
   ],
-  "lastUpdated": "2026-02-07T00:11:03.242207Z",
+  "lastUpdated": "2026-02-07T00:14:29.349541Z",
   "activities": [
     {
       "type": "moved",
