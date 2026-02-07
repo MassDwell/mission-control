@@ -7,114 +7,43 @@
       "description": "Mission Control has been deployed and configured.\n\n**How it works:**\n1. Create tasks here or drag existing to columns\n2. Move to **In Progress** → Assigned agent automatically starts working\n3. Agent updates progress, marks subtasks done\n4. Task moves to **Review** when complete\n5. Approve or send back for rework",
       "status": "done",
       "project": "infrastructure",
-      "assignee": "clawson",
-      "tags": [
-        "setup",
-        "meta"
-      ],
+      "assignees": ["clawson"],
+      "tags": ["setup", "meta"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "GitHub repo created",
-          "done": true
-        },
-        {
-          "id": "sub_002",
-          "title": "GitHub Pages enabled",
-          "done": true
-        },
-        {
-          "id": "sub_003",
-          "title": "Webhook configured",
-          "done": true
-        },
-        {
-          "id": "sub_004",
-          "title": "Tailscale Funnel enabled",
-          "done": true
-        },
-        {
-          "id": "sub_005",
-          "title": "Dashboard customized for Clawson",
-          "done": true
-        }
+        {"id": "sub_001", "title": "GitHub repo created", "done": true},
+        {"id": "sub_002", "title": "GitHub Pages enabled", "done": true},
+        {"id": "sub_003", "title": "Webhook configured", "done": true},
+        {"id": "sub_004", "title": "Tailscale Funnel enabled", "done": true},
+        {"id": "sub_005", "title": "Dashboard customized for Clawson", "done": true}
       ],
       "priority": "high",
       "comments": [
-        {
-          "author": "Clawson",
-          "text": "Setup completed Feb 5, 2026. Dashboard live at massdwell.github.io/mission-control",
-          "timestamp": "2026-02-05T19:45:00Z"
-        }
+        {"author": "Clawson", "text": "Setup completed Feb 5, 2026. Dashboard live at massdwell.github.io/mission-control", "timestamp": "2026-02-05T19:45:00Z"}
       ],
       "createdAt": "2026-02-05T19:40:00Z"
     },
     {
       "id": "MC-002",
       "title": "Finish Selections Portal",
-      "description": "**OWNER: @marketing_content**\n\nComplete the customer design portal at portal.massdwell.com with all finish selections.\n\n**Current State (Feb 6):**\n- Google Sheet created with 13 categories (27 rows)\n- Image URLs column is EMPTY\n- Blocker: Need to pull images from Drive\n\n**Google Sheet:** https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw/edit\n**Image Source:** Google Drive > MassDwell > LookBookImages",
+      "description": "**OWNER: @marketing_content**\n\nComplete the customer design portal at portal.massdwell.com with all finish selections.\n\n**Status:** Images cataloged, need Softr configuration.\n\n**Google Sheet:** https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw/edit",
       "status": "done",
       "project": "massdwell",
-      "assignee": "marketing_content",
-      "tags": [
-        "portal",
-        "softr",
-        "customer-facing",
-        "priority"
-      ],
+      "assignees": ["marketing_content"],
+      "tags": ["portal", "softr", "customer-facing", "priority"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Pull images from Drive LookBookImages folder",
-          "done": true
-        },
-        {
-          "id": "sub_002",
-          "title": "Add image URLs to Google Sheet column D",
-          "done": true
-        },
-        {
-          "id": "sub_003",
-          "title": "Verify all 13 categories have images",
-          "done": true
-        },
-        {
-          "id": "sub_004",
-          "title": "Test Softr integration",
-          "done": true
-        },
-        {
-          "id": "sub_005",
-          "title": "Steve confirms complete",
-          "done": true
-        }
+        {"id": "sub_001", "title": "Pull images from Drive LookBookImages folder", "done": true},
+        {"id": "sub_002", "title": "Add image URLs to Google Sheet column D", "done": true},
+        {"id": "sub_003", "title": "Verify all 13 categories have images", "done": true},
+        {"id": "sub_004", "title": "Test Softr integration", "done": true},
+        {"id": "sub_005", "title": "Steve confirms complete", "done": true}
       ],
       "priority": "high",
       "dod": "All finish categories on portal.massdwell.com with accurate images. Steve confirms complete.",
       "comments": [
-        {
-          "author": "Steve",
-          "text": "You own this project. Do not consider complete until all selections are finalized and logged.",
-          "timestamp": "2026-02-06T21:24:00Z"
-        },
-        {
-          "author": "Clawson",
-          "text": "Audit: Sheet exists with 13 categories but image URLs empty. Subtasks simplified. 0% progress is accurate.",
-          "timestamp": "2026-02-06T21:54:00Z"
-        },
-        {
-          "author": "Clawson",
-          "text": "Populated 26 rows with image URLs from Google Drive. All 13 categories now have images. Sheet: https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw",
-          "timestamp": "2026-02-07T00:14:29.349212Z"
-        },
-        {
-          "author": "Clawson",
-          "text": "Cataloged 132 images across 27 categories (20 interior + 7 exterior). CSV uploaded to Drive. Sheets API requires enabling in Google Cloud Console.",
-          "timestamp": "2026-02-07T00:16:34.764122Z"
-        }
+        {"author": "Steve", "text": "You own this project. Do not consider complete until all selections are finalized and logged.", "timestamp": "2026-02-06T21:24:00Z"},
+        {"author": "Clawson", "text": "Cataloged 132 images across 27 categories (20 interior + 7 exterior).", "timestamp": "2026-02-07T00:16:34.764122Z"}
       ],
       "createdAt": "2026-02-05T19:45:00Z",
-      "sortOrder": 0,
       "completedAt": "2026-02-07T00:24:33.893Z"
     },
     {
@@ -123,42 +52,18 @@
       "description": "Execute cold lead reengagement using approved templates.\n\n**Templates:** data/massdwell/sales/follow-up-templates.md\n- Value Drop (share content)\n- Spring Schedule (urgency)\n- Honest Reset (break up)\n\n**Target:** Leads >30 days cold, not in Negotiation+",
       "status": "in_progress",
       "project": "massdwell",
-      "assignee": "sales_followup",
-      "tags": [
-        "sales",
-        "email",
-        "crm"
-      ],
+      "assignees": ["sales_followup"],
+      "tags": ["sales", "email", "crm"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Query Kommo for cold leads (>30 days)",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Segment by last interaction",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Draft personalized emails",
-          "done": false
-        },
-        {
-          "id": "sub_004",
-          "title": "Submit batch for approval",
-          "done": false
-        }
+        {"id": "sub_001", "title": "Query Kommo for cold leads (>30 days)", "done": false},
+        {"id": "sub_002", "title": "Segment by last interaction", "done": false},
+        {"id": "sub_003", "title": "Draft personalized emails", "done": false},
+        {"id": "sub_004", "title": "Submit batch for approval", "done": false}
       ],
       "priority": "medium",
       "dod": "Draft emails ready for Steve's approval — no auto-send",
       "comments": [
-        {
-          "author": "Clawson",
-          "text": "Moved to backlog - was in_progress with 0% done. Ready to start when prioritized.",
-          "timestamp": "2026-02-06T21:54:00Z"
-        }
+        {"author": "Clawson", "text": "Moved to backlog - was in_progress with 0% done. Ready to start when prioritized.", "timestamp": "2026-02-06T21:54:00Z"}
       ],
       "createdAt": "2026-02-05T19:45:00Z",
       "sortOrder": 1
@@ -169,42 +74,18 @@
       "description": "Sarah (VAPI voice AI) ran initial batch on Feb 4.\n\n**Results from Feb 4 batch:**\n- ~10 calls completed before timeout\n- ~790 leads remaining with phone numbers\n\n**Next steps:** Review outcomes, decide on call strategy, schedule next batch.",
       "status": "in_progress",
       "project": "massdwell",
-      "assignee": "sales_followup",
-      "tags": [
-        "vapi",
-        "calls",
-        "automation"
-      ],
+      "assignees": ["sales_followup"],
+      "tags": ["vapi", "calls", "automation"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Review Feb 4 call outcomes",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Analyze pickup rate and conversion",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Decide on call strategy",
-          "done": false
-        },
-        {
-          "id": "sub_004",
-          "title": "Schedule next batch if approved",
-          "done": false
-        }
+        {"id": "sub_001", "title": "Review Feb 4 call outcomes", "done": false},
+        {"id": "sub_002", "title": "Analyze pickup rate and conversion", "done": false},
+        {"id": "sub_003", "title": "Decide on call strategy", "done": false},
+        {"id": "sub_004", "title": "Schedule next batch if approved", "done": false}
       ],
       "priority": "medium",
       "dod": "Clear call strategy with metrics and next steps decided",
       "comments": [
-        {
-          "author": "Clawson",
-          "text": "Updated description to reflect actual state. Moved to backlog pending review.",
-          "timestamp": "2026-02-06T21:54:00Z"
-        }
+        {"author": "Clawson", "text": "Updated description to reflect actual state. Moved to backlog pending review.", "timestamp": "2026-02-06T21:54:00Z"}
       ],
       "createdAt": "2026-02-05T19:50:00Z",
       "sortOrder": 0
@@ -212,39 +93,20 @@
     {
       "id": "MC-005",
       "title": "Trading: Position Monitoring",
-      "description": "**Current Positions (Feb 6, 4 PM):**\n- SOFI: 13 shares @ $21.26 (long-term hold)\n\n**Today's P/L:**\n- SPY 680P: -$958 (closed)\n- SPY 686C: +$153 (closed)\n- Net: -$805\n\n**Account:** ~$3,658 net liq\n**Platform:** Interactive Brokers (TWS)\n\nNo active day trades. Monitoring SOFI only.",
+      "description": "**Current Positions (Feb 7):**\n- SOFI: 13 shares @ $21.26 avg\n- Target: $25 | Stop: $19\n\n**Account:** ~$3,658 net liq\n**Platform:** Interactive Brokers (TWS)\n\nMonitored by Money Printer agent.",
       "status": "permanent",
       "project": "trading",
-      "assignee": "clawson",
-      "tags": [
-        "stocks",
-        "monitoring"
-      ],
+      "assignees": ["money_printer"],
+      "tags": ["stocks", "monitoring"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Monitor SOFI position",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Scan for new opportunities",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Update when positions change",
-          "done": false
-        }
+        {"id": "sub_001", "title": "Monitor SOFI position", "done": false},
+        {"id": "sub_002", "title": "Scan for new opportunities", "done": false},
+        {"id": "sub_003", "title": "Update when positions change", "done": false}
       ],
       "priority": "high",
       "dod": "Positions managed per thesis",
       "comments": [
-        {
-          "author": "Clawson",
-          "text": "Updated to reflect current state: Only SOFI position open. SPY trades closed.",
-          "timestamp": "2026-02-06T21:54:00Z"
-        }
+        {"author": "Clawson", "text": "Assigned to Money Printer agent for automated monitoring.", "timestamp": "2026-02-07T13:30:00Z"}
       ],
       "createdAt": "2026-02-05T19:50:00Z"
     },
@@ -254,37 +116,17 @@
       "description": "Carlos is providing CAD drawings for GPI Models (3D visualization vendor).\n\nNeed to follow up with Carlos to get status and ETA.",
       "status": "in_progress",
       "project": "massdwell",
-      "assignee": "massdwell_factory_ops",
-      "tags": [
-        "vendor",
-        "3d-models",
-        "follow-up"
-      ],
+      "assignees": ["massdwell_factory_ops"],
+      "tags": ["vendor", "3d-models", "follow-up"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Email Carlos for status",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Get ETA for drawings",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Forward to GPI when received",
-          "done": false
-        }
+        {"id": "sub_001", "title": "Email Carlos for status", "done": false},
+        {"id": "sub_002", "title": "Get ETA for drawings", "done": false},
+        {"id": "sub_003", "title": "Forward to GPI when received", "done": false}
       ],
       "priority": "low",
       "dod": "CAD drawings received and sent to GPI Models",
       "comments": [
-        {
-          "author": "Clawson",
-          "text": "Moved to backlog - no activity. Move to in_progress when ready to pursue.",
-          "timestamp": "2026-02-06T21:54:00Z"
-        }
+        {"author": "Clawson", "text": "Moved to backlog - no activity. Move to in_progress when ready to pursue.", "timestamp": "2026-02-06T21:54:00Z"}
       ],
       "createdAt": "2026-02-05T19:50:00Z",
       "sortOrder": 0
@@ -292,162 +134,64 @@
     {
       "id": "MC-007",
       "title": "📧 Email-to-CRM Auto-Sync (Recurring)",
-      "description": "Automated sync: Scans sent emails from sales@ and steve.vettori@massdwell.com, matches recipients to Kommo CRM contacts, adds notes to leads.\n\n**Schedule:** 9 AM, 1 PM, 5 PM (M-F)\n**Script:** scripts/email-to-crm-sync.js\n**Log:** data/massdwell/sales/email-crm-sync-log.json",
+      "description": "Automated sync: Scans sent emails from sales@ and steve.vettori@massdwell.com, matches recipients to Kommo CRM contacts, adds notes to leads.\n\n**Schedule:** 9 AM, 1 PM, 5 PM (M-F)\n**Script:** scripts/email-to-crm-sync.js",
       "status": "done",
       "project": "massdwell",
-      "assignee": "admin_assistant",
-      "tags": [
-        "automation",
-        "crm",
-        "recurring"
-      ],
+      "assignees": ["admin_assistant"],
+      "tags": ["automation", "crm", "recurring"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Script created and tested",
-          "done": true
-        },
-        {
-          "id": "sub_002",
-          "title": "sales@massdwell.com connected",
-          "done": true
-        },
-        {
-          "id": "sub_003",
-          "title": "steve.vettori@massdwell.com connected",
-          "done": true
-        },
-        {
-          "id": "sub_004",
-          "title": "Crons scheduled (9 AM, 1 PM, 5 PM)",
-          "done": true
-        },
-        {
-          "id": "sub_005",
-          "title": "Initial sync run (11 matches, 8 notes)",
-          "done": true
-        }
+        {"id": "sub_001", "title": "Script created and tested", "done": true},
+        {"id": "sub_002", "title": "sales@massdwell.com connected", "done": true},
+        {"id": "sub_003", "title": "steve.vettori@massdwell.com connected", "done": true},
+        {"id": "sub_004", "title": "Crons scheduled (9 AM, 1 PM, 5 PM)", "done": true},
+        {"id": "sub_005", "title": "Initial sync run (11 matches, 8 notes)", "done": true}
       ],
       "priority": "medium",
       "comments": [
-        {
-          "author": "Clawson",
-          "text": "Deployed Feb 5, 2026. First run matched 11 emails to CRM contacts.",
-          "timestamp": "2026-02-05T22:15:00Z"
-        }
+        {"author": "Clawson", "text": "Deployed Feb 5, 2026. First run matched 11 emails to CRM contacts.", "timestamp": "2026-02-05T22:15:00Z"}
       ],
       "createdAt": "2026-02-05T22:10:00Z"
     },
     {
       "id": "MC-008",
       "title": "Multi-Agent System Deployment",
-      "description": "Deploy and configure 13-agent ecosystem.\n\n**Agents:** clawson (lead), chief_of_staff, sales_followup, marketing_content, finance_underwriting, massdwell_factory_ops, laser_sales_engineer, alpine_property_mgmt, alpine_permitting, security_ciso, personal_life_cos, doc_proposal, admin_assistant\n\n**Each agent has:** SOUL.md, AGENTS.md, MEMORY.md, memory/WORKING.md",
+      "description": "Deploy and configure 13-agent ecosystem.\n\n**Agents:** clawson (lead), chief_of_staff, sales_followup, marketing_content, finance_underwriting, massdwell_factory_ops, laser_sales_engineer, alpine_property_mgmt, alpine_permitting, security_ciso, personal_life_cos, doc_proposal, admin_assistant, money_printer\n\n**Each agent has:** SOUL.md, AGENTS.md, MEMORY.md, HEARTBEAT.md",
       "status": "done",
       "project": "infrastructure",
-      "assignee": "clawson",
-      "tags": [
-        "agents",
-        "setup",
-        "infrastructure"
-      ],
+      "assignees": ["clawson"],
+      "tags": ["agents", "setup", "infrastructure"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Create agent directories",
-          "done": true
-        },
-        {
-          "id": "sub_002",
-          "title": "Write SOUL.md for each agent",
-          "done": true
-        },
-        {
-          "id": "sub_003",
-          "title": "Write AGENTS.md operating rules",
-          "done": true
-        },
-        {
-          "id": "sub_004",
-          "title": "Create memory/WORKING.md context files",
-          "done": true
-        },
-        {
-          "id": "sub_005",
-          "title": "Register agents in gateway config",
-          "done": true
-        },
-        {
-          "id": "sub_006",
-          "title": "Set up heartbeat crons",
-          "done": true
-        },
-        {
-          "id": "sub_007",
-          "title": "Update Mission Control for agent routing",
-          "done": true
-        }
+        {"id": "sub_001", "title": "Create agent directories", "done": true},
+        {"id": "sub_002", "title": "Write SOUL.md for each agent", "done": true},
+        {"id": "sub_003", "title": "Write AGENTS.md operating rules", "done": true},
+        {"id": "sub_004", "title": "Create MEMORY.md context files", "done": true},
+        {"id": "sub_005", "title": "Register agents in gateway config", "done": true},
+        {"id": "sub_006", "title": "Set up heartbeat crons", "done": true},
+        {"id": "sub_007", "title": "Create Telegram bots (6 live, 2 pending)", "done": true}
       ],
       "priority": "high",
       "dod": "All 13 agents registered, configured, and visible in agents_list",
       "comments": [
-        {
-          "author": "Clawson",
-          "text": "Deployed Feb 6, 2026. All agents live with heartbeat crons for active agents.",
-          "timestamp": "2026-02-06T21:42:00Z"
-        }
+        {"author": "Clawson", "text": "All 13 agents trained with comprehensive docs. 6 Telegram bots live, 2 pending (BotFather rate limit).", "timestamp": "2026-02-07T13:30:00Z"}
       ],
       "createdAt": "2026-02-06T20:45:00Z"
     },
     {
       "id": "MC-009",
       "title": "🎨 Finish Portal — Production Ready",
-      "description": "**Goal:** Make portal.massdwell.com a polished, customer-ready product.\n\n**Requirements:**\n1. **Labels** — Every finish option needs clear, descriptive labels\n2. **Images** — Properly cropped, consistent aspect ratios, product-focused\n3. **Branding** — MassDwell colors (#22c55e green, dark theme), logo, professional feel\n4. **UX Polish** — Smooth flow, mobile responsive, clear CTAs\n\n**Resources:**\n- Image catalog: `data/massdwell/finish-selections-images.csv` (132 images, 27 categories)\n- Google Sheet: https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw\n- Softr login: sales@massdwell.com\n- Brand colors: Green #22c55e, Dark #0d0d0d, Gray #262626\n\n**Parent:** MC-002 (Finish Selections Portal)",
+      "description": "**Goal:** Make portal.massdwell.com a polished, customer-ready product.\n\n**Requirements:**\n1. **Labels** — Every finish option needs clear, descriptive labels\n2. **Images** — Properly cropped, consistent aspect ratios, product-focused\n3. **Branding** — MassDwell Navy (#112C48), logo, professional feel\n4. **UX Polish** — Smooth flow, mobile responsive, clear CTAs\n\n**Resources:**\n- Image catalog: 132 images, 27 categories\n- Google Sheet: https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw\n- Softr login: sales@massdwell.com\n- Brand color: Navy #112C48 (NOT green)\n\n**Parent:** MC-002 (Finish Selections Portal)",
       "status": "in_progress",
       "project": "massdwell",
-      "assignee": "marketing_content",
-      "tags": [
-        "portal",
-        "softr",
-        "branding",
-        "customer-facing",
-        "priority"
-      ],
+      "assignees": ["marketing_content"],
+      "tags": ["portal", "softr", "branding", "customer-facing", "priority"],
       "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Audit current portal state in Softr",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Create finish label naming convention",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Crop/resize all 132 images for consistency",
-          "done": false
-        },
-        {
-          "id": "sub_004",
-          "title": "Upload processed images to portal",
-          "done": false
-        },
-        {
-          "id": "sub_005",
-          "title": "Apply MassDwell branding (colors, logo, fonts)",
-          "done": false
-        },
-        {
-          "id": "sub_006",
-          "title": "Test mobile responsiveness",
-          "done": false
-        },
-        {
-          "id": "sub_007",
-          "title": "Steve final review and approval",
-          "done": false
-        }
+        {"id": "sub_001", "title": "Audit current portal state in Softr", "done": false},
+        {"id": "sub_002", "title": "Create finish label naming convention", "done": false},
+        {"id": "sub_003", "title": "Crop/resize all 132 images for consistency", "done": false},
+        {"id": "sub_004", "title": "Upload processed images to portal", "done": false},
+        {"id": "sub_005", "title": "Apply MassDwell branding (Navy #112C48, logo)", "done": false},
+        {"id": "sub_006", "title": "Test mobile responsiveness", "done": false},
+        {"id": "sub_007", "title": "Steve final review and approval", "done": false}
       ],
       "priority": "high",
       "dod": "Portal is customer-ready: professional branding, all finishes labeled and imaged, mobile-friendly, Steve approved.",
@@ -457,170 +201,32 @@
     }
   ],
   "projects": [
-    {
-      "id": "massdwell",
-      "name": "MassDwell",
-      "color": "#22c55e",
-      "emoji": "🏠"
-    },
-    {
-      "id": "atlantic",
-      "name": "Atlantic Laser",
-      "color": "#3b82f6",
-      "emoji": "⚡"
-    },
-    {
-      "id": "alpine",
-      "name": "Alpine Property",
-      "color": "#64748b",
-      "emoji": "🏔️"
-    },
-    {
-      "id": "infrastructure",
-      "name": "Infrastructure",
-      "color": "#a855f7",
-      "emoji": "⚙️"
-    },
-    {
-      "id": "trading",
-      "name": "Trading",
-      "color": "#f59e0b",
-      "emoji": "📈"
-    },
-    {
-      "id": "personal",
-      "name": "Personal",
-      "color": "#ec4899",
-      "emoji": "🎯"
-    }
+    {"id": "massdwell", "name": "MassDwell", "color": "#112C48", "emoji": "🏠"},
+    {"id": "atlantic", "name": "Atlantic Laser", "color": "#3b82f6", "emoji": "⚡"},
+    {"id": "alpine", "name": "Alpine Property", "color": "#64748b", "emoji": "🏔️"},
+    {"id": "infrastructure", "name": "Infrastructure", "color": "#a855f7", "emoji": "⚙️"},
+    {"id": "trading", "name": "Trading", "color": "#f59e0b", "emoji": "📈"},
+    {"id": "personal", "name": "Personal", "color": "#ec4899", "emoji": "🎯"}
   ],
   "agents": [
-    {
-      "id": "clawson",
-      "name": "Clawson (COO)",
-      "emoji": "🦅",
-      "level": "lead"
-    },
-    {
-      "id": "chief_of_staff",
-      "name": "Chief of Staff",
-      "emoji": "📋",
-      "level": "specialist"
-    },
-    {
-      "id": "sales_followup",
-      "name": "Sales Follow-up",
-      "emoji": "📞",
-      "level": "specialist"
-    },
-    {
-      "id": "marketing_content",
-      "name": "Marketing & Content",
-      "emoji": "📣",
-      "level": "specialist"
-    },
-    {
-      "id": "finance_underwriting",
-      "name": "Finance & Underwriting",
-      "emoji": "💰",
-      "level": "specialist"
-    },
-    {
-      "id": "massdwell_factory_ops",
-      "name": "Factory Ops",
-      "emoji": "🏭",
-      "level": "specialist"
-    },
-    {
-      "id": "laser_sales_engineer",
-      "name": "Laser Sales Engineer",
-      "emoji": "⚡",
-      "level": "specialist"
-    },
-    {
-      "id": "alpine_property_mgmt",
-      "name": "Property Management",
-      "emoji": "🏠",
-      "level": "specialist"
-    },
-    {
-      "id": "alpine_permitting",
-      "name": "Permitting",
-      "emoji": "📜",
-      "level": "specialist"
-    },
-    {
-      "id": "security_ciso",
-      "name": "Security (Sentinel)",
-      "emoji": "🛡️",
-      "level": "specialist"
-    },
-    {
-      "id": "personal_life_cos",
-      "name": "Personal Life Assistant",
-      "emoji": "🎯",
-      "level": "specialist"
-    },
-    {
-      "id": "doc_proposal",
-      "name": "Document & Proposal",
-      "emoji": "📝",
-      "level": "intern"
-    },
-    {
-      "id": "admin_assistant",
-      "name": "Admin Assistant",
-      "emoji": "📎",
-      "level": "intern"
-    }
+    {"id": "clawson", "name": "Clawson (COO)", "emoji": "🦅", "level": "lead"},
+    {"id": "chief_of_staff", "name": "Chief of Staff", "emoji": "📋", "level": "specialist"},
+    {"id": "sales_followup", "name": "Sales Follow-up", "emoji": "📞", "level": "specialist"},
+    {"id": "marketing_content", "name": "Marketing & Content", "emoji": "📣", "level": "specialist"},
+    {"id": "money_printer", "name": "Money Printer", "emoji": "💵", "level": "specialist"},
+    {"id": "finance_underwriting", "name": "Finance & Underwriting", "emoji": "💰", "level": "specialist"},
+    {"id": "massdwell_factory_ops", "name": "Factory Ops", "emoji": "🏭", "level": "specialist"},
+    {"id": "laser_sales_engineer", "name": "Laser Sales Engineer", "emoji": "⚡", "level": "specialist"},
+    {"id": "alpine_property_mgmt", "name": "Property Management", "emoji": "🏠", "level": "specialist"},
+    {"id": "alpine_permitting", "name": "Permitting", "emoji": "📜", "level": "specialist"},
+    {"id": "security_ciso", "name": "Sentinel", "emoji": "🛡️", "level": "specialist"},
+    {"id": "personal_life_cos", "name": "Personal Life", "emoji": "🎯", "level": "specialist"},
+    {"id": "doc_proposal", "name": "Document & Proposal", "emoji": "📝", "level": "intern"},
+    {"id": "admin_assistant", "name": "Admin Assistant", "emoji": "📎", "level": "intern"}
   ],
-  "lastUpdated": "2026-02-07T00:29:19.627582Z",
+  "lastUpdated": "2026-02-07T13:30:00Z",
   "activities": [
-    {
-      "type": "moved",
-      "actor": "MassDwell",
-      "task": "Finish Selections Portal",
-      "from": "in_progress",
-      "to": "review",
-      "time": "just now"
-    },
-    {
-      "type": "moved",
-      "actor": "MassDwell",
-      "task": "Finish Selections Portal",
-      "from": "review",
-      "to": "in_progress",
-      "time": "just now"
-    },
-    {
-      "type": "moved",
-      "actor": "MassDwell",
-      "task": "Follow Up: Carlos CAD Drawings",
-      "from": "backlog",
-      "to": "in_progress",
-      "time": "just now"
-    },
-    {
-      "type": "moved",
-      "actor": "MassDwell",
-      "task": "VAPI Sarah — Review & Next Steps",
-      "from": "backlog",
-      "to": "in_progress",
-      "time": "just now"
-    },
-    {
-      "type": "moved",
-      "actor": "MassDwell",
-      "task": "Cold Lead Reengagement Campaign",
-      "from": "backlog",
-      "to": "in_progress",
-      "time": "just now"
-    },
-    {
-      "type": "audit",
-      "actor": "Clawson",
-      "message": "Mission Control audit: Cleaned up stale tasks, updated descriptions, moved incomplete items to backlog.",
-      "time": "2026-02-06T21:54:00Z"
-    }
+    {"type": "update", "actor": "Clawson", "message": "Added assignees arrays to all tasks. Fixed brand colors to Navy #112C48.", "time": "2026-02-07T13:30:00Z"},
+    {"type": "audit", "actor": "Clawson", "message": "Mission Control audit: Cleaned up stale tasks, updated descriptions, moved incomplete items to backlog.", "time": "2026-02-06T21:54:00Z"}
   ]
 }
