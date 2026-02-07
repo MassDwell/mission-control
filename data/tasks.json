@@ -476,7 +476,7 @@
         "marketing_content"
       ],
       "subtasks": [],
-      "priority": "medium",
+      "priority": "high",
       "createdAt": "2026-02-07T18:42:31.770Z",
       "status": "in_progress"
     }
@@ -605,7 +605,7 @@
       "level": "intern"
     }
   ],
-  "lastUpdated": "2026-02-07T18:42:31.770Z",
+  "lastUpdated": "2026-02-07T18:54:41.852Z",
   "activities": [
     {
       "type": "update",
