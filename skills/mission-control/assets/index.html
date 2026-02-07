@@ -1416,6 +1416,31 @@
             display: flex;
             gap: 0.75rem;
             font-size: 0.875rem;
+            padding: 0.75rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .activity-item:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .activity-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+        }
+        
+        .activity-empty {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
         }
 
         .activity-dot {
@@ -2344,9 +2369,26 @@
         <aside class="activity" id="activity-sidebar">
             <div class="activity-header">
                 <span>ACTIVITY</span>
+                <span id="activity-status" style="font-size: 0.7rem; margin-left: 0.5rem;"></span>
                 <button class="activity-toggle" onclick="toggleActivity()" title="Hide Activity">
                     <span id="activity-toggle-icon">✕</span>
                 </button>
+            </div>
+            <div class="activity-filters" style="padding: 0.5rem; border-bottom: 1px solid var(--border); display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <select id="activity-filter-source" onchange="ActivityFeed.filters.source = this.value || null; ActivityFeed.render();" style="padding: 0.25rem; font-size: 0.75rem; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); border-radius: 4px;">
+                    <option value="">All Sources</option>
+                    <option value="clawson">🦅 Clawson</option>
+                    <option value="sales_followup">💼 Sales</option>
+                    <option value="marketing_content">📢 Marketing</option>
+                    <option value="system">⚙️ System</option>
+                </select>
+                <select id="activity-filter-type" onchange="ActivityFeed.filters.eventType = this.value || null; ActivityFeed.render();" style="padding: 0.25rem; font-size: 0.75rem; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); border-radius: 4px;">
+                    <option value="">All Types</option>
+                    <option value="agent_action">🤖 Agent</option>
+                    <option value="lead_event">👤 Lead</option>
+                    <option value="note">📝 Note</option>
+                    <option value="sync">🔄 Sync</option>
+                </select>
             </div>
             <div class="activity-list" id="activity-list"></div>
         </aside>
@@ -6988,6 +7030,8 @@
         // Check auth on page load
         checkAuth();
     </script>
+<!-- Supabase Live Activity Feed -->
+<script src="activity-feed.js"></script>
 </body>
 </html>
 <!-- test Wed Jan 28 19:46:49 CET 2026 -->
