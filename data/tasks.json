@@ -104,7 +104,9 @@
         }
       ],
       "createdAt": "2026-02-05T19:45:00Z",
-      "sortOrder": 0
+      "sortOrder": 0,
+      "processingStartedAt": "2026-02-07T00:11:03.242035Z",
+      "processingAgent": "Clawson"
     },
     {
       "id": "MC-003",
@@ -506,7 +508,7 @@
       "level": "intern"
     }
   ],
-  "lastUpdated": "2026-02-07T00:07:45.800243Z",
+  "lastUpdated": "2026-02-07T00:11:03.242207Z",
   "activities": [
     {
       "type": "moved",
