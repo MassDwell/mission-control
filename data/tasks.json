@@ -396,7 +396,66 @@
           "timestamp": "2026-02-06T21:42:00Z"
         }
       ],
-      "createdAt": "2026-02-06T20:45:00Z"
+      "createdAt": "2026-02-06T20:45:00Z",
+      "processingStartedAt": "2026-02-07T00:26:51.877982Z",
+      "processingAgent": "Clawson"
+    },
+    {
+      "id": "MC-008",
+      "title": "🎨 Finish Portal — Production Ready",
+      "description": "**Goal:** Make portal.massdwell.com a polished, customer-ready product.\n\n**Requirements:**\n1. **Labels** — Every finish option needs clear, descriptive labels\n2. **Images** — Properly cropped, consistent aspect ratios, product-focused\n3. **Branding** — MassDwell colors (#22c55e green, dark theme), logo, professional feel\n4. **UX Polish** — Smooth flow, mobile responsive, clear CTAs\n\n**Resources:**\n- Image catalog: `data/massdwell/finish-selections-images.csv` (132 images, 27 categories)\n- Google Sheet: https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw\n- Softr login: sales@massdwell.com\n- Brand colors: Green #22c55e, Dark #0d0d0d, Gray #262626\n\n**Parent:** MC-002 (Finish Selections Portal)",
+      "status": "in_progress",
+      "project": "massdwell",
+      "assignee": "marketing_content",
+      "tags": [
+        "portal",
+        "softr",
+        "branding",
+        "customer-facing",
+        "priority"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Audit current portal state in Softr",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Create finish label naming convention",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Crop/resize all 132 images for consistency",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Upload processed images to portal",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Apply MassDwell branding (colors, logo, fonts)",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "Test mobile responsiveness",
+          "done": false
+        },
+        {
+          "id": "sub_007",
+          "title": "Steve final review and approval",
+          "done": false
+        }
+      ],
+      "priority": "high",
+      "dod": "Portal is customer-ready: professional branding, all finishes labeled and imaged, mobile-friendly, Steve approved.",
+      "comments": [],
+      "createdAt": "2026-02-07T00:26:51.855677Z",
+      "sortOrder": 0
     }
   ],
   "projects": [
@@ -517,7 +576,7 @@
       "level": "intern"
     }
   ],
-  "lastUpdated": "2026-02-07T00:24:33.893Z",
+  "lastUpdated": "2026-02-07T00:26:51.878082Z",
   "activities": [
     {
       "type": "moved",
