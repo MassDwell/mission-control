@@ -8,13 +8,36 @@
       "status": "done",
       "project": "infrastructure",
       "assignee": "clawson",
-      "tags": ["setup", "meta"],
+      "tags": [
+        "setup",
+        "meta"
+      ],
       "subtasks": [
-        { "id": "sub_001", "title": "GitHub repo created", "done": true },
-        { "id": "sub_002", "title": "GitHub Pages enabled", "done": true },
-        { "id": "sub_003", "title": "Webhook configured", "done": true },
-        { "id": "sub_004", "title": "Tailscale Funnel enabled", "done": true },
-        { "id": "sub_005", "title": "Dashboard customized for Clawson", "done": true }
+        {
+          "id": "sub_001",
+          "title": "GitHub repo created",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "GitHub Pages enabled",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Webhook configured",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Tailscale Funnel enabled",
+          "done": true
+        },
+        {
+          "id": "sub_005",
+          "title": "Dashboard customized for Clawson",
+          "done": true
+        }
       ],
       "priority": "high",
       "comments": [
@@ -33,13 +56,38 @@
       "status": "in_progress",
       "project": "massdwell",
       "assignee": "marketing_content",
-      "tags": ["portal", "softr", "customer-facing", "priority"],
+      "tags": [
+        "portal",
+        "softr",
+        "customer-facing",
+        "priority"
+      ],
       "subtasks": [
-        { "id": "sub_001", "title": "Pull images from Drive LookBookImages folder", "done": false },
-        { "id": "sub_002", "title": "Add image URLs to Google Sheet column D", "done": false },
-        { "id": "sub_003", "title": "Verify all 13 categories have images", "done": false },
-        { "id": "sub_004", "title": "Test Softr integration", "done": false },
-        { "id": "sub_005", "title": "Steve confirms complete", "done": false }
+        {
+          "id": "sub_001",
+          "title": "Pull images from Drive LookBookImages folder",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Add image URLs to Google Sheet column D",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Verify all 13 categories have images",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Test Softr integration",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Steve confirms complete",
+          "done": false
+        }
       ],
       "priority": "high",
       "dod": "All finish categories on portal.massdwell.com with accurate images. Steve confirms complete.",
@@ -56,7 +104,9 @@
         }
       ],
       "createdAt": "2026-02-05T19:45:00Z",
-      "sortOrder": 0
+      "sortOrder": 0,
+      "processingStartedAt": "2026-02-07T00:02:18.018864Z",
+      "processingAgent": "marketing_content"
     },
     {
       "id": "MC-003",
@@ -65,12 +115,32 @@
       "status": "backlog",
       "project": "massdwell",
       "assignee": "sales_followup",
-      "tags": ["sales", "email", "crm"],
+      "tags": [
+        "sales",
+        "email",
+        "crm"
+      ],
       "subtasks": [
-        { "id": "sub_001", "title": "Query Kommo for cold leads (>30 days)", "done": false },
-        { "id": "sub_002", "title": "Segment by last interaction", "done": false },
-        { "id": "sub_003", "title": "Draft personalized emails", "done": false },
-        { "id": "sub_004", "title": "Submit batch for approval", "done": false }
+        {
+          "id": "sub_001",
+          "title": "Query Kommo for cold leads (>30 days)",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Segment by last interaction",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Draft personalized emails",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Submit batch for approval",
+          "done": false
+        }
       ],
       "priority": "medium",
       "dod": "Draft emails ready for Steve's approval — no auto-send",
@@ -91,12 +161,32 @@
       "status": "backlog",
       "project": "massdwell",
       "assignee": "sales_followup",
-      "tags": ["vapi", "calls", "automation"],
+      "tags": [
+        "vapi",
+        "calls",
+        "automation"
+      ],
       "subtasks": [
-        { "id": "sub_001", "title": "Review Feb 4 call outcomes", "done": false },
-        { "id": "sub_002", "title": "Analyze pickup rate and conversion", "done": false },
-        { "id": "sub_003", "title": "Decide on call strategy", "done": false },
-        { "id": "sub_004", "title": "Schedule next batch if approved", "done": false }
+        {
+          "id": "sub_001",
+          "title": "Review Feb 4 call outcomes",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Analyze pickup rate and conversion",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Decide on call strategy",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Schedule next batch if approved",
+          "done": false
+        }
       ],
       "priority": "medium",
       "dod": "Clear call strategy with metrics and next steps decided",
@@ -117,11 +207,26 @@
       "status": "permanent",
       "project": "trading",
       "assignee": "clawson",
-      "tags": ["stocks", "monitoring"],
+      "tags": [
+        "stocks",
+        "monitoring"
+      ],
       "subtasks": [
-        { "id": "sub_001", "title": "Monitor SOFI position", "done": false },
-        { "id": "sub_002", "title": "Scan for new opportunities", "done": false },
-        { "id": "sub_003", "title": "Update when positions change", "done": false }
+        {
+          "id": "sub_001",
+          "title": "Monitor SOFI position",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Scan for new opportunities",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Update when positions change",
+          "done": false
+        }
       ],
       "priority": "high",
       "dod": "Positions managed per thesis",
@@ -141,11 +246,27 @@
       "status": "backlog",
       "project": "massdwell",
       "assignee": "massdwell_factory_ops",
-      "tags": ["vendor", "3d-models", "follow-up"],
+      "tags": [
+        "vendor",
+        "3d-models",
+        "follow-up"
+      ],
       "subtasks": [
-        { "id": "sub_001", "title": "Email Carlos for status", "done": false },
-        { "id": "sub_002", "title": "Get ETA for drawings", "done": false },
-        { "id": "sub_003", "title": "Forward to GPI when received", "done": false }
+        {
+          "id": "sub_001",
+          "title": "Email Carlos for status",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Get ETA for drawings",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Forward to GPI when received",
+          "done": false
+        }
       ],
       "priority": "low",
       "dod": "CAD drawings received and sent to GPI Models",
@@ -166,13 +287,37 @@
       "status": "done",
       "project": "massdwell",
       "assignee": "admin_assistant",
-      "tags": ["automation", "crm", "recurring"],
+      "tags": [
+        "automation",
+        "crm",
+        "recurring"
+      ],
       "subtasks": [
-        { "id": "sub_001", "title": "Script created and tested", "done": true },
-        { "id": "sub_002", "title": "sales@massdwell.com connected", "done": true },
-        { "id": "sub_003", "title": "steve.vettori@massdwell.com connected", "done": true },
-        { "id": "sub_004", "title": "Crons scheduled (9 AM, 1 PM, 5 PM)", "done": true },
-        { "id": "sub_005", "title": "Initial sync run (11 matches, 8 notes)", "done": true }
+        {
+          "id": "sub_001",
+          "title": "Script created and tested",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "sales@massdwell.com connected",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "steve.vettori@massdwell.com connected",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Crons scheduled (9 AM, 1 PM, 5 PM)",
+          "done": true
+        },
+        {
+          "id": "sub_005",
+          "title": "Initial sync run (11 matches, 8 notes)",
+          "done": true
+        }
       ],
       "priority": "medium",
       "comments": [
@@ -191,15 +336,47 @@
       "status": "done",
       "project": "infrastructure",
       "assignee": "clawson",
-      "tags": ["agents", "setup", "infrastructure"],
+      "tags": [
+        "agents",
+        "setup",
+        "infrastructure"
+      ],
       "subtasks": [
-        { "id": "sub_001", "title": "Create agent directories", "done": true },
-        { "id": "sub_002", "title": "Write SOUL.md for each agent", "done": true },
-        { "id": "sub_003", "title": "Write AGENTS.md operating rules", "done": true },
-        { "id": "sub_004", "title": "Create memory/WORKING.md context files", "done": true },
-        { "id": "sub_005", "title": "Register agents in gateway config", "done": true },
-        { "id": "sub_006", "title": "Set up heartbeat crons", "done": true },
-        { "id": "sub_007", "title": "Update Mission Control for agent routing", "done": true }
+        {
+          "id": "sub_001",
+          "title": "Create agent directories",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Write SOUL.md for each agent",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Write AGENTS.md operating rules",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Create memory/WORKING.md context files",
+          "done": true
+        },
+        {
+          "id": "sub_005",
+          "title": "Register agents in gateway config",
+          "done": true
+        },
+        {
+          "id": "sub_006",
+          "title": "Set up heartbeat crons",
+          "done": true
+        },
+        {
+          "id": "sub_007",
+          "title": "Update Mission Control for agent routing",
+          "done": true
+        }
       ],
       "priority": "high",
       "dod": "All 13 agents registered, configured, and visible in agents_list",
@@ -214,29 +391,124 @@
     }
   ],
   "projects": [
-    { "id": "massdwell", "name": "MassDwell", "color": "#22c55e", "emoji": "🏠" },
-    { "id": "atlantic", "name": "Atlantic Laser", "color": "#3b82f6", "emoji": "⚡" },
-    { "id": "alpine", "name": "Alpine Property", "color": "#64748b", "emoji": "🏔️" },
-    { "id": "infrastructure", "name": "Infrastructure", "color": "#a855f7", "emoji": "⚙️" },
-    { "id": "trading", "name": "Trading", "color": "#f59e0b", "emoji": "📈" },
-    { "id": "personal", "name": "Personal", "color": "#ec4899", "emoji": "🎯" }
+    {
+      "id": "massdwell",
+      "name": "MassDwell",
+      "color": "#22c55e",
+      "emoji": "🏠"
+    },
+    {
+      "id": "atlantic",
+      "name": "Atlantic Laser",
+      "color": "#3b82f6",
+      "emoji": "⚡"
+    },
+    {
+      "id": "alpine",
+      "name": "Alpine Property",
+      "color": "#64748b",
+      "emoji": "🏔️"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infrastructure",
+      "color": "#a855f7",
+      "emoji": "⚙️"
+    },
+    {
+      "id": "trading",
+      "name": "Trading",
+      "color": "#f59e0b",
+      "emoji": "📈"
+    },
+    {
+      "id": "personal",
+      "name": "Personal",
+      "color": "#ec4899",
+      "emoji": "🎯"
+    }
   ],
   "agents": [
-    { "id": "clawson", "name": "Clawson (COO)", "emoji": "🦅", "level": "lead" },
-    { "id": "chief_of_staff", "name": "Chief of Staff", "emoji": "📋", "level": "specialist" },
-    { "id": "sales_followup", "name": "Sales Follow-up", "emoji": "📞", "level": "specialist" },
-    { "id": "marketing_content", "name": "Marketing & Content", "emoji": "📣", "level": "specialist" },
-    { "id": "finance_underwriting", "name": "Finance & Underwriting", "emoji": "💰", "level": "specialist" },
-    { "id": "massdwell_factory_ops", "name": "Factory Ops", "emoji": "🏭", "level": "specialist" },
-    { "id": "laser_sales_engineer", "name": "Laser Sales Engineer", "emoji": "⚡", "level": "specialist" },
-    { "id": "alpine_property_mgmt", "name": "Property Management", "emoji": "🏠", "level": "specialist" },
-    { "id": "alpine_permitting", "name": "Permitting", "emoji": "📜", "level": "specialist" },
-    { "id": "security_ciso", "name": "Security (Sentinel)", "emoji": "🛡️", "level": "specialist" },
-    { "id": "personal_life_cos", "name": "Personal Life Assistant", "emoji": "🎯", "level": "specialist" },
-    { "id": "doc_proposal", "name": "Document & Proposal", "emoji": "📝", "level": "intern" },
-    { "id": "admin_assistant", "name": "Admin Assistant", "emoji": "📎", "level": "intern" }
+    {
+      "id": "clawson",
+      "name": "Clawson (COO)",
+      "emoji": "🦅",
+      "level": "lead"
+    },
+    {
+      "id": "chief_of_staff",
+      "name": "Chief of Staff",
+      "emoji": "📋",
+      "level": "specialist"
+    },
+    {
+      "id": "sales_followup",
+      "name": "Sales Follow-up",
+      "emoji": "📞",
+      "level": "specialist"
+    },
+    {
+      "id": "marketing_content",
+      "name": "Marketing & Content",
+      "emoji": "📣",
+      "level": "specialist"
+    },
+    {
+      "id": "finance_underwriting",
+      "name": "Finance & Underwriting",
+      "emoji": "💰",
+      "level": "specialist"
+    },
+    {
+      "id": "massdwell_factory_ops",
+      "name": "Factory Ops",
+      "emoji": "🏭",
+      "level": "specialist"
+    },
+    {
+      "id": "laser_sales_engineer",
+      "name": "Laser Sales Engineer",
+      "emoji": "⚡",
+      "level": "specialist"
+    },
+    {
+      "id": "alpine_property_mgmt",
+      "name": "Property Management",
+      "emoji": "🏠",
+      "level": "specialist"
+    },
+    {
+      "id": "alpine_permitting",
+      "name": "Permitting",
+      "emoji": "📜",
+      "level": "specialist"
+    },
+    {
+      "id": "security_ciso",
+      "name": "Security (Sentinel)",
+      "emoji": "🛡️",
+      "level": "specialist"
+    },
+    {
+      "id": "personal_life_cos",
+      "name": "Personal Life Assistant",
+      "emoji": "🎯",
+      "level": "specialist"
+    },
+    {
+      "id": "doc_proposal",
+      "name": "Document & Proposal",
+      "emoji": "📝",
+      "level": "intern"
+    },
+    {
+      "id": "admin_assistant",
+      "name": "Admin Assistant",
+      "emoji": "📎",
+      "level": "intern"
+    }
   ],
-  "lastUpdated": "2026-02-06T21:54:00Z",
+  "lastUpdated": "2026-02-07T00:02:18.018978Z",
   "activities": [
     {
       "type": "audit",
