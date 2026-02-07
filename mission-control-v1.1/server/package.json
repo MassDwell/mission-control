@@ -1,0 +1,13 @@
+{
+  "name": "mission-control-server",
+  "version": "1.1.0",
+  "description": "Real-time Mission Control Server for OpenClaw",
+  "main": "mission-control-server.js",
+  "scripts": {
+    "start": "node mission-control-server.js",
+    "bridge": "node bridge.js"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}

@@ -1,0 +1,54 @@
+Category,Option Name,Brand,Color/Style,Is Upgrade,Upgrade Price
+Roof Shingles,Mission Brown,GAF Timberline HDZ,Brown,FALSE,0
+Roof Shingles,Oyster Gray,GAF Timberline HDZ,Light Gray,FALSE,0
+Roof Shingles,Pewter Gray,GAF Timberline HDZ,Gray,FALSE,0
+Roof Shingles,Slate,GAF Timberline HDZ,Dark Gray,FALSE,0
+Roof Shingles,Fox Hollow Gray,GAF Timberline HDZ,Gray,FALSE,0
+Roof Shingles,Barkwood,GAF Timberline HDZ,Brown,FALSE,0
+Roof Shingles,Charcoal,GAF Timberline HDZ,Dark Gray,FALSE,0
+Roof Shingles,Driftwood,GAF Timberline HDZ,Light Brown,FALSE,0
+Roof Shingles,Hickory,GAF Timberline HDZ,Brown,FALSE,0
+Roof Shingles,Shakewood,GAF Timberline HDZ,Light Brown,FALSE,0
+Siding,White,Cement Board/Vinyl,White,FALSE,0
+Siding,Gray,Cement Board/Vinyl,Gray,FALSE,0
+Siding,Beige,Cement Board/Vinyl,Beige,FALSE,0
+Exterior Lighting,Rectangular Lantern,Progress Lighting,Black Clear Glass,TRUE,150
+Exterior Lighting,Cylindrical Modern,Progress Lighting,Black,TRUE,150
+Exterior Lighting,Gooseneck Barn,Progress Lighting,Black Industrial,TRUE,150
+Exterior Lighting,Traditional Lantern,Progress Lighting,Black Seeded Glass,TRUE,150
+Interior Paint,Pure White,Sherwin Williams,White (ceilings),FALSE,0
+Interior Paint,Greek Villa,Sherwin Williams,Off-White/Cream,FALSE,0
+Interior Paint,Accessible Beige,Sherwin Williams,Beige,FALSE,0
+Interior Paint,Agreeable Gray,Sherwin Williams,Gray,FALSE,0
+Interior Paint,Denim,Sherwin Williams,Navy Blue,TRUE,500
+Interior Paint,First Star,Sherwin Williams,Off-White,TRUE,500
+Interior Paint,Evergreen Fog,Sherwin Williams,Sage Green,TRUE,500
+Interior Paint,Sea Salt,Sherwin Williams,Seafoam,TRUE,500
+Flooring,Hermosa,Emser Emcore SPC,Light Beige,FALSE,0
+Flooring,Brea,Emser Emcore SPC,Warm Brown,FALSE,0
+Flooring,Ojai,Emser Emcore SPC,Gray/Brown,FALSE,0
+Flooring,Barstow,Emser Emcore SPC,Gray,FALSE,0
+Flooring,Solvang,Emser Emcore SPC,Dark Brown,FALSE,0
+Flooring,Malibu,Emser Emcore SPC,Medium Brown,FALSE,0
+Interior Doors,Shaker 2-Panel,N/A,Solid Core,FALSE,0
+Interior Doors,Shaker 3-Panel,N/A,Solid Core,TRUE,75
+Interior Doors,Flush Panel,N/A,Modern Smooth,TRUE,100
+Door Hardware,Satin Nickel,Kwikset/Schlage,Brushed Silver,FALSE,0
+Door Hardware,Matte Black,Kwikset/Schlage,Black,TRUE,50
+Door Hardware,Oil Rubbed Bronze,Kwikset/Schlage,Bronze,TRUE,50
+Cabinets,White Shaker,N/A,White,FALSE,0
+Cabinets,Gray Shaker,N/A,Gray,FALSE,0
+Cabinets,Natural Wood,N/A,Light Wood Grain,TRUE,1500
+Cabinets,Navy Blue,N/A,Navy Blue,TRUE,2000
+Countertops,Quartz White,Various,White,FALSE,0
+Countertops,Quartz Gray,Various,Gray Veining,FALSE,0
+Countertops,Quartz Calacatta,Various,White/Gold Veining,TRUE,800
+Countertops,Butcher Block,Various,Natural Wood,TRUE,500
+Bathroom Tile,White Subway 3x6,Various,White Glossy,FALSE,0
+Bathroom Tile,White Subway 4x12,Various,White Glossy,TRUE,200
+Bathroom Tile,Herringbone White,Various,White Pattern,TRUE,400
+Bathroom Tile,Penny Round,Various,White/Black/Gray,TRUE,350
+Bathroom Fixtures,Chrome Standard,Various,Chrome,FALSE,0
+Bathroom Fixtures,Brushed Nickel,Various,Nickel,TRUE,150
+Bathroom Fixtures,Matte Black,Various,Black,TRUE,200
+Bathroom Fixtures,Gold/Brass,Various,Gold,TRUE,350

@@ -1,0 +1,70 @@
+[
+  {
+    "timestamp": "2026-02-05T14:20:22.612Z",
+    "duration": 59485,
+    "leads": 858,
+    "contacts": 1364,
+    "pipelines": 1,
+    "notes": 1248,
+    "events": 32484,
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-02-02T23:27:43.530Z",
+    "duration": 44896,
+    "leads": 844,
+    "contacts": 1350,
+    "pipelines": 1,
+    "notes": 1225,
+    "events": 30974,
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-02-02T23:23:07.311Z",
+    "duration": 2165,
+    "leads": 844,
+    "contacts": 1350,
+    "pipelines": 1,
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-02-02T23:23:06.533Z",
+    "duration": 2739,
+    "leads": 844,
+    "contacts": 1350,
+    "pipelines": 1,
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-02-02T23:21:48.168Z",
+    "duration": 2415,
+    "leads": 844,
+    "contacts": 1350,
+    "pipelines": 1,
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-02-02T23:21:18.031Z",
+    "duration": 3720,
+    "leads": 844,
+    "contacts": 1350,
+    "pipelines": 1,
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-02-02T23:19:26.578Z",
+    "duration": 3,
+    "leads": 0,
+    "contacts": 0,
+    "pipelines": 0,
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-02-02T23:19:18.109Z",
+    "duration": 2,
+    "leads": 0,
+    "contacts": 0,
+    "pipelines": 0,
+    "status": "success"
+  }
+]

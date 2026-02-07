@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "skills": {
+    "seo-competitor-analysis": {
+      "version": "1.0.0",
+      "installedAt": 1770203402894
+    },
+    "seo-article-gen": {
+      "version": "1.0.0",
+      "installedAt": 1770203404532
+    },
+    "blogburst": {
+      "version": "1.0.5",
+      "installedAt": 1770203406019
+    },
+    "synth-data": {
+      "version": "1.0.3",
+      "installedAt": 1770203412731
+    },
+    "trello": {
+      "version": "1.0.0",
+      "installedAt": 1770203414022
+    },
+    "youtube-api-skill": {
+      "version": "1.0.0",
+      "installedAt": 1770203415499
+    },
+    "gdocs-markdown": {
+      "version": "1.0.1",
+      "installedAt": 1770203416982
+    },
+    "vapi-calls": {
+      "version": "1.0.0",
+      "installedAt": 1770203422055
+    }
+  }
+}

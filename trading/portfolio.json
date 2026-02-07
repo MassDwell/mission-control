@@ -1,0 +1,27 @@
+{
+  "updated": "2026-02-04T14:59:00Z",
+  "account": "IBKR Live",
+  "startingCapital": 1000,
+  "positions": [
+    { "symbol": "T", "shares": 7, "avgPrice": 26.87, "cost": 188.08 },
+    { "symbol": "SOFI", "shares": 13, "avgPrice": 21.11, "cost": 274.52 },
+    { "symbol": "F", "shares": 14, "avgPrice": 13.70, "cost": 191.73 },
+    { "symbol": "NU", "shares": 11, "avgPrice": 18.02, "cost": 198.17 }
+  ],
+  "totalInvested": 852.50,
+  "cashRemaining": 147.50,
+  "stopLoss": 0.05,
+  "takeProfit": 0.10,
+  "target": {
+    "date": "2026-02-07",
+    "amount": 1050,
+    "percent": 5
+  },
+  "trades": [
+    { "date": "2026-02-03", "action": "BUY", "symbol": "T", "shares": 7, "price": 26.87 },
+    { "date": "2026-02-03", "action": "BUY", "symbol": "SOFI", "shares": 9, "price": 21.21 },
+    { "date": "2026-02-03", "action": "BUY", "symbol": "F", "shares": 14, "price": 13.70 },
+    { "date": "2026-02-03", "action": "BUY", "symbol": "NU", "shares": 11, "price": 18.02 },
+    { "date": "2026-02-04", "action": "BUY", "symbol": "SOFI", "shares": 4, "price": 20.89 }
+  ]
+}

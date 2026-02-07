@@ -1,0 +1,41 @@
+Name,Category,Brand,Color,Photo,IsUpgrade,UpgradePrice
+Shaker White,Cabinets,Shaker Style,White,,false,0.00
+Shaker Gray,Cabinets,Shaker Style,Gray,,false,0.00
+Shaker Natural Wood,Cabinets,Shaker Style,Natural Wood,,false,0.00
+Modern Flat Panel White,Cabinets,Modern Flat Panel,White,,true,1500.00
+Modern Flat Panel Gray,Cabinets,Modern Flat Panel,Gray,,true,1500.00
+Quartz White,Countertops,Quartz,White,,false,0.00
+Quartz Gray,Countertops,Quartz,Gray,,false,0.00
+Quartz Black,Countertops,Quartz,Black,,false,0.00
+Granite Black Galaxy,Countertops,Granite,Black Galaxy,,true,2000.00
+Butcher Block Natural,Countertops,Butcher Block,Natural,,true,800.00
+Light Beige,Flooring,Emser,Light Beige,,false,0.00
+Warm Brown,Flooring,Emser,Warm Brown,,false,0.00
+Gray Brown,Flooring,Emser,Gray/Brown,,false,0.00
+Gray,Flooring,Emser,Gray,,false,0.00
+Dark Brown,Flooring,Emser,Dark Brown,,false,0.00
+Medium Brown,Flooring,Emser,Medium Brown,,false,0.00
+Mission Brown,Roof Shingles,GAF Timberline HDZ,Mission Brown,,false,0.00
+Oyster Gray,Roof Shingles,GAF Timberline HDZ,Oyster Gray,,false,0.00
+Pewter Gray,Roof Shingles,GAF Timberline HDZ,Pewter Gray,,false,0.00
+Slate,Roof Shingles,GAF Timberline HDZ,Slate,,false,0.00
+Charcoal,Roof Shingles,GAF Timberline HDZ,Charcoal,,false,0.00
+Barkwood,Roof Shingles,GAF Timberline HDZ,Barkwood,,false,0.00
+White,Siding,Cement Board,White,,false,0.00
+Gray,Siding,Cement Board,Gray,,false,0.00
+Beige,Siding,Cement Board,Beige,,false,0.00
+Pure White,Interior Paint,Sherwin Williams,Pure White,,false,0.00
+Agreeable Gray,Interior Paint,Sherwin Williams,Agreeable Gray,,false,0.00
+Accessible Beige,Interior Paint,Sherwin Williams,Accessible Beige,,false,0.00
+White Subway,Bathroom Tile,Ceramic,White Subway,,false,0.00
+Gray Subway,Bathroom Tile,Ceramic,Gray Subway,,false,0.00
+White Hexagon,Bathroom Tile,Porcelain,White Hexagon,,true,500.00
+Brushed Nickel,Fixtures,Delta,Brushed Nickel,,false,0.00
+Matte Black,Fixtures,Delta,Matte Black,,true,200.00
+Chrome,Fixtures,Delta,Chrome,,false,0.00
+6-Panel White,Interior Doors,Masonite,6-Panel White,,false,0.00
+Shaker White,Interior Doors,Masonite,Shaker White,,true,150.00
+Flush White,Interior Doors,Masonite,Flush White,,false,0.00
+Coach Light Black,Exterior Lighting,Kichler,Black,,false,0.00
+Coach Light Bronze,Exterior Lighting,Kichler,Bronze,,false,0.00
+Modern Black,Exterior Lighting,Kichler,Matte Black,,true,100.00

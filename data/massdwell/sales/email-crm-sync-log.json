@@ -1,0 +1,493 @@
+[
+  {
+    "timestamp": "2026-02-05T22:12:37.297Z",
+    "hoursBack": 8,
+    "dryRun": true,
+    "processed": 8,
+    "matched": 8,
+    "notes_added": 8,
+    "details": [
+      {
+        "email": "Mtcsmc2000@msn.com",
+        "contact": "Susan Collins",
+        "contactId": 31914545,
+        "leadId": 22400065,
+        "subject": "Something changed since we talked, Susan",
+        "date": "Thu, 5 Feb 2026 13:26:25 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "hbt1950@outlook.com",
+        "contact": "Bunny Trainor",
+        "contactId": 31805663,
+        "leadId": 22286901,
+        "subject": "Something changed since we talked, Bunny",
+        "date": "Thu, 5 Feb 2026 13:26:23 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "cherylhill56@yahoo.com",
+        "contact": "Cheryl Hill",
+        "contactId": 31881773,
+        "leadId": 22365229,
+        "subject": "Something changed since we talked, Cheryl",
+        "date": "Thu, 5 Feb 2026 13:26:21 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "tom@morningtidefg.com",
+        "contact": "Tom Higgins",
+        "contactId": 31895061,
+        "leadId": 22378577,
+        "subject": "Something changed since we talked, Tom",
+        "date": "Thu, 5 Feb 2026 13:26:20 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "nakima3@netzero.net",
+        "contact": "Christine Miller",
+        "contactId": 31770123,
+        "leadId": 22249661,
+        "subject": "Something changed since we talked, Christine",
+        "date": "Thu, 5 Feb 2026 13:26:19 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "jamesdelconte3@comcast.net",
+        "contact": "James DelConte",
+        "contactId": 31872953,
+        "leadId": 22354693,
+        "subject": "Something changed since we talked, James",
+        "date": "Thu, 5 Feb 2026 13:26:17 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "Briantfarrell@comcast.net",
+        "contact": "Brian Farrell",
+        "contactId": 31011943,
+        "leadId": 21505537,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 10:26:14 -0800",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "brian9185@icloud.com",
+        "contact": "Brian Blanchette",
+        "contactId": 31218495,
+        "leadId": 21712535,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 13:26:12 -0500",
+        "account": "sales@massdwell.com"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-02-05T22:13:14.169Z",
+    "hoursBack": 8,
+    "dryRun": false,
+    "processed": 8,
+    "matched": 8,
+    "notes_added": 8,
+    "details": [
+      {
+        "email": "Mtcsmc2000@msn.com",
+        "contact": "Susan Collins",
+        "contactId": 31914545,
+        "leadId": 22400065,
+        "subject": "Something changed since we talked, Susan",
+        "date": "Thu, 5 Feb 2026 13:26:25 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "hbt1950@outlook.com",
+        "contact": "Bunny Trainor",
+        "contactId": 31805663,
+        "leadId": 22286901,
+        "subject": "Something changed since we talked, Bunny",
+        "date": "Thu, 5 Feb 2026 13:26:23 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "cherylhill56@yahoo.com",
+        "contact": "Cheryl Hill",
+        "contactId": 31881773,
+        "leadId": 22365229,
+        "subject": "Something changed since we talked, Cheryl",
+        "date": "Thu, 5 Feb 2026 13:26:21 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "tom@morningtidefg.com",
+        "contact": "Tom Higgins",
+        "contactId": 31895061,
+        "leadId": 22378577,
+        "subject": "Something changed since we talked, Tom",
+        "date": "Thu, 5 Feb 2026 13:26:20 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "nakima3@netzero.net",
+        "contact": "Christine Miller",
+        "contactId": 31770123,
+        "leadId": 22249661,
+        "subject": "Something changed since we talked, Christine",
+        "date": "Thu, 5 Feb 2026 13:26:19 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "jamesdelconte3@comcast.net",
+        "contact": "James DelConte",
+        "contactId": 31872953,
+        "leadId": 22354693,
+        "subject": "Something changed since we talked, James",
+        "date": "Thu, 5 Feb 2026 13:26:17 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "Briantfarrell@comcast.net",
+        "contact": "Brian Farrell",
+        "contactId": 31011943,
+        "leadId": 21505537,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 10:26:14 -0800",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "brian9185@icloud.com",
+        "contact": "Brian Blanchette",
+        "contactId": 31218495,
+        "leadId": 21712535,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 13:26:12 -0500",
+        "account": "sales@massdwell.com"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-02-05T22:15:44.248Z",
+    "hoursBack": 12,
+    "dryRun": true,
+    "processed": 14,
+    "matched": 11,
+    "notes_added": 11,
+    "details": [
+      {
+        "email": "kfederow@yahoo.com",
+        "contact": "Kurt Federow",
+        "contactId": 22368276,
+        "leadId": 16636280,
+        "subject": "Re: Still thinking about an ADU?",
+        "date": "Thu, 5 Feb 2026 15:36:11 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "Mtcsmc2000@msn.com",
+        "contact": "Susan Collins",
+        "contactId": 31914545,
+        "leadId": 22400065,
+        "subject": "Something changed since we talked, Susan",
+        "date": "Thu, 5 Feb 2026 13:26:25 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "hbt1950@outlook.com",
+        "contact": "Bunny Trainor",
+        "contactId": 31805663,
+        "leadId": 22286901,
+        "subject": "Something changed since we talked, Bunny",
+        "date": "Thu, 5 Feb 2026 13:26:23 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "cherylhill56@yahoo.com",
+        "contact": "Cheryl Hill",
+        "contactId": 31881773,
+        "leadId": 22365229,
+        "subject": "Something changed since we talked, Cheryl",
+        "date": "Thu, 5 Feb 2026 13:26:21 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "tom@morningtidefg.com",
+        "contact": "Tom Higgins",
+        "contactId": 31895061,
+        "leadId": 22378577,
+        "subject": "Something changed since we talked, Tom",
+        "date": "Thu, 5 Feb 2026 13:26:20 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "nakima3@netzero.net",
+        "contact": "Christine Miller",
+        "contactId": 31770123,
+        "leadId": 22249661,
+        "subject": "Something changed since we talked, Christine",
+        "date": "Thu, 5 Feb 2026 13:26:19 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "jamesdelconte3@comcast.net",
+        "contact": "James DelConte",
+        "contactId": 31872953,
+        "leadId": 22354693,
+        "subject": "Something changed since we talked, James",
+        "date": "Thu, 5 Feb 2026 13:26:17 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "Briantfarrell@comcast.net",
+        "contact": "Brian Farrell",
+        "contactId": 31011943,
+        "leadId": 21505537,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 10:26:14 -0800",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "brian9185@icloud.com",
+        "contact": "Brian Blanchette",
+        "contactId": 31218495,
+        "leadId": 21712535,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 13:26:12 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "gomes5@me.com",
+        "contact": "Phillip G Gomes",
+        "contactId": 23551484,
+        "leadId": 14200296,
+        "subject": "Re: Still thinking about an ADU?",
+        "date": "Thu, 5 Feb 2026 07:20:14 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "barry@mrgelston.com",
+        "contact": "Barry Gelston",
+        "contactId": 30297528,
+        "leadId": 20738006,
+        "subject": "Re: MassDwell | 280 Woburn st. Lexington",
+        "date": "Thu, 5 Feb 2026 06:58:02 -0500",
+        "account": "steve.vettori@massdwell.com"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-02-05T22:16:47.782Z",
+    "hoursBack": 12,
+    "dryRun": true,
+    "processed": 14,
+    "matched": 11,
+    "notes_added": 11,
+    "details": [
+      {
+        "email": "kfederow@yahoo.com",
+        "contact": "Kurt Federow",
+        "contactId": 22368276,
+        "leadId": 16636280,
+        "subject": "Re: Still thinking about an ADU?",
+        "date": "Thu, 5 Feb 2026 15:36:11 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "Mtcsmc2000@msn.com",
+        "contact": "Susan Collins",
+        "contactId": 31914545,
+        "leadId": 22400065,
+        "subject": "Something changed since we talked, Susan",
+        "date": "Thu, 5 Feb 2026 13:26:25 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "hbt1950@outlook.com",
+        "contact": "Bunny Trainor",
+        "contactId": 31805663,
+        "leadId": 22286901,
+        "subject": "Something changed since we talked, Bunny",
+        "date": "Thu, 5 Feb 2026 13:26:23 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "cherylhill56@yahoo.com",
+        "contact": "Cheryl Hill",
+        "contactId": 31881773,
+        "leadId": 22365229,
+        "subject": "Something changed since we talked, Cheryl",
+        "date": "Thu, 5 Feb 2026 13:26:21 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "tom@morningtidefg.com",
+        "contact": "Tom Higgins",
+        "contactId": 31895061,
+        "leadId": 22378577,
+        "subject": "Something changed since we talked, Tom",
+        "date": "Thu, 5 Feb 2026 13:26:20 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "nakima3@netzero.net",
+        "contact": "Christine Miller",
+        "contactId": 31770123,
+        "leadId": 22249661,
+        "subject": "Something changed since we talked, Christine",
+        "date": "Thu, 5 Feb 2026 13:26:19 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "jamesdelconte3@comcast.net",
+        "contact": "James DelConte",
+        "contactId": 31872953,
+        "leadId": 22354693,
+        "subject": "Something changed since we talked, James",
+        "date": "Thu, 5 Feb 2026 13:26:17 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "Briantfarrell@comcast.net",
+        "contact": "Brian Farrell",
+        "contactId": 31011943,
+        "leadId": 21505537,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 10:26:14 -0800",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "brian9185@icloud.com",
+        "contact": "Brian Blanchette",
+        "contactId": 31218495,
+        "leadId": 21712535,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 13:26:12 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "gomes5@me.com",
+        "contact": "Phillip G Gomes",
+        "contactId": 23551484,
+        "leadId": 14200296,
+        "subject": "Re: Still thinking about an ADU?",
+        "date": "Thu, 5 Feb 2026 07:20:14 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "barry@mrgelston.com",
+        "contact": "Barry Gelston",
+        "contactId": 30297528,
+        "leadId": 20738006,
+        "subject": "Re: MassDwell | 280 Woburn st. Lexington",
+        "date": "Thu, 5 Feb 2026 06:58:02 -0500",
+        "account": "steve.vettori@massdwell.com"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-02-05T22:17:25.597Z",
+    "hoursBack": 12,
+    "dryRun": true,
+    "processed": 14,
+    "matched": 11,
+    "notes_added": 11,
+    "details": [
+      {
+        "email": "kfederow@yahoo.com",
+        "contact": "Kurt Federow",
+        "contactId": 22368276,
+        "leadId": 16636280,
+        "subject": "Re: Still thinking about an ADU?",
+        "date": "Thu, 5 Feb 2026 15:36:11 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "Mtcsmc2000@msn.com",
+        "contact": "Susan Collins",
+        "contactId": 31914545,
+        "leadId": 22400065,
+        "subject": "Something changed since we talked, Susan",
+        "date": "Thu, 5 Feb 2026 13:26:25 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "hbt1950@outlook.com",
+        "contact": "Bunny Trainor",
+        "contactId": 31805663,
+        "leadId": 22286901,
+        "subject": "Something changed since we talked, Bunny",
+        "date": "Thu, 5 Feb 2026 13:26:23 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "cherylhill56@yahoo.com",
+        "contact": "Cheryl Hill",
+        "contactId": 31881773,
+        "leadId": 22365229,
+        "subject": "Something changed since we talked, Cheryl",
+        "date": "Thu, 5 Feb 2026 13:26:21 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "tom@morningtidefg.com",
+        "contact": "Tom Higgins",
+        "contactId": 31895061,
+        "leadId": 22378577,
+        "subject": "Something changed since we talked, Tom",
+        "date": "Thu, 5 Feb 2026 13:26:20 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "nakima3@netzero.net",
+        "contact": "Christine Miller",
+        "contactId": 31770123,
+        "leadId": 22249661,
+        "subject": "Something changed since we talked, Christine",
+        "date": "Thu, 5 Feb 2026 13:26:19 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "jamesdelconte3@comcast.net",
+        "contact": "James DelConte",
+        "contactId": 31872953,
+        "leadId": 22354693,
+        "subject": "Something changed since we talked, James",
+        "date": "Thu, 5 Feb 2026 13:26:17 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "Briantfarrell@comcast.net",
+        "contact": "Brian Farrell",
+        "contactId": 31011943,
+        "leadId": 21505537,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 10:26:14 -0800",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "brian9185@icloud.com",
+        "contact": "Brian Blanchette",
+        "contactId": 31218495,
+        "leadId": 21712535,
+        "subject": "Something changed since we talked, Brian",
+        "date": "Thu, 5 Feb 2026 13:26:12 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "gomes5@me.com",
+        "contact": "Phillip G Gomes",
+        "contactId": 23551484,
+        "leadId": 14200296,
+        "subject": "Re: Still thinking about an ADU?",
+        "date": "Thu, 5 Feb 2026 07:20:14 -0500",
+        "account": "sales@massdwell.com"
+      },
+      {
+        "email": "barry@mrgelston.com",
+        "contact": "Barry Gelston",
+        "contactId": 30297528,
+        "leadId": 20738006,
+        "subject": "Re: MassDwell | 280 Woburn st. Lexington",
+        "date": "Thu, 5 Feb 2026 06:58:02 -0500",
+        "account": "steve.vettori@massdwell.com"
+      }
+    ]
+  }
+]

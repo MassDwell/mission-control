@@ -1,0 +1,14 @@
+{
+  "mentions": [
+    {
+      "id": "653fbb2c-34df-4377-a870-5c5c30a6cc37",
+      "target": "marketing_content",
+      "from": "steve",
+      "timestamp": "2026-02-06T21:24:00Z",
+      "message": "You own the 'Finish Selections' project. Do not consider this complete until all selections are finalized and logged.",
+      "status": "pending"
+    }
+  ],
+  "subscriptions": {},
+  "lastUpdated": "2026-02-06T21:24:00Z"
+}

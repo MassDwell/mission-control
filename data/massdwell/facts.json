@@ -1,0 +1,282 @@
+{
+  "_meta": {
+    "description": "MassDwell - Facts & Context",
+    "last_updated": "2026-02-03",
+    "version": "1.2"
+  },
+  "company": {
+    "legal_name": null,
+    "dba": "MassDwell",
+    "founded": null,
+    "website": "massdwell.com",
+    "tagline": "Where Life Fits",
+    "role": "Primary operating company - Modular ADU manufacturing",
+    "parent": "Alpine Property Group",
+    "description": "Affordable, sustainable and easy to build modular housing solutions",
+    "minimum_deal_size": 141000,
+    "minimum_deal_note": "Dwell Essential starts at $141K - no deals below this"
+  },
+  "leadership": {
+    "principal": "Steve Vettori",
+    "title": "Principal"
+  },
+  "mission": {
+    "core": "Deliver high-quality ADUs through factory-built solutions to address housing needs",
+    "positioning": "We build for people who build the future",
+    "values": [
+      "Accelerated construction",
+      "Property appreciation",
+      "Cost-effectiveness",
+      "Eco-friendliness",
+      "Energy efficiency",
+      "Sustainability"
+    ]
+  },
+  "value_proposition": {
+    "speed": "50% faster than traditional construction",
+    "timeline": "8-12 weeks post-approval completion",
+    "quality": "Controlled factory environment reduces delays, waste, labor costs",
+    "service": "Handles permitting and approvals - full turnkey",
+    "pricing": "Transparent and customized based on model, finishes, site conditions",
+    "benefits": {
+      "accelerated_construction": "50% faster than traditional methods, reducing the time to occupancy or rental",
+      "appreciation": "Increase in property value and potential for additional income generation through rental",
+      "cost_effective": "Reduction in labor and material costs, making ADUs more affordable",
+      "sustainability": "Superior energy efficiency and eco-friendly materials, reducing costs and environmental impact"
+    }
+  },
+  "products": {
+    "models": [
+      {
+        "name": "Dwell Essential",
+        "sqft": 471.69,
+        "dimensions": "39ft x 18ft",
+        "deck_sqft": 233.79,
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "starting_price": 141000
+      },
+      {
+        "name": "Dwell Classic",
+        "sqft": 574.83,
+        "dimensions": "48ft x 18ft",
+        "deck_sqft": 233.79,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "starting_price": 172000
+      },
+      {
+        "name": "Dwell Deluxe",
+        "sqft": 600,
+        "dimensions": "50ft x 12ft",
+        "deck_sqft": null,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "starting_price": 186000
+      },
+      {
+        "name": "Dwell Prime",
+        "sqft": 900,
+        "dimensions": "39ft x 29ft",
+        "deck_sqft": 233.79,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "starting_price": 270000
+      }
+    ],
+    "customization": "Available based on finishes and site conditions",
+    "price_range": {
+      "min": 141000,
+      "max": 270000
+    }
+  },
+  "manufacturing": {
+    "method": "Factory-built / modular",
+    "description": "Manufacturing housing units in a controlled factory environment and delivering them ready for installation",
+    "advantages": "Drastically reduces delays, waste, and labor costs. Smarter, faster, and more predictable building process with no compromise on quality or design.",
+    "facility_location": null,
+    "capacity": null,
+    "lead_time": "8-12 weeks post-approval"
+  },
+  "partnerships": {
+    "aac_steel": {
+      "name": "AAC Steel",
+      "website": "aacsteel.com",
+      "role": "Building materials partner",
+      "value": "Eco-friendly, fire-resistant, lightweight, thermal resistant - highest quality safe construction"
+    }
+  },
+  "target_customers": {
+    "homeowners": {
+      "description": "Add an independent unit to your home",
+      "use_cases": [
+        "Host family",
+        "Earn rental income",
+        "Create space for what matters most"
+      ]
+    },
+    "rental_investors": {
+      "description": "Boost the value and density of your portfolio",
+      "use_cases": [
+        "Fast, high-quality ADU installations",
+        "Long-term returns"
+      ]
+    },
+    "small_lot_developers": {
+      "description": "Build smarter and faster",
+      "use_cases": [
+        "Simplify construction on compact urban lots",
+        "Turnkey modular solutions",
+        "Cut time and cost"
+      ]
+    }
+  },
+  "sales": {
+    "process": "Quote request via website form",
+    "typical_cycle": null,
+    "current_pipeline": [],
+    "completed_projects": []
+  },
+  "permits_and_approvals": {
+    "service_offered": true,
+    "description": "Team handles all local zoning checks, permitting and approvals",
+    "typical_timeline": null,
+    "jurisdictions_served": [
+      "Massachusetts"
+    ]
+  },
+  "documents": {
+    "decks": [
+      {
+        "filename": "MassDwell_Investor_Deck_v2.2.pdf",
+        "type": "investor_deck",
+        "version": "2.2",
+        "date": "2026-01-25",
+        "local_path": "data/massdwell/decks/MassDwell_Investor_Deck_v2.2.pdf",
+        "drive_link": "https://drive.google.com/file/d/1gL98gVffOOyqRcYViRm38sicI_w2D5ec/view",
+        "notes": "Primary investor presentation - LATEST"
+      },
+      {
+        "filename": "MassDwell_Investor_Deck_v2.1.pdf",
+        "type": "investor_deck",
+        "version": "2.1",
+        "date": "2026-01-23",
+        "drive_link": "https://drive.google.com/file/d/1PsiLIDNQB8i3av4mhXwoCqDjeMEcugzw/view",
+        "notes": "Previous version"
+      }
+    ],
+    "product_specs": [
+      {
+        "filename": "MASSDWELL-CATALOGUE-OK-compact.pdf",
+        "type": "product_catalogue",
+        "notes": "Full product catalogue with specifications"
+      }
+    ],
+    "marketing_assets": [
+      {
+        "filename": "MassDwell_Flyer_Combined.pdf",
+        "type": "flyer",
+        "notes": "Combined marketing flyer"
+      },
+      {
+        "filename": "MassDwell Lookbook 2026.pdf",
+        "type": "lookbook",
+        "year": 2026,
+        "notes": "2026 design lookbook"
+      },
+      {
+        "filename": "MassDwell_Lookbook_2026.pdf",
+        "type": "lookbook",
+        "year": 2026,
+        "pages": 45,
+        "local_path": "data/massdwell/decks/MassDwell_Lookbook_2026.pdf",
+        "summary_path": "data/massdwell/decks/lookbook_summary.md",
+        "notes": "Full product catalog with specs, exterior/interior options, process"
+      }
+    ]
+  },
+  "open_questions": [
+    "Manufacturing facility location?",
+    "Production capacity?",
+    "Current sales pipeline - active leads?",
+    "Completed project count and locations?",
+    "Full pricing breakdown with options/upgrades?",
+    "Permitting timeline by municipality?",
+    "Marketing channels and lead sources?",
+    "Competitor landscape?",
+    "Team members beyond Steve?",
+    "Financing options available to customers?"
+  ],
+  "crm": {
+    "platform": "Kommo",
+    "subdomain": "massdwellcrm",
+    "integration_date": "2026-02-02",
+    "local_mirror": "crm-dashboard (localhost:8085)"
+  },
+  "google_workspace": {
+    "account": "sales@massdwell.com",
+    "integration_date": "2026-02-02",
+    "gmail": {
+      "total_messages": 2327,
+      "threads": 1156,
+      "status": "connected"
+    },
+    "calendar": {
+      "status": "connected",
+      "usage": "minimal"
+    },
+    "drive": {
+      "status": "connected",
+      "total_files": 100,
+      "storage_used_gb": 8.4
+    }
+  },
+  "contracts": {
+    "active": [
+      {
+        "customer": "48 Blue Gill Lane Plymouth",
+        "drive_link": "https://docs.google.com/document/d/1MTIGslMdlfTw1sX41Vbg1p3sySvaOZmb/edit",
+        "date": "2025-10-18"
+      },
+      {
+        "customer": "280 Woburn Lexington",
+        "drive_link": "https://docs.google.com/document/d/12_OUNUKqc0PEXxQgf_TwcMSHkzjT2lq2/edit",
+        "date": "2025-12-17"
+      }
+    ],
+    "template": {
+      "name": "MassDwell ADU Contract.docx",
+      "drive_link": "https://docs.google.com/document/d/1S9l7e3cWzaQ4jZ3IaS6nMNtl9JDJYThT/edit",
+      "updated": "2026-01-06"
+    }
+  },
+  "pipeline": {
+    "as_of": "2026-02-02",
+    "total_leads": 844,
+    "total_value": 20690820,
+    "avg_deal_size": 24515,
+    "conversion_rate": "0.4%",
+    "closed_won": 1,
+    "closed_lost": 248,
+    "active_negotiation": 4,
+    "active_negotiation_value": 898000,
+    "hot_leads": [
+      "Bob Warren - $205K - Mattapoisett",
+      "Michael - $307K - Andover",
+      "Plymouth Lead - $241K",
+      "Lexington Lead - $200K",
+      "Westwood Lead - $150K"
+    ]
+  },
+  "pricing": {
+    "baseline_per_sqft": 300,
+    "baseline_note": "$300/sq ft baseline for quoting (turnkey)",
+    "construction_method": "Light gauge steel (AAC Steel partnership)",
+    "includes": [
+      "Permitting",
+      "Site work",
+      "Installation"
+    ],
+    "custom_builds": "In-house architecture team can custom build any design"
+  }
+}

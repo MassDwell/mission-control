@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MassDwell - SAFE Investment</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+    }
+    
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      page-break-after: always;
+      position: relative;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .slide:last-child {
+      page-break-after: avoid;
+    }
+    
+    .logo {
+      font-size: 18px;
+      font-weight: 600;
+      color: #60a5fa;
+      position: absolute;
+      top: 40px;
+      left: 60px;
+    }
+    
+    .page-num {
+      position: absolute;
+      bottom: 40px;
+      right: 60px;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    h1 {
+      font-size: 52px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    h2 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #f0f0f0;
+    }
+    
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #60a5fa;
+    }
+    
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #b0b0b0;
+    }
+    
+    .tagline {
+      font-size: 28px;
+      color: #a78bfa;
+      margin-bottom: 40px;
+    }
+    
+    .subtitle {
+      font-size: 22px;
+      color: #888;
+      margin-top: 10px;
+    }
+    
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .stat-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: #60a5fa;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 16px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .feature-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 25px;
+    }
+    
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    
+    .feature-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #f0f0f0;
+      margin-bottom: 10px;
+    }
+    
+    .feature-desc {
+      font-size: 16px;
+      color: #888;
+      line-height: 1.5;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    
+    th {
+      text-align: left;
+      padding: 15px 20px;
+      background: rgba(96, 165, 250, 0.1);
+      color: #60a5fa;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    td {
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: #ccc;
+      font-size: 18px;
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .highlight {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+    
+    .center-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 30px;
+    }
+    
+    .pill {
+      display: inline-block;
+      background: rgba(96, 165, 250, 0.15);
+      color: #60a5fa;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    
+    .big-number {
+      font-size: 120px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    
+    .cta-box {
+      background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(167, 139, 250, 0.2));
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      position: relative;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    }
+    
+    .timeline-item {
+      text-align: center;
+      width: 20%;
+      position: relative;
+    }
+    
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: #60a5fa;
+      border-radius: 50%;
+      margin: 20px auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .timeline-year {
+      font-size: 24px;
+      font-weight: 700;
+      color: #60a5fa;
+    }
+    
+    .timeline-text {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+    }
+    
+    ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+    
+    li {
+      padding: 12px 0;
+      padding-left: 30px;
+      position: relative;
+      font-size: 18px;
+      color: #ccc;
+    }
+    
+    li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #60a5fa;
+    }
+
+    .cover-slide {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cover-slide h1 {
+      font-size: 72px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Cover -->
+<div class="slide cover-slide">
+  <div class="pill">SAFE INVESTMENT</div>
+  <h1>MassDwell</h1>
+  <p class="tagline">Where Life Fits</p>
+  <p style="margin-top: 40px; font-size: 18px;">AI-Powered Modular ADUs for the Future of Housing</p>
+  <p style="margin-top: 60px; font-size: 16px; color: #666;">Needham, Massachusetts • 2026</p>
+  <span class="page-num">1</span>
+</div>
+
+<!-- Slide 2: The Problem -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>America's Housing Crisis</h2>
+  <p class="subtitle">A $3.8M unit shortage demands new solutions</p>
+  
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="stat-number">3.8M</div>
+      <div class="stat-label">Unit Shortage</div>
+      <p style="font-size: 14px; margin-top: 15px;">National housing deficit creating unprecedented demand</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">52%</div>
+      <div class="stat-label">Cost-Burdened</div>
+      <p style="font-size: 14px; margin-top: 15px;">Renters spending over 30% of income on housing</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">40%</div>
+      <div class="stat-label">Labor Shortage</div>
+      <p style="font-size: 14px; margin-top: 15px;">Construction industry facing critical skilled labor deficit</p>
+    </div>
+  </div>
+  <span class="page-num">2</span>
+</div>
+
+<!-- Slide 3: The Solution -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>Modular ADUs, Reimagined</h2>
+  <p class="subtitle">Factory precision meets AI-driven design</p>
+  
+  <div class="feature-grid">
+    <div class="feature-box">
+      <div class="feature-icon">🏭</div>
+      <div class="feature-title">Factory-Built</div>
+      <div class="feature-desc">Controlled environment manufacturing for consistent quality and 50% faster delivery</div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon">🤖</div>
+      <div class="feature-title">AI-Optimized</div>
+      <div class="feature-desc">Generative design creates custom floor plans from natural language descriptions</div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon">🌱</div>
+      <div class="feature-title">Sustainable</div>
+      <div class="feature-desc">Net-zero ready construction with eco-friendly materials and minimal waste</div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title">Turnkey</div>
+      <div class="feature-desc">Full service from design through permitting to installation—keys in 8-12 weeks</div>
+    </div>
+  </div>
+  <span class="page-num">3</span>
+</div>
+
+<!-- Slide 4: Product Line -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>Product Line</h2>
+  <p class="subtitle">Premium ADUs starting at $141,000</p>
+  
+  <table>
+    <tr>
+      <th>Model</th>
+      <th>Size</th>
+      <th>Bed/Bath</th>
+      <th>Starting Price</th>
+    </tr>
+    <tr>
+      <td><span class="highlight">Dwell Essential</span></td>
+      <td>470 sq ft</td>
+      <td>1 bed / 1 bath</td>
+      <td>$141,000</td>
+    </tr>
+    <tr>
+      <td><span class="highlight">Dwell Classic</span></td>
+      <td>565 sq ft</td>
+      <td>2 bed / 1 bath</td>
+      <td>$172,000</td>
+    </tr>
+    <tr>
+      <td><span class="highlight">Dwell Deluxe</span></td>
+      <td>594 sq ft</td>
+      <td>2 bed / 1 bath</td>
+      <td>$186,000</td>
+    </tr>
+    <tr>
+      <td><span class="highlight">Dwell Prime</span></td>
+      <td>892 sq ft</td>
+      <td>2 bed / 2 bath</td>
+      <td>$270,000</td>
+    </tr>
+  </table>
+  
+  <p style="margin-top: 30px; font-size: 16px; color: #666;">Average price: ~$192K • Baseline: $300/sq ft turnkey</p>
+  <span class="page-num">4</span>
+</div>
+
+<!-- Slide 5: Technology -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>AI + Robotics Integration</h2>
+  <p class="subtitle">Technology-first manufacturing</p>
+  
+  <div class="two-col">
+    <div>
+      <h3>AI Platform</h3>
+      <ul>
+        <li>Generative design from natural language</li>
+        <li>Automatic zoning compliance checks</li>
+        <li>Predictive demand forecasting</li>
+        <li>Supply chain optimization</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Robotic Manufacturing</h3>
+      <ul>
+        <li>Sub-millimeter precision (±0.5mm)</li>
+        <li>Automated CFS fabrication</li>
+        <li>Computer vision QC</li>
+        <li>Zero on-site rework</li>
+      </ul>
+    </div>
+  </div>
+  <span class="page-num">5</span>
+</div>
+
+<!-- Slide 6: Process -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>Turnkey Process</h2>
+  <p class="subtitle">From concept to keys in 8-12 weeks</p>
+  
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">01</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">AI Design Tool<br/>Define needs & feasibility</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">02</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">Planning<br/>Permits & shop drawings</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">03</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">Factory Production<br/>Robotic assembly</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">04</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">Delivery<br/>Install & handover</div>
+    </div>
+  </div>
+  <span class="page-num">6</span>
+</div>
+
+<!-- Slide 7: Market Opportunity -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>Market Opportunity</h2>
+  <p class="subtitle">A massive and growing market</p>
+  
+  <div class="two-col" style="margin-top: 40px;">
+    <div class="stat-box" style="text-align: center;">
+      <div class="stat-number">$47B</div>
+      <div class="stat-label">Global ADU Market by 2035</div>
+      <p style="font-size: 16px; margin-top: 15px;">9.19% CAGR</p>
+    </div>
+    <div>
+      <h3>Market Drivers</h3>
+      <ul>
+        <li>Housing affordability crisis intensifying</li>
+        <li>MA rapidly easing ADU zoning rules</li>
+        <li>Multigenerational living on the rise</li>
+        <li>Remote work driving flexible space demand</li>
+      </ul>
+    </div>
+  </div>
+  <span class="page-num">7</span>
+</div>
+
+<!-- Slide 8: Competitive Position -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>Competitive Position</h2>
+  <p class="subtitle">First AI-driven modular manufacturer in the Northeast</p>
+  
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="stat-number" style="font-size: 36px;">1 Month</div>
+      <div class="stat-label">Production Time</div>
+      <p style="font-size: 14px; margin-top: 10px;">vs 6-7 months from competitors</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size: 36px;">±0.5mm</div>
+      <div class="stat-label">Precision</div>
+      <p style="font-size: 14px; margin-top: 10px;">Robotic tolerances no local vendor offers</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size: 36px;">Infinite</div>
+      <div class="stat-label">Custom Designs</div>
+      <p style="font-size: 14px; margin-top: 10px;">AI-powered vs fixed templates</p>
+    </div>
+  </div>
+  
+  <p style="margin-top: 40px; text-align: center; color: #60a5fa; font-size: 20px;">
+    West Coast innovators are 3,000+ miles away. Northeast traditionals have no tech.<br/>
+    <strong>Clear path to regional market leadership.</strong>
+  </p>
+  <span class="page-num">8</span>
+</div>
+
+<!-- Slide 9: Team -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>Leadership</h2>
+  <p class="subtitle">Experienced operators with skin in the game</p>
+  
+  <div class="two-col" style="margin-top: 40px;">
+    <div class="feature-box">
+      <div class="feature-title">Steve Vettori</div>
+      <div class="feature-desc" style="color: #60a5fa; margin-bottom: 10px;">Founder & CEO</div>
+      <div class="feature-desc">
+        Real estate developer since 2016. Licensed broker. Former Atlassian & Cohesity. 
+        Principal at Alpine Property Group with 12+ property portfolio.
+      </div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-title">Carlos Ferreira</div>
+      <div class="feature-desc" style="color: #60a5fa; margin-bottom: 10px;">Founder & CTO</div>
+      <div class="feature-desc">
+        Technical leadership in manufacturing and construction technology. 
+        Engineering expertise in modular systems and automation.
+      </div>
+    </div>
+  </div>
+  
+  <div style="margin-top: 40px;">
+    <h3>Strategic Partners</h3>
+    <p style="font-size: 16px;">MCSteel (engineered framing) • Alpine Property Group (development pipeline)</p>
+  </div>
+  <span class="page-num">9</span>
+</div>
+
+<!-- Slide 10: Financials -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>Growth Trajectory</h2>
+  <p class="subtitle">Path to $50M revenue</p>
+  
+  <table>
+    <tr>
+      <th>Metric</th>
+      <th>2026</th>
+      <th>2027</th>
+      <th>2028</th>
+      <th>2029</th>
+    </tr>
+    <tr>
+      <td>Units Sold</td>
+      <td>15</td>
+      <td>40</td>
+      <td>100</td>
+      <td class="highlight">200</td>
+    </tr>
+    <tr>
+      <td>Revenue</td>
+      <td>$3M</td>
+      <td>$8M</td>
+      <td>$20M</td>
+      <td class="highlight">$50M</td>
+    </tr>
+    <tr>
+      <td>Gross Margin</td>
+      <td>25%</td>
+      <td>30%</td>
+      <td>35%</td>
+      <td class="highlight">45%</td>
+    </tr>
+    <tr>
+      <td>EBITDA</td>
+      <td>-$500K</td>
+      <td>$500K</td>
+      <td>$4M</td>
+      <td class="highlight">$12M</td>
+    </tr>
+  </table>
+  
+  <p style="margin-top: 30px; text-align: center; font-size: 18px;">
+    Break-even: Late 2027 • Target margin: 35-45% at scale
+  </p>
+  <span class="page-num">10</span>
+</div>
+
+<!-- Slide 11: The Ask -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>The Ask</h2>
+  <p class="subtitle">SAFE Note Offering</p>
+  
+  <div class="two-col">
+    <div>
+      <div class="cta-box">
+        <div class="big-number">$15M</div>
+        <p style="font-size: 20px; margin-top: 10px;">Valuation Cap</p>
+        <p style="font-size: 14px; color: #888; margin-top: 5px;">~5x projected 2026 revenue</p>
+      </div>
+      
+      <table style="margin-top: 20px;">
+        <tr>
+          <td>Instrument</td>
+          <td class="highlight">Post-Money SAFE</td>
+        </tr>
+        <tr>
+          <td>Raising</td>
+          <td>$1M - $5M</td>
+        </tr>
+        <tr>
+          <td>Minimum</td>
+          <td>$25,000</td>
+        </tr>
+      </table>
+    </div>
+    
+    <div>
+      <h3>Your Upside</h3>
+      <table>
+        <tr>
+          <th>If Series A at...</th>
+          <th>Your Advantage</th>
+        </tr>
+        <tr>
+          <td>$30M</td>
+          <td class="highlight">2x</td>
+        </tr>
+        <tr>
+          <td>$45M</td>
+          <td class="highlight">3x</td>
+        </tr>
+        <tr>
+          <td>$75M</td>
+          <td class="highlight">5x</td>
+        </tr>
+      </table>
+      
+      <h3 style="margin-top: 30px;">Use of Funds</h3>
+      <ul>
+        <li>50% — Factory operations & first units</li>
+        <li>25% — AI platform development</li>
+        <li>25% — Team & operations</li>
+      </ul>
+    </div>
+  </div>
+  <span class="page-num">11</span>
+</div>
+
+<!-- Slide 12: Why SAFE -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>Why SAFE?</h2>
+  <p class="subtitle">Move fast, reward believers</p>
+  
+  <div class="feature-grid">
+    <div class="feature-box">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title">Speed</div>
+      <div class="feature-desc">Standard YC docs. Close in days, not months. Less legal, more building.</div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon">🎯</div>
+      <div class="feature-title">Focus</div>
+      <div class="feature-desc">Defer valuation debates until we have production data. Prove the model first.</div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon">🤝</div>
+      <div class="feature-title">Alignment</div>
+      <div class="feature-desc">No board seats or control terms. We stay focused on execution.</div>
+    </div>
+    <div class="feature-box">
+      <div class="feature-icon">📈</div>
+      <div class="feature-title">Upside</div>
+      <div class="feature-desc">$15M cap gives early believers significant advantage at Series A.</div>
+    </div>
+  </div>
+  
+  <p style="margin-top: 40px; text-align: center; font-size: 18px; color: #888;">
+    "We're not asking you to value us. We're asking you to believe in us."
+  </p>
+  <span class="page-num">12</span>
+</div>
+
+<!-- Slide 13: Milestones -->
+<div class="slide">
+  <span class="logo">MassDwell</span>
+  <h2>2026 Milestones</h2>
+  <p class="subtitle">Clear path to Series A</p>
+  
+  <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="stat-box">
+      <div class="stat-number" style="font-size: 32px;">Q1</div>
+      <div class="stat-label">Factory Setup</div>
+      <p style="font-size: 14px; margin-top: 10px;">Interim facility operational in RI</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size: 32px;">Q2</div>
+      <div class="stat-label">First Units</div>
+      <p style="font-size: 14px; margin-top: 10px;">Prototype production begins</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size: 32px;">Q3</div>
+      <div class="stat-label">Scale</div>
+      <p style="font-size: 14px; margin-top: 10px;">10+ units delivered</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size: 32px;">Q4</div>
+      <div class="stat-label">Series A</div>
+      <p style="font-size: 14px; margin-top: 10px;">Flagship factory fundraise</p>
+    </div>
+  </div>
+  
+  <div class="cta-box" style="margin-top: 50px;">
+    <h3 style="color: #f0f0f0;">Key Metrics at Series A</h3>
+    <p style="font-size: 18px; margin-top: 15px;">
+      15+ units delivered • $3M+ revenue • Factory producing • Clear path to flagship
+    </p>
+  </div>
+  <span class="page-num">13</span>
+</div>
+
+<!-- Slide 14: Contact -->
+<div class="slide cover-slide">
+  <h1>MassDwell</h1>
+  <p class="tagline">Where Life Fits</p>
+  
+  <div style="margin-top: 60px;">
+    <p style="font-size: 22px; color: #f0f0f0;">Steve Vettori</p>
+    <p style="font-size: 18px; color: #888;">Founder & CEO</p>
+    <p style="font-size: 18px; color: #60a5fa; margin-top: 20px;">steve.vettori@massdwell.com</p>
+    <p style="font-size: 18px; color: #888; margin-top: 10px;">massdwell.com</p>
+  </div>
+  
+  <p style="margin-top: 60px; font-size: 16px; color: #666;">Needham, Massachusetts</p>
+  <span class="page-num">14</span>
+</div>
+
+</body>
+</html>

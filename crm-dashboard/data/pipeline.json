@@ -1,0 +1,12 @@
+{
+  "stages": [
+    {"id": "new", "name": "New Lead", "color": "#3b82f6"},
+    {"id": "contacted", "name": "Contacted", "color": "#8b5cf6"},
+    {"id": "qualified", "name": "Qualified", "color": "#f59e0b"},
+    {"id": "proposal", "name": "Proposal Sent", "color": "#10b981"},
+    {"id": "negotiation", "name": "Negotiation", "color": "#ec4899"},
+    {"id": "won", "name": "Won", "color": "#22c55e"},
+    {"id": "lost", "name": "Lost", "color": "#6b7280"}
+  ],
+  "assignments": {}
+}

@@ -1,0 +1,84 @@
+{
+  "account": "@massdwell",
+  "timezone": "America/New_York",
+  "postTimes": ["07:30", "12:15", "18:00"],
+  "themes": {
+    "monday": {
+      "theme": "Monday Motivation / New Week New Space",
+      "imagePrompts": [
+        "Modern ADU home office with large window overlooking garden, person working at minimalist desk, natural morning light, productive atmosphere, professional lifestyle photography",
+        "Sunrise view of modern backyard ADU in Massachusetts suburb, fresh morning dew on lawn, peaceful start to week, architectural photography"
+      ],
+      "postTemplates": [
+        "Start the week with more space. 🌅\n\nImagine walking 30 feet to your home office. No commute. No distractions.\n\nADUs are changing how we work from home.\n\nmassdwell.com\n#MondayMotivation #WorkFromHome #ADU",
+        "New week. New possibilities. 🏡\n\nWhat could you do with 600 extra square feet in your backyard?\n\n→ Rental income\n→ Home office\n→ Space for aging parents\n\nmassdwell.com"
+      ]
+    },
+    "tuesday": {
+      "theme": "Transformation Tuesday",
+      "imagePrompts": [
+        "Before and after style split image showing empty Massachusetts backyard transforming into backyard with modern ADU, dramatic improvement, real estate photography",
+        "Construction progress of modular ADU being installed by crane in suburban backyard, exciting transformation moment, documentary style photography"
+      ],
+      "postTemplates": [
+        "Transformation Tuesday 🔄\n\nFrom empty backyard to income-generating asset in 8-12 weeks.\n\nFactory-built. Precision-crafted. Massachusetts-ready.\n\nSee what's possible → massdwell.com\n#TransformationTuesday #ADU #ModularHomes",
+        "8 weeks ago: empty lawn\nToday: $2,000/month rental income 💰\n\nThat's the ADU transformation.\n\nmassdwell.com\n#PassiveIncome #RealEstate #Massachusetts"
+      ]
+    },
+    "wednesday": {
+      "theme": "Interior Wednesday",
+      "imagePrompts": [
+        "Luxurious ADU bathroom with walk-in shower, modern fixtures, natural light from skylight, spa-like atmosphere, interior design photography",
+        "Compact but elegant ADU kitchen with quartz countertops, modern appliances, clever storage solutions, bright and airy, real estate photography"
+      ],
+      "postTemplates": [
+        "Small space. Big style. ✨\n\nEvery inch of our ADUs is designed for maximum livability.\n\nThis bathroom proves you don't need a mansion to live well.\n\nmassdwell.com\n#InteriorDesign #ADU #SmallSpaceLiving",
+        "The kitchen that fits your backyard (and your budget). 🍳\n\nFull-size appliances. Quartz counters. Clever storage.\n\nStarting at $141K.\n\nmassdwell.com\n#KitchenDesign #ADU #Massachusetts"
+      ]
+    },
+    "thursday": {
+      "theme": "Thoughtful Thursday (Education)",
+      "imagePrompts": [
+        "Infographic style image showing Massachusetts ADU zoning map, professional clean design, educational content",
+        "Diagram of ADU placement options on residential lot, setbacks illustrated, clear informative graphics, architectural diagram style"
+      ],
+      "postTemplates": [
+        "Did you know? 🧠\n\nMassachusetts passed ADU-friendly zoning in 2024. Most single-family lots can now add an ADU by-right.\n\nNo special permits. No lengthy appeals.\n\nCheck your eligibility → massdwell.com\n#Massachusetts #ADU #Zoning",
+        "ADU 101: What counts as an ADU? 📚\n\n✓ 400-900 sq ft\n✓ Full kitchen + bath\n✓ Separate entrance\n✓ On same lot as main home\n\nLearn more → massdwell.com\n#RealEstateEducation #ADU"
+      ]
+    },
+    "friday": {
+      "theme": "Feature Friday",
+      "imagePrompts": [
+        "Luxurious ADU bedroom with floor-to-ceiling windows, cozy bedding, morning light streaming in, aspirational lifestyle photography",
+        "Modern ADU exterior at twilight with warm interior lights glowing, landscaped pathway, inviting evening atmosphere, architectural photography"
+      ],
+      "postTemplates": [
+        "Feature Friday: The bedroom that guests never want to leave. 🛏️\n\nFloor-to-ceiling windows. Climate control. Complete privacy.\n\nThis is ADU living.\n\nmassdwell.com\n#FeatureFriday #GuestHouse #ADU",
+        "Friday night in the backyard. 🌙\n\nYour own retreat. Steps from home. Worlds away from stress.\n\nADUs starting at $141K.\n\nmassdwell.com\n#WeekendVibes #ADU #BackyardGoals"
+      ]
+    },
+    "saturday": {
+      "theme": "Lifestyle Saturday",
+      "imagePrompts": [
+        "Family gathering on ADU patio during summer barbecue, string lights, multiple generations enjoying outdoor space, warm lifestyle photography",
+        "Young couple relaxing on modern ADU deck with morning coffee, peaceful weekend morning, suburban Massachusetts backdrop, lifestyle photography"
+      ],
+      "postTemplates": [
+        "Saturday mornings hit different when grandma lives 50 feet away. ☕\n\nADUs keep families close while giving everyone their own space.\n\nMulti-generational living, reimagined.\n\nmassdwell.com\n#FamilyFirst #ADU #MultigenerationalLiving",
+        "Weekend mode: activated. 🌿\n\nYour backyard. Your retreat. Your rental income while you're away.\n\nADUs are the ultimate flex.\n\nmassdwell.com\n#WeekendVibes #PassiveIncome #ADU"
+      ]
+    },
+    "sunday": {
+      "theme": "Sunday Showcase",
+      "imagePrompts": [
+        "Aerial drone view of beautiful Massachusetts neighborhood with several properties featuring modern ADUs, community integration, real estate photography",
+        "Peaceful Sunday morning scene of modern ADU with person reading on small porch, coffee cup, newspaper, serene suburban setting, lifestyle photography"
+      ],
+      "postTemplates": [
+        "Sunday Showcase 🏠\n\nADUs aren't changing neighborhoods — they're completing them.\n\nMore housing. More options. More community.\n\nSee our portfolio → massdwell.com\n#SundayShowcase #ADU #Massachusetts",
+        "The Sunday paper hits different from your own backyard cottage. ☀️\n\nPeace. Privacy. Possibility.\n\nmassdwell.com\n#SundayMorning #ADU #BackyardLiving"
+      ]
+    }
+  }
+}

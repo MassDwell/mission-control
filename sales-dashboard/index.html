@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MassDwell Team Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+    .lead-card { transition: all 0.15s ease; }
+    .lead-card:active { transform: scale(0.98); }
+    .hot { border-left: 4px solid #ef4444; }
+    .warm { border-left: 4px solid #f59e0b; }
+    .cold { border-left: 4px solid #6b7280; }
+    .temp-badge-hot { background: #fef2f2; color: #dc2626; }
+    .temp-badge-warm { background: #fffbeb; color: #d97706; }
+    .temp-badge-cold { background: #f3f4f6; color: #6b7280; }
+    .filter-pill { transition: all 0.15s; }
+    .filter-pill.active { background: #2563eb; color: white; }
+    .stat-card { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
+    @media (max-width: 640px) {
+      .filter-row { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .filter-row::-webkit-scrollbar { display: none; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  
+  <!-- Login Screen -->
+  <div id="loginScreen" class="fixed inset-0 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl p-6 sm:p-8 w-full max-w-sm shadow-2xl">
+      <img src="https://massdwell.com/wp-content/uploads/2024/01/MassDwell-Logo-Header.png" alt="MassDwell" class="h-10 mx-auto mb-6">
+      <h1 class="text-xl font-bold text-center mb-1">Team Sales Dashboard</h1>
+      <p class="text-gray-500 text-sm text-center mb-6">Enter password to continue</p>
+      <input type="password" id="passwordInput" placeholder="Password" 
+        class="w-full px-4 py-3 border rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-center text-lg"
+        onkeydown="if(event.key==='Enter')login()">
+      <button onclick="login()" 
+        class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 active:bg-blue-800 transition">
+        Sign In
+      </button>
+      <p id="loginError" class="text-red-500 text-sm mt-3 text-center hidden">Invalid password</p>
+    </div>
+  </div>
+
+  <!-- Main Dashboard -->
+  <div id="dashboard" class="hidden pb-24">
+    
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <img src="https://massdwell.com/wp-content/uploads/2024/01/MassDwell-Logo-Header.png" alt="MassDwell" class="h-7">
+          <span class="text-lg font-bold text-gray-800 hidden sm:inline">Sales</span>
+        </div>
+        <button onclick="logout()" class="text-gray-500 hover:text-gray-700 text-sm">Sign Out</button>
+      </div>
+    </header>
+
+    <!-- Stats -->
+    <div class="max-w-6xl mx-auto px-4 py-4">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="stat-card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-gray-800" id="statTotal">-</div>
+          <div class="text-xs text-gray-500 mt-1">Active Leads</div>
+        </div>
+        <div class="stat-card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-red-600" id="statHot">-</div>
+          <div class="text-xs text-gray-500 mt-1">Hot 🔥</div>
+        </div>
+        <div class="stat-card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-amber-600" id="statFollowups">-</div>
+          <div class="text-xs text-gray-500 mt-1">Need Follow-up</div>
+        </div>
+        <div class="stat-card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-blue-600" id="statValue">-</div>
+          <div class="text-xs text-gray-500 mt-1">Pipeline</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="max-w-6xl mx-auto px-4 pb-3 space-y-3">
+      <!-- Search -->
+      <input type="text" id="searchInput" placeholder="Search leads..." 
+        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+        oninput="renderLeads()">
+      
+      <!-- Filter Pills Row -->
+      <div class="filter-row flex gap-2 pb-1">
+        <button class="filter-pill px-3 py-1.5 rounded-full text-sm border bg-white whitespace-nowrap active" data-filter="temp" data-value="all" onclick="setFilter('temp','all')">All</button>
+        <button class="filter-pill px-3 py-1.5 rounded-full text-sm border bg-white whitespace-nowrap" data-filter="temp" data-value="hot" onclick="setFilter('temp','hot')">🔥 Hot</button>
+        <button class="filter-pill px-3 py-1.5 rounded-full text-sm border bg-white whitespace-nowrap" data-filter="temp" data-value="warm" onclick="setFilter('temp','warm')">☀️ Warm</button>
+        <button class="filter-pill px-3 py-1.5 rounded-full text-sm border bg-white whitespace-nowrap" data-filter="temp" data-value="cold" onclick="setFilter('temp','cold')">❄️ Cold</button>
+      </div>
+      
+      <!-- Sort & Stage Filter -->
+      <div class="flex gap-2 flex-wrap">
+        <select id="stageFilter" class="px-3 py-2 rounded-lg border bg-white text-sm flex-1 min-w-[140px]" onchange="renderLeads()">
+          <option value="">All Stages</option>
+          <option value="Incoming Leads">Incoming Leads</option>
+          <option value="Welcome Email Sent">Welcome Email Sent</option>
+          <option value="Follow-up 1">Follow-up 1</option>
+          <option value="Conversation Started">Conversation Started</option>
+          <option value="Site Feasibility Booked">Site Feasibility Booked</option>
+          <option value="Site Feasibility Completed">Site Feasibility Completed</option>
+          <option value="Negotiation">Negotiation</option>
+          <option value="Contract Signed">Contract Signed</option>
+        </select>
+        <select id="sortBy" class="px-3 py-2 rounded-lg border bg-white text-sm flex-1 min-w-[140px]" onchange="renderLeads()">
+          <option value="updated">Last Activity</option>
+          <option value="value-desc">Value (High→Low)</option>
+          <option value="value-asc">Value (Low→High)</option>
+          <option value="created">Date Added</option>
+        </select>
+      </div>
+      
+      <!-- Date Range -->
+      <div class="flex gap-2">
+        <input type="date" id="dateFrom" class="px-3 py-2 rounded-lg border bg-white text-sm flex-1" onchange="renderLeads()">
+        <span class="self-center text-gray-400">to</span>
+        <input type="date" id="dateTo" class="px-3 py-2 rounded-lg border bg-white text-sm flex-1" onchange="renderLeads()">
+        <button onclick="clearDates()" class="px-3 py-2 rounded-lg border bg-white text-sm text-gray-500">Clear</button>
+      </div>
+    </div>
+
+    <!-- Leads List -->
+    <div class="max-w-6xl mx-auto px-4">
+      <div id="leadsList" class="space-y-2">
+        <div class="text-center py-8 text-gray-400">Loading...</div>
+      </div>
+      <div id="resultsCount" class="text-center text-sm text-gray-400 py-4"></div>
+    </div>
+  </div>
+
+  <!-- Lead Detail Modal -->
+  <div id="leadModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center">
+    <div class="bg-white w-full sm:w-auto sm:min-w-[400px] sm:max-w-lg sm:rounded-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto">
+      <div class="sticky top-0 bg-white p-4 border-b flex justify-between items-start">
+        <div class="flex-1 pr-4">
+          <h2 id="modalName" class="text-xl font-bold text-gray-800"></h2>
+          <p id="modalStage" class="text-sm text-gray-500 mt-0.5"></p>
+        </div>
+        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl leading-none p-1">×</button>
+      </div>
+      <div class="p-4 space-y-4" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    let leads = [];
+    let filters = { temp: 'all' };
+
+    // Check if already logged in
+    if (sessionStorage.getItem('dashboardAuth') === 'true') {
+      showDashboard();
+    }
+
+    async function login() {
+      const password = document.getElementById('passwordInput').value;
+      try {
+        const res = await fetch('/api/auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          sessionStorage.setItem('dashboardAuth', 'true');
+          showDashboard();
+        } else {
+          document.getElementById('loginError').classList.remove('hidden');
+        }
+      } catch (e) {
+        document.getElementById('loginError').textContent = 'Connection error';
+        document.getElementById('loginError').classList.remove('hidden');
+      }
+    }
+
+    function logout() {
+      sessionStorage.removeItem('dashboardAuth');
+      location.reload();
+    }
+
+    function showDashboard() {
+      document.getElementById('loginScreen').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      loadData();
+    }
+
+    async function loadData() {
+      try {
+        const [leadsRes, statsRes] = await Promise.all([
+          fetch('/api/leads'),
+          fetch('/api/stats')
+        ]);
+        leads = await leadsRes.json();
+        const stats = await statsRes.json();
+        
+        document.getElementById('statTotal').textContent = stats.total;
+        document.getElementById('statHot').textContent = stats.hot;
+        document.getElementById('statFollowups').textContent = stats.followUpsThisWeek;
+        document.getElementById('statValue').textContent = formatValue(stats.pipelineValue);
+        
+        renderLeads();
+      } catch (err) {
+        console.error('Failed to load data:', err);
+        document.getElementById('leadsList').innerHTML = '<div class="text-center py-8 text-red-500">Failed to load data</div>';
+      }
+    }
+
+    function setFilter(type, value) {
+      filters[type] = value;
+      // Update pill UI
+      document.querySelectorAll(`[data-filter="${type}"]`).forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.value === value);
+      });
+      renderLeads();
+    }
+
+    function clearDates() {
+      document.getElementById('dateFrom').value = '';
+      document.getElementById('dateTo').value = '';
+      renderLeads();
+    }
+
+    function renderLeads() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const stage = document.getElementById('stageFilter').value;
+      const sortBy = document.getElementById('sortBy').value;
+      const dateFrom = document.getElementById('dateFrom').value;
+      const dateTo = document.getElementById('dateTo').value;
+
+      let filtered = leads.filter(l => {
+        // Search
+        if (search && !l.name.toLowerCase().includes(search) && 
+            !l.location.toLowerCase().includes(search) &&
+            !l.email.toLowerCase().includes(search)) {
+          return false;
+        }
+        // Temperature
+        if (filters.temp !== 'all' && l.temperature !== filters.temp) return false;
+        // Stage
+        if (stage && l.stage !== stage) return false;
+        // Date range (by created date)
+        if (dateFrom && new Date(l.createdAt) < new Date(dateFrom)) return false;
+        if (dateTo && new Date(l.createdAt) > new Date(dateTo + 'T23:59:59')) return false;
+        return true;
+      });
+
+      // Sort
+      filtered.sort((a, b) => {
+        switch (sortBy) {
+          case 'value-desc': return b.value - a.value;
+          case 'value-asc': return a.value - b.value;
+          case 'created': return new Date(b.createdAt) - new Date(a.createdAt);
+          case 'updated': 
+          default: return new Date(b.updatedAt) - new Date(a.updatedAt);
+        }
+      });
+
+      const html = filtered.map(l => `
+        <div class="lead-card bg-white rounded-xl p-4 border shadow-sm ${l.temperature}" onclick="openModal(${l.id})">
+          <div class="flex justify-between items-start">
+            <div class="flex-1 min-w-0">
+              <div class="font-semibold text-gray-800 truncate">${escapeHtml(l.name)}</div>
+              <div class="text-sm text-gray-500 truncate">${escapeHtml(l.location) || 'No location'}</div>
+            </div>
+            <div class="flex flex-col items-end ml-3">
+              <span class="font-semibold text-green-600">${formatValue(l.value)}</span>
+              <span class="text-xs px-2 py-0.5 rounded-full mt-1 temp-badge-${l.temperature}">
+                ${l.temperature === 'hot' ? '🔥' : l.temperature === 'warm' ? '☀️' : '❄️'} ${l.temperature}
+              </span>
+            </div>
+          </div>
+          <div class="mt-2 flex items-center justify-between text-xs">
+            <span class="text-gray-400">${l.stage}</span>
+            <span class="text-gray-400">${l.daysInStage}d in stage</span>
+          </div>
+          ${l.lastActivity ? `<div class="mt-2 text-xs text-gray-500 truncate">💬 ${escapeHtml(l.lastActivity)}</div>` : ''}
+        </div>
+      `).join('');
+
+      document.getElementById('leadsList').innerHTML = html || '<div class="text-center py-8 text-gray-400">No leads match your filters</div>';
+      document.getElementById('resultsCount').textContent = `Showing ${filtered.length} of ${leads.length} leads`;
+    }
+
+    function openModal(id) {
+      const lead = leads.find(l => l.id === id);
+      if (!lead) return;
+
+      document.getElementById('modalName').textContent = lead.name;
+      document.getElementById('modalStage').textContent = `${lead.stage} • ${lead.owner}`;
+      
+      const notesHtml = lead.notes.length ? lead.notes.map(n => `
+        <div class="text-sm border-l-2 border-gray-200 pl-3 py-1">
+          <div class="text-gray-700">${escapeHtml(n.text) || '<i>No text</i>'}</div>
+          <div class="text-xs text-gray-400 mt-1">${formatDate(n.date)}</div>
+        </div>
+      `).join('') : '<div class="text-sm text-gray-400">No notes</div>';
+
+      document.getElementById('modalContent').innerHTML = `
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide">Value</div>
+            <div class="font-semibold text-green-600 text-lg">${formatValue(lead.value)}</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide">Temperature</div>
+            <div class="font-semibold capitalize">${lead.temperature === 'hot' ? '🔥 Hot' : lead.temperature === 'warm' ? '☀️ Warm' : '❄️ Cold'}</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide">Location</div>
+            <div class="font-medium">${escapeHtml(lead.location) || 'Not provided'}</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide">Type</div>
+            <div class="font-medium">${escapeHtml(lead.typeScope) || 'Not specified'}</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide">Added</div>
+            <div class="font-medium">${formatDate(lead.createdAt)}</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide">In Stage</div>
+            <div class="font-medium">${lead.daysInStage} days</div>
+          </div>
+        </div>
+
+        ${lead.phone || lead.email ? `
+        <div class="border-t pt-4 mt-4">
+          <div class="text-xs text-gray-500 uppercase tracking-wide mb-2">Contact</div>
+          ${lead.phone ? `<a href="tel:${lead.phone}" class="flex items-center gap-2 text-blue-600 py-1"><span>📞</span> ${escapeHtml(lead.phone)}</a>` : ''}
+          ${lead.email ? `<a href="mailto:${lead.email}" class="flex items-center gap-2 text-blue-600 py-1"><span>✉️</span> ${escapeHtml(lead.email)}</a>` : ''}
+        </div>
+        ` : ''}
+
+        <div class="border-t pt-4 mt-4">
+          <div class="text-xs text-gray-500 uppercase tracking-wide mb-2">Recent Notes</div>
+          <div class="space-y-3">${notesHtml}</div>
+        </div>
+
+        <div class="border-t pt-4 mt-4 flex gap-2">
+          ${lead.phone ? `<a href="tel:${lead.phone}" class="flex-1 bg-green-600 text-white py-3 rounded-lg text-center font-medium">📞 Call</a>` : ''}
+          ${lead.email ? `<a href="mailto:${lead.email}" class="flex-1 bg-blue-600 text-white py-3 rounded-lg text-center font-medium">✉️ Email</a>` : ''}
+          ${!lead.phone && !lead.email ? '<div class="text-center text-gray-400 py-2 w-full">No contact info available</div>' : ''}
+        </div>
+      `;
+      
+      document.getElementById('leadModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('leadModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function formatValue(value) {
+      if (!value) return '$0';
+      if (value >= 1000000) return '$' + (value / 1000000).toFixed(1) + 'M';
+      if (value >= 1000) return '$' + (value / 1000).toFixed(0) + 'K';
+      return '$' + value;
+    }
+
+    function formatDate(dateStr) {
+      if (!dateStr) return 'Unknown';
+      const d = new Date(dateStr);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // Modal close handlers
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    document.getElementById('leadModal').addEventListener('click', e => {
+      if (e.target.id === 'leadModal') closeModal();
+    });
+  </script>
+</body>
+</html>

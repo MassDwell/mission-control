@@ -1,0 +1,33 @@
+Name,Category,Brand,Color,IsUpgrade,UpgradePrice
+Bright Chrome,Door Hardware,Schlage Latitude,Chrome Lever,FALSE,0
+Matte Black,Door Hardware,Schlage Latitude,Black Lever,FALSE,0
+Satin Nickel,Door Hardware,Schlage Latitude,Nickel Lever,FALSE,0
+Brushed Nickel Bar Pull,Cabinet Hardware,Liberty,Nickel,FALSE,0
+Matte Black Bar Pull,Cabinet Hardware,Black,FALSE,0
+Oil Rubbed Bronze,Cabinet Hardware,Liberty,Bronze,FALSE,0
+Stainless Single Bowl,Kitchen Sink,Kraus,Stainless Steel,FALSE,0
+Stainless Double Bowl,Kitchen Sink,Kraus,Stainless Steel,FALSE,0
+White Composite Single,Kitchen Sink,Kraus,White,FALSE,0
+Brushed Nickel Pull-Down,Kitchen Faucet,Moen,Nickel,FALSE,0
+Matte Black Pull-Down,Kitchen Faucet,Moen,Black,FALSE,0
+Chrome Pull-Down,Kitchen Faucet,Moen,Chrome,FALSE,0
+White Subway 3x6,Backsplash Tile,MSI,White Ceramic,FALSE,0
+White Herringbone,Backsplash Tile,MSI,White Pattern,FALSE,0
+Gray Subway 3x6,Backsplash Tile,MSI,Gray Ceramic,FALSE,0
+24 inch White Shaker,Bathroom Vanity,Glacier Bay,White Single,FALSE,0
+30 inch White Shaker,Bathroom Vanity,Glacier Bay,White Single,FALSE,0
+36 inch Gray Shaker,Bathroom Vanity,Glacier Bay,Gray Single,FALSE,0
+48 inch White Double,Bathroom Vanity,Glacier Bay,White Double,TRUE,500
+Brushed Nickel Single Handle,Bathroom Faucet,Moen,Nickel,FALSE,0
+Matte Black Single Handle,Bathroom Faucet,Moen,Black,FALSE,0
+Chrome Single Handle,Bathroom Faucet,Moen,Chrome,FALSE,0
+Brushed Nickel Widespread,Bathroom Faucet,Moen,Nickel 2-Handle,TRUE,150
+Matte Black Widespread,Bathroom Faucet,Moen,Black 2-Handle,TRUE,150
+Panel + Panel Bifold,Interior Doors,Standard,White 6-Panel,FALSE,0
+Panel Shaker + Shaker Bifold,Interior Doors,Standard,White Shaker,FALSE,0
+Denim,Wall Color Accent,Sherwin Williams,Navy Blue,TRUE,0
+First Star,Wall Color Accent,Sherwin Williams,Soft White,TRUE,0
+Evergreen Fog,Wall Color Accent,Sherwin Williams,Sage Green,TRUE,0
+Sea Salt,Wall Color Accent,Sherwin Williams,Coastal Blue-Green,TRUE,0
+White Shaker,Kitchen Cabinets,Standard,White,FALSE,0
+Gray Shaker,Kitchen Cabinets,Standard,Gray,FALSE,0

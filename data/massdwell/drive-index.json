@@ -1,0 +1,1564 @@
+{
+  "indexedAt": "2026-02-03T04:01:59.910Z",
+  "totalFiles": 100,
+  "summary": {
+    "folders": 30,
+    "documents": 5,
+    "spreadsheets": 4,
+    "presentations": 0,
+    "pdfs": 22,
+    "images": 24,
+    "videos": 0,
+    "other": 15
+  },
+  "keyDocuments": [
+    {
+      "parents": [
+        "1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS"
+      ],
+      "id": "1gL98gVffOOyqRcYViRm38sicI_w2D5ec",
+      "name": "MassDwell_Investor_Deck_v2.2.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1gL98gVffOOyqRcYViRm38sicI_w2D5ec/view?usp=drivesdk",
+      "modifiedTime": "2026-01-25T18:01:58.000Z",
+      "size": "30860803"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1vIrsEURNNAeZRoHeMn3bzNnSWRpK0G7a",
+      "name": "MassDwell Lookbook 2026.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1vIrsEURNNAeZRoHeMn3bzNnSWRpK0G7a/view?usp=drivesdk",
+      "modifiedTime": "2026-01-23T16:12:33.000Z",
+      "size": "17821086"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS",
+      "name": "Investor Material",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS",
+      "modifiedTime": "2026-01-23T16:10:40.146Z"
+    },
+    {
+      "parents": [
+        "1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS"
+      ],
+      "id": "1PsiLIDNQB8i3av4mhXwoCqDjeMEcugzw",
+      "name": "MassDwell_Investor_Deck_v2.1.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1PsiLIDNQB8i3av4mhXwoCqDjeMEcugzw/view?usp=drivesdk",
+      "modifiedTime": "2026-01-23T15:08:36.000Z",
+      "size": "30860978"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1S9l7e3cWzaQ4jZ3IaS6nMNtl9JDJYThT",
+      "name": "MassDwell ADU Contract.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/1S9l7e3cWzaQ4jZ3IaS6nMNtl9JDJYThT/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2026-01-06T17:29:22.205Z",
+      "size": "1932355"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "12_OUNUKqc0PEXxQgf_TwcMSHkzjT2lq2",
+      "name": "MassDwell contract - 280 Woburn Lexington.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/12_OUNUKqc0PEXxQgf_TwcMSHkzjT2lq2/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2025-12-17T23:19:31.928Z",
+      "size": "57775"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1XS62LhJh1-WDU-a1b2LYNbSBROYPid97",
+      "name": "48 Blue Gill Lane Plymouth- MassDwell Contract.docx - 10/18/25, 4:49 PM",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1XS62LhJh1-WDU-a1b2LYNbSBROYPid97/view?usp=drivesdk",
+      "modifiedTime": "2025-10-22T20:45:40.996Z",
+      "size": "461868"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1MTIGslMdlfTw1sX41Vbg1p3sySvaOZmb",
+      "name": "48 Blue Gill Lane Plymouth- MassDwell Contract.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/1MTIGslMdlfTw1sX41Vbg1p3sySvaOZmb/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2025-10-18T20:49:01.037Z",
+      "size": "59422"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1MhChIZamaMKshH9LIKglsb8ve4tplue1",
+      "name": "48 Blue Gill Lane Plymouth- MassDwell Contract.docx - 10/18/25, 4:48 PM",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1MhChIZamaMKshH9LIKglsb8ve4tplue1/view?usp=drivesdk",
+      "modifiedTime": "2025-10-18T20:48:42.403Z",
+      "size": "329136"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1QMU5FQZEKvj5u4npX4MVTPVDmFBjCukz",
+      "name": "MASSDWELL-CATALOGUE-PRICES-new-england.pdf",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "webViewLink": "https://drive.google.com/file/d/1QMU5FQZEKvj5u4npX4MVTPVDmFBjCukz/view?usp=drivesdk",
+      "modifiedTime": "2025-10-02T22:17:21.193Z"
+    },
+    {
+      "id": "1GjpJqmJArSEPzxPTkOCkQld9EA-qmGSh",
+      "name": "MASSDWELL-CATALOGUE-PRICES-new-england.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1GjpJqmJArSEPzxPTkOCkQld9EA-qmGSh/view?usp=drivesdk",
+      "modifiedTime": "2025-10-01T13:32:02.000Z",
+      "size": "6027793"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "18pt0cp2Fv6Sf3zgZv_GDS62rqpSCh4H-",
+      "name": "MASSDWELL-CATALOGUE-OK-compact.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/18pt0cp2Fv6Sf3zgZv_GDS62rqpSCh4H-/view?usp=drivesdk",
+      "modifiedTime": "2025-08-15T17:55:49.065Z",
+      "size": "3616606"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8",
+      "name": "Contracts",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8",
+      "modifiedTime": "2025-08-13T11:04:18.562Z"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1vBTDlQAWd9wA9_k_Lyhxqsv0jejliGCx",
+      "name": " MASSDWELL-CATALOGUE-OK-compact.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1vBTDlQAWd9wA9_k_Lyhxqsv0jejliGCx/view?usp=drivesdk",
+      "modifiedTime": "2025-07-18T13:46:20.431Z",
+      "size": "3616606"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv",
+      "name": "Tiny Homes Competitive Quotes/Info",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv",
+      "modifiedTime": "2025-07-16T09:40:16.912Z"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "1j1zqznhQNJnqLRseqkPoBoEBgFtsEzGL",
+      "name": "Proposal_1277806_Fri, 28 Mar 2025 21-22-05 GMT.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1j1zqznhQNJnqLRseqkPoBoEBgFtsEzGL/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:40:51.000Z",
+      "size": "2224111"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "1bKoV1_5orO6hHmGpB7e7yTnT816l1a8_",
+      "name": "2025 LOOK BOOK CATALOG Inclusions and Options.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1bKoV1_5orO6hHmGpB7e7yTnT816l1a8_/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:40:44.000Z",
+      "size": "7913124"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "1UeDvGhwX-UtgtVC8aVYGHg0Jr0slIxbU",
+      "name": "Garrett Greer MA Tiny Home Proposal V1.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1UeDvGhwX-UtgtVC8aVYGHg0Jr0slIxbU/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:40:41.000Z",
+      "size": "2155284"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1x7rIgu5bDoV7nHKtmIE7K73gxORXZ1gJ",
+      "name": "MASSDWELL-CATALOGUE-OK (1).pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1x7rIgu5bDoV7nHKtmIE7K73gxORXZ1gJ/view?usp=drivesdk",
+      "modifiedTime": "2025-07-08T23:10:20.000Z",
+      "size": "828758617"
+    }
+  ],
+  "folders": [
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops",
+      "name": "Panels Plus Info",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops",
+      "modifiedTime": "2026-01-27T16:52:13.294Z"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS",
+      "name": "Investor Material",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS",
+      "modifiedTime": "2026-01-23T16:10:40.146Z"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "15Bi1enC21nehRbeouBhSb4D574nblvpS",
+      "name": "48 Blue Gill Lane",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/15Bi1enC21nehRbeouBhSb4D574nblvpS",
+      "modifiedTime": "2026-01-14T19:36:02.474Z"
+    },
+    {
+      "parents": [
+        "0AI7o-WyuyHRbUk9PVA"
+      ],
+      "id": "1KKIsOqVhXyxo2ZKih9AF19R3wI5xGxbQ",
+      "name": "Meet Recordings",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1KKIsOqVhXyxo2ZKih9AF19R3wI5xGxbQ",
+      "modifiedTime": "2025-11-18T20:35:19.363Z"
+    },
+    {
+      "id": "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI",
+      "name": "MassDwell",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI",
+      "modifiedTime": "2025-09-10T21:50:30.531Z"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8",
+      "name": "Contracts",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8",
+      "modifiedTime": "2025-08-13T11:04:18.562Z"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0",
+      "name": "Sales",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0",
+      "modifiedTime": "2025-07-18T13:44:56.732Z"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv",
+      "name": "Tiny Homes Competitive Quotes/Info",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv",
+      "modifiedTime": "2025-07-16T09:40:16.912Z"
+    },
+    {
+      "parents": [
+        "1hLkmjcNv-sf4ZDA33FSF8tZRUqaHq-K0"
+      ],
+      "id": "1e3PE8ec2QemWcfotJkvcLchdqFfMewlC",
+      "name": "STORIES",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1e3PE8ec2QemWcfotJkvcLchdqFfMewlC",
+      "modifiedTime": "2025-06-27T17:30:18.588Z"
+    },
+    {
+      "parents": [
+        "1466H7I_u2AQi_mFDdYMYFLezTKDByMdR"
+      ],
+      "id": "1bffEjVsZgl7fZfqp2PaVGr1AWte3GJ6S",
+      "name": "FEED",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1bffEjVsZgl7fZfqp2PaVGr1AWte3GJ6S",
+      "modifiedTime": "2025-06-27T17:29:34.423Z"
+    },
+    {
+      "parents": [
+        "1fLcyHlkZuWu40zy0eVY9UVKVSDmLd1zZ"
+      ],
+      "id": "1AeNUJMGIXXsT__3X-4zuVWVW5aPZv4aR",
+      "name": "FEED",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1AeNUJMGIXXsT__3X-4zuVWVW5aPZv4aR",
+      "modifiedTime": "2025-06-27T17:28:51.126Z"
+    },
+    {
+      "parents": [
+        "1sfDtpkXarx5iM0ntOMIJsDjxhtpxebfD"
+      ],
+      "id": "1kJ-IqJ24xmzCkcDLon2HlNWGJ2jad791",
+      "name": "FEED",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1kJ-IqJ24xmzCkcDLon2HlNWGJ2jad791",
+      "modifiedTime": "2025-06-27T17:26:56.552Z"
+    },
+    {
+      "id": "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd",
+      "name": "ART - Jun/25 Target Audience",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd",
+      "modifiedTime": "2025-06-25T14:26:01.924Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1hLkmjcNv-sf4ZDA33FSF8tZRUqaHq-K0",
+      "name": "AUDIENCE 05 - Owner Backyard",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1hLkmjcNv-sf4ZDA33FSF8tZRUqaHq-K0",
+      "modifiedTime": "2025-06-25T14:25:00.174Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1466H7I_u2AQi_mFDdYMYFLezTKDByMdR",
+      "name": "AUDIENCE 04 - Income/Rental",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1466H7I_u2AQi_mFDdYMYFLezTKDByMdR",
+      "modifiedTime": "2025-06-25T14:24:35.110Z"
+    },
+    {
+      "parents": [
+        "1hJJnK-iLv3Hqmgx0e5gAHpDU75jjr-1x"
+      ],
+      "id": "1fLcyHlkZuWu40zy0eVY9UVKVSDmLd1zZ",
+      "name": "HOME OFFICE",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1fLcyHlkZuWu40zy0eVY9UVKVSDmLd1zZ",
+      "modifiedTime": "2025-06-25T14:23:36.755Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1hJJnK-iLv3Hqmgx0e5gAHpDU75jjr-1x",
+      "name": "AUDIENCE 03 - Owner Privacy",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1hJJnK-iLv3Hqmgx0e5gAHpDU75jjr-1x",
+      "modifiedTime": "2025-06-25T14:23:21.400Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1sfDtpkXarx5iM0ntOMIJsDjxhtpxebfD",
+      "name": "AUDIENCE 02 - Legal Advantages",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1sfDtpkXarx5iM0ntOMIJsDjxhtpxebfD",
+      "modifiedTime": "2025-06-25T14:19:14.274Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1juFCrqjzw7DYfkIkJlvgMezbRNfq-RnY",
+      "name": "AUDIENCE 01 - Family Backyard",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1juFCrqjzw7DYfkIkJlvgMezbRNfq-RnY",
+      "modifiedTime": "2025-06-25T14:15:22.476Z"
+    },
+    {
+      "parents": [
+        "1juFCrqjzw7DYfkIkJlvgMezbRNfq-RnY"
+      ],
+      "id": "14K8c6jrH0VEVDJH37PvF4DEDTUoPKWk2",
+      "name": "STORIES",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/14K8c6jrH0VEVDJH37PvF4DEDTUoPKWk2",
+      "modifiedTime": "2025-06-25T13:23:38.194Z"
+    },
+    {
+      "parents": [
+        "1juFCrqjzw7DYfkIkJlvgMezbRNfq-RnY"
+      ],
+      "id": "1W9ObqMOTI5aG35JEcFDiulcWo_Ne3vLb",
+      "name": "FEED",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1W9ObqMOTI5aG35JEcFDiulcWo_Ne3vLb",
+      "modifiedTime": "2025-06-25T13:23:38.194Z"
+    },
+    {
+      "parents": [
+        "1mHGYF2DNCDS5A-EhiY5jjYXTKhozQEx4"
+      ],
+      "id": "11--EW65qPIcu0TJziXhw2XhjeypemClD",
+      "name": "EPS - AI",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/11--EW65qPIcu0TJziXhw2XhjeypemClD",
+      "modifiedTime": "2025-05-20T13:52:49.880Z"
+    },
+    {
+      "parents": [
+        "1cJsuyOQ2IghX6xGma6VYIbn3vRWi1CnX"
+      ],
+      "id": "1OeJmwtCnp4WZaier3EWNuPw6PP6gph97",
+      "name": "JPG",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1OeJmwtCnp4WZaier3EWNuPw6PP6gph97",
+      "modifiedTime": "2025-05-20T13:52:36.693Z"
+    },
+    {
+      "parents": [
+        "1BFPIQUouraGekqnmnHBVwDaIJ_tGEQ_e"
+      ],
+      "id": "1XWBZ-XSrMfvauMoHjjMvQtn-c3CBt6r-",
+      "name": "JPG",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1XWBZ-XSrMfvauMoHjjMvQtn-c3CBt6r-",
+      "modifiedTime": "2025-05-20T13:52:36.693Z"
+    },
+    {
+      "parents": [
+        "1qR5DUj9utWComKAJ2AiPtC8CHQhgDpi8"
+      ],
+      "id": "1BFPIQUouraGekqnmnHBVwDaIJ_tGEQ_e",
+      "name": "MEDIUM QUALITY",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1BFPIQUouraGekqnmnHBVwDaIJ_tGEQ_e",
+      "modifiedTime": "2025-05-20T13:52:35.096Z"
+    },
+    {
+      "parents": [
+        "1ImkU1csIvp-fjRBNVONWUOwkdJMWq3aS"
+      ],
+      "id": "17qO1u2kR1bYGsCU0UNHcZ_t6hvDBDX2S",
+      "name": "JPG",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/17qO1u2kR1bYGsCU0UNHcZ_t6hvDBDX2S",
+      "modifiedTime": "2025-05-20T13:52:35.096Z"
+    },
+    {
+      "parents": [
+        "1qR5DUj9utWComKAJ2AiPtC8CHQhgDpi8"
+      ],
+      "id": "1cJsuyOQ2IghX6xGma6VYIbn3vRWi1CnX",
+      "name": "HIGH QUALITY",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1cJsuyOQ2IghX6xGma6VYIbn3vRWi1CnX",
+      "modifiedTime": "2025-05-20T13:52:35.096Z"
+    },
+    {
+      "parents": [
+        "11--EW65qPIcu0TJziXhw2XhjeypemClD"
+      ],
+      "id": "1afsgS8LxrRQbZU3Fof3gfg4G7zknuit-",
+      "name": "AI",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1afsgS8LxrRQbZU3Fof3gfg4G7zknuit-",
+      "modifiedTime": "2025-05-20T13:52:35.096Z"
+    },
+    {
+      "parents": [
+        "1mHGYF2DNCDS5A-EhiY5jjYXTKhozQEx4"
+      ],
+      "id": "1ImkU1csIvp-fjRBNVONWUOwkdJMWq3aS",
+      "name": "LOGOMARK",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1ImkU1csIvp-fjRBNVONWUOwkdJMWq3aS",
+      "modifiedTime": "2025-05-20T13:52:33.812Z"
+    },
+    {
+      "parents": [
+        "1mHGYF2DNCDS5A-EhiY5jjYXTKhozQEx4"
+      ],
+      "id": "1qR5DUj9utWComKAJ2AiPtC8CHQhgDpi8",
+      "name": "LOGOTYPE",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1qR5DUj9utWComKAJ2AiPtC8CHQhgDpi8",
+      "modifiedTime": "2025-05-20T13:52:33.812Z"
+    }
+  ],
+  "allFiles": [
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1BeURdPiga9A14icRqJ7EdpzzrUA2ZbtTewdgU0ToPEg",
+      "name": "ADU Cheat Sheet: Massachusetts Towns",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1BeURdPiga9A14icRqJ7EdpzzrUA2ZbtTewdgU0ToPEg/edit?usp=drivesdk",
+      "modifiedTime": "2026-01-29T11:58:14.442Z",
+      "size": "1169"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1--c5X0_JCEaqgZKEC4KNG-GLsBlRdu-v7L6q5nQxKK8",
+      "name": "MassDwell Q1 marketing strategy",
+      "mimeType": "application/vnd.google-apps.document",
+      "webViewLink": "https://docs.google.com/document/d/1--c5X0_JCEaqgZKEC4KNG-GLsBlRdu-v7L6q5nQxKK8/edit?usp=drivesdk",
+      "modifiedTime": "2026-01-28T12:47:59.426Z",
+      "size": "5578"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops",
+      "name": "Panels Plus Info",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops",
+      "modifiedTime": "2026-01-27T16:52:13.294Z"
+    },
+    {
+      "parents": [
+        "1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops"
+      ],
+      "id": "1FKErg_-KjSO_Mj8H8rSZofpME2LBjiNi",
+      "name": "PP55010 layout air-elect.PDF",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1FKErg_-KjSO_Mj8H8rSZofpME2LBjiNi/view?usp=drivesdk",
+      "modifiedTime": "2026-01-27T16:47:52.000Z",
+      "size": "985207"
+    },
+    {
+      "parents": [
+        "1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops"
+      ],
+      "id": "1j51FPPm6iztdQdU_RhiuR_n8a1aS-qfd",
+      "name": "PP62000.SLDASM",
+      "mimeType": "application/sldworks",
+      "webViewLink": "https://drive.google.com/file/d/1j51FPPm6iztdQdU_RhiuR_n8a1aS-qfd/view?usp=drivesdk",
+      "modifiedTime": "2026-01-27T16:47:50.000Z",
+      "size": "11587968"
+    },
+    {
+      "parents": [
+        "1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops"
+      ],
+      "id": "10YVA-q_4uOA81AC6giHWP0gr7U0Lc_5V",
+      "name": "Panels Plus LGS Framing.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/10YVA-q_4uOA81AC6giHWP0gr7U0Lc_5V/view?usp=drivesdk",
+      "modifiedTime": "2026-01-27T16:47:50.000Z",
+      "size": "3357242"
+    },
+    {
+      "parents": [
+        "1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops"
+      ],
+      "id": "1FOxsOcSqHFwck0tC3WQFLcRm5LbpbOaA",
+      "name": "Panels Plus Brochure.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1FOxsOcSqHFwck0tC3WQFLcRm5LbpbOaA/view?usp=drivesdk",
+      "modifiedTime": "2026-01-27T16:47:50.000Z",
+      "size": "11976561"
+    },
+    {
+      "parents": [
+        "1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops"
+      ],
+      "id": "1O4O9_LTgjYKcJKHSWuwjgaFhiV2VT3ba",
+      "name": "PP62000-20 AIR, ELEC.PDF",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1O4O9_LTgjYKcJKHSWuwjgaFhiV2VT3ba/view?usp=drivesdk",
+      "modifiedTime": "2026-01-27T16:47:50.000Z",
+      "size": "776152"
+    },
+    {
+      "parents": [
+        "1RgEiIpL6_YF5kCzTGFpDz7SAHtI1Mops"
+      ],
+      "id": "1gvFv3P0Vv85f20HFmJ7mnqFR9WgihLUv",
+      "name": "PP62000.SLDDRW",
+      "mimeType": "application/sldworks",
+      "webViewLink": "https://drive.google.com/file/d/1gvFv3P0Vv85f20HFmJ7mnqFR9WgihLUv/view?usp=drivesdk",
+      "modifiedTime": "2026-01-27T16:47:50.000Z",
+      "size": "3089072"
+    },
+    {
+      "parents": [
+        "1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS"
+      ],
+      "id": "1gL98gVffOOyqRcYViRm38sicI_w2D5ec",
+      "name": "MassDwell_Investor_Deck_v2.2.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1gL98gVffOOyqRcYViRm38sicI_w2D5ec/view?usp=drivesdk",
+      "modifiedTime": "2026-01-25T18:01:58.000Z",
+      "size": "30860803"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1tdoGOa-sa6eAA9rLYX9ismzT3slXWQwn",
+      "name": "MASSDWELL - PRIME.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1tdoGOa-sa6eAA9rLYX9ismzT3slXWQwn/view?usp=drivesdk",
+      "modifiedTime": "2026-01-23T17:06:14.000Z",
+      "size": "1875973"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1Vs5t66BZkROQKtG2kCzIMos186Rc0q_D",
+      "name": "MASSDWELL - ESSENTIAL.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1Vs5t66BZkROQKtG2kCzIMos186Rc0q_D/view?usp=drivesdk",
+      "modifiedTime": "2026-01-23T17:06:02.000Z",
+      "size": "2016924"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1JKS7I2q_wCHJN80NPfonNdf7SHHhgujA",
+      "name": "MASSDWELL - DELUXE.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1JKS7I2q_wCHJN80NPfonNdf7SHHhgujA/view?usp=drivesdk",
+      "modifiedTime": "2026-01-23T17:05:49.000Z",
+      "size": "2029438"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1QZe1Xoaps07u0BCWKwrBYW9i-8nvSstM",
+      "name": "MASSDWELL - CLASSIC.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1QZe1Xoaps07u0BCWKwrBYW9i-8nvSstM/view?usp=drivesdk",
+      "modifiedTime": "2026-01-23T17:05:39.000Z",
+      "size": "1952737"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1vIrsEURNNAeZRoHeMn3bzNnSWRpK0G7a",
+      "name": "MassDwell Lookbook 2026.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1vIrsEURNNAeZRoHeMn3bzNnSWRpK0G7a/view?usp=drivesdk",
+      "modifiedTime": "2026-01-23T16:12:33.000Z",
+      "size": "17821086"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS",
+      "name": "Investor Material",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS",
+      "modifiedTime": "2026-01-23T16:10:40.146Z"
+    },
+    {
+      "parents": [
+        "1mcg-8DDmFcHTAKrbcG3jXc7H0_Z4h7GS"
+      ],
+      "id": "1PsiLIDNQB8i3av4mhXwoCqDjeMEcugzw",
+      "name": "MassDwell_Investor_Deck_v2.1.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1PsiLIDNQB8i3av4mhXwoCqDjeMEcugzw/view?usp=drivesdk",
+      "modifiedTime": "2026-01-23T15:08:36.000Z",
+      "size": "30860978"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1RPbv0cG6TB2EgauSOXJltuzjLhLyqWinJ8SVMMyIgag",
+      "name": "MassDwell Competitors",
+      "mimeType": "application/vnd.google-apps.document",
+      "webViewLink": "https://docs.google.com/document/d/1RPbv0cG6TB2EgauSOXJltuzjLhLyqWinJ8SVMMyIgag/edit?usp=drivesdk",
+      "modifiedTime": "2026-01-17T22:47:03.788Z",
+      "size": "1024"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1BfcgC-saKe_ao6ozx7VmK7lbxR-EwTcU",
+      "name": "22 Brady Loop.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/1BfcgC-saKe_ao6ozx7VmK7lbxR-EwTcU/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2026-01-14T21:03:37.181Z",
+      "size": "2411551"
+    },
+    {
+      "parents": [
+        "15Bi1enC21nehRbeouBhSb4D574nblvpS"
+      ],
+      "id": "1ICqebzPFpdJXYuczp5gJU1bqikGlA5KK_VzG85e3Ta8",
+      "name": "Finish Selection- 48 Blue Gill Lane, Plymouth",
+      "mimeType": "application/vnd.google-apps.document",
+      "webViewLink": "https://docs.google.com/document/d/1ICqebzPFpdJXYuczp5gJU1bqikGlA5KK_VzG85e3Ta8/edit?usp=drivesdk",
+      "modifiedTime": "2026-01-14T19:36:42.149Z",
+      "size": "1024"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "15Bi1enC21nehRbeouBhSb4D574nblvpS",
+      "name": "48 Blue Gill Lane",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/15Bi1enC21nehRbeouBhSb4D574nblvpS",
+      "modifiedTime": "2026-01-14T19:36:02.474Z"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1S9l7e3cWzaQ4jZ3IaS6nMNtl9JDJYThT",
+      "name": "MassDwell ADU Contract.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/1S9l7e3cWzaQ4jZ3IaS6nMNtl9JDJYThT/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2026-01-06T17:29:22.205Z",
+      "size": "1932355"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "12_OUNUKqc0PEXxQgf_TwcMSHkzjT2lq2",
+      "name": "MassDwell contract - 280 Woburn Lexington.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/12_OUNUKqc0PEXxQgf_TwcMSHkzjT2lq2/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2025-12-17T23:19:31.928Z",
+      "size": "57775"
+    },
+    {
+      "parents": [
+        "1KKIsOqVhXyxo2ZKih9AF19R3wI5xGxbQ"
+      ],
+      "id": "1wJ5-zDPFmdQRIuRwPRdSSytnBFDyuqqbIahVdLz2eQk",
+      "name": "MassDwell Sync - 2025/11/18 14:56 EST - Notes by Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "webViewLink": "https://docs.google.com/document/d/1wJ5-zDPFmdQRIuRwPRdSSytnBFDyuqqbIahVdLz2eQk/edit?usp=drivesdk",
+      "modifiedTime": "2025-11-18T20:35:40.285Z",
+      "size": "23799"
+    },
+    {
+      "parents": [
+        "0AI7o-WyuyHRbUk9PVA"
+      ],
+      "id": "1KKIsOqVhXyxo2ZKih9AF19R3wI5xGxbQ",
+      "name": "Meet Recordings",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1KKIsOqVhXyxo2ZKih9AF19R3wI5xGxbQ",
+      "modifiedTime": "2025-11-18T20:35:19.363Z"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1cTXIcTQzsCCsw_4jEoIuBN3WwOS_iweu",
+      "name": "stripe_backup_code.txt",
+      "mimeType": "text/plain",
+      "webViewLink": "https://drive.google.com/file/d/1cTXIcTQzsCCsw_4jEoIuBN3WwOS_iweu/view?usp=drivesdk",
+      "modifiedTime": "2025-11-12T20:34:53.000Z",
+      "size": "191"
+    },
+    {
+      "id": "1HHDRinn-JzwnYSmF8hhBdYbY7XIz9-letQAKYifK5_w",
+      "name": "MassDwell x Michael Chesson - Kick Off - 2025/11/11 14:58 GMT - Notes by Gemini",
+      "mimeType": "application/vnd.google-apps.document",
+      "webViewLink": "https://docs.google.com/document/d/1HHDRinn-JzwnYSmF8hhBdYbY7XIz9-letQAKYifK5_w/edit?usp=drivesdk",
+      "modifiedTime": "2025-11-11T15:25:07.057Z",
+      "size": "16497"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1XS62LhJh1-WDU-a1b2LYNbSBROYPid97",
+      "name": "48 Blue Gill Lane Plymouth- MassDwell Contract.docx - 10/18/25, 4:49 PM",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1XS62LhJh1-WDU-a1b2LYNbSBROYPid97/view?usp=drivesdk",
+      "modifiedTime": "2025-10-22T20:45:40.996Z",
+      "size": "461868"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1MTIGslMdlfTw1sX41Vbg1p3sySvaOZmb",
+      "name": "48 Blue Gill Lane Plymouth- MassDwell Contract.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/1MTIGslMdlfTw1sX41Vbg1p3sySvaOZmb/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2025-10-18T20:49:01.037Z",
+      "size": "59422"
+    },
+    {
+      "parents": [
+        "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8"
+      ],
+      "id": "1MhChIZamaMKshH9LIKglsb8ve4tplue1",
+      "name": "48 Blue Gill Lane Plymouth- MassDwell Contract.docx - 10/18/25, 4:48 PM",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1MhChIZamaMKshH9LIKglsb8ve4tplue1/view?usp=drivesdk",
+      "modifiedTime": "2025-10-18T20:48:42.403Z",
+      "size": "329136"
+    },
+    {
+      "parents": [
+        "0AI7o-WyuyHRbUk9PVA"
+      ],
+      "id": "1G7ADGtnTC5W2LJnUXmZWmLniV0Ap_pXDVDGi6NGR7ak",
+      "name": "MassDwell- Project Inquiry Form",
+      "mimeType": "application/vnd.google-apps.form",
+      "webViewLink": "https://docs.google.com/forms/d/1G7ADGtnTC5W2LJnUXmZWmLniV0Ap_pXDVDGi6NGR7ak/edit?usp=drivesdk",
+      "modifiedTime": "2025-10-10T16:27:58.457Z",
+      "size": "1840"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1QMU5FQZEKvj5u4npX4MVTPVDmFBjCukz",
+      "name": "MASSDWELL-CATALOGUE-PRICES-new-england.pdf",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "webViewLink": "https://drive.google.com/file/d/1QMU5FQZEKvj5u4npX4MVTPVDmFBjCukz/view?usp=drivesdk",
+      "modifiedTime": "2025-10-02T22:17:21.193Z"
+    },
+    {
+      "id": "1GjpJqmJArSEPzxPTkOCkQld9EA-qmGSh",
+      "name": "MASSDWELL-CATALOGUE-PRICES-new-england.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1GjpJqmJArSEPzxPTkOCkQld9EA-qmGSh/view?usp=drivesdk",
+      "modifiedTime": "2025-10-01T13:32:02.000Z",
+      "size": "6027793"
+    },
+    {
+      "id": "14IAsdwXKpLtF3D3V2AKnDFuI7QYFWWk8RPZVaZVGJE0",
+      "name": "Beacon Punch List",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/14IAsdwXKpLtF3D3V2AKnDFuI7QYFWWk8RPZVaZVGJE0/edit?usp=drivesdk",
+      "modifiedTime": "2025-09-30T00:24:28.667Z",
+      "size": "3415"
+    },
+    {
+      "id": "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI",
+      "name": "MassDwell",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI",
+      "modifiedTime": "2025-09-10T21:50:30.531Z"
+    },
+    {
+      "parents": [
+        "0AI7o-WyuyHRbUk9PVA"
+      ],
+      "id": "1kqYOPOE-QMRekMho5NCzihRC9WHw1-Zk",
+      "name": "MassDwell-Look Book 2025.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1kqYOPOE-QMRekMho5NCzihRC9WHw1-Zk/view?usp=drivesdk",
+      "modifiedTime": "2025-09-05T16:57:34.000Z",
+      "size": "17412950"
+    },
+    {
+      "id": "15Q26hIagiy5C4rAtehNiSOLMzprVwSuu",
+      "name": "72 School Woburn.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/15Q26hIagiy5C4rAtehNiSOLMzprVwSuu/view?usp=drivesdk",
+      "modifiedTime": "2025-08-23T17:22:32.652Z",
+      "size": "35719"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "18pt0cp2Fv6Sf3zgZv_GDS62rqpSCh4H-",
+      "name": "MASSDWELL-CATALOGUE-OK-compact.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/18pt0cp2Fv6Sf3zgZv_GDS62rqpSCh4H-/view?usp=drivesdk",
+      "modifiedTime": "2025-08-15T17:55:49.065Z",
+      "size": "3616606"
+    },
+    {
+      "parents": [
+        "0AI7o-WyuyHRbUk9PVA"
+      ],
+      "id": "1xZMqMSt8AbTrKVo-9E5Jw2d62NzHASMB",
+      "name": "MassDwell Brochure.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/1xZMqMSt8AbTrKVo-9E5Jw2d62NzHASMB/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2025-08-13T16:19:48.000Z",
+      "size": "87256"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8",
+      "name": "Contracts",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1fe8Kt1eHCeHL5FgXUhY1ztB4iy3PKYf8",
+      "modifiedTime": "2025-08-13T11:04:18.562Z"
+    },
+    {
+      "parents": [
+        "0AI7o-WyuyHRbUk9PVA"
+      ],
+      "id": "1BUTR_UCpAdpEuifIRrdz29aCuZC-ewQq",
+      "name": "Signature.jpg",
+      "mimeType": "image/jpeg",
+      "webViewLink": "https://drive.google.com/file/d/1BUTR_UCpAdpEuifIRrdz29aCuZC-ewQq/view?usp=drivesdk",
+      "modifiedTime": "2025-07-28T19:03:36.000Z",
+      "size": "18493"
+    },
+    {
+      "parents": [
+        "0AI7o-WyuyHRbUk9PVA"
+      ],
+      "id": "12QbSzsfCzOZWaINiuOqF7zvN77bi7RieU3pRxTbdqTk",
+      "name": "MassDwell- Project Inquiry Form (Responses)",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/12QbSzsfCzOZWaINiuOqF7zvN77bi7RieU3pRxTbdqTk/edit?usp=drivesdk",
+      "modifiedTime": "2025-07-28T14:13:30.238Z",
+      "size": "3913"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1aFzsxpaR4i7RUUFFWYOcD3YwIxu5NEfz",
+      "name": "MassDwell ADU Project Inquiry Form.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "webViewLink": "https://docs.google.com/document/d/1aFzsxpaR4i7RUUFFWYOcD3YwIxu5NEfz/edit?usp=drivesdk&ouid=101402102450522794070&rtpof=true&sd=true",
+      "modifiedTime": "2025-07-18T13:54:58.590Z",
+      "size": "372514"
+    },
+    {
+      "parents": [
+        "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0"
+      ],
+      "id": "1vBTDlQAWd9wA9_k_Lyhxqsv0jejliGCx",
+      "name": " MASSDWELL-CATALOGUE-OK-compact.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1vBTDlQAWd9wA9_k_Lyhxqsv0jejliGCx/view?usp=drivesdk",
+      "modifiedTime": "2025-07-18T13:46:20.431Z",
+      "size": "3616606"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0",
+      "name": "Sales",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1l9f3w52Q3YActepQvoqHmjdCFjLmxFh0",
+      "modifiedTime": "2025-07-18T13:44:56.732Z"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv",
+      "name": "Tiny Homes Competitive Quotes/Info",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv",
+      "modifiedTime": "2025-07-16T09:40:16.912Z"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "17pCrgxmW_F3BsJIWFZG80jyhO30NfqGs",
+      "name": "Invoice 1037.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/17pCrgxmW_F3BsJIWFZG80jyhO30NfqGs/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:45:09.000Z",
+      "size": "68114"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "1-_h_cQqpqgUpaNC5lgupYWHqnGOIiFTC",
+      "name": "148 Winona St, Peabody, MA 01960_20250516.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1-_h_cQqpqgUpaNC5lgupYWHqnGOIiFTC/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:41:44.000Z",
+      "size": "24448294"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "1ogWBFsjaC8t2qnWDi6pV1sqbU9OZ-EWk",
+      "name": "Garrett Greer Engineering Change Order - All Upgrades and Scope of Work Changes.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1ogWBFsjaC8t2qnWDi6pV1sqbU9OZ-EWk/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:41:19.000Z",
+      "size": "62613"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "1j1zqznhQNJnqLRseqkPoBoEBgFtsEzGL",
+      "name": "Proposal_1277806_Fri, 28 Mar 2025 21-22-05 GMT.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1j1zqznhQNJnqLRseqkPoBoEBgFtsEzGL/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:40:51.000Z",
+      "size": "2224111"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "1bKoV1_5orO6hHmGpB7e7yTnT816l1a8_",
+      "name": "2025 LOOK BOOK CATALOG Inclusions and Options.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1bKoV1_5orO6hHmGpB7e7yTnT816l1a8_/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:40:44.000Z",
+      "size": "7913124"
+    },
+    {
+      "parents": [
+        "1V0T749KI5lhjAgXG69DZ6W_ed4XOhJZv"
+      ],
+      "id": "1UeDvGhwX-UtgtVC8aVYGHg0Jr0slIxbU",
+      "name": "Garrett Greer MA Tiny Home Proposal V1.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1UeDvGhwX-UtgtVC8aVYGHg0Jr0slIxbU/view?usp=drivesdk",
+      "modifiedTime": "2025-07-15T21:40:41.000Z",
+      "size": "2155284"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1pWZSlI8I1HEeo6vFO8BuU8nfo4jl1mdpoI_md02DXa4",
+      "name": "MassDwell Costs",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1pWZSlI8I1HEeo6vFO8BuU8nfo4jl1mdpoI_md02DXa4/edit?usp=drivesdk",
+      "modifiedTime": "2025-07-11T19:46:03.809Z",
+      "size": "1024"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1hXtZudELUZjvRi4RrXrH4InD5LWxEpCZ",
+      "name": "ART - Jun/25 Target Audience",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "webViewLink": "https://drive.google.com/file/d/1hXtZudELUZjvRi4RrXrH4InD5LWxEpCZ/view?usp=drivesdk",
+      "modifiedTime": "2025-07-11T11:24:29.304Z"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1x7rIgu5bDoV7nHKtmIE7K73gxORXZ1gJ",
+      "name": "MASSDWELL-CATALOGUE-OK (1).pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1x7rIgu5bDoV7nHKtmIE7K73gxORXZ1gJ/view?usp=drivesdk",
+      "modifiedTime": "2025-07-08T23:10:20.000Z",
+      "size": "828758617"
+    },
+    {
+      "parents": [
+        "0AI7o-WyuyHRbUk9PVA"
+      ],
+      "id": "14UpKBa_0EouWpEu-XxMch98eeM1_YeMh",
+      "name": "MassDwell",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "webViewLink": "https://drive.google.com/file/d/14UpKBa_0EouWpEu-XxMch98eeM1_YeMh/view?usp=drivesdk",
+      "modifiedTime": "2025-07-08T22:32:58.752Z"
+    },
+    {
+      "parents": [
+        "1bffEjVsZgl7fZfqp2PaVGr1AWte3GJ6S"
+      ],
+      "id": "16nhQ2RmN1KQRcqh3hMb1Vv1dDX07GJBu",
+      "name": "FEED-AUDIENCE-04-MASSDWELL-03.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/16nhQ2RmN1KQRcqh3hMb1Vv1dDX07GJBu/view?usp=drivesdk",
+      "modifiedTime": "2025-07-07T20:28:31.000Z",
+      "size": "1398961"
+    },
+    {
+      "parents": [
+        "1hLkmjcNv-sf4ZDA33FSF8tZRUqaHq-K0"
+      ],
+      "id": "1e3PE8ec2QemWcfotJkvcLchdqFfMewlC",
+      "name": "STORIES",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1e3PE8ec2QemWcfotJkvcLchdqFfMewlC",
+      "modifiedTime": "2025-06-27T17:30:18.588Z"
+    },
+    {
+      "parents": [
+        "1466H7I_u2AQi_mFDdYMYFLezTKDByMdR"
+      ],
+      "id": "1bffEjVsZgl7fZfqp2PaVGr1AWte3GJ6S",
+      "name": "FEED",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1bffEjVsZgl7fZfqp2PaVGr1AWte3GJ6S",
+      "modifiedTime": "2025-06-27T17:29:34.423Z"
+    },
+    {
+      "parents": [
+        "1fLcyHlkZuWu40zy0eVY9UVKVSDmLd1zZ"
+      ],
+      "id": "1AeNUJMGIXXsT__3X-4zuVWVW5aPZv4aR",
+      "name": "FEED",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1AeNUJMGIXXsT__3X-4zuVWVW5aPZv4aR",
+      "modifiedTime": "2025-06-27T17:28:51.126Z"
+    },
+    {
+      "parents": [
+        "1sfDtpkXarx5iM0ntOMIJsDjxhtpxebfD"
+      ],
+      "id": "1kJ-IqJ24xmzCkcDLon2HlNWGJ2jad791",
+      "name": "FEED",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1kJ-IqJ24xmzCkcDLon2HlNWGJ2jad791",
+      "modifiedTime": "2025-06-27T17:26:56.552Z"
+    },
+    {
+      "parents": [
+        "1e3PE8ec2QemWcfotJkvcLchdqFfMewlC"
+      ],
+      "id": "1l5eqW3lZMEHWUveBYST7f4D_OhsASsV-",
+      "name": "STORIES-AUDIENCE-05-MASSDWELL-01-1.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1l5eqW3lZMEHWUveBYST7f4D_OhsASsV-/view?usp=drivesdk",
+      "modifiedTime": "2025-06-27T12:37:53.000Z",
+      "size": "2034179"
+    },
+    {
+      "parents": [
+        "1bffEjVsZgl7fZfqp2PaVGr1AWte3GJ6S"
+      ],
+      "id": "1BKng6nxW87p2yiIAb-BVGM_kkAmyset0",
+      "name": "FEED-AUDIENCE-04-MASSDWELL-02.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1BKng6nxW87p2yiIAb-BVGM_kkAmyset0/view?usp=drivesdk",
+      "modifiedTime": "2025-06-27T12:27:35.000Z",
+      "size": "1828127"
+    },
+    {
+      "parents": [
+        "1bffEjVsZgl7fZfqp2PaVGr1AWte3GJ6S"
+      ],
+      "id": "1qkhu_iMhcBqS8p1BNF9zY-eeZKWfNI4K",
+      "name": "FEED-AUDIENCE-04-MASSDWELL-01-2.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1qkhu_iMhcBqS8p1BNF9zY-eeZKWfNI4K/view?usp=drivesdk",
+      "modifiedTime": "2025-06-27T12:24:25.000Z",
+      "size": "1440137"
+    },
+    {
+      "parents": [
+        "1bffEjVsZgl7fZfqp2PaVGr1AWte3GJ6S"
+      ],
+      "id": "1Cuex1pHqF0m8JE8NPB5eaHTX6xjvQ3Dk",
+      "name": "FEED-AUDIENCE-04-MASSDWELL-01-1.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1Cuex1pHqF0m8JE8NPB5eaHTX6xjvQ3Dk/view?usp=drivesdk",
+      "modifiedTime": "2025-06-27T12:24:15.000Z",
+      "size": "1679540"
+    },
+    {
+      "parents": [
+        "1AeNUJMGIXXsT__3X-4zuVWVW5aPZv4aR"
+      ],
+      "id": "1x7UIWxkYGBXqYe9DQFDlXVA3VoWrL4ly",
+      "name": "FEED-AUDIENCE-03-MASSDWELL-01.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1x7UIWxkYGBXqYe9DQFDlXVA3VoWrL4ly/view?usp=drivesdk",
+      "modifiedTime": "2025-06-26T13:40:22.000Z",
+      "size": "1793057"
+    },
+    {
+      "parents": [
+        "1kJ-IqJ24xmzCkcDLon2HlNWGJ2jad791"
+      ],
+      "id": "1fFWsOZ0hzbpglPVocFsSw_F5nvimWHnW",
+      "name": "FEED-AUDIENCE-02-MASSDWELL-02.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1fFWsOZ0hzbpglPVocFsSw_F5nvimWHnW/view?usp=drivesdk",
+      "modifiedTime": "2025-06-26T13:21:43.000Z",
+      "size": "1597345"
+    },
+    {
+      "parents": [
+        "1kJ-IqJ24xmzCkcDLon2HlNWGJ2jad791"
+      ],
+      "id": "1MpwW1I_FF1gguzwQk6E5pLEVHADB3LFn",
+      "name": "FEED-AUDIENCE-02-MASSDWELL-01.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1MpwW1I_FF1gguzwQk6E5pLEVHADB3LFn/view?usp=drivesdk",
+      "modifiedTime": "2025-06-26T13:17:08.000Z",
+      "size": "1832543"
+    },
+    {
+      "parents": [
+        "1W9ObqMOTI5aG35JEcFDiulcWo_Ne3vLb"
+      ],
+      "id": "1wSU-OkzcCeUswQPZI9zq4bi6CoH5ipYY",
+      "name": "FEED-AUDIENCE-01-MASSDWELL-03.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1wSU-OkzcCeUswQPZI9zq4bi6CoH5ipYY/view?usp=drivesdk",
+      "modifiedTime": "2025-06-25T14:30:23.737Z",
+      "size": "1424835"
+    },
+    {
+      "parents": [
+        "1W9ObqMOTI5aG35JEcFDiulcWo_Ne3vLb"
+      ],
+      "id": "1brLKZ-11n3U7J0v0P1LrAbyn_smPpf-Z",
+      "name": "FEED-AUDIENCE-01-MASSDWELL-02.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1brLKZ-11n3U7J0v0P1LrAbyn_smPpf-Z/view?usp=drivesdk",
+      "modifiedTime": "2025-06-25T14:30:19.784Z",
+      "size": "1686303"
+    },
+    {
+      "parents": [
+        "14K8c6jrH0VEVDJH37PvF4DEDTUoPKWk2"
+      ],
+      "id": "1rErFm0JXozSt4sQ8VSPO0QZPb8sG4vjC",
+      "name": "STORIES-AUDIENCE-01-MASSDWELL-02.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1rErFm0JXozSt4sQ8VSPO0QZPb8sG4vjC/view?usp=drivesdk",
+      "modifiedTime": "2025-06-25T14:29:56.210Z",
+      "size": "2443921"
+    },
+    {
+      "parents": [
+        "14K8c6jrH0VEVDJH37PvF4DEDTUoPKWk2"
+      ],
+      "id": "1ejdBWMAT9PwJ2MZullHdAAWghtMQsPUQ",
+      "name": "STORIES-AUDIENCE-01-MASSDWELL-01.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1ejdBWMAT9PwJ2MZullHdAAWghtMQsPUQ/view?usp=drivesdk",
+      "modifiedTime": "2025-06-25T14:28:56.485Z",
+      "size": "2606678"
+    },
+    {
+      "id": "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd",
+      "name": "ART - Jun/25 Target Audience",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd",
+      "modifiedTime": "2025-06-25T14:26:01.924Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1hLkmjcNv-sf4ZDA33FSF8tZRUqaHq-K0",
+      "name": "AUDIENCE 05 - Owner Backyard",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1hLkmjcNv-sf4ZDA33FSF8tZRUqaHq-K0",
+      "modifiedTime": "2025-06-25T14:25:00.174Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1466H7I_u2AQi_mFDdYMYFLezTKDByMdR",
+      "name": "AUDIENCE 04 - Income/Rental",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1466H7I_u2AQi_mFDdYMYFLezTKDByMdR",
+      "modifiedTime": "2025-06-25T14:24:35.110Z"
+    },
+    {
+      "parents": [
+        "1hJJnK-iLv3Hqmgx0e5gAHpDU75jjr-1x"
+      ],
+      "id": "1fLcyHlkZuWu40zy0eVY9UVKVSDmLd1zZ",
+      "name": "HOME OFFICE",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1fLcyHlkZuWu40zy0eVY9UVKVSDmLd1zZ",
+      "modifiedTime": "2025-06-25T14:23:36.755Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1hJJnK-iLv3Hqmgx0e5gAHpDU75jjr-1x",
+      "name": "AUDIENCE 03 - Owner Privacy",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1hJJnK-iLv3Hqmgx0e5gAHpDU75jjr-1x",
+      "modifiedTime": "2025-06-25T14:23:21.400Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1sfDtpkXarx5iM0ntOMIJsDjxhtpxebfD",
+      "name": "AUDIENCE 02 - Legal Advantages",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1sfDtpkXarx5iM0ntOMIJsDjxhtpxebfD",
+      "modifiedTime": "2025-06-25T14:19:14.274Z"
+    },
+    {
+      "parents": [
+        "1YZW-O-Voy-TsTsO8XE_qQXZoB96d2xpd"
+      ],
+      "id": "1juFCrqjzw7DYfkIkJlvgMezbRNfq-RnY",
+      "name": "AUDIENCE 01 - Family Backyard",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1juFCrqjzw7DYfkIkJlvgMezbRNfq-RnY",
+      "modifiedTime": "2025-06-25T14:15:22.476Z"
+    },
+    {
+      "parents": [
+        "1W9ObqMOTI5aG35JEcFDiulcWo_Ne3vLb"
+      ],
+      "id": "1Bw_ge9fPFDhyaI4GfvFo8jLxWH1tEDXI",
+      "name": "MASSDWELL-public01-creative01.png",
+      "mimeType": "image/png",
+      "webViewLink": "https://drive.google.com/file/d/1Bw_ge9fPFDhyaI4GfvFo8jLxWH1tEDXI/view?usp=drivesdk",
+      "modifiedTime": "2025-06-25T13:56:34.000Z",
+      "size": "1751490"
+    },
+    {
+      "parents": [
+        "1juFCrqjzw7DYfkIkJlvgMezbRNfq-RnY"
+      ],
+      "id": "14K8c6jrH0VEVDJH37PvF4DEDTUoPKWk2",
+      "name": "STORIES",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/14K8c6jrH0VEVDJH37PvF4DEDTUoPKWk2",
+      "modifiedTime": "2025-06-25T13:23:38.194Z"
+    },
+    {
+      "parents": [
+        "1juFCrqjzw7DYfkIkJlvgMezbRNfq-RnY"
+      ],
+      "id": "1W9ObqMOTI5aG35JEcFDiulcWo_Ne3vLb",
+      "name": "FEED",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1W9ObqMOTI5aG35JEcFDiulcWo_Ne3vLb",
+      "modifiedTime": "2025-06-25T13:23:38.194Z"
+    },
+    {
+      "parents": [
+        "1VfV8QirpG9qgvDlqvUNSXAofo3PuBlej"
+      ],
+      "id": "1CHFHR4JqQdCufJDMRYZ0GTPIgUuYXWxa",
+      "name": "Mass Dwell Brand Identity Manual.pdf",
+      "mimeType": "application/pdf",
+      "webViewLink": "https://drive.google.com/file/d/1CHFHR4JqQdCufJDMRYZ0GTPIgUuYXWxa/view?usp=drivesdk",
+      "modifiedTime": "2025-05-29T12:45:18.950Z",
+      "size": "1714231"
+    },
+    {
+      "parents": [
+        "1x-pVygOPd7Um7dyGmy9GXtap8HuSWYHI"
+      ],
+      "id": "1WAUEg4htITTXaDaM7cn6Sv0TAqgi-E4y",
+      "name": "# LOGOS",
+      "mimeType": "application/vnd.google-apps.shortcut",
+      "webViewLink": "https://drive.google.com/file/d/1WAUEg4htITTXaDaM7cn6Sv0TAqgi-E4y/view?usp=drivesdk",
+      "modifiedTime": "2025-05-20T14:06:04.330Z"
+    },
+    {
+      "parents": [
+        "1mHGYF2DNCDS5A-EhiY5jjYXTKhozQEx4"
+      ],
+      "id": "11--EW65qPIcu0TJziXhw2XhjeypemClD",
+      "name": "EPS - AI",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/11--EW65qPIcu0TJziXhw2XhjeypemClD",
+      "modifiedTime": "2025-05-20T13:52:49.880Z"
+    },
+    {
+      "parents": [
+        "1cJsuyOQ2IghX6xGma6VYIbn3vRWi1CnX"
+      ],
+      "id": "1OeJmwtCnp4WZaier3EWNuPw6PP6gph97",
+      "name": "JPG",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1OeJmwtCnp4WZaier3EWNuPw6PP6gph97",
+      "modifiedTime": "2025-05-20T13:52:36.693Z"
+    },
+    {
+      "parents": [
+        "1BFPIQUouraGekqnmnHBVwDaIJ_tGEQ_e"
+      ],
+      "id": "1XWBZ-XSrMfvauMoHjjMvQtn-c3CBt6r-",
+      "name": "JPG",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1XWBZ-XSrMfvauMoHjjMvQtn-c3CBt6r-",
+      "modifiedTime": "2025-05-20T13:52:36.693Z"
+    },
+    {
+      "parents": [
+        "1qR5DUj9utWComKAJ2AiPtC8CHQhgDpi8"
+      ],
+      "id": "1BFPIQUouraGekqnmnHBVwDaIJ_tGEQ_e",
+      "name": "MEDIUM QUALITY",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1BFPIQUouraGekqnmnHBVwDaIJ_tGEQ_e",
+      "modifiedTime": "2025-05-20T13:52:35.096Z"
+    },
+    {
+      "parents": [
+        "1ImkU1csIvp-fjRBNVONWUOwkdJMWq3aS"
+      ],
+      "id": "17qO1u2kR1bYGsCU0UNHcZ_t6hvDBDX2S",
+      "name": "JPG",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/17qO1u2kR1bYGsCU0UNHcZ_t6hvDBDX2S",
+      "modifiedTime": "2025-05-20T13:52:35.096Z"
+    },
+    {
+      "parents": [
+        "1qR5DUj9utWComKAJ2AiPtC8CHQhgDpi8"
+      ],
+      "id": "1cJsuyOQ2IghX6xGma6VYIbn3vRWi1CnX",
+      "name": "HIGH QUALITY",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1cJsuyOQ2IghX6xGma6VYIbn3vRWi1CnX",
+      "modifiedTime": "2025-05-20T13:52:35.096Z"
+    },
+    {
+      "parents": [
+        "11--EW65qPIcu0TJziXhw2XhjeypemClD"
+      ],
+      "id": "1afsgS8LxrRQbZU3Fof3gfg4G7zknuit-",
+      "name": "AI",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1afsgS8LxrRQbZU3Fof3gfg4G7zknuit-",
+      "modifiedTime": "2025-05-20T13:52:35.096Z"
+    },
+    {
+      "parents": [
+        "1mHGYF2DNCDS5A-EhiY5jjYXTKhozQEx4"
+      ],
+      "id": "1ImkU1csIvp-fjRBNVONWUOwkdJMWq3aS",
+      "name": "LOGOMARK",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1ImkU1csIvp-fjRBNVONWUOwkdJMWq3aS",
+      "modifiedTime": "2025-05-20T13:52:33.812Z"
+    },
+    {
+      "parents": [
+        "1mHGYF2DNCDS5A-EhiY5jjYXTKhozQEx4"
+      ],
+      "id": "1qR5DUj9utWComKAJ2AiPtC8CHQhgDpi8",
+      "name": "LOGOTYPE",
+      "mimeType": "application/vnd.google-apps.folder",
+      "webViewLink": "https://drive.google.com/drive/folders/1qR5DUj9utWComKAJ2AiPtC8CHQhgDpi8",
+      "modifiedTime": "2025-05-20T13:52:33.812Z"
+    },
+    {
+      "parents": [
+        "1afsgS8LxrRQbZU3Fof3gfg4G7zknuit-"
+      ],
+      "id": "1Ish3aVk3Vr5nJglOlrq2yJHzuNi3ycXC",
+      "name": "ai-LOGO-MassDwell-black.ai",
+      "mimeType": "application/postscript",
+      "webViewLink": "https://drive.google.com/file/d/1Ish3aVk3Vr5nJglOlrq2yJHzuNi3ycXC/view?usp=drivesdk",
+      "modifiedTime": "2025-05-20T13:47:24.000Z",
+      "size": "248546"
+    },
+    {
+      "parents": [
+        "17qO1u2kR1bYGsCU0UNHcZ_t6hvDBDX2S"
+      ],
+      "id": "1tPEI1K2SI0oiH2UCAf-s_39mQqhTaKYq",
+      "name": "LOGOMARK-MassDwell-color.jpg",
+      "mimeType": "image/jpeg",
+      "webViewLink": "https://drive.google.com/file/d/1tPEI1K2SI0oiH2UCAf-s_39mQqhTaKYq/view?usp=drivesdk",
+      "modifiedTime": "2025-05-20T13:44:39.000Z",
+      "size": "66599"
+    },
+    {
+      "parents": [
+        "1OeJmwtCnp4WZaier3EWNuPw6PP6gph97"
+      ],
+      "id": "1ZQyoipag_VghmZ0ciN713OaLZzMUQ_em",
+      "name": "LOGOTYPE-HIGH-MassDwell-white.jpg",
+      "mimeType": "image/jpeg",
+      "webViewLink": "https://drive.google.com/file/d/1ZQyoipag_VghmZ0ciN713OaLZzMUQ_em/view?usp=drivesdk",
+      "modifiedTime": "2025-05-20T13:36:48.000Z",
+      "size": "300286"
+    },
+    {
+      "parents": [
+        "1OeJmwtCnp4WZaier3EWNuPw6PP6gph97"
+      ],
+      "id": "1Y9ZAeBvP6PR-EIuhneIcL4Qe2PahMiwI",
+      "name": "LOGOTYPE-HIGH-MassDwell-color.jpg",
+      "mimeType": "image/jpeg",
+      "webViewLink": "https://drive.google.com/file/d/1Y9ZAeBvP6PR-EIuhneIcL4Qe2PahMiwI/view?usp=drivesdk",
+      "modifiedTime": "2025-05-20T13:36:30.000Z",
+      "size": "285303"
+    },
+    {
+      "parents": [
+        "1OeJmwtCnp4WZaier3EWNuPw6PP6gph97"
+      ],
+      "id": "1OYFHDCPkriZgizei-XaxZXA-SDlWWrrQ",
+      "name": "LOGOTYPE-HIGH-MassDwell-black.jpg",
+      "mimeType": "image/jpeg",
+      "webViewLink": "https://drive.google.com/file/d/1OYFHDCPkriZgizei-XaxZXA-SDlWWrrQ/view?usp=drivesdk",
+      "modifiedTime": "2025-05-20T13:36:16.000Z",
+      "size": "185579"
+    },
+    {
+      "parents": [
+        "1XWBZ-XSrMfvauMoHjjMvQtn-c3CBt6r-"
+      ],
+      "id": "1rXSoy8s6PrRDLW0ntyoD5DALRvE7k3ZO",
+      "name": "LOGOTYPE-MEDIUM-MassDwell-color.jpg",
+      "mimeType": "image/jpeg",
+      "webViewLink": "https://drive.google.com/file/d/1rXSoy8s6PrRDLW0ntyoD5DALRvE7k3ZO/view?usp=drivesdk",
+      "modifiedTime": "2025-05-20T13:22:58.000Z",
+      "size": "63775"
+    },
+    {
+      "parents": [
+        "1XWBZ-XSrMfvauMoHjjMvQtn-c3CBt6r-"
+      ],
+      "id": "1Ye7jtwfUBzpEpU0JYM5obQalynsXri1W",
+      "name": "LOGOTYPE-MEDIUM-MassDwell-white.jpg",
+      "mimeType": "image/jpeg",
+      "webViewLink": "https://drive.google.com/file/d/1Ye7jtwfUBzpEpU0JYM5obQalynsXri1W/view?usp=drivesdk",
+      "modifiedTime": "2025-05-20T13:22:44.000Z",
+      "size": "63099"
+    }
+  ]
+}

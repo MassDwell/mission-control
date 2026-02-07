@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "description": "Alpine Property Group - Facts & Context",
+    "last_updated": "2026-02-02",
+    "version": "1.0"
+  },
+  "company": {
+    "legal_name": "Alpine Property Group LLC",
+    "dba": null,
+    "founded": 2016,
+    "website": "alpinepropertygroupllc.com",
+    "role": "Foundation entity - real estate investment & development"
+  },
+  "leadership": {
+    "principal": "Steve Vettori",
+    "title": "Principal",
+    "license": "Real Estate Broker/Sales Agent (MA)"
+  },
+  "focus": {
+    "primary": "Multi-family and mixed-use properties",
+    "secondary": "Ground-up development",
+    "market": "Greater Boston",
+    "asset_types": ["Multi-family", "Mixed-use", "Townhomes", "Condominiums"]
+  },
+  "investment_strategy": {
+    "approach": [
+      "Buy below replacement cost",
+      "Wise leverage use",
+      "Often largest investor in deals",
+      "Rigorous underwriting",
+      "Off-market deals in familiar markets"
+    ],
+    "development_style": "Immediate post-closure starts for quick progress"
+  },
+  "portfolio": {
+    "properties": [
+      {"name": "1114 Beacon", "address": null, "type": null, "status": null},
+      {"name": "Cedar Place", "address": null, "type": null, "status": null},
+      {"name": "101 Condor", "address": null, "type": null, "status": null},
+      {"name": "11 Taft Hill Terrace", "address": null, "type": null, "status": null},
+      {"name": "41 Chesley Road", "address": null, "type": null, "status": null},
+      {"name": "32 Carol Road", "address": null, "type": null, "status": null},
+      {"name": "705 Hammond", "address": null, "type": null, "status": null},
+      {"name": "5 Bellflower Street", "address": null, "type": null, "status": null},
+      {"name": "3 Bellflower Street", "address": null, "type": null, "status": null},
+      {"name": "55 Derby Street", "address": null, "type": null, "status": null},
+      {"name": "19 Dunes View Road", "address": null, "type": null, "status": null},
+      {"name": "82 Rossmore Road", "address": null, "type": null, "status": null}
+    ],
+    "total_units": null,
+    "total_sqft": null,
+    "aum": null
+  },
+  "financials": {
+    "typical_deal_size": null,
+    "preferred_leverage": null,
+    "target_returns": null,
+    "capital_sources": []
+  },
+  "key_contacts": {
+    "attorneys": [],
+    "accountants": [],
+    "lenders": [],
+    "brokers": [],
+    "contractors": []
+  },
+  "open_questions": [
+    "Full addresses for portfolio properties?",
+    "Current status of each property (owned, sold, in development)?",
+    "Property types and unit counts?",
+    "Key vendor and partner relationships?",
+    "Current AUM?",
+    "Active deals in pipeline?"
+  ]
+}

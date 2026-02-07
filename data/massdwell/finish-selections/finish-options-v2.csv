@@ -1,0 +1,69 @@
+Category,Option Name,Brand,Color/Style,Is Upgrade
+Roof Shingles,Mission Brown,GAF Timberline HDZ,Brown,No
+Roof Shingles,Charcoal,GAF Timberline HDZ,Gray,No
+Roof Shingles,Weathered Wood,GAF Timberline HDZ,Brown/Gray,No
+Roof Shingles,Slate,GAF Timberline HDZ,Gray,No
+Roof Shingles,Shakewood,GAF Timberline HDZ,Brown,No
+Roof Shingles,Pewter Gray,GAF Timberline HDZ,Gray,No
+Siding Type,Horizontal Lap,James Hardie,Fiber Cement,No
+Siding Type,Board & Batten,James Hardie,Fiber Cement,No
+Siding Color,Arctic White,James Hardie,White,No
+Siding Color,Iron Gray,James Hardie,Gray,No
+Siding Color,Evening Blue,James Hardie,Blue,No
+Flooring,Hermosa,Emser Emcore Oxford,Light Warm Wood,No
+Flooring,Brea,Emser Emcore Oxford,Medium Brown,No
+Flooring,Ojai,Emser Emcore Oxford,Dark Weathered,No
+Flooring,Barstow,Emser Emcore Windsor,Light Gray,No
+Flooring,Solvang,Emser Emcore Windsor,Dark Brown,No
+Flooring,Malibu,Emser Emcore Windsor,Medium Gray/Brown,No
+Interior Doors,Panel + Panel Bifold,Standard,White 6-Panel,No
+Interior Doors,Panel Shaker + Shaker Bifold,Standard,White Shaker,No
+Door Hardware,Bright Chrome,Schlage Latitude,Chrome Lever,No
+Door Hardware,Matte Black,Schlage Latitude,Black Lever,No
+Door Hardware,Satin Nickel,Schlage Latitude,Nickel Lever,No
+Wall Color Standard,Pure White,Sherwin Williams,Bright White,No
+Wall Color Standard,Greek Villa,Sherwin Williams,Warm Cream,No
+Wall Color Standard,Accessible Beige,Sherwin Williams,Warm Beige,No
+Wall Color Standard,Agreeable Gray,Sherwin Williams,Warm Gray,No
+Wall Color Accent,Denim,Sherwin Williams,Navy Blue,Yes
+Wall Color Accent,First Star,Sherwin Williams,Soft White,Yes
+Wall Color Accent,Evergreen Fog,Sherwin Williams,Sage Green,Yes
+Wall Color Accent,Sea Salt,Sherwin Williams,Coastal Blue/Green,Yes
+Kitchen Cabinets,White Shaker,Standard,White,No
+Kitchen Cabinets,Gray Shaker,Standard,Gray,No
+Cabinet Hardware,Brushed Nickel Bar Pull,Liberty,Nickel,No
+Cabinet Hardware,Matte Black Bar Pull,Liberty,Black,No
+Cabinet Hardware,Oil Rubbed Bronze,Liberty,Bronze,No
+Countertops,Frost White Quartz,MSI,White,No
+Countertops,Calacatta Laza Quartz,MSI,White/Gray Veining,No
+Countertops,Gray Lagoon Quartz,MSI,Gray,No
+Countertops,Midnight Majesty Quartz,MSI,Dark Gray/Black,No
+Countertops,Arctic White Laminate,Wilsonart,White Budget,No
+Kitchen Sink,Stainless Single Bowl,Kraus,Stainless Steel,No
+Kitchen Sink,Stainless Double Bowl,Kraus,Stainless Steel,No
+Kitchen Sink,White Composite Single,Kraus,White,No
+Kitchen Faucet,Brushed Nickel Pull-Down,Moen,Nickel,No
+Kitchen Faucet,Matte Black Pull-Down,Moen,Black,No
+Kitchen Faucet,Chrome Pull-Down,Moen,Chrome,No
+Backsplash Tile,White Subway 3x6,MSI,White Ceramic,No
+Backsplash Tile,White Herringbone,MSI,White Pattern,No
+Backsplash Tile,Gray Subway 3x6,MSI,Gray Ceramic,No
+Bathroom Tile,White Subway 3x6,MSI,White Ceramic,No
+Bathroom Tile,Large Format White 12x24,MSI,White Porcelain,No
+Bathroom Tile,Gray Hexagon Mosaic,MSI,Gray,No
+Bathroom Vanity,24" White Shaker,Glacier Bay,White Single,No
+Bathroom Vanity,30" White Shaker,Glacier Bay,White Single,No
+Bathroom Vanity,36" Gray Shaker,Glacier Bay,Gray Single,No
+Bathroom Vanity,48" White Double,Glacier Bay,White Double,Yes
+Bathroom Faucet,Brushed Nickel Single Handle,Moen,Nickel,No
+Bathroom Faucet,Matte Black Single Handle,Moen,Black,No
+Bathroom Faucet,Chrome Single Handle,Moen,Chrome,No
+Bathroom Faucet,Brushed Nickel Widespread,Moen,Nickel 2-Handle,Yes
+Bathroom Faucet,Matte Black Widespread,Moen,Black 2-Handle,Yes
+Exterior Lighting,Modern Cylinder,Progress Lighting,Black,No
+Exterior Lighting,Traditional Lantern,Progress Lighting,Black,No
+Exterior Lighting,Farmhouse Gooseneck,Progress Lighting,Black,No
+Exterior Lighting,Classic Coach Light,Progress Lighting,Black,No
+Fixtures,Brushed Nickel Package,Standard,Nickel throughout,No
+Fixtures,Matte Black Package,Standard,Black throughout,No
+Fixtures,Chrome Package,Standard,Chrome throughout,No

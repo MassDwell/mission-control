@@ -1,0 +1,60 @@
+{
+  "checked": "2026-02-03T18:24:39.416Z",
+  "total": 10,
+  "now": [],
+  "soon": [],
+  "later": [],
+  "stop": [
+    {
+      "email": "kimberlyblack36@gmail.com",
+      "category": "STOP",
+      "body": "Stop"
+    },
+    {
+      "email": "cavitt_bessie@yahoo.com",
+      "category": "STOP",
+      "body": "Later"
+    },
+    {
+      "email": "arachnedfp@gmail.com",
+      "category": "STOP",
+      "body": "Stop"
+    },
+    {
+      "email": "betsyhinkle@gmail.com",
+      "category": "STOP",
+      "body": "We had a virtual meeting set up that no one came to. We aren’t interested"
+    },
+    {
+      "email": "cathymcintyre36@gmail.com",
+      "category": "STOP",
+      "body": "Stop"
+    },
+    {
+      "email": "cdonnad@gmail.com",
+      "category": "STOP",
+      "body": "Unsubscribe"
+    },
+    {
+      "email": "gomes5@me.com",
+      "category": "STOP",
+      "body": "Call Me! Phillip Gomes"
+    },
+    {
+      "email": "fjburke2@gmail.com",
+      "category": "STOP",
+      "body": "Later. Please send product link"
+    },
+    {
+      "email": "gdog477@yahoo.com",
+      "category": "STOP",
+      "body": "stop"
+    },
+    {
+      "email": "cobcarlson@gmail.com",
+      "category": "STOP",
+      "body": "STOP"
+    }
+  ],
+  "unknown": []
+}

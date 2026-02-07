@@ -1,0 +1,44 @@
+{
+  "account": {
+    "name": "Clawson Paper Trading",
+    "starting_capital": 1000,
+    "current_cash": 951.55,
+    "created": "2026-02-02",
+    "status": "paused - waiting for IBKR approval"
+  },
+  "positions": [],
+  "trades": [
+    {
+      "date": "2026-02-03",
+      "symbol": "PLTR",
+      "action": "BUY",
+      "shares": 5,
+      "price": 164.51,
+      "total": 822.55,
+      "time": "09:41:00",
+      "reason": "Momentum play - strong earnings, 11% pre-market gap"
+    },
+    {
+      "date": "2026-02-03",
+      "symbol": "PLTR",
+      "action": "SELL",
+      "shares": 5,
+      "price": 154.82,
+      "total": 774.10,
+      "time": "10:07:00",
+      "reason": "Stop loss missed - manual exit to limit losses"
+    }
+  ],
+  "daily_pnl": [
+    {
+      "date": "2026-02-03",
+      "realized_pnl": -48.45,
+      "trades": 2,
+      "notes": "PLTR earnings play reversed hard. Stop loss not automated - lesson learned."
+    }
+  ],
+  "lessons": [
+    "2026-02-03: Earnings momentum plays can reverse fast. Need automated stop loss execution.",
+    "2026-02-03: Gap-up entries risky - consider waiting for first pullback confirmation."
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "syncedAt": "2026-02-05T14:20:22.514Z",
+  "pipelines": [
+    {
+      "id": 11301551,
+      "name": "Pipeline",
+      "sort": 1,
+      "is_main": true,
+      "is_unsorted_on": true,
+      "is_archive": false,
+      "account_id": 34697891,
+      "_links": {
+        "self": {
+          "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551"
+        }
+      },
+      "_embedded": {
+        "statuses": [
+          {
+            "id": 86738623,
+            "name": "Incoming leads",
+            "sort": 10,
+            "is_editable": false,
+            "pipeline_id": 11301551,
+            "color": "#c1c1c1",
+            "type": 1,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/86738623"
+              }
+            }
+          },
+          {
+            "id": 88661695,
+            "name": "Incoming Leads",
+            "sort": 20,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#99ccff",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/88661695"
+              }
+            }
+          },
+          {
+            "id": 94100935,
+            "name": "Welcome e-mail sent",
+            "sort": 30,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#ccc8f9",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/94100935"
+              }
+            }
+          },
+          {
+            "id": 86738631,
+            "name": "Follow-up 1",
+            "sort": 40,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#c1e0ff",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/86738631"
+              }
+            }
+          },
+          {
+            "id": 86738627,
+            "name": "recycle follow-up",
+            "sort": 50,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#ebffb1",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/86738627"
+              }
+            }
+          },
+          {
+            "id": 86738635,
+            "name": "conversation started",
+            "sort": 60,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#ffeab2",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/86738635"
+              }
+            }
+          },
+          {
+            "id": 89929427,
+            "name": "Site feasibility booked",
+            "sort": 70,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#ffce5a",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/89929427"
+              }
+            }
+          },
+          {
+            "id": 86738823,
+            "name": "site feasibility completed",
+            "sort": 80,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#deff81",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/86738823"
+              }
+            }
+          },
+          {
+            "id": 88076707,
+            "name": "Negotiation/Decision Making",
+            "sort": 90,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#ccc8f9",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/88076707"
+              }
+            }
+          },
+          {
+            "id": 89929311,
+            "name": "Contract Signed/Deposit paid",
+            "sort": 100,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#87f2c0",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/89929311"
+              }
+            }
+          },
+          {
+            "id": 93011343,
+            "name": "FUTURE CONTACT",
+            "sort": 110,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#99ccff",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/93011343"
+              }
+            }
+          },
+          {
+            "id": 97920535,
+            "name": "recap email's",
+            "sort": 120,
+            "is_editable": true,
+            "pipeline_id": 11301551,
+            "color": "#99ccff",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/97920535"
+              }
+            }
+          },
+          {
+            "id": 142,
+            "name": "Closed - won",
+            "sort": 10000,
+            "is_editable": false,
+            "pipeline_id": 11301551,
+            "color": "#CCFF66",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/142"
+              }
+            }
+          },
+          {
+            "id": 143,
+            "name": "Closed - lost",
+            "sort": 11000,
+            "is_editable": false,
+            "pipeline_id": 11301551,
+            "color": "#D5D8DB",
+            "type": 0,
+            "account_id": 34697891,
+            "_links": {
+              "self": {
+                "href": "https://massdwellcrm.kommo.com/api/v4/leads/pipelines/11301551/statuses/143"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

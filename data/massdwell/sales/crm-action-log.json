@@ -1,0 +1,3603 @@
+{
+  "initialized": "2026-02-03T11:47:00-05:00",
+  "rules_version": "1.0",
+  "actions": [
+    {
+      "timestamp": "2026-02-03T16:49:31.150Z",
+      "action": "email_sent",
+      "lead_id": 18701410,
+      "lead_name": "jesse",
+      "email": "tpptoday@yahoo.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:32.996Z",
+      "action": "email_sent",
+      "lead_id": 18727954,
+      "lead_name": "Ray",
+      "email": "Raymondbertoni@aol.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:34.805Z",
+      "action": "email_sent",
+      "lead_id": 18739580,
+      "lead_name": "there",
+      "email": "jjlookin69@gmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:36.654Z",
+      "action": "email_sent",
+      "lead_id": 18776086,
+      "lead_name": "Christopher",
+      "email": "a1jferrell@yahoo.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:38.602Z",
+      "action": "email_sent",
+      "lead_id": 18776274,
+      "lead_name": "Jacob",
+      "email": "jacob.m.masin@gmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:40.413Z",
+      "action": "email_sent",
+      "lead_id": 18778286,
+      "lead_name": "there",
+      "email": "cheriamclane@yahoo.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:42.389Z",
+      "action": "email_sent",
+      "lead_id": 18778468,
+      "lead_name": "Julia",
+      "email": "Upiria0404@gmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:44.165Z",
+      "action": "email_sent",
+      "lead_id": 18798288,
+      "lead_name": "Antonio",
+      "email": "andrade_a@hotmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:46.076Z",
+      "action": "email_sent",
+      "lead_id": 18801000,
+      "lead_name": "there",
+      "email": "brianwmcmahon@gmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:47.901Z",
+      "action": "email_sent",
+      "lead_id": 18801600,
+      "lead_name": "Deb",
+      "email": "debrareich13@yahoo.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:49.821Z",
+      "action": "email_sent",
+      "lead_id": 18873732,
+      "lead_name": "Lisa",
+      "email": "Crimsonfarmscranberry@gmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:51.606Z",
+      "action": "email_sent",
+      "lead_id": 18922640,
+      "lead_name": "Gretchen",
+      "email": "gsonju@gmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:53.388Z",
+      "action": "email_sent",
+      "lead_id": 18927920,
+      "lead_name": "there",
+      "email": "ellievitt@aol.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:55.187Z",
+      "action": "email_sent",
+      "lead_id": 18931676,
+      "lead_name": "there",
+      "email": "vskeppler57@gmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:57.031Z",
+      "action": "email_sent",
+      "lead_id": 19016602,
+      "lead_name": "there",
+      "email": "christined1115@hotmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:49:58.814Z",
+      "action": "email_sent",
+      "lead_id": 19019344,
+      "lead_name": "there",
+      "email": "em.heff@verizon.net",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:00.924Z",
+      "action": "email_sent",
+      "lead_id": 19029461,
+      "lead_name": "Bunny",
+      "email": "hbt1950@outlook.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:02.972Z",
+      "action": "email_sent",
+      "lead_id": 19033963,
+      "lead_name": "Stephen",
+      "email": "Stephenhcozzi@gmail.vom",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:04.938Z",
+      "action": "email_sent",
+      "lead_id": 19048225,
+      "lead_name": "there",
+      "email": "Gabrieljamesrivers@gmail.com",
+      "template": "requalification_1",
+      "subject": "Still thinking about an ADU?"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:45.037Z",
+      "action": "email_sent",
+      "lead_id": 19051269,
+      "lead_name": "there",
+      "email": "otooletina@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:46.760Z",
+      "action": "email_sent",
+      "lead_id": 19056707,
+      "lead_name": "Cheryl",
+      "email": "Cheryl.duff@me.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:48.756Z",
+      "action": "email_sent",
+      "lead_id": 19057777,
+      "lead_name": "Pamela",
+      "email": "pamwoodbury@ymail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:50.692Z",
+      "action": "email_sent",
+      "lead_id": 19058881,
+      "lead_name": "Ann",
+      "email": "brady4@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:52.525Z",
+      "action": "email_sent",
+      "lead_id": 19110952,
+      "lead_name": "Sara",
+      "email": "sgrib@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:54.378Z",
+      "action": "email_sent",
+      "lead_id": 19115402,
+      "lead_name": "Nils",
+      "email": "nils@xopj.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:56.580Z",
+      "action": "email_sent",
+      "lead_id": 19151924,
+      "lead_name": "Kimberly",
+      "email": "Kimandowen@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:50:58.577Z",
+      "action": "email_sent",
+      "lead_id": 19158648,
+      "lead_name": "Alyssa",
+      "email": "alyssarflynn@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:00.486Z",
+      "action": "email_sent",
+      "lead_id": 19179992,
+      "lead_name": "Billy",
+      "email": "Billyfahey107@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:02.671Z",
+      "action": "email_sent",
+      "lead_id": 19189872,
+      "lead_name": "there",
+      "email": "mensingac@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:05.455Z",
+      "action": "email_sent",
+      "lead_id": 19292390,
+      "lead_name": "there",
+      "email": "Carolther@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:07.721Z",
+      "action": "email_sent",
+      "lead_id": 19304312,
+      "lead_name": "there",
+      "email": "cacf525@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:09.736Z",
+      "action": "email_sent",
+      "lead_id": 19329552,
+      "lead_name": "there",
+      "email": "carol.lindenmuth@exprealty.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:11.542Z",
+      "action": "email_sent",
+      "lead_id": 19342822,
+      "lead_name": "Mike",
+      "email": "mikemiller0369@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:13.424Z",
+      "action": "email_sent",
+      "lead_id": 19350162,
+      "lead_name": "there",
+      "email": "jeffmarlowe@cox.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:15.109Z",
+      "action": "email_sent",
+      "lead_id": 19396762,
+      "lead_name": "there",
+      "email": "Mayzmckelley@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:17.110Z",
+      "action": "email_sent",
+      "lead_id": 19399794,
+      "lead_name": "Mike",
+      "email": "bcksa@verizon.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:18.788Z",
+      "action": "email_sent",
+      "lead_id": 19404958,
+      "lead_name": "Sara",
+      "email": "sarahastings4285@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:20.504Z",
+      "action": "email_sent",
+      "lead_id": 19415616,
+      "lead_name": "Lee",
+      "email": "leenguyen77@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:22.449Z",
+      "action": "email_sent",
+      "lead_id": 17930316,
+      "lead_name": "Peter",
+      "email": "Bundfrei@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:24.199Z",
+      "action": "email_sent",
+      "lead_id": 17954153,
+      "lead_name": "Adler",
+      "email": "caroladler0@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:25.912Z",
+      "action": "email_sent",
+      "lead_id": 17966737,
+      "lead_name": "there",
+      "email": "Shannonomalley85@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:27.573Z",
+      "action": "email_sent",
+      "lead_id": 18050960,
+      "lead_name": "Chevonne",
+      "email": "Jeanadriano1950@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:29.255Z",
+      "action": "email_sent",
+      "lead_id": 18055400,
+      "lead_name": "Kelly",
+      "email": "chassonkelly@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:31.169Z",
+      "action": "email_sent",
+      "lead_id": 18081178,
+      "lead_name": "Karen",
+      "email": "kjtysver@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:32.903Z",
+      "action": "email_sent",
+      "lead_id": 18082788,
+      "lead_name": "there",
+      "email": "deborahmckenna76@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:34.657Z",
+      "action": "email_sent",
+      "lead_id": 18191840,
+      "lead_name": "there",
+      "email": "Jan84@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:36.289Z",
+      "action": "email_sent",
+      "lead_id": 18197386,
+      "lead_name": "there",
+      "email": "blmoeller47@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:38.039Z",
+      "action": "email_sent",
+      "lead_id": 18197922,
+      "lead_name": "Susan",
+      "email": "Susan.shallman@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:39.844Z",
+      "action": "email_sent",
+      "lead_id": 18204922,
+      "lead_name": "Martha",
+      "email": "huntley.martha@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:41.687Z",
+      "action": "email_sent",
+      "lead_id": 18206308,
+      "lead_name": "Cathy",
+      "email": "bellsandwhistles2011@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:43.351Z",
+      "action": "email_sent",
+      "lead_id": 18260182,
+      "lead_name": "there",
+      "email": "mirandachan4@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:45.198Z",
+      "action": "email_sent",
+      "lead_id": 18292140,
+      "lead_name": "Diane",
+      "email": "Neylon@bc.edu",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:47.013Z",
+      "action": "email_sent",
+      "lead_id": 18292466,
+      "lead_name": "there",
+      "email": "donnahobrien@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:48.958Z",
+      "action": "email_sent",
+      "lead_id": 18293338,
+      "lead_name": "there",
+      "email": "joancallahanserio@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:50.711Z",
+      "action": "email_sent",
+      "lead_id": 18293950,
+      "lead_name": "Sara",
+      "email": "ackaire@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:52.386Z",
+      "action": "email_sent",
+      "lead_id": 19437150,
+      "lead_name": "Mary",
+      "email": "mary.browne7@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:54.032Z",
+      "action": "email_sent",
+      "lead_id": 19482264,
+      "lead_name": "Diane",
+      "email": "dianefitzgibbons@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:55.816Z",
+      "action": "email_sent",
+      "lead_id": 19486422,
+      "lead_name": "there",
+      "email": "kathleenheroux@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:57.958Z",
+      "action": "email_sent",
+      "lead_id": 19488870,
+      "lead_name": "there",
+      "email": "barriefeldman@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:51:59.914Z",
+      "action": "email_sent",
+      "lead_id": 19492662,
+      "lead_name": "Jennifer",
+      "email": "jgreen373@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:01.860Z",
+      "action": "email_sent",
+      "lead_id": 19510550,
+      "lead_name": "Ed",
+      "email": "earlybirds@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:03.849Z",
+      "action": "email_sent",
+      "lead_id": 19782512,
+      "lead_name": "Karen",
+      "email": "kdev5@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:05.648Z",
+      "action": "email_sent",
+      "lead_id": 19900893,
+      "lead_name": "Joyce",
+      "email": "jehurley123@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:07.629Z",
+      "action": "email_sent",
+      "lead_id": 18328454,
+      "lead_name": "Iqbal",
+      "email": "hammadikhan123@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:09.541Z",
+      "action": "email_sent",
+      "lead_id": 18341660,
+      "lead_name": "MaryAnn",
+      "email": "maryann.animalcrackers@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:11.998Z",
+      "action": "email_sent",
+      "lead_id": 18342464,
+      "lead_name": "Evangelina",
+      "email": "Vanngee@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:13.694Z",
+      "action": "email_sent",
+      "lead_id": 18343346,
+      "lead_name": "Priya Zander Fox",
+      "email": "softsurrender2@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:15.397Z",
+      "action": "email_sent",
+      "lead_id": 18343630,
+      "lead_name": "there",
+      "email": "brt653@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:53.482Z",
+      "action": "email_sent",
+      "lead_id": 18347562,
+      "lead_name": "Cheryl",
+      "email": "Marsh2222@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:55.313Z",
+      "action": "email_sent",
+      "lead_id": 18359538,
+      "lead_name": "Tommy",
+      "email": "tepbogie2015@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:57.155Z",
+      "action": "email_sent",
+      "lead_id": 18361290,
+      "lead_name": "Sharma",
+      "email": "latitude93@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:52:58.614Z",
+      "action": "email_sent",
+      "lead_id": 18367198,
+      "lead_name": "Stewart",
+      "email": "marla.woods@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:00.368Z",
+      "action": "email_sent",
+      "lead_id": 18368154,
+      "lead_name": "Luiza",
+      "email": "lbermanrealtor@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:02.065Z",
+      "action": "email_sent",
+      "lead_id": 18378034,
+      "lead_name": "Fran",
+      "email": "fpassios@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:03.914Z",
+      "action": "email_sent",
+      "lead_id": 18379882,
+      "lead_name": "Cynthia Linn Spratt",
+      "email": "sprattquilt@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:05.852Z",
+      "action": "email_sent",
+      "lead_id": 18399664,
+      "lead_name": "Lois",
+      "email": "nwlowmo159@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:07.407Z",
+      "action": "email_sent",
+      "lead_id": 18423666,
+      "lead_name": "Joe",
+      "email": "Olitskybenj@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:08.894Z",
+      "action": "email_sent",
+      "lead_id": 18436222,
+      "lead_name": "Kathleen",
+      "email": "kathleenascott275@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:10.385Z",
+      "action": "email_sent",
+      "lead_id": 18441878,
+      "lead_name": "mike",
+      "email": "matthewbaldassari@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:12.106Z",
+      "action": "email_sent",
+      "lead_id": 18457044,
+      "lead_name": "John",
+      "email": "wasielewski2000@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:13.570Z",
+      "action": "email_sent",
+      "lead_id": 18476940,
+      "lead_name": "David",
+      "email": "d_borden@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:15.086Z",
+      "action": "email_sent",
+      "lead_id": 18479526,
+      "lead_name": "Sheila",
+      "email": "Sgdunne28@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:16.611Z",
+      "action": "email_sent",
+      "lead_id": 18494886,
+      "lead_name": "there",
+      "email": "dlkfarm@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:18.078Z",
+      "action": "email_sent",
+      "lead_id": 18549508,
+      "lead_name": "there",
+      "email": "gomezlj@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:19.638Z",
+      "action": "email_sent",
+      "lead_id": 18556858,
+      "lead_name": "there",
+      "email": "Dspearsmoorehead@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:21.087Z",
+      "action": "email_sent",
+      "lead_id": 18584338,
+      "lead_name": "Amber",
+      "email": "amberace25@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:22.672Z",
+      "action": "email_sent",
+      "lead_id": 18624160,
+      "lead_name": "Corinne",
+      "email": "watsoncorinne2013@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:24.108Z",
+      "action": "email_sent",
+      "lead_id": 18639468,
+      "lead_name": "Robert",
+      "email": "Nne1bxm@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:25.595Z",
+      "action": "email_sent",
+      "lead_id": 17164014,
+      "lead_name": "there",
+      "email": "Mcgeemikiko@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:27.157Z",
+      "action": "email_sent",
+      "lead_id": 17198818,
+      "lead_name": "Stephen",
+      "email": "stevec@jomardist.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:28.798Z",
+      "action": "email_sent",
+      "lead_id": 17204160,
+      "lead_name": "there",
+      "email": "wpbaam@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:30.437Z",
+      "action": "email_sent",
+      "lead_id": 17215514,
+      "lead_name": "Tom",
+      "email": "Palmertj@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:31.976Z",
+      "action": "email_sent",
+      "lead_id": 17264607,
+      "lead_name": "joseph",
+      "email": "bolosib2011@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:33.601Z",
+      "action": "email_sent",
+      "lead_id": 17286823,
+      "lead_name": "there",
+      "email": "firecracker1974@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:35.085Z",
+      "action": "email_sent",
+      "lead_id": 17299261,
+      "lead_name": "Laura",
+      "email": "laura.cordes@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:36.889Z",
+      "action": "email_sent",
+      "lead_id": 17333807,
+      "lead_name": "Lynn",
+      "email": "lfriedman41@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:38.447Z",
+      "action": "email_sent",
+      "lead_id": 17334847,
+      "lead_name": "John",
+      "email": "Johnpage1231@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:40.091Z",
+      "action": "email_sent",
+      "lead_id": 17366460,
+      "lead_name": "Nick",
+      "email": "Npabst1@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:41.553Z",
+      "action": "email_sent",
+      "lead_id": 17366484,
+      "lead_name": "there",
+      "email": "emilymarcus1@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:42.919Z",
+      "action": "email_sent",
+      "lead_id": 17372552,
+      "lead_name": "there",
+      "email": "annhelpern@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:44.567Z",
+      "action": "email_sent",
+      "lead_id": 17376970,
+      "lead_name": "Sharon",
+      "email": "crazysd@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:46.104Z",
+      "action": "email_sent",
+      "lead_id": 17385556,
+      "lead_name": "Harold",
+      "email": "salantinsurance@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:47.584Z",
+      "action": "email_sent",
+      "lead_id": 17392876,
+      "lead_name": "there",
+      "email": "tivnan25@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:48.996Z",
+      "action": "email_sent",
+      "lead_id": 17417792,
+      "lead_name": "Deborah",
+      "email": "dfrosenthal@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:50.527Z",
+      "action": "email_sent",
+      "lead_id": 17444614,
+      "lead_name": "there",
+      "email": "godlovesus52511@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:52.247Z",
+      "action": "email_sent",
+      "lead_id": 17481866,
+      "lead_name": "there",
+      "email": "katherynannrolfe@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:53.679Z",
+      "action": "email_sent",
+      "lead_id": 17503436,
+      "lead_name": "Carl",
+      "email": "carlj1c@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:55.162Z",
+      "action": "email_sent",
+      "lead_id": 17510910,
+      "lead_name": "there",
+      "email": "Sareet1@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:56.693Z",
+      "action": "email_sent",
+      "lead_id": 17516956,
+      "lead_name": "there",
+      "email": "jonessneed@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:58.288Z",
+      "action": "email_sent",
+      "lead_id": 17527516,
+      "lead_name": "Liz",
+      "email": "lizmdlima@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:53:59.752Z",
+      "action": "email_sent",
+      "lead_id": 17533246,
+      "lead_name": "D",
+      "email": "arachnedfp@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:01.228Z",
+      "action": "email_sent",
+      "lead_id": 17548550,
+      "lead_name": "Jim",
+      "email": "Jmk2@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:02.786Z",
+      "action": "email_sent",
+      "lead_id": 18656710,
+      "lead_name": "Cheryl",
+      "email": "Cheryl.lindsey@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:04.290Z",
+      "action": "email_sent",
+      "lead_id": 18681934,
+      "lead_name": "jackie",
+      "email": "bandjgolden@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:05.969Z",
+      "action": "email_sent",
+      "lead_id": 18683226,
+      "lead_name": "Jennifer",
+      "email": "Jshustermn@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:07.544Z",
+      "action": "email_sent",
+      "lead_id": 18685482,
+      "lead_name": "Karen",
+      "email": "Nauset245@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:09.245Z",
+      "action": "email_sent",
+      "lead_id": 18687116,
+      "lead_name": "there",
+      "email": "jerryrwilliamsplm@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:10.719Z",
+      "action": "email_sent",
+      "lead_id": 17552590,
+      "lead_name": "there",
+      "email": "Ziggy99@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:12.271Z",
+      "action": "email_sent",
+      "lead_id": 17597098,
+      "lead_name": "there",
+      "email": "cavicino@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:13.915Z",
+      "action": "email_sent",
+      "lead_id": 17599598,
+      "lead_name": "Christopher",
+      "email": "Chrisbopalenik@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:15.406Z",
+      "action": "email_sent",
+      "lead_id": 17627280,
+      "lead_name": "Rachel",
+      "email": "matchmakerfriend@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:16.934Z",
+      "action": "email_sent",
+      "lead_id": 17634610,
+      "lead_name": "Robin",
+      "email": "rherm5555@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:18.418Z",
+      "action": "email_sent",
+      "lead_id": 17672248,
+      "lead_name": "James",
+      "email": "Jkellerhouse@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:20.042Z",
+      "action": "email_sent",
+      "lead_id": 17714654,
+      "lead_name": "there",
+      "email": "winkdinkerson101@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:21.627Z",
+      "action": "email_sent",
+      "lead_id": 17718772,
+      "lead_name": "there",
+      "email": "Christine@instantinteriorsllc.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:23.274Z",
+      "action": "email_sent",
+      "lead_id": 17739862,
+      "lead_name": "Rob",
+      "email": "r.fitz4@juno.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:24.739Z",
+      "action": "email_sent",
+      "lead_id": 17758516,
+      "lead_name": "Patricia",
+      "email": "Pgormally@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:26.161Z",
+      "action": "email_sent",
+      "lead_id": 17773672,
+      "lead_name": "Dan",
+      "email": "dchmoxy@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:27.574Z",
+      "action": "email_sent",
+      "lead_id": 17800052,
+      "lead_name": "Sarah",
+      "email": "swperreault@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:29.087Z",
+      "action": "email_sent",
+      "lead_id": 17814236,
+      "lead_name": "Michelle",
+      "email": "michelle_lathrop@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:30.601Z",
+      "action": "email_sent",
+      "lead_id": 17825120,
+      "lead_name": "Sally",
+      "email": "sdecaro55@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:32.182Z",
+      "action": "email_sent",
+      "lead_id": 17838024,
+      "lead_name": "there",
+      "email": "lawhipple622@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:33.602Z",
+      "action": "email_sent",
+      "lead_id": 17852028,
+      "lead_name": "Miriam",
+      "email": "mim@dogpeoplerule.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:35.255Z",
+      "action": "email_sent",
+      "lead_id": 17853524,
+      "lead_name": "Gary",
+      "email": "g.w.mccarthy777@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:36.703Z",
+      "action": "email_sent",
+      "lead_id": 17856952,
+      "lead_name": "there",
+      "email": "aobk12@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:38.211Z",
+      "action": "email_sent",
+      "lead_id": 17857392,
+      "lead_name": "there",
+      "email": "ovady.j@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:39.670Z",
+      "action": "email_sent",
+      "lead_id": 17862296,
+      "lead_name": "Cathy",
+      "email": "cabiliouris@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:41.326Z",
+      "action": "email_sent",
+      "lead_id": 17890562,
+      "lead_name": "Michael",
+      "email": "captainmjb@juno.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:42.833Z",
+      "action": "email_sent",
+      "lead_id": 15113376,
+      "lead_name": "Laura",
+      "email": "ludens99@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:44.297Z",
+      "action": "email_sent",
+      "lead_id": 15116344,
+      "lead_name": "Lee",
+      "email": "leelincoln2525@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:45.931Z",
+      "action": "email_sent",
+      "lead_id": 15118764,
+      "lead_name": "John",
+      "email": "mellor69@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:47.310Z",
+      "action": "email_sent",
+      "lead_id": 15123730,
+      "lead_name": "Karl",
+      "email": "kfk55@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:48.852Z",
+      "action": "email_sent",
+      "lead_id": 15150628,
+      "lead_name": "Case",
+      "email": "Ceesvelp@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:50.496Z",
+      "action": "email_sent",
+      "lead_id": 15172460,
+      "lead_name": "Ellen",
+      "email": "winconnor100@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:52.055Z",
+      "action": "email_sent",
+      "lead_id": 15201884,
+      "lead_name": "Nelson",
+      "email": "noslenzaid07@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:53.438Z",
+      "action": "email_sent",
+      "lead_id": 15234694,
+      "lead_name": "Kerry",
+      "email": "Pkhaley66@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:55.129Z",
+      "action": "email_sent",
+      "lead_id": 15657488,
+      "lead_name": "Rena",
+      "email": "renakwhite@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:56.825Z",
+      "action": "email_sent",
+      "lead_id": 15753742,
+      "lead_name": "Cherie",
+      "email": "shariangl05@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:54:58.340Z",
+      "action": "email_sent",
+      "lead_id": 15962318,
+      "lead_name": "Vee",
+      "email": "JoeVee21@outlook.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:00.151Z",
+      "action": "email_sent",
+      "lead_id": 15974200,
+      "lead_name": "Gil",
+      "email": "ralrenbro@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:01.996Z",
+      "action": "email_sent",
+      "lead_id": 15992188,
+      "lead_name": "Stacey",
+      "email": "staceycolon@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:03.767Z",
+      "action": "email_sent",
+      "lead_id": 16249080,
+      "lead_name": "josefa",
+      "email": "sabong51@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:05.655Z",
+      "action": "email_sent",
+      "lead_id": 16276016,
+      "lead_name": "Bradford",
+      "email": "bradford.brady@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:07.148Z",
+      "action": "email_sent",
+      "lead_id": 16308242,
+      "lead_name": "Melinda",
+      "email": "gmelinda44@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:08.758Z",
+      "action": "email_sent",
+      "lead_id": 16397066,
+      "lead_name": "Marilyn",
+      "email": "myasway@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:10.501Z",
+      "action": "email_sent",
+      "lead_id": 16571448,
+      "lead_name": "John",
+      "email": "john.doherty61@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:12.030Z",
+      "action": "email_sent",
+      "lead_id": 16711926,
+      "lead_name": "there",
+      "email": "damato32@charter.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:13.648Z",
+      "action": "email_sent",
+      "lead_id": 16739996,
+      "lead_name": "Carole",
+      "email": "Cgianquitt@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:15.342Z",
+      "action": "email_sent",
+      "lead_id": 16765514,
+      "lead_name": "Deborah",
+      "email": "irish8mom9@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:17.816Z",
+      "action": "email_sent",
+      "lead_id": 16833642,
+      "lead_name": "Clark",
+      "email": "2025capecod2025@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:19.613Z",
+      "action": "email_sent",
+      "lead_id": 16843396,
+      "lead_name": "there",
+      "email": "brutuscantoreggi@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:21.252Z",
+      "action": "email_sent",
+      "lead_id": 16870176,
+      "lead_name": "Douglas",
+      "email": "douglasweidl@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:22.939Z",
+      "action": "email_sent",
+      "lead_id": 17911422,
+      "lead_name": "Donna",
+      "email": "cdonnad@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:24.496Z",
+      "action": "email_sent",
+      "lead_id": 13131200,
+      "lead_name": "Igor",
+      "email": "igor1gbr@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:26.170Z",
+      "action": "email_sent",
+      "lead_id": 13142012,
+      "lead_name": "Christina",
+      "email": "Cvage625@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:27.602Z",
+      "action": "email_sent",
+      "lead_id": 13207122,
+      "lead_name": "Garett",
+      "email": "Bodelsfishing@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:55:29.446Z",
+      "action": "email_sent",
+      "lead_id": 13231482,
+      "lead_name": "Sas",
+      "email": "797becker@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:31.093Z",
+      "action": "email_sent",
+      "lead_id": 13233982,
+      "lead_name": "Alfredo",
+      "email": "torresale600@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:32.937Z",
+      "action": "email_sent",
+      "lead_id": 13364998,
+      "lead_name": "Shannon",
+      "email": "Dec1899@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:34.621Z",
+      "action": "email_sent",
+      "lead_id": 13389966,
+      "lead_name": "Tom",
+      "email": "Peacockkennel@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:35.983Z",
+      "action": "email_sent",
+      "lead_id": 13445452,
+      "lead_name": "Kathleen",
+      "email": "kbarquet@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:37.646Z",
+      "action": "email_sent",
+      "lead_id": 13450942,
+      "lead_name": "Sandy",
+      "email": "sparky125660@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:39.072Z",
+      "action": "email_sent",
+      "lead_id": 13453692,
+      "lead_name": "Krish",
+      "email": "krish_bala_8@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:40.438Z",
+      "action": "email_sent",
+      "lead_id": 16871734,
+      "lead_name": "Jane",
+      "email": "baker6426@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:41.775Z",
+      "action": "email_sent",
+      "lead_id": 16874126,
+      "lead_name": "Timothy",
+      "email": "tmthysullivan256@icloud.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:43.517Z",
+      "action": "email_sent",
+      "lead_id": 16903546,
+      "lead_name": "Cathy",
+      "email": "cathmorgan@verizon.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:44.794Z",
+      "action": "email_sent",
+      "lead_id": 16922570,
+      "lead_name": "there",
+      "email": "tmbaiona@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:46.186Z",
+      "action": "email_sent",
+      "lead_id": 16928264,
+      "lead_name": "Thomas",
+      "email": "tr225@nc.rr.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:47.784Z",
+      "action": "email_sent",
+      "lead_id": 16931168,
+      "lead_name": "Kate",
+      "email": "Regis79@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:49.348Z",
+      "action": "email_sent",
+      "lead_id": 16937030,
+      "lead_name": "there",
+      "email": "addrecords@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:50.855Z",
+      "action": "email_sent",
+      "lead_id": 16937512,
+      "lead_name": "Julie",
+      "email": "jedbaumann@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:52.290Z",
+      "action": "email_sent",
+      "lead_id": 16993770,
+      "lead_name": "Sandra",
+      "email": "sandralouis1288@icloud.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:53.856Z",
+      "action": "email_sent",
+      "lead_id": 16999290,
+      "lead_name": "Patrick",
+      "email": "Pdmccarty33@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:55.261Z",
+      "action": "email_sent",
+      "lead_id": 17007186,
+      "lead_name": "there",
+      "email": "leo8969@aol.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:57.000Z",
+      "action": "email_sent",
+      "lead_id": 17020526,
+      "lead_name": "there",
+      "email": "nkress4@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:56:58.537Z",
+      "action": "email_sent",
+      "lead_id": 17037840,
+      "lead_name": "Linda",
+      "email": "kinger2004@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:00.065Z",
+      "action": "email_sent",
+      "lead_id": 17053892,
+      "lead_name": "Kelley",
+      "email": "kelleyhartigan@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:02.307Z",
+      "action": "email_sent",
+      "lead_id": 17062396,
+      "lead_name": "there",
+      "email": "amylawler63@icloud.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:04.068Z",
+      "action": "email_sent",
+      "lead_id": 17087200,
+      "lead_name": "Danielle",
+      "email": "drizika@mac.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:05.681Z",
+      "action": "email_sent",
+      "lead_id": 17097342,
+      "lead_name": "Lauren",
+      "email": "l.wolin@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:07.753Z",
+      "action": "email_sent",
+      "lead_id": 17101726,
+      "lead_name": "there",
+      "email": "jereenbabirye@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:09.336Z",
+      "action": "email_sent",
+      "lead_id": 17110782,
+      "lead_name": "Patricia",
+      "email": "mopsey794@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:11.132Z",
+      "action": "email_sent",
+      "lead_id": 13458970,
+      "lead_name": "John",
+      "email": "nighttrain0507@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:12.643Z",
+      "action": "email_sent",
+      "lead_id": 13478968,
+      "lead_name": "Mary",
+      "email": "mmbassett2@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:14.168Z",
+      "action": "email_sent",
+      "lead_id": 13527312,
+      "lead_name": "Ashley",
+      "email": "ashleygbailleul@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:15.845Z",
+      "action": "email_sent",
+      "lead_id": 13573958,
+      "lead_name": "Eddie",
+      "email": "Enigmatwod@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:17.386Z",
+      "action": "email_sent",
+      "lead_id": 13658208,
+      "lead_name": "Frank",
+      "email": "fchaseltine@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:18.941Z",
+      "action": "email_sent",
+      "lead_id": 13676802,
+      "lead_name": "Maryanne",
+      "email": "mhcmacleod@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:20.479Z",
+      "action": "email_sent",
+      "lead_id": 13686762,
+      "lead_name": "Richard",
+      "email": "emorello@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:22.088Z",
+      "action": "email_sent",
+      "lead_id": 13687258,
+      "lead_name": "Peter",
+      "email": "petersantillan@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:23.642Z",
+      "action": "email_sent",
+      "lead_id": 13693132,
+      "lead_name": "Paul",
+      "email": "josephkimball389@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:25.018Z",
+      "action": "email_sent",
+      "lead_id": 13711804,
+      "lead_name": "Amy",
+      "email": "amyneri6@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:26.434Z",
+      "action": "email_sent",
+      "lead_id": 13729626,
+      "lead_name": "Joan",
+      "email": "jcarter7@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:28.235Z",
+      "action": "email_sent",
+      "lead_id": 13746810,
+      "lead_name": "Joe",
+      "email": "joe105kennedy@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:29.659Z",
+      "action": "email_sent",
+      "lead_id": 13750210,
+      "lead_name": "Thomas",
+      "email": "bigape006@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:31.202Z",
+      "action": "email_sent",
+      "lead_id": 13750234,
+      "lead_name": "Alicyn",
+      "email": "alicyn@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:32.840Z",
+      "action": "email_sent",
+      "lead_id": 13766404,
+      "lead_name": "Deborah",
+      "email": "dtraversfitton@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:34.356Z",
+      "action": "email_sent",
+      "lead_id": 13831294,
+      "lead_name": "Anne",
+      "email": "annet81@icloud.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:35.914Z",
+      "action": "email_sent",
+      "lead_id": 13894398,
+      "lead_name": "John",
+      "email": "Fjburke2@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:37.584Z",
+      "action": "email_sent",
+      "lead_id": 13976712,
+      "lead_name": "Edward",
+      "email": "thundercar323@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:39.026Z",
+      "action": "email_sent",
+      "lead_id": 13993972,
+      "lead_name": "Michael",
+      "email": "mjsmi2275@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:40.624Z",
+      "action": "email_sent",
+      "lead_id": 14088356,
+      "lead_name": "Elizabeth",
+      "email": "betsyhinkle@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:41.985Z",
+      "action": "email_sent",
+      "lead_id": 14119516,
+      "lead_name": "Almitra",
+      "email": "pinkdiamond3k@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:43.490Z",
+      "action": "email_sent",
+      "lead_id": 14122898,
+      "lead_name": "Dennisse",
+      "email": "martinezdennisse@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:44.924Z",
+      "action": "email_sent",
+      "lead_id": 14157334,
+      "lead_name": "Juliana",
+      "email": "julianagrullon@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:46.462Z",
+      "action": "email_sent",
+      "lead_id": 14239860,
+      "lead_name": "Jane",
+      "email": "janelyon09@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:47.894Z",
+      "action": "email_sent",
+      "lead_id": 14265340,
+      "lead_name": "Robin",
+      "email": "rerelee01@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:49.533Z",
+      "action": "email_sent",
+      "lead_id": 14330684,
+      "lead_name": "carlo",
+      "email": "rickihd@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:51.185Z",
+      "action": "email_sent",
+      "lead_id": 11121844,
+      "lead_name": "Sue",
+      "email": "sue.wiesen70@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:52.888Z",
+      "action": "email_sent",
+      "lead_id": 11123874,
+      "lead_name": "Bonnie",
+      "email": "bonnierox@15ord.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:54.423Z",
+      "action": "email_sent",
+      "lead_id": 11156372,
+      "lead_name": "Sabrina",
+      "email": "consis@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:56.086Z",
+      "action": "email_sent",
+      "lead_id": 11474033,
+      "lead_name": "Doreen",
+      "email": "lamotte463@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:57.621Z",
+      "action": "email_sent",
+      "lead_id": 11562328,
+      "lead_name": "Thomas",
+      "email": "tdion76@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:57:59.175Z",
+      "action": "email_sent",
+      "lead_id": 11571812,
+      "lead_name": "Anne",
+      "email": "rus05@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:00.682Z",
+      "action": "email_sent",
+      "lead_id": 11580721,
+      "lead_name": "JayOzz1",
+      "email": "jayxtr@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:02.333Z",
+      "action": "email_sent",
+      "lead_id": 11608902,
+      "lead_name": "Rhonda",
+      "email": "Myedadvocate@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:03.870Z",
+      "action": "email_sent",
+      "lead_id": 11957150,
+      "lead_name": "Roger",
+      "email": "rogtoyz@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:05.468Z",
+      "action": "email_sent",
+      "lead_id": 11963514,
+      "lead_name": "Cob",
+      "email": "cobcarlson@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:06.942Z",
+      "action": "email_sent",
+      "lead_id": 12126980,
+      "lead_name": "Judy",
+      "email": "jasienowskijudy@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:08.684Z",
+      "action": "email_sent",
+      "lead_id": 12137542,
+      "lead_name": "Kristin",
+      "email": "Krislm1202@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:10.204Z",
+      "action": "email_sent",
+      "lead_id": 14366324,
+      "lead_name": "Andres",
+      "email": "Andyvargasrealty@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:11.716Z",
+      "action": "email_sent",
+      "lead_id": 14413804,
+      "lead_name": "JOHNSON",
+      "email": "RMASTERZEE2000@YAHOO.COM",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:13.234Z",
+      "action": "email_sent",
+      "lead_id": 14421714,
+      "lead_name": "Sandra",
+      "email": "chelsandra7@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:14.788Z",
+      "action": "email_sent",
+      "lead_id": 14428198,
+      "lead_name": "Michael",
+      "email": "mike.altob@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:16.120Z",
+      "action": "email_sent",
+      "lead_id": 14431764,
+      "lead_name": "jay",
+      "email": "jay_8989@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:17.796Z",
+      "action": "email_sent",
+      "lead_id": 14697386,
+      "lead_name": "Tammy",
+      "email": "starbrightwhitch1@gmail.coms",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:19.279Z",
+      "action": "email_sent",
+      "lead_id": 14719874,
+      "lead_name": "Darlene",
+      "email": "darlenefalardeau@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:20.765Z",
+      "action": "email_sent",
+      "lead_id": 14719890,
+      "lead_name": "Darlene",
+      "email": "darlenefalardeau@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:22.508Z",
+      "action": "email_sent",
+      "lead_id": 15036346,
+      "lead_name": "Cristina",
+      "email": "cl52395@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:24.042Z",
+      "action": "email_sent",
+      "lead_id": 15099894,
+      "lead_name": "George",
+      "email": "gscarmeas@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:25.540Z",
+      "action": "email_sent",
+      "lead_id": 15100498,
+      "lead_name": "Suzanne",
+      "email": "Schill45@outlook.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:26.896Z",
+      "action": "email_sent",
+      "lead_id": 12142476,
+      "lead_name": "Sherri",
+      "email": "sherriclip@outlook.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:28.651Z",
+      "action": "email_sent",
+      "lead_id": 12236378,
+      "lead_name": "Irving",
+      "email": "irvls7454@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:30.098Z",
+      "action": "email_sent",
+      "lead_id": 12375190,
+      "lead_name": "Kingsley",
+      "email": "Jwkingsley@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:31.413Z",
+      "action": "email_sent",
+      "lead_id": 12385458,
+      "lead_name": "Barbara",
+      "email": "foxprintfarmsouth@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:32.861Z",
+      "action": "email_sent",
+      "lead_id": 12424546,
+      "lead_name": "Rob",
+      "email": "rclum1218@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:34.393Z",
+      "action": "email_sent",
+      "lead_id": 12432110,
+      "lead_name": "Robin",
+      "email": "catbabylove@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:35.852Z",
+      "action": "email_sent",
+      "lead_id": 12631770,
+      "lead_name": "Elkhaira",
+      "email": "abomurhaba@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:37.304Z",
+      "action": "email_sent",
+      "lead_id": 12686974,
+      "lead_name": "Vacation",
+      "email": "mvyvacations@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:38.873Z",
+      "action": "email_sent",
+      "lead_id": 12694966,
+      "lead_name": "Tsetan",
+      "email": "Gava.tsetan@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:40.428Z",
+      "action": "email_sent",
+      "lead_id": 12711842,
+      "lead_name": "Wally",
+      "email": "eldayha@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:41.779Z",
+      "action": "email_sent",
+      "lead_id": 12759140,
+      "lead_name": "Linda",
+      "email": "poe.l@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:43.147Z",
+      "action": "email_sent",
+      "lead_id": 12786796,
+      "lead_name": "Lisa",
+      "email": "arain96@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:44.588Z",
+      "action": "email_sent",
+      "lead_id": 12888782,
+      "lead_name": "Renae",
+      "email": "bingostarr724@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:46.366Z",
+      "action": "email_sent",
+      "lead_id": 12889750,
+      "lead_name": "Judith",
+      "email": "zjahnev@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:48.006Z",
+      "action": "email_sent",
+      "lead_id": 12899230,
+      "lead_name": "Kelly",
+      "email": "kelllylmac@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:49.576Z",
+      "action": "email_sent",
+      "lead_id": 12935942,
+      "lead_name": "Donald",
+      "email": "donaldgray19a@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:51.178Z",
+      "action": "email_sent",
+      "lead_id": 12943634,
+      "lead_name": "Resurrected",
+      "email": "gigipap2966@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:52.714Z",
+      "action": "email_sent",
+      "lead_id": 13032316,
+      "lead_name": "Taiza",
+      "email": "cheftaiza@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:54.206Z",
+      "action": "email_sent",
+      "lead_id": 13042040,
+      "lead_name": "Denise",
+      "email": "cashinden@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:55.786Z",
+      "action": "email_sent",
+      "lead_id": 13046344,
+      "lead_name": "Andreia",
+      "email": "Andreiamtg@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:57.119Z",
+      "action": "email_sent",
+      "lead_id": 13092512,
+      "lead_name": "Nicole",
+      "email": "nicole.nadeau@solution4u.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:58.462Z",
+      "action": "email_sent",
+      "lead_id": 13092762,
+      "lead_name": "Jennifer",
+      "email": "jangeloni74@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:58:59.882Z",
+      "action": "email_sent",
+      "lead_id": 13121220,
+      "lead_name": "Brianna",
+      "email": "Scoogies335@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:02.323Z",
+      "action": "email_sent",
+      "lead_id": 19006842,
+      "lead_name": "Pam",
+      "email": "Pdellicarpini@lasell.edu",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:04.185Z",
+      "action": "email_sent",
+      "lead_id": 20104340,
+      "lead_name": "Cathy",
+      "email": "cathymcintyre36@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:05.707Z",
+      "action": "email_sent",
+      "lead_id": 19964581,
+      "lead_name": "Charles",
+      "email": "mcconologue@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:07.359Z",
+      "action": "email_sent",
+      "lead_id": 20010053,
+      "lead_name": "Kevin",
+      "email": "beardogrover@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:08.997Z",
+      "action": "email_sent",
+      "lead_id": 20048521,
+      "lead_name": "there",
+      "email": "Cathyclarkteam@outlook.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:10.534Z",
+      "action": "email_sent",
+      "lead_id": 12882484,
+      "lead_name": "Liz",
+      "email": "liztamm77@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:11.756Z",
+      "action": "email_sent",
+      "lead_id": 13812688,
+      "lead_name": "Bessie",
+      "email": "cavitt_bessie@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:13.399Z",
+      "action": "email_sent",
+      "lead_id": 13945614,
+      "lead_name": "Dan",
+      "email": "gdog477@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:15.344Z",
+      "action": "email_sent",
+      "lead_id": 16717636,
+      "lead_name": "there",
+      "email": "mfcgroupma@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:16.880Z",
+      "action": "email_sent",
+      "lead_id": 16783828,
+      "lead_name": "there",
+      "email": "feylerlezlie@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:18.417Z",
+      "action": "email_sent",
+      "lead_id": 16808996,
+      "lead_name": "there",
+      "email": "jtkm6@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:20.158Z",
+      "action": "email_sent",
+      "lead_id": 16976136,
+      "lead_name": "Frank",
+      "email": "franciscturner@yahoo.comy",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:21.788Z",
+      "action": "email_sent",
+      "lead_id": 17006544,
+      "lead_name": "Lachelle",
+      "email": "jeffco_contractors@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:23.174Z",
+      "action": "email_sent",
+      "lead_id": 17104456,
+      "lead_name": "LUKE",
+      "email": "ballstatefate1@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:24.869Z",
+      "action": "email_sent",
+      "lead_id": 17117570,
+      "lead_name": "there",
+      "email": "Melpcote@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:26.303Z",
+      "action": "email_sent",
+      "lead_id": 17215280,
+      "lead_name": "Rose",
+      "email": "m_w_duke@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:27.743Z",
+      "action": "email_sent",
+      "lead_id": 17530814,
+      "lead_name": "cheryl",
+      "email": "cheryllove98@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:29.130Z",
+      "action": "email_sent",
+      "lead_id": 17638944,
+      "lead_name": "mickala",
+      "email": "xfrank357@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:30.603Z",
+      "action": "email_sent",
+      "lead_id": 17640156,
+      "lead_name": "cornelia",
+      "email": "nelmore51242@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:32.241Z",
+      "action": "email_sent",
+      "lead_id": 17689076,
+      "lead_name": "Paula",
+      "email": "PJ624@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:33.710Z",
+      "action": "email_sent",
+      "lead_id": 17702178,
+      "lead_name": "Julie",
+      "email": "sunsetbluewater@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:35.211Z",
+      "action": "email_sent",
+      "lead_id": 17788694,
+      "lead_name": "Janis",
+      "email": "thebrucequeen1@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:36.683Z",
+      "action": "email_sent",
+      "lead_id": 17943560,
+      "lead_name": "Virginia",
+      "email": "ghiesimbol@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:38.129Z",
+      "action": "email_sent",
+      "lead_id": 18436124,
+      "lead_name": "Bev",
+      "email": "bevrodrigue26@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:39.717Z",
+      "action": "email_sent",
+      "lead_id": 18509736,
+      "lead_name": "Kaori",
+      "email": "Dence.kaori@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:41.151Z",
+      "action": "email_sent",
+      "lead_id": 18718082,
+      "lead_name": "Scott",
+      "email": "juditiger@townisp.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:42.638Z",
+      "action": "email_sent",
+      "lead_id": 19084311,
+      "lead_name": "there",
+      "email": "Jhassan56@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:44.006Z",
+      "action": "email_sent",
+      "lead_id": 19255834,
+      "lead_name": "Faiza",
+      "email": "foza@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:45.473Z",
+      "action": "email_sent",
+      "lead_id": 19261534,
+      "lead_name": "Anne",
+      "email": "anne.m2@verizon.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:46.981Z",
+      "action": "email_sent",
+      "lead_id": 19350240,
+      "lead_name": "Nick",
+      "email": "nick.watchhill@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:48.336Z",
+      "action": "email_sent",
+      "lead_id": 20050067,
+      "lead_name": "Michael",
+      "email": "michaelgoes@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:50.058Z",
+      "action": "email_sent",
+      "lead_id": 20083536,
+      "lead_name": "Willie",
+      "email": "Wg829@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:51.542Z",
+      "action": "email_sent",
+      "lead_id": 17137584,
+      "lead_name": "ann",
+      "email": "ann@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:53.233Z",
+      "action": "email_sent",
+      "lead_id": 16636280,
+      "lead_name": "Kurt",
+      "email": "kfederow@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:54.667Z",
+      "action": "email_sent",
+      "lead_id": 16936078,
+      "lead_name": "John",
+      "email": "johnnycoppa123@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:56.283Z",
+      "action": "email_sent",
+      "lead_id": 16943432,
+      "lead_name": "there",
+      "email": "shannonalo@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:57.879Z",
+      "action": "email_sent",
+      "lead_id": 18826676,
+      "lead_name": "Courtney",
+      "email": "dragon42@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T16:59:59.185Z",
+      "action": "email_sent",
+      "lead_id": 17401438,
+      "lead_name": "Frank",
+      "email": "Frank@fwrba.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:00.811Z",
+      "action": "email_sent",
+      "lead_id": 20956087,
+      "lead_name": "Pauline",
+      "email": "silkluv2@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:02.691Z",
+      "action": "email_sent",
+      "lead_id": 17108750,
+      "lead_name": "Richard",
+      "email": "Richardbaltzer311@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:04.395Z",
+      "action": "email_sent",
+      "lead_id": 17642660,
+      "lead_name": "Roy",
+      "email": "zavbav02@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:06.443Z",
+      "action": "email_sent",
+      "lead_id": 20327698,
+      "lead_name": "Lanette",
+      "email": "lanettetyrrell@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:08.389Z",
+      "action": "email_sent",
+      "lead_id": 20327708,
+      "lead_name": "Greg",
+      "email": "gahatteberg@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:10.233Z",
+      "action": "email_sent",
+      "lead_id": 20357098,
+      "lead_name": "Carolina",
+      "email": "karolinewat@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:11.973Z",
+      "action": "email_sent",
+      "lead_id": 20359618,
+      "lead_name": "Kimberly",
+      "email": "kimberlyblack36@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:13.511Z",
+      "action": "email_sent",
+      "lead_id": 20439230,
+      "lead_name": "Kristi",
+      "email": "krisyg3@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:15.147Z",
+      "action": "email_sent",
+      "lead_id": 20683026,
+      "lead_name": "Eddie",
+      "email": "fasteddiesbakery@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:17.196Z",
+      "action": "email_sent",
+      "lead_id": 20691144,
+      "lead_name": "Gregory",
+      "email": "greg.slimko@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:19.142Z",
+      "action": "email_sent",
+      "lead_id": 20735772,
+      "lead_name": "Anne",
+      "email": "anneleahy217@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:20.818Z",
+      "action": "email_sent",
+      "lead_id": 20737722,
+      "lead_name": "Faye",
+      "email": "baierfaye@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:22.520Z",
+      "action": "email_sent",
+      "lead_id": 20762710,
+      "lead_name": "Julia",
+      "email": "animalritual@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:00:24.076Z",
+      "action": "email_sent",
+      "lead_id": 20776750,
+      "lead_name": "there",
+      "email": "Cisrael45@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:08.257Z",
+      "action": "email_sent",
+      "lead_id": 20791170,
+      "lead_name": "Andrea",
+      "email": "ndrpardi@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:09.835Z",
+      "action": "email_sent",
+      "lead_id": 20816642,
+      "lead_name": "there",
+      "email": "beannie69@outlook.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:11.407Z",
+      "action": "email_sent",
+      "lead_id": 20832690,
+      "lead_name": "there",
+      "email": "kaitewalmsley@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:12.896Z",
+      "action": "email_sent",
+      "lead_id": 20853126,
+      "lead_name": "William",
+      "email": "wmezzetti@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:14.541Z",
+      "action": "email_sent",
+      "lead_id": 20862436,
+      "lead_name": "there",
+      "email": "jackyfoster@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:16.161Z",
+      "action": "email_sent",
+      "lead_id": 20908370,
+      "lead_name": "Lisa",
+      "email": "Branford1965@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:17.665Z",
+      "action": "email_sent",
+      "lead_id": 19732410,
+      "lead_name": "there",
+      "email": "Ljean93@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:19.251Z",
+      "action": "email_sent",
+      "lead_id": 19306928,
+      "lead_name": "Nancy",
+      "email": "naldrich34@icloud.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:20.890Z",
+      "action": "email_sent",
+      "lead_id": 19054377,
+      "lead_name": "Jake",
+      "email": "beaton76@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:22.736Z",
+      "action": "email_sent",
+      "lead_id": 19017390,
+      "lead_name": "Joe",
+      "email": "Kajoes@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:24.292Z",
+      "action": "email_sent",
+      "lead_id": 19008600,
+      "lead_name": "Jennifer",
+      "email": "jfraser@bchigh.edu",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:25.910Z",
+      "action": "email_sent",
+      "lead_id": 19954687,
+      "lead_name": "Michael",
+      "email": "mkrhodeisland@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:27.262Z",
+      "action": "email_sent",
+      "lead_id": 19666474,
+      "lead_name": "there",
+      "email": "suffolkd@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:28.979Z",
+      "action": "email_sent",
+      "lead_id": 19664842,
+      "lead_name": "Bob",
+      "email": "Bobby.abare@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:30.425Z",
+      "action": "email_sent",
+      "lead_id": 19327410,
+      "lead_name": "Meg",
+      "email": "megan.mccormick207@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:32.050Z",
+      "action": "email_sent",
+      "lead_id": 18983976,
+      "lead_name": "Laurie",
+      "email": "legeytlaurie@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:33.712Z",
+      "action": "email_sent",
+      "lead_id": 18687248,
+      "lead_name": "there",
+      "email": "Shetrawskid@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:35.213Z",
+      "action": "email_sent",
+      "lead_id": 18616588,
+      "lead_name": "Laurie",
+      "email": "lowe0413@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:36.762Z",
+      "action": "email_sent",
+      "lead_id": 18604776,
+      "lead_name": "Nancy",
+      "email": "succuly@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:38.184Z",
+      "action": "email_sent",
+      "lead_id": 16836380,
+      "lead_name": "Courtnay",
+      "email": "courtnayburgess@ymail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:39.835Z",
+      "action": "email_sent",
+      "lead_id": 16889800,
+      "lead_name": "Anh",
+      "email": "anhma1_tuyetlinhe@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:41.485Z",
+      "action": "email_sent",
+      "lead_id": 16894160,
+      "lead_name": "DAVID",
+      "email": "DFLYNN83@GMAIL.COM",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:43.215Z",
+      "action": "email_sent",
+      "lead_id": 16901580,
+      "lead_name": "Lota",
+      "email": "lotahertal@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:44.972Z",
+      "action": "email_sent",
+      "lead_id": 17099230,
+      "lead_name": "Amy",
+      "email": "achickering85@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:46.592Z",
+      "action": "email_sent",
+      "lead_id": 17113948,
+      "lead_name": "Kristen",
+      "email": "kshaw111@ymail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:48.131Z",
+      "action": "email_sent",
+      "lead_id": 17161214,
+      "lead_name": "there",
+      "email": "Lin.arkle@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:49.768Z",
+      "action": "email_sent",
+      "lead_id": 17166598,
+      "lead_name": "Chad",
+      "email": "cedwards4@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:51.611Z",
+      "action": "email_sent",
+      "lead_id": 17167450,
+      "lead_name": "Ashley",
+      "email": "ashleycrannell07@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:53.145Z",
+      "action": "email_sent",
+      "lead_id": 17187872,
+      "lead_name": "denise",
+      "email": "andersond2@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:54.530Z",
+      "action": "email_sent",
+      "lead_id": 17214374,
+      "lead_name": "there",
+      "email": "Bluevette666@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:56.218Z",
+      "action": "email_sent",
+      "lead_id": 17285169,
+      "lead_name": "Nora",
+      "email": "The6powers@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:57.577Z",
+      "action": "email_sent",
+      "lead_id": 17292855,
+      "lead_name": "Remika",
+      "email": "remikab22@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:01:59.085Z",
+      "action": "email_sent",
+      "lead_id": 17350322,
+      "lead_name": "Courtney",
+      "email": "coseycourtney@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:00.561Z",
+      "action": "email_sent",
+      "lead_id": 17352252,
+      "lead_name": "Lisa",
+      "email": "lisa.reyna635@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:02.576Z",
+      "action": "email_sent",
+      "lead_id": 17354260,
+      "lead_name": "Mark",
+      "email": "markmirus1969@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:04.410Z",
+      "action": "email_sent",
+      "lead_id": 17358092,
+      "lead_name": "Eugene",
+      "email": "gailgirlga@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:06.049Z",
+      "action": "email_sent",
+      "lead_id": 17414028,
+      "lead_name": "Bradley",
+      "email": "twocbrad2014@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:07.482Z",
+      "action": "email_sent",
+      "lead_id": 17428158,
+      "lead_name": "there",
+      "email": "pamelalduggan@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:09.428Z",
+      "action": "email_sent",
+      "lead_id": 17429700,
+      "lead_name": "Aunalyss",
+      "email": "ams.94@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:10.967Z",
+      "action": "email_sent",
+      "lead_id": 17435038,
+      "lead_name": "there",
+      "email": "beaver.rogers@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:12.500Z",
+      "action": "email_sent",
+      "lead_id": 17564216,
+      "lead_name": "John",
+      "email": "jaosn@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:14.054Z",
+      "action": "email_sent",
+      "lead_id": 17578342,
+      "lead_name": "Kathy",
+      "email": "Kathy.m.s@att.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:15.674Z",
+      "action": "email_sent",
+      "lead_id": 17588756,
+      "lead_name": "Patrick",
+      "email": "pm52081@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:17.121Z",
+      "action": "email_sent",
+      "lead_id": 17647362,
+      "lead_name": "Shannon",
+      "email": "Sld111384@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:18.990Z",
+      "action": "email_sent",
+      "lead_id": 17661934,
+      "lead_name": "there",
+      "email": "drmdbaseer@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:20.724Z",
+      "action": "email_sent",
+      "lead_id": 17713380,
+      "lead_name": "there",
+      "email": "Jmherronjr@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:22.433Z",
+      "action": "email_sent",
+      "lead_id": 17770002,
+      "lead_name": "Noreen",
+      "email": "renee95828@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:24.072Z",
+      "action": "email_sent",
+      "lead_id": 17778858,
+      "lead_name": "there",
+      "email": "busanimazwixaba@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:25.812Z",
+      "action": "email_sent",
+      "lead_id": 17806626,
+      "lead_name": "Martha",
+      "email": "margar101@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:27.279Z",
+      "action": "email_sent",
+      "lead_id": 17908658,
+      "lead_name": "there",
+      "email": "fmasiello1976@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:28.999Z",
+      "action": "email_sent",
+      "lead_id": 17912274,
+      "lead_name": "Faron",
+      "email": "faronsalon@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:30.523Z",
+      "action": "email_sent",
+      "lead_id": 15261900,
+      "lead_name": "Mark",
+      "email": "maleonard49@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:32.265Z",
+      "action": "email_sent",
+      "lead_id": 15277285,
+      "lead_name": "Andres",
+      "email": "phaedrusandres1@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:33.762Z",
+      "action": "email_sent",
+      "lead_id": 15604825,
+      "lead_name": "Stephen",
+      "email": "Kgreen04259@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:36.154Z",
+      "action": "email_sent",
+      "lead_id": 15605097,
+      "lead_name": "Kim",
+      "email": "kimkimbers@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:38.100Z",
+      "action": "email_sent",
+      "lead_id": 15736476,
+      "lead_name": "Michael",
+      "email": "Mjweiner51@icloud.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:39.533Z",
+      "action": "email_sent",
+      "lead_id": 18174602,
+      "lead_name": "Dan",
+      "email": "dwflynn@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:40.977Z",
+      "action": "email_sent",
+      "lead_id": 18237906,
+      "lead_name": "Dianna",
+      "email": "dilindholm@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:42.606Z",
+      "action": "email_sent",
+      "lead_id": 18273046,
+      "lead_name": "Totianna",
+      "email": "totiannaw@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:44.118Z",
+      "action": "email_sent",
+      "lead_id": 18295858,
+      "lead_name": "Jeanne",
+      "email": "jeannecchapman12@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:45.606Z",
+      "action": "email_sent",
+      "lead_id": 18324322,
+      "lead_name": "monica",
+      "email": "khyriewifey@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:47.111Z",
+      "action": "email_sent",
+      "lead_id": 18360872,
+      "lead_name": "Paul",
+      "email": "sbogart80@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:48.697Z",
+      "action": "email_sent",
+      "lead_id": 18384548,
+      "lead_name": "Robyn",
+      "email": "robynhafley@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:50.184Z",
+      "action": "email_sent",
+      "lead_id": 18388436,
+      "lead_name": "Karon",
+      "email": "karonsch16@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:52.045Z",
+      "action": "email_sent",
+      "lead_id": 18430628,
+      "lead_name": "ELAINE",
+      "email": "elainewalls44@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:53.532Z",
+      "action": "email_sent",
+      "lead_id": 18486940,
+      "lead_name": "BRITTNEY",
+      "email": "britdavis21@yoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:55.304Z",
+      "action": "email_sent",
+      "lead_id": 18542064,
+      "lead_name": "Jose",
+      "email": "junior_bd05@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:56.794Z",
+      "action": "email_sent",
+      "lead_id": 18557324,
+      "lead_name": "Elena",
+      "email": "emarcella08@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:02:58.478Z",
+      "action": "email_sent",
+      "lead_id": 18570044,
+      "lead_name": "Tiffany",
+      "email": "ttgrl30@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:01.347Z",
+      "action": "email_sent",
+      "lead_id": 18578054,
+      "lead_name": "Tevita",
+      "email": "kalavitevita@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:02.984Z",
+      "action": "email_sent",
+      "lead_id": 15751494,
+      "lead_name": "James",
+      "email": "dougjarrell@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:04.725Z",
+      "action": "email_sent",
+      "lead_id": 15761046,
+      "lead_name": "Onur",
+      "email": "onur-turnuklu@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:06.466Z",
+      "action": "email_sent",
+      "lead_id": 15763510,
+      "lead_name": "Kathy",
+      "email": "kathycardogno@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:08.617Z",
+      "action": "email_sent",
+      "lead_id": 15767802,
+      "lead_name": "Yanira",
+      "email": "yanchloe1@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:10.389Z",
+      "action": "email_sent",
+      "lead_id": 15778860,
+      "lead_name": "Lois",
+      "email": "loishaynes17@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:11.996Z",
+      "action": "email_sent",
+      "lead_id": 15780212,
+      "lead_name": "Janet",
+      "email": "theaguilarteamre@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:13.411Z",
+      "action": "email_sent",
+      "lead_id": 15807676,
+      "lead_name": "Richard",
+      "email": "richardbradley78@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:14.828Z",
+      "action": "email_sent",
+      "lead_id": 15913182,
+      "lead_name": "David",
+      "email": "dwald1234@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:16.501Z",
+      "action": "email_sent",
+      "lead_id": 16043646,
+      "lead_name": "Michael",
+      "email": "mikemyman@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:17.967Z",
+      "action": "email_sent",
+      "lead_id": 16122484,
+      "lead_name": "Margaret",
+      "email": "margaretlayton@mac.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:19.882Z",
+      "action": "email_sent",
+      "lead_id": 16124344,
+      "lead_name": "Doug",
+      "email": "dougdalrymple7@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:21.724Z",
+      "action": "email_sent",
+      "lead_id": 16215032,
+      "lead_name": "S",
+      "email": "sronnen@me.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:23.164Z",
+      "action": "email_sent",
+      "lead_id": 16221718,
+      "lead_name": "Dream",
+      "email": "digtalfusion@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:24.632Z",
+      "action": "email_sent",
+      "lead_id": 16253256,
+      "lead_name": "Jimmy",
+      "email": "mhwtrading@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:26.194Z",
+      "action": "email_sent",
+      "lead_id": 16264412,
+      "lead_name": "Kelli",
+      "email": "mikmac919@aol.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:27.587Z",
+      "action": "email_sent",
+      "lead_id": 16286972,
+      "lead_name": "Kathy",
+      "email": "brower6@me.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:28.971Z",
+      "action": "email_sent",
+      "lead_id": 16348288,
+      "lead_name": "Craig",
+      "email": "woolley.craig7@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:30.619Z",
+      "action": "email_sent",
+      "lead_id": 16356028,
+      "lead_name": "Joseph",
+      "email": "joe@atlanticatm.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:31.962Z",
+      "action": "email_sent",
+      "lead_id": 16380144,
+      "lead_name": "Lead",
+      "email": "JadaBrown@usbuygood.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:33.603Z",
+      "action": "email_sent",
+      "lead_id": 16454182,
+      "lead_name": "Neal",
+      "email": "nealryan3@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:35.053Z",
+      "action": "email_sent",
+      "lead_id": 16472028,
+      "lead_name": "Bill",
+      "email": "truck6@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:36.574Z",
+      "action": "email_sent",
+      "lead_id": 16557459,
+      "lead_name": "Tyler",
+      "email": "tebeardsley@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:38.025Z",
+      "action": "email_sent",
+      "lead_id": 16558897,
+      "lead_name": "there",
+      "email": "christybelleau@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:39.490Z",
+      "action": "email_sent",
+      "lead_id": 16559801,
+      "lead_name": "Jonathan",
+      "email": "email@jonbloch.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:40.772Z",
+      "action": "email_sent",
+      "lead_id": 16572486,
+      "lead_name": "there",
+      "email": "Bcorso@hotmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:42.240Z",
+      "action": "email_sent",
+      "lead_id": 16580792,
+      "lead_name": "Mark",
+      "email": "carolynpayton625@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:43.569Z",
+      "action": "email_sent",
+      "lead_id": 16587408,
+      "lead_name": "there",
+      "email": "sponeill5@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:44.931Z",
+      "action": "email_sent",
+      "lead_id": 16632440,
+      "lead_name": "there",
+      "email": "amrik@oneworldcuisine.coma",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:46.338Z",
+      "action": "email_sent",
+      "lead_id": 16705784,
+      "lead_name": "amy",
+      "email": "m16e7cardenas@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:47.655Z",
+      "action": "email_sent",
+      "lead_id": 16264290,
+      "lead_name": "kathleen",
+      "email": "Kathleenalthea@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:49.127Z",
+      "action": "email_sent",
+      "lead_id": 18538282,
+      "lead_name": "Heather",
+      "email": "heatherrsullivan1@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:50.527Z",
+      "action": "email_sent",
+      "lead_id": 19400754,
+      "lead_name": "Lauren",
+      "email": "Chenevertl@worcesterschools.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:51.878Z",
+      "action": "email_sent",
+      "lead_id": 20420450,
+      "lead_name": "Diane",
+      "email": "stardustdiane@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:53.251Z",
+      "action": "email_sent",
+      "lead_id": 18743040,
+      "lead_name": "there",
+      "email": "pratacontractorsinc@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:54.599Z",
+      "action": "email_sent",
+      "lead_id": 18680848,
+      "lead_name": "there",
+      "email": "jeffrey.fugleberg@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:55.927Z",
+      "action": "email_sent",
+      "lead_id": 18606328,
+      "lead_name": "there",
+      "email": "fjmuise@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:57.184Z",
+      "action": "email_sent",
+      "lead_id": 19368504,
+      "lead_name": "Leona",
+      "email": "classser@msn.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:03:58.641Z",
+      "action": "email_sent",
+      "lead_id": 17415988,
+      "lead_name": "Deb",
+      "email": "dcary@massaudubon.org",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:00.186Z",
+      "action": "email_sent",
+      "lead_id": 18705866,
+      "lead_name": "John",
+      "email": "Jxsweeney@acosta.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:01.569Z",
+      "action": "email_sent",
+      "lead_id": 18252830,
+      "lead_name": "there",
+      "email": "janieob179@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:03.176Z",
+      "action": "email_sent",
+      "lead_id": 17859694,
+      "lead_name": "there",
+      "email": "lainiesimoneau@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:04.844Z",
+      "action": "email_sent",
+      "lead_id": 18379776,
+      "lead_name": "Kevin",
+      "email": "kevin_kelly@nps.gov",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:06.576Z",
+      "action": "email_sent",
+      "lead_id": 17857458,
+      "lead_name": "Tom",
+      "email": "TLeveille1953@gmail.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:07.961Z",
+      "action": "email_sent",
+      "lead_id": 17159428,
+      "lead_name": "Christopher",
+      "email": "cjdolan910@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:10.563Z",
+      "action": "email_sent",
+      "lead_id": 15969332,
+      "lead_name": "Nhieu",
+      "email": "nguyentony70@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:12.197Z",
+      "action": "email_sent",
+      "lead_id": 15766628,
+      "lead_name": "Laurie",
+      "email": "Ldorval@bridgewell.org",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:13.845Z",
+      "action": "email_sent",
+      "lead_id": 15604465,
+      "lead_name": "Ali",
+      "email": "ali_sullo@comcast.net",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:15.292Z",
+      "action": "email_sent",
+      "lead_id": 14200296,
+      "lead_name": "Phillip",
+      "email": "gomes5@me.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:16.696Z",
+      "action": "email_sent",
+      "lead_id": 13724896,
+      "lead_name": "Tony",
+      "email": "Tony1.cabral@nemoves.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T17:04:18.244Z",
+      "action": "email_sent",
+      "lead_id": 16518035,
+      "lead_name": "there",
+      "email": "anthony_spence_01904@yahoo.com",
+      "template": "requalification_1"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "HOT",
+      "email": "andreiamtg@gmail.com",
+      "name": "Andreia Da Silva",
+      "note": "Yes! 1117 Whitman St, Hanson MA"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "HOT",
+      "email": "betsyhinkle@gmail.com",
+      "name": "Betsy Hinkle",
+      "note": "Sure we can try again! What is the next step?"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "STOP",
+      "email": "kimberlyblack36@gmail.com",
+      "name": "Kimberly Black",
+      "note": "Archived"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "STOP",
+      "email": "arachnedfp@gmail.com",
+      "name": "Debbie Fields Popham",
+      "note": "Archived"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "STOP",
+      "email": "cathymcintyre36@gmail.com",
+      "name": "Cathy McIntyre",
+      "note": "Archived"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "STOP",
+      "email": "cdonnad@gmail.com",
+      "name": "Donna",
+      "note": "Unsubscribe - Archived"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "STOP",
+      "email": "gdog477@yahoo.com",
+      "name": "Dan",
+      "note": "Archived"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "STOP",
+      "email": "cobcarlson@gmail.com",
+      "name": "Cob Carlson",
+      "note": "Archived"
+    },
+    {
+      "timestamp": "2026-02-03T20:01:34.437Z",
+      "action": "reply_processed",
+      "type": "LOST",
+      "email": "dcary@massaudubon.org",
+      "name": "Deb Cary",
+      "note": "Hiring local builder - Archived"
+    },
+    {
+      "timestamp": "2026-02-05T07:22:00Z",
+      "action": "note_added",
+      "lead_id": 13046344,
+      "lead_name": "Andreia Dasilva",
+      "note": "Steve sent follow-up email - Subject: Still thinking about an ADU?",
+      "note_id": 7846173,
+      "triggered_by": "Steve via Telegram"
+    },
+    {
+      "timestamp": "2026-02-05T07:22:00Z",
+      "action": "note_added",
+      "lead_id": 14200296,
+      "lead_name": "Phillip G Gomes",
+      "note": "Steve sent follow-up email - Subject: Still thinking about an ADU?",
+      "note_id": 7846203,
+      "triggered_by": "Steve via Telegram"
+    }
+  ]
+}

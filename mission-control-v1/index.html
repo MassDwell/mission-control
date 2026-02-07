@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clawson Mission Control V1.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // MassDwell - Modern, Sustainable, Green/Earth
+                        massdwell: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        // Atlantic Laser - Technical, Precise, Blue
+                        atlantic: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        // Alpine Property - Professional, Investment, Slate/Mountain
+                        alpine: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+        .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+        .scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="h-full bg-gray-50 font-sans" x-data="missionControl()" x-cloak>
+    
+    <!-- Main Hub View -->
+    <div x-show="!activeEntity" class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl">🦅</span>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-gray-900">Clawson Mission Control</h1>
+                            <p class="text-sm text-gray-500">V1.0 • Alpine Ecosystem Command Center</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-right">
+                            <p class="text-sm font-medium text-gray-900" x-text="currentTime"></p>
+                            <p class="text-xs text-gray-500" x-text="currentDate"></p>
+                        </div>
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                            <span class="text-sm font-medium text-gray-600">SV</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Global Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">Total Active Tasks</p>
+                            <p class="text-3xl font-bold text-gray-900" x-text="globalStats.totalTasks">0</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">Pipeline Items</p>
+                            <p class="text-3xl font-bold text-gray-900" x-text="globalStats.pipelineItems">0</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">Active Agents</p>
+                            <p class="text-3xl font-bold text-gray-900">10</p>
+                        </div>
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">System Health</p>
+                            <p class="text-3xl font-bold text-green-600">98%</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entity Cards -->
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Entity Dashboards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- MassDwell Card -->
+                <div @click="selectEntity('massdwell')" class="bg-gradient-to-br from-massdwell-600 to-massdwell-800 rounded-2xl shadow-lg p-6 cursor-pointer transform transition hover:scale-[1.02] hover:shadow-xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center">
+                            <span class="text-3xl">🏠</span>
+                        </div>
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-sm text-white">Primary</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">MassDwell</h3>
+                    <p class="text-massdwell-100 text-sm mb-6">Modular ADU Manufacturing</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-3">
+                            <p class="text-massdwell-200 text-xs">Active Projects</p>
+                            <p class="text-white text-xl font-bold" x-text="entities.massdwell.activeProjects">0</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-3">
+                            <p class="text-massdwell-200 text-xs">Pipeline Value</p>
+                            <p class="text-white text-xl font-bold" x-text="'$' + (entities.massdwell.pipelineValue / 1000).toFixed(0) + 'K'">$0K</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Atlantic Laser Card -->
+                <div @click="selectEntity('atlantic')" class="bg-gradient-to-br from-atlantic-600 to-atlantic-800 rounded-2xl shadow-lg p-6 cursor-pointer transform transition hover:scale-[1.02] hover:shadow-xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center">
+                            <span class="text-3xl">⚡</span>
+                        </div>
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-sm text-white">Secondary</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Atlantic Laser</h3>
+                    <p class="text-atlantic-100 text-sm mb-6">Laser Welding Distribution</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-3">
+                            <p class="text-atlantic-200 text-xs">Open Leads</p>
+                            <p class="text-white text-xl font-bold" x-text="entities.atlantic.openLeads">0</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-3">
+                            <p class="text-atlantic-200 text-xs">Quote Pipeline</p>
+                            <p class="text-white text-xl font-bold" x-text="'$' + (entities.atlantic.quotePipeline / 1000).toFixed(0) + 'K'">$0K</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alpine Property Card -->
+                <div @click="selectEntity('alpine')" class="bg-gradient-to-br from-alpine-700 to-alpine-900 rounded-2xl shadow-lg p-6 cursor-pointer transform transition hover:scale-[1.02] hover:shadow-xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center">
+                            <span class="text-3xl">🏔️</span>
+                        </div>
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-sm text-white">Foundation</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Alpine Property</h3>
+                    <p class="text-alpine-300 text-sm mb-6">Real Estate Investment & Dev</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-3">
+                            <p class="text-alpine-300 text-xs">Properties</p>
+                            <p class="text-white text-xl font-bold" x-text="entities.alpine.properties">0</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-3">
+                            <p class="text-alpine-300 text-xs">AUM</p>
+                            <p class="text-white text-xl font-bold" x-text="'$' + (entities.alpine.aum / 1000000).toFixed(1) + 'M'">$0M</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Alerts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Recent Activity -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">Recent Activity</h3>
+                        <button class="text-sm text-blue-600 hover:text-blue-700">View All</button>
+                    </div>
+                    <div class="space-y-4 max-h-80 overflow-y-auto scrollbar-thin">
+                        <template x-for="activity in recentActivity" :key="activity.id">
+                            <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition">
+                                <div class="w-8 h-8 flex-shrink-0 rounded-full flex items-center justify-center text-sm"
+                                     :class="{
+                                         'bg-massdwell-100 text-massdwell-600': activity.entity === 'massdwell',
+                                         'bg-atlantic-100 text-atlantic-600': activity.entity === 'atlantic',
+                                         'bg-alpine-100 text-alpine-600': activity.entity === 'alpine'
+                                     }">
+                                    <span x-text="activity.icon"></span>
+                                </div>
+                                <div class="flex-1 min-w-0 overflow-hidden">
+                                    <p class="text-sm text-gray-900 truncate" x-text="activity.message"></p>
+                                    <p class="text-xs text-gray-500" x-text="activity.time"></p>
+                                </div>
+                            </div>
+                        </template>
+                        <template x-if="recentActivity.length === 0">
+                            <div class="text-center py-8 text-gray-400">
+                                <p class="text-sm">No recent activity</p>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Alerts & Notifications -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">Alerts & Notifications</h3>
+                        <span class="px-2 py-1 bg-red-100 text-red-600 text-xs font-medium rounded-full" x-text="alerts.filter(a => a.priority === 'high').length + ' Critical'"></span>
+                    </div>
+                    <div class="space-y-3 max-h-80 overflow-y-auto scrollbar-thin">
+                        <template x-for="alert in alerts" :key="alert.id">
+                            <div class="flex items-start space-x-3 p-3 rounded-lg border-l-4"
+                                 :class="{
+                                     'bg-red-50 border-red-500': alert.priority === 'high',
+                                     'bg-yellow-50 border-yellow-500': alert.priority === 'medium',
+                                     'bg-blue-50 border-blue-500': alert.priority === 'low'
+                                 }">
+                                <div class="flex-1 min-w-0 overflow-hidden">
+                                    <p class="text-sm font-medium truncate"
+                                       :class="{
+                                           'text-red-800': alert.priority === 'high',
+                                           'text-yellow-800': alert.priority === 'medium',
+                                           'text-blue-800': alert.priority === 'low'
+                                       }"
+                                       x-text="alert.title"></p>
+                                    <p class="text-xs mt-1 line-clamp-2"
+                                       :class="{
+                                           'text-red-600': alert.priority === 'high',
+                                           'text-yellow-600': alert.priority === 'medium',
+                                           'text-blue-600': alert.priority === 'low'
+                                       }"
+                                       x-text="alert.message"></p>
+                                </div>
+                                <button class="flex-shrink-0 text-gray-400 hover:text-gray-600">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </template>
+                        <template x-if="alerts.length === 0">
+                            <div class="text-center py-8 text-gray-400">
+                                <p class="text-sm">No alerts</p>
+                                <p class="text-xs mt-1">All systems operational</p>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Entity Dashboard View -->
+    <div x-show="activeEntity" class="min-h-screen flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white border-r border-gray-200 flex flex-col">
+            <!-- Entity Header -->
+            <div class="p-4 border-b border-gray-200">
+                <button @click="activeEntity = null" class="flex items-center text-sm text-gray-500 hover:text-gray-700 mb-4">
+                    <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Hub
+                </button>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center"
+                         :class="{
+                             'bg-massdwell-100': activeEntity === 'massdwell',
+                             'bg-atlantic-100': activeEntity === 'atlantic',
+                             'bg-alpine-100': activeEntity === 'alpine'
+                         }">
+                        <span class="text-xl" x-text="getEntityIcon()"></span>
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-gray-900" x-text="getEntityName()"></h2>
+                        <p class="text-xs text-gray-500" x-text="getEntityTagline()"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-4 space-y-1">
+                <template x-for="item in sidebarItems" :key="item.id">
+                    <button @click="activeSection = item.id" 
+                            class="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition"
+                            :class="activeSection === item.id 
+                                ? (activeEntity === 'massdwell' ? 'bg-massdwell-100 text-massdwell-700' : 
+                                   activeEntity === 'atlantic' ? 'bg-atlantic-100 text-atlantic-700' : 
+                                   'bg-alpine-100 text-alpine-700')
+                                : 'text-gray-600 hover:bg-gray-100'">
+                        <span x-text="item.icon"></span>
+                        <span class="text-sm font-medium" x-text="item.label"></span>
+                    </button>
+                </template>
+            </nav>
+
+            <!-- User Info -->
+            <div class="p-4 border-t border-gray-200">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                        <span class="text-xs font-medium text-gray-600">SV</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate">Steve Vettori</p>
+                        <p class="text-xs text-gray-500">Principal</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-hidden">
+            <!-- Top Header -->
+            <header class="bg-white border-b border-gray-200 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-xl font-semibold text-gray-900" x-text="getSectionTitle()"></h1>
+                        <p class="text-sm text-gray-500" x-text="getSectionSubtitle()"></p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <!-- Search -->
+                        <div class="relative">
+                            <input type="text" placeholder="Search..." 
+                                   class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <!-- Notifications -->
+                        <button class="relative p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                            </svg>
+                            <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                        </button>
+                        <!-- Time -->
+                        <div class="text-right">
+                            <p class="text-sm font-medium text-gray-900" x-text="currentTime"></p>
+                            <p class="text-xs text-gray-500" x-text="currentDate"></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="p-6 overflow-y-auto h-[calc(100vh-73px)] scrollbar-thin">
+                <!-- Overview Section -->
+                <div x-show="activeSection === 'overview'">
+                    <!-- KPI Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                        <template x-for="kpi in getCurrentKPIs()" :key="kpi.label">
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 overflow-hidden">
+                                <div class="flex items-center justify-between gap-2">
+                                    <div class="min-w-0 flex-1">
+                                        <p class="text-sm text-gray-500 truncate" x-text="kpi.label"></p>
+                                        <p class="text-2xl font-bold text-gray-900 truncate" x-text="kpi.value"></p>
+                                        <p class="text-xs mt-1"
+                                           :class="kpi.trend > 0 ? 'text-green-600' : kpi.trend < 0 ? 'text-red-600' : 'text-gray-400'"
+                                           x-text="kpi.trend !== 0 ? ((kpi.trend > 0 ? '↑ ' : '↓ ') + Math.abs(kpi.trend) + '% vs last month') : '—'"></p>
+                                    </div>
+                                    <div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center"
+                                         :class="{
+                                             'bg-massdwell-100 text-massdwell-600': activeEntity === 'massdwell',
+                                             'bg-atlantic-100 text-atlantic-600': activeEntity === 'atlantic',
+                                             'bg-alpine-100 text-alpine-600': activeEntity === 'alpine'
+                                         }">
+                                        <span x-text="kpi.icon"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Performance Trend</h3>
+                            <canvas id="performanceChart" height="200"></canvas>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Pipeline Distribution</h3>
+                            <canvas id="pipelineChart" height="200"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Status Heatmap -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">System Health</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="p-4 rounded-lg bg-green-50 border border-green-200">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-green-800">Tasks</span>
+                                    <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                                </div>
+                                <p class="text-2xl font-bold text-green-700 mt-2">On Track</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-green-50 border border-green-200">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-green-800">Pipeline</span>
+                                    <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                                </div>
+                                <p class="text-2xl font-bold text-green-700 mt-2">Healthy</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-yellow-50 border border-yellow-200">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-yellow-800">Team Load</span>
+                                    <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                                </div>
+                                <p class="text-2xl font-bold text-yellow-700 mt-2">Moderate</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-green-50 border border-green-200">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-green-800">Revenue</span>
+                                    <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                                </div>
+                                <p class="text-2xl font-bold text-green-700 mt-2">Above Target</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tasks Section -->
+                <div x-show="activeSection === 'tasks'">
+                    <!-- Task Controls -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-4">
+                            <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>All Tasks</option>
+                                <option>My Tasks</option>
+                                <option>Overdue</option>
+                                <option>Due This Week</option>
+                            </select>
+                            <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>All Priorities</option>
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </div>
+                        <button class="px-4 py-2 rounded-lg text-white text-sm font-medium"
+                                :class="{
+                                    'bg-massdwell-600 hover:bg-massdwell-700': activeEntity === 'massdwell',
+                                    'bg-atlantic-600 hover:bg-atlantic-700': activeEntity === 'atlantic',
+                                    'bg-alpine-700 hover:bg-alpine-800': activeEntity === 'alpine'
+                                }">
+                            + New Task
+                        </button>
+                    </div>
+
+                    <!-- Kanban Board -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <template x-for="column in taskColumns" :key="column.id">
+                            <div class="bg-gray-100 rounded-xl p-4">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h4 class="font-semibold text-gray-700" x-text="column.title"></h4>
+                                    <span class="px-2 py-1 bg-gray-200 text-gray-600 text-xs rounded-full" 
+                                          x-text="getTasksForColumn(column.id).length"></span>
+                                </div>
+                                <div class="space-y-3">
+                                    <template x-for="task in getTasksForColumn(column.id)" :key="task.id">
+                                        <div class="bg-white rounded-lg shadow-sm p-4 cursor-pointer hover:shadow-md transition overflow-hidden">
+                                            <div class="flex items-start justify-between mb-2 gap-2">
+                                                <span class="flex-shrink-0 px-2 py-0.5 text-xs font-medium rounded"
+                                                      :class="{
+                                                          'bg-red-100 text-red-700': task.priority === 'high',
+                                                          'bg-yellow-100 text-yellow-700': task.priority === 'medium',
+                                                          'bg-blue-100 text-blue-700': task.priority === 'low'
+                                                      }"
+                                                      x-text="task.priority"></span>
+                                                <span class="flex-shrink-0 text-xs text-gray-400" x-text="task.dueDate"></span>
+                                            </div>
+                                            <h5 class="text-sm font-medium text-gray-900 mb-2 line-clamp-2" x-text="task.title"></h5>
+                                            <div class="flex items-center justify-between gap-2">
+                                                <div class="flex items-center space-x-2 min-w-0">
+                                                    <div class="w-6 h-6 flex-shrink-0 bg-gray-200 rounded-full flex items-center justify-center">
+                                                        <span class="text-xs text-gray-600" x-text="task.assignee.split(' ').map(n => n[0]).join('')"></span>
+                                                    </div>
+                                                    <span class="text-xs text-gray-500 truncate" x-text="task.assignee"></span>
+                                                </div>
+                                                <div class="w-16 flex-shrink-0 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                                                    <div class="h-full rounded-full"
+                                                         :class="{
+                                                             'bg-massdwell-500': activeEntity === 'massdwell',
+                                                             'bg-atlantic-500': activeEntity === 'atlantic',
+                                                             'bg-alpine-500': activeEntity === 'alpine'
+                                                         }"
+                                                         :style="'width: ' + task.progress + '%'"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                    <template x-if="getTasksForColumn(column.id).length === 0">
+                                        <div class="text-center py-4 text-gray-400 text-xs">
+                                            No tasks
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Pipeline Section -->
+                <div x-show="activeSection === 'pipeline'">
+                    <!-- Pipeline Funnel -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Pipeline Stages</h3>
+                        <div class="flex items-end justify-between h-48 gap-2">
+                            <template x-for="(stage, index) in getPipelineStages()" :key="stage.name">
+                                <div class="flex-1 flex flex-col items-center min-w-0">
+                                    <div class="w-full max-w-[100px] rounded-t-lg transition-all duration-300"
+                                         :class="{
+                                             'bg-massdwell-500': activeEntity === 'massdwell',
+                                             'bg-atlantic-500': activeEntity === 'atlantic',
+                                             'bg-alpine-600': activeEntity === 'alpine'
+                                         }"
+                                         :style="'height: ' + (stage.count > 0 ? Math.max(stage.count / maxStageCount * 100, 5) : 2) + '%; opacity: ' + (1 - index * 0.15)">
+                                    </div>
+                                    <div class="text-center mt-3 w-full overflow-hidden">
+                                        <p class="text-xs sm:text-sm font-medium text-gray-900 truncate" x-text="stage.name"></p>
+                                        <p class="text-lg font-bold" 
+                                           :class="{
+                                               'text-massdwell-600': activeEntity === 'massdwell',
+                                               'text-atlantic-600': activeEntity === 'atlantic',
+                                               'text-alpine-600': activeEntity === 'alpine'
+                                           }"
+                                           x-text="stage.count"></p>
+                                        <p class="text-xs text-gray-500 truncate" x-text="stage.value"></p>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Items Table -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-900">Pipeline Items</h3>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stage</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Value</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Days in Stage</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Owner</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <template x-for="item in getPipelineItems()" :key="item.id">
+                                        <tr class="hover:bg-gray-50">
+                                            <td class="px-6 py-4 max-w-xs">
+                                                <div class="min-w-0">
+                                                    <p class="text-sm font-medium text-gray-900 truncate" x-text="item.name"></p>
+                                                    <p class="text-xs text-gray-500 truncate" x-text="item.description"></p>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <span class="px-2 py-1 text-xs font-medium rounded-full whitespace-nowrap"
+                                                      :class="{
+                                                          'bg-blue-100 text-blue-700': item.stage === 'Lead',
+                                                          'bg-yellow-100 text-yellow-700': item.stage === 'Qualified',
+                                                          'bg-purple-100 text-purple-700': item.stage === 'Proposal',
+                                                          'bg-green-100 text-green-700': item.stage === 'Closed'
+                                                      }"
+                                                      x-text="item.stage"></span>
+                                            </td>
+                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap" x-text="item.value"></td>
+                                            <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap" x-text="item.daysInStage + ' days'"></td>
+                                            <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap truncate max-w-[120px]" x-text="item.owner"></td>
+                                            <td class="px-6 py-4">
+                                                <button class="text-sm text-blue-600 hover:text-blue-700">View</button>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                    <template x-if="getPipelineItems().length === 0">
+                                        <tr>
+                                            <td colspan="6" class="px-6 py-12 text-center text-gray-400">
+                                                <p class="text-sm">No pipeline items</p>
+                                                <p class="text-xs mt-1">Add deals to track your pipeline</p>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div x-show="activeSection === 'team'">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <template x-for="member in getTeamMembers()" :key="member.id">
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 overflow-hidden">
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <div class="w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center text-white font-medium"
+                                         :class="{
+                                             'bg-massdwell-500': activeEntity === 'massdwell',
+                                             'bg-atlantic-500': activeEntity === 'atlantic',
+                                             'bg-alpine-600': activeEntity === 'alpine'
+                                         }">
+                                        <span x-text="member.name.split(' ').map(n => n[0]).join('')"></span>
+                                    </div>
+                                    <div class="min-w-0">
+                                        <h4 class="font-semibold text-gray-900 truncate" x-text="member.name"></h4>
+                                        <p class="text-sm text-gray-500 truncate" x-text="member.role"></p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between text-sm">
+                                        <span class="text-gray-500">Active Tasks</span>
+                                        <span class="font-medium text-gray-900" x-text="member.activeTasks"></span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm">
+                                        <span class="text-gray-500">Workload</span>
+                                        <span class="font-medium" 
+                                              :class="{
+                                                  'text-green-600': member.workload < 70,
+                                                  'text-yellow-600': member.workload >= 70 && member.workload < 90,
+                                                  'text-red-600': member.workload >= 90
+                                              }"
+                                              x-text="member.workload + '%'"></span>
+                                    </div>
+                                    <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full rounded-full transition-all duration-300"
+                                             :class="{
+                                                 'bg-green-500': member.workload < 70,
+                                                 'bg-yellow-500': member.workload >= 70 && member.workload < 90,
+                                                 'bg-red-500': member.workload >= 90
+                                             }"
+                                             :style="'width: ' + member.workload + '%'"></div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-gray-200">
+                                    <p class="text-xs text-gray-500 mb-2">Contact</p>
+                                    <p class="text-sm text-gray-900 truncate" x-text="member.email"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <template x-if="getTeamMembers().length === 0">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center text-gray-400">
+                            <p class="text-sm">No team members configured</p>
+                            <p class="text-xs mt-1">Add team members in settings</p>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Analytics Section -->
+                <div x-show="activeSection === 'analytics'">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Monthly Performance</h3>
+                            <canvas id="monthlyChart" height="250"></canvas>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Conversion Rates</h3>
+                            <canvas id="conversionChart" height="250"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Insights -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <span class="text-xl">🤖</span>
+                            <h3 class="text-lg font-semibold text-gray-900">AI-Powered Insights</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-lg bg-blue-50 border border-blue-200">
+                                <p class="text-sm font-medium text-blue-800 mb-2">Opportunity Detected</p>
+                                <p class="text-xs text-blue-600">Pipeline stage "Proposal" has 3 items idle for >7 days. Consider follow-up actions.</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-yellow-50 border border-yellow-200">
+                                <p class="text-sm font-medium text-yellow-800 mb-2">Resource Alert</p>
+                                <p class="text-xs text-yellow-600">Team workload is trending toward capacity. Consider task redistribution.</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-green-50 border border-green-200">
+                                <p class="text-sm font-medium text-green-800 mb-2">Positive Trend</p>
+                                <p class="text-xs text-green-600">Lead conversion rate improved 12% this month. Current strategies are effective.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Section -->
+                <div x-show="activeSection === 'settings'">
+                    <div class="max-w-2xl">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Dashboard Settings</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between py-3 border-b border-gray-200">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Email Notifications</p>
+                                        <p class="text-sm text-gray-500">Receive alerts via email</p>
+                                    </div>
+                                    <button class="relative w-11 h-6 bg-blue-600 rounded-full transition">
+                                        <span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition"></span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between py-3 border-b border-gray-200">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Real-time Updates</p>
+                                        <p class="text-sm text-gray-500">Auto-refresh dashboard data</p>
+                                    </div>
+                                    <button class="relative w-11 h-6 bg-blue-600 rounded-full transition">
+                                        <span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition"></span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Dark Mode</p>
+                                        <p class="text-sm text-gray-500">Toggle dark theme</p>
+                                    </div>
+                                    <button class="relative w-11 h-6 bg-gray-300 rounded-full transition">
+                                        <span class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Data Management</h3>
+                            <div class="space-y-3">
+                                <button class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 text-left flex items-center justify-between">
+                                    <span>Export Data (CSV)</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                    </svg>
+                                </button>
+                                <button class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 text-left flex items-center justify-between">
+                                    <span>Import Data</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                                    </svg>
+                                </button>
+                                <button class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 text-left flex items-center justify-between">
+                                    <span>Generate Report (PDF)</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

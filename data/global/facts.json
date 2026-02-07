@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "description": "Global facts spanning all entities in the Alpine ecosystem",
+    "last_updated": "2026-02-02",
+    "version": "1.0"
+  },
+  "principal": {
+    "name": "Steve Vettori",
+    "title": "Principal",
+    "email": null,
+    "phone": null,
+    "x_handle": "@veto6040",
+    "linkedin": null
+  },
+  "headquarters": {
+    "address": null,
+    "city": "Needham",
+    "state": "MA",
+    "zip": null,
+    "note": "Shared office space for all three entities"
+  },
+  "entities": [
+    {
+      "name": "Alpine Property Group",
+      "type": "LLC",
+      "role": "Foundation / Holding",
+      "focus": "Real estate investment & development",
+      "founded": 2016
+    },
+    {
+      "name": "MassDwell",
+      "type": null,
+      "role": "Primary operating company",
+      "focus": "Modular ADU manufacturing",
+      "founded": null
+    },
+    {
+      "name": "Atlantic Laser Solutions",
+      "type": null,
+      "role": "Secondary operating company",
+      "focus": "Laser welding equipment distribution",
+      "founded": null
+    }
+  ],
+  "market": {
+    "primary_region": "Greater Boston",
+    "state": "Massachusetts",
+    "focus_areas": ["Needham", "Boston metro"]
+  },
+  "strategic_themes": [
+    "Value-driven opportunities",
+    "Sustainability",
+    "Cutting-edge efficiency",
+    "Community transformation",
+    "Local market expertise",
+    "Vertical integration"
+  ],
+  "key_relationships": {
+    "partners": [],
+    "vendors": [],
+    "investors": [],
+    "advisors": []
+  },
+  "open_questions": [
+    "Exact office address?",
+    "Steve's direct contact info?",
+    "Entity legal structures (LLC, Corp, etc.)?",
+    "Banking/financial relationships?",
+    "Insurance providers?",
+    "Legal counsel?"
+  ]
+}

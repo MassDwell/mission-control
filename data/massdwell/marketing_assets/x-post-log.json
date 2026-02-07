@@ -1,0 +1,83 @@
+{
+  "account": "@massdwell",
+  "strategy": "rapid_growth",
+  "started": "2026-02-03",
+  "posts": [
+    {
+      "id": "2018772423588389190",
+      "timestamp": "2026-02-03T14:44:00-05:00",
+      "image": "exterior-modern-1.jpg",
+      "text": "This could be in your backyard by summer. 🏡 Modern ADUs built 50% faster...",
+      "type": "product_hero"
+    },
+    {
+      "id": "2018772456853450967",
+      "timestamp": "2026-02-03T14:44:30-05:00",
+      "image": "interior-living-1.jpg",
+      "text": "Small footprint. Big living. ✨ Our ADU interiors maximize every square foot...",
+      "type": "interior_showcase"
+    },
+    {
+      "id": "2018772487752851729",
+      "timestamp": "2026-02-03T14:45:00-05:00",
+      "image": "exterior-family-1.jpg",
+      "text": "Space for family to grow. Space for memories to happen. 💫 ADUs aren't just buildings...",
+      "type": "lifestyle_emotional"
+    },
+    {
+      "id": "2018772520095146189",
+      "timestamp": "2026-02-03T14:45:30-05:00",
+      "image": "aerial-property-1.jpg",
+      "text": "See how it fits? 👀 Modern ADU, seamlessly integrated...",
+      "type": "property_integration"
+    },
+    {
+      "id": "2018774376515023250",
+      "timestamp": "2026-02-03T19:51:33.295Z",
+      "image": "daily-1770148291581.jpg",
+      "text": "Transformation Tuesday 🔄\n\nFrom empty backyard to income-generating asset in 8-12 weeks.\n\nFactory-bu...",
+      "type": "Transformation Tuesday",
+      "generated": true
+    },
+    {
+      "id": "2018821879725785451",
+      "timestamp": "2026-02-03T23:00:18.899Z",
+      "image": "daily-1770159617380.jpg",
+      "text": "8 weeks ago: empty lawn\nToday: $2,000/month rental income 💰\n\nThat's the ADU transformation.\n\nmassdw...",
+      "type": "Transformation Tuesday",
+      "generated": true
+    },
+    {
+      "id": "2019025686216818736",
+      "timestamp": "2026-02-04T12:30:10.168Z",
+      "image": "daily-1770208208160.jpg",
+      "text": "Small space. Big style. ✨\n\nEvery inch of our ADUs is designed for maximum livability.\n\nThis bathroom...",
+      "type": "Interior Wednesday",
+      "generated": true
+    },
+    {
+      "id": "2019184226952753502",
+      "timestamp": "2026-02-04T23:00:09.207Z",
+      "image": "daily-1770246007672.jpg",
+      "text": "The kitchen that fits your backyard (and your budget). 🍳\n\nFull-size appliances. Quartz counters. Cl...",
+      "type": "Interior Wednesday",
+      "generated": true
+    },
+    {
+      "id": "2019388068348793296",
+      "timestamp": "2026-02-05T12:30:08.828Z",
+      "image": "daily-1770294607201.jpg",
+      "text": "ADU 101: What counts as an ADU? 📚\n\n✓ 400-900 sq ft\n✓ Full kitchen + bath\n✓ Separate entrance\n✓ On s...",
+      "type": "Thoughtful Thursday (Education)",
+      "generated": true
+    },
+    {
+      "id": "2019546636544778254",
+      "timestamp": "2026-02-05T23:00:14.353Z",
+      "image": "daily-1770332413068.jpg",
+      "text": "ADU 101: What counts as an ADU? 📚\n\n✓ 400-900 sq ft\n✓ Full kitchen + bath\n✓ Separate entrance\n✓ On s...",
+      "type": "Thoughtful Thursday (Education)",
+      "generated": true
+    }
+  ]
+}

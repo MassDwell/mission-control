@@ -1,0 +1,75 @@
+{
+  "calls": [
+    {
+      "phone": "+12014178417",
+      "name": "Mohammed Baseer Ahmed",
+      "callId": "019c2a7e-6258-7665-8868-99a082506742",
+      "timestamp": "2026-02-04T21:10:51.779Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12014500915",
+      "name": "Karolina Szymanek",
+      "callId": "019c2a7e-9237-7995-94a9-d77d59ca4f18",
+      "timestamp": "2026-02-04T21:11:04.049Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12016187549",
+      "name": "Bena Booth",
+      "callId": "019c2a7e-c250-7000-8162-773618709e80",
+      "timestamp": "2026-02-04T21:11:16.374Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12016997420",
+      "name": "Rishi Rajive",
+      "callId": "019c2a7e-f25a-766a-a55e-8041f61921ac",
+      "timestamp": "2026-02-04T21:11:28.794Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12022564277",
+      "name": "Jerrold Frank",
+      "callId": "019c2a7f-230f-7ccf-ac64-0cfedc6cf87c",
+      "timestamp": "2026-02-04T21:11:41.102Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12023608245",
+      "name": "Kendall Dorman",
+      "callId": "019c2a7f-52e4-7aa9-8e77-5e3a878e0eaa",
+      "timestamp": "2026-02-04T21:11:53.343Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12023658240",
+      "name": "Anna Carstens Mensing",
+      "callId": "019c2a7f-82cb-799d-a126-c02c19ea9b21",
+      "timestamp": "2026-02-04T21:12:05.603Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12024928999",
+      "name": "John Wasielewski",
+      "callId": "019c2a7f-b29e-7445-8b0b-6f809986701d",
+      "timestamp": "2026-02-04T21:12:17.836Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12032318243",
+      "name": "Julie-Ann Silberman-Bunn",
+      "callId": "019c2a7f-e26b-7664-bac9-15a2fb18899d",
+      "timestamp": "2026-02-04T21:12:30.082Z",
+      "status": "initiated"
+    },
+    {
+      "phone": "+12032338056",
+      "name": "Paula Delage",
+      "callId": "019c2a80-1281-7eee-aae1-d28ec416e392",
+      "timestamp": "2026-02-04T21:12:42.445Z",
+      "status": "initiated"
+    }
+  ],
+  "lastRun": "2026-02-04T21:12:42.445Z"
+}

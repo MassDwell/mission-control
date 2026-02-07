@@ -1,0 +1,132 @@
+{
+  "_meta": {
+    "description": "Atlantic Laser Solutions - Facts & Context",
+    "last_updated": "2026-02-02",
+    "version": "1.0"
+  },
+  "company": {
+    "legal_name": null,
+    "dba": "Atlantic Laser Solutions",
+    "founded": null,
+    "website": "atlanticlasersolutions.com",
+    "role": "Secondary operating company - Laser welding equipment distribution"
+  },
+  "leadership": {
+    "principal": "Steve Vettori",
+    "title": "Principal & CEO"
+  },
+  "mission": {
+    "core": "Revolutionize welding with compact, efficient handheld lasers",
+    "values": [
+      "Cutting-edge technology",
+      "User-friendly operation",
+      "Enhanced productivity",
+      "Reduced training time",
+      "Cost-effective performance"
+    ]
+  },
+  "distribution": {
+    "type": "Authorized distributor",
+    "manufacturer": "Theo",
+    "product_line": "Laser Welding Machines",
+    "territory": null
+  },
+  "products": {
+    "main_line": "Theo MA1 Series",
+    "technology": {
+      "type": "Air-cooled fiber laser",
+      "power_input": "220Vac",
+      "speed_advantage": "Up to 4x faster than arc welding",
+      "energy_savings": "80% less energy than TIG/arc methods",
+      "training_time": "Trainable in hours"
+    },
+    "certifications": ["CE", "FDA", "ETL"],
+    "models": [
+      {
+        "name": "MA1-35",
+        "penetration": "1/8 inch",
+        "output": "800W",
+        "weight_lbs": 62,
+        "display": "Top-mounted screen",
+        "price": null
+      },
+      {
+        "name": "MA1-45",
+        "penetration": "3/16 inch",
+        "output": "1200W",
+        "weight_lbs": 86,
+        "display": "7-inch LED touch screen",
+        "price": null
+      },
+      {
+        "name": "MA1-65",
+        "penetration": "1/4 inch (stainless steel)",
+        "output": "1500W",
+        "weight_lbs": 86,
+        "display": "7-inch LED touch screen",
+        "price": null
+      },
+      {
+        "name": "MA1-Ultra",
+        "penetration": "Enhanced",
+        "output": "Premium",
+        "weight_lbs": null,
+        "display": null,
+        "features": [
+          "Deeper welds",
+          "Less heat",
+          "10% reduced energy use",
+          "100% duty cycle",
+          "Upgraded wire feeder",
+          "Tested over 3,000 hours"
+        ],
+        "price": null
+      }
+    ],
+    "accessories": [
+      {"name": "Wire feeders", "price": null},
+      {"name": "Safety enclosures (8x8)", "price": null},
+      {"name": "Safety enclosures (custom sizes)", "price": null}
+    ],
+    "services": [
+      "Customized safety training",
+      "Expert guidance",
+      "Integration support"
+    ]
+  },
+  "target_customers": [
+    "Welding shops",
+    "Manufacturing facilities",
+    "Metal fabricators",
+    "Automotive repair",
+    "HVAC contractors",
+    "Individual professional welders"
+  ],
+  "sales": {
+    "process": null,
+    "typical_cycle": null,
+    "current_pipeline": [],
+    "completed_sales": []
+  },
+  "marketing": {
+    "channels": [],
+    "trade_shows": [],
+    "content_assets": []
+  },
+  "support": {
+    "warranty": null,
+    "service_locations": [],
+    "training_offerings": ["Customized safety training"]
+  },
+  "open_questions": [
+    "Full pricing for all models?",
+    "Current sales pipeline?",
+    "Territory/distribution rights scope?",
+    "Warranty terms?",
+    "Inventory levels?",
+    "Lead time from Theo?",
+    "Competitor landscape?",
+    "Marketing channels and lead sources?",
+    "Service/repair capabilities?"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "MassDwell Marketing Dashboard",
+  "url": "https://lookerstudio.google.com/u/0/reporting/b1c14498-6e34-469d-96bf-a95abf14d008/page/p_ffqfubejnd",
+  "platform": "Looker Studio",
+  "dataSources": ["Meta Ads", "Google Ads", "Google Analytics"],
+  "keyMetrics": [
+    "Active Users",
+    "Google Ads Spend",
+    "Google Ads Views",
+    "Google Ads Clicks",
+    "Google Ads Conversions",
+    "Meta Ads Performance",
+    "Top Pages",
+    "Top Regions"
+  ],
+  "baseline": {
+    "date": "2026-02-03",
+    "activeUsers": 193,
+    "googleAdsSpend": 2.09,
+    "googleAdsViews": 574,
+    "googleAdsClicks": 6,
+    "topRegion": "Massachusetts"
+  },
+  "alerts": {
+    "activeUsersDropPct": 30,
+    "spendOverDailyBudget": 50,
+    "conversionRateDropPct": 25
+  }
+}

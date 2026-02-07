@@ -1,0 +1,16 @@
+Name,Category,Brand,Color,IsUpgrade,UpgradePrice
+Agreeable Gray,Interior Paint,Sherwin Williams,Agreeable Gray,false,0
+Accessible Beige,Interior Paint,Sherwin Williams,Accessible Beige,false,0
+Alabaster,Interior Paint,Sherwin Williams,Alabaster,false,0
+Naval,Interior Paint,Sherwin Williams,Navy Blue,true,500
+Sea Salt,Interior Paint,Sherwin Williams,Soft Green,false,0
+Shaker White,Cabinets,Premium Cabinetry,White,false,0
+Shaker Gray,Cabinets,Premium Cabinetry,Gray,false,0
+Shaker Navy,Cabinets,Premium Cabinetry,Navy,true,1500
+Modern Flat White,Cabinets,Premium Cabinetry,White,true,2000
+Natural Oak,Cabinets,Premium Cabinetry,Oak,true,2500
+Carrara White,Countertops,MSI Quartz,White/Gray Veins,true,1200
+Calacatta Gold,Countertops,MSI Quartz,White/Gold Veins,true,2500
+Arctic White,Countertops,MSI Quartz,Pure White,false,0
+Steel Gray,Countertops,MSI Quartz,Gray,false,0
+Midnight Black,Countertops,MSI Quartz,Black,true,800

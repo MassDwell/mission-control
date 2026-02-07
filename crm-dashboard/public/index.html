@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MassDwell CRM | Sales Pipeline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+        
+        /* Glass morphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        .gradient-hot {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        .gradient-warm {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+        .gradient-cold {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        
+        /* Animated gradient border */
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(59, 130, 246, 0.3));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        
+        /* Smooth transitions */
+        .smooth { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .smooth-fast { transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        /* Card hover effects */
+        .lead-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .lead-card:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Drag states */
+        .drag-over { 
+            background: rgba(16, 185, 129, 0.1) !important; 
+            border: 2px dashed rgba(16, 185, 129, 0.5) !important;
+        }
+        .dragging { opacity: 0.5; transform: scale(0.98); }
+        
+        /* Pulse animation */
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .pulse-subtle { animation: pulse-subtle 2s ease-in-out infinite; }
+        
+        /* Glow effects */
+        .glow-green { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+        .glow-blue { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+        
+        /* Floating orbs background */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .orb-1 { width: 400px; height: 400px; background: #10b981; top: -100px; left: -100px; }
+        .orb-2 { width: 300px; height: 300px; background: #6366f1; bottom: -50px; right: -50px; }
+        .orb-3 { width: 200px; height: 200px; background: #3b82f6; top: 50%; left: 30%; }
+        
+        /* Temperature indicators */
+        .temp-hot { 
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.1));
+            border-left: 3px solid #ef4444;
+        }
+        .temp-warm { 
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(234, 88, 12, 0.1));
+            border-left: 3px solid #f97316;
+        }
+        .temp-cold { 
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(37, 99, 235, 0.1));
+            border-left: 3px solid #3b82f6;
+        }
+        
+        /* Quick action buttons */
+        .quick-action {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+        .quick-action:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.1);
+        }
+        
+        /* Stage column header */
+        .stage-header {
+            background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+        }
+        
+        /* Mobile menu */
+        @media (max-width: 768px) {
+            .mobile-sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 50;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            .mobile-sidebar.open {
+                transform: translateX(0);
+            }
+        }
+        
+        /* Stat cards */
+        .stat-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+        }
+        
+        /* Search input glow */
+        .search-input:focus {
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3), 0 0 20px rgba(16, 185, 129, 0.1);
+        }
+        
+        /* Fade in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.3s ease forwards; }
+        
+        /* Number counter animation */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen overflow-hidden relative" x-data="crmApp()">
+    <!-- Background orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    
+    <!-- Header -->
+    <header class="glass border-b border-white/5 px-4 md:px-6 py-3 relative z-20">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3 md:space-x-4">
+                <!-- Mobile menu button -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 -ml-2 rounded-lg hover:bg-white/10 smooth">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                
+                <div class="w-10 h-10 md:w-11 md:h-11 gradient-accent rounded-xl flex items-center justify-center shadow-lg glow-green">
+                    <span class="text-xl md:text-2xl">🏠</span>
+                </div>
+                <div class="hidden sm:block">
+                    <h1 class="text-lg md:text-xl font-bold bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">MassDwell CRM</h1>
+                    <p class="text-xs text-white/40 font-medium tracking-wide">SALES PIPELINE</p>
+                </div>
+            </div>
+            
+            <!-- Search bar (desktop) -->
+            <div class="hidden md:flex flex-1 max-w-md mx-8">
+                <div class="relative w-full">
+                    <input type="text" x-model="searchQuery" placeholder="Search leads by name, phone, location..."
+                           class="search-input w-full px-4 py-2.5 pl-10 bg-white/5 rounded-xl text-sm focus:outline-none border border-white/10 focus:border-emerald-500/50 smooth placeholder-white/30">
+                    <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <div x-show="searchQuery" class="absolute right-2 top-1/2 -translate-y-1/2">
+                        <button @click="searchQuery = ''" class="p-1 hover:bg-white/10 rounded smooth-fast">
+                            <svg class="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <!-- Filter button -->
+                <div class="relative" x-data="{ filterOpen: false }">
+                    <button @click="filterOpen = !filterOpen" 
+                            class="p-2.5 glass rounded-xl hover:bg-white/10 smooth relative"
+                            :class="activeFilters.length ? 'ring-2 ring-emerald-500/50' : ''">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                        </svg>
+                        <span x-show="activeFilters.length" class="absolute -top-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full text-xs flex items-center justify-center font-medium" x-text="activeFilters.length"></span>
+                    </button>
+                    
+                    <!-- Filter dropdown -->
+                    <div x-show="filterOpen" @click.outside="filterOpen = false" x-transition
+                         class="absolute right-0 mt-2 w-72 glass rounded-2xl p-4 shadow-2xl z-50">
+                        <h4 class="font-semibold mb-3 text-sm">Filter Leads</h4>
+                        
+                        <div class="space-y-3">
+                            <!-- Temperature filter -->
+                            <div>
+                                <label class="text-xs text-white/50 uppercase tracking-wide mb-2 block">Temperature</label>
+                                <div class="flex gap-2">
+                                    <button @click="toggleFilter('hot')" 
+                                            class="px-3 py-1.5 rounded-lg text-xs font-medium smooth-fast"
+                                            :class="activeFilters.includes('hot') ? 'bg-red-500/30 text-red-300 ring-1 ring-red-500/50' : 'bg-white/5 hover:bg-white/10'">
+                                        🔥 Hot
+                                    </button>
+                                    <button @click="toggleFilter('warm')" 
+                                            class="px-3 py-1.5 rounded-lg text-xs font-medium smooth-fast"
+                                            :class="activeFilters.includes('warm') ? 'bg-orange-500/30 text-orange-300 ring-1 ring-orange-500/50' : 'bg-white/5 hover:bg-white/10'">
+                                        🌡️ Warm
+                                    </button>
+                                    <button @click="toggleFilter('cold')" 
+                                            class="px-3 py-1.5 rounded-lg text-xs font-medium smooth-fast"
+                                            :class="activeFilters.includes('cold') ? 'bg-blue-500/30 text-blue-300 ring-1 ring-blue-500/50' : 'bg-white/5 hover:bg-white/10'">
+                                        ❄️ Cold
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Value filter -->
+                            <div>
+                                <label class="text-xs text-white/50 uppercase tracking-wide mb-2 block">Value Range</label>
+                                <div class="flex gap-2">
+                                    <button @click="toggleFilter('high-value')" 
+                                            class="px-3 py-1.5 rounded-lg text-xs font-medium smooth-fast"
+                                            :class="activeFilters.includes('high-value') ? 'bg-emerald-500/30 text-emerald-300 ring-1 ring-emerald-500/50' : 'bg-white/5 hover:bg-white/10'">
+                                        💎 $100K+
+                                    </button>
+                                    <button @click="toggleFilter('has-value')" 
+                                            class="px-3 py-1.5 rounded-lg text-xs font-medium smooth-fast"
+                                            :class="activeFilters.includes('has-value') ? 'bg-emerald-500/30 text-emerald-300 ring-1 ring-emerald-500/50' : 'bg-white/5 hover:bg-white/10'">
+                                        💰 Has Value
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <button x-show="activeFilters.length" @click="activeFilters = []" 
+                                    class="w-full py-2 text-xs text-white/50 hover:text-white smooth-fast">
+                                Clear all filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sync button -->
+                <button @click="syncFromKommo()" 
+                        class="hidden sm:flex items-center space-x-2 px-4 py-2.5 gradient-accent rounded-xl text-sm font-medium shadow-lg hover:shadow-emerald-500/25 smooth glow-green"
+                        :disabled="syncing"
+                        :class="syncing ? 'opacity-70' : ''">
+                    <svg x-show="!syncing" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    <svg x-show="syncing" class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span x-text="syncing ? 'Syncing...' : 'Sync'"></span>
+                </button>
+                
+                <!-- Status indicator -->
+                <div class="hidden lg:flex items-center space-x-2 px-3 py-2 glass rounded-xl"
+                     :class="kommoConnected ? 'ring-1 ring-emerald-500/30' : 'ring-1 ring-red-500/30'">
+                    <span class="w-2 h-2 rounded-full pulse-subtle" :class="kommoConnected ? 'bg-emerald-400' : 'bg-red-400'"></span>
+                    <span class="text-xs font-medium" :class="kommoConnected ? 'text-emerald-400' : 'text-red-400'" x-text="kommoConnected ? 'Kommo' : 'Offline'"></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile search -->
+        <div class="md:hidden mt-3">
+            <div class="relative">
+                <input type="text" x-model="searchQuery" placeholder="Search leads..."
+                       class="search-input w-full px-4 py-2.5 pl-10 bg-white/5 rounded-xl text-sm focus:outline-none border border-white/10 focus:border-emerald-500/50 smooth placeholder-white/30">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex h-[calc(100vh-73px)] md:h-[calc(100vh-65px)] relative z-10">
+        <!-- Sidebar -->
+        <aside class="mobile-sidebar md:relative w-64 glass border-r border-white/5 flex flex-col" :class="mobileMenuOpen ? 'open' : ''">
+            <!-- Mobile close button -->
+            <button @click="mobileMenuOpen = false" class="md:hidden absolute top-4 right-4 p-2 hover:bg-white/10 rounded-lg smooth">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            
+            <nav class="flex-1 p-4 space-y-1">
+                <button @click="view = 'pipeline'; mobileMenuOpen = false" 
+                        class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl smooth"
+                        :class="view === 'pipeline' ? 'gradient-accent shadow-lg glow-green' : 'hover:bg-white/5'">
+                    <span class="text-lg">📊</span>
+                    <span class="font-medium">Pipeline</span>
+                </button>
+                <button @click="view = 'leads'; mobileMenuOpen = false"
+                        class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl smooth"
+                        :class="view === 'leads' ? 'gradient-accent shadow-lg glow-green' : 'hover:bg-white/5'">
+                    <span class="text-lg">👥</span>
+                    <span class="font-medium">All Leads</span>
+                    <span class="ml-auto bg-white/10 px-2.5 py-0.5 rounded-full text-xs font-semibold" x-text="leads.length"></span>
+                </button>
+                <button @click="view = 'analytics'; mobileMenuOpen = false"
+                        class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl smooth"
+                        :class="view === 'analytics' ? 'gradient-accent shadow-lg glow-green' : 'hover:bg-white/5'">
+                    <span class="text-lg">📈</span>
+                    <span class="font-medium">Analytics</span>
+                </button>
+            </nav>
+            
+            <!-- Stats -->
+            <div class="p-4 border-t border-white/5 space-y-3">
+                <div class="stat-card rounded-xl p-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-white/40 uppercase tracking-wide">Pipeline Value</span>
+                        <span class="text-lg">💰</span>
+                    </div>
+                    <p class="text-xl font-bold text-emerald-400 mt-1" x-text="'$' + formatNumber(totalValue)"></p>
+                </div>
+                <div class="stat-card rounded-xl p-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-white/40 uppercase tracking-wide">Active Leads</span>
+                        <span class="text-lg">🎯</span>
+                    </div>
+                    <p class="text-xl font-bold mt-1" x-text="activeLeads"></p>
+                </div>
+                <div class="stat-card rounded-xl p-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-white/40 uppercase tracking-wide">Hot Leads</span>
+                        <span class="text-lg">🔥</span>
+                    </div>
+                    <p class="text-xl font-bold text-red-400 mt-1" x-text="hotLeadsCount"></p>
+                </div>
+                
+                <div class="text-center pt-2">
+                    <p class="text-xs text-white/30">Last sync</p>
+                    <p class="text-xs text-white/50 font-medium" x-text="lastSync || 'Never'"></p>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Mobile overlay -->
+        <div x-show="mobileMenuOpen" @click="mobileMenuOpen = false" 
+             class="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40" x-transition.opacity></div>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-hidden flex flex-col">
+            <!-- Pipeline View -->
+            <div x-show="view === 'pipeline'" class="h-full flex flex-col">
+                <!-- Pipeline Stats Bar -->
+                <div class="px-4 py-3 border-b border-white/5 flex items-center justify-between overflow-x-auto">
+                    <div class="flex items-center space-x-2 min-w-max">
+                        <span class="text-sm text-white/50">Showing</span>
+                        <span class="px-2 py-1 bg-white/10 rounded-lg text-sm font-semibold" x-text="filteredLeads.length + ' leads'"></span>
+                        <span x-show="searchQuery || activeFilters.length" class="text-sm text-white/50">
+                            (filtered from <span x-text="leads.length"></span>)
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded bg-red-500"></span>
+                            <span class="text-white/50">Hot (&lt;3d)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded bg-orange-500"></span>
+                            <span class="text-white/50">Warm (3-14d)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded bg-blue-500"></span>
+                            <span class="text-white/50">Cold (&gt;14d)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-1 overflow-x-auto p-4">
+                    <div class="flex space-x-4 h-full min-w-max">
+                        <template x-for="stage in visibleStages" :key="stage.id">
+                            <div class="w-72 md:w-80 flex-shrink-0 glass-card rounded-2xl flex flex-col smooth"
+                                 @dragover.prevent="$el.classList.add('drag-over')"
+                                 @dragleave="$el.classList.remove('drag-over')"
+                                 @drop="handleDrop($event, stage.id); $el.classList.remove('drag-over')">
+                                <!-- Stage Header -->
+                                <div class="stage-header p-4 rounded-t-2xl border-b border-white/5">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-3 h-3 rounded-full shadow-lg" :style="`background: ${stage.color}; box-shadow: 0 0 10px ${stage.color}50`"></div>
+                                            <span class="font-semibold text-sm" x-text="stage.name"></span>
+                                        </div>
+                                        <div class="flex items-center space-x-2">
+                                            <span class="px-2 py-1 bg-white/10 rounded-lg text-xs font-bold" x-text="getStageLeads(stage.id).length"></span>
+                                        </div>
+                                    </div>
+                                    <!-- Stage value total -->
+                                    <div class="mt-2 flex items-center justify-between text-xs">
+                                        <span class="text-white/40">Total Value</span>
+                                        <span class="text-emerald-400 font-semibold" x-text="'$' + formatNumber(getStageValue(stage.id))"></span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Leads -->
+                                <div class="flex-1 overflow-y-auto p-3 space-y-2">
+                                    <template x-for="lead in getStageLeads(stage.id)" :key="lead.id">
+                                        <div class="lead-card rounded-xl p-3 cursor-pointer"
+                                             :class="getTemperatureClass(lead)"
+                                             draggable="true"
+                                             @dragstart="dragStart($event, lead)"
+                                             @click="openLead(lead)">
+                                            <!-- Lead header - NAME PROMINENT -->
+                                            <div class="flex items-start justify-between mb-2">
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="font-bold text-base text-white truncate" x-text="getLeadDisplayName(lead)"></p>
+                                                    <p class="text-xs text-white/50 truncate mt-0.5" x-text="getLeadLocation(lead) || 'No location'"></p>
+                                                </div>
+                                                <span class="ml-2 text-lg" x-text="getTemperatureEmoji(lead)"></span>
+                                            </div>
+                                            
+                                            <!-- Lead details -->
+                                            <div class="flex items-center justify-between text-xs mb-3">
+                                                <span class="text-emerald-400 font-semibold" x-text="lead.price ? '$' + formatNumber(lead.price) : '-'"></span>
+                                                <span class="text-white/40" x-text="getDaysInStage(lead) + ' days'"></span>
+                                            </div>
+                                            
+                                            <!-- Quick actions -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center space-x-1">
+                                                    <button @click.stop="callLead(lead)" class="quick-action hover:bg-emerald-500/20" title="Call">
+                                                        📞
+                                                    </button>
+                                                    <button @click.stop="emailLead(lead)" class="quick-action hover:bg-blue-500/20" title="Email">
+                                                        ✉️
+                                                    </button>
+                                                    <button @click.stop="openLead(lead)" class="quick-action hover:bg-amber-500/20" title="Add Note">
+                                                        📝
+                                                    </button>
+                                                </div>
+                                                <div class="flex items-center space-x-1">
+                                                    <span x-show="hasNotes(lead.id)" class="text-amber-400 text-xs" title="Has notes">📋</span>
+                                                    <span x-show="lead.notes && lead.notes.length" class="text-blue-400 text-xs" title="Kommo notes">💬</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                    
+                                    <div x-show="getStageLeads(stage.id).length === 0" 
+                                         class="text-center py-12 text-white/30 text-sm">
+                                        <div class="text-4xl mb-2 opacity-50">📭</div>
+                                        No leads
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leads List View -->
+            <div x-show="view === 'leads'" class="h-full flex flex-col">
+                <div class="p-4 border-b border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div>
+                        <h2 class="text-lg font-bold">All Leads</h2>
+                        <p class="text-sm text-white/40" x-text="filteredLeads.length + ' leads' + (searchQuery ? ' matching \"' + searchQuery + '\"' : '')"></p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <select x-model="sortBy" class="px-3 py-2 bg-white/5 rounded-xl text-sm border border-white/10 focus:outline-none focus:border-emerald-500/50">
+                            <option value="updated">Recently Updated</option>
+                            <option value="created">Recently Created</option>
+                            <option value="value-high">Highest Value</option>
+                            <option value="value-low">Lowest Value</option>
+                            <option value="name">Name A-Z</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex-1 overflow-y-auto">
+                    <div class="grid gap-3 p-4 md:grid-cols-2 lg:grid-cols-3">
+                        <template x-for="lead in sortedLeads" :key="lead.id">
+                            <div class="lead-card glass-card rounded-2xl p-4 cursor-pointer"
+                                 :class="getTemperatureClass(lead)"
+                                 @click="openLead(lead)">
+                                <div class="flex items-start justify-between mb-3">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="font-bold text-lg text-white truncate" x-text="getLeadDisplayName(lead)"></p>
+                                        <p class="text-xs text-white/50 mt-0.5" x-text="getLeadLocation(lead) || 'No location'"></p>
+                                    </div>
+                                    <span class="text-xl ml-2" x-text="getTemperatureEmoji(lead)"></span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between text-sm mb-3">
+                                    <span class="px-2 py-1 rounded-lg text-xs font-medium"
+                                          :style="`background: ${getStageColor(lead.status_id)}20; color: ${getStageColor(lead.status_id)}`"
+                                          x-text="getStageName(lead.status_id)"></span>
+                                    <span class="text-emerald-400 font-bold" x-text="lead.price ? '$' + formatNumber(lead.price) : '-'"></span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between text-xs text-white/40">
+                                    <span x-text="getDaysInStage(lead) + ' days in stage'"></span>
+                                    <div class="flex items-center space-x-2">
+                                        <button @click.stop="callLead(lead)" class="quick-action hover:bg-emerald-500/20">📞</button>
+                                        <button @click.stop="emailLead(lead)" class="quick-action hover:bg-blue-500/20">✉️</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics View -->
+            <div x-show="view === 'analytics'" class="h-full overflow-y-auto p-4 md:p-6">
+                <h2 class="text-xl font-bold mb-6">Pipeline Analytics</h2>
+                
+                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-8">
+                    <div class="glass-card rounded-2xl p-5 gradient-border">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-white/50">Total Pipeline Value</span>
+                            <span class="text-2xl">💰</span>
+                        </div>
+                        <p class="text-3xl font-bold text-emerald-400" x-text="'$' + formatNumber(totalValue)"></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 gradient-border">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-white/50">Total Leads</span>
+                            <span class="text-2xl">👥</span>
+                        </div>
+                        <p class="text-3xl font-bold" x-text="leads.length"></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 gradient-border">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-white/50">Avg Deal Size</span>
+                            <span class="text-2xl">📊</span>
+                        </div>
+                        <p class="text-3xl font-bold" x-text="'$' + formatNumber(avgDealSize)"></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 gradient-border">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-white/50">Conversion Rate</span>
+                            <span class="text-2xl">🎯</span>
+                        </div>
+                        <p class="text-3xl font-bold text-emerald-400" x-text="winRate + '%'"></p>
+                    </div>
+                </div>
+                
+                <!-- Stage breakdown -->
+                <div class="glass-card rounded-2xl p-5">
+                    <h3 class="font-semibold mb-4">Leads by Stage</h3>
+                    <div class="space-y-3">
+                        <template x-for="stage in visibleStages" :key="stage.id">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-32 md:w-48 text-sm truncate" x-text="stage.name"></div>
+                                <div class="flex-1 h-8 bg-white/5 rounded-lg overflow-hidden">
+                                    <div class="h-full rounded-lg smooth" 
+                                         :style="`width: ${(getStageLeads(stage.id).length / Math.max(...visibleStages.map(s => getStageLeads(s.id).length || 1))) * 100}%; background: ${stage.color}`"></div>
+                                </div>
+                                <div class="w-12 text-right text-sm font-semibold" x-text="getStageLeads(stage.id).length"></div>
+                                <div class="w-24 text-right text-sm text-emerald-400" x-text="'$' + formatNumber(getStageValue(stage.id))"></div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Lead Detail Sidebar -->
+        <aside x-show="selectedLead" x-transition:enter="transition ease-out duration-300"
+               x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+               x-transition:leave="transition ease-in duration-200"
+               x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full"
+               class="fixed md:relative right-0 top-0 h-full w-full md:w-96 glass-dark border-l border-white/5 flex flex-col z-30">
+            <!-- Header -->
+            <div class="p-4 border-b border-white/5 flex items-start justify-between">
+                <div class="flex-1 min-w-0">
+                    <h3 class="font-bold text-lg truncate" x-text="getLeadDisplayName(selectedLead)"></h3>
+                    <p class="text-sm text-white/40 truncate" x-text="getLeadLocation(selectedLead) || 'No location'"></p>
+                </div>
+                <button @click="selectedLead = null" class="ml-3 p-2 hover:bg-white/10 rounded-xl smooth">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-4 space-y-4">
+                <!-- Lead Temperature Badge -->
+                <div class="flex items-center space-x-3 p-3 rounded-xl" :class="getTemperatureClass(selectedLead)">
+                    <span class="text-2xl" x-text="getTemperatureEmoji(selectedLead)"></span>
+                    <div>
+                        <p class="font-semibold" x-text="getTemperatureLabel(selectedLead)"></p>
+                        <p class="text-xs text-white/50" x-text="getDaysInStage(selectedLead) + ' days in current stage'"></p>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="grid grid-cols-3 gap-2">
+                    <button @click="callLead(selectedLead)" class="flex flex-col items-center p-3 glass rounded-xl hover:bg-emerald-500/20 smooth">
+                        <span class="text-xl mb-1">📞</span>
+                        <span class="text-xs">Call</span>
+                    </button>
+                    <button @click="emailLead(selectedLead)" class="flex flex-col items-center p-3 glass rounded-xl hover:bg-blue-500/20 smooth">
+                        <span class="text-xl mb-1">✉️</span>
+                        <span class="text-xs">Email</span>
+                    </button>
+                    <button @click="openKommo(selectedLead)" class="flex flex-col items-center p-3 glass rounded-xl hover:bg-purple-500/20 smooth">
+                        <span class="text-xl mb-1">🔗</span>
+                        <span class="text-xs">Kommo</span>
+                    </button>
+                </div>
+                
+                <!-- Lead Info -->
+                <div class="glass rounded-xl p-4 space-y-3">
+                    <h4 class="font-semibold text-sm flex items-center space-x-2">
+                        <span>📋</span>
+                        <span>Lead Details</span>
+                    </h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-white/50">Value</span>
+                            <span class="text-emerald-400 font-semibold" x-text="selectedLead?.price ? '$' + formatNumber(selectedLead.price) : '-'"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-white/50">Stage</span>
+                            <span x-text="getStageName(selectedLead?.status_id)"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-white/50">Created</span>
+                            <span x-text="formatDate(selectedLead?.created_at)"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-white/50">Updated</span>
+                            <span x-text="formatDate(selectedLead?.updated_at)"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Custom Fields -->
+                <div x-show="selectedLead?.fields && Object.keys(selectedLead.fields).filter(k => !k.includes('utm') && !k.includes('Ad')).length > 0" 
+                     class="glass rounded-xl p-4">
+                    <h4 class="font-semibold text-sm flex items-center space-x-2 mb-3">
+                        <span>📝</span>
+                        <span>Additional Info</span>
+                    </h4>
+                    <div class="space-y-2 text-sm">
+                        <template x-for="[key, value] in Object.entries(selectedLead?.fields || {}).filter(([k]) => !k.includes('utm') && !k.includes('Ad') && !k.includes('Adset'))" :key="key">
+                            <div class="flex justify-between">
+                                <span class="text-white/50 truncate" x-text="key"></span>
+                                <span class="ml-2 truncate text-right max-w-[50%]" x-text="value"></span>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                
+                <!-- Kommo Notes -->
+                <div x-show="selectedLead?.notes?.filter(n => n.text?.trim()).length > 0" class="glass rounded-xl p-4">
+                    <h4 class="font-semibold text-sm flex items-center space-x-2 mb-3">
+                        <span>💬</span>
+                        <span>Kommo Notes</span>
+                    </h4>
+                    <div class="space-y-2 max-h-40 overflow-y-auto">
+                        <template x-for="note in (selectedLead?.notes || []).filter(n => n.text?.trim())" :key="note.id">
+                            <div class="bg-white/5 rounded-lg p-3">
+                                <p class="text-sm" x-text="note.text"></p>
+                                <p class="text-xs text-white/40 mt-1" x-text="formatDate(note.created_at)"></p>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                
+                <!-- My Notes -->
+                <div class="glass rounded-xl p-4">
+                    <h4 class="font-semibold text-sm flex items-center space-x-2 mb-3">
+                        <span>🦅</span>
+                        <span>My Notes</span>
+                    </h4>
+                    <textarea x-model="currentNote" 
+                              @input="debounceSaveNote(selectedLead?.id)"
+                              class="w-full h-32 bg-white/5 rounded-xl p-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500/50 border border-white/10 smooth"
+                              placeholder="Add personal notes, follow-up reminders..."></textarea>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Toast notifications -->
+    <div x-show="toast" x-transition class="fixed bottom-4 right-4 z-50">
+        <div class="glass rounded-xl px-4 py-3 flex items-center space-x-3 shadow-2xl">
+            <span x-text="toastIcon"></span>
+            <span x-text="toast"></span>
+        </div>
+    </div>
+
+    <script>
+        function crmApp() {
+            return {
+                view: 'pipeline',
+                leads: [],
+                stages: [],
+                notes: {},
+                contactMap: {},  // Contact ID → name lookup for Meta leads
+                selectedLead: null,
+                currentNote: '',
+                searchQuery: '',
+                sortBy: 'updated',
+                lastSync: null,
+                syncing: false,
+                kommoConnected: false,
+                draggedLead: null,
+                mobileMenuOpen: false,
+                activeFilters: [],
+                toast: '',
+                toastIcon: '',
+                saveTimeout: null,
+                
+                init() {
+                    this.loadData();
+                },
+                
+                async loadData() {
+                    // Load pipelines
+                    try {
+                        const pipelineResponse = await fetch('/api/pipelines');
+                        const pipelineData = await pipelineResponse.json();
+                        if (pipelineData.pipelines?.[0]?._embedded?.statuses) {
+                            this.stages = pipelineData.pipelines[0]._embedded.statuses.map(s => ({
+                                id: Number(s.id),
+                                name: s.name,
+                                color: s.color,
+                                sort: s.sort
+                            })).sort((a, b) => a.sort - b.sort);
+                        }
+                    } catch (e) {
+                        console.error('Failed to load pipelines', e);
+                    }
+                    
+                    // Load leads
+                    try {
+                        const response = await fetch('/api/leads');
+                        const data = await response.json();
+                        this.leads = (data.leads || []).map(lead => ({
+                            ...lead,
+                            status_id: Number(lead.status_id),
+                            contact: lead.contact_name || lead.name,
+                            phone: this.extractPhone(lead),
+                            email: this.extractEmail(lead),
+                            notes: lead.kommo_notes || [],
+                            fields: lead.custom_fields || {}
+                        }));
+                        this.lastSync = data.syncedAt ? new Date(data.syncedAt).toLocaleString() : null;
+                        this.kommoConnected = data.syncedAt !== null;
+                    } catch (e) {
+                        console.error('Failed to load leads', e);
+                    }
+                    
+                    // Load contacts for name resolution (Meta leads have numeric IDs as names)
+                    try {
+                        const contactsResponse = await fetch('/api/contacts');
+                        const contactsData = await contactsResponse.json();
+                        this.contactMap = {};
+                        (contactsData.contacts || []).forEach(contact => {
+                            if (contact.id && contact.name && !contact.name.match(/^\d+$/)) {
+                                this.contactMap[contact.id] = contact.name;
+                            }
+                        });
+                    } catch (e) {
+                        console.error('Failed to load contacts', e);
+                    }
+                    
+                    // Load notes
+                    try {
+                        const notesResponse = await fetch('/api/notes');
+                        this.notes = (await notesResponse.json()).notes || {};
+                    } catch (e) {
+                        this.notes = {};
+                    }
+                },
+                
+                extractPhone(lead) {
+                    // Try to find phone from various sources
+                    if (lead.contact_phone) return lead.contact_phone;
+                    const phoneField = (lead.custom_fields_values || []).find(f => 
+                        f.field_name?.toLowerCase().includes('phone') || f.field_code === 'PHONE'
+                    );
+                    return phoneField?.values?.[0]?.value || null;
+                },
+                
+                extractEmail(lead) {
+                    if (lead.contact_email) return lead.contact_email;
+                    const emailField = (lead.custom_fields_values || []).find(f => 
+                        f.field_name?.toLowerCase().includes('email') || f.field_code === 'EMAIL'
+                    );
+                    return emailField?.values?.[0]?.value || null;
+                },
+                
+                async syncFromKommo() {
+                    this.syncing = true;
+                    this.showToast('🔄', 'Syncing with Kommo...');
+                    try {
+                        const response = await fetch('/api/sync', {method: 'POST'});
+                        const result = await response.json();
+                        if (result.status === 'success') {
+                            await this.loadData();
+                            this.showToast('✅', 'Sync complete!');
+                        } else {
+                            this.showToast('❌', 'Sync failed');
+                        }
+                    } catch (e) {
+                        this.showToast('❌', 'Sync failed');
+                    }
+                    this.syncing = false;
+                },
+                
+                get visibleStages() {
+                    // Exclude closed stages from kanban by default, show main pipeline stages
+                    return this.stages.filter(s => s.sort < 10000);
+                },
+                
+                getStageLeads(stageId) {
+                    return this.filteredLeads
+                        .filter(l => Number(l.status_id) === Number(stageId))
+                        .sort((a, b) => (b.created_at || 0) - (a.created_at || 0)); // Newest first
+                },
+                
+                getStageValue(stageId) {
+                    return this.getStageLeads(stageId).reduce((sum, l) => sum + (l.price || 0), 0);
+                },
+                
+                getStageName(stageId) {
+                    const stage = this.stages.find(s => s.id === Number(stageId));
+                    return stage?.name || 'Unknown';
+                },
+                
+                getStageColor(stageId) {
+                    const stage = this.stages.find(s => s.id === Number(stageId));
+                    return stage?.color || '#6b7280';
+                },
+                
+                get filteredLeads() {
+                    let result = this.leads;
+                    
+                    // Search filter
+                    if (this.searchQuery) {
+                        const q = this.searchQuery.toLowerCase();
+                        result = result.filter(l => 
+                            l.name?.toLowerCase().includes(q) ||
+                            l.contact?.toLowerCase().includes(q) ||
+                            l.phone?.toLowerCase().includes(q) ||
+                            l.fields?.Location?.toLowerCase().includes(q)
+                        );
+                    }
+                    
+                    // Temperature filters
+                    if (this.activeFilters.includes('hot')) {
+                        result = result.filter(l => this.getDaysInStage(l) < 3);
+                    }
+                    if (this.activeFilters.includes('warm')) {
+                        result = result.filter(l => {
+                            const days = this.getDaysInStage(l);
+                            return days >= 3 && days <= 14;
+                        });
+                    }
+                    if (this.activeFilters.includes('cold')) {
+                        result = result.filter(l => this.getDaysInStage(l) > 14);
+                    }
+                    
+                    // Value filters
+                    if (this.activeFilters.includes('high-value')) {
+                        result = result.filter(l => (l.price || 0) >= 100000);
+                    }
+                    if (this.activeFilters.includes('has-value')) {
+                        result = result.filter(l => (l.price || 0) > 0);
+                    }
+                    
+                    return result;
+                },
+                
+                get sortedLeads() {
+                    const leads = [...this.filteredLeads];
+                    switch (this.sortBy) {
+                        case 'updated':
+                            return leads.sort((a, b) => (b.updated_at || 0) - (a.updated_at || 0));
+                        case 'created':
+                            return leads.sort((a, b) => (b.created_at || 0) - (a.created_at || 0));
+                        case 'value-high':
+                            return leads.sort((a, b) => (b.price || 0) - (a.price || 0));
+                        case 'value-low':
+                            return leads.sort((a, b) => (a.price || 0) - (b.price || 0));
+                        case 'name':
+                            return leads.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+                        default:
+                            return leads;
+                    }
+                },
+                
+                get totalValue() {
+                    return this.leads.reduce((sum, l) => sum + (l.price || 0), 0);
+                },
+                
+                get activeLeads() {
+                    // Leads not in closed stages
+                    return this.leads.filter(l => l.status_id !== 142 && l.status_id !== 143).length;
+                },
+                
+                get hotLeadsCount() {
+                    return this.leads.filter(l => this.getDaysInStage(l) < 3 && l.status_id !== 142 && l.status_id !== 143).length;
+                },
+                
+                get winRate() {
+                    const won = this.leads.filter(l => l.status_id === 142).length;
+                    const closed = this.leads.filter(l => [142, 143].includes(l.status_id)).length;
+                    return closed > 0 ? Math.round((won / closed) * 100) : 0;
+                },
+                
+                get avgDealSize() {
+                    const leadsWithValue = this.leads.filter(l => l.price > 0);
+                    if (leadsWithValue.length === 0) return 0;
+                    return Math.round(leadsWithValue.reduce((s, l) => s + l.price, 0) / leadsWithValue.length);
+                },
+                
+                // Display helpers
+                getLeadDisplayName(lead) {
+                    if (!lead) return '';
+                    // If name is a real name (not just numbers), use it
+                    if (lead.name && !lead.name.match(/^\d+$/)) return lead.name;
+                    
+                    // For Meta/FB leads (numeric ID names), look up the linked contact's real name
+                    const linkedContactId = lead._embedded?.contacts?.[0]?.id;
+                    if (linkedContactId && this.contactMap[linkedContactId]) {
+                        return this.contactMap[linkedContactId];
+                    }
+                    
+                    // Check contact_name (linked contact's real name)
+                    if (lead.contact_name && !lead.contact_name.match(/^\d+$/)) return lead.contact_name;
+                    // Check contact field
+                    if (lead.contact && !lead.contact.match(/^\d+$/)) return lead.contact;
+                    // Fallback to location for Facebook leads
+                    const location = lead.fields?.Location || lead.custom_fields?.Location;
+                    if (location && location.length > 3) return location;
+                    // Last resort
+                    if (lead.phone) return lead.phone;
+                    return lead.name || 'Unknown';
+                },
+                
+                getLeadLocation(lead) {
+                    return lead?.fields?.Location || null;
+                },
+                
+                getDaysInStage(lead) {
+                    if (!lead?.updated_at) return 0;
+                    const updated = new Date(lead.updated_at * 1000);
+                    const now = new Date();
+                    return Math.floor((now - updated) / (1000 * 60 * 60 * 24));
+                },
+                
+                getTemperature(lead) {
+                    const days = this.getDaysInStage(lead);
+                    if (days < 3) return 'hot';
+                    if (days <= 14) return 'warm';
+                    return 'cold';
+                },
+                
+                getTemperatureClass(lead) {
+                    const temp = this.getTemperature(lead);
+                    return `temp-${temp}`;
+                },
+                
+                getTemperatureEmoji(lead) {
+                    const temp = this.getTemperature(lead);
+                    return temp === 'hot' ? '🔥' : temp === 'warm' ? '🌡️' : '❄️';
+                },
+                
+                getTemperatureLabel(lead) {
+                    const temp = this.getTemperature(lead);
+                    return temp === 'hot' ? 'Hot Lead' : temp === 'warm' ? 'Warm Lead' : 'Cold Lead';
+                },
+                
+                openLead(lead) {
+                    this.selectedLead = lead;
+                    this.currentNote = this.notes[lead.id] || '';
+                },
+                
+                hasNotes(leadId) {
+                    return this.notes[leadId] && this.notes[leadId].trim().length > 0;
+                },
+                
+                debounceSaveNote(leadId) {
+                    clearTimeout(this.saveTimeout);
+                    this.saveTimeout = setTimeout(() => this.saveNote(leadId), 500);
+                },
+                
+                async saveNote(leadId) {
+                    if (!leadId) return;
+                    this.notes[leadId] = this.currentNote;
+                    try {
+                        await fetch('/api/notes', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({leadId, note: this.currentNote})
+                        });
+                    } catch (e) {
+                        console.log('Note saved locally');
+                    }
+                },
+                
+                // Actions
+                callLead(lead) {
+                    if (lead?.phone) {
+                        window.open(`tel:${lead.phone}`, '_self');
+                    } else {
+                        this.showToast('📞', 'No phone number available');
+                    }
+                },
+                
+                emailLead(lead) {
+                    if (lead?.email) {
+                        window.open(`mailto:${lead.email}`, '_self');
+                    } else {
+                        this.showToast('✉️', 'No email available');
+                    }
+                },
+                
+                openKommo(lead) {
+                    if (lead?.id) {
+                        window.open(`https://massdwellcrm.kommo.com/leads/detail/${lead.id}`, '_blank');
+                    }
+                },
+                
+                toggleFilter(filter) {
+                    const idx = this.activeFilters.indexOf(filter);
+                    if (idx > -1) {
+                        this.activeFilters.splice(idx, 1);
+                    } else {
+                        // Remove conflicting temp filters
+                        if (['hot', 'warm', 'cold'].includes(filter)) {
+                            this.activeFilters = this.activeFilters.filter(f => !['hot', 'warm', 'cold'].includes(f));
+                        }
+                        this.activeFilters.push(filter);
+                    }
+                },
+                
+                // Drag & Drop
+                dragStart(event, lead) {
+                    this.draggedLead = lead;
+                    event.target.classList.add('dragging');
+                    event.dataTransfer.effectAllowed = 'move';
+                },
+                
+                handleDrop(event, stageId) {
+                    if (this.draggedLead) {
+                        this.draggedLead.status_id = Number(stageId);
+                        this.savePipeline();
+                        this.showToast('✅', `Moved to ${this.getStageName(stageId)}`);
+                    }
+                    this.draggedLead = null;
+                    document.querySelectorAll('.dragging').forEach(el => el.classList.remove('dragging'));
+                },
+                
+                async savePipeline() {
+                    try {
+                        await fetch('/api/pipeline', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({leads: this.leads})
+                        });
+                    } catch (e) {
+                        console.log('Pipeline saved locally');
+                    }
+                },
+                
+                showToast(icon, message) {
+                    this.toastIcon = icon;
+                    this.toast = message;
+                    setTimeout(() => this.toast = '', 3000);
+                },
+                
+                formatNumber(num) {
+                    if (!num) return '0';
+                    return num.toLocaleString();
+                },
+                
+                formatDate(dateVal) {
+                    if (!dateVal) return '-';
+                    const date = typeof dateVal === 'number' ? new Date(dateVal * 1000) : new Date(dateVal);
+                    if (isNaN(date.getTime())) return '-';
+                    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                }
+            };
+        }
+    </script>
+</body>
+</html>

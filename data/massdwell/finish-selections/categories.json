@@ -1,0 +1,55 @@
+{
+  "driveFolder": "LookBookImages",
+  "drivePath": "Shared with me > MassDwell > LookBookImages",
+  "categories": {
+    "EXTERIOR": [
+      "To be explored - contains exterior finish options"
+    ],
+    "INTERIOR": [
+      "ADA APPROVED BATH UPGRADES",
+      "BASEBOARD & TRIM",
+      "BATHROOM FAUCETS",
+      "BATHROOM TOILET",
+      "BATHROOM VANITY LIGHTING - INCLUDED",
+      "BATHROOM VANITY LIGHTING - UPGRADE",
+      "BATHROOM VANITY SINK - INCLUDED",
+      "CABINET HARDWARE",
+      "CEILING-WALL-TRIM PAINT",
+      "DOOR HARDWARE",
+      "KITCHEN FAUCET",
+      "KITCHEN SINKS",
+      "QUARTZ COUNTERTOPS",
+      "SHOWER - OPTIONAL UPGRADES",
+      "SHOWER DOOR - UPGRADE",
+      "SHOWER FIXTURES",
+      "SHOWER WALL & FLOOR TILE - INCLUDED",
+      "WALL & CEILING FINISH",
+      "WALL FEATURE - UPGRADE",
+      "WALL-TRIM PAINT"
+    ]
+  },
+  "portalMapping": {
+    "existingCategories": [
+      "Roof Shingles",
+      "Siding Type/Color",
+      "Exterior Lighting",
+      "Wall Color Standard",
+      "Flooring",
+      "Kitchen Cabinets",
+      "Countertops",
+      "Backsplash Tile",
+      "Interior Doors"
+    ],
+    "newCategories": [
+      "Door Hardware",
+      "Cabinet Hardware",
+      "Kitchen Sink",
+      "Kitchen Faucet",
+      "Backsplash Grout",
+      "Bathroom Vanity",
+      "Bathroom Faucet",
+      "Wall Color Accent"
+    ]
+  },
+  "lastUpdated": "2026-02-06T11:57:00-05:00"
+}

@@ -1,0 +1,47 @@
+{
+  "version": "1.1",
+  "updated": "2026-02-03",
+  "profile": {
+    "name": "Steve Vettori",
+    "age": 42,
+    "height": "5'7\"",
+    "current_weight": 184,
+    "target_weight": 165,
+    "location": "Needham, MA"
+  },
+  "sobriety": {
+    "status": "Tracked externally (separate app)",
+    "note": "Do not track or mention - Steve handles this himself"
+  },
+  "family": {
+    "coparent": {
+      "name": "Lauren Lombardi",
+      "relationship": "Co-parent (not romantic)",
+      "notes": "Co-parenting only. Focus on kids logistics, not relationship."
+    },
+    "children": [
+      {"name": "Olivia", "birthday": "2023-05-10", "notes": "Oldest daughter"},
+      {"name": "Audrey", "birthday": "2025-11-11", "notes": "Youngest daughter"}
+    ],
+    "parents": [
+      {"name": "Steve", "role": "Father"},
+      {"name": "Lory", "role": "Mother"}
+    ],
+    "siblings": ["Brian", "Janelle", "Patrice"]
+  },
+  "important_dates": {
+    "olivia_birthday": "05-10",
+    "audrey_birthday": "11-11",
+    "sobriety_start": "2026-01-20"
+  },
+  "health_goals": {
+    "weight_loss": "184 to 165 lbs (-19 lbs)",
+    "sobriety": "Maintain alcohol-free lifestyle"
+  },
+  "life_goals": [
+    "Grow businesses, especially MassDwell",
+    "Mental clarity",
+    "Live a good life",
+    "Maintain sobriety"
+  ]
+}
