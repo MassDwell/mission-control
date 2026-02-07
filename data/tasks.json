@@ -396,9 +396,7 @@
           "timestamp": "2026-02-06T21:42:00Z"
         }
       ],
-      "createdAt": "2026-02-06T20:45:00Z",
-      "processingStartedAt": "2026-02-07T00:26:51.877982Z",
-      "processingAgent": "Clawson"
+      "createdAt": "2026-02-06T20:45:00Z"
     },
     {
       "id": "MC-008",
@@ -576,7 +574,7 @@
       "level": "intern"
     }
   ],
-  "lastUpdated": "2026-02-07T00:26:51.878082Z",
+  "lastUpdated": "2026-02-07T00:29:19.627582Z",
   "activities": [
     {
       "type": "moved",
