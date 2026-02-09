@@ -7,8 +7,8 @@
       "name": "Clawson",
       "emoji": "🦅",
       "role": "Master Agent / COO",
-      "status": "working",
-      "currentTask": "MC-008",
+      "status": "idle",
+      "currentTask": null,
       "lastSeen": "2026-02-09T21:25:00Z",
       "level": "lead"
     },
@@ -17,8 +17,8 @@
       "name": "Marketing",
       "emoji": "📣",
       "role": "Content & Campaigns",
-      "status": "idle",
-      "currentTask": null,
+      "status": "working",
+      "currentTask": "MC-629",
       "lastSeen": "2026-02-09T19:30:00Z",
       "level": "specialist"
     },
@@ -27,8 +27,8 @@
       "name": "Sales",
       "emoji": "💼",
       "role": "Lead Follow-up",
-      "status": "idle",
-      "currentTask": null,
+      "status": "working",
+      "currentTask": "MC-003",
       "lastSeen": "2026-02-09T17:15:00Z",
       "level": "specialist"
     },
@@ -37,7 +37,7 @@
       "name": "Admin",
       "emoji": "🔧",
       "role": "Administrative Tasks",
-      "status": "offline",
+      "status": "idle",
       "currentTask": null,
       "lastSeen": "2026-02-08T21:00:00Z",
       "level": "intern"
@@ -205,7 +205,8 @@
       "createdAt": "2026-02-05T19:45:00Z",
       "sortOrder": 1,
       "dueDate": "2026-02-08T19:45:00Z",
-      "recurring": null
+      "recurring": null,
+      "assignee": "sales_followup"
     },
     {
       "id": "MC-004",
@@ -255,7 +256,8 @@
       "createdAt": "2026-02-05T19:50:00Z",
       "sortOrder": 0,
       "dueDate": "2026-02-08T19:50:00Z",
-      "recurring": null
+      "recurring": null,
+      "assignee": "sales_followup"
     },
     {
       "id": "MC-005",
@@ -298,7 +300,8 @@
       ],
       "createdAt": "2026-02-05T19:50:00Z",
       "dueDate": "2026-02-06T19:50:00Z",
-      "recurring": null
+      "recurring": null,
+      "assignee": "clawson"
     },
     {
       "id": "MC-006",
@@ -343,7 +346,8 @@
       "createdAt": "2026-02-05T19:50:00Z",
       "sortOrder": 0,
       "dueDate": "2026-02-12T19:50:00Z",
-      "recurring": null
+      "recurring": null,
+      "assignee": "admin_assistant"
     },
     {
       "id": "MC-007",
@@ -603,7 +607,7 @@
       "id": "MC-629",
       "title": "testing ",
       "description": "testing to see assignment to marketing ",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "infrastructure",
       "assignee": "marketing_content",
       "tags": [
