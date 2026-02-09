@@ -138,6 +138,13 @@
                         <span id="notificationBadge" class="absolute -top-1 -right-1 bg-mission-error text-xs rounded-full px-1.5 py-0.5 text-white font-bold hidden">3</span>
                     </button>
                 </div>
+                <button id="settingsBtn" class="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-700" title="Settings">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </button>
+                <span id="syncStatus" class="text-xs text-gray-500 hidden"></span>
             </div>
         </div>
     </header>
@@ -344,12 +351,46 @@
         </div>
     </div>
 
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-mission-card rounded-lg p-6 w-full max-w-lg">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold">⚙️ Settings</h3>
+                    <button id="closeSettingsModal" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">GitHub Personal Access Token</label>
+                        <input type="password" id="githubToken" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white" placeholder="ghp_xxxxxxxxxxxx">
+                        <p class="text-xs text-gray-500 mt-1">Required to save changes. Get one at GitHub → Settings → Developer settings → Personal access tokens</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="autoSaveEnabled" class="rounded bg-gray-700 border-gray-600">
+                        <label for="autoSaveEnabled" class="text-sm text-gray-300">Auto-save changes to GitHub</label>
+                    </div>
+                    <div id="settingsStatus" class="text-sm hidden"></div>
+                    <div class="flex gap-2 pt-4">
+                        <button id="saveSettingsBtn" class="flex-1 bg-mission-accent hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium">Save Settings</button>
+                        <button id="testConnectionBtn" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium">Test</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Global state
         let data = null;
         let draggedTask = null;
         let currentView = 'board';
         let currentCalendarDate = new Date();
+        let githubToken = localStorage.getItem('mc_github_token') || '';
+        let autoSaveEnabled = localStorage.getItem('mc_auto_save') === 'true';
 
         // Initialize the dashboard
         async function init() {
@@ -613,6 +654,102 @@
                 column.addEventListener('dragenter', handleDragEnter);
                 column.addEventListener('dragleave', handleDragLeave);
             });
+
+            // Settings modal
+            document.getElementById('settingsBtn').addEventListener('click', () => {
+                document.getElementById('githubToken').value = githubToken;
+                document.getElementById('autoSaveEnabled').checked = autoSaveEnabled;
+                document.getElementById('settingsModal').classList.remove('hidden');
+            });
+            document.getElementById('closeSettingsModal').addEventListener('click', () => {
+                document.getElementById('settingsModal').classList.add('hidden');
+            });
+            document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
+            document.getElementById('testConnectionBtn').addEventListener('click', testGitHubConnection);
+        }
+
+        // Save settings
+        function saveSettings() {
+            githubToken = document.getElementById('githubToken').value;
+            autoSaveEnabled = document.getElementById('autoSaveEnabled').checked;
+            localStorage.setItem('mc_github_token', githubToken);
+            localStorage.setItem('mc_auto_save', autoSaveEnabled.toString());
+            showSettingsStatus('✅ Settings saved!', 'text-green-400');
+            setTimeout(() => document.getElementById('settingsModal').classList.add('hidden'), 1000);
+        }
+
+        // Show settings status
+        function showSettingsStatus(message, colorClass) {
+            const status = document.getElementById('settingsStatus');
+            status.textContent = message;
+            status.className = `text-sm ${colorClass}`;
+            status.classList.remove('hidden');
+        }
+
+        // Test GitHub connection
+        async function testGitHubConnection() {
+            const token = document.getElementById('githubToken').value;
+            if (!token) {
+                showSettingsStatus('❌ Enter a token first', 'text-red-400');
+                return;
+            }
+            try {
+                const response = await fetch('https://api.github.com/repos/MassDwell/mission-control', {
+                    headers: { 'Authorization': `token ${token}` }
+                });
+                if (response.ok) {
+                    showSettingsStatus('✅ Connection successful!', 'text-green-400');
+                } else {
+                    showSettingsStatus('❌ Invalid token or no access', 'text-red-400');
+                }
+            } catch (error) {
+                showSettingsStatus('❌ Connection failed', 'text-red-400');
+            }
+        }
+
+        // Save to GitHub
+        async function saveToGitHub() {
+            if (!githubToken || !autoSaveEnabled) return;
+            
+            const syncStatus = document.getElementById('syncStatus');
+            syncStatus.textContent = '💾 Saving...';
+            syncStatus.classList.remove('hidden');
+            
+            try {
+                // Get current file SHA
+                const getResponse = await fetch('https://api.github.com/repos/MassDwell/mission-control/contents/data/data.json', {
+                    headers: { 'Authorization': `token ${githubToken}` }
+                });
+                const fileData = await getResponse.json();
+                const sha = fileData.sha;
+                
+                // Update file
+                const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+                const updateResponse = await fetch('https://api.github.com/repos/MassDwell/mission-control/contents/data/data.json', {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Dashboard update: ${new Date().toISOString()}`,
+                        content: content,
+                        sha: sha
+                    })
+                });
+                
+                if (updateResponse.ok) {
+                    syncStatus.textContent = '✅ Saved';
+                    setTimeout(() => syncStatus.classList.add('hidden'), 2000);
+                } else {
+                    throw new Error('Save failed');
+                }
+            } catch (error) {
+                console.error('GitHub save error:', error);
+                syncStatus.textContent = '❌ Save failed';
+                syncStatus.className = 'text-xs text-red-400';
+                setTimeout(() => syncStatus.classList.add('hidden'), 3000);
+            }
         }
 
         // Handle task creation
@@ -654,6 +791,9 @@
                 timestamp: new Date().toISOString()
             });
             renderActivity();
+            
+            // Save to GitHub
+            saveToGitHub();
         }
 
         // Close create modal
@@ -861,6 +1001,9 @@
 
             renderTasks();
             renderActivity();
+            
+            // Save to GitHub
+            saveToGitHub();
         }
 
         // Utility functions
