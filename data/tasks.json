@@ -491,7 +491,7 @@
     {
       "id": "MC-TEST",
       "title": "Test Webhook Integration",
-      "description": "Testing MC → Ops Loop bridge",
+      "description": "Testing webhook at 02:24:22",
       "status": "in_progress",
       "project": "infrastructure",
       "assignees": [
