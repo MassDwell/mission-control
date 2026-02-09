@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-02-09T21:31:00Z",
+  "lastUpdated": "2026-02-09T22:14:00Z",
   "agents": [
     {
       "id": "clawson",
@@ -210,7 +210,13 @@
       "recurring": {
         "enabled": true,
         "frequency": "daily",
-        "days": [1, 2, 3, 4, 5]
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
       }
     }
   ],
