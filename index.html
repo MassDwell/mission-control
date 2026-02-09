@@ -412,10 +412,20 @@
             }
         }
 
-        // Load data from JSON file
+        // Load data from JSON file (with cache busting)
+        let skipNextRefresh = false;
+        
         async function loadData() {
+            // Skip refresh if we just saved (prevents overwriting with stale cached data)
+            if (skipNextRefresh) {
+                skipNextRefresh = false;
+                return;
+            }
+            
             try {
-                const response = await fetch('./data/data.json');
+                // Add timestamp to bust GitHub Pages cache
+                const cacheBuster = `?t=${Date.now()}`;
+                const response = await fetch('./data/data.json' + cacheBuster);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -740,6 +750,9 @@
                 
                 if (updateResponse.ok) {
                     syncStatus.textContent = '✅ Saved';
+                    // Skip next 2 refresh cycles to let GitHub Pages cache update
+                    skipNextRefresh = true;
+                    setTimeout(() => { skipNextRefresh = true; }, 30000);
                     setTimeout(() => syncStatus.classList.add('hidden'), 2000);
                 } else {
                     throw new Error('Save failed');
