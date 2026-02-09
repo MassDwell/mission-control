@@ -161,7 +161,7 @@
       "id": "MC-003",
       "title": "Cold Lead Reengagement Campaign",
       "description": "Execute cold lead reengagement using approved templates.\n\n**Templates:** data/massdwell/sales/follow-up-templates.md\n- Value Drop (share content)\n- Spring Schedule (urgency)\n- Honest Reset (break up)\n\n**Target:** Leads >30 days cold, not in Negotiation+",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "massdwell",
       "assignees": [
         "sales_followup"
@@ -598,20 +598,6 @@
           5
         ]
       }
-    },
-    {
-      "id": "MC-514",
-      "title": "Test",
-      "description": "Testing workflow. route to marketing and have marketing finish workflow",
-      "status": "backlog",
-      "project": "infrastructure",
-      "assignee": "clawson",
-      "tags": [
-        "marketing"
-      ],
-      "priority": "high",
-      "createdAt": "2026-02-09T22:35:53.514Z",
-      "dueDate": "2026-02-10T22:35:53.514Z"
     }
   ],
   "projects": [
@@ -654,13 +640,13 @@
   ],
   "activity": [
     {
-      "id": "act_1770676553515",
-      "type": "task_created",
+      "id": "act_1770676640593",
+      "type": "task_moved",
       "agent": "system",
       "agentEmoji": "⚙️",
-      "message": "Created task \"Test\" assigned to Clawson",
-      "taskId": "MC-514",
-      "timestamp": "2026-02-09T22:35:53.515Z"
+      "message": "Moved \"Cold Lead Reengagement Campaign\" from backlog to in progress",
+      "taskId": "MC-003",
+      "timestamp": "2026-02-09T22:37:20.593Z"
     },
     {
       "id": "act_001",
