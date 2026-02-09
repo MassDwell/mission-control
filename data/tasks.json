@@ -114,7 +114,7 @@
       "id": "MC-003",
       "title": "Cold Lead Reengagement Campaign",
       "description": "Execute cold lead reengagement using approved templates.\n\n**Templates:** data/massdwell/sales/follow-up-templates.md\n- Value Drop (share content)\n- Spring Schedule (urgency)\n- Honest Reset (break up)\n\n**Target:** Leads >30 days cold, not in Negotiation+",
-      "status": "in_progress",
+      "status": "backlog",
       "project": "massdwell",
       "assignees": [
         "sales_followup"
@@ -162,7 +162,7 @@
       "id": "MC-004",
       "title": "VAPI Sarah — Review & Next Steps",
       "description": "Sarah (VAPI voice AI) ran initial batch on Feb 4.\n\n**Results from Feb 4 batch:**\n- ~10 calls completed before timeout\n- ~790 leads remaining with phone numbers\n\n**Next steps:** Review outcomes, decide on call strategy, schedule next batch.",
-      "status": "in_progress",
+      "status": "backlog",
       "project": "massdwell",
       "assignees": [
         "sales_followup"
@@ -251,7 +251,7 @@
       "id": "MC-006",
       "title": "Follow Up: Carlos CAD Drawings",
       "description": "Carlos is providing CAD drawings for GPI Models (3D visualization vendor).\n\nNeed to follow up with Carlos to get status and ETA.",
-      "status": "in_progress",
+      "status": "backlog",
       "project": "massdwell",
       "assignees": [
         "massdwell_factory_ops"
@@ -407,7 +407,7 @@
       "id": "MC-009",
       "title": "🎨 Finish Portal — Production Ready",
       "description": "**Goal:** Make portal.massdwell.com a polished, customer-ready product.\n\n**Requirements:**\n1. **Labels** — Every finish option needs clear, descriptive labels\n2. **Images** — Properly cropped, consistent aspect ratios, product-focused\n3. **Branding** — MassDwell Navy (#112C48), logo, professional feel\n4. **UX Polish** — Smooth flow, mobile responsive, clear CTAs\n\n**Resources:**\n- Image catalog: 132 images, 27 categories\n- Google Sheet: https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw\n- Softr login: sales@massdwell.com\n- Brand color: Navy #112C48 (NOT green)\n\n**Parent:** MC-002 (Finish Selections Portal)",
-      "status": "in_progress",
+      "status": "done",
       "project": "massdwell",
       "assignees": [
         "marketing_content"
@@ -458,47 +458,58 @@
       ],
       "priority": "high",
       "dod": "Portal is customer-ready: professional branding, all finishes labeled and imaged, mobile-friendly, Steve approved.",
-      "comments": [],
-      "createdAt": "2026-02-07T00:26:51.855677Z",
-      "sortOrder": 0
-    },
-    {
-      "id": "task_1770489751770",
-      "title": "Investor Pitch Tracking",
-      "description": "Database to track the investor meetings that are scheduled and compeleted.  next steps etc.",
-      "project": "",
-      "tags": [
-        "finance",
-        "marketing"
-      ],
-      "assignees": [
-        "chief_of_staff",
-        "marketing_content"
-      ],
-      "subtasks": [],
-      "priority": "high",
-      "createdAt": "2026-02-07T18:42:31.770Z",
-      "status": "done",
       "comments": [
         {
-          "author": "Agent",
-          "text": "Completed: Investor pitch tracking system created with database template, tracking framework, and implementation guide",
-          "timestamp": "2026-02-07T19:07:47Z"
+          "id": "cancel_1770647421",
+          "author": "Steve",
+          "text": "❌ CANCELLED — Starting over. Design not working.",
+          "createdAt": "2026-02-09T09:30:21.990786Z"
         }
       ],
-      "completedAt": "2026-02-07T20:29:35.881Z"
+      "createdAt": "2026-02-07T00:26:51.855677Z",
+      "sortOrder": 0,
+      "cancelledAt": "2026-02-09T09:30:21.990773Z"
     },
     {
-      "id": "MC-TEST",
-      "title": "Test Webhook Integration",
-      "description": "Final webhook test 21:25:05",
-      "status": "in_progress",
+      "id": "MC-010",
+      "title": "🔄 Activity Feed + MC Hybrid Workflow",
+      "description": "Implement hybrid visibility system:\n- MC Tasks for significant work\n- Activity Feed for all agent activity",
+      "status": "done",
       "project": "infrastructure",
       "assignees": [
         "clawson"
       ],
-      "priority": "low",
-      "createdAt": "2026-02-09T02:23:13Z"
+      "tags": [
+        "infrastructure",
+        "visibility",
+        "agents"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Create log-activity.sh script",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Update all 13 agent HEARTBEATs",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Create activity-logging.md SOP",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Test activity logging",
+          "done": true
+        }
+      ],
+      "priority": "high",
+      "createdAt": "2026-02-07T20:32:00Z",
+      "completedAt": "2026-02-07T20:35:00Z",
+      "duration": "8m"
     }
   ],
   "projects": [
@@ -625,7 +636,7 @@
       "level": "intern"
     }
   ],
-  "lastUpdated": "2026-02-07T20:29:35.881Z",
+  "lastUpdated": "2026-02-09T09:30:21.990788Z",
   "activities": [
     {
       "type": "update",
