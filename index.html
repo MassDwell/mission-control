@@ -1002,7 +1002,13 @@
             
             if (!draggedTask) return;
 
-            const newStatus = e.target.dataset.status;
+            // Find the column - either the target itself or its parent with data-status
+            let dropTarget = e.target;
+            while (dropTarget && !dropTarget.dataset.status) {
+                dropTarget = dropTarget.parentElement;
+            }
+            
+            const newStatus = dropTarget?.dataset.status;
             if (!newStatus) return;
 
             // Find and update the task
