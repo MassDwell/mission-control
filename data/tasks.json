@@ -491,7 +491,7 @@
     {
       "id": "MC-TEST",
       "title": "Test Webhook Integration",
-      "description": "Testing webhook at 02:24:22",
+      "description": "Final webhook test 21:25:05",
       "status": "in_progress",
       "project": "infrastructure",
       "assignees": [
