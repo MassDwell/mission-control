@@ -492,7 +492,7 @@
       "id": "MC-TEST",
       "title": "Test Webhook Integration",
       "description": "Final webhook test 21:25:05",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "infrastructure",
       "assignees": [
         "clawson"
