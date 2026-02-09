@@ -636,8 +636,9 @@
             data.agents.forEach(agent => {
                 // Check if agent has tasks in progress - override status if so
                 const inProgressTasks = data.tasks.filter(t => t.assignee === agent.id && t.status === 'in_progress');
-                const effectiveStatus = inProgressTasks.length > 0 ? 'working' : agent.status;
-                const currentTask = inProgressTasks.length > 0 ? inProgressTasks[0].id : agent.currentTask;
+                const isWorking = inProgressTasks.length > 0;
+                const effectiveStatus = isWorking ? 'working' : agent.status;
+                const currentTask = isWorking ? inProgressTasks[0].id : null;
                 
                 const statusColor = getStatusColor(effectiveStatus);
                 const statusIcon = getStatusIcon(effectiveStatus);
@@ -664,7 +665,7 @@
                         </div>
                         <span class="text-gray-500">${lastSeen}</span>
                     </div>
-                    ${currentTask ? `<div class="text-xs text-mission-accent mt-1">Working on ${currentTask}</div>` : ''}
+                    ${isWorking && currentTask ? `<div class="text-xs text-mission-accent mt-1">Working on ${currentTask}</div>` : ''}
                 `;
 
                 agentList.appendChild(agentDiv);
