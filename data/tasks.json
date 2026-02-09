@@ -487,6 +487,18 @@
         }
       ],
       "completedAt": "2026-02-07T20:29:35.881Z"
+    },
+    {
+      "id": "MC-TEST",
+      "title": "Test Webhook Integration",
+      "description": "Testing MC → Ops Loop bridge",
+      "status": "backlog",
+      "project": "infrastructure",
+      "assignees": [
+        "clawson"
+      ],
+      "priority": "low",
+      "createdAt": "2026-02-09T02:23:13Z"
     }
   ],
   "projects": [
