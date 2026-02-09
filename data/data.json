@@ -578,8 +578,8 @@
     },
     {
       "id": "MC-011",
-      "title": "📸 Instagram Post",
-      "description": "Daily Instagram content posting",
+      "title": "📸 Instagram Post (9 AM & 5 PM)",
+      "description": "Daily Instagram content posting\n\n**Schedule:**\n• 9:00 AM — Morning post\n• 5:00 PM — Afternoon post",
       "status": "permanent",
       "project": "massdwell",
       "assignee": "marketing_content",
