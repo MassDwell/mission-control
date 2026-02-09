@@ -30,6 +30,13 @@
         .scrollbar-track-transparent {
             scrollbar-color: #374151 transparent;
         }
+        /* Fix column scrolling */
+        #backlogColumn, #progressColumn, #reviewColumn, #doneColumn {
+            max-height: calc(100vh - 380px);
+        }
+        #activityFeed {
+            max-height: 120px;
+        }
         .drag-over {
             background-color: rgba(59, 130, 246, 0.1) !important;
             border-color: #3b82f6 !important;
