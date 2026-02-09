@@ -644,13 +644,13 @@
   ],
   "activity": [
     {
-      "id": "act_1770678462017",
+      "id": "act_1770678527316",
       "type": "task_moved",
       "agent": "system",
       "agentEmoji": "⚙️",
       "message": "Moved \"Cold Lead Reengagement Campaign\" from in progress to backlog",
       "taskId": "MC-003",
-      "timestamp": "2026-02-09T23:07:42.017Z"
+      "timestamp": "2026-02-09T23:08:47.316Z"
     },
     {
       "id": "act_1770676894631",
