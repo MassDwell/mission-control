@@ -602,6 +602,274 @@
           5
         ]
       }
+    },
+    {
+      "id": "MC-012",
+      "title": "🐦 X Post - Morning (7:30 AM)",
+      "description": "Automated task - runs daily at 7:30 AM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "marketing_content",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "id": "MC-013",
+      "title": "🐦 X Post - Midday (12:15 PM)",
+      "description": "Automated task - runs daily at 12:15 PM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "marketing_content",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "id": "MC-014",
+      "title": "🐦 X Post - Evening (6 PM)",
+      "description": "Automated task - runs daily at 6:00 PM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "marketing_content",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "id": "MC-015",
+      "title": "📧 Morning Team Briefing (9 AM)",
+      "description": "Automated task - runs daily at 9:00 AM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "chief_of_staff",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "id": "MC-016",
+      "title": "📧 Evening Team Briefing (5 PM)",
+      "description": "Automated task - runs daily at 5:00 PM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "chief_of_staff",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "id": "MC-017",
+      "title": "📞 Sarah Cold Calls - Morning (9 AM)",
+      "description": "Automated task - runs daily at 9:00 AM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "sales_followup",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "id": "MC-018",
+      "title": "📞 Sarah Cold Calls - Afternoon (2 PM)",
+      "description": "Automated task - runs daily at 2:00 PM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "sales_followup",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "id": "MC-019",
+      "title": "📊 Daily Pipeline Review (9 AM)",
+      "description": "Automated task - runs daily at 9:00 AM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "sales_followup",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "id": "MC-020",
+      "title": "📈 Trading EOD Report (4 PM)",
+      "description": "Automated task - runs daily at 4:00 PM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "money_printer",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "id": "MC-021",
+      "title": "📋 Daily Standup (10 PM)",
+      "description": "Automated task - runs daily at 10:00 PM",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "chief_of_staff",
+      "tags": [
+        "automated",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T23:00:00Z",
+      "dueDate": "2026-02-12T23:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
     }
   ],
   "projects": [
