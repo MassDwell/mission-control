@@ -77,6 +77,13 @@
         #cronsTableBody tr:hover {
             background-color: rgba(59, 130, 246, 0.1);
         }
+        #cronsView .overflow-auto {
+            scrollbar-width: thin;
+            scrollbar-color: #374151 transparent;
+        }
+        #cronsView thead {
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="bg-mission-bg text-white font-sans">
@@ -181,8 +188,8 @@
             </div>
 
             <!-- Scheduled Jobs View -->
-            <div id="cronsView" class="flex-1 p-6 overflow-hidden hidden">
-                <div class="flex items-center justify-between mb-6">
+            <div id="cronsView" class="flex-1 p-6 overflow-hidden hidden flex flex-col">
+                <div class="flex items-center justify-between mb-4 flex-shrink-0">
                     <div class="flex items-center space-x-4">
                         <h2 class="text-xl font-semibold text-gray-300">⏰ Scheduled Jobs</h2>
                         <span id="cronStats" class="text-sm text-gray-500"></span>
@@ -202,10 +209,10 @@
                         </button>
                     </div>
                 </div>
-                <div class="bg-mission-card rounded-lg overflow-hidden">
-                    <div class="overflow-x-auto">
+                <div class="bg-mission-card rounded-lg overflow-hidden flex-1 flex flex-col min-h-0">
+                    <div class="overflow-auto flex-1">
                         <table class="w-full text-sm">
-                            <thead class="bg-gray-800 text-gray-400">
+                            <thead class="bg-gray-800 text-gray-400 sticky top-0">
                                 <tr>
                                     <th class="text-left px-4 py-3 font-medium">Status</th>
                                     <th class="text-left px-4 py-3 font-medium">Job Name</th>
@@ -222,7 +229,7 @@
                         </table>
                     </div>
                 </div>
-                <div id="cronUpdateTime" class="text-xs text-gray-500 mt-4 text-right"></div>
+                <div id="cronUpdateTime" class="text-xs text-gray-500 mt-2 text-right flex-shrink-0"></div>
             </div>
 
             <!-- Activity Feed (Bottom) -->
