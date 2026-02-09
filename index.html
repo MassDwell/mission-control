@@ -161,42 +161,42 @@
         <!-- Main Content Area -->
         <div class="flex-1 flex flex-col">
             <!-- Task Board (Kanban) -->
-            <div id="boardView" class="flex-1 p-6 overflow-hidden flex flex-col">
-                <h2 class="text-xl font-semibold mb-4 text-gray-300 flex-shrink-0">Task Board</h2>
-                <div class="grid grid-cols-4 gap-4 flex-1 min-h-0">
-                    <div class="bg-mission-card rounded-lg p-4 flex flex-col min-h-0 max-h-full">
-                        <div class="flex items-center justify-between mb-4 flex-shrink-0">
+            <div id="boardView" class="flex-1 p-6 overflow-hidden">
+                <h2 class="text-xl font-semibold mb-6 text-gray-300">Task Board</h2>
+                <div class="grid grid-cols-4 gap-6 h-full">
+                    <div class="bg-mission-card rounded-lg p-4 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
                             <h3 class="font-semibold text-gray-300">📥 Backlog</h3>
                             <span id="backlogCount" class="bg-gray-600 text-xs px-2 py-1 rounded-full">0</span>
                         </div>
-                        <div id="backlogColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0 max-h-full" data-status="backlog">
+                        <div id="backlogColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0" data-status="backlog">
                             <!-- Tasks will be populated here -->
                         </div>
                     </div>
-                    <div class="bg-mission-card rounded-lg p-4 flex flex-col min-h-0 max-h-full">
-                        <div class="flex items-center justify-between mb-4 flex-shrink-0">
+                    <div class="bg-mission-card rounded-lg p-4 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
                             <h3 class="font-semibold text-gray-300">▶️ In Progress</h3>
                             <span id="progressCount" class="bg-mission-accent text-xs px-2 py-1 rounded-full">0</span>
                         </div>
-                        <div id="progressColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0 max-h-full" data-status="in_progress">
+                        <div id="progressColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0" data-status="in_progress">
                             <!-- Tasks will be populated here -->
                         </div>
                     </div>
-                    <div class="bg-mission-card rounded-lg p-4 flex flex-col min-h-0 max-h-full">
-                        <div class="flex items-center justify-between mb-4 flex-shrink-0">
+                    <div class="bg-mission-card rounded-lg p-4 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
                             <h3 class="font-semibold text-gray-300">👀 Review</h3>
                             <span id="reviewCount" class="bg-mission-warning text-xs px-2 py-1 rounded-full">0</span>
                         </div>
-                        <div id="reviewColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0 max-h-full" data-status="review">
+                        <div id="reviewColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0" data-status="review">
                             <!-- Tasks will be populated here -->
                         </div>
                     </div>
-                    <div class="bg-mission-card rounded-lg p-4 flex flex-col min-h-0 max-h-full">
-                        <div class="flex items-center justify-between mb-4 flex-shrink-0">
+                    <div class="bg-mission-card rounded-lg p-4 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
                             <h3 class="font-semibold text-gray-300">✅ Done</h3>
                             <span id="doneCount" class="bg-mission-success text-xs px-2 py-1 rounded-full">0</span>
                         </div>
-                        <div id="doneColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0 max-h-full" data-status="done">
+                        <div id="doneColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0" data-status="done">
                             <!-- Tasks will be populated here -->
                         </div>
                     </div>
@@ -238,8 +238,8 @@
             </div>
 
             <!-- Activity Feed (Bottom) -->
-            <div class="bg-mission-card border-t border-gray-700 p-4 h-48 flex-shrink-0 flex flex-col">
-                <div class="flex items-center justify-between mb-3 flex-shrink-0">
+            <div class="bg-mission-card border-t border-gray-700 p-6 h-64">
+                <div class="flex items-center justify-between mb-4">
                     <h2 class="text-lg font-semibold text-gray-300">Recent Activity</h2>
                     <select id="activityFilter" class="bg-gray-700 text-white px-3 py-1 rounded text-sm">
                         <option value="all">All Activity</option>
@@ -249,7 +249,7 @@
                         <option value="admin_assistant">🔧 Admin</option>
                     </select>
                 </div>
-                <div id="activityFeed" class="space-y-2 overflow-y-auto scrollbar-thin scrollbar-track-transparent flex-1 min-h-0">
+                <div id="activityFeed" class="space-y-2 overflow-y-auto scrollbar-thin scrollbar-track-transparent h-40">
                     <!-- Activity items will be populated here -->
                 </div>
             </div>
