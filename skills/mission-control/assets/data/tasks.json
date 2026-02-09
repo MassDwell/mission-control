@@ -7,14 +7,39 @@
       "description": "Mission Control has been deployed and configured.",
       "status": "done",
       "project": "infrastructure",
-      "assignees": ["clawson"],
-      "tags": ["setup", "meta"],
+      "assignees": [
+        "clawson"
+      ],
+      "tags": [
+        "setup",
+        "meta"
+      ],
       "subtasks": [
-        {"id": "sub_001", "title": "GitHub repo created", "done": true},
-        {"id": "sub_002", "title": "GitHub Pages enabled", "done": true},
-        {"id": "sub_003", "title": "Webhook configured", "done": true},
-        {"id": "sub_004", "title": "Tailscale Funnel enabled", "done": true},
-        {"id": "sub_005", "title": "Dashboard customized for Clawson", "done": true}
+        {
+          "id": "sub_001",
+          "title": "GitHub repo created",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "GitHub Pages enabled",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Webhook configured",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Tailscale Funnel enabled",
+          "done": true
+        },
+        {
+          "id": "sub_005",
+          "title": "Dashboard customized for Clawson",
+          "done": true
+        }
       ],
       "priority": "high",
       "createdAt": "2026-02-05T19:40:00Z"
@@ -24,8 +49,13 @@
       "title": "Finish Selections Portal",
       "status": "done",
       "project": "massdwell",
-      "assignees": ["marketing_content"],
-      "tags": ["portal", "softr"],
+      "assignees": [
+        "marketing_content"
+      ],
+      "tags": [
+        "portal",
+        "softr"
+      ],
       "priority": "high",
       "createdAt": "2026-02-05T19:45:00Z",
       "completedAt": "2026-02-07T00:24:33.893Z"
@@ -36,18 +66,44 @@
       "description": "**COMPLETED Feb 7:** Sales Followup identified 5 high-value candidates:\n1. Kathleen Sullivan - $250K (PRIORITY - was promised Jan follow-up)\n2. John Paul Raposa - $357K (Highest value)\n3. Krish Bala - $172K (Rental income focus)\n4. Brianna Patterson - $175K (Mom moving Spring 2027)\n5. Sue Wiesen - $200K (Family ADU)\n\n**Email sent to Nick with action items.**",
       "status": "review",
       "project": "massdwell",
-      "assignees": ["sales_followup"],
-      "tags": ["sales", "email", "crm"],
+      "assignees": [
+        "sales_followup"
+      ],
+      "tags": [
+        "sales",
+        "email",
+        "crm"
+      ],
       "subtasks": [
-        {"id": "sub_001", "title": "Query Supabase for cold leads (>30 days)", "done": true},
-        {"id": "sub_002", "title": "Segment by value and location", "done": true},
-        {"id": "sub_003", "title": "Draft personalized follow-up messages", "done": true},
-        {"id": "sub_004", "title": "Submit to Nick for review", "done": true}
+        {
+          "id": "sub_001",
+          "title": "Query Supabase for cold leads (>30 days)",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Segment by value and location",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Draft personalized follow-up messages",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Submit to Nick for review",
+          "done": true
+        }
       ],
       "priority": "medium",
       "dod": "Draft emails ready for Nick's review — no auto-send",
       "comments": [
-        {"author": "Sales Followup", "text": "5 leads identified, draft messages written, email sent to Nick. Kathleen Sullivan should be called TODAY.", "timestamp": "2026-02-07T20:29:00Z"}
+        {
+          "author": "Sales Followup",
+          "text": "5 leads identified, draft messages written, email sent to Nick. Kathleen Sullivan should be called TODAY.",
+          "timestamp": "2026-02-07T20:29:00Z"
+        }
       ],
       "createdAt": "2026-02-05T19:45:00Z",
       "completedAt": "2026-02-07T20:29:00Z",
@@ -58,8 +114,14 @@
       "title": "VAPI Sarah — Review & Next Steps",
       "status": "backlog",
       "project": "massdwell",
-      "assignees": ["sales_followup"],
-      "tags": ["vapi", "calls", "automation"],
+      "assignees": [
+        "sales_followup"
+      ],
+      "tags": [
+        "vapi",
+        "calls",
+        "automation"
+      ],
       "priority": "medium",
       "createdAt": "2026-02-05T19:50:00Z"
     },
@@ -69,8 +131,13 @@
       "description": "**Current Positions (Feb 7):**\n- SOFI: 13 shares @ $21.26 avg\n- Target: $25 | Stop: $19\n\nMonitored by Money Printer agent.",
       "status": "permanent",
       "project": "trading",
-      "assignees": ["money_printer"],
-      "tags": ["stocks", "monitoring"],
+      "assignees": [
+        "money_printer"
+      ],
+      "tags": [
+        "stocks",
+        "monitoring"
+      ],
       "priority": "high",
       "createdAt": "2026-02-05T19:50:00Z"
     },
@@ -79,8 +146,13 @@
       "title": "Follow Up: Carlos CAD Drawings",
       "status": "backlog",
       "project": "massdwell",
-      "assignees": ["massdwell_factory_ops"],
-      "tags": ["vendor", "3d-models"],
+      "assignees": [
+        "massdwell_factory_ops"
+      ],
+      "tags": [
+        "vendor",
+        "3d-models"
+      ],
       "priority": "low",
       "createdAt": "2026-02-05T19:50:00Z"
     },
@@ -89,8 +161,14 @@
       "title": "📧 Email-to-CRM Auto-Sync (Recurring)",
       "status": "done",
       "project": "massdwell",
-      "assignees": ["admin_assistant"],
-      "tags": ["automation", "crm", "recurring"],
+      "assignees": [
+        "admin_assistant"
+      ],
+      "tags": [
+        "automation",
+        "crm",
+        "recurring"
+      ],
       "priority": "medium",
       "createdAt": "2026-02-05T22:10:00Z"
     },
@@ -99,8 +177,14 @@
       "title": "Multi-Agent System Deployment",
       "status": "done",
       "project": "infrastructure",
-      "assignees": ["clawson"],
-      "tags": ["agents", "setup", "infrastructure"],
+      "assignees": [
+        "clawson"
+      ],
+      "tags": [
+        "agents",
+        "setup",
+        "infrastructure"
+      ],
       "priority": "high",
       "createdAt": "2026-02-06T20:45:00Z"
     },
@@ -108,19 +192,55 @@
       "id": "MC-009",
       "title": "🎨 Finish Portal — Production Ready",
       "description": "Make portal.massdwell.com customer-ready with proper branding, labels, and cropped images.\n\n**Brand color:** Navy #112C48",
-      "status": "in_progress",
+      "status": "done",
       "project": "massdwell",
-      "assignees": ["marketing_content"],
-      "tags": ["portal", "softr", "branding", "priority"],
+      "assignees": [
+        "marketing_content"
+      ],
+      "tags": [
+        "portal",
+        "softr",
+        "branding",
+        "priority"
+      ],
       "subtasks": [
-        {"id": "sub_001", "title": "Audit current portal state", "done": false},
-        {"id": "sub_002", "title": "Apply MassDwell branding (Navy #112C48)", "done": false},
-        {"id": "sub_003", "title": "Crop/resize all 132 images", "done": false},
-        {"id": "sub_004", "title": "Test mobile responsiveness", "done": false},
-        {"id": "sub_005", "title": "Steve final review", "done": false}
+        {
+          "id": "sub_001",
+          "title": "Audit current portal state",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Apply MassDwell branding (Navy #112C48)",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Crop/resize all 132 images",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Test mobile responsiveness",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Steve final review",
+          "done": false
+        }
       ],
       "priority": "high",
-      "createdAt": "2026-02-07T00:26:51.855677Z"
+      "createdAt": "2026-02-07T00:26:51.855677Z",
+      "cancelledAt": "2026-02-09T09:10:11.112726Z",
+      "comments": [
+        {
+          "id": "c_1770646211112",
+          "author": "Steve",
+          "text": "❌ CANCELLED — Starting over. Design not working.",
+          "createdAt": "2026-02-09T09:10:11.112732Z"
+        }
+      ]
     },
     {
       "id": "MC-010",
@@ -128,13 +248,35 @@
       "description": "Implement hybrid visibility system:\n- MC Tasks for significant work\n- Activity Feed for all agent activity",
       "status": "done",
       "project": "infrastructure",
-      "assignees": ["clawson"],
-      "tags": ["infrastructure", "visibility", "agents"],
+      "assignees": [
+        "clawson"
+      ],
+      "tags": [
+        "infrastructure",
+        "visibility",
+        "agents"
+      ],
       "subtasks": [
-        {"id": "sub_001", "title": "Create log-activity.sh script", "done": true},
-        {"id": "sub_002", "title": "Update all 13 agent HEARTBEATs", "done": true},
-        {"id": "sub_003", "title": "Create activity-logging.md SOP", "done": true},
-        {"id": "sub_004", "title": "Test activity logging", "done": true}
+        {
+          "id": "sub_001",
+          "title": "Create log-activity.sh script",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Update all 13 agent HEARTBEATs",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Create activity-logging.md SOP",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Test activity logging",
+          "done": true
+        }
       ],
       "priority": "high",
       "createdAt": "2026-02-07T20:32:00Z",
@@ -143,32 +285,142 @@
     }
   ],
   "projects": [
-    {"id": "massdwell", "name": "MassDwell", "color": "#112C48", "emoji": "🏠"},
-    {"id": "atlantic", "name": "Atlantic Laser", "color": "#3b82f6", "emoji": "⚡"},
-    {"id": "alpine", "name": "Alpine Property", "color": "#64748b", "emoji": "🏔️"},
-    {"id": "infrastructure", "name": "Infrastructure", "color": "#a855f7", "emoji": "⚙️"},
-    {"id": "trading", "name": "Trading", "color": "#f59e0b", "emoji": "📈"},
-    {"id": "personal", "name": "Personal", "color": "#ec4899", "emoji": "🎯"}
+    {
+      "id": "massdwell",
+      "name": "MassDwell",
+      "color": "#112C48",
+      "emoji": "🏠"
+    },
+    {
+      "id": "atlantic",
+      "name": "Atlantic Laser",
+      "color": "#3b82f6",
+      "emoji": "⚡"
+    },
+    {
+      "id": "alpine",
+      "name": "Alpine Property",
+      "color": "#64748b",
+      "emoji": "🏔️"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infrastructure",
+      "color": "#a855f7",
+      "emoji": "⚙️"
+    },
+    {
+      "id": "trading",
+      "name": "Trading",
+      "color": "#f59e0b",
+      "emoji": "📈"
+    },
+    {
+      "id": "personal",
+      "name": "Personal",
+      "color": "#ec4899",
+      "emoji": "🎯"
+    }
   ],
   "agents": [
-    {"id": "clawson", "name": "Clawson (COO)", "emoji": "🦅", "level": "lead"},
-    {"id": "chief_of_staff", "name": "Chief of Staff", "emoji": "📋", "level": "specialist"},
-    {"id": "sales_followup", "name": "Sales Follow-up", "emoji": "📞", "level": "specialist"},
-    {"id": "marketing_content", "name": "Marketing & Content", "emoji": "📣", "level": "specialist"},
-    {"id": "money_printer", "name": "Money Printer", "emoji": "💵", "level": "specialist"},
-    {"id": "finance_underwriting", "name": "Finance & Underwriting", "emoji": "💰", "level": "specialist"},
-    {"id": "massdwell_factory_ops", "name": "Factory Ops", "emoji": "🏭", "level": "specialist"},
-    {"id": "laser_sales_engineer", "name": "Laser Sales Engineer", "emoji": "⚡", "level": "specialist"},
-    {"id": "alpine_property_mgmt", "name": "Property Management", "emoji": "🏠", "level": "specialist"},
-    {"id": "alpine_permitting", "name": "Permitting", "emoji": "📜", "level": "specialist"},
-    {"id": "security_ciso", "name": "Sentinel", "emoji": "🛡️", "level": "specialist"},
-    {"id": "personal_life_cos", "name": "Personal Life", "emoji": "🎯", "level": "specialist"},
-    {"id": "doc_proposal", "name": "Document & Proposal", "emoji": "📝", "level": "intern"},
-    {"id": "admin_assistant", "name": "Admin Assistant", "emoji": "📎", "level": "intern"}
+    {
+      "id": "clawson",
+      "name": "Clawson (COO)",
+      "emoji": "🦅",
+      "level": "lead"
+    },
+    {
+      "id": "chief_of_staff",
+      "name": "Chief of Staff",
+      "emoji": "📋",
+      "level": "specialist"
+    },
+    {
+      "id": "sales_followup",
+      "name": "Sales Follow-up",
+      "emoji": "📞",
+      "level": "specialist"
+    },
+    {
+      "id": "marketing_content",
+      "name": "Marketing & Content",
+      "emoji": "📣",
+      "level": "specialist"
+    },
+    {
+      "id": "money_printer",
+      "name": "Money Printer",
+      "emoji": "💵",
+      "level": "specialist"
+    },
+    {
+      "id": "finance_underwriting",
+      "name": "Finance & Underwriting",
+      "emoji": "💰",
+      "level": "specialist"
+    },
+    {
+      "id": "massdwell_factory_ops",
+      "name": "Factory Ops",
+      "emoji": "🏭",
+      "level": "specialist"
+    },
+    {
+      "id": "laser_sales_engineer",
+      "name": "Laser Sales Engineer",
+      "emoji": "⚡",
+      "level": "specialist"
+    },
+    {
+      "id": "alpine_property_mgmt",
+      "name": "Property Management",
+      "emoji": "🏠",
+      "level": "specialist"
+    },
+    {
+      "id": "alpine_permitting",
+      "name": "Permitting",
+      "emoji": "📜",
+      "level": "specialist"
+    },
+    {
+      "id": "security_ciso",
+      "name": "Sentinel",
+      "emoji": "🛡️",
+      "level": "specialist"
+    },
+    {
+      "id": "personal_life_cos",
+      "name": "Personal Life",
+      "emoji": "🎯",
+      "level": "specialist"
+    },
+    {
+      "id": "doc_proposal",
+      "name": "Document & Proposal",
+      "emoji": "📝",
+      "level": "intern"
+    },
+    {
+      "id": "admin_assistant",
+      "name": "Admin Assistant",
+      "emoji": "📎",
+      "level": "intern"
+    }
   ],
   "lastUpdated": "2026-02-07T20:37:00Z",
   "activities": [
-    {"type": "complete", "actor": "Clawson", "message": "Implemented hybrid MC + Activity Feed workflow.", "time": "2026-02-07T20:35:00Z"},
-    {"type": "complete", "actor": "Sales Followup", "message": "Cold lead re-engagement complete. 5 leads, email to Nick.", "time": "2026-02-07T20:29:00Z"}
+    {
+      "type": "complete",
+      "actor": "Clawson",
+      "message": "Implemented hybrid MC + Activity Feed workflow.",
+      "time": "2026-02-07T20:35:00Z"
+    },
+    {
+      "type": "complete",
+      "actor": "Sales Followup",
+      "message": "Cold lead re-engagement complete. 5 leads, email to Nick.",
+      "time": "2026-02-07T20:29:00Z"
+    }
   ]
 }
