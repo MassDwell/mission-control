@@ -589,6 +589,10 @@
             card.addEventListener('click', () => showTaskDetails(task));
             card.addEventListener('dragstart', handleDragStart);
             card.addEventListener('dragend', handleDragEnd);
+            
+            // Allow drops on task cards (delegate to parent column)
+            card.addEventListener('dragover', handleDragOver);
+            card.addEventListener('drop', handleDrop);
 
             return card;
         }
