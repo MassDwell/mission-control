@@ -1087,10 +1087,16 @@
 
             title.textContent = `${agent.emoji} ${agent.name}`;
 
-            const statusColor = getStatusColor(agent.status);
-            const statusIcon = getStatusIcon(agent.status);
+            // Check if agent has tasks in progress
             const assignedTasks = data.tasks.filter(task => task.assignee === agent.id);
+            const inProgressTasks = assignedTasks.filter(task => task.status === 'in_progress');
             const completedTasks = assignedTasks.filter(task => task.status === 'done');
+            const isWorking = inProgressTasks.length > 0;
+            const effectiveStatus = isWorking ? 'working' : agent.status;
+            const currentTask = isWorking ? inProgressTasks[0].id : null;
+
+            const statusColor = getStatusColor(effectiveStatus);
+            const statusIcon = getStatusIcon(effectiveStatus);
 
             content.innerHTML = `
                 <div class="space-y-4">
@@ -1116,10 +1122,10 @@
                         </div>
                     </div>
                     
-                    ${agent.currentTask ? `
+                    ${isWorking && currentTask ? `
                         <div>
                             <label class="text-sm text-gray-400">Current Task</label>
-                            <div class="text-mission-accent">${agent.currentTask}</div>
+                            <div class="text-mission-accent">${currentTask}</div>
                         </div>
                     ` : ''}
 
