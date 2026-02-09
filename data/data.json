@@ -1,0 +1,296 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-02-09T21:31:00Z",
+  "agents": [
+    {
+      "id": "clawson",
+      "name": "Clawson",
+      "emoji": "🦅",
+      "role": "Master Agent / COO",
+      "status": "working",
+      "currentTask": "MC-008",
+      "lastSeen": "2026-02-09T21:25:00Z",
+      "level": "lead"
+    },
+    {
+      "id": "marketing_content",
+      "name": "Marketing",
+      "emoji": "📣",
+      "role": "Content & Campaigns",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": "2026-02-09T19:30:00Z",
+      "level": "specialist"
+    },
+    {
+      "id": "sales_followup",
+      "name": "Sales",
+      "emoji": "💼",
+      "role": "Lead Follow-up",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": "2026-02-09T17:15:00Z",
+      "level": "specialist"
+    },
+    {
+      "id": "admin_assistant",
+      "name": "Admin",
+      "emoji": "🔧",
+      "role": "Administrative Tasks",
+      "status": "offline",
+      "currentTask": null,
+      "lastSeen": "2026-02-08T21:00:00Z",
+      "level": "intern"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "MC-001",
+      "title": "✅ Mission Control Setup Complete",
+      "description": "Mission Control has been deployed and configured.\n\n**How it works:**\n1. Create tasks here or drag existing to columns\n2. Move to **In Progress** → Assigned agent automatically starts working\n3. Agent updates progress, marks subtasks done\n4. Task moves to **Review** when complete\n5. Approve or send back for rework",
+      "status": "done",
+      "project": "infrastructure",
+      "assignee": "clawson",
+      "tags": [
+        "setup",
+        "meta"
+      ],
+      "priority": "high",
+      "createdAt": "2026-02-05T19:40:00Z",
+      "completedAt": "2026-02-05T19:45:00Z"
+    },
+    {
+      "id": "MC-002",
+      "title": "Finish Selections Portal",
+      "description": "**OWNER: @marketing_content**\n\nComplete the customer design portal at portal.massdwell.com with all finish selections.\n\n**Status:** Images cataloged, need Softr configuration.\n\n**Google Sheet:** https://docs.google.com/spreadsheets/d/1UdidwqpYKo1ncru81LFdS5QHJCLfdg1-jv9poaD-IXw/edit",
+      "status": "done",
+      "project": "massdwell",
+      "assignee": "marketing_content",
+      "tags": [
+        "portal",
+        "softr",
+        "customer-facing",
+        "priority"
+      ],
+      "priority": "high",
+      "createdAt": "2026-02-05T19:45:00Z",
+      "completedAt": "2026-02-07T00:24:33.893Z"
+    },
+    {
+      "id": "MC-003",
+      "title": "Cold Lead Reengagement Campaign",
+      "description": "Execute cold lead reengagement using approved templates.\n\n**Templates:** data/massdwell/sales/follow-up-templates.md\n- Value Drop (share content)\n- Spring Schedule (urgency)\n- Honest Reset (break up)\n\n**Target:** Leads >30 days cold, not in Negotiation+",
+      "status": "backlog",
+      "project": "massdwell",
+      "assignee": "sales_followup",
+      "tags": [
+        "sales",
+        "email",
+        "crm"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-05T19:45:00Z"
+    },
+    {
+      "id": "MC-004",
+      "title": "VAPI Sarah — Review & Next Steps",
+      "description": "Sarah (VAPI voice AI) ran initial batch on Feb 4.\n\n**Results from Feb 4 batch:**\n- ~10 calls completed before timeout\n- ~790 leads remaining with phone numbers\n\n**Next steps:** Review outcomes, decide on call strategy, schedule next batch.",
+      "status": "backlog",
+      "project": "massdwell",
+      "assignee": "sales_followup",
+      "tags": [
+        "vapi",
+        "calls",
+        "automation"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-05T19:50:00Z"
+    },
+    {
+      "id": "MC-005",
+      "title": "Trading: Position Monitoring",
+      "description": "**Current Positions (Feb 7):**\n- SOFI: 13 shares @ $21.26 avg\n- Target: $25 | Stop: $19\n\n**Account:** ~$3,658 net liq\n**Platform:** Interactive Brokers (TWS)\n\nMonitored by Money Printer agent.",
+      "status": "in_progress",
+      "project": "trading",
+      "assignee": "clawson",
+      "tags": [
+        "stocks",
+        "monitoring"
+      ],
+      "priority": "high",
+      "createdAt": "2026-02-05T19:50:00Z"
+    },
+    {
+      "id": "MC-006",
+      "title": "Follow Up: Carlos CAD Drawings",
+      "description": "Carlos is providing CAD drawings for GPI Models (3D visualization vendor).\n\nNeed to follow up with Carlos to get status and ETA.",
+      "status": "backlog",
+      "project": "massdwell",
+      "assignee": "admin_assistant",
+      "tags": [
+        "vendor",
+        "3d-models",
+        "follow-up"
+      ],
+      "priority": "low",
+      "createdAt": "2026-02-05T19:50:00Z"
+    },
+    {
+      "id": "MC-007",
+      "title": "📧 Email-to-CRM Auto-Sync",
+      "description": "Automated sync: Scans sent emails from sales@ and steve.vettori@massdwell.com, matches recipients to Kommo CRM contacts, adds notes to leads.\n\n**Schedule:** 9 AM, 1 PM, 5 PM (M-F)\n**Script:** scripts/email-to-crm-sync.js",
+      "status": "done",
+      "project": "massdwell",
+      "assignee": "admin_assistant",
+      "tags": [
+        "automation",
+        "crm",
+        "recurring"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-05T22:10:00Z",
+      "completedAt": "2026-02-05T22:15:00Z"
+    },
+    {
+      "id": "MC-008",
+      "title": "Multi-Agent System Deployment",
+      "description": "Deploy and configure 13-agent ecosystem.\n\n**Agents:** clawson (lead), chief_of_staff, sales_followup, marketing_content, finance_underwriting, massdwell_factory_ops, laser_sales_engineer, alpine_property_mgmt, alpine_permitting, security_ciso, personal_life_cos, doc_proposal, admin_assistant, money_printer\n\n**Each agent has:** SOUL.md, AGENTS.md, MEMORY.md, HEARTBEAT.md",
+      "status": "done",
+      "project": "infrastructure",
+      "assignee": "clawson",
+      "tags": [
+        "agents",
+        "setup",
+        "infrastructure"
+      ],
+      "priority": "high",
+      "createdAt": "2026-02-06T20:45:00Z",
+      "completedAt": "2026-02-07T13:30:00Z"
+    },
+    {
+      "id": "MC-010",
+      "title": "🔄 Activity Feed + MC Hybrid Workflow",
+      "description": "Implement hybrid visibility system:\n- MC Tasks for significant work\n- Activity Feed for all agent activity",
+      "status": "done",
+      "project": "infrastructure",
+      "assignee": "clawson",
+      "tags": [
+        "infrastructure",
+        "visibility",
+        "agents"
+      ],
+      "priority": "high",
+      "createdAt": "2026-02-07T20:32:00Z",
+      "completedAt": "2026-02-07T20:35:00Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "massdwell",
+      "name": "MassDwell",
+      "color": "#112C48",
+      "emoji": "🏠"
+    },
+    {
+      "id": "atlantic",
+      "name": "Atlantic Laser",
+      "color": "#3b82f6",
+      "emoji": "⚡"
+    },
+    {
+      "id": "alpine",
+      "name": "Alpine Property",
+      "color": "#64748b",
+      "emoji": "🏔️"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infrastructure",
+      "color": "#a855f7",
+      "emoji": "⚙️"
+    },
+    {
+      "id": "trading",
+      "name": "Trading",
+      "color": "#f59e0b",
+      "emoji": "📈"
+    },
+    {
+      "id": "personal",
+      "name": "Personal",
+      "color": "#ec4899",
+      "emoji": "🎯"
+    }
+  ],
+  "activity": [
+    {
+      "id": "act_001",
+      "type": "task_completed",
+      "agent": "clawson",
+      "agentEmoji": "🦅",
+      "message": "Completed Multi-Agent System Deployment",
+      "taskId": "MC-008",
+      "timestamp": "2026-02-07T13:30:00Z"
+    },
+    {
+      "id": "act_002",
+      "type": "task_completed",
+      "agent": "clawson",
+      "agentEmoji": "🦅",
+      "message": "Completed Activity Feed + MC Hybrid Workflow",
+      "taskId": "MC-010",
+      "timestamp": "2026-02-07T20:35:00Z"
+    },
+    {
+      "id": "act_003",
+      "type": "task_completed",
+      "agent": "marketing_content",
+      "agentEmoji": "📣",
+      "message": "Completed Finish Selections Portal",
+      "taskId": "MC-002",
+      "timestamp": "2026-02-07T00:24:33Z"
+    },
+    {
+      "id": "act_004",
+      "type": "task_completed",
+      "agent": "admin_assistant",
+      "agentEmoji": "🔧",
+      "message": "Completed Email-to-CRM Auto-Sync",
+      "taskId": "MC-007",
+      "timestamp": "2026-02-05T22:15:00Z"
+    },
+    {
+      "id": "act_005",
+      "type": "task_cancelled",
+      "agent": "steve",
+      "agentEmoji": "👤",
+      "message": "Cancelled Finish Portal — Production Ready",
+      "taskId": "MC-009",
+      "timestamp": "2026-02-09T09:30:21Z"
+    },
+    {
+      "id": "act_006",
+      "type": "agent_status",
+      "agent": "clawson",
+      "agentEmoji": "🦅",
+      "message": "Status changed to Working",
+      "timestamp": "2026-02-09T21:25:00Z"
+    },
+    {
+      "id": "act_007",
+      "type": "agent_status",
+      "agent": "marketing_content",
+      "agentEmoji": "📣",
+      "message": "Status changed to Idle",
+      "timestamp": "2026-02-09T19:30:00Z"
+    },
+    {
+      "id": "act_008",
+      "type": "agent_status",
+      "agent": "sales_followup",
+      "agentEmoji": "💼",
+      "message": "Status changed to Idle",
+      "timestamp": "2026-02-09T17:15:00Z"
+    }
+  ]
+}
