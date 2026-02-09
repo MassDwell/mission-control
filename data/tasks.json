@@ -492,7 +492,7 @@
       "id": "MC-TEST",
       "title": "Test Webhook Integration",
       "description": "Testing MC → Ops Loop bridge",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "infrastructure",
       "assignees": [
         "clawson"
