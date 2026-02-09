@@ -17,8 +17,8 @@
       "name": "Marketing",
       "emoji": "📣",
       "role": "Content & Campaigns",
-      "status": "working",
-      "currentTask": "MC-629",
+      "status": "idle",
+      "currentTask": null,
       "lastSeen": "2026-02-09T19:30:00Z",
       "level": "specialist"
     },
@@ -602,20 +602,6 @@
           5
         ]
       }
-    },
-    {
-      "id": "MC-629",
-      "title": "testing ",
-      "description": "testing to see assignment to marketing ",
-      "status": "in_progress",
-      "project": "infrastructure",
-      "assignee": "marketing_content",
-      "tags": [
-        "marketing"
-      ],
-      "priority": "urgent",
-      "createdAt": "2026-02-09T22:41:34.629Z",
-      "dueDate": "2026-02-12T22:41:34.629Z"
     }
   ],
   "projects": [
