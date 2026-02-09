@@ -13,24 +13,114 @@
       "level": "lead"
     },
     {
-      "id": "marketing_content",
-      "name": "Marketing",
-      "emoji": "📣",
-      "role": "Content & Campaigns",
+      "id": "chief_of_staff",
+      "name": "Chief of Staff",
+      "emoji": "📋",
+      "role": "Coordination & Briefings",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-09T19:30:00Z",
+      "lastSeen": null,
       "level": "specialist"
     },
     {
       "id": "sales_followup",
       "name": "Sales",
       "emoji": "💼",
-      "role": "Lead Follow-up",
-      "status": "working",
-      "currentTask": "MC-003",
+      "role": "Lead Follow-up & CRM",
+      "status": "idle",
+      "currentTask": null,
       "lastSeen": "2026-02-09T17:15:00Z",
       "level": "specialist"
+    },
+    {
+      "id": "marketing_content",
+      "name": "Marketing",
+      "emoji": "📣",
+      "role": "Content & Social Media",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": "2026-02-09T19:30:00Z",
+      "level": "specialist"
+    },
+    {
+      "id": "finance_underwriting",
+      "name": "Finance",
+      "emoji": "💰",
+      "role": "Underwriting & Analysis",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
+      "level": "specialist"
+    },
+    {
+      "id": "massdwell_factory_ops",
+      "name": "Factory Ops",
+      "emoji": "🏭",
+      "role": "MassDwell Production",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
+      "level": "specialist"
+    },
+    {
+      "id": "laser_sales_engineer",
+      "name": "Laser Sales",
+      "emoji": "⚡",
+      "role": "Atlantic Laser Solutions",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
+      "level": "specialist"
+    },
+    {
+      "id": "alpine_property_mgmt",
+      "name": "Property Mgmt",
+      "emoji": "🏔️",
+      "role": "Alpine Property Management",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
+      "level": "specialist"
+    },
+    {
+      "id": "alpine_permitting",
+      "name": "Permitting",
+      "emoji": "📜",
+      "role": "Permits & Approvals",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
+      "level": "specialist"
+    },
+    {
+      "id": "security_ciso",
+      "name": "Security",
+      "emoji": "🔒",
+      "role": "Security & Compliance",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
+      "level": "specialist"
+    },
+    {
+      "id": "money_printer",
+      "name": "Money Printer",
+      "emoji": "🖨️",
+      "role": "Trading & Investments",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
+      "level": "specialist"
+    },
+    {
+      "id": "doc_proposal",
+      "name": "Doc/Proposal",
+      "emoji": "📝",
+      "role": "Documents & Proposals",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
+      "level": "intern"
     },
     {
       "id": "admin_assistant",
@@ -40,6 +130,16 @@
       "status": "idle",
       "currentTask": null,
       "lastSeen": "2026-02-08T21:00:00Z",
+      "level": "intern"
+    },
+    {
+      "id": "personal_life_cos",
+      "name": "Personal CoS",
+      "emoji": "🎯",
+      "role": "Personal Life Management",
+      "status": "idle",
+      "currentTask": null,
+      "lastSeen": null,
       "level": "intern"
     }
   ],
