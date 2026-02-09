@@ -57,7 +57,8 @@
       ],
       "priority": "high",
       "createdAt": "2026-02-05T19:40:00Z",
-      "completedAt": "2026-02-05T19:45:00Z"
+      "completedAt": "2026-02-05T19:45:00Z",
+      "dueDate": "2026-02-06T19:40:00Z"
     },
     {
       "id": "MC-002",
@@ -74,7 +75,8 @@
       ],
       "priority": "high",
       "createdAt": "2026-02-05T19:45:00Z",
-      "completedAt": "2026-02-07T00:24:33.893Z"
+      "completedAt": "2026-02-07T00:24:33.893Z",
+      "dueDate": "2026-02-06T19:45:00Z"
     },
     {
       "id": "MC-003",
@@ -89,7 +91,8 @@
         "crm"
       ],
       "priority": "medium",
-      "createdAt": "2026-02-05T19:45:00Z"
+      "createdAt": "2026-02-05T19:45:00Z",
+      "dueDate": "2026-02-08T19:45:00Z"
     },
     {
       "id": "MC-004",
@@ -104,7 +107,8 @@
         "automation"
       ],
       "priority": "medium",
-      "createdAt": "2026-02-05T19:50:00Z"
+      "createdAt": "2026-02-05T19:50:00Z",
+      "dueDate": "2026-02-08T19:50:00Z"
     },
     {
       "id": "MC-005",
@@ -118,7 +122,8 @@
         "monitoring"
       ],
       "priority": "high",
-      "createdAt": "2026-02-05T19:50:00Z"
+      "createdAt": "2026-02-05T19:50:00Z",
+      "dueDate": "2026-02-06T19:50:00Z"
     },
     {
       "id": "MC-006",
@@ -133,7 +138,8 @@
         "follow-up"
       ],
       "priority": "low",
-      "createdAt": "2026-02-05T19:50:00Z"
+      "createdAt": "2026-02-05T19:50:00Z",
+      "dueDate": "2026-02-12T19:50:00Z"
     },
     {
       "id": "MC-007",
@@ -149,7 +155,8 @@
       ],
       "priority": "medium",
       "createdAt": "2026-02-05T22:10:00Z",
-      "completedAt": "2026-02-05T22:15:00Z"
+      "completedAt": "2026-02-05T22:15:00Z",
+      "dueDate": "2026-02-08T22:10:00Z"
     },
     {
       "id": "MC-008",
@@ -165,7 +172,8 @@
       ],
       "priority": "high",
       "createdAt": "2026-02-06T20:45:00Z",
-      "completedAt": "2026-02-07T13:30:00Z"
+      "completedAt": "2026-02-07T13:30:00Z",
+      "dueDate": "2026-02-07T20:45:00Z"
     },
     {
       "id": "MC-010",
@@ -181,7 +189,29 @@
       ],
       "priority": "high",
       "createdAt": "2026-02-07T20:32:00Z",
-      "completedAt": "2026-02-07T20:35:00Z"
+      "completedAt": "2026-02-07T20:35:00Z",
+      "dueDate": "2026-02-08T20:32:00Z"
+    },
+    {
+      "id": "MC-011",
+      "title": "📸 Instagram Post",
+      "description": "Daily Instagram content posting",
+      "status": "permanent",
+      "project": "massdwell",
+      "assignee": "marketing_content",
+      "tags": [
+        "social-media",
+        "content",
+        "daily"
+      ],
+      "priority": "medium",
+      "createdAt": "2026-02-09T22:00:00Z",
+      "dueDate": "2026-02-12T22:00:00Z",
+      "recurring": {
+        "enabled": true,
+        "frequency": "daily",
+        "days": [1, 2, 3, 4, 5]
+      }
     }
   ],
   "projects": [

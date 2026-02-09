@@ -51,6 +51,55 @@
         .modal-backdrop {
             backdrop-filter: blur(4px);
         }
+        .overdue-task {
+            border: 2px solid #ef4444 !important;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+        }
+        .overdue-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 10px;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+        .calendar-day {
+            min-height: 80px;
+            border: 1px solid #374151;
+            padding: 4px;
+        }
+        .calendar-day:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        .calendar-day.other-month {
+            color: #6b7280;
+            background-color: #1f2937;
+        }
+        .calendar-day.today {
+            background-color: rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+        .calendar-task {
+            font-size: 10px;
+            padding: 2px 4px;
+            margin: 1px 0;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        .calendar-task:hover {
+            opacity: 0.8;
+        }
+        .calendar-task.priority-urgent { background: #ef4444; }
+        .calendar-task.priority-high { background: #f59e0b; }
+        .calendar-task.priority-medium { background: #3b82f6; }
+        .calendar-task.priority-low { background: #6b7280; }
+        .calendar-task.priority-recurring { background: #8b5cf6; }
     </style>
 </head>
 <body class="bg-mission-bg text-white font-sans">
@@ -58,7 +107,13 @@
     <header class="bg-mission-card border-b border-gray-700 px-6 py-4">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-4">
-                <h1 class="text-2xl font-bold text-mission-accent">🎛️ Mission Control v2</h1>
+                <div class="flex items-center space-x-6">
+                    <h1 class="text-2xl font-bold text-mission-accent">🎛️ Mission Control v2</h1>
+                    <div class="flex bg-gray-800 rounded-lg p-1">
+                        <button id="boardViewBtn" class="px-4 py-2 rounded-md text-sm font-medium bg-mission-accent text-white">Board</button>
+                        <button id="calendarViewBtn" class="px-4 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white">Calendar</button>
+                    </div>
+                </div>
                 <div class="flex items-center space-x-2 text-sm text-gray-400">
                     <div id="statusIndicator" class="w-3 h-3 rounded-full bg-mission-success pulse-dot"></div>
                     <span id="statusText">Online</span>
@@ -99,7 +154,7 @@
         <!-- Main Content Area -->
         <div class="flex-1 flex flex-col">
             <!-- Task Board (Kanban) -->
-            <div class="flex-1 p-6 overflow-hidden">
+            <div id="boardView" class="flex-1 p-6 overflow-hidden">
                 <h2 class="text-xl font-semibold mb-6 text-gray-300">Task Board</h2>
                 <div class="grid grid-cols-4 gap-6 h-full">
                     <div class="bg-mission-card rounded-lg p-4 flex flex-col">
@@ -137,6 +192,40 @@
                         <div id="doneColumn" class="flex-1 space-y-3 overflow-y-auto scrollbar-thin scrollbar-track-transparent min-h-0" data-status="done">
                             <!-- Tasks will be populated here -->
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar View -->
+            <div id="calendarView" class="flex-1 p-6 overflow-hidden hidden">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-semibold text-gray-300">Calendar</h2>
+                    <div class="flex items-center space-x-4">
+                        <button id="calendarPrevBtn" class="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <h3 id="calendarMonth" class="text-lg font-medium min-w-48 text-center"></h3>
+                        <button id="calendarNextBtn" class="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-mission-card rounded-lg p-4 h-full">
+                    <div class="grid grid-cols-7 gap-1 mb-4">
+                        <div class="text-center text-gray-400 text-sm font-medium p-2">Mon</div>
+                        <div class="text-center text-gray-400 text-sm font-medium p-2">Tue</div>
+                        <div class="text-center text-gray-400 text-sm font-medium p-2">Wed</div>
+                        <div class="text-center text-gray-400 text-sm font-medium p-2">Thu</div>
+                        <div class="text-center text-gray-400 text-sm font-medium p-2">Fri</div>
+                        <div class="text-center text-gray-400 text-sm font-medium p-2">Sat</div>
+                        <div class="text-center text-gray-400 text-sm font-medium p-2">Sun</div>
+                    </div>
+                    <div id="calendarGrid" class="grid grid-cols-7 gap-1 h-96 overflow-y-auto">
+                        <!-- Calendar days will be populated here -->
                     </div>
                 </div>
             </div>
@@ -198,6 +287,7 @@
                             <option value="high">High</option>
                             <option value="urgent">Urgent</option>
                         </select>
+                        <div id="dueDateDisplay" class="text-sm text-gray-400 mt-1"></div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Tags (comma separated)</label>
@@ -258,6 +348,8 @@
         // Global state
         let data = null;
         let draggedTask = null;
+        let currentView = 'board';
+        let currentCalendarDate = new Date();
 
         // Initialize the dashboard
         async function init() {
@@ -269,6 +361,10 @@
                 setupEventListeners();
                 startPolling();
                 updateLastRefresh();
+                
+                // Load saved view preference
+                const savedView = localStorage.getItem('missionControlView') || 'board';
+                switchView(savedView);
             } catch (error) {
                 console.error('Failed to initialize dashboard:', error);
                 updateStatus('offline', 'Error loading data');
@@ -365,34 +461,40 @@
 
             // Count tasks by status
             const counts = { backlog: 0, in_progress: 0, review: 0, done: 0 };
+            const overdueCounts = { backlog: 0, in_progress: 0, review: 0, done: 0 };
 
             data.tasks.forEach(task => {
                 if (columns[task.status]) {
                     const taskCard = createTaskCard(task);
                     columns[task.status].appendChild(taskCard);
                     counts[task.status]++;
+                    if (isTaskOverdue(task)) {
+                        overdueCounts[task.status]++;
+                    }
                 }
             });
 
             // Update count badges
-            document.getElementById('backlogCount').textContent = counts.backlog;
-            document.getElementById('progressCount').textContent = counts.in_progress;
-            document.getElementById('reviewCount').textContent = counts.review;
+            document.getElementById('backlogCount').textContent = counts.backlog + (overdueCounts.backlog > 0 ? ` (${overdueCounts.backlog} overdue)` : '');
+            document.getElementById('progressCount').textContent = counts.in_progress + (overdueCounts.in_progress > 0 ? ` (${overdueCounts.in_progress} overdue)` : '');
+            document.getElementById('reviewCount').textContent = counts.review + (overdueCounts.review > 0 ? ` (${overdueCounts.review} overdue)` : '');
             document.getElementById('doneCount').textContent = counts.done;
         }
 
         // Create a task card element
         function createTaskCard(task) {
             const card = document.createElement('div');
-            card.className = 'bg-gray-800 rounded-lg p-3 cursor-pointer task-card';
+            card.className = 'bg-gray-800 rounded-lg p-3 cursor-pointer task-card relative';
             card.draggable = true;
             card.dataset.taskId = task.id;
             
             const priorityColor = getPriorityColor(task.priority);
             const project = data.projects?.find(p => p.id === task.project);
             const assigneeAgent = data.agents.find(a => a.id === task.assignee);
+            const isOverdue = isTaskOverdue(task);
             
             card.innerHTML = `
+                ${isOverdue ? '<div class="overdue-badge">OVERDUE</div>' : ''}
                 <div class="flex items-start justify-between mb-2">
                     <div class="flex items-center space-x-2">
                         <div class="w-2 h-2 rounded-full ${priorityColor}"></div>
@@ -405,6 +507,7 @@
                     <div class="flex items-center space-x-2">
                         ${project ? `<span class="bg-gray-700 px-2 py-1 rounded text-xs" style="color: ${project.color}">${project.emoji} ${project.name}</span>` : ''}
                     </div>
+                    ${task.dueDate ? `<div class="text-gray-500 text-xs">Due: ${formatDueDate(task.dueDate)}</div>` : ''}
                 </div>
                 ${task.tags && task.tags.length > 0 ? `
                     <div class="flex flex-wrap gap-1 mt-2">
@@ -413,6 +516,11 @@
                     </div>
                 ` : ''}
             `;
+
+            // Add overdue styling
+            if (isOverdue) {
+                card.classList.add('overdue-task');
+            }
 
             // Add event listeners
             card.addEventListener('click', () => showTaskDetails(task));
@@ -450,13 +558,25 @@
 
         // Setup event listeners
         function setupEventListeners() {
+            // View toggle
+            document.getElementById('boardViewBtn').addEventListener('click', () => switchView('board'));
+            document.getElementById('calendarViewBtn').addEventListener('click', () => switchView('calendar'));
+
+            // Calendar navigation
+            document.getElementById('calendarPrevBtn').addEventListener('click', () => navigateCalendar(-1));
+            document.getElementById('calendarNextBtn').addEventListener('click', () => navigateCalendar(1));
+
             // Create task modal
             document.getElementById('createTaskBtn').addEventListener('click', () => {
                 document.getElementById('createTaskModal').classList.remove('hidden');
+                updateDueDateDisplay();
             });
 
             document.getElementById('closeCreateModal').addEventListener('click', closeCreateModal);
             document.getElementById('cancelCreateTask').addEventListener('click', closeCreateModal);
+            
+            // Update due date when priority changes
+            document.getElementById('taskPriority').addEventListener('change', updateDueDateDisplay);
             
             document.getElementById('createTaskForm').addEventListener('submit', handleCreateTask);
 
@@ -514,7 +634,8 @@
                 assignee,
                 tags,
                 priority,
-                createdAt: new Date().toISOString()
+                createdAt: new Date().toISOString(),
+                dueDate: calculateDueDate(priority)
             };
 
             data.tasks.push(newTask);
@@ -584,6 +705,12 @@
                         <label class="text-sm text-gray-400">Created</label>
                         <div>${formatDateTime(task.createdAt)}</div>
                     </div>
+                    ${task.dueDate ? `
+                        <div>
+                            <label class="text-sm text-gray-400">Due Date</label>
+                            <div class="${isTaskOverdue(task) ? 'text-mission-error font-bold' : ''}">${formatDateTime(task.dueDate)}</div>
+                        </div>
+                    ` : ''}
                 </div>
                 ${task.description ? `
                     <div class="mb-4">
@@ -596,6 +723,19 @@
                         <label class="text-sm text-gray-400">Tags</label>
                         <div class="flex flex-wrap gap-2 mt-1">
                             ${task.tags.map(tag => `<span class="bg-gray-700 px-2 py-1 rounded text-sm">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                ${task.recurring && task.recurring.enabled ? `
+                    <div class="mb-4">
+                        <label class="text-sm text-gray-400">Recurring Schedule</label>
+                        <div class="mt-1 p-3 bg-gray-800 rounded text-sm">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-purple-400">🔄</span>
+                                <span class="font-medium">Recurring Task</span>
+                            </div>
+                            <div>Frequency: ${task.recurring.frequency}</div>
+                            ${task.recurring.days ? `<div>Days: ${task.recurring.days.map(d => ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][d-1]).join(', ')}</div>` : ''}
                         </div>
                     </div>
                 ` : ''}
@@ -776,6 +916,177 @@
                 minute: '2-digit',
                 hour12: false
             });
+        }
+
+        // New utility functions
+        function calculateDueDate(priority) {
+            const now = new Date();
+            const daysToAdd = {
+                'urgent': 0,    // Due immediately (same day)
+                'high': 1,      // Due in 1 day
+                'medium': 3,    // Due in 3 days
+                'low': 7        // Due in 7 days
+            };
+            
+            const days = daysToAdd[priority] || 3;
+            const dueDate = new Date(now);
+            dueDate.setDate(dueDate.getDate() + days);
+            return dueDate.toISOString();
+        }
+
+        function updateDueDateDisplay() {
+            const priority = document.getElementById('taskPriority').value;
+            const dueDate = new Date(calculateDueDate(priority));
+            const display = document.getElementById('dueDateDisplay');
+            display.textContent = `Due: ${dueDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+        }
+
+        function formatDueDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        }
+
+        function isTaskOverdue(task) {
+            if (!task.dueDate || task.status === 'done') return false;
+            return new Date(task.dueDate) < new Date();
+        }
+
+        function switchView(view) {
+            currentView = view;
+            localStorage.setItem('missionControlView', view);
+            
+            if (view === 'board') {
+                document.getElementById('boardView').classList.remove('hidden');
+                document.getElementById('calendarView').classList.add('hidden');
+                document.getElementById('boardViewBtn').classList.add('bg-mission-accent', 'text-white');
+                document.getElementById('boardViewBtn').classList.remove('text-gray-400');
+                document.getElementById('calendarViewBtn').classList.remove('bg-mission-accent', 'text-white');
+                document.getElementById('calendarViewBtn').classList.add('text-gray-400');
+            } else if (view === 'calendar') {
+                document.getElementById('boardView').classList.add('hidden');
+                document.getElementById('calendarView').classList.remove('hidden');
+                document.getElementById('calendarViewBtn').classList.add('bg-mission-accent', 'text-white');
+                document.getElementById('calendarViewBtn').classList.remove('text-gray-400');
+                document.getElementById('boardViewBtn').classList.remove('bg-mission-accent', 'text-white');
+                document.getElementById('boardViewBtn').classList.add('text-gray-400');
+                renderCalendar();
+            }
+        }
+
+        function navigateCalendar(direction) {
+            currentCalendarDate.setMonth(currentCalendarDate.getMonth() + direction);
+            renderCalendar();
+        }
+
+        function renderCalendar() {
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            
+            document.getElementById('calendarMonth').textContent = 
+                `${monthNames[currentCalendarDate.getMonth()]} ${currentCalendarDate.getFullYear()}`;
+
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = '';
+
+            const firstDay = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth(), 1);
+            const lastDay = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth() + 1, 0);
+            
+            // Start from Monday
+            const startDate = new Date(firstDay);
+            const dayOfWeek = firstDay.getDay();
+            startDate.setDate(startDate.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1));
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            for (let i = 0; i < 42; i++) { // 6 weeks * 7 days
+                const cellDate = new Date(startDate);
+                cellDate.setDate(startDate.getDate() + i);
+                
+                const dayCell = document.createElement('div');
+                dayCell.className = 'calendar-day';
+                
+                const isCurrentMonth = cellDate.getMonth() === currentCalendarDate.getMonth();
+                const isToday = cellDate.getTime() === today.getTime();
+                
+                if (!isCurrentMonth) {
+                    dayCell.classList.add('other-month');
+                }
+                if (isToday) {
+                    dayCell.classList.add('today');
+                }
+
+                // Date number
+                const dateDiv = document.createElement('div');
+                dateDiv.className = 'font-medium text-xs mb-1';
+                dateDiv.textContent = cellDate.getDate();
+                dayCell.appendChild(dateDiv);
+
+                // Tasks for this day
+                const tasksForDay = getTasksForDate(cellDate);
+                tasksForDay.forEach(task => {
+                    const taskElement = createCalendarTask(task);
+                    dayCell.appendChild(taskElement);
+                });
+
+                dayCell.addEventListener('click', () => showDayTasks(cellDate, tasksForDay));
+                grid.appendChild(dayCell);
+            }
+        }
+
+        function getTasksForDate(date) {
+            const tasks = [];
+            const dateStr = date.toISOString().split('T')[0];
+            
+            data.tasks.forEach(task => {
+                // Regular tasks with due dates
+                if (task.dueDate && task.dueDate.split('T')[0] === dateStr) {
+                    tasks.push({ ...task, isRecurring: false });
+                }
+                
+                // Recurring tasks
+                if (task.recurring && task.recurring.enabled) {
+                    const dayOfWeek = date.getDay();
+                    const adjustedDay = dayOfWeek === 0 ? 7 : dayOfWeek; // Convert Sunday from 0 to 7
+                    
+                    if (task.recurring.frequency === 'daily' && task.recurring.days.includes(adjustedDay)) {
+                        tasks.push({ ...task, isRecurring: true });
+                    }
+                }
+            });
+            
+            return tasks;
+        }
+
+        function createCalendarTask(task) {
+            const taskDiv = document.createElement('div');
+            const priorityClass = task.isRecurring ? 'priority-recurring' : `priority-${task.priority}`;
+            taskDiv.className = `calendar-task ${priorityClass}`;
+            
+            const assigneeAgent = data.agents.find(a => a.id === task.assignee);
+            const emoji = assigneeAgent ? assigneeAgent.emoji : '👤';
+            
+            // Truncate title if too long
+            const title = task.title.length > 15 ? task.title.substring(0, 15) + '...' : task.title;
+            
+            taskDiv.innerHTML = `<span>${emoji}</span><span>${title}</span>`;
+            taskDiv.onclick = (e) => {
+                e.stopPropagation();
+                showTaskDetails(task);
+            };
+            
+            return taskDiv;
+        }
+
+        function showDayTasks(date, tasks) {
+            const dateStr = date.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            alert(`Tasks for ${dateStr}:\n\n${tasks.map(t => `• ${t.title}`).join('\n') || 'No tasks for this day'}`);
         }
 
         // Polling function
