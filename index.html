@@ -88,6 +88,17 @@
             top: 0;
             z-index: 10;
         }
+        /* Task menu styling */
+        .task-menu-btn {
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+        .task-card:hover .task-menu-btn {
+            opacity: 1;
+        }
+        .task-menu-btn:focus {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-mission-bg text-white font-sans">
@@ -725,7 +736,23 @@
                         <div class="w-2 h-2 rounded-full ${priorityColor}"></div>
                         <span class="text-xs font-medium text-gray-400">${task.id}</span>
                     </div>
-                    ${assigneeAgent ? `<span class="text-sm">${assigneeAgent.emoji}</span>` : ''}
+                    <div class="flex items-center space-x-1">
+                        ${assigneeAgent ? `<span class="text-sm">${assigneeAgent.emoji}</span>` : ''}
+                        <div class="relative task-menu">
+                            <button class="text-gray-500 hover:text-white p-1 rounded hover:bg-gray-700 task-menu-btn" onclick="event.stopPropagation(); toggleTaskMenu('${task.id}')">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/>
+                                </svg>
+                            </button>
+                            <div id="menu-${task.id}" class="hidden absolute right-0 top-6 bg-gray-700 rounded-lg shadow-xl py-1 z-20 min-w-32">
+                                <button onclick="event.stopPropagation(); quickMoveTask('${task.id}', 'in_progress')" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-600 flex items-center gap-2">▶️ Start</button>
+                                <button onclick="event.stopPropagation(); quickMoveTask('${task.id}', 'done')" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-600 flex items-center gap-2">✅ Complete</button>
+                                <hr class="border-gray-600 my-1">
+                                <button onclick="event.stopPropagation(); archiveTask('${task.id}')" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-600 flex items-center gap-2">📦 Archive</button>
+                                <button onclick="event.stopPropagation(); deleteTask('${task.id}')" class="w-full text-left px-3 py-2 text-sm hover:bg-red-600 text-red-400 hover:text-white flex items-center gap-2">🗑️ Delete</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="font-medium text-sm mb-2 line-clamp-2">${task.title}</div>
                 <div class="flex items-center justify-between text-xs">
@@ -1017,18 +1044,27 @@
                     </div>
                     <div>
                         <label class="text-sm text-gray-400">Status</label>
-                        <div class="capitalize">${task.status.replace('_', ' ')}</div>
+                        <select id="taskStatusSelect" class="bg-gray-700 text-white px-2 py-1 rounded text-sm" onchange="updateTaskStatus('${task.id}', this.value)">
+                            <option value="backlog" ${task.status === 'backlog' ? 'selected' : ''}>📥 Backlog</option>
+                            <option value="in_progress" ${task.status === 'in_progress' ? 'selected' : ''}>▶️ In Progress</option>
+                            <option value="review" ${task.status === 'review' ? 'selected' : ''}>👀 Review</option>
+                            <option value="done" ${task.status === 'done' ? 'selected' : ''}>✅ Done</option>
+                        </select>
                     </div>
                     <div>
                         <label class="text-sm text-gray-400">Priority</label>
-                        <div class="flex items-center space-x-2">
-                            <div class="w-2 h-2 rounded-full ${priorityColor}"></div>
-                            <span class="capitalize">${task.priority}</span>
-                        </div>
+                        <select id="taskPrioritySelect" class="bg-gray-700 text-white px-2 py-1 rounded text-sm" onchange="updateTaskPriority('${task.id}', this.value)">
+                            <option value="low" ${task.priority === 'low' ? 'selected' : ''}>Low</option>
+                            <option value="medium" ${task.priority === 'medium' ? 'selected' : ''}>Medium</option>
+                            <option value="high" ${task.priority === 'high' ? 'selected' : ''}>High</option>
+                            <option value="urgent" ${task.priority === 'urgent' ? 'selected' : ''}>🔥 Urgent</option>
+                        </select>
                     </div>
                     <div>
                         <label class="text-sm text-gray-400">Assignee</label>
-                        <div>${assigneeAgent ? `${assigneeAgent.emoji} ${assigneeAgent.name}` : task.assignee}</div>
+                        <select id="taskAssigneeSelect" class="bg-gray-700 text-white px-2 py-1 rounded text-sm" onchange="updateTaskAssignee('${task.id}', this.value)">
+                            ${data.agents.map(a => `<option value="${a.id}" ${task.assignee === a.id ? 'selected' : ''}>${a.emoji} ${a.name}</option>`).join('')}
+                        </select>
                     </div>
                     ${project ? `
                         <div>
@@ -1074,10 +1110,167 @@
                         </div>
                     </div>
                 ` : ''}
+                
+                <!-- Action Buttons -->
+                <div class="flex gap-3 pt-4 border-t border-gray-700">
+                    <button onclick="archiveTask('${task.id}')" class="flex-1 bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-medium transition-colors">
+                        📦 Archive
+                    </button>
+                    <button onclick="deleteTask('${task.id}')" class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg font-medium transition-colors">
+                        🗑️ Delete
+                    </button>
+                </div>
             `;
 
             modal.classList.remove('hidden');
         }
+        
+        // Update task status
+        function updateTaskStatus(taskId, newStatus) {
+            const task = data.tasks.find(t => t.id === taskId);
+            if (!task) return;
+            
+            const oldStatus = task.status;
+            task.status = newStatus;
+            
+            if (newStatus === 'in_progress' && !task.startedAt) {
+                task.startedAt = new Date().toISOString();
+            }
+            if (newStatus === 'done' && !task.completedAt) {
+                task.completedAt = new Date().toISOString();
+            }
+            
+            // Add activity
+            data.activity.unshift({
+                id: `act_${Date.now()}`,
+                type: 'task_moved',
+                agent: 'system',
+                agentEmoji: '⚙️',
+                message: `Moved "${task.title}" from ${oldStatus} to ${newStatus}`,
+                taskId: taskId,
+                timestamp: new Date().toISOString()
+            });
+            
+            renderTasks();
+            renderActivity();
+            saveToGitHub();
+        }
+        
+        // Update task priority
+        function updateTaskPriority(taskId, newPriority) {
+            const task = data.tasks.find(t => t.id === taskId);
+            if (!task) return;
+            
+            task.priority = newPriority;
+            renderTasks();
+            saveToGitHub();
+        }
+        
+        // Update task assignee
+        function updateTaskAssignee(taskId, newAssignee) {
+            const task = data.tasks.find(t => t.id === taskId);
+            if (!task) return;
+            
+            const oldAssignee = task.assignee;
+            task.assignee = newAssignee;
+            
+            const newAgent = data.agents.find(a => a.id === newAssignee);
+            data.activity.unshift({
+                id: `act_${Date.now()}`,
+                type: 'task_reassigned',
+                agent: 'system',
+                agentEmoji: '⚙️',
+                message: `Reassigned "${task.title}" to ${newAgent?.name || newAssignee}`,
+                taskId: taskId,
+                timestamp: new Date().toISOString()
+            });
+            
+            renderTasks();
+            renderAgents();
+            renderActivity();
+            saveToGitHub();
+        }
+        
+        // Archive task
+        function archiveTask(taskId) {
+            const task = data.tasks.find(t => t.id === taskId);
+            if (!task) return;
+            
+            if (!confirm(`Archive task "${task.title}"? It will be hidden from the board.`)) return;
+            
+            task.status = 'archived';
+            task.archivedAt = new Date().toISOString();
+            
+            data.activity.unshift({
+                id: `act_${Date.now()}`,
+                type: 'task_archived',
+                agent: 'system',
+                agentEmoji: '📦',
+                message: `Archived "${task.title}"`,
+                taskId: taskId,
+                timestamp: new Date().toISOString()
+            });
+            
+            document.getElementById('taskDetailsModal').classList.add('hidden');
+            renderTasks();
+            renderActivity();
+            saveToGitHub();
+        }
+        
+        // Delete task
+        function deleteTask(taskId) {
+            const task = data.tasks.find(t => t.id === taskId);
+            if (!task) return;
+            
+            if (!confirm(`Delete task "${task.title}"? This cannot be undone.`)) return;
+            
+            data.tasks = data.tasks.filter(t => t.id !== taskId);
+            
+            data.activity.unshift({
+                id: `act_${Date.now()}`,
+                type: 'task_deleted',
+                agent: 'system',
+                agentEmoji: '🗑️',
+                message: `Deleted "${task.title}"`,
+                taskId: taskId,
+                timestamp: new Date().toISOString()
+            });
+            
+            document.getElementById('taskDetailsModal').classList.add('hidden');
+            renderTasks();
+            renderActivity();
+            saveToGitHub();
+        }
+        
+        // Toggle task quick menu
+        function toggleTaskMenu(taskId) {
+            // Close all other menus first
+            document.querySelectorAll('[id^="menu-"]').forEach(menu => {
+                if (menu.id !== `menu-${taskId}`) {
+                    menu.classList.add('hidden');
+                }
+            });
+            
+            const menu = document.getElementById(`menu-${taskId}`);
+            menu.classList.toggle('hidden');
+        }
+        
+        // Quick move task (from menu)
+        function quickMoveTask(taskId, newStatus) {
+            const menu = document.getElementById(`menu-${taskId}`);
+            if (menu) menu.classList.add('hidden');
+            
+            updateTaskStatus(taskId, newStatus);
+        }
+        
+        // Close menus when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.task-menu')) {
+                document.querySelectorAll('[id^="menu-"]').forEach(menu => {
+                    menu.classList.add('hidden');
+                });
+            }
+        });
 
         // Show agent details
         function showAgentDetails(agent) {
