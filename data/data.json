@@ -598,6 +598,20 @@
           5
         ]
       }
+    },
+    {
+      "id": "MC-514",
+      "title": "Test",
+      "description": "Testing workflow. route to marketing and have marketing finish workflow",
+      "status": "backlog",
+      "project": "infrastructure",
+      "assignee": "clawson",
+      "tags": [
+        "marketing"
+      ],
+      "priority": "high",
+      "createdAt": "2026-02-09T22:35:53.514Z",
+      "dueDate": "2026-02-10T22:35:53.514Z"
     }
   ],
   "projects": [
@@ -639,6 +653,15 @@
     }
   ],
   "activity": [
+    {
+      "id": "act_1770676553515",
+      "type": "task_created",
+      "agent": "system",
+      "agentEmoji": "⚙️",
+      "message": "Created task \"Test\" assigned to Clawson",
+      "taskId": "MC-514",
+      "timestamp": "2026-02-09T22:35:53.515Z"
+    },
     {
       "id": "act_001",
       "type": "task_completed",
