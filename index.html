@@ -634,10 +634,10 @@
             agentList.innerHTML = '';
 
             data.agents.forEach(agent => {
-                // Check if agent has tasks in progress - override status if so
+                // Derive status purely from tasks - ignore agent.status which may be stale
                 const inProgressTasks = data.tasks.filter(t => t.assignee === agent.id && t.status === 'in_progress');
                 const isWorking = inProgressTasks.length > 0;
-                const effectiveStatus = isWorking ? 'working' : agent.status;
+                const effectiveStatus = isWorking ? 'working' : 'idle';
                 const currentTask = isWorking ? inProgressTasks[0].id : null;
                 
                 const statusColor = getStatusColor(effectiveStatus);
@@ -1087,12 +1087,12 @@
 
             title.textContent = `${agent.emoji} ${agent.name}`;
 
-            // Check if agent has tasks in progress
+            // Derive status purely from tasks - ignore agent.status which may be stale
             const assignedTasks = data.tasks.filter(task => task.assignee === agent.id);
             const inProgressTasks = assignedTasks.filter(task => task.status === 'in_progress');
             const completedTasks = assignedTasks.filter(task => task.status === 'done');
             const isWorking = inProgressTasks.length > 0;
-            const effectiveStatus = isWorking ? 'working' : agent.status;
+            const effectiveStatus = isWorking ? 'working' : 'idle';
             const currentTask = isWorking ? inProgressTasks[0].id : null;
 
             const statusColor = getStatusColor(effectiveStatus);
