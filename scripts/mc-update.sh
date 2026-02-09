@@ -5,7 +5,7 @@
 set -e
 
 WORKSPACE="/Users/openclaw/.openclaw/workspace"
-TASKS_FILE="$WORKSPACE/data/tasks.json"
+TASKS_FILE="$WORKSPACE/mission-control/data/data.json"
 
 cd "$WORKSPACE"
 
