@@ -73,40 +73,10 @@
             top: -8px;
             right: -8px;
         }
-        .calendar-day {
-            min-height: 80px;
-            border: 1px solid #374151;
-            padding: 4px;
-        }
-        .calendar-day:hover {
+        /* Crons table styling */
+        #cronsTableBody tr:hover {
             background-color: rgba(59, 130, 246, 0.1);
         }
-        .calendar-day.other-month {
-            color: #6b7280;
-            background-color: #1f2937;
-        }
-        .calendar-day.today {
-            background-color: rgba(59, 130, 246, 0.2);
-            border-color: #3b82f6;
-        }
-        .calendar-task {
-            font-size: 10px;
-            padding: 2px 4px;
-            margin: 1px 0;
-            border-radius: 3px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 2px;
-        }
-        .calendar-task:hover {
-            opacity: 0.8;
-        }
-        .calendar-task.priority-urgent { background: #ef4444; }
-        .calendar-task.priority-high { background: #f59e0b; }
-        .calendar-task.priority-medium { background: #3b82f6; }
-        .calendar-task.priority-low { background: #6b7280; }
-        .calendar-task.priority-recurring { background: #8b5cf6; }
     </style>
 </head>
 <body class="bg-mission-bg text-white font-sans">
@@ -118,7 +88,7 @@
                     <h1 class="text-2xl font-bold text-mission-accent">🎛️ Mission Control v2</h1>
                     <div class="flex bg-gray-800 rounded-lg p-1">
                         <button id="boardViewBtn" class="px-4 py-2 rounded-md text-sm font-medium bg-mission-accent text-white">Board</button>
-                        <button id="calendarViewBtn" class="px-4 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white">Calendar</button>
+                        <button id="cronsViewBtn" class="px-4 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white">Scheduled Jobs</button>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 text-sm text-gray-400">
@@ -210,38 +180,49 @@
                 </div>
             </div>
 
-            <!-- Calendar View -->
-            <div id="calendarView" class="flex-1 p-6 overflow-hidden hidden">
+            <!-- Scheduled Jobs View -->
+            <div id="cronsView" class="flex-1 p-6 overflow-hidden hidden">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-xl font-semibold text-gray-300">Calendar</h2>
                     <div class="flex items-center space-x-4">
-                        <button id="calendarPrevBtn" class="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-700">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                            </svg>
-                        </button>
-                        <h3 id="calendarMonth" class="text-lg font-medium min-w-48 text-center"></h3>
-                        <button id="calendarNextBtn" class="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-700">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
+                        <h2 class="text-xl font-semibold text-gray-300">⏰ Scheduled Jobs</h2>
+                        <span id="cronStats" class="text-sm text-gray-500"></span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <select id="cronAgentFilter" class="bg-gray-700 text-white px-3 py-1 rounded text-sm">
+                            <option value="all">All Agents</option>
+                        </select>
+                        <select id="cronStatusFilter" class="bg-gray-700 text-white px-3 py-1 rounded text-sm">
+                            <option value="all">All Status</option>
+                            <option value="ok">✅ OK</option>
+                            <option value="error">❌ Error</option>
+                            <option value="never">⏳ Never Run</option>
+                        </select>
+                        <button id="refreshCronsBtn" class="bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded text-sm">
+                            🔄 Refresh
                         </button>
                     </div>
                 </div>
-                <div class="bg-mission-card rounded-lg p-4 h-full">
-                    <div class="grid grid-cols-7 gap-1 mb-4">
-                        <div class="text-center text-gray-400 text-sm font-medium p-2">Mon</div>
-                        <div class="text-center text-gray-400 text-sm font-medium p-2">Tue</div>
-                        <div class="text-center text-gray-400 text-sm font-medium p-2">Wed</div>
-                        <div class="text-center text-gray-400 text-sm font-medium p-2">Thu</div>
-                        <div class="text-center text-gray-400 text-sm font-medium p-2">Fri</div>
-                        <div class="text-center text-gray-400 text-sm font-medium p-2">Sat</div>
-                        <div class="text-center text-gray-400 text-sm font-medium p-2">Sun</div>
-                    </div>
-                    <div id="calendarGrid" class="grid grid-cols-7 gap-1 h-96 overflow-y-auto">
-                        <!-- Calendar days will be populated here -->
+                <div class="bg-mission-card rounded-lg overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-800 text-gray-400">
+                                <tr>
+                                    <th class="text-left px-4 py-3 font-medium">Status</th>
+                                    <th class="text-left px-4 py-3 font-medium">Job Name</th>
+                                    <th class="text-left px-4 py-3 font-medium">Agent</th>
+                                    <th class="text-left px-4 py-3 font-medium">Schedule</th>
+                                    <th class="text-left px-4 py-3 font-medium">Next Run</th>
+                                    <th class="text-left px-4 py-3 font-medium">Last Run</th>
+                                    <th class="text-left px-4 py-3 font-medium">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cronsTableBody" class="divide-y divide-gray-700">
+                                <!-- Cron jobs will be populated here -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+                <div id="cronUpdateTime" class="text-xs text-gray-500 mt-4 text-right"></div>
             </div>
 
             <!-- Activity Feed (Bottom) -->
@@ -393,9 +374,9 @@
     <script>
         // Global state
         let data = null;
+        let cronData = null;
         let draggedTask = null;
         let currentView = 'board';
-        let currentCalendarDate = new Date();
         let githubToken = localStorage.getItem('mc_github_token') || '';
         let autoSaveEnabled = localStorage.getItem('mc_auto_save') === 'true';
 
@@ -403,6 +384,7 @@
         async function init() {
             try {
                 await loadData();
+                await loadCronData();
                 renderAgents();
                 renderTasks();
                 renderActivity();
@@ -417,6 +399,174 @@
                 console.error('Failed to initialize dashboard:', error);
                 updateStatus('offline', 'Error loading data');
             }
+        }
+        
+        // Load cron data from JSON file
+        async function loadCronData() {
+            try {
+                const cacheBuster = `?t=${Date.now()}`;
+                const response = await fetch('https://raw.githubusercontent.com/MassDwell/mission-control/main/data/crons.json' + cacheBuster);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                cronData = await response.json();
+                populateCronAgentFilter();
+            } catch (error) {
+                console.error('Error loading cron data:', error);
+                // Try local fallback
+                try {
+                    const response = await fetch('./data/crons.json');
+                    cronData = await response.json();
+                    populateCronAgentFilter();
+                } catch (e) {
+                    console.error('Local cron fallback failed:', e);
+                }
+            }
+        }
+        
+        // Populate agent filter dropdown
+        function populateCronAgentFilter() {
+            if (!cronData) return;
+            const filter = document.getElementById('cronAgentFilter');
+            const agents = [...new Set(cronData.jobs.map(j => j.agent))].sort();
+            filter.innerHTML = '<option value="all">All Agents</option>';
+            agents.forEach(agent => {
+                const opt = document.createElement('option');
+                opt.value = agent;
+                opt.textContent = agent.replace(/_/g, ' ');
+                filter.appendChild(opt);
+            });
+        }
+        
+        // Render cron jobs table
+        function renderCrons() {
+            if (!cronData) return;
+            
+            const tbody = document.getElementById('cronsTableBody');
+            const agentFilter = document.getElementById('cronAgentFilter').value;
+            const statusFilter = document.getElementById('cronStatusFilter').value;
+            
+            let jobs = cronData.jobs;
+            
+            // Apply filters
+            if (agentFilter !== 'all') {
+                jobs = jobs.filter(j => j.agent === agentFilter);
+            }
+            if (statusFilter !== 'all') {
+                jobs = jobs.filter(j => j.lastStatus === statusFilter);
+            }
+            
+            // Update stats
+            const stats = document.getElementById('cronStats');
+            stats.textContent = `${jobs.length} of ${cronData.totalJobs} jobs | ${cronData.enabledJobs} enabled`;
+            
+            tbody.innerHTML = '';
+            
+            jobs.forEach(job => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-gray-800 transition-colors';
+                
+                const statusIcon = getStatusIcon2(job.lastStatus, job.lastError);
+                const agentEmoji = getAgentEmoji(job.agent);
+                const modelBadge = getModelBadge(job.model);
+                
+                tr.innerHTML = `
+                    <td class="px-4 py-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg">${statusIcon}</span>
+                            ${job.enabled ? '' : '<span class="text-xs bg-gray-600 px-1.5 py-0.5 rounded">OFF</span>'}
+                        </div>
+                    </td>
+                    <td class="px-4 py-3">
+                        <div class="font-medium text-white">${job.name}</div>
+                        ${job.deleteAfterRun ? '<span class="text-xs text-orange-400">⚡ One-time</span>' : ''}
+                        ${job.lastError ? `<div class="text-xs text-red-400 mt-1 truncate max-w-xs" title="${job.lastError}">${job.lastError}</div>` : ''}
+                    </td>
+                    <td class="px-4 py-3">
+                        <span class="text-gray-300">${agentEmoji} ${job.agent}</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <span class="text-gray-400">${job.schedule}</span>
+                        ${modelBadge}
+                    </td>
+                    <td class="px-4 py-3">
+                        <span class="${job.nextRun === 'Overdue' ? 'text-red-400' : 'text-mission-accent'}">${job.nextRun}</span>
+                    </td>
+                    <td class="px-4 py-3 text-gray-500">
+                        ${job.lastRunAt ? formatCronTime(job.lastRunAt) : 'Never'}
+                        ${job.lastDurationMs ? `<span class="text-xs">(${(job.lastDurationMs/1000).toFixed(1)}s)</span>` : ''}
+                    </td>
+                    <td class="px-4 py-3">
+                        <button onclick="runCronJob('${job.id}', '${job.name}')" class="text-xs bg-mission-accent hover:bg-blue-600 px-2 py-1 rounded text-white">
+                            ▶ Run
+                        </button>
+                    </td>
+                `;
+                
+                tbody.appendChild(tr);
+            });
+            
+            // Update time
+            document.getElementById('cronUpdateTime').textContent = 
+                `Data exported: ${new Date(cronData.exportedAt).toLocaleString()}`;
+        }
+        
+        function getStatusIcon2(status, error) {
+            if (error) return '❌';
+            switch (status) {
+                case 'ok': return '✅';
+                case 'error': return '❌';
+                case 'never': return '⏳';
+                default: return '⏳';
+            }
+        }
+        
+        function getAgentEmoji(agent) {
+            const emojis = {
+                'main': '🦅',
+                'clawson': '🦅',
+                'marketing_content': '📣',
+                'sales_followup': '💼',
+                'admin_assistant': '🔧',
+                'chief_of_staff': '📋',
+                'money_printer': '💰',
+                'security_ciso': '🛡️',
+                'personal_life_cos': '🏠',
+                'massdwell_factory_ops': '🏭',
+                'finance_underwriting': '📊',
+                'alpine_permitting': '📝',
+                'alpine_property_mgmt': '🏢',
+                'laser_sales_engineer': '⚡',
+                'doc_proposal': '📄'
+            };
+            return emojis[agent] || '🤖';
+        }
+        
+        function getModelBadge(model) {
+            if (!model || model === 'default') return '';
+            const isHaiku = model.includes('haiku');
+            const isSonnet = model.includes('sonnet');
+            const isOpus = model.includes('opus');
+            
+            if (isHaiku) return '<span class="ml-2 text-xs bg-green-800 text-green-200 px-1.5 py-0.5 rounded">Haiku</span>';
+            if (isSonnet) return '<span class="ml-2 text-xs bg-blue-800 text-blue-200 px-1.5 py-0.5 rounded">Sonnet</span>';
+            if (isOpus) return '<span class="ml-2 text-xs bg-purple-800 text-purple-200 px-1.5 py-0.5 rounded">Opus</span>';
+            return '';
+        }
+        
+        function formatCronTime(isoString) {
+            const date = new Date(isoString);
+            return date.toLocaleString('en-US', {
+                month: 'short', day: 'numeric',
+                hour: 'numeric', minute: '2-digit',
+                hour12: true
+            });
+        }
+        
+        function runCronJob(jobId, jobName) {
+            // Copy command to clipboard and show message
+            const msg = `Run cron: ${jobName}`;
+            navigator.clipboard.writeText(msg).then(() => {
+                alert(`To run this job, tell Clawson:\n\n"Run cron job: ${jobName}"\n\nor use job ID: ${jobId}`);
+            });
         }
 
         // Load data from JSON file (with cache busting)
@@ -627,11 +777,15 @@
         function setupEventListeners() {
             // View toggle
             document.getElementById('boardViewBtn').addEventListener('click', () => switchView('board'));
-            document.getElementById('calendarViewBtn').addEventListener('click', () => switchView('calendar'));
+            document.getElementById('cronsViewBtn').addEventListener('click', () => switchView('crons'));
 
-            // Calendar navigation
-            document.getElementById('calendarPrevBtn').addEventListener('click', () => navigateCalendar(-1));
-            document.getElementById('calendarNextBtn').addEventListener('click', () => navigateCalendar(1));
+            // Cron filters
+            document.getElementById('cronAgentFilter').addEventListener('change', renderCrons);
+            document.getElementById('cronStatusFilter').addEventListener('change', renderCrons);
+            document.getElementById('refreshCronsBtn').addEventListener('click', async () => {
+                await loadCronData();
+                renderCrons();
+            });
 
             // Create task modal
             document.getElementById('createTaskBtn').addEventListener('click', () => {
@@ -1135,136 +1289,20 @@
             
             if (view === 'board') {
                 document.getElementById('boardView').classList.remove('hidden');
-                document.getElementById('calendarView').classList.add('hidden');
+                document.getElementById('cronsView').classList.add('hidden');
                 document.getElementById('boardViewBtn').classList.add('bg-mission-accent', 'text-white');
                 document.getElementById('boardViewBtn').classList.remove('text-gray-400');
-                document.getElementById('calendarViewBtn').classList.remove('bg-mission-accent', 'text-white');
-                document.getElementById('calendarViewBtn').classList.add('text-gray-400');
-            } else if (view === 'calendar') {
+                document.getElementById('cronsViewBtn').classList.remove('bg-mission-accent', 'text-white');
+                document.getElementById('cronsViewBtn').classList.add('text-gray-400');
+            } else if (view === 'crons') {
                 document.getElementById('boardView').classList.add('hidden');
-                document.getElementById('calendarView').classList.remove('hidden');
-                document.getElementById('calendarViewBtn').classList.add('bg-mission-accent', 'text-white');
-                document.getElementById('calendarViewBtn').classList.remove('text-gray-400');
+                document.getElementById('cronsView').classList.remove('hidden');
+                document.getElementById('cronsViewBtn').classList.add('bg-mission-accent', 'text-white');
+                document.getElementById('cronsViewBtn').classList.remove('text-gray-400');
                 document.getElementById('boardViewBtn').classList.remove('bg-mission-accent', 'text-white');
                 document.getElementById('boardViewBtn').classList.add('text-gray-400');
-                renderCalendar();
+                renderCrons();
             }
-        }
-
-        function navigateCalendar(direction) {
-            currentCalendarDate.setMonth(currentCalendarDate.getMonth() + direction);
-            renderCalendar();
-        }
-
-        function renderCalendar() {
-            const monthNames = ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"];
-            
-            document.getElementById('calendarMonth').textContent = 
-                `${monthNames[currentCalendarDate.getMonth()]} ${currentCalendarDate.getFullYear()}`;
-
-            const grid = document.getElementById('calendarGrid');
-            grid.innerHTML = '';
-
-            const firstDay = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth(), 1);
-            const lastDay = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth() + 1, 0);
-            
-            // Start from Monday
-            const startDate = new Date(firstDay);
-            const dayOfWeek = firstDay.getDay();
-            startDate.setDate(startDate.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1));
-
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            for (let i = 0; i < 42; i++) { // 6 weeks * 7 days
-                const cellDate = new Date(startDate);
-                cellDate.setDate(startDate.getDate() + i);
-                
-                const dayCell = document.createElement('div');
-                dayCell.className = 'calendar-day';
-                
-                const isCurrentMonth = cellDate.getMonth() === currentCalendarDate.getMonth();
-                const isToday = cellDate.getTime() === today.getTime();
-                
-                if (!isCurrentMonth) {
-                    dayCell.classList.add('other-month');
-                }
-                if (isToday) {
-                    dayCell.classList.add('today');
-                }
-
-                // Date number
-                const dateDiv = document.createElement('div');
-                dateDiv.className = 'font-medium text-xs mb-1';
-                dateDiv.textContent = cellDate.getDate();
-                dayCell.appendChild(dateDiv);
-
-                // Tasks for this day
-                const tasksForDay = getTasksForDate(cellDate);
-                tasksForDay.forEach(task => {
-                    const taskElement = createCalendarTask(task);
-                    dayCell.appendChild(taskElement);
-                });
-
-                dayCell.addEventListener('click', () => showDayTasks(cellDate, tasksForDay));
-                grid.appendChild(dayCell);
-            }
-        }
-
-        function getTasksForDate(date) {
-            const tasks = [];
-            const dateStr = date.toISOString().split('T')[0];
-            
-            data.tasks.forEach(task => {
-                // Regular tasks with due dates
-                if (task.dueDate && task.dueDate.split('T')[0] === dateStr) {
-                    tasks.push({ ...task, isRecurring: false });
-                }
-                
-                // Recurring tasks
-                if (task.recurring && task.recurring.enabled) {
-                    const dayOfWeek = date.getDay();
-                    const adjustedDay = dayOfWeek === 0 ? 7 : dayOfWeek; // Convert Sunday from 0 to 7
-                    
-                    if (task.recurring.frequency === 'daily' && task.recurring.days.includes(adjustedDay)) {
-                        tasks.push({ ...task, isRecurring: true });
-                    }
-                }
-            });
-            
-            return tasks;
-        }
-
-        function createCalendarTask(task) {
-            const taskDiv = document.createElement('div');
-            const priorityClass = task.isRecurring ? 'priority-recurring' : `priority-${task.priority}`;
-            taskDiv.className = `calendar-task ${priorityClass}`;
-            
-            const assigneeAgent = data.agents.find(a => a.id === task.assignee);
-            const emoji = assigneeAgent ? assigneeAgent.emoji : '👤';
-            
-            // Truncate title if too long
-            const title = task.title.length > 15 ? task.title.substring(0, 15) + '...' : task.title;
-            
-            taskDiv.innerHTML = `<span>${emoji}</span><span>${title}</span>`;
-            taskDiv.onclick = (e) => {
-                e.stopPropagation();
-                showTaskDetails(task);
-            };
-            
-            return taskDiv;
-        }
-
-        function showDayTasks(date, tasks) {
-            const dateStr = date.toLocaleDateString('en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
-            
-            alert(`Tasks for ${dateStr}:\n\n${tasks.map(t => `• ${t.title}`).join('\n') || 'No tasks for this day'}`);
         }
 
         // Polling function
