@@ -650,7 +650,7 @@
 
         // Setup real-time subscriptions
         function setupRealtimeSubscriptions() {
-            supabase
+            sb
                 .channel('mission-control')
                 .on('postgres_changes', { event: '*', schema: 'public', table: 'tasks' }, () => {
                     console.log('Task change detected');
