@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Control v2 - Agent Operations Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -402,6 +403,11 @@
         let githubToken = localStorage.getItem('mc_github_token') || '';
         let autoSaveEnabled = localStorage.getItem('mc_auto_save') === 'true';
 
+        // Supabase configuration
+        const SUPABASE_URL = 'https://cwnvvdxwwvrfxoudcaag.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_KgXR0y-99KEHPy0MaPoB6A_Nf4eCSDd';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
         // Initialize the dashboard
         async function init() {
             try {
@@ -413,6 +419,7 @@
                 setupEventListeners();
                 startPolling();
                 updateLastRefresh();
+                setupRealtimeSubscriptions();
                 
                 // Load saved view preference
                 const savedView = localStorage.getItem('missionControlView') || 'board';
@@ -591,30 +598,72 @@
             });
         }
 
-        // Load data from JSON file (with cache busting)
-        let skipNextRefresh = false;
-        
+        // Load data from Supabase
         async function loadData() {
-            // Skip refresh if we just saved (prevents overwriting with stale cached data)
-            if (skipNextRefresh) {
-                skipNextRefresh = false;
-                return;
-            }
-            
             try {
-                // Fetch from raw GitHub to bypass Pages CDN cache
-                const cacheBuster = `?t=${Date.now()}`;
-                const response = await fetch('https://raw.githubusercontent.com/MassDwell/mission-control/main/data/data.json' + cacheBuster);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                data = await response.json();
-                updateStatus('online', 'Online');
+                // Fetch all data from Supabase in parallel
+                const [projectsRes, agentsRes, tasksRes, activityRes] = await Promise.all([
+                    supabase.from('projects').select('*'),
+                    supabase.from('agents').select('*'),
+                    supabase.from('tasks').select('*').order('sort_order', { ascending: true }),
+                    supabase.from('activity').select('*').order('created_at', { ascending: false }).limit(50)
+                ]);
+
+                if (projectsRes.error) throw projectsRes.error;
+                if (agentsRes.error) throw agentsRes.error;
+                if (tasksRes.error) throw tasksRes.error;
+                if (activityRes.error) throw activityRes.error;
+
+                // Map Supabase snake_case to camelCase
+                data = {
+                    version: '2.2.0',
+                    lastUpdated: new Date().toISOString(),
+                    projects: projectsRes.data,
+                    agents: agentsRes.data.map(a => ({
+                        ...a,
+                        currentTask: a.current_task,
+                        lastSeen: a.last_seen
+                    })),
+                    tasks: tasksRes.data.map(t => ({
+                        ...t,
+                        sortOrder: t.sort_order,
+                        dueDate: t.due_date,
+                        createdAt: t.created_at,
+                        completedAt: t.completed_at,
+                        cancelledAt: t.cancelled_at
+                    })),
+                    activity: activityRes.data.map(a => ({
+                        ...a,
+                        agentEmoji: a.agent_emoji,
+                        taskId: a.task_id,
+                        timestamp: a.created_at
+                    }))
+                };
+                updateStatus('online', 'Supabase');
             } catch (error) {
-                console.error('Error loading data:', error);
+                console.error('Error loading data from Supabase:', error);
                 updateStatus('offline', 'Offline');
                 throw error;
             }
+        }
+
+        // Setup real-time subscriptions
+        function setupRealtimeSubscriptions() {
+            supabase
+                .channel('mission-control')
+                .on('postgres_changes', { event: '*', schema: 'public', table: 'tasks' }, () => {
+                    console.log('Task change detected');
+                    loadData().then(() => { renderTasks(); renderActivity(); });
+                })
+                .on('postgres_changes', { event: '*', schema: 'public', table: 'agents' }, () => {
+                    console.log('Agent change detected');
+                    loadData().then(() => renderAgents());
+                })
+                .on('postgres_changes', { event: '*', schema: 'public', table: 'activity' }, () => {
+                    console.log('Activity change detected');
+                    loadData().then(() => renderActivity());
+                })
+                .subscribe();
         }
 
         // Update status indicator
@@ -926,52 +975,87 @@
             }
         }
 
-        // Save to GitHub
-        async function saveToGitHub() {
-            if (!githubToken || !autoSaveEnabled) return;
-            
+        // Save single task to Supabase
+        async function saveTask(task) {
             const syncStatus = document.getElementById('syncStatus');
             syncStatus.textContent = '💾 Saving...';
             syncStatus.classList.remove('hidden');
             
             try {
-                // Get current file SHA
-                const getResponse = await fetch('https://api.github.com/repos/MassDwell/mission-control/contents/data/data.json', {
-                    headers: { 'Authorization': `token ${githubToken}` }
+                const { error } = await supabase.from('tasks').upsert({
+                    id: task.id,
+                    title: task.title,
+                    description: task.description || null,
+                    status: task.status,
+                    project: task.project || null,
+                    assignee: task.assignee || null,
+                    assignees: task.assignees || [],
+                    tags: task.tags || [],
+                    subtasks: task.subtasks || [],
+                    priority: task.priority || 'medium',
+                    dod: task.dod || null,
+                    comments: task.comments || [],
+                    sort_order: task.sortOrder || 0,
+                    due_date: task.dueDate || null,
+                    recurring: task.recurring || null,
+                    created_at: task.createdAt || new Date().toISOString(),
+                    completed_at: task.completedAt || null,
+                    cancelled_at: task.cancelledAt || null
                 });
-                const fileData = await getResponse.json();
-                const sha = fileData.sha;
                 
-                // Update file
-                const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
-                const updateResponse = await fetch('https://api.github.com/repos/MassDwell/mission-control/contents/data/data.json', {
-                    method: 'PUT',
-                    headers: {
-                        'Authorization': `token ${githubToken}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        message: `Dashboard update: ${new Date().toISOString()}`,
-                        content: content,
-                        sha: sha
-                    })
-                });
-                
-                if (updateResponse.ok) {
-                    syncStatus.textContent = '✅ Saved';
-                    // Skip next 2 refresh cycles to let GitHub Pages cache update
-                    skipNextRefresh = true;
-                    setTimeout(() => { skipNextRefresh = true; }, 30000);
-                    setTimeout(() => syncStatus.classList.add('hidden'), 2000);
-                } else {
-                    throw new Error('Save failed');
-                }
+                if (error) throw error;
+                syncStatus.textContent = '✅ Saved';
+                setTimeout(() => syncStatus.classList.add('hidden'), 1500);
             } catch (error) {
-                console.error('GitHub save error:', error);
+                console.error('Supabase save error:', error);
                 syncStatus.textContent = '❌ Save failed';
                 syncStatus.className = 'text-xs text-red-400';
                 setTimeout(() => syncStatus.classList.add('hidden'), 3000);
             }
+        }
+
+        // Save activity to Supabase
+        async function saveActivity(activity) {
+            try {
+                const { error } = await supabase.from('activity').insert({
+                    id: activity.id,
+                    type: activity.type,
+                    agent: activity.agent || null,
+                    agent_emoji: activity.agentEmoji || null,
+                    message: activity.message,
+                    task_id: activity.taskId || null,
+                    created_at: activity.timestamp || new Date().toISOString()
+                });
+                if (error) console.error('Activity save error:', error);
+            } catch (error) {
+                console.error('Activity save error:', error);
+            }
+        }
+
+        // Save agent to Supabase
+        async function saveAgent(agent) {
+            try {
+                const { error } = await supabase.from('agents').upsert({
+                    id: agent.id,
+                    name: agent.name,
+                    emoji: agent.emoji,
+                    role: agent.role,
+                    level: agent.level,
+                    status: agent.status,
+                    current_task: agent.currentTask || null,
+                    last_seen: agent.lastSeen || null
+                });
+                if (error) console.error('Agent save error:', error);
+            } catch (error) {
+                console.error('Agent save error:', error);
+            }
+        }
+
+        // Legacy function name for compatibility
+        async function saveToGitHub() {
+            // Now saves to Supabase - this is called after bulk changes
+            // For individual changes, use saveTask/saveActivity/saveAgent
+            console.log('saveToGitHub called - using Supabase now');
         }
 
         // Handle task creation
@@ -1003,7 +1087,7 @@
 
             // Add activity
             const agent = data.agents.find(a => a.id === assignee);
-            data.activity.unshift({
+            const newActivity = {
                 id: `act_${Date.now()}`,
                 type: 'task_created',
                 agent: 'system',
@@ -1011,11 +1095,13 @@
                 message: `Created task "${title}" assigned to ${agent?.name || assignee}`,
                 taskId: newTask.id,
                 timestamp: new Date().toISOString()
-            });
+            };
+            data.activity.unshift(newActivity);
             renderActivity();
             
-            // Save to GitHub
-            saveToGitHub();
+            // Save to Supabase
+            saveTask(newTask);
+            saveActivity(newActivity);
         }
 
         // Close create modal
@@ -1141,7 +1227,7 @@
             }
             
             // Add activity
-            data.activity.unshift({
+            const newActivity = {
                 id: `act_${Date.now()}`,
                 type: 'task_moved',
                 agent: 'system',
@@ -1149,11 +1235,13 @@
                 message: `Moved "${task.title}" from ${oldStatus} to ${newStatus}`,
                 taskId: taskId,
                 timestamp: new Date().toISOString()
-            });
+            };
+            data.activity.unshift(newActivity);
             
             renderTasks();
             renderActivity();
-            saveToGitHub();
+            saveTask(task);
+            saveActivity(newActivity);
         }
         
         // Update task priority
@@ -1163,7 +1251,7 @@
             
             task.priority = newPriority;
             renderTasks();
-            saveToGitHub();
+            saveTask(task);
         }
         
         // Update task assignee
@@ -1175,7 +1263,7 @@
             task.assignee = newAssignee;
             
             const newAgent = data.agents.find(a => a.id === newAssignee);
-            data.activity.unshift({
+            const newActivity = {
                 id: `act_${Date.now()}`,
                 type: 'task_reassigned',
                 agent: 'system',
@@ -1183,12 +1271,14 @@
                 message: `Reassigned "${task.title}" to ${newAgent?.name || newAssignee}`,
                 taskId: taskId,
                 timestamp: new Date().toISOString()
-            });
+            };
+            data.activity.unshift(newActivity);
             
             renderTasks();
             renderAgents();
             renderActivity();
-            saveToGitHub();
+            saveTask(task);
+            saveActivity(newActivity);
         }
         
         // Archive task
@@ -1201,7 +1291,7 @@
             task.status = 'archived';
             task.archivedAt = new Date().toISOString();
             
-            data.activity.unshift({
+            const newActivity = {
                 id: `act_${Date.now()}`,
                 type: 'task_archived',
                 agent: 'system',
@@ -1209,16 +1299,18 @@
                 message: `Archived "${task.title}"`,
                 taskId: taskId,
                 timestamp: new Date().toISOString()
-            });
+            };
+            data.activity.unshift(newActivity);
             
             document.getElementById('taskDetailsModal').classList.add('hidden');
             renderTasks();
             renderActivity();
-            saveToGitHub();
+            saveTask(task);
+            saveActivity(newActivity);
         }
         
         // Delete task
-        function deleteTask(taskId) {
+        async function deleteTask(taskId) {
             const task = data.tasks.find(t => t.id === taskId);
             if (!task) return;
             
@@ -1226,20 +1318,25 @@
             
             data.tasks = data.tasks.filter(t => t.id !== taskId);
             
-            data.activity.unshift({
+            const newActivity = {
                 id: `act_${Date.now()}`,
                 type: 'task_deleted',
                 agent: 'system',
                 agentEmoji: '🗑️',
                 message: `Deleted "${task.title}"`,
-                taskId: taskId,
+                taskId: null, // Set to null since task is being deleted
                 timestamp: new Date().toISOString()
-            });
+            };
+            data.activity.unshift(newActivity);
             
             document.getElementById('taskDetailsModal').classList.add('hidden');
             renderTasks();
             renderActivity();
-            saveToGitHub();
+            
+            // Delete from Supabase
+            const { error } = await supabase.from('tasks').delete().eq('id', taskId);
+            if (error) console.error('Delete error:', error);
+            saveActivity(newActivity);
         }
         
         // Toggle task quick menu
@@ -1386,10 +1483,14 @@
 
             const oldStatus = task.status;
             task.status = newStatus;
+            
+            if (newStatus === 'done' && !task.completedAt) {
+                task.completedAt = new Date().toISOString();
+            }
 
             // Add activity
             const agent = data.agents.find(a => a.id === task.assignee);
-            data.activity.unshift({
+            const newActivity = {
                 id: `act_${Date.now()}`,
                 type: 'task_moved',
                 agent: 'system',
@@ -1397,13 +1498,15 @@
                 message: `Moved "${task.title}" from ${oldStatus.replace('_', ' ')} to ${newStatus.replace('_', ' ')}`,
                 taskId: task.id,
                 timestamp: new Date().toISOString()
-            });
+            };
+            data.activity.unshift(newActivity);
 
             renderTasks();
             renderActivity();
             
-            // Save to GitHub
-            saveToGitHub();
+            // Save to Supabase
+            saveTask(task);
+            saveActivity(newActivity);
         }
 
         // Utility functions
