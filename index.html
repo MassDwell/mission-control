@@ -1163,12 +1163,15 @@
                         <label class="text-sm text-gray-400">Created</label>
                         <div>${formatDateTime(task.createdAt)}</div>
                     </div>
-                    ${task.dueDate ? `
-                        <div>
-                            <label class="text-sm text-gray-400">Due Date</label>
-                            <div class="${isTaskOverdue(task) ? 'text-mission-error font-bold' : ''}">${formatDateTime(task.dueDate)}</div>
-                        </div>
-                    ` : ''}
+                    <div>
+                        <label class="text-sm text-gray-400">Due Date</label>
+                        <input type="datetime-local" 
+                            id="taskDueDateInput" 
+                            class="bg-gray-700 text-white px-2 py-1 rounded text-sm ${isTaskOverdue(task) ? 'border-2 border-mission-error' : ''}" 
+                            value="${task.dueDate ? new Date(task.dueDate).toISOString().slice(0, 16) : ''}"
+                            onchange="updateTaskDueDate('${task.id}', this.value)">
+                        ${isTaskOverdue(task) ? '<span class="text-mission-error text-xs ml-2">OVERDUE</span>' : ''}
+                    </div>
                 </div>
                 ${task.description ? `
                     <div class="mb-4">
@@ -1277,6 +1280,31 @@
             
             renderTasks();
             renderAgents();
+            renderActivity();
+            saveTask(task);
+            saveActivity(newActivity);
+        }
+        
+        // Update task due date
+        function updateTaskDueDate(taskId, newDueDate) {
+            const task = data.tasks.find(t => t.id === taskId);
+            if (!task) return;
+            
+            const oldDueDate = task.dueDate;
+            task.dueDate = newDueDate ? new Date(newDueDate).toISOString() : null;
+            
+            const newActivity = {
+                id: `act_${Date.now()}`,
+                type: 'task_updated',
+                agent: 'system',
+                agentEmoji: '📅',
+                message: `Updated due date for "${task.title}" to ${newDueDate ? formatDateTime(task.dueDate) : 'none'}`,
+                taskId: taskId,
+                timestamp: new Date().toISOString()
+            };
+            data.activity.unshift(newActivity);
+            
+            renderTasks();
             renderActivity();
             saveTask(task);
             saveActivity(newActivity);
