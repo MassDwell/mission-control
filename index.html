@@ -805,6 +805,26 @@
                     </div>
                 </div>
                 <div class="font-medium text-sm mb-2 line-clamp-2">${task.title}</div>
+                ${task.subtasks && task.subtasks.length > 0 ? `
+                    <div class="mb-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
+                            <span>Subtasks</span>
+                            <span>${task.subtasks.filter(s => s.done).length}/${task.subtasks.length}</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-1.5 mb-2">
+                            <div class="bg-mission-success h-1.5 rounded-full transition-all" style="width: ${(task.subtasks.filter(s => s.done).length / task.subtasks.length) * 100}%"></div>
+                        </div>
+                        <div class="space-y-1 text-xs">
+                            ${task.subtasks.slice(0, 3).map(st => `
+                                <div class="flex items-center gap-2 ${st.done ? 'text-gray-500 line-through' : 'text-gray-300'}">
+                                    <span>${st.done ? '✅' : '⬜'}</span>
+                                    <span class="truncate">${st.title}</span>
+                                </div>
+                            `).join('')}
+                            ${task.subtasks.length > 3 ? `<div class="text-gray-500 text-xs">+${task.subtasks.length - 3} more</div>` : ''}
+                        </div>
+                    </div>
+                ` : ''}
                 <div class="flex items-center justify-between text-xs">
                     <div class="flex items-center space-x-2">
                         ${project ? `<span class="bg-gray-700 px-2 py-1 rounded text-xs" style="color: ${project.color}">${project.emoji} ${project.name}</span>` : ''}
