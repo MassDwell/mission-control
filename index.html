@@ -1199,6 +1199,22 @@
                         <div class="mt-1 p-3 bg-gray-800 rounded text-sm whitespace-pre-wrap">${task.description}</div>
                     </div>
                 ` : ''}
+                ${task.subtasks && task.subtasks.length > 0 ? `
+                    <div class="mb-4">
+                        <label class="text-sm text-gray-400">Subtasks (${task.subtasks.filter(s => s.done).length}/${task.subtasks.length})</label>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-2 mb-3">
+                            <div class="bg-mission-success h-2 rounded-full transition-all" style="width: ${(task.subtasks.filter(s => s.done).length / task.subtasks.length) * 100}%"></div>
+                        </div>
+                        <div class="space-y-2 mt-2">
+                            ${task.subtasks.map((st, idx) => `
+                                <div class="flex items-center gap-3 p-2 bg-gray-800 rounded hover:bg-gray-750 cursor-pointer" onclick="toggleSubtask('${task.id}', ${idx})">
+                                    <span class="text-lg">${st.done ? '✅' : '⬜'}</span>
+                                    <span class="${st.done ? 'text-gray-500 line-through' : 'text-gray-200'}">${st.title}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
                 ${task.tags && task.tags.length > 0 ? `
                     <div class="mb-4">
                         <label class="text-sm text-gray-400">Tags</label>
@@ -1386,6 +1402,21 @@
             const { error } = await sb.from('tasks').delete().eq('id', taskId);
             if (error) console.error('Delete error:', error);
             saveActivity(newActivity);
+        }
+        
+        // Toggle subtask completion
+        async function toggleSubtask(taskId, subtaskIndex) {
+            const task = data.tasks.find(t => t.id === taskId);
+            if (!task || !task.subtasks || !task.subtasks[subtaskIndex]) return;
+            
+            task.subtasks[subtaskIndex].done = !task.subtasks[subtaskIndex].done;
+            
+            // Re-render the modal to show updated state
+            showTaskDetails(task);
+            renderTasks();
+            
+            // Save to Supabase
+            saveTask(task);
         }
         
         // Toggle task quick menu
