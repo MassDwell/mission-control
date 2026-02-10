@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Control v2 - Agent Operations Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -406,7 +406,8 @@
         // Supabase configuration
         const SUPABASE_URL = 'https://cwnvvdxwwvrfxoudcaag.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_KgXR0y-99KEHPy0MaPoB6A_Nf4eCSDd';
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const { createClient } = supabase;
+        const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         // Initialize the dashboard
         async function init() {
@@ -603,10 +604,10 @@
             try {
                 // Fetch all data from Supabase in parallel
                 const [projectsRes, agentsRes, tasksRes, activityRes] = await Promise.all([
-                    supabase.from('projects').select('*'),
-                    supabase.from('agents').select('*'),
-                    supabase.from('tasks').select('*').order('sort_order', { ascending: true }),
-                    supabase.from('activity').select('*').order('created_at', { ascending: false }).limit(50)
+                    sb.from('projects').select('*'),
+                    sb.from('agents').select('*'),
+                    sb.from('tasks').select('*').order('sort_order', { ascending: true }),
+                    sb.from('activity').select('*').order('created_at', { ascending: false }).limit(50)
                 ]);
 
                 if (projectsRes.error) throw projectsRes.error;
@@ -982,7 +983,7 @@
             syncStatus.classList.remove('hidden');
             
             try {
-                const { error } = await supabase.from('tasks').upsert({
+                const { error } = await sb.from('tasks').upsert({
                     id: task.id,
                     title: task.title,
                     description: task.description || null,
@@ -1017,7 +1018,7 @@
         // Save activity to Supabase
         async function saveActivity(activity) {
             try {
-                const { error } = await supabase.from('activity').insert({
+                const { error } = await sb.from('activity').insert({
                     id: activity.id,
                     type: activity.type,
                     agent: activity.agent || null,
@@ -1035,7 +1036,7 @@
         // Save agent to Supabase
         async function saveAgent(agent) {
             try {
-                const { error } = await supabase.from('agents').upsert({
+                const { error } = await sb.from('agents').upsert({
                     id: agent.id,
                     name: agent.name,
                     emoji: agent.emoji,
@@ -1334,7 +1335,7 @@
             renderActivity();
             
             // Delete from Supabase
-            const { error } = await supabase.from('tasks').delete().eq('id', taskId);
+            const { error } = await sb.from('tasks').delete().eq('id', taskId);
             if (error) console.error('Delete error:', error);
             saveActivity(newActivity);
         }
