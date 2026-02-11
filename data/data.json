@@ -19,7 +19,7 @@
       "role": "Lead Follow-up & CRM",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-11T16:30:47.081Z",
+      "lastSeen": "2026-02-11T17:00:38.056Z",
       "level": "specialist"
     },
     {
@@ -29,7 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-11T16:30:57.390Z",
+      "lastSeen": "2026-02-11T17:00:47.942Z",
       "level": "specialist"
     },
     {
@@ -49,7 +49,7 @@
       "role": "Trading & Investments",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-11T16:31:10.500Z",
+      "lastSeen": "2026-02-11T17:01:03.229Z",
       "level": "specialist"
     },
     {
@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-11T16:31:40.893Z",
+      "lastSeen": "2026-02-11T17:01:36.338Z",
       "level": "intern"
     },
     {
@@ -67,9 +67,9 @@
       "name": "Personal CoS",
       "emoji": "🎯",
       "role": "Personal Life Management",
-      "status": "active",
+      "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-11T11:50:54.315Z",
+      "lastSeen": "2026-02-11T17:01:48.379Z",
       "level": "intern"
     }
   ],
