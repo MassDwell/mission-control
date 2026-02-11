@@ -9,18 +9,8 @@
       "role": "Master Agent / COO",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-10T15:44:45.791Z",
+      "lastSeen": "2026-02-11T11:44:34.693Z",
       "level": "lead"
-    },
-    {
-      "id": "chief_of_staff",
-      "name": "Chief of Staff",
-      "emoji": "📋",
-      "role": "Coordination & Briefings",
-      "status": "idle",
-      "currentTask": null,
-      "lastSeen": "2026-02-11T01:00:03.039Z",
-      "level": "specialist"
     },
     {
       "id": "sales_followup",
@@ -29,7 +19,7 @@
       "role": "Lead Follow-up & CRM",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-10T22:30:03.233Z",
+      "lastSeen": "2026-02-11T15:30:35.902Z",
       "level": "specialist"
     },
     {
@@ -39,17 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-10T23:30:03.443Z",
-      "level": "specialist"
-    },
-    {
-      "id": "finance_underwriting",
-      "name": "Finance",
-      "emoji": "💰",
-      "role": "Underwriting & Analysis",
-      "status": "idle",
-      "currentTask": null,
-      "lastSeen": null,
+      "lastSeen": "2026-02-11T15:31:05.429Z",
       "level": "specialist"
     },
     {
@@ -63,64 +43,14 @@
       "level": "specialist"
     },
     {
-      "id": "laser_sales_engineer",
-      "name": "Laser Sales",
-      "emoji": "⚡",
-      "role": "Atlantic Laser Solutions",
-      "status": "idle",
-      "currentTask": null,
-      "lastSeen": null,
-      "level": "specialist"
-    },
-    {
-      "id": "alpine_property_mgmt",
-      "name": "Property Mgmt",
-      "emoji": "🏔️",
-      "role": "Alpine Property Management",
-      "status": "idle",
-      "currentTask": null,
-      "lastSeen": null,
-      "level": "specialist"
-    },
-    {
-      "id": "alpine_permitting",
-      "name": "Permitting",
-      "emoji": "📜",
-      "role": "Permits & Approvals",
-      "status": "idle",
-      "currentTask": null,
-      "lastSeen": null,
-      "level": "specialist"
-    },
-    {
-      "id": "security_ciso",
-      "name": "Security",
-      "emoji": "🔒",
-      "role": "Security & Compliance",
-      "status": "idle",
-      "currentTask": null,
-      "lastSeen": null,
-      "level": "specialist"
-    },
-    {
       "id": "money_printer",
       "name": "Money Printer",
       "emoji": "🖨️",
       "role": "Trading & Investments",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-10T12:35:00Z",
+      "lastSeen": "2026-02-11T15:31:19.953Z",
       "level": "specialist"
-    },
-    {
-      "id": "doc_proposal",
-      "name": "Doc/Proposal",
-      "emoji": "📝",
-      "role": "Documents & Proposals",
-      "status": "idle",
-      "currentTask": null,
-      "lastSeen": null,
-      "level": "intern"
     },
     {
       "id": "admin_assistant",
@@ -129,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-10T23:30:18.260Z",
+      "lastSeen": "2026-02-11T15:31:39.036Z",
       "level": "intern"
     },
     {
@@ -137,9 +67,9 @@
       "name": "Personal CoS",
       "emoji": "🎯",
       "role": "Personal Life Management",
-      "status": "idle",
+      "status": "active",
       "currentTask": null,
-      "lastSeen": null,
+      "lastSeen": "2026-02-11T11:50:54.315Z",
       "level": "intern"
     }
   ],
