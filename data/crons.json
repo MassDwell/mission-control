@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-02-12T04:00:00-05:00",
-  "totalJobs": 43,
-  "enabledJobs": 43,
+  "lastUpdated": "2026-02-12T06:00:00-05:00",
+  "totalJobs": 37,
+  "enabledJobs": 37,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -58,15 +58,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "systemEvent",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "7152a1c9-7bff-4704-903c-64f3b0e635eb",
       "name": "Morning Jobs Safeguard (7:30 AM)",
       "agent": "main",
@@ -108,6 +99,15 @@
       "agent": "personal_life_cos",
       "schedule": "0 8,12,18 * * *",
       "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "systemEvent",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -312,9 +312,9 @@
   ],
   "byAgent": {
     "main": 20,
-    "sales_followup": 6,
-    "marketing_content": 5,
-    "admin_assistant": 3,
+    "sales_followup": 5,
+    "marketing_content": 4,
+    "admin_assistant": 2,
     "personal_life_cos": 1,
     "money_printer": 1,
     "massdwell_factory_ops": 1
