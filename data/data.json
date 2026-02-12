@@ -71,6 +71,16 @@
       "currentTask": null,
       "lastSeen": "2026-02-12T13:01:04.563Z",
       "level": "intern"
+    },
+    {
+      "id": "codesmith",
+      "name": "Codesmith",
+      "emoji": "🛠️",
+      "role": "Developer Agent",
+      "status": "active",
+      "currentTask": null,
+      "lastSeen": "2026-02-12T15:20:00.000Z",
+      "level": "specialist"
     }
   ],
   "tasks": [
