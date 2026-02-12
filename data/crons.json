@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-12T03:00:00Z",
-  "totalJobs": 43,
+  "exportedAt": "2026-02-12T05:00:00Z",
+  "totalJobs": 34,
   "jobs": [
     {"id": "b5b920de-0696-442e-b98c-faeb568f6800", "name": "Cold Lead Reply Monitor", "agent": "sales_followup", "schedule": "every 15m", "enabled": true, "model": "claude-haiku-4-5"},
     {"id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8", "name": "Self-Healing: Stale Task Recovery", "agent": "main", "schedule": "*/15 * * * *", "enabled": true, "model": "claude-haiku-4-5"},
@@ -37,5 +37,5 @@
     {"id": "e756c9bc-bcc6-4218-98ae-840abf784a8f", "name": "Monthly Learning Consolidation", "agent": "main", "schedule": "0 10 1 * *", "enabled": true, "model": "claude-haiku-4-5"},
     {"id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36", "name": "Instagram Token Refresh Reminder", "agent": "main", "schedule": "at 2026-04-01T14:00:00Z", "enabled": true, "model": "claude-haiku-4-5", "oneShot": true}
   ],
-  "note": "Antfarm workflow jobs removed (had delivery errors). Core jobs: 43 active."
+  "note": "34 core jobs active. New day: Thursday Feb 12."
 }
