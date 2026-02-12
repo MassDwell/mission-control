@@ -29,7 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-12T15:00:40.400Z",
+      "lastSeen": "2026-02-12T15:15:16.811Z",
       "level": "specialist"
     },
     {
@@ -37,9 +37,9 @@
       "name": "Factory Ops",
       "emoji": "🏭",
       "role": "MassDwell Production",
-      "status": "idle",
+      "status": "active",
       "currentTask": null,
-      "lastSeen": null,
+      "lastSeen": "2026-02-12T15:17:36.040Z",
       "level": "specialist"
     },
     {
@@ -49,7 +49,7 @@
       "role": "Trading & Investments",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-12T15:00:53.901Z",
+      "lastSeen": "2026-02-12T15:15:29.460Z",
       "level": "specialist"
     },
     {
