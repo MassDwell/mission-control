@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-12T08:01:00-05:00",
+  "lastUpdated": "2026-02-12T10:02:00-05:00",
   "totalJobs": 40,
   "enabledJobs": 40,
   "jobs": [
@@ -13,11 +13,47 @@
       "lastStatus": "ok"
     },
     {
+      "id": "bb23b957-96e4-4092-ba1e-c356b375338f",
+      "name": "Intraday Position Monitor (5 min)",
+      "agent": "main",
+      "schedule": "*/5 9-16 * * 1-5",
+      "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "4d6db964-b930-4ace-a543-b59bf5e81d73",
+      "name": "Trading Position Monitor",
+      "agent": "main",
+      "schedule": "*/5 9-16 * * 1-5",
+      "model": "default",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "52f9f036-08b0-4ce4-89d0-a8a49d73afef",
+      "name": "IBKR Intraday Monitor",
+      "agent": "main",
+      "schedule": "*/15 9-16 * * 1-5",
+      "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
       "name": "Marketing Agent Heartbeat",
       "agent": "marketing_content",
       "schedule": "*/15 8-18 * * *",
       "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "7775e5de-df6d-4601-9ec2-b723f2889044",
+      "name": "Money Printer Heartbeat",
+      "agent": "money_printer",
+      "schedule": "*/15 9-16 * * 1-5",
+      "model": "opus-4-5",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -49,42 +85,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "name": "Admin Assistant Heartbeat",
-      "agent": "admin_assistant",
-      "schedule": "*/30 8-18 * * *",
-      "model": "haiku-4-5",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "name": "Mission Control Status Sync",
-      "agent": "main",
-      "schedule": "*/30 * * * *",
-      "model": "haiku-4-5",
-      "enabled": true,
-      "lastStatus": "error"
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "name": "Codesmith Heartbeat",
-      "agent": "main",
-      "schedule": "*/30 8-18 * * *",
-      "model": "sonnet-4-0",
-      "enabled": true,
-      "lastStatus": null
-    },
-    {
-      "id": "52f9f036-08b0-4ce4-89d0-a8a49d73afef",
-      "name": "IBKR Intraday Monitor",
-      "agent": "main",
-      "schedule": "*/15 9-16 * * 1-5",
-      "model": "haiku-4-5",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "13d4023a-500d-45e8-a6a7-1aac280195ee",
       "name": "TWS Connection Watchdog",
       "agent": "main",
@@ -103,29 +103,11 @@
       "lastStatus": "ok"
     },
     {
-      "id": "7775e5de-df6d-4601-9ec2-b723f2889044",
-      "name": "Money Printer Heartbeat",
-      "agent": "money_printer",
-      "schedule": "*/15 9-16 * * 1-5",
-      "model": "opus-4-5",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "name": "Factory Ops Heartbeat",
-      "agent": "massdwell_factory_ops",
-      "schedule": "0 9,13,17 * * 1-5",
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "name": "Admin Assistant Heartbeat",
+      "agent": "admin_assistant",
+      "schedule": "*/30 8-18 * * *",
       "model": "haiku-4-5",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "name": "Hourly Memory Summarizer",
-      "agent": "main",
-      "schedule": "0 * * * *",
-      "model": "systemEvent",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -139,82 +121,28 @@
       "lastStatus": "ok"
     },
     {
-      "id": "bb23b957-96e4-4092-ba1e-c356b375338f",
-      "name": "Intraday Position Monitor (5 min)",
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "name": "Mission Control Status Sync",
       "agent": "main",
-      "schedule": "*/5 9-16 * * 1-5",
-      "model": "haiku-4-5",
-      "enabled": true,
-      "lastStatus": null
-    },
-    {
-      "id": "4d6db964-b930-4ace-a543-b59bf5e81d73",
-      "name": "Trading Position Monitor",
-      "agent": "main",
-      "schedule": "*/5 9-16 * * 1-5",
-      "model": "default",
-      "enabled": true,
-      "lastStatus": null
-    },
-    {
-      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
-      "name": "Sales Followup - Morning Email Sync",
-      "agent": "sales_followup",
-      "schedule": "10 9 * * 1-5",
+      "schedule": "*/30 * * * *",
       "model": "haiku-4-5",
       "enabled": true,
       "lastStatus": "ok"
     },
     {
-      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
-      "name": "Instagram Post - Morning",
-      "agent": "marketing_content",
-      "schedule": "20 9 * * *",
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
+      "name": "Codesmith Heartbeat",
+      "agent": "main",
+      "schedule": "*/30 8-18 * * *",
       "model": "sonnet-4-0",
       "enabled": true,
-      "lastStatus": null
-    },
-    {
-      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
-      "name": "MassDwell Marketing Dashboard Check",
-      "agent": "main",
-      "schedule": "25 9 * * *",
-      "model": "haiku-4-5",
-      "enabled": true,
       "lastStatus": "ok"
     },
     {
-      "id": "e0f0e1e4-600b-4c21-8a28-88827b2592e4",
-      "name": "Trading: Market Open Execution",
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "name": "Hourly Memory Summarizer",
       "agent": "main",
-      "schedule": "25 9 * * 1-5",
-      "model": "haiku-4-5",
-      "enabled": true,
-      "lastStatus": null
-    },
-    {
-      "id": "0cde95ea-ea06-4788-9ac6-25d2e0e35955",
-      "name": "Money Printer - Market Open Check",
-      "agent": "main",
-      "schedule": "30 9 * * 1-5",
-      "model": "haiku-4-5",
-      "enabled": true,
-      "lastStatus": null
-    },
-    {
-      "id": "9ebcbd64-1ea5-4b50-9326-92ad41e38e01",
-      "name": "VRT Price Alert - Post-Earnings Entry",
-      "agent": "main",
-      "schedule": "35 9 12 2 * (one-shot)",
-      "model": "haiku-4-5",
-      "enabled": true,
-      "lastStatus": null
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
+      "schedule": "0 * * * *",
       "model": "systemEvent",
       "enabled": true,
       "lastStatus": "ok"
@@ -238,6 +166,15 @@
       "lastStatus": "ok"
     },
     {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "systemEvent",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
       "name": "MassDwell X Post - Midday",
       "agent": "marketing_content",
@@ -245,6 +182,15 @@
       "model": "haiku-4-5",
       "enabled": true,
       "lastStatus": null
+    },
+    {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "name": "Factory Ops Heartbeat",
+      "agent": "massdwell_factory_ops",
+      "schedule": "0 9,13,17 * * 1-5",
+      "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
     },
     {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
@@ -310,6 +256,51 @@
       "lastStatus": "ok"
     },
     {
+      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
+      "name": "Sales Followup - Morning Email Sync",
+      "agent": "sales_followup",
+      "schedule": "10 9 * * 1-5",
+      "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
+      "name": "Instagram Post - Morning",
+      "agent": "marketing_content",
+      "schedule": "20 9 * * *",
+      "model": "sonnet-4-0",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
+      "name": "MassDwell Marketing Dashboard Check",
+      "agent": "main",
+      "schedule": "25 9 * * *",
+      "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "e0f0e1e4-600b-4c21-8a28-88827b2592e4",
+      "name": "Trading: Market Open Execution",
+      "agent": "main",
+      "schedule": "25 9 * * 1-5",
+      "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "0cde95ea-ea06-4788-9ac6-25d2e0e35955",
+      "name": "Money Printer - Market Open Check",
+      "agent": "main",
+      "schedule": "30 9 * * 1-5",
+      "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
       "name": "Monthly Learning Consolidation",
       "agent": "main",
@@ -326,10 +317,19 @@
       "model": "haiku-4-5",
       "enabled": true,
       "lastStatus": null
+    },
+    {
+      "id": "9ebcbd64-1ea5-4b50-9326-92ad41e38e01",
+      "name": "VRT Price Alert - Post-Earnings Entry",
+      "agent": "main",
+      "schedule": "35 9 12 2 * (one-shot, ran today)",
+      "model": "haiku-4-5",
+      "enabled": true,
+      "lastStatus": null
     }
   ],
   "byAgent": {
-    "main": 24,
+    "main": 25,
     "sales_followup": 5,
     "marketing_content": 4,
     "admin_assistant": 2,
