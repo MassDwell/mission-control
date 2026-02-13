@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-13T10:00:40-05:00",
+  "exportedAt": "2026-02-13T12:02:03-05:00",
   "totalJobs": 30,
   "jobs": [
     {
@@ -26,6 +26,15 @@
       "agent": "main",
       "schedule": "*/10 9-16 * * 1-5",
       "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
+      "name": "MassDwell X Post - Midday",
+      "agent": "marketing_content",
+      "schedule": "15 12 * * *",
+      "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -93,6 +102,15 @@
       "lastStatus": "ok"
     },
     {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "name": "Factory Ops Heartbeat",
+      "agent": "massdwell_factory_ops",
+      "schedule": "0 9,13,17 * * 1-5",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
       "name": "Hourly Memory Summarizer",
       "agent": "main",
@@ -102,19 +120,10 @@
       "lastStatus": "ok"
     },
     {
-      "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
-      "name": "Personal Gmail Cleanup (3x Daily)",
-      "agent": "admin_assistant",
-      "schedule": "0 8,12,18 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "name": "Personal Life Heartbeat",
-      "agent": "personal_life_cos",
-      "schedule": "0 8,12,18 * * *",
+      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
+      "name": "Sarah Cold Calls - Afternoon",
+      "agent": "sales_followup",
+      "schedule": "0 14 * * 1-5",
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
@@ -125,33 +134,6 @@
       "agent": "main",
       "schedule": "0 */2 * * *",
       "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "name": "MassDwell X Post - Midday",
-      "agent": "marketing_content",
-      "schedule": "15 12 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "name": "Factory Ops Heartbeat",
-      "agent": "massdwell_factory_ops",
-      "schedule": "0 9,13,17 * * 1-5",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
-      "name": "Sarah Cold Calls - Afternoon",
-      "agent": "sales_followup",
-      "schedule": "0 14 * * 1-5",
-      "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -179,6 +161,24 @@
       "agent": "marketing_content",
       "schedule": "0 18 * * *",
       "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
+      "name": "Personal Gmail Cleanup (3x Daily)",
+      "agent": "admin_assistant",
+      "schedule": "0 8,12,18 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "name": "Personal Life Heartbeat",
+      "agent": "personal_life_cos",
+      "schedule": "0 8,12,18 * * *",
+      "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
     },
