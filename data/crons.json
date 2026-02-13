@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-13T18:01:45-05:00",
-  "totalJobs": 33,
+  "exportedAt": "2026-02-13T23:32:00Z",
+  "jobCount": 33,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -8,8 +8,8 @@
       "agent": "sales_followup",
       "schedule": "every 15m",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T23:17:57Z"
     },
     {
       "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
@@ -17,8 +17,8 @@
       "agent": "marketing_content",
       "schedule": "*/15 8-18 * * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T23:30:00Z"
     },
     {
       "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
@@ -26,8 +26,8 @@
       "agent": "main",
       "schedule": "*/15 * * * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T23:30:23Z"
     },
     {
       "id": "70e8419d-8ca9-474a-b775-d59de639539a",
@@ -35,17 +35,17 @@
       "agent": "main",
       "schedule": "every 30m",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T23:15:37Z"
     },
     {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "name": "Admin Assistant Heartbeat",
-      "agent": "admin_assistant",
-      "schedule": "*/30 8-18 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "name": "Hourly Memory Summarizer",
+      "agent": "main",
+      "schedule": "0 * * * *",
+      "model": "systemEvent",
+      "status": "ok",
+      "lastRun": "2026-02-13T22:01:45Z"
     },
     {
       "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
@@ -53,35 +53,17 @@
       "agent": "main",
       "schedule": "*/30 * * * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "name": "Codesmith Heartbeat",
-      "agent": "main",
-      "schedule": "*/30 8-18 * * *",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "name": "Hourly Memory Summarizer",
-      "agent": "main",
-      "schedule": "0 * * * *",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T23:30:30Z"
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
       "name": "Mission Control Cron Export",
       "agent": "main",
       "schedule": "0 */2 * * *",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
+      "model": "systemEvent",
+      "status": "ok",
+      "lastRun": "2026-02-13T22:01:45Z"
     },
     {
       "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
@@ -89,8 +71,8 @@
       "agent": "main",
       "schedule": "0 21 * * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-12T02:00:00Z"
     },
     {
       "id": "7152a1c9-7bff-4704-903c-64f3b0e635eb",
@@ -98,8 +80,8 @@
       "agent": "main",
       "schedule": "30 7 * * *",
       "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T12:31:07Z"
     },
     {
       "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
@@ -107,8 +89,17 @@
       "agent": "admin_assistant",
       "schedule": "0 8,12,18 * * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T23:01:00Z"
+    },
+    {
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "name": "Admin Assistant Heartbeat",
+      "agent": "admin_assistant",
+      "schedule": "*/30 8-18 * * *",
+      "model": "haiku",
+      "status": "ok",
+      "lastRun": "2026-02-13T23:30:11Z"
     },
     {
       "id": "a8544303-c019-4675-9ab4-2570296413c8",
@@ -116,17 +107,26 @@
       "agent": "personal_life_cos",
       "schedule": "0 8,12,18 * * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T23:01:37Z"
+    },
+    {
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
+      "name": "Codesmith Heartbeat",
+      "agent": "main",
+      "schedule": "*/30 8-18 * * *",
+      "model": "sonnet",
+      "status": "ok",
+      "lastRun": "2026-02-13T23:30:39Z"
     },
     {
       "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "name": "Kommo CRM Sync (3x Daily)",
+      "name": "Kommo CRM Sync",
       "agent": "main",
       "schedule": "0 8,13,18 * * *",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "pending"
+      "model": "default",
+      "status": "ok",
+      "lastRun": "2026-02-13T23:02:38Z"
     },
     {
       "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
@@ -134,8 +134,8 @@
       "agent": "marketing_content",
       "schedule": "20 9 * * *",
       "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-12T14:20:00Z"
     },
     {
       "id": "80458079-b1f4-41bc-a260-f224a863fcce",
@@ -143,8 +143,8 @@
       "agent": "main",
       "schedule": "25 9 * * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-12T14:25:00Z"
     },
     {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
@@ -152,8 +152,8 @@
       "agent": "marketing_content",
       "schedule": "15 12 * * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T17:15:00Z"
     },
     {
       "id": "9e0b82cc-9857-43c1-9058-bba52b69d67b",
@@ -161,8 +161,8 @@
       "agent": "main",
       "schedule": "0 17 * * *",
       "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T22:00:00Z"
     },
     {
       "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
@@ -170,8 +170,8 @@
       "agent": "marketing_content",
       "schedule": "0 18 * * *",
       "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T23:00:00Z"
     },
     {
       "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
@@ -179,8 +179,8 @@
       "agent": "sales_followup",
       "schedule": "*/30 9-17 * * 1-5",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T21:30:00Z"
     },
     {
       "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
@@ -188,8 +188,8 @@
       "agent": "massdwell_factory_ops",
       "schedule": "0 9,13,17 * * 1-5",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T22:01:05Z"
     },
     {
       "id": "a5087bf0-afe6-4e82-9d0b-cdc256fe6ef8",
@@ -197,8 +197,8 @@
       "agent": "main",
       "schedule": "*/10 9-16 * * 1-5",
       "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T20:30:00Z"
     },
     {
       "id": "cebccb37-baa7-41ec-8b77-279b361606b8",
@@ -206,8 +206,8 @@
       "agent": "main",
       "schedule": "*/5 9-16 * * 1-5",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T20:59:47Z"
     },
     {
       "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
@@ -215,35 +215,33 @@
       "agent": "sales_followup",
       "schedule": "10 9 * * 1-5",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T14:10:00Z"
     },
     {
       "id": "db961ad6-4b76-4592-90fc-5502c0badcc6",
       "name": "Monday Morning Stop-Loss Execution",
       "agent": "main",
       "schedule": "31 9 * * 1",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "pending"
+      "model": "systemEvent",
+      "status": "pending"
     },
     {
       "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
       "name": "Daily Lead Email Outreach",
       "agent": "main",
       "schedule": "0 10 * * 1-5",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "pending"
+      "model": "default",
+      "status": "pending"
     },
     {
       "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
       "name": "Bounce Monitor - Auto Close Lost",
       "agent": "main",
       "schedule": "0 11,16 * * 1-5",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
+      "model": "default",
+      "status": "ok",
+      "lastRun": "2026-02-13T21:04:38Z"
     },
     {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
@@ -251,8 +249,8 @@
       "agent": "sales_followup",
       "schedule": "0 14 * * 1-5",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T19:00:00Z"
     },
     {
       "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
@@ -260,8 +258,8 @@
       "agent": "sales_followup",
       "schedule": "0 17 * * 1-5",
       "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T22:00:00Z"
     },
     {
       "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
@@ -269,17 +267,16 @@
       "agent": "main",
       "schedule": "0 10 1 * *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "pending"
+      "status": "pending"
     },
     {
       "id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36",
       "name": "Instagram Token Refresh Reminder",
       "agent": "main",
-      "schedule": "at 2026-04-01",
+      "schedule": "2026-04-01T14:00:00Z",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "pending"
+      "status": "pending",
+      "oneShot": true
     },
     {
       "id": "9ebcbd64-1ea5-4b50-9326-92ad41e38e01",
@@ -287,8 +284,8 @@
       "agent": "main",
       "schedule": "35 9 12 2 *",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "pending"
+      "status": "pending",
+      "oneShot": true
     },
     {
       "id": "6b44003c-de44-4bcf-a262-d7ae2607e32c",
@@ -296,8 +293,8 @@
       "agent": "main",
       "schedule": "0 8 13 2 *",
       "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
+      "status": "ok",
+      "lastRun": "2026-02-13T13:01:56Z"
     }
   ]
 }
