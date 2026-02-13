@@ -1,12 +1,21 @@
 {
-  "exportedAt": "2026-02-13T06:00:00-05:00",
-  "totalJobs": 29,
+  "exportedAt": "2026-02-13T08:01:07-05:00",
+  "totalJobs": 28,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
       "name": "Cold Lead Reply Monitor",
       "agent": "sales_followup",
       "schedule": "every 15m",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
+      "name": "Marketing Agent Heartbeat",
+      "agent": "marketing_content",
+      "schedule": "*/15 8-18 * * *",
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
@@ -30,51 +39,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "name": "Mission Control Status Sync",
-      "agent": "main",
-      "schedule": "*/30 * * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "name": "Hourly Memory Summarizer",
-      "agent": "main",
-      "schedule": "0 * * * *",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "7152a1c9-7bff-4704-903c-64f3b0e635eb",
-      "name": "Morning Jobs Safeguard (7:30 AM)",
-      "agent": "main",
-      "schedule": "30 7 * * *",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
-      "name": "Personal Gmail Cleanup (3x Daily)",
-      "agent": "admin_assistant",
-      "schedule": "0 8,12,18 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
-      "name": "Marketing Agent Heartbeat",
-      "agent": "marketing_content",
-      "schedule": "*/15 8-18 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "9147988a-935a-4fa6-b776-77cbc994611f",
       "name": "Admin Assistant Heartbeat",
       "agent": "admin_assistant",
@@ -84,22 +48,14 @@
       "lastStatus": "ok"
     },
     {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "name": "Personal Life Heartbeat",
-      "agent": "personal_life_cos",
-      "schedule": "0 8,12,18 * * *",
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "name": "Mission Control Status Sync",
+      "agent": "main",
+      "schedule": "*/30 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
+      "lastStatus": "error",
+      "consecutiveErrors": 2
     },
     {
       "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
@@ -109,15 +65,6 @@
       "model": "sonnet",
       "enabled": true,
       "lastStatus": "ok"
-    },
-    {
-      "id": "6b44003c-de44-4bcf-a262-d7ae2607e32c",
-      "name": "Morning Scraper Test & Fix",
-      "agent": "main",
-      "schedule": "0 8 13 2 *",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "pending"
     },
     {
       "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
@@ -134,6 +81,15 @@
       "agent": "massdwell_factory_ops",
       "schedule": "0 9,13,17 * * 1-5",
       "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "name": "Hourly Memory Summarizer",
+      "agent": "main",
+      "schedule": "0 * * * *",
+      "model": "system",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -169,6 +125,33 @@
       "name": "MassDwell Marketing Dashboard Check",
       "agent": "main",
       "schedule": "25 9 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "system",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
+      "name": "Personal Gmail Cleanup (3x Daily)",
+      "agent": "admin_assistant",
+      "schedule": "0 8,12,18 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "name": "Personal Life Heartbeat",
+      "agent": "personal_life_cos",
+      "schedule": "0 8,12,18 * * *",
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
@@ -228,6 +211,15 @@
       "lastStatus": "ok"
     },
     {
+      "id": "7152a1c9-7bff-4704-903c-64f3b0e635eb",
+      "name": "Morning Jobs Safeguard (7:30 AM)",
+      "agent": "main",
+      "schedule": "30 7 * * *",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
       "name": "Monthly Learning Consolidation",
       "agent": "main",
@@ -253,6 +245,15 @@
       "model": "haiku",
       "enabled": true,
       "lastStatus": "pending"
+    },
+    {
+      "id": "6b44003c-de44-4bcf-a262-d7ae2607e32c",
+      "name": "Morning Scraper Test & Fix",
+      "agent": "main",
+      "schedule": "0 8 13 2 *",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "running"
     }
   ]
 }
