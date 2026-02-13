@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-13T16:02:22-05:00",
-  "totalJobs": 32,
+  "exportedAt": "2026-02-13T18:01:45-05:00",
+  "totalJobs": 33,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -8,24 +8,6 @@
       "agent": "sales_followup",
       "schedule": "every 15m",
       "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "cebccb37-baa7-41ec-8b77-279b361606b8",
-      "name": "Intraday Position Monitor (5-min)",
-      "agent": "main",
-      "schedule": "*/5 9-16 * * 1-5",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "a5087bf0-afe6-4e82-9d0b-cdc256fe6ef8",
-      "name": "Alpaca Paper Trader (Autonomous)",
-      "agent": "main",
-      "schedule": "*/10 9-16 * * 1-5",
-      "model": "sonnet",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -52,15 +34,6 @@
       "name": "Kommo CRM Sync",
       "agent": "main",
       "schedule": "every 30m",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
-      "name": "Sales Agent Heartbeat",
-      "agent": "sales_followup",
-      "schedule": "*/30 9-17 * * 1-5",
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
@@ -93,24 +66,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
-      "name": "Sales Followup - EOD Email Sync",
-      "agent": "sales_followup",
-      "schedule": "0 17 * * 1-5",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "name": "Factory Ops Heartbeat",
-      "agent": "massdwell_factory_ops",
-      "schedule": "0 9,13,17 * * 1-5",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
       "name": "Hourly Memory Summarizer",
       "agent": "main",
@@ -120,19 +75,28 @@
       "lastStatus": "ok"
     },
     {
-      "id": "9e0b82cc-9857-43c1-9058-bba52b69d67b",
-      "name": "Instagram Post - Afternoon",
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
       "agent": "main",
-      "schedule": "0 17 * * *",
-      "model": "sonnet",
+      "schedule": "0 */2 * * *",
+      "model": "system",
       "enabled": true,
       "lastStatus": "ok"
     },
     {
-      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
-      "name": "MassDwell X Post - Evening",
-      "agent": "marketing_content",
-      "schedule": "0 18 * * *",
+      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
+      "name": "Nightly Learning - Rotating Agent",
+      "agent": "main",
+      "schedule": "0 21 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "7152a1c9-7bff-4704-903c-64f3b0e635eb",
+      "name": "Morning Jobs Safeguard (7:30 AM)",
+      "agent": "main",
+      "schedule": "30 7 * * *",
       "model": "sonnet",
       "enabled": true,
       "lastStatus": "ok"
@@ -156,15 +120,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
       "name": "Kommo CRM Sync (3x Daily)",
       "agent": "main",
@@ -172,24 +127,6 @@
       "model": "sonnet",
       "enabled": true,
       "lastStatus": "pending"
-    },
-    {
-      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
-      "name": "Nightly Learning - Rotating Agent",
-      "agent": "main",
-      "schedule": "0 21 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "7152a1c9-7bff-4704-903c-64f3b0e635eb",
-      "name": "Morning Jobs Safeguard (7:30 AM)",
-      "agent": "main",
-      "schedule": "30 7 * * *",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
     },
     {
       "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
@@ -219,6 +156,60 @@
       "lastStatus": "ok"
     },
     {
+      "id": "9e0b82cc-9857-43c1-9058-bba52b69d67b",
+      "name": "Instagram Post - Afternoon",
+      "agent": "main",
+      "schedule": "0 17 * * *",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
+      "name": "MassDwell X Post - Evening",
+      "agent": "marketing_content",
+      "schedule": "0 18 * * *",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
+      "name": "Sales Agent Heartbeat",
+      "agent": "sales_followup",
+      "schedule": "*/30 9-17 * * 1-5",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "name": "Factory Ops Heartbeat",
+      "agent": "massdwell_factory_ops",
+      "schedule": "0 9,13,17 * * 1-5",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a5087bf0-afe6-4e82-9d0b-cdc256fe6ef8",
+      "name": "Alpaca Paper Trader (Autonomous)",
+      "agent": "main",
+      "schedule": "*/10 9-16 * * 1-5",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "cebccb37-baa7-41ec-8b77-279b361606b8",
+      "name": "Intraday Position Monitor (5-min)",
+      "agent": "main",
+      "schedule": "*/5 9-16 * * 1-5",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
       "name": "Sales Followup - Morning Email Sync",
       "agent": "sales_followup",
@@ -226,6 +217,15 @@
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
+    },
+    {
+      "id": "db961ad6-4b76-4592-90fc-5502c0badcc6",
+      "name": "Monday Morning Stop-Loss Execution",
+      "agent": "main",
+      "schedule": "31 9 * * 1",
+      "model": "system",
+      "enabled": true,
+      "lastStatus": "pending"
     },
     {
       "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
@@ -243,7 +243,7 @@
       "schedule": "0 11,16 * * 1-5",
       "model": "sonnet",
       "enabled": true,
-      "lastStatus": "pending"
+      "lastStatus": "ok"
     },
     {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
@@ -251,6 +251,15 @@
       "agent": "sales_followup",
       "schedule": "0 14 * * 1-5",
       "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
+      "name": "Sales Followup - EOD Email Sync",
+      "agent": "sales_followup",
+      "schedule": "0 17 * * 1-5",
+      "model": "sonnet",
       "enabled": true,
       "lastStatus": "ok"
     },
