@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-12T20:00:00-05:00",
+  "lastUpdated": "2026-02-12T22:00:00-05:00",
   "totalJobs": 29,
   "enabledJobs": 29,
   "jobs": [
@@ -7,7 +7,6 @@
     {"id": "534c0bcd", "name": "Self-Healing: Stale Task Recovery", "agent": "main", "schedule": "*/15 * * * *", "model": "haiku-4-5", "lastStatus": "ok"},
     {"id": "70e8419d", "name": "Kommo CRM Sync", "agent": "main", "schedule": "Every 30 min", "model": "haiku-4-5", "lastStatus": "ok"},
     {"id": "03ae3f12", "name": "Mission Control Status Sync", "agent": "main", "schedule": "*/30 * * * *", "model": "haiku-4-5", "lastStatus": "ok"},
-    {"id": "dc6a1ba8", "name": "Nightly Learning - Rotating Agent", "agent": "main", "schedule": "0 21 * * *", "model": "haiku-4-5", "lastStatus": "ok"},
     {"id": "c0d63b29", "name": "Hourly Memory Summarizer", "agent": "main", "schedule": "0 * * * *", "model": "systemEvent", "lastStatus": "ok"},
     {"id": "036b8a6f", "name": "Mission Control Cron Export", "agent": "main", "schedule": "0 */2 * * *", "model": "systemEvent", "lastStatus": "ok"},
     {"id": "7152a1c9", "name": "Morning Jobs Safeguard (7:30 AM)", "agent": "main", "schedule": "30 7 * * *", "model": "sonnet-4-0", "lastStatus": "ok"},
@@ -28,6 +27,7 @@
     {"id": "6f8a55d5", "name": "Sales Followup - EOD Email Sync", "agent": "sales_followup", "schedule": "0 17 * * 1-5", "model": "sonnet-4-0", "lastStatus": "ok"},
     {"id": "9e0b82cc", "name": "Instagram Post - Afternoon (Draft)", "agent": "main", "schedule": "0 17 * * *", "model": "sonnet-4-0", "lastStatus": "ok"},
     {"id": "3255cb05", "name": "MassDwell X Post - Evening", "agent": "marketing_content", "schedule": "0 18 * * *", "model": "sonnet-4-0", "lastStatus": "ok"},
+    {"id": "dc6a1ba8", "name": "Nightly Learning - Rotating Agent", "agent": "main", "schedule": "0 21 * * *", "model": "haiku-4-5", "lastStatus": "ok"},
     {"id": "e756c9bc", "name": "Monthly Learning Consolidation", "agent": "main", "schedule": "0 10 1 * *", "model": "haiku-4-5", "lastStatus": null},
     {"id": "e959e7b5", "name": "Instagram Token Refresh Reminder", "agent": "main", "schedule": "Apr 1, 2026 (one-shot)", "model": "haiku-4-5", "lastStatus": null},
     {"id": "9ebcbd64", "name": "VRT Price Alert - Post-Earnings Entry", "agent": "main", "schedule": "Ran Feb 12 (one-shot)", "model": "haiku-4-5", "lastStatus": null}
