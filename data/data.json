@@ -19,7 +19,7 @@
       "role": "Lead Follow-up & CRM",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-13T21:00:03.912Z",
+      "lastSeen": "2026-02-13T21:30:04.259Z",
       "level": "specialist"
     },
     {
@@ -29,7 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-13T21:02:04.807Z",
+      "lastSeen": "2026-02-13T21:30:18.476Z",
       "level": "specialist"
     },
     {
@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-13T21:02:15.424Z",
+      "lastSeen": "2026-02-13T21:30:25.940Z",
       "level": "intern"
     },
     {
@@ -79,7 +79,7 @@
       "role": "Developer Agent",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-13T20:31:25.374Z",
+      "lastSeen": "2026-02-13T21:02:53.343Z",
       "level": "specialist"
     }
   ],
