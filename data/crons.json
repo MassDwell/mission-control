@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-13T14:00:48-05:00",
-  "totalJobs": 29,
+  "exportedAt": "2026-02-13T16:02:22-05:00",
+  "totalJobs": 32,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -93,24 +93,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "name": "Hourly Memory Summarizer",
-      "agent": "main",
-      "schedule": "0 * * * *",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
       "name": "Sales Followup - EOD Email Sync",
       "agent": "sales_followup",
@@ -125,6 +107,15 @@
       "agent": "massdwell_factory_ops",
       "schedule": "0 9,13,17 * * 1-5",
       "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "name": "Hourly Memory Summarizer",
+      "agent": "main",
+      "schedule": "0 * * * *",
+      "model": "system",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -163,6 +154,24 @@
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "system",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "name": "Kommo CRM Sync (3x Daily)",
+      "agent": "main",
+      "schedule": "0 8,13,18 * * *",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "pending"
     },
     {
       "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
@@ -217,6 +226,24 @@
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
+    },
+    {
+      "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
+      "name": "Daily Lead Email Outreach",
+      "agent": "main",
+      "schedule": "0 10 * * 1-5",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
+      "name": "Bounce Monitor - Auto Close Lost",
+      "agent": "main",
+      "schedule": "0 11,16 * * 1-5",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "pending"
     },
     {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
