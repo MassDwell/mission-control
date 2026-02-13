@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-13T08:01:07-05:00",
-  "totalJobs": 28,
+  "exportedAt": "2026-02-13T10:00:40-05:00",
+  "totalJobs": 30,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -8,6 +8,24 @@
       "agent": "sales_followup",
       "schedule": "every 15m",
       "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "cebccb37-baa7-41ec-8b77-279b361606b8",
+      "name": "Intraday Position Monitor (5-min)",
+      "agent": "main",
+      "schedule": "*/5 9-16 * * 1-5",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a5087bf0-afe6-4e82-9d0b-cdc256fe6ef8",
+      "name": "Alpaca Paper Trader (Autonomous)",
+      "agent": "main",
+      "schedule": "*/10 9-16 * * 1-5",
+      "model": "sonnet",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -39,6 +57,15 @@
       "lastStatus": "ok"
     },
     {
+      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
+      "name": "Sales Agent Heartbeat",
+      "agent": "sales_followup",
+      "schedule": "*/30 9-17 * * 1-5",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "9147988a-935a-4fa6-b776-77cbc994611f",
       "name": "Admin Assistant Heartbeat",
       "agent": "admin_assistant",
@@ -54,8 +81,7 @@
       "schedule": "*/30 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastStatus": "error",
-      "consecutiveErrors": 2
+      "lastStatus": "ok"
     },
     {
       "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
@@ -67,73 +93,10 @@
       "lastStatus": "ok"
     },
     {
-      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
-      "name": "Sales Agent Heartbeat",
-      "agent": "sales_followup",
-      "schedule": "*/30 9-17 * * 1-5",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "name": "Factory Ops Heartbeat",
-      "agent": "massdwell_factory_ops",
-      "schedule": "0 9,13,17 * * 1-5",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
       "name": "Hourly Memory Summarizer",
       "agent": "main",
       "schedule": "0 * * * *",
-      "model": "system",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "a5087bf0-afe6-4e82-9d0b-cdc256fe6ef8",
-      "name": "Alpaca Paper Trader (Autonomous)",
-      "agent": "main",
-      "schedule": "*/10 9-16 * * 1-5",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
-      "name": "Sales Followup - Morning Email Sync",
-      "agent": "sales_followup",
-      "schedule": "10 9 * * 1-5",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
-      "name": "Instagram Post - Morning",
-      "agent": "marketing_content",
-      "schedule": "20 9 * * *",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
-      "name": "MassDwell Marketing Dashboard Check",
-      "agent": "main",
-      "schedule": "25 9 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
       "model": "system",
       "enabled": true,
       "lastStatus": "ok"
@@ -157,10 +120,28 @@
       "lastStatus": "ok"
     },
     {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "system",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
       "name": "MassDwell X Post - Midday",
       "agent": "marketing_content",
       "schedule": "15 12 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "name": "Factory Ops Heartbeat",
+      "agent": "massdwell_factory_ops",
+      "schedule": "0 9,13,17 * * 1-5",
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
@@ -220,6 +201,33 @@
       "lastStatus": "ok"
     },
     {
+      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
+      "name": "Instagram Post - Morning",
+      "agent": "marketing_content",
+      "schedule": "20 9 * * *",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
+      "name": "MassDwell Marketing Dashboard Check",
+      "agent": "main",
+      "schedule": "25 9 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
+      "name": "Sales Followup - Morning Email Sync",
+      "agent": "sales_followup",
+      "schedule": "10 9 * * 1-5",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
       "name": "Monthly Learning Consolidation",
       "agent": "main",
@@ -253,7 +261,7 @@
       "schedule": "0 8 13 2 *",
       "model": "sonnet",
       "enabled": true,
-      "lastStatus": "running"
+      "lastStatus": "ok"
     }
   ]
 }
