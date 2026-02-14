@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-14T14:00:00-05:00",
+  "exportedAt": "2026-02-14T16:00:00-05:00",
   "totalJobs": 33,
   "jobs": [
     {
@@ -75,15 +75,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "systemEvent",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "9e0b82cc-9857-43c1-9058-bba52b69d67b",
       "name": "Instagram Post - Afternoon",
       "agent": "main",
@@ -116,6 +107,15 @@
       "agent": "personal_life_cos",
       "schedule": "0 8,12,18 * * *",
       "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "systemEvent",
       "enabled": true,
       "lastStatus": "ok"
     },
