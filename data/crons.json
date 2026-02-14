@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-14T08:00:00-05:00",
+  "exportedAt": "2026-02-14T10:00:00-05:00",
   "totalJobs": 33,
   "jobs": [
     {
@@ -54,7 +54,7 @@
       "schedule": "*/30 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastStatus": "error"
+      "lastStatus": "ok"
     },
     {
       "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
@@ -75,33 +75,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
-      "name": "Instagram Post - Morning",
-      "agent": "marketing_content",
-      "schedule": "20 9 * * *",
-      "model": "sonnet",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
-      "name": "MassDwell Marketing Dashboard Check",
-      "agent": "main",
-      "schedule": "25 9 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "systemEvent",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
       "name": "Personal Gmail Cleanup (3x Daily)",
       "agent": "admin_assistant",
@@ -116,6 +89,15 @@
       "agent": "personal_life_cos",
       "schedule": "0 8,12,18 * * *",
       "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "systemEvent",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -170,6 +152,24 @@
       "agent": "main",
       "schedule": "30 7 * * *",
       "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
+      "name": "Instagram Post - Morning",
+      "agent": "marketing_content",
+      "schedule": "20 9 * * *",
+      "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
+      "name": "MassDwell Marketing Dashboard Check",
+      "agent": "main",
+      "schedule": "25 9 * * *",
+      "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
     },
