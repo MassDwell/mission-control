@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-13T23:32:00Z",
+  "exportedAt": "2026-02-14T01:00:00Z",
   "jobCount": 33,
   "jobs": [
     {
@@ -9,16 +9,7 @@
       "schedule": "every 15m",
       "model": "haiku",
       "status": "ok",
-      "lastRun": "2026-02-13T23:17:57Z"
-    },
-    {
-      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
-      "name": "Marketing Agent Heartbeat",
-      "agent": "marketing_content",
-      "schedule": "*/15 8-18 * * *",
-      "model": "haiku",
-      "status": "ok",
-      "lastRun": "2026-02-13T23:30:00Z"
+      "lastRun": "2026-02-14T01:01:16Z"
     },
     {
       "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
@@ -27,7 +18,7 @@
       "schedule": "*/15 * * * *",
       "model": "haiku",
       "status": "ok",
-      "lastRun": "2026-02-13T23:30:23Z"
+      "lastRun": "2026-02-14T01:00:00Z"
     },
     {
       "id": "70e8419d-8ca9-474a-b775-d59de639539a",
@@ -36,16 +27,7 @@
       "schedule": "every 30m",
       "model": "haiku",
       "status": "ok",
-      "lastRun": "2026-02-13T23:15:37Z"
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "name": "Hourly Memory Summarizer",
-      "agent": "main",
-      "schedule": "0 * * * *",
-      "model": "systemEvent",
-      "status": "ok",
-      "lastRun": "2026-02-13T22:01:45Z"
+      "lastRun": "2026-02-14T00:45:36Z"
     },
     {
       "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
@@ -54,16 +36,7 @@
       "schedule": "*/30 * * * *",
       "model": "haiku",
       "status": "ok",
-      "lastRun": "2026-02-13T23:30:30Z"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "systemEvent",
-      "status": "ok",
-      "lastRun": "2026-02-13T22:01:45Z"
+      "lastRun": "2026-02-14T01:00:05Z"
     },
     {
       "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
@@ -72,7 +45,25 @@
       "schedule": "0 21 * * *",
       "model": "haiku",
       "status": "ok",
-      "lastRun": "2026-02-12T02:00:00Z"
+      "nextRun": "2026-02-14T02:00:00Z"
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "name": "Hourly Memory Summarizer",
+      "agent": "main",
+      "schedule": "0 * * * *",
+      "model": "systemEvent",
+      "status": "ok",
+      "lastRun": "2026-02-14T01:00:00Z"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "systemEvent",
+      "status": "ok",
+      "lastRun": "2026-02-14T01:00:00Z"
     },
     {
       "id": "7152a1c9-7bff-4704-903c-64f3b0e635eb",
@@ -91,6 +82,15 @@
       "model": "haiku",
       "status": "ok",
       "lastRun": "2026-02-13T23:01:00Z"
+    },
+    {
+      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
+      "name": "Marketing Agent Heartbeat",
+      "agent": "marketing_content",
+      "schedule": "*/15 8-18 * * *",
+      "model": "haiku",
+      "status": "ok",
+      "lastRun": "2026-02-13T23:45:00Z"
     },
     {
       "id": "9147988a-935a-4fa6-b776-77cbc994611f",
@@ -224,7 +224,8 @@
       "agent": "main",
       "schedule": "31 9 * * 1",
       "model": "systemEvent",
-      "status": "pending"
+      "status": "pending",
+      "nextRun": "2026-02-16T14:31:00Z"
     },
     {
       "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
@@ -232,7 +233,8 @@
       "agent": "main",
       "schedule": "0 10 * * 1-5",
       "model": "default",
-      "status": "pending"
+      "status": "pending",
+      "nextRun": "2026-02-16T15:00:00Z"
     },
     {
       "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
@@ -267,7 +269,8 @@
       "agent": "main",
       "schedule": "0 10 1 * *",
       "model": "haiku",
-      "status": "pending"
+      "status": "pending",
+      "nextRun": "2026-03-01T15:00:00Z"
     },
     {
       "id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36",
