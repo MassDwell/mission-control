@@ -9,7 +9,7 @@
       "role": "Master Agent / COO",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-14T17:00:30.444Z",
+      "lastSeen": "2026-02-14T17:41:38.773Z",
       "level": "lead"
     },
     {
@@ -29,7 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-14T17:30:02.599Z",
+      "lastSeen": "2026-02-14T18:00:02.369Z",
       "level": "specialist"
     },
     {
@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-14T17:30:12.353Z",
+      "lastSeen": "2026-02-14T18:00:10.083Z",
       "level": "intern"
     },
     {
@@ -79,7 +79,7 @@
       "role": "Developer Agent",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-14T17:01:26.320Z",
+      "lastSeen": "2026-02-14T17:30:35.385Z",
       "level": "specialist"
     }
   ],
