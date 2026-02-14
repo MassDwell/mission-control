@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-14T12:01:00-05:00",
+  "exportedAt": "2026-02-14T14:00:00-05:00",
   "totalJobs": 33,
   "jobs": [
     {
@@ -7,15 +7,6 @@
       "name": "Cold Lead Reply Monitor",
       "agent": "sales_followup",
       "schedule": "Every 15 min",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "name": "MassDwell X Post - Midday",
-      "agent": "marketing_content",
-      "schedule": "15 12 * * *",
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
@@ -84,15 +75,6 @@
       "lastStatus": "ok"
     },
     {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "name": "Kommo CRM Sync (3x Daily)",
-      "agent": "main",
-      "schedule": "0 8,13,18 * * *",
-      "model": "default",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
       "name": "Mission Control Cron Export",
       "agent": "main",
@@ -138,6 +120,15 @@
       "lastStatus": "ok"
     },
     {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "name": "Kommo CRM Sync (3x Daily)",
+      "agent": "main",
+      "schedule": "0 8,13,18 * * *",
+      "model": "default",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
       "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
       "name": "Nightly Learning - Rotating Agent",
       "agent": "main",
@@ -169,6 +160,15 @@
       "name": "MassDwell Marketing Dashboard Check",
       "agent": "main",
       "schedule": "25 9 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
+      "name": "MassDwell X Post - Midday",
+      "agent": "marketing_content",
+      "schedule": "15 12 * * *",
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
