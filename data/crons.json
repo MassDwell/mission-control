@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-14T10:00:00-05:00",
+  "exportedAt": "2026-02-14T12:01:00-05:00",
   "totalJobs": 33,
   "jobs": [
     {
@@ -7,6 +7,15 @@
       "name": "Cold Lead Reply Monitor",
       "agent": "sales_followup",
       "schedule": "Every 15 min",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
+      "name": "MassDwell X Post - Midday",
+      "agent": "marketing_content",
+      "schedule": "15 12 * * *",
       "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
@@ -75,20 +84,11 @@
       "lastStatus": "ok"
     },
     {
-      "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
-      "name": "Personal Gmail Cleanup (3x Daily)",
-      "agent": "admin_assistant",
-      "schedule": "0 8,12,18 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "name": "Personal Life Heartbeat",
-      "agent": "personal_life_cos",
-      "schedule": "0 8,12,18 * * *",
-      "model": "haiku",
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "name": "Kommo CRM Sync (3x Daily)",
+      "agent": "main",
+      "schedule": "0 8,13,18 * * *",
+      "model": "default",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -98,24 +98,6 @@
       "agent": "main",
       "schedule": "0 */2 * * *",
       "model": "systemEvent",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "name": "MassDwell X Post - Midday",
-      "agent": "marketing_content",
-      "schedule": "15 12 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastStatus": "ok"
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "name": "Kommo CRM Sync (3x Daily)",
-      "agent": "main",
-      "schedule": "0 8,13,18 * * *",
-      "model": "default",
       "enabled": true,
       "lastStatus": "ok"
     },
@@ -134,6 +116,24 @@
       "agent": "marketing_content",
       "schedule": "0 18 * * *",
       "model": "sonnet",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
+      "name": "Personal Gmail Cleanup (3x Daily)",
+      "agent": "admin_assistant",
+      "schedule": "0 8,12,18 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "name": "Personal Life Heartbeat",
+      "agent": "personal_life_cos",
+      "schedule": "0 8,12,18 * * *",
+      "model": "haiku",
       "enabled": true,
       "lastStatus": "ok"
     },
