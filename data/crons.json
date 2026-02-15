@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-15T04:00:00-05:00",
-  "totalJobs": 38,
+  "exportedAt": "2026-02-15T06:00:00-05:00",
+  "totalJobs": 34,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -9,7 +9,7 @@
       "schedule": "every 15m",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T03:47:56Z",
+      "lastRun": "2026-02-15T05:47:56Z",
       "lastStatus": "ok"
     },
     {
@@ -19,7 +19,7 @@
       "schedule": "*/15 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T03:45:00Z",
+      "lastRun": "2026-02-15T06:00:00Z",
       "lastStatus": "ok"
     },
     {
@@ -29,7 +29,7 @@
       "schedule": "every 30m",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T03:45:36Z",
+      "lastRun": "2026-02-15T05:45:36Z",
       "lastStatus": "ok"
     },
     {
@@ -39,7 +39,7 @@
       "schedule": "*/30 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T03:30:04Z",
+      "lastRun": "2026-02-15T06:00:05Z",
       "lastStatus": "ok"
     },
     {
@@ -49,17 +49,7 @@
       "schedule": "0 * * * *",
       "model": "n/a (systemEvent)",
       "enabled": true,
-      "lastRun": "2026-02-15T03:00:00Z",
-      "lastStatus": "ok"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "n/a (systemEvent)",
-      "enabled": true,
-      "lastRun": "2026-02-15T02:00:00Z",
+      "lastRun": "2026-02-15T06:00:00Z",
       "lastStatus": "ok"
     },
     {
@@ -110,6 +100,16 @@
       "model": "haiku",
       "enabled": true,
       "lastRun": "2026-02-14T18:01:58Z",
+      "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "n/a (systemEvent)",
+      "enabled": true,
+      "lastRun": "2026-02-15T06:00:00Z",
       "lastStatus": "ok"
     },
     {
