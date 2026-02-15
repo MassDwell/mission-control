@@ -29,7 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-15T20:30:04.381Z",
+      "lastSeen": "2026-02-15T21:30:02.018Z",
       "level": "specialist"
     },
     {
@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-15T21:00:21.826Z",
+      "lastSeen": "2026-02-15T21:30:08.964Z",
       "level": "intern"
     },
     {
@@ -79,7 +79,7 @@
       "role": "Developer Agent",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-15T20:30:41.477Z",
+      "lastSeen": "2026-02-15T21:00:42.942Z",
       "level": "specialist"
     }
   ],
