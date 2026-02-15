@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-15T12:01:00-05:00",
+  "exportedAt": "2026-02-15T14:00:00-05:00",
   "totalJobs": 39,
   "jobs": [
     {
@@ -9,17 +9,7 @@
       "schedule": "every 15m",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T11:47:56Z",
-      "lastStatus": "ok"
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "name": "MassDwell X Post - Midday",
-      "agent": "marketing_content",
-      "schedule": "15 12 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastRun": "2026-02-14T17:15:00Z",
+      "lastRun": "2026-02-15T13:47:56Z",
       "lastStatus": "ok"
     },
     {
@@ -29,7 +19,7 @@
       "schedule": "*/15 8-18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T11:45:00Z",
+      "lastRun": "2026-02-15T13:45:00Z",
       "lastStatus": "ok"
     },
     {
@@ -39,7 +29,7 @@
       "schedule": "*/15 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T11:45:08Z",
+      "lastRun": "2026-02-15T13:45:15Z",
       "lastStatus": "ok"
     },
     {
@@ -49,7 +39,7 @@
       "schedule": "every 30m",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T11:45:36Z",
+      "lastRun": "2026-02-15T13:45:36Z",
       "lastStatus": "ok"
     },
     {
@@ -59,7 +49,7 @@
       "schedule": "*/30 8-18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T11:30:10Z",
+      "lastRun": "2026-02-15T13:30:13Z",
       "lastStatus": "ok"
     },
     {
@@ -69,7 +59,7 @@
       "schedule": "*/30 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T11:30:24Z",
+      "lastRun": "2026-02-15T13:30:24Z",
       "lastStatus": "ok"
     },
     {
@@ -79,7 +69,7 @@
       "schedule": "*/30 8-18 * * *",
       "model": "sonnet",
       "enabled": true,
-      "lastRun": "2026-02-15T11:30:30Z",
+      "lastRun": "2026-02-15T13:30:29Z",
       "lastStatus": "ok"
     },
     {
@@ -89,17 +79,7 @@
       "schedule": "0 * * * *",
       "model": "n/a (systemEvent)",
       "enabled": true,
-      "lastRun": "2026-02-15T11:00:18Z",
-      "lastStatus": "ok"
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "name": "Kommo CRM Sync",
-      "agent": "main",
-      "schedule": "0 8,13,18 * * *",
-      "model": "default",
-      "enabled": true,
-      "lastRun": "2026-02-15T08:01:44Z",
+      "lastRun": "2026-02-15T13:00:19Z",
       "lastStatus": "ok"
     },
     {
@@ -109,7 +89,7 @@
       "schedule": "0 */2 * * *",
       "model": "n/a (systemEvent)",
       "enabled": true,
-      "lastRun": "2026-02-15T10:00:36Z",
+      "lastRun": "2026-02-15T12:01:40Z",
       "lastStatus": "ok"
     },
     {
@@ -139,7 +119,7 @@
       "schedule": "0 8,12,18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T08:00:00Z",
+      "lastRun": "2026-02-15T12:00:00Z",
       "lastStatus": "ok"
     },
     {
@@ -149,7 +129,17 @@
       "schedule": "0 8,12,18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T08:01:01Z",
+      "lastRun": "2026-02-15T12:01:27Z",
+      "lastStatus": "ok"
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "name": "Kommo CRM Sync",
+      "agent": "main",
+      "schedule": "0 8,13,18 * * *",
+      "model": "default",
+      "enabled": true,
+      "lastRun": "2026-02-15T13:00:49Z",
       "lastStatus": "ok"
     },
     {
@@ -291,6 +281,16 @@
       "enabled": true,
       "lastRun": null,
       "lastStatus": null
+    },
+    {
+      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
+      "name": "MassDwell X Post - Midday",
+      "agent": "marketing_content",
+      "schedule": "15 12 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastRun": "2026-02-15T12:15:00Z",
+      "lastStatus": "ok"
     },
     {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
