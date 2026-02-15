@@ -9,7 +9,7 @@
       "role": "Master Agent / COO",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-15T21:30:49.420Z",
+      "lastSeen": "2026-02-15T22:30:27.227Z",
       "level": "lead"
     },
     {
@@ -19,7 +19,7 @@
       "role": "Lead Follow-up & CRM",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-13T22:30:03.814Z",
+      "lastSeen": "2026-02-15T22:23:48.710Z",
       "level": "specialist"
     },
     {
@@ -29,7 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-15T22:00:02.928Z",
+      "lastSeen": "2026-02-15T22:30:03.563Z",
       "level": "specialist"
     },
     {
@@ -37,9 +37,9 @@
       "name": "Factory Ops",
       "emoji": "🏭",
       "role": "MassDwell Production",
-      "status": "active",
+      "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-12T15:17:36.040Z",
+      "lastSeen": "2026-02-15T22:23:50.917Z",
       "level": "specialist"
     },
     {
@@ -49,7 +49,7 @@
       "role": "Trading & Investments",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-12T19:01:06.248Z",
+      "lastSeen": "2026-02-15T22:23:49.815Z",
       "level": "specialist"
     },
     {
@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-15T22:00:13.388Z",
+      "lastSeen": "2026-02-15T22:30:13.189Z",
       "level": "intern"
     },
     {
@@ -69,7 +69,7 @@
       "role": "Personal Life Management",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-15T17:01:29.310Z",
+      "lastSeen": "2026-02-15T22:23:50.540Z",
       "level": "intern"
     },
     {
@@ -77,9 +77,9 @@
       "name": "Codesmith",
       "emoji": "🛠️",
       "role": "Developer Agent",
-      "status": "active",
+      "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-15T21:30:29.796Z",
+      "lastSeen": "2026-02-15T22:23:49.440Z",
       "level": "specialist"
     }
   ],
