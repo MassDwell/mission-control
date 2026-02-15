@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-15T14:00:00-05:00",
-  "totalJobs": 39,
+  "exportedAt": "2026-02-15T16:00:00-05:00",
+  "totalJobs": 40,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -9,7 +9,7 @@
       "schedule": "every 15m",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T13:47:56Z",
+      "lastRun": "2026-02-15T15:47:56Z",
       "lastStatus": "ok"
     },
     {
@@ -19,7 +19,7 @@
       "schedule": "*/15 8-18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T13:45:00Z",
+      "lastRun": "2026-02-15T15:45:00Z",
       "lastStatus": "ok"
     },
     {
@@ -29,7 +29,7 @@
       "schedule": "*/15 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T13:45:15Z",
+      "lastRun": "2026-02-15T15:45:13Z",
       "lastStatus": "ok"
     },
     {
@@ -39,7 +39,7 @@
       "schedule": "every 30m",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T13:45:36Z",
+      "lastRun": "2026-02-15T15:45:36Z",
       "lastStatus": "ok"
     },
     {
@@ -49,7 +49,7 @@
       "schedule": "*/30 8-18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T13:30:13Z",
+      "lastRun": "2026-02-15T15:30:12Z",
       "lastStatus": "ok"
     },
     {
@@ -59,7 +59,7 @@
       "schedule": "*/30 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T13:30:24Z",
+      "lastRun": "2026-02-15T15:30:33Z",
       "lastStatus": "ok"
     },
     {
@@ -69,7 +69,7 @@
       "schedule": "*/30 8-18 * * *",
       "model": "sonnet",
       "enabled": true,
-      "lastRun": "2026-02-15T13:30:29Z",
+      "lastRun": "2026-02-15T15:30:37Z",
       "lastStatus": "ok"
     },
     {
@@ -79,17 +79,7 @@
       "schedule": "0 * * * *",
       "model": "n/a (systemEvent)",
       "enabled": true,
-      "lastRun": "2026-02-15T13:00:19Z",
-      "lastStatus": "ok"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "n/a (systemEvent)",
-      "enabled": true,
-      "lastRun": "2026-02-15T12:01:40Z",
+      "lastRun": "2026-02-15T15:00:20Z",
       "lastStatus": "ok"
     },
     {
@@ -130,6 +120,16 @@
       "model": "haiku",
       "enabled": true,
       "lastRun": "2026-02-15T12:01:27Z",
+      "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "n/a (systemEvent)",
+      "enabled": true,
+      "lastRun": "2026-02-15T14:00:38Z",
       "lastStatus": "ok"
     },
     {
@@ -328,6 +328,16 @@
       "agent": "main",
       "schedule": "0 10 1 * *",
       "model": "haiku",
+      "enabled": true,
+      "lastRun": null,
+      "lastStatus": null
+    },
+    {
+      "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
+      "name": "Bi-Weekly Memory Audit",
+      "agent": "main",
+      "schedule": "0 10 1,15 * *",
+      "model": "sonnet",
       "enabled": true,
       "lastRun": null,
       "lastStatus": null
