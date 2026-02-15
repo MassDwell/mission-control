@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-15T08:01:00-05:00",
-  "totalJobs": 37,
+  "exportedAt": "2026-02-15T10:00:00-05:00",
+  "totalJobs": 38,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -9,7 +9,7 @@
       "schedule": "every 15m",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T07:47:56Z",
+      "lastRun": "2026-02-15T09:47:56Z",
       "lastStatus": "ok"
     },
     {
@@ -19,7 +19,7 @@
       "schedule": "*/15 8-18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-14T18:45:00Z",
+      "lastRun": "2026-02-15T09:45:00Z",
       "lastStatus": "ok"
     },
     {
@@ -29,7 +29,7 @@
       "schedule": "*/15 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T07:45:00Z",
+      "lastRun": "2026-02-15T09:45:10Z",
       "lastStatus": "ok"
     },
     {
@@ -39,7 +39,7 @@
       "schedule": "every 30m",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T07:45:36Z",
+      "lastRun": "2026-02-15T09:45:36Z",
       "lastStatus": "ok"
     },
     {
@@ -49,7 +49,7 @@
       "schedule": "*/30 8-18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-14T18:30:09Z",
+      "lastRun": "2026-02-15T09:30:08Z",
       "lastStatus": "ok"
     },
     {
@@ -59,7 +59,7 @@
       "schedule": "*/30 * * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-15T07:30:04Z",
+      "lastRun": "2026-02-15T09:30:24Z",
       "lastStatus": "ok"
     },
     {
@@ -69,7 +69,7 @@
       "schedule": "*/30 8-18 * * *",
       "model": "sonnet",
       "enabled": true,
-      "lastRun": "2026-02-14T18:30:26Z",
+      "lastRun": "2026-02-15T09:30:30Z",
       "lastStatus": "ok"
     },
     {
@@ -79,37 +79,7 @@
       "schedule": "0 * * * *",
       "model": "n/a (systemEvent)",
       "enabled": true,
-      "lastRun": "2026-02-15T07:00:00Z",
-      "lastStatus": "ok"
-    },
-    {
-      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
-      "name": "Instagram Post - Morning",
-      "agent": "marketing_content",
-      "schedule": "20 9 * * *",
-      "model": "sonnet",
-      "enabled": true,
-      "lastRun": "2026-02-14T14:20:00Z",
-      "lastStatus": "ok"
-    },
-    {
-      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
-      "name": "MassDwell Marketing Dashboard Check",
-      "agent": "main",
-      "schedule": "25 9 * * *",
-      "model": "haiku",
-      "enabled": true,
-      "lastRun": "2026-02-14T14:25:00Z",
-      "lastStatus": "ok"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "agent": "main",
-      "schedule": "0 */2 * * *",
-      "model": "n/a (systemEvent)",
-      "enabled": true,
-      "lastRun": "2026-02-15T06:00:00Z",
+      "lastRun": "2026-02-15T09:00:26Z",
       "lastStatus": "ok"
     },
     {
@@ -119,7 +89,7 @@
       "schedule": "0 8,12,18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-14T18:01:01Z",
+      "lastRun": "2026-02-15T08:00:00Z",
       "lastStatus": "ok"
     },
     {
@@ -129,7 +99,17 @@
       "schedule": "0 8,12,18 * * *",
       "model": "haiku",
       "enabled": true,
-      "lastRun": "2026-02-14T18:01:58Z",
+      "lastRun": "2026-02-15T08:01:01Z",
+      "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agent": "main",
+      "schedule": "0 */2 * * *",
+      "model": "n/a (systemEvent)",
+      "enabled": true,
+      "lastRun": "2026-02-15T08:01:08Z",
       "lastStatus": "ok"
     },
     {
@@ -149,7 +129,7 @@
       "schedule": "0 8,13,18 * * *",
       "model": "default",
       "enabled": true,
-      "lastRun": "2026-02-14T18:02:38Z",
+      "lastRun": "2026-02-15T08:01:44Z",
       "lastStatus": "ok"
     },
     {
@@ -253,6 +233,26 @@
       "lastStatus": "ok"
     },
     {
+      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
+      "name": "Instagram Post - Morning",
+      "agent": "marketing_content",
+      "schedule": "20 9 * * *",
+      "model": "sonnet",
+      "enabled": true,
+      "lastRun": "2026-02-15T09:20:00Z",
+      "lastStatus": "ok"
+    },
+    {
+      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
+      "name": "MassDwell Marketing Dashboard Check",
+      "agent": "main",
+      "schedule": "25 9 * * *",
+      "model": "haiku",
+      "enabled": true,
+      "lastRun": "2026-02-15T09:25:00Z",
+      "lastStatus": "ok"
+    },
+    {
       "id": "db961ad6-4b76-4592-90fc-5502c0badcc6",
       "name": "Monday Morning Stop-Loss Execution",
       "agent": "main",
@@ -281,6 +281,16 @@
       "enabled": true,
       "lastRun": "2026-02-13T21:04:38Z",
       "lastStatus": "ok"
+    },
+    {
+      "id": "23b6c084-56fc-4723-98e3-6045c76ba035",
+      "name": "Reminder: ADU Futures Exchange Review",
+      "agent": "main",
+      "schedule": "one-shot: 2026-02-16T16:00:00Z",
+      "model": "n/a (systemEvent)",
+      "enabled": true,
+      "lastRun": null,
+      "lastStatus": null
     },
     {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
