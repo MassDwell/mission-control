@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-16T09:00:00.000Z",
-  "totalJobs": 54,
+  "exportedAt": "2026-02-16T11:00:00.000Z",
+  "totalJobs": 48,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -28,7 +28,7 @@
     },
     {
       "id": "70e8419d-8ca9-474a-b775-d59de639539a",
-      "name": "Kommo CRM Sync",
+      "name": "Kommo CRM Sync (30-min)",
       "agent": "main",
       "schedule": "every 30 min",
       "enabled": true,
@@ -124,7 +124,7 @@
     },
     {
       "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "name": "Kommo CRM Sync",
+      "name": "Kommo CRM Sync (3x Daily)",
       "agent": "main",
       "schedule": "0 8,13,18 * * *",
       "enabled": true,
@@ -211,20 +211,20 @@
       "model": "sonnet"
     },
     {
-      "id": "23b6c084-56fc-4723-98e3-6045c76ba035",
-      "name": "Reminder: ADU Futures Exchange Review",
-      "agent": "main",
-      "schedule": "one-time: 2026-02-16 11:00 AM",
-      "enabled": true,
-      "model": "system"
-    },
-    {
       "id": "3b3f1767-8a8b-4593-8776-7725f608b1bb",
       "name": "Personal Gmail Cleanup - 11 AM",
       "agent": "main",
       "schedule": "0 11 * * *",
       "enabled": true,
       "model": "sonnet"
+    },
+    {
+      "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
+      "name": "Reta Meal Prompt - Lunch",
+      "agent": "main",
+      "schedule": "0 11 * * *",
+      "enabled": true,
+      "model": "haiku"
     },
     {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
@@ -259,6 +259,14 @@
       "model": "sonnet"
     },
     {
+      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
+      "name": "Reta Meal Prompt - Dinner",
+      "agent": "main",
+      "schedule": "0 17 * * *",
+      "enabled": true,
+      "model": "haiku"
+    },
+    {
       "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
       "name": "MassDwell X Post - Evening",
       "agent": "marketing_content",
@@ -291,30 +299,6 @@
       "model": "sonnet"
     },
     {
-      "id": "948e44ae-07c5-4b20-b890-ea670edf534a",
-      "name": "Realtor Email Response Check",
-      "agent": "main",
-      "schedule": "one-time: 2026-02-18 09:00 AM",
-      "enabled": true,
-      "model": "system"
-    },
-    {
-      "id": "7e12d4fa-876a-4178-9251-cd9cb569fa79",
-      "name": "Reminder: Tammy Pelletier Discovery Call",
-      "agent": "main",
-      "schedule": "one-time: 2026-02-18 11:00 AM",
-      "enabled": true,
-      "model": "system"
-    },
-    {
-      "id": "cb9adfc1-ccbf-4b61-b514-846f68205669",
-      "name": "Realtor Outreach Follow-Up Check",
-      "agent": "main",
-      "schedule": "one-time: 2026-02-20 09:00 AM",
-      "enabled": true,
-      "model": "system"
-    },
-    {
       "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
       "name": "Monthly Learning Consolidation",
       "agent": "main",
@@ -329,34 +313,37 @@
       "schedule": "0 10 1,15 * *",
       "enabled": true,
       "model": "sonnet"
+    }
+  ],
+  "oneTimeReminders": [
+    {
+      "id": "23b6c084-56fc-4723-98e3-6045c76ba035",
+      "name": "Reminder: ADU Futures Exchange Review",
+      "scheduledFor": "2026-02-16 11:00 AM EST"
+    },
+    {
+      "id": "948e44ae-07c5-4b20-b890-ea670edf534a",
+      "name": "Realtor Email Response Check",
+      "scheduledFor": "2026-02-18 09:00 AM EST"
+    },
+    {
+      "id": "7e12d4fa-876a-4178-9251-cd9cb569fa79",
+      "name": "Reminder: Tammy Pelletier Discovery Call",
+      "scheduledFor": "2026-02-18 11:00 AM EST"
+    },
+    {
+      "id": "cb9adfc1-ccbf-4b61-b514-846f68205669",
+      "name": "Realtor Outreach Follow-Up Check",
+      "scheduledFor": "2026-02-20 09:00 AM EST"
     },
     {
       "id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36",
       "name": "Instagram Token Refresh Reminder",
-      "agent": "main",
-      "schedule": "one-time: 2026-04-01 10:00 AM",
-      "enabled": true,
-      "model": "haiku"
-    },
-    {
-      "id": "9ebcbd64-1ea5-4b50-9326-92ad41e38e01",
-      "name": "VRT Price Alert - Post-Earnings Entry",
-      "agent": "main",
-      "schedule": "35 9 12 2 *",
-      "enabled": true,
-      "model": "haiku"
-    },
-    {
-      "id": "6b44003c-de44-4bcf-a262-d7ae2607e32c",
-      "name": "Morning Scraper Test & Fix",
-      "agent": "main",
-      "schedule": "0 8 13 2 *",
-      "enabled": true,
-      "model": "sonnet"
+      "scheduledFor": "2026-04-01 10:00 AM EST"
     }
   ],
   "byAgent": {
-    "main": 32,
+    "main": 28,
     "sales_followup": 6,
     "marketing_content": 5,
     "admin_assistant": 2,
@@ -364,8 +351,8 @@
     "massdwell_factory_ops": 1
   },
   "byModel": {
-    "haiku": 20,
-    "sonnet": 18,
-    "system": 9
+    "haiku": 19,
+    "sonnet": 17,
+    "system": 3
   }
 }
