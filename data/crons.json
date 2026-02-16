@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-16T11:00:00.000Z",
-  "totalJobs": 48,
+  "exportedAt": "2026-02-16T13:01:00.000Z",
+  "totalJobs": 57,
   "jobs": [
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
@@ -67,6 +67,22 @@
       "model": "system"
     },
     {
+      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
+      "name": "Personal Life - Morning Scan",
+      "agent": "main",
+      "schedule": "0 7 * * *",
+      "enabled": true,
+      "model": "sonnet"
+    },
+    {
+      "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
+      "name": "Admin - Morning Operations Scan",
+      "agent": "main",
+      "schedule": "0 7 * * 1-5",
+      "enabled": true,
+      "model": "sonnet"
+    },
+    {
       "id": "7152a1c9-7bff-4704-903c-64f3b0e635eb",
       "name": "Morning Jobs Safeguard (7:30 AM)",
       "agent": "main",
@@ -76,7 +92,7 @@
     },
     {
       "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
-      "name": "Daily Competitor Intel Email",
+      "name": "Competitor Intel - Delta Only",
       "agent": "main",
       "schedule": "30 7 * * *",
       "enabled": true,
@@ -131,12 +147,20 @@
       "model": "sonnet"
     },
     {
+      "id": "6d582540-c76d-4e0f-92b6-b7c3da6ad601",
+      "name": "Marketing - Weekly Planning (Monday)",
+      "agent": "main",
+      "schedule": "0 8 * * 1",
+      "enabled": true,
+      "model": "sonnet"
+    },
+    {
       "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
       "name": "Sales Agent Heartbeat",
       "agent": "sales_followup",
       "schedule": "*/30 9-17 * * 1-5",
       "enabled": true,
-      "model": "haiku"
+      "model": "sonnet"
     },
     {
       "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
@@ -243,6 +267,14 @@
       "model": "haiku"
     },
     {
+      "id": "9b64f6e3-a62e-4539-a839-dd46589b92d2",
+      "name": "Marketing - Weekly Report (Friday)",
+      "agent": "main",
+      "schedule": "0 16 * * 5",
+      "enabled": true,
+      "model": "sonnet"
+    },
+    {
       "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
       "name": "Sales Followup - EOD Email Sync",
       "agent": "sales_followup",
@@ -267,6 +299,14 @@
       "model": "haiku"
     },
     {
+      "id": "fd060220-23e7-4031-afa5-8c169908351b",
+      "name": "Factory Ops - Weekly Report",
+      "agent": "main",
+      "schedule": "0 17 * * 5",
+      "enabled": true,
+      "model": "sonnet"
+    },
+    {
       "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
       "name": "MassDwell X Post - Evening",
       "agent": "marketing_content",
@@ -279,6 +319,14 @@
       "name": "Personal Gmail Cleanup - 6 PM",
       "agent": "main",
       "schedule": "0 18 * * *",
+      "enabled": true,
+      "model": "sonnet"
+    },
+    {
+      "id": "d167f9af-c31c-4b2a-a88a-8d6d7d1ebc98",
+      "name": "Clawson - Weekly Alignment Summary",
+      "agent": "main",
+      "schedule": "0 18 * * 0",
       "enabled": true,
       "model": "sonnet"
     },
@@ -317,6 +365,16 @@
   ],
   "oneTimeReminders": [
     {
+      "id": "b6588b94-363a-49a2-89b1-9aa982ea9b95",
+      "name": "Sales Sprint - Hour 1",
+      "scheduledFor": "2026-02-16 09:00 AM EST"
+    },
+    {
+      "id": "c7c5f504-d6c7-44fc-9ec3-08e45a519625",
+      "name": "Sales Sprint - Hour 2",
+      "scheduledFor": "2026-02-16 10:30 AM EST"
+    },
+    {
       "id": "23b6c084-56fc-4723-98e3-6045c76ba035",
       "name": "Reminder: ADU Futures Exchange Review",
       "scheduledFor": "2026-02-16 11:00 AM EST"
@@ -337,13 +395,18 @@
       "scheduledFor": "2026-02-20 09:00 AM EST"
     },
     {
+      "id": "e7827c01-9046-4688-863b-f6850a9fb576",
+      "name": "Retatrutide Week 3 Check-In",
+      "scheduledFor": "2026-02-23 09:00 AM EST"
+    },
+    {
       "id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36",
       "name": "Instagram Token Refresh Reminder",
       "scheduledFor": "2026-04-01 10:00 AM EST"
     }
   ],
   "byAgent": {
-    "main": 28,
+    "main": 37,
     "sales_followup": 6,
     "marketing_content": 5,
     "admin_assistant": 2,
@@ -351,8 +414,8 @@
     "massdwell_factory_ops": 1
   },
   "byModel": {
-    "haiku": 19,
-    "sonnet": 17,
+    "haiku": 17,
+    "sonnet": 25,
     "system": 3
   }
 }
