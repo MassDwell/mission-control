@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-17T13:01:00.000Z",
-  "totalJobs": 58,
+  "exportedAt": "2026-02-17T15:01:00.000Z",
+  "totalJobs": 55,
   "jobs": [
     {"id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0", "name": "Hourly Memory Summarizer", "schedule": "0 * * * *", "enabled": true, "sessionTarget": "main"},
     {"id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8", "name": "Mission Control Cron Export", "schedule": "0 */2 * * *", "enabled": true, "sessionTarget": "main"},
@@ -36,7 +36,6 @@
     {"id": "7625b56d-6635-4f7d-b0b1-b68851e15c83", "name": "MassDwell X Post - Midday", "schedule": "15 12 * * *", "enabled": true, "sessionTarget": "isolated"},
     {"id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97", "name": "Sarah Cold Calls - Afternoon", "schedule": "0 14 * * 1-5", "enabled": true, "sessionTarget": "isolated"},
     {"id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964", "name": "Sales Followup - EOD Email Sync", "schedule": "0 17 * * 1-5", "enabled": true, "sessionTarget": "isolated"},
-    {"id": "9e0b82cc-9857-43c1-9058-bba52b69d67b", "name": "Instagram Post - Afternoon", "schedule": "0 17 * * *", "enabled": true, "sessionTarget": "isolated"},
     {"id": "0aa76451-de48-4023-b891-97ba9d44f110", "name": "Reta Meal Prompt - Dinner", "schedule": "0 17 * * *", "enabled": true, "sessionTarget": "isolated"},
     {"id": "3255cb05-5739-4d31-a685-481e7db7fb10", "name": "MassDwell X Post - Evening", "schedule": "0 18 * * *", "enabled": true, "sessionTarget": "isolated"},
     {"id": "baa28006-de6c-4227-9ba7-f58b578823d4", "name": "Personal Gmail Cleanup - 6 PM", "schedule": "0 18 * * *", "enabled": true, "sessionTarget": "isolated"},
