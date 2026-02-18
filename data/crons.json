@@ -1,66 +1,455 @@
 {
-  "exportedAt": "2026-02-18T15:02:00.000Z",
-  "totalJobs": 60,
-  "summary": {
-    "enabled": 60,
-    "lastHourOk": 58,
-    "errors": 1
-  },
+  "lastUpdated": "2026-02-18T17:02:00Z",
+  "jobCount": 58,
   "jobs": [
-    {"id": "c0d63b29", "name": "Hourly Memory Summarizer", "schedule": "0 * * * *", "status": "ok"},
-    {"id": "036b8a6f", "name": "Mission Control Cron Export", "schedule": "0 */2 * * *", "status": "ok"},
-    {"id": "534c0bcd", "name": "Self-Healing: Stale Task Recovery", "schedule": "*/15 * * * *", "status": "ok"},
-    {"id": "03ae3f12", "name": "Mission Control Status Sync", "schedule": "*/30 * * * *", "status": "ok"},
-    {"id": "71479587", "name": "BTC Scalper (5-min)", "schedule": "*/5 * * * *", "status": "ok"},
-    {"id": "cebccb37", "name": "Intraday Position Monitor", "schedule": "*/5 9-16 * * 1-5", "status": "ok"},
-    {"id": "b5b920de", "name": "Cold Lead Reply Monitor", "schedule": "every 15 min", "status": "ok"},
-    {"id": "26004572", "name": "Automaton Growth Heartbeat", "schedule": "every 1 hour", "status": "ok"},
-    {"id": "70e8419d", "name": "Kommo CRM Sync (30min)", "schedule": "every 30 min", "status": "ok"},
-    {"id": "dfdab606", "name": "Personal Gmail Cleanup - 5 AM", "schedule": "0 5 * * *", "status": "ok"},
-    {"id": "54646cf5", "name": "Personal Life - Morning Scan", "schedule": "0 7 * * *", "status": "ok"},
-    {"id": "2be6e5b6", "name": "Admin - Morning Operations Scan", "schedule": "0 7 * * 1-5", "status": "ok"},
-    {"id": "5d91d1ce", "name": "Competitor Intel - Delta Only", "schedule": "30 7 * * *", "status": "ok"},
-    {"id": "a83a6f2a", "name": "Personal Gmail Cleanup (3x Daily)", "schedule": "0 8,12,18 * * *", "status": "ok"},
-    {"id": "d34a8dee", "name": "Marketing Agent Heartbeat", "schedule": "*/15 8-18 * * *", "status": "ok"},
-    {"id": "9147988a", "name": "Admin Assistant Heartbeat", "schedule": "*/30 8-18 * * *", "status": "ok"},
-    {"id": "a8544303", "name": "Personal Life Heartbeat", "schedule": "0 8,12,18 * * *", "status": "ok"},
-    {"id": "6d2e15b1", "name": "Codesmith Heartbeat", "schedule": "*/30 8-18 * * *", "status": "ok"},
-    {"id": "77833d5e", "name": "Kommo CRM Sync (3x)", "schedule": "0 8,13,18 * * *", "status": "ok"},
-    {"id": "10f65eca", "name": "Sales Agent Heartbeat", "schedule": "*/30 9-17 * * 1-5", "status": "ok"},
-    {"id": "8ba23d99", "name": "Factory Ops Heartbeat", "schedule": "0 9,13,17 * * 1-5", "status": "ok"},
-    {"id": "a5087bf0", "name": "Alpaca Paper Trader", "schedule": "*/10 9-16 * * 1-5", "status": "ok"},
-    {"id": "923db090", "name": "ADU Building Dept Outreach", "schedule": "0 9 * * *", "status": "ok"},
-    {"id": "00d523b0", "name": "Instagram Content Reminder", "schedule": "0 9 * * 1-6", "status": "ok"},
-    {"id": "35de63e6", "name": "Sales Followup - Morning Email Sync", "schedule": "10 9 * * 1-5", "status": "ok"},
-    {"id": "86f9c475", "name": "Instagram Post - Morning", "schedule": "20 9 * * *", "status": "ok"},
-    {"id": "80458079", "name": "Marketing Dashboard Check", "schedule": "25 9 * * *", "status": "ok"},
-    {"id": "1b21f09e", "name": "Market Open Trading Check", "schedule": "30 9 * * 1-5", "status": "ok"},
-    {"id": "9fe417e4", "name": "Execute CSCO Stop Loss", "schedule": "30 9 * * TUE-FRI", "status": "ok"},
-    {"id": "cab97889", "name": "Daily Lead Email Outreach", "schedule": "0 10 * * 1-5", "status": "running"},
-    {"id": "5779c154", "name": "PLTR Lotto Watch", "schedule": "0 10,12,14,15 * * 1-5", "status": "running"},
-    {"id": "4f303b01", "name": "Bounce Monitor", "schedule": "0 11,16 * * 1-5", "status": "ok"},
-    {"id": "3b3f1767", "name": "Personal Gmail Cleanup - 11 AM", "schedule": "0 11 * * *", "status": "ok"},
-    {"id": "7e12d4fa", "name": "Reminder: Tammy Pelletier Call", "schedule": "one-shot: 2026-02-18T16:00Z", "status": "pending"},
-    {"id": "9cb5cee0", "name": "Reta Meal Prompt - Lunch", "schedule": "0 11 * * *", "status": "ok"},
-    {"id": "7625b56d", "name": "MassDwell X Post - Midday", "schedule": "15 12 * * *", "status": "ok"},
-    {"id": "1d6d3730", "name": "Sarah Cold Calls", "schedule": "0 14 * * 1-5", "status": "ok"},
-    {"id": "6f8a55d5", "name": "Sales Followup - EOD Email Sync", "schedule": "0 17 * * 1-5", "status": "ok"},
-    {"id": "0aa76451", "name": "Reta Meal Prompt - Dinner", "schedule": "0 17 * * *", "status": "ok"},
-    {"id": "3255cb05", "name": "MassDwell X Post - Evening", "schedule": "0 18 * * *", "status": "error", "error": "timed out"},
-    {"id": "baa28006", "name": "Personal Gmail Cleanup - 6 PM", "schedule": "0 18 * * *", "status": "ok"},
-    {"id": "dc6a1ba8", "name": "Nightly Learning - Rotating", "schedule": "0 21 * * *", "status": "ok"},
-    {"id": "0da75b0b", "name": "BTC Scalper Daily Summary", "schedule": "0 22 * * *", "status": "ok"},
-    {"id": "19a30526", "name": "Follow-up: Paige Lyons", "schedule": "one-shot: 2026-02-19T14:00Z", "status": "pending"},
-    {"id": "cb9adfc1", "name": "Realtor Outreach Follow-Up", "schedule": "one-shot: 2026-02-20T14:00Z", "status": "pending"},
-    {"id": "ed91660a", "name": "iMessage Setup Reminder", "schedule": "one-shot: 2026-02-21T14:00Z", "status": "pending"},
-    {"id": "9b64f6e3", "name": "Marketing - Weekly Report", "schedule": "0 16 * * 5", "status": "pending"},
-    {"id": "fd060220", "name": "Factory Ops - Weekly Report", "schedule": "0 17 * * 5", "status": "pending"},
-    {"id": "ab8660cc", "name": "MassDwell Knowledge Refresh", "schedule": "0 6 * * 0", "status": "pending"},
-    {"id": "d167f9af", "name": "Clawson - Weekly Alignment", "schedule": "0 18 * * 0", "status": "pending"},
-    {"id": "6d582540", "name": "Marketing - Weekly Planning", "schedule": "0 8 * * 1", "status": "ok"},
-    {"id": "e7827c01", "name": "Retatrutide Week 3 Check-In", "schedule": "one-shot: 2026-02-23T14:00Z", "status": "pending"},
-    {"id": "0d8672c3", "name": "Bi-Weekly Memory Audit", "schedule": "0 10 1,15 * *", "status": "pending"},
-    {"id": "e756c9bc", "name": "Monthly Learning Consolidation", "schedule": "0 10 1 * *", "status": "pending"},
-    {"id": "e959e7b5", "name": "Instagram Token Refresh", "schedule": "one-shot: 2026-04-01T14:00Z", "status": "pending"}
+    {
+      "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
+      "name": "Personal Gmail Cleanup (3x Daily)",
+      "agentId": "admin_assistant",
+      "schedule": "0 8,12,18 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
+      "name": "Sales Agent Heartbeat",
+      "agentId": "sales_followup",
+      "schedule": "*/30 9-17 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
+      "name": "Marketing Agent Heartbeat",
+      "agentId": "marketing_content",
+      "schedule": "*/15 8-18 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "name": "Admin Assistant Heartbeat",
+      "agentId": "admin_assistant",
+      "schedule": "*/30 8-18 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "name": "Personal Life Heartbeat",
+      "agentId": "personal_life_cos",
+      "schedule": "0 8,12,18 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "name": "Hourly Memory Summarizer",
+      "agentId": "main",
+      "schedule": "0 * * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agentId": "main",
+      "schedule": "0 */2 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
+      "name": "Self-Healing: Stale Task Recovery",
+      "agentId": "main",
+      "schedule": "*/15 * * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "name": "Mission Control Status Sync",
+      "agentId": "main",
+      "schedule": "*/30 * * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
+      "name": "Codesmith Heartbeat",
+      "agentId": "main",
+      "schedule": "*/30 8-18 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "a5087bf0-afe6-4e82-9d0b-cdc256fe6ef8",
+      "name": "Alpaca Paper Trader (Autonomous)",
+      "agentId": "main",
+      "schedule": "*/10 9-16 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "cebccb37-baa7-41ec-8b77-279b361606b8",
+      "name": "Intraday Position Monitor (5-min)",
+      "agentId": "main",
+      "schedule": "*/5 9-16 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "71479587-9e25-474b-bce2-f929140565f9",
+      "name": "BTC Scalper (5-min)",
+      "agentId": "main",
+      "schedule": "*/5 * * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "5779c154-6d76-4012-8761-429d06a1729c",
+      "name": "PLTR Lotto Watch",
+      "agentId": "main",
+      "schedule": "0 10,12,14,15 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "b5b920de-0696-442e-b98c-faeb568f6800",
+      "name": "Cold Lead Reply Monitor",
+      "agentId": "sales_followup",
+      "schedule": "every 15m",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
+      "name": "Automaton Growth - Heartbeat",
+      "agentId": "main",
+      "schedule": "every 1h",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
+      "name": "MassDwell X Post - Midday",
+      "agentId": "marketing_content",
+      "schedule": "15 12 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "70e8419d-8ca9-474a-b775-d59de639539a",
+      "name": "Kommo CRM Sync",
+      "agentId": "main",
+      "schedule": "every 30m",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "name": "Factory Ops Heartbeat",
+      "agentId": "massdwell_factory_ops",
+      "schedule": "0 9,13,17 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "name": "Kommo CRM Sync",
+      "agentId": "main",
+      "schedule": "0 8,13,18 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
+      "name": "Sarah Cold Calls - Afternoon",
+      "agentId": "sales_followup",
+      "schedule": "0 14 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
+      "name": "Bounce Monitor - Auto Close Lost",
+      "agentId": "main",
+      "schedule": "0 11,16 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
+      "name": "Sales Followup - EOD Email Sync",
+      "agentId": "sales_followup",
+      "schedule": "0 17 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
+      "name": "Reta Meal Prompt - Dinner",
+      "agentId": "main",
+      "schedule": "0 17 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
+      "name": "MassDwell X Post - Evening",
+      "agentId": "marketing_content",
+      "schedule": "0 18 * * *",
+      "enabled": true,
+      "lastStatus": "error",
+      "lastError": "timeout"
+    },
+    {
+      "id": "baa28006-de6c-4227-9ba7-f58b578823d4",
+      "name": "Personal Gmail Cleanup - 6 PM",
+      "agentId": "main",
+      "schedule": "0 18 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
+      "name": "Nightly Learning - Rotating Agent",
+      "agentId": "main",
+      "schedule": "0 21 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "0da75b0b-3a5c-46a6-bdc1-8329286ebfd4",
+      "name": "BTC Scalper Daily Summary",
+      "agentId": "main",
+      "schedule": "0 22 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "dfdab606-d4dc-4d69-9df3-aef28c2876a7",
+      "name": "Personal Gmail Cleanup - 5 AM",
+      "agentId": "main",
+      "schedule": "0 5 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
+      "name": "Personal Life - Morning Scan",
+      "agentId": "main",
+      "schedule": "0 7 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
+      "name": "Admin - Morning Operations Scan",
+      "agentId": "main",
+      "schedule": "0 7 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
+      "name": "Competitor Intel - Delta Only",
+      "agentId": "main",
+      "schedule": "30 7 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "19a30526-0f17-48a2-a6b5-8ec9fce15336",
+      "name": "Follow-up: Paige Lyons Offer Status",
+      "agentId": "main",
+      "schedule": "at 2026-02-19T14:00:00Z",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "923db090-7acd-4131-adae-cfd7759aa47c",
+      "name": "ADU Building Dept Outreach - Daily Batch",
+      "agentId": "main",
+      "schedule": "0 9 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
+      "name": "Instagram Content Reminder",
+      "agentId": "main",
+      "schedule": "0 9 * * 1-6",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
+      "name": "Sales Followup - Morning Email Sync",
+      "agentId": "sales_followup",
+      "schedule": "10 9 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
+      "name": "Instagram Post - Morning",
+      "agentId": "marketing_content",
+      "schedule": "20 9 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
+      "name": "MassDwell Marketing Dashboard Check",
+      "agentId": "main",
+      "schedule": "25 9 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "1b21f09e-37c2-4bc0-aa2d-bdbf7968019e",
+      "name": "Market Open Trading Check",
+      "agentId": "main",
+      "schedule": "30 9 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "9fe417e4-0083-44c2-ad96-134d9294f765",
+      "name": "Execute CSCO Stop Loss at Market Open",
+      "agentId": "main",
+      "schedule": "30 09 * * TUE-FRI",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
+      "name": "Daily Lead Email Outreach",
+      "agentId": "main",
+      "schedule": "0 10 * * 1-5",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "3b3f1767-8a8b-4593-8776-7725f608b1bb",
+      "name": "Personal Gmail Cleanup - 11 AM",
+      "agentId": "main",
+      "schedule": "0 11 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
+      "name": "Reta Meal Prompt - Lunch",
+      "agentId": "main",
+      "schedule": "0 11 * * *",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "cb9adfc1-ccbf-4b61-b514-846f68205669",
+      "name": "Realtor Outreach Follow-Up Check",
+      "agentId": "main",
+      "schedule": "at 2026-02-20T14:00:00Z",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "9b64f6e3-a62e-4539-a839-dd46589b92d2",
+      "name": "Marketing - Weekly Report (Friday)",
+      "agentId": "main",
+      "schedule": "0 16 * * 5",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "fd060220-23e7-4031-afa5-8c169908351b",
+      "name": "Factory Ops - Weekly Report",
+      "agentId": "main",
+      "schedule": "0 17 * * 5",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "ed91660a-ebe9-49cf-94d5-a84959171045",
+      "name": "iMessage Setup Reminder",
+      "agentId": "main",
+      "schedule": "at 2026-02-21T14:00:00Z",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "ab8660cc-2f59-4b6e-8cfa-c2b4a030c188",
+      "name": "MassDwell Knowledge Refresh (Weekly)",
+      "agentId": "main",
+      "schedule": "0 6 * * 0",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "d167f9af-c31c-4b2a-a88a-8d6d7d1ebc98",
+      "name": "Clawson - Weekly Alignment Summary",
+      "agentId": "main",
+      "schedule": "0 18 * * 0",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "6d582540-c76d-4e0f-92b6-b7c3da6ad601",
+      "name": "Marketing - Weekly Planning (Monday)",
+      "agentId": "main",
+      "schedule": "0 8 * * 1",
+      "enabled": true,
+      "lastStatus": "ok"
+    },
+    {
+      "id": "e7827c01-9046-4688-863b-f6850a9fb576",
+      "name": "Retatrutide Week 3 Check-In",
+      "agentId": "main",
+      "schedule": "at 2026-02-23T14:00:00Z",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
+      "name": "Monthly Learning Consolidation",
+      "agentId": "main",
+      "schedule": "0 10 1 * *",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
+      "name": "Bi-Weekly Memory Audit",
+      "agentId": "main",
+      "schedule": "0 10 1,15 * *",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36",
+      "name": "Instagram Token Refresh Reminder",
+      "agentId": "main",
+      "schedule": "at 2026-04-01T14:00:00Z",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "9ebcbd64-1ea5-4b50-9326-92ad41e38e01",
+      "name": "VRT Price Alert - Post-Earnings Entry",
+      "agentId": "main",
+      "schedule": "35 9 12 2 *",
+      "enabled": true,
+      "lastStatus": "pending"
+    },
+    {
+      "id": "6b44003c-de44-4bcf-a262-d7ae2607e32c",
+      "name": "Morning Scraper Test & Fix",
+      "agentId": "main",
+      "schedule": "0 8 13 2 *",
+      "enabled": true,
+      "lastStatus": "ok"
+    }
   ]
 }
