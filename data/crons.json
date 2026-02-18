@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-18T01:00:00.000Z",
+  "exportedAt": "2026-02-18T03:00:00.000Z",
   "totalJobs": 62,
   "jobs": [
     {"id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0", "name": "Hourly Memory Summarizer", "agent": "main", "schedule": "0 * * * *", "enabled": true, "lastStatus": "ok"},
@@ -7,10 +7,9 @@
     {"id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8", "name": "Self-Healing: Stale Task Recovery", "agent": "main", "schedule": "*/15 * * * *", "enabled": true, "lastStatus": "ok"},
     {"id": "03ae3f12-6724-4437-bfde-b57d2d4362b5", "name": "Mission Control Status Sync", "agent": "main", "schedule": "*/30 * * * *", "enabled": true, "lastStatus": "ok"},
     {"id": "71479587-9e25-474b-bce2-f929140565f9", "name": "BTC Scalper (5-min)", "agent": "main", "schedule": "*/5 * * * *", "enabled": true, "lastStatus": "ok"},
+    {"id": "0da75b0b-3a5c-46a6-bdc1-8329286ebfd4", "name": "BTC Scalper Daily Summary", "agent": "main", "schedule": "0 22 * * *", "enabled": true, "lastStatus": "ok"},
     {"id": "b5b920de-0696-442e-b98c-faeb568f6800", "name": "Cold Lead Reply Monitor", "agent": "sales_followup", "schedule": "every 15m", "enabled": true, "lastStatus": "ok"},
     {"id": "70e8419d-8ca9-474a-b775-d59de639539a", "name": "Kommo CRM Sync", "agent": "main", "schedule": "every 30m", "enabled": true, "lastStatus": "ok"},
-    {"id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b", "name": "Nightly Learning - Rotating Agent", "agent": "main", "schedule": "0 21 * * *", "enabled": true, "lastStatus": "ok"},
-    {"id": "0da75b0b-3a5c-46a6-bdc1-8329286ebfd4", "name": "BTC Scalper Daily Summary", "agent": "main", "schedule": "0 22 * * *", "enabled": true, "lastStatus": "ok"},
     {"id": "dfdab606-d4dc-4d69-9df3-aef28c2876a7", "name": "Personal Gmail Cleanup - 5 AM", "agent": "main", "schedule": "0 5 * * *", "enabled": true, "lastStatus": "ok"},
     {"id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67", "name": "Personal Life - Morning Scan", "agent": "main", "schedule": "0 7 * * *", "enabled": true, "lastStatus": "ok"},
     {"id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626", "name": "Admin - Morning Operations Scan", "agent": "main", "schedule": "0 7 * * 1-5", "enabled": true, "lastStatus": "ok"},
@@ -47,6 +46,7 @@
     {"id": "0aa76451-de48-4023-b891-97ba9d44f110", "name": "Reta Meal Prompt - Dinner", "agent": "main", "schedule": "0 17 * * *", "enabled": true, "lastStatus": "ok"},
     {"id": "3255cb05-5739-4d31-a685-481e7db7fb10", "name": "MassDwell X Post - Evening", "agent": "marketing_content", "schedule": "0 18 * * *", "enabled": true, "lastStatus": "error"},
     {"id": "baa28006-de6c-4227-9ba7-f58b578823d4", "name": "Personal Gmail Cleanup - 6 PM", "agent": "main", "schedule": "0 18 * * *", "enabled": true, "lastStatus": "ok"},
+    {"id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b", "name": "Nightly Learning - Rotating Agent", "agent": "main", "schedule": "0 21 * * *", "enabled": true, "lastStatus": "ok"},
     {"id": "19a30526-0f17-48a2-a6b5-8ec9fce15336", "name": "Follow-up: Paige Lyons Offer Status", "agent": "main", "schedule": "at 2026-02-19T14:00:00Z", "enabled": true, "lastStatus": "pending"},
     {"id": "cb9adfc1-ccbf-4b61-b514-846f68205669", "name": "Realtor Outreach Follow-Up Check", "agent": "main", "schedule": "at 2026-02-20T14:00:00Z", "enabled": true, "lastStatus": "pending"},
     {"id": "9b64f6e3-a62e-4539-a839-dd46589b92d2", "name": "Marketing - Weekly Report (Friday)", "agent": "main", "schedule": "0 16 * * 5", "enabled": true, "lastStatus": "pending"},
