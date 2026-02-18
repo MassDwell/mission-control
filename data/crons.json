@@ -1,6 +1,6 @@
 {
-  "exportedAt": "2026-02-18T09:00:00.000Z",
-  "totalJobs": 56,
+  "exportedAt": "2026-02-18T11:00:00.000Z",
+  "totalJobs": 57,
   "jobs": [
     {
       "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
@@ -210,6 +210,14 @@
       "lastStatus": "ok"
     },
     {
+      "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
+      "name": "Instagram Content Reminder",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "0 9 * * 1-6 (Mon-Sat 9 AM)",
+      "sessionTarget": "isolated"
+    },
+    {
       "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
       "name": "Sales Followup - Morning Email Sync",
       "agentId": "sales_followup",
@@ -378,7 +386,8 @@
       "enabled": true,
       "schedule": "0 18 * * * (daily 6 PM)",
       "sessionTarget": "isolated",
-      "lastStatus": "error"
+      "lastStatus": "error",
+      "lastError": "cron: job execution timed out"
     },
     {
       "id": "baa28006-de6c-4227-9ba7-f58b578823d4",
@@ -484,7 +493,7 @@
       "sessionTarget": "isolated"
     },
     {
-      "id": "6b44003c-de44-4bcf-a262-d7ae2607e32c",
+      "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
       "name": "Monthly Learning Consolidation",
       "agentId": "main",
       "enabled": true,
