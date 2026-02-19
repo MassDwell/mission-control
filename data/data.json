@@ -29,7 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-19T22:30:25.431Z",
+      "lastSeen": "2026-02-19T23:01:23.300Z",
       "level": "specialist"
     },
     {
@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-19T22:30:30.910Z",
+      "lastSeen": "2026-02-19T23:01:29.667Z",
       "level": "intern"
     },
     {
@@ -69,7 +69,7 @@
       "role": "Personal Life Management",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-19T17:00:39.939Z",
+      "lastSeen": "2026-02-19T23:01:35.432Z",
       "level": "intern"
     },
     {
@@ -79,7 +79,7 @@
       "role": "Developer Agent",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-19T22:02:13.526Z",
+      "lastSeen": "2026-02-19T22:30:49.393Z",
       "level": "specialist"
     }
   ],
