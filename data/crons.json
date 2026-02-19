@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-19T05:04:00.000Z",
+  "exportedAt": "2026-02-19T07:04:00.000Z",
   "totalJobs": 59,
   "jobs": [
     {"id": "71479587-9e25-474b-bce2-f929140565f9", "name": "BTC Scalper (5-min)", "agentId": "main", "schedule": "*/5 * * * *", "enabled": true, "lastStatus": "ok"},
@@ -61,13 +61,12 @@
     {"id": "6b44003c-de44-4bcf-a262-d7ae2607e32c", "name": "Morning Scraper Test & Fix", "agentId": "main", "schedule": "0 8 13 2 *", "enabled": true, "lastStatus": "ok"}
   ],
   "healthSummary": {
-    "ok": 54,
+    "ok": 50,
     "error": 2,
-    "pending": 12,
-    "changes": [
-      "NEW: Atlantic Laser QB→Pipedrive Sync (6 AM daily)",
-      "FIXED: Automaton Growth - now OK (was error)", 
-      "Total jobs: 58→59"
+    "pending": 15,
+    "errorJobs": [
+      "Bounce Monitor - Auto Close Lost (ERR_MODULE_NOT_FOUND)",
+      "Reta Meal Prompt - Dinner (ERR_MODULE_NOT_FOUND)"
     ]
   }
 }
