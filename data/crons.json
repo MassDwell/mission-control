@@ -1,12 +1,74 @@
 {
   "jobs": [
     {
+      "id": "a5087bf0-afe6-4e82-9d0b-cdc256fe6ef8",
+      "agentId": "main",
+      "name": "Alpaca Paper Trader (Autonomous)",
+      "enabled": true,
+      "createdAtMs": 1770924114844,
+      "updatedAtMs": 1771513292471,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/10 9-16 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "[AUTONOMOUS PAPER TRADING]\n\nYou have FULL AUTONOMY to trade the Alpaca paper account.\n\n1. Run: node ~/.openclaw/workspace/trading-alpaca/autonomous-trader.js\n2. Check positions and P/L\n3. If any position hits -8% stop: SELL IT\n4. If any position hits +15%: TAKE PROFITS (sell half)\n5. If you see a high-conviction opportunity: BUY IT\n6. Use Alpaca credentials in credentials/alpaca/paper-trading.json\n\nBe aggressive. This is paper money. Learn what works.\n\nReport only if you made a trade or have an important alert. Otherwise HEARTBEAT_OK.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771513800000,
+        "lastRunAtMs": 1771513284481,
+        "lastStatus": "ok",
+        "lastDurationMs": 7990,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "cebccb37-baa7-41ec-8b77-279b361606b8",
+      "agentId": "main",
+      "name": "Intraday Position Monitor (5-min)",
+      "enabled": true,
+      "createdAtMs": 1770991458945,
+      "updatedAtMs": 1771513523026,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/5 9-16 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "[INTRADAY MONITOR - 5-min check]\n\nRun enhanced position monitor:\nnode ~/.openclaw/.openclaw/workspace/trading/intraday-monitor.js\n\nThis monitors active positions for:\n• +5% profit alerts\n• +10% breakout alerts  \n• -3% stop warnings\n• Trailing stop updates\n\nOnly report if STOP or BREAKOUT alerts are generated. Otherwise HEARTBEAT_OK.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771513800000,
+        "lastRunAtMs": 1771513518630,
+        "lastStatus": "ok",
+        "lastDurationMs": 4396,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "71479587-9e25-474b-bce2-f929140565f9",
       "agentId": "main",
       "name": "BTC Scalper (5-min)",
       "enabled": true,
       "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771506185375,
+      "updatedAtMs": 1771513528912,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 * * * *",
@@ -24,12 +86,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771506300000,
-        "lastRunAtMs": 1771506180362,
+        "nextRunAtMs": 1771513800000,
+        "lastRunAtMs": 1771513523026,
         "lastStatus": "ok",
-        "lastDurationMs": 5013,
-        "consecutiveErrors": 0,
-        "runningAtMs": 1771506300023
+        "lastDurationMs": 5886,
+        "consecutiveErrors": 0
       }
     },
     {
@@ -39,7 +100,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771503002742,
+      "updatedAtMs": 1771510326798,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -58,11 +119,11 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771506476834,
-        "lastRunAtMs": 1771502876855,
+        "nextRunAtMs": 1771513926798,
+        "lastRunAtMs": 1771510198212,
         "lastStatus": "error",
-        "lastDurationMs": 125887,
-        "consecutiveErrors": 4,
+        "lastDurationMs": 128586,
+        "consecutiveErrors": 6,
         "lastError": "cron announce delivery failed"
       }
     },
@@ -72,7 +133,7 @@
       "name": "Marketing Agent Heartbeat",
       "enabled": true,
       "createdAtMs": 1770408787882,
-      "updatedAtMs": 1771506024500,
+      "updatedAtMs": 1771513246735,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 8-18 * * *",
@@ -90,10 +151,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771506900000,
-        "lastRunAtMs": 1771506000025,
+        "nextRunAtMs": 1771514100000,
+        "lastRunAtMs": 1771513241854,
         "lastStatus": "ok",
-        "lastDurationMs": 24475,
+        "lastDurationMs": 4881,
         "consecutiveErrors": 0
       }
     },
@@ -103,7 +164,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771506114386,
+      "updatedAtMs": 1771513258994,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -121,10 +182,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771506900000,
-        "lastRunAtMs": 1771506106684,
+        "nextRunAtMs": 1771514100000,
+        "lastRunAtMs": 1771513254212,
         "lastStatus": "ok",
-        "lastDurationMs": 7702,
+        "lastDurationMs": 4782,
         "consecutiveErrors": 0
       }
     },
@@ -133,7 +194,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771506254971,
+      "updatedAtMs": 1771513518630,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -147,108 +208,15 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771507076157,
-        "lastRunAtMs": 1771506252080,
+        "nextRunAtMs": 1771514276157,
+        "lastRunAtMs": 1771513516679,
         "lastStatus": "ok",
-        "lastDurationMs": 2891,
+        "lastDurationMs": 1951,
         "consecutiveErrors": 0
       },
       "enabled": true,
       "delivery": {
         "mode": "none"
-      }
-    },
-    {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "agentId": "admin_assistant",
-      "name": "Admin Assistant Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770651479323,
-      "updatedAtMs": 1771506065329,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin admin_assistant\n1. Read agents/admin_assistant/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions admin_assistant\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota admin_assistant\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks admin_assistant\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute it\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Task title\" --agent admin_assistant\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771507800000,
-        "lastRunAtMs": 1771506024500,
-        "lastStatus": "ok",
-        "lastDurationMs": 40829,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "agentId": "main",
-      "name": "Mission Control Status Sync",
-      "enabled": true,
-      "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771506119846,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Push Mission Control data.json to GitHub for dashboard sync.\n\nRun:\ncd /Users/openclaw/.openclaw/workspace/mission-control && git add data/data.json && git diff --cached --quiet || (git commit -m \"Auto-sync agent statuses\" && git push origin main)\n\nReply HEARTBEAT_OK when done.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771507800000,
-        "lastRunAtMs": 1771506114386,
-        "lastStatus": "ok",
-        "lastDurationMs": 5460,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "agentId": "main",
-      "name": "Codesmith Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770896303696,
-      "updatedAtMs": 1771506145132,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin codesmith active\n1. Read agents/codesmith/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json for @codesmith\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions codesmith\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota codesmith\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks codesmith\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute the development work\n   - Test it works\n   - Git commit if code changed\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Dev: [description]\" --agent codesmith\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771507800000,
-        "lastRunAtMs": 1771506119846,
-        "lastStatus": "ok",
-        "lastDurationMs": 25286,
-        "consecutiveErrors": 0
       }
     },
     {
@@ -257,7 +225,7 @@
       "name": "Sales Agent Heartbeat",
       "enabled": true,
       "createdAtMs": 1770408787872,
-      "updatedAtMs": 1771453849058,
+      "updatedAtMs": 1771513241854,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 9-17 * * 1-5",
@@ -275,30 +243,30 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771509600000,
-        "lastRunAtMs": 1771453800024,
+        "nextRunAtMs": 1771515000000,
+        "lastRunAtMs": 1771513200028,
         "lastStatus": "ok",
-        "lastDurationMs": 49034,
+        "lastDurationMs": 41826,
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "agentId": "massdwell_factory_ops",
-      "name": "Factory Ops Heartbeat",
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "agentId": "admin_assistant",
+      "name": "Admin Assistant Heartbeat",
       "enabled": true,
-      "createdAtMs": 1770651492744,
-      "updatedAtMs": 1771452208478,
+      "createdAtMs": 1770651479323,
+      "updatedAtMs": 1771513254212,
       "schedule": {
         "kind": "cron",
-        "expr": "0 9,13,17 * * 1-5",
+        "expr": "*/30 8-18 * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
       "wakeMode": "next-heartbeat",
       "payload": {
         "kind": "agentTurn",
-        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin massdwell_factory_ops\n1. Read agents/massdwell_factory_ops/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions massdwell_factory_ops\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota massdwell_factory_ops\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks massdwell_factory_ops\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute it\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Task title\" --agent massdwell_factory_ops\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
+        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin admin_assistant\n1. Read agents/admin_assistant/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions admin_assistant\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota admin_assistant\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks admin_assistant\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute it\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Task title\" --agent admin_assistant\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
         "model": "anthropic/claude-haiku-4-5",
         "timeoutSeconds": 300
       },
@@ -306,61 +274,30 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771509600000,
-        "lastRunAtMs": 1771452186651,
+        "nextRunAtMs": 1771515000000,
+        "lastRunAtMs": 1771513246735,
         "lastStatus": "ok",
-        "lastDurationMs": 21827,
+        "lastDurationMs": 7477,
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "a5087bf0-afe6-4e82-9d0b-cdc256fe6ef8",
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
       "agentId": "main",
-      "name": "Alpaca Paper Trader (Autonomous)",
+      "name": "Mission Control Status Sync",
       "enabled": true,
-      "createdAtMs": 1770924114844,
-      "updatedAtMs": 1771451441055,
+      "createdAtMs": 1770740199525,
+      "updatedAtMs": 1771513263566,
       "schedule": {
         "kind": "cron",
-        "expr": "*/10 9-16 * * 1-5",
+        "expr": "*/30 * * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
-      "wakeMode": "now",
+      "wakeMode": "next-heartbeat",
       "payload": {
         "kind": "agentTurn",
-        "message": "[AUTONOMOUS PAPER TRADING]\n\nYou have FULL AUTONOMY to trade the Alpaca paper account.\n\n1. Run: node ~/.openclaw/workspace/trading-alpaca/autonomous-trader.js\n2. Check positions and P/L\n3. If any position hits -8% stop: SELL IT\n4. If any position hits +15%: TAKE PROFITS (sell half)\n5. If you see a high-conviction opportunity: BUY IT\n6. Use Alpaca credentials in credentials/alpaca/paper-trading.json\n\nBe aggressive. This is paper money. Learn what works.\n\nReport only if you made a trade or have an important alert. Otherwise HEARTBEAT_OK.",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771509600000,
-        "lastRunAtMs": 1771451400024,
-        "lastStatus": "ok",
-        "lastDurationMs": 41031,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "cebccb37-baa7-41ec-8b77-279b361606b8",
-      "agentId": "main",
-      "name": "Intraday Position Monitor (5-min)",
-      "enabled": true,
-      "createdAtMs": 1770991458945,
-      "updatedAtMs": 1771451707407,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/5 9-16 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "[INTRADAY MONITOR - 5-min check]\n\nRun enhanced position monitor:\nnode ~/.openclaw/.openclaw/workspace/trading/intraday-monitor.js\n\nThis monitors active positions for:\n• +5% profit alerts\n• +10% breakout alerts  \n• -3% stop warnings\n• Trailing stop updates\n\nOnly report if STOP or BREAKOUT alerts are generated. Otherwise HEARTBEAT_OK.",
+        "message": "Push Mission Control data.json to GitHub for dashboard sync.\n\nRun:\ncd /Users/openclaw/.openclaw/workspace/mission-control && git add data/data.json && git diff --cached --quiet || (git commit -m \"Auto-sync agent statuses\" && git push origin main)\n\nReply HEARTBEAT_OK when done.",
         "model": "anthropic/claude-haiku-4-5",
         "timeoutSeconds": 60
       },
@@ -368,174 +305,30 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771509600000,
-        "lastRunAtMs": 1771451700022,
+        "nextRunAtMs": 1771515000000,
+        "lastRunAtMs": 1771513258994,
         "lastStatus": "ok",
-        "lastDurationMs": 7385,
+        "lastDurationMs": 4572,
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "19a30526-0f17-48a2-a6b5-8ec9fce15336",
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
       "agentId": "main",
-      "name": "Follow-up: Paige Lyons Offer Status",
+      "name": "Codesmith Heartbeat",
       "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1771251150497,
-      "updatedAtMs": 1771251150497,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-19T14:00:00.000Z"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "📋 FOLLOW-UP: Paige Lyons\n\nOffer went in Feb 16 on 233 Central St, Foxboro.\n\nCheck status:\n• Did they get the house?\n• If yes → schedule next steps (site visit, contract)\n• If no → stay in touch for next property\n\nEither way, they're using MassDwell for the ADU."
-      },
-      "state": {
-        "nextRunAtMs": 1771509600000
-      }
-    },
-    {
-      "id": "923db090-7acd-4131-adae-cfd7759aa47c",
-      "agentId": "main",
-      "name": "ADU Building Dept Outreach - Daily Batch",
-      "enabled": true,
-      "createdAtMs": 1771302674959,
-      "updatedAtMs": 1771423557226,
+      "createdAtMs": 1770896303696,
+      "updatedAtMs": 1771513284481,
       "schedule": {
         "kind": "cron",
-        "expr": "0 9 * * *",
+        "expr": "*/30 8-18 * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Send the next batch of 20 building department outreach emails for the ADU Permit Navigator. Run: cd ~/.openclaw/workspace/adu-permit-navigator && node scripts/send-building-dept-outreach.js --batch=20. Report how many sent, how many bounced, and how many remaining."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771509600000,
-        "lastRunAtMs": 1771423488459,
-        "lastStatus": "ok",
-        "lastDurationMs": 68767,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
-      "agentId": "main",
-      "name": "Instagram Content Reminder",
-      "enabled": true,
-      "notify": true,
-      "createdAtMs": 1771407119642,
-      "updatedAtMs": 1771423581529,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * 1-6",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Send Steve the daily Instagram content reminder. Read agents/marketing/data/instagram-content-calendar-week1.md and tell him what content is scheduled for TODAY. Keep it short — just the content type, topic, and a reminder of the hook/CTA. If it's Sunday, remind him to batch content for next week.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 120
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771509600000,
-        "lastRunAtMs": 1771423557226,
-        "lastStatus": "ok",
-        "lastDurationMs": 24303,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771506254972,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1771509632114,
-        "lastRunAtMs": 1771506254971,
-        "lastStatus": "ok",
-        "lastDurationMs": 1,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
-      "agentId": "sales_followup",
-      "name": "Sales Followup - Morning Email Sync",
-      "createdAtMs": 1770329569592,
-      "updatedAtMs": 1771423934334,
-      "schedule": {
-        "kind": "cron",
-        "expr": "10 9 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "[TIME: 9:10 AM EST]\n\nMorning email check for sales@massdwell.com.\n\nFIRST: session_status, read agents/sales_followup/SOUL.md, agents/sales_followup/MEMORY.md.\n\nTHEN: Run gog gmail list --unread --limit 30 --account sales@massdwell.com\n\nFor each lead-related email:\n1. Match to CRM lead if possible\n2. Add note to CRM with email summary\n3. Flag hot leads for the team\n\nTHEN: Email morning summary to the team:\ngog gmail send --to \"steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com\" --subject \"☀️ MassDwell Morning Sales Update - [Date]\" --body \"[summary of overnight activity, hot leads, items needing attention]\" --account sales@massdwell.com\n\nWrite findings to MEMORY.md.",
-        "timeoutSeconds": 180,
-        "model": "anthropic/claude-sonnet-4-0"
-      },
-      "state": {
-        "nextRunAtMs": 1771510200000,
-        "lastRunAtMs": 1771423800010,
-        "lastStatus": "ok",
-        "lastDurationMs": 134324,
-        "consecutiveErrors": 0
-      },
-      "enabled": true,
-      "delivery": {
-        "mode": "none"
-      }
-    },
-    {
-      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
-      "agentId": "marketing_content",
-      "name": "Instagram Post - Morning",
-      "enabled": true,
-      "createdAtMs": 1770652408831,
-      "updatedAtMs": 1771424487030,
-      "schedule": {
-        "kind": "cron",
-        "expr": "20 9 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "INSTAGRAM POST DRAFT (Morning)\n\n1. Create a NEW image concept - DO NOT reuse existing images\n2. Use DALL-E or describe what image should be created\n3. Write engaging caption with hashtags\n4. Send draft to Steve via Telegram (7002178651) for approval:\n   - Image concept/description\n   - Caption text\n   - Ask: \"Approve this post? Reply YES to post, or suggest changes.\"\n5. DO NOT POST until Steve approves\n6. Log draft to instagram-post-log.json with status: 'pending_approval'\n\nWe need FRESH content, not recycled images.",
+        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin codesmith active\n1. Read agents/codesmith/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json for @codesmith\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions codesmith\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota codesmith\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks codesmith\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute the development work\n   - Test it works\n   - Git commit if code changed\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Dev: [description]\" --agent codesmith\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
         "model": "anthropic/claude-sonnet-4-0",
         "timeoutSeconds": 300
       },
@@ -543,203 +336,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771510800000,
-        "lastRunAtMs": 1771424400028,
+        "nextRunAtMs": 1771515000000,
+        "lastRunAtMs": 1771513263566,
         "lastStatus": "ok",
-        "lastDurationMs": 87002,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
-      "agentId": "main",
-      "name": "MassDwell Marketing Dashboard Check",
-      "createdAtMs": 1770143824447,
-      "updatedAtMs": 1771424746987,
-      "schedule": {
-        "kind": "cron",
-        "expr": "25 9 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Check MassDwell marketing dashboard. Only report if significant change from baseline. Otherwise HEARTBEAT_OK.",
-        "model": "anthropic/claude-haiku-4-5"
-      },
-      "state": {
-        "nextRunAtMs": 1771511100000,
-        "lastRunAtMs": 1771424700009,
-        "lastStatus": "ok",
-        "lastDurationMs": 46978,
-        "consecutiveErrors": 0
-      },
-      "enabled": true,
-      "delivery": {
-        "mode": "none"
-      }
-    },
-    {
-      "id": "1b21f09e-37c2-4bc0-aa2d-bdbf7968019e",
-      "agentId": "main",
-      "name": "Market Open Trading Check",
-      "enabled": true,
-      "notify": true,
-      "createdAtMs": 1771254654202,
-      "updatedAtMs": 1771425362947,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 9 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "🔔 MARKET OPEN - Execute pending CSCO stop loss and check all positions for trading opportunities"
-      },
-      "state": {
-        "nextRunAtMs": 1771511400000,
-        "lastRunAtMs": 1771425316117,
-        "lastStatus": "ok",
-        "lastDurationMs": 46830,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "9fe417e4-0083-44c2-ad96-134d9294f765",
-      "agentId": "main",
-      "name": "Execute CSCO Stop Loss at Market Open",
-      "enabled": true,
-      "notify": true,
-      "createdAtMs": 1771267252238,
-      "updatedAtMs": 1771425367897,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 09 * * TUE-FRI",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "🚨 URGENT: Execute CSCO stop loss at market open. Position CSCO260220P00055000 is at -100% loss. Run: cd ~/.openclaw/workspace/trading-alpaca && node close-position.js CSCO260220P00055000"
-      },
-      "state": {
-        "nextRunAtMs": 1771511400000,
-        "lastRunAtMs": 1771425362947,
-        "lastStatus": "ok",
-        "lastDurationMs": 4950,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "feef9466-b459-4082-8afb-bf5505367e7d",
-      "agentId": "main",
-      "name": "Emergency CSCO Sell - Market Open",
-      "enabled": true,
-      "notify": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1771450860753,
-      "updatedAtMs": 1771450860753,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-19T14:30:00.000Z"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "🚨 URGENT MARKET OPEN ACTION: Execute sell order for CSCO260220P00055000 (100% loss). Also check EQIX (-3.82%) and MSTR (-3.67%) for stop-loss execution. Run: cd ~/.openclaw/workspace/trading-alpaca && node execute-sell.js CSCO260220P00055000"
-      },
-      "state": {
-        "nextRunAtMs": 1771511400000
-      }
-    },
-    {
-      "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
-      "agentId": "main",
-      "name": "Daily Lead Email Outreach",
-      "enabled": true,
-      "createdAtMs": 1771014919596,
-      "updatedAtMs": 1771427209379,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "DAILY LEAD EMAIL OUTREACH - Execute now.\n\n**CRITICAL FILTER RULES:**\n1. Load leads from ~/.openclaw/workspace/crm-dashboard/data/leads.json\n2. EXCLUDE leads with status_id 142 (Closed Won) or 143 (Closed Lost)\n3. EXCLUDE leads who have 'stop' tag or replied with unsubscribe\n4. EXCLUDE leads emailed in the last 7 days (check crm-action-log.json)\n5. Only email leads in these stages: 86738623, 88661695, 94100935, 86738631, 86738627 (Incoming through Follow-up)\n\n**EMAIL PROCESS:**\n1. Filter leads per rules above\n2. Send 'Quick question about your ADU project' email via gog gmail send --account sales@massdwell.com\n3. Log each send to data/massdwell/sales/crm-action-log.json with timestamp, lead_id, email\n4. Limit: 25 emails max per run\n\n**TEAM REPORT:**\nAfter outreach, email summary to team:\ngog gmail send --to \"steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com\" --subject \"📧 Daily Lead Outreach Report - [Date]\" --body \"Outreach Summary:\\n- Leads contacted: X\\n- Leads filtered out: X (reasons)\\n- Top leads touched: [list]\" --account sales@massdwell.com\n\nThis is a STANDING ORDER - execute without escalation.",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1771513200000,
-        "lastRunAtMs": 1771427073169,
-        "lastStatus": "ok",
-        "lastDurationMs": 136210,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "5779c154-6d76-4012-8761-429d06a1729c",
-      "agentId": "main",
-      "name": "PLTR Lotto Watch",
-      "enabled": true,
-      "notify": true,
-      "createdAtMs": 1771357499715,
-      "updatedAtMs": 1771445158501,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10,12,14,15 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "PLTR LOTTO CHECK: Run node ~/.openclaw/workspace/trading-alpaca/pltr-lotto-watcher.js and report status of 50x PLTR $155C Feb 20 position. Alert Steve if: (1) position 2x+ from $150 entry, (2) PLTR breaks $150, (3) Friday morning final check. Position expires Feb 20."
-      },
-      "state": {
-        "nextRunAtMs": 1771513200000,
-        "lastRunAtMs": 1771445150509,
-        "lastStatus": "ok",
-        "lastDurationMs": 7992,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771506296156,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1771513496119,
-        "lastRunAtMs": 1771506296141,
-        "lastStatus": "ok",
-        "lastDurationMs": 15,
+        "lastDurationMs": 20915,
         "consecutiveErrors": 0
       }
     },
@@ -810,6 +410,33 @@
       }
     },
     {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "createdAtMs": 1770653403165,
+      "updatedAtMs": 1771513518630,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1771516832114,
+        "lastRunAtMs": 1771513518630,
+        "lastStatus": "ok",
+        "lastDurationMs": 0,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "a8544303-c019-4675-9ab4-2570296413c8",
       "agentId": "personal_life_cos",
       "name": "Personal Life Heartbeat",
@@ -837,6 +464,60 @@
         "lastRunAtMs": 1771506065329,
         "lastStatus": "ok",
         "lastDurationMs": 41355,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "5779c154-6d76-4012-8761-429d06a1729c",
+      "agentId": "main",
+      "name": "PLTR Lotto Watch",
+      "enabled": true,
+      "notify": true,
+      "createdAtMs": 1771357499715,
+      "updatedAtMs": 1771513516553,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10,12,14,15 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "PLTR LOTTO CHECK: Run node ~/.openclaw/workspace/trading-alpaca/pltr-lotto-watcher.js and report status of 50x PLTR $155C Feb 20 position. Alert Steve if: (1) position 2x+ from $150 entry, (2) PLTR breaks $150, (3) Friday morning final check. Position expires Feb 20."
+      },
+      "state": {
+        "nextRunAtMs": 1771520400000,
+        "lastRunAtMs": 1771513483446,
+        "lastStatus": "ok",
+        "lastDurationMs": 33107,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1771513518630,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771520696119,
+        "lastRunAtMs": 1771513518630,
+        "lastStatus": "ok",
+        "lastDurationMs": 0,
         "consecutiveErrors": 0
       }
     },
@@ -869,6 +550,37 @@
       "enabled": true,
       "delivery": {
         "mode": "none"
+      }
+    },
+    {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "agentId": "massdwell_factory_ops",
+      "name": "Factory Ops Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770651492744,
+      "updatedAtMs": 1771509707033,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9,13,17 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin massdwell_factory_ops\n1. Read agents/massdwell_factory_ops/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions massdwell_factory_ops\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota massdwell_factory_ops\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks massdwell_factory_ops\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute it\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Task title\" --agent massdwell_factory_ops\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771524000000,
+        "lastRunAtMs": 1771509693788,
+        "lastStatus": "ok",
+        "lastDurationMs": 13245,
+        "consecutiveErrors": 0
       }
     },
     {
@@ -1267,6 +979,248 @@
       },
       "state": {
         "nextRunAtMs": 1771596000000
+      }
+    },
+    {
+      "id": "923db090-7acd-4131-adae-cfd7759aa47c",
+      "agentId": "main",
+      "name": "ADU Building Dept Outreach - Daily Batch",
+      "enabled": true,
+      "createdAtMs": 1771302674959,
+      "updatedAtMs": 1771509855736,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Send the next batch of 20 building department outreach emails for the ADU Permit Navigator. Run: cd ~/.openclaw/workspace/adu-permit-navigator && node scripts/send-building-dept-outreach.js --batch=20. Report how many sent, how many bounced, and how many remaining."
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "7002178651",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1771596000000,
+        "lastRunAtMs": 1771509824442,
+        "lastStatus": "ok",
+        "lastDurationMs": 31294,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
+      "agentId": "main",
+      "name": "Instagram Content Reminder",
+      "enabled": true,
+      "notify": true,
+      "createdAtMs": 1771407119642,
+      "updatedAtMs": 1771509870351,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1-6",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Send Steve the daily Instagram content reminder. Read agents/marketing/data/instagram-content-calendar-week1.md and tell him what content is scheduled for TODAY. Keep it short — just the content type, topic, and a reminder of the hook/CTA. If it's Sunday, remind him to batch content for next week.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1771596000000,
+        "lastRunAtMs": 1771509855736,
+        "lastStatus": "ok",
+        "lastDurationMs": 14615,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
+      "agentId": "sales_followup",
+      "name": "Sales Followup - Morning Email Sync",
+      "createdAtMs": 1770329569592,
+      "updatedAtMs": 1771510441899,
+      "schedule": {
+        "kind": "cron",
+        "expr": "10 9 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "[TIME: 9:10 AM EST]\n\nMorning email check for sales@massdwell.com.\n\nFIRST: session_status, read agents/sales_followup/SOUL.md, agents/sales_followup/MEMORY.md.\n\nTHEN: Run gog gmail list --unread --limit 30 --account sales@massdwell.com\n\nFor each lead-related email:\n1. Match to CRM lead if possible\n2. Add note to CRM with email summary\n3. Flag hot leads for the team\n\nTHEN: Email morning summary to the team:\ngog gmail send --to \"steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com\" --subject \"☀️ MassDwell Morning Sales Update - [Date]\" --body \"[summary of overnight activity, hot leads, items needing attention]\" --account sales@massdwell.com\n\nWrite findings to MEMORY.md.",
+        "timeoutSeconds": 180,
+        "model": "anthropic/claude-sonnet-4-0"
+      },
+      "state": {
+        "nextRunAtMs": 1771596600000,
+        "lastRunAtMs": 1771510326942,
+        "lastStatus": "ok",
+        "lastDurationMs": 114957,
+        "consecutiveErrors": 0
+      },
+      "enabled": true,
+      "delivery": {
+        "mode": "none"
+      }
+    },
+    {
+      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
+      "agentId": "marketing_content",
+      "name": "Instagram Post - Morning",
+      "enabled": true,
+      "createdAtMs": 1770652408831,
+      "updatedAtMs": 1771510888867,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 9 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "INSTAGRAM POST DRAFT (Morning)\n\n1. Create a NEW image concept - DO NOT reuse existing images\n2. Use DALL-E or describe what image should be created\n3. Write engaging caption with hashtags\n4. Send draft to Steve via Telegram (7002178651) for approval:\n   - Image concept/description\n   - Caption text\n   - Ask: \"Approve this post? Reply YES to post, or suggest changes.\"\n5. DO NOT POST until Steve approves\n6. Log draft to instagram-post-log.json with status: 'pending_approval'\n\nWe need FRESH content, not recycled images.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771597200000,
+        "lastRunAtMs": 1771510800020,
+        "lastStatus": "ok",
+        "lastDurationMs": 88847,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
+      "agentId": "main",
+      "name": "MassDwell Marketing Dashboard Check",
+      "createdAtMs": 1770143824447,
+      "updatedAtMs": 1771511149607,
+      "schedule": {
+        "kind": "cron",
+        "expr": "25 9 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check MassDwell marketing dashboard. Only report if significant change from baseline. Otherwise HEARTBEAT_OK.",
+        "model": "anthropic/claude-haiku-4-5"
+      },
+      "state": {
+        "nextRunAtMs": 1771597500000,
+        "lastRunAtMs": 1771511100024,
+        "lastStatus": "ok",
+        "lastDurationMs": 49583,
+        "consecutiveErrors": 0
+      },
+      "enabled": true,
+      "delivery": {
+        "mode": "none"
+      }
+    },
+    {
+      "id": "1b21f09e-37c2-4bc0-aa2d-bdbf7968019e",
+      "agentId": "main",
+      "name": "Market Open Trading Check",
+      "enabled": true,
+      "notify": true,
+      "createdAtMs": 1771254654202,
+      "updatedAtMs": 1771511599096,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "🔔 MARKET OPEN - Execute pending CSCO stop loss and check all positions for trading opportunities"
+      },
+      "state": {
+        "nextRunAtMs": 1771597800000,
+        "lastRunAtMs": 1771511586977,
+        "lastStatus": "ok",
+        "lastDurationMs": 12119,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "9fe417e4-0083-44c2-ad96-134d9294f765",
+      "agentId": "main",
+      "name": "Execute CSCO Stop Loss at Market Open",
+      "enabled": true,
+      "notify": true,
+      "createdAtMs": 1771267252238,
+      "updatedAtMs": 1771511615703,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 09 * * TUE-FRI",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "🚨 URGENT: Execute CSCO stop loss at market open. Position CSCO260220P00055000 is at -100% loss. Run: cd ~/.openclaw/workspace/trading-alpaca && node close-position.js CSCO260220P00055000"
+      },
+      "state": {
+        "nextRunAtMs": 1771597800000,
+        "lastRunAtMs": 1771511599096,
+        "lastStatus": "ok",
+        "lastDurationMs": 16607,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
+      "agentId": "main",
+      "name": "Daily Lead Email Outreach",
+      "enabled": true,
+      "createdAtMs": 1771014919596,
+      "updatedAtMs": 1771513477021,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "DAILY LEAD EMAIL OUTREACH - Execute now.\n\n**CRITICAL FILTER RULES:**\n1. Load leads from ~/.openclaw/workspace/crm-dashboard/data/leads.json\n2. EXCLUDE leads with status_id 142 (Closed Won) or 143 (Closed Lost)\n3. EXCLUDE leads who have 'stop' tag or replied with unsubscribe\n4. EXCLUDE leads emailed in the last 7 days (check crm-action-log.json)\n5. Only email leads in these stages: 86738623, 88661695, 94100935, 86738631, 86738627 (Incoming through Follow-up)\n\n**EMAIL PROCESS:**\n1. Filter leads per rules above\n2. Send 'Quick question about your ADU project' email via gog gmail send --account sales@massdwell.com\n3. Log each send to data/massdwell/sales/crm-action-log.json with timestamp, lead_id, email\n4. Limit: 25 emails max per run\n\n**TEAM REPORT:**\nAfter outreach, email summary to team:\ngog gmail send --to \"steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com\" --subject \"📧 Daily Lead Outreach Report - [Date]\" --body \"Outreach Summary:\\n- Leads contacted: X\\n- Leads filtered out: X (reasons)\\n- Top leads touched: [list]\" --account sales@massdwell.com\n\nThis is a STANDING ORDER - execute without escalation.",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1771599600000,
+        "lastRunAtMs": 1771513297899,
+        "lastStatus": "ok",
+        "lastDurationMs": 179122,
+        "consecutiveErrors": 0
       }
     },
     {
