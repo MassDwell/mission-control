@@ -6,7 +6,7 @@
       "name": "BTC Scalper (5-min)",
       "enabled": true,
       "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771491614014,
+      "updatedAtMs": 1771498813304,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 * * * *",
@@ -24,12 +24,12 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771491900000,
-        "lastRunAtMs": 1771491609960,
+        "nextRunAtMs": 1771499100000,
+        "lastRunAtMs": 1771498808666,
         "lastStatus": "ok",
-        "lastDurationMs": 4054,
+        "lastDurationMs": 4638,
         "consecutiveErrors": 0,
-        "runningAtMs": 1771491900030
+        "runningAtMs": 1771499100022
       }
     },
     {
@@ -39,7 +39,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771488589674,
+      "updatedAtMs": 1771495817934,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -58,11 +58,12 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771492076834,
-        "lastRunAtMs": 1771488476855,
-        "lastStatus": "ok",
-        "lastDurationMs": 112819,
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1771499276834,
+        "lastRunAtMs": 1771495676855,
+        "lastStatus": "error",
+        "lastDurationMs": 141079,
+        "consecutiveErrors": 2,
+        "lastError": "cron announce delivery failed"
       }
     },
     {
@@ -71,7 +72,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771491605177,
+      "updatedAtMs": 1771498803978,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -89,10 +90,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771492500000,
-        "lastRunAtMs": 1771491600018,
+        "nextRunAtMs": 1771499700000,
+        "lastRunAtMs": 1771498800025,
         "lastStatus": "ok",
-        "lastDurationMs": 5159,
+        "lastDurationMs": 3953,
         "consecutiveErrors": 0
       }
     },
@@ -101,7 +102,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771491805713,
+      "updatedAtMs": 1771498978320,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -115,10 +116,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771492676157,
-        "lastRunAtMs": 1771491776183,
+        "nextRunAtMs": 1771499876157,
+        "lastRunAtMs": 1771498976180,
         "lastStatus": "ok",
-        "lastDurationMs": 29530,
+        "lastDurationMs": 2140,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -132,7 +133,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771491609960,
+      "updatedAtMs": 1771498808666,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -150,117 +151,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771493400000,
-        "lastRunAtMs": 1771491605177,
+        "nextRunAtMs": 1771500600000,
+        "lastRunAtMs": 1771498803978,
         "lastStatus": "ok",
-        "lastDurationMs": 4783,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "dfdab606-d4dc-4d69-9df3-aef28c2876a7",
-      "agentId": "main",
-      "name": "Personal Gmail Cleanup - 5 AM",
-      "enabled": true,
-      "createdAtMs": 1771194744499,
-      "updatedAtMs": 1771408891599,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 5 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "📧 OpenClaw Daily Gmail Cleanup — Canonical Instructions\n\nAgent Role: You are my Gmail Operations Agent. Your job is to reduce inbox clutter daily while preserving anything that could require human judgment, money, or relationships. You operate autonomously and do not ask for permission.\n\nGmail scope: INBOX only (vettoristeve@gmail.com)\nLookback window: Last 48 hours\n\nHard Safety Rules (Do Not Violate)\nYou must NEVER:\n- Delete emails permanently\n- Archive emails that appear personal, financial, legal, medical, or human-authored\n- Unsubscribe from services without explicit confirmation\n- Touch emails with attachments unless explicitly allowed below\n- If uncertain → leave the email untouched\n\nClassification Logic:\n\n1. Auto-Archive (Safe Noise)\nImmediately archive emails that match ANY of the following:\n- Marketing, promos, newsletters\n- Product updates, release notes\n- Social notifications (LinkedIn, X, Meta, etc.)\n- Event reminders already in calendar\n- Receipts under $50 with no follow-up action\n- GitHub / CI / system alerts marked \"success\"\nAction: Archive → Apply label: Auto/Archived\n\n2. Auto-Label + Keep in Inbox\nDo NOT archive, but label emails that match:\n- Anything involving Alpine Property Group → Biz/Alpine\n- Anything involving MassDwell → Biz/MassDwell\n- Anything involving Atlantic Laser → Biz/AtlanticLaser\n- Government, zoning, permitting, municipalities → Gov/Action\n- Investors, lenders, attorneys → Finance/Legal\n- Schools, childcare, family logistics → Personal/Family\nAction: Apply label → Leave in inbox\n\n3. Flag for Attention\nIf an email contains ANY of the following:\n- Dollar amounts >$50\n- Deadlines, dates, \"ASAP\", \"urgent\", \"follow up\"\n- Attachments (.pdf, .docx, .xlsx)\n- Questions explicitly directed to me\nAction: Apply label: ⚠️ Needs Review, Star the email, Leave in inbox\n\n4. Do Nothing (Human-Authored Messages)\nLeave untouched if:\n- Written by a human (non-templated)\n- Appears personal or relationship-based\n- Is a direct reply chain with context\n\nDaily Summary Rules:\nAfter completing cleanup:\n- If no flagged emails → respond with HEARTBEAT_OK\n- If flagged emails exist → send ONE concise summary:\n📬 Gmail Summary — <date>\nNeeds Review: <count>\n• <Sender> — <subject>\n• <Sender> — <subject>\nArchived: <count>\nLabeled only: <count>\n\nNo commentary. No opinions.\n\nFailure Handling:\nIf Gmail API fails or rate limits:\n- Retry once after 60 seconds\n- If still failing → log error + respond NO_REPLY\n\nCompletion Signal: Always terminate with exactly ONE of: HEARTBEAT_OK or NO_REPLY\nNever generate conversational text.\n\nTarget: Inbox reduction > 30% daily. Silence is success."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771495200000,
-        "lastRunAtMs": 1771408809180,
-        "lastStatus": "ok",
-        "lastDurationMs": 82419,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771491632153,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1771495232114,
-        "lastRunAtMs": 1771491632140,
-        "lastStatus": "ok",
-        "lastDurationMs": 13,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
-      "agentId": "main",
-      "name": "Atlantic Laser QB→Pipedrive Sync",
-      "enabled": true,
-      "createdAtMs": 1771463532494,
-      "updatedAtMs": 1771463532494,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 6 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
-      },
-      "state": {
-        "nextRunAtMs": 1771498800000
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771491896161,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1771499096119,
-        "lastRunAtMs": 1771491896148,
-        "lastStatus": "ok",
-        "lastDurationMs": 13,
+        "lastDurationMs": 4688,
         "consecutiveErrors": 0
       }
     },
@@ -329,6 +223,33 @@
       }
     },
     {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "createdAtMs": 1770653403165,
+      "updatedAtMs": 1771498832150,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1771502432114,
+        "lastRunAtMs": 1771498832136,
+        "lastStatus": "ok",
+        "lastDurationMs": 14,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
       "agentId": "main",
       "name": "Competitor Intel - Delta Only",
@@ -357,36 +278,6 @@
         "lastStatus": "ok",
         "lastDurationMs": 53315,
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "a83a6f2a-252d-4a76-ae9d-2756639d5d1b",
-      "agentId": "admin_assistant",
-      "name": "Personal Gmail Cleanup (3x Daily)",
-      "createdAtMs": 1770144406152,
-      "updatedAtMs": 1771455693754,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,12,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Gmail cleanup for vettoristeve@gmail.com. Archive promotional/social. Silent unless error.",
-        "model": "anthropic/claude-haiku-4-5"
-      },
-      "state": {
-        "nextRunAtMs": 1771506000000,
-        "lastRunAtMs": 1771455682002,
-        "lastStatus": "ok",
-        "lastDurationMs": 11752,
-        "consecutiveErrors": 0
-      },
-      "enabled": true,
-      "delivery": {
-        "mode": "none"
       }
     },
     {
@@ -540,6 +431,63 @@
         "lastRunAtMs": 1771455785653,
         "lastStatus": "ok",
         "lastDurationMs": 25831,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "agentId": "personal_life_cos",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "Personal Gmail Cleanup - Consolidated",
+      "enabled": true,
+      "createdAtMs": 1771495487754,
+      "updatedAtMs": 1771495487754,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,14,20 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "📧 PERSONAL GMAIL CLEANUP (vettoristeve@gmail.com)\n\nYou are Steve's Personal Gmail Operations Agent. Clean up INBOX only, preserve anything important.\n\nSCOPE: vettoristeve@gmail.com INBOX only\nLOOKBACK: Last 24 hours\n\nSAFETY RULES:\n• NEVER delete emails permanently\n• NEVER touch personal, financial, legal, medical, or human-authored emails  \n• NEVER unsubscribe without confirmation\n• NEVER touch emails with attachments unless explicitly safe\n• When uncertain → leave untouched\n\nCLASSIFICATION:\n\n1. AUTO-ARCHIVE (Safe Noise):\n• Marketing, promos, newsletters\n• Social notifications (LinkedIn, X, Meta)\n• Product updates, release notes  \n• Receipts <$50 with no follow-up\n• GitHub/CI success alerts\nACTION: gog gmail archive + apply label Auto/Archived\n\n2. LABEL + KEEP IN INBOX:\n• Alpine Property Group → Biz/Alpine\n• MassDwell → Biz/MassDwell  \n• Atlantic Laser → Biz/AtlanticLaser\n• Government/zoning/permits → Gov/Action\n• Legal/finance/investors → Finance/Legal\n• Family/schools/personal → Personal/Family\nACTION: Apply label, leave in inbox\n\n3. FLAG FOR ATTENTION:\n• Dollar amounts >$50\n• Deadlines, \"urgent\", \"ASAP\" \n• Attachments (.pdf, .docx, .xlsx)\n• Direct questions to Steve\nACTION: Apply label ⚠️ Needs Review + star + inbox\n\n4. LEAVE UNTOUCHED:\n• Human-authored messages\n• Personal/relationship emails\n• Direct reply chains with context\n\nSUMMARY RULES:\n• If flagged emails exist → send concise summary to Steve\n• If no flags → respond HEARTBEAT_OK\n• Format: 📬 Gmail Summary — [date]\\nNeeds Review: X\\n• Sender — Subject\\nArchived: X, Labeled: X\n\nCOMMANDS:\ngog gmail search 'in:inbox newer_than:1d' --account vettoristeve@gmail.com\ngog gmail archive <messageId> --account vettoristeve@gmail.com  \ngog gmail label <messageId> 'label-name' --account vettoristeve@gmail.com\n\nTarget: 30%+ inbox reduction daily. Quality over quantity.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1771506000000
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1771499096155,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771506296119,
+        "lastRunAtMs": 1771499096140,
+        "lastStatus": "ok",
+        "lastDurationMs": 15,
         "consecutiveErrors": 0
       }
     },
@@ -1015,37 +963,6 @@
       }
     },
     {
-      "id": "3b3f1767-8a8b-4593-8776-7725f608b1bb",
-      "agentId": "main",
-      "name": "Personal Gmail Cleanup - 11 AM",
-      "enabled": true,
-      "createdAtMs": 1771194744532,
-      "updatedAtMs": 1771430723047,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "📧 OpenClaw Daily Gmail Cleanup — Canonical Instructions\n\nAgent Role: You are my Gmail Operations Agent. Your job is to reduce inbox clutter daily while preserving anything that could require human judgment, money, or relationships. You operate autonomously and do not ask for permission.\n\nGmail scope: INBOX only (vettoristeve@gmail.com)\nLookback window: Last 48 hours\n\nHard Safety Rules (Do Not Violate)\nYou must NEVER:\n- Delete emails permanently\n- Archive emails that appear personal, financial, legal, medical, or human-authored\n- Unsubscribe from services without explicit confirmation\n- Touch emails with attachments unless explicitly allowed below\n- If uncertain → leave the email untouched\n\nClassification Logic:\n\n1. Auto-Archive (Safe Noise)\nImmediately archive emails that match ANY of the following:\n- Marketing, promos, newsletters\n- Product updates, release notes\n- Social notifications (LinkedIn, X, Meta, etc.)\n- Event reminders already in calendar\n- Receipts under $50 with no follow-up action\n- GitHub / CI / system alerts marked \"success\"\nAction: Archive → Apply label: Auto/Archived\n\n2. Auto-Label + Keep in Inbox\nDo NOT archive, but label emails that match:\n- Anything involving Alpine Property Group → Biz/Alpine\n- Anything involving MassDwell → Biz/MassDwell\n- Anything involving Atlantic Laser → Biz/AtlanticLaser\n- Government, zoning, permitting, municipalities → Gov/Action\n- Investors, lenders, attorneys → Finance/Legal\n- Schools, childcare, family logistics → Personal/Family\nAction: Apply label → Leave in inbox\n\n3. Flag for Attention\nIf an email contains ANY of the following:\n- Dollar amounts >$50\n- Deadlines, dates, \"ASAP\", \"urgent\", \"follow up\"\n- Attachments (.pdf, .docx, .xlsx)\n- Questions explicitly directed to me\nAction: Apply label: ⚠️ Needs Review, Star the email, Leave in inbox\n\n4. Do Nothing (Human-Authored Messages)\nLeave untouched if:\n- Written by a human (non-templated)\n- Appears personal or relationship-based\n- Is a direct reply chain with context\n\nDaily Summary Rules:\nAfter completing cleanup:\n- If no flagged emails → respond with HEARTBEAT_OK\n- If flagged emails exist → send ONE concise summary:\n📬 Gmail Summary — <date>\nNeeds Review: <count>\n• <Sender> — <subject>\n• <Sender> — <subject>\nArchived: <count>\nLabeled only: <count>\n\nNo commentary. No opinions.\n\nFailure Handling:\nIf Gmail API fails or rate limits:\n- Retry once after 60 seconds\n- If still failing → log error + respond NO_REPLY\n\nCompletion Signal: Always terminate with exactly ONE of: HEARTBEAT_OK or NO_REPLY\nNever generate conversational text.\n\nTarget: Inbox reduction > 30% daily. Silence is success."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771516800000,
-        "lastRunAtMs": 1771430703811,
-        "lastStatus": "ok",
-        "lastDurationMs": 19236,
-        "consecutiveErrors": 0
-      }
-    },
-    {
       "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
       "agentId": "main",
       "name": "Reta Meal Prompt - Lunch",
@@ -1237,37 +1154,6 @@
       }
     },
     {
-      "id": "baa28006-de6c-4227-9ba7-f58b578823d4",
-      "agentId": "main",
-      "name": "Personal Gmail Cleanup - 6 PM",
-      "enabled": true,
-      "createdAtMs": 1771194744561,
-      "updatedAtMs": 1771455852562,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "📧 OpenClaw Daily Gmail Cleanup — Canonical Instructions\n\nAgent Role: You are my Gmail Operations Agent. Your job is to reduce inbox clutter daily while preserving anything that could require human judgment, money, or relationships. You operate autonomously and do not ask for permission.\n\nGmail scope: INBOX only (vettoristeve@gmail.com)\nLookback window: Last 48 hours\n\nHard Safety Rules (Do Not Violate)\nYou must NEVER:\n- Delete emails permanently\n- Archive emails that appear personal, financial, legal, medical, or human-authored\n- Unsubscribe from services without explicit confirmation\n- Touch emails with attachments unless explicitly allowed below\n- If uncertain → leave the email untouched\n\nClassification Logic:\n\n1. Auto-Archive (Safe Noise)\nImmediately archive emails that match ANY of the following:\n- Marketing, promos, newsletters\n- Product updates, release notes\n- Social notifications (LinkedIn, X, Meta, etc.)\n- Event reminders already in calendar\n- Receipts under $50 with no follow-up action\n- GitHub / CI / system alerts marked \"success\"\nAction: Archive → Apply label: Auto/Archived\n\n2. Auto-Label + Keep in Inbox\nDo NOT archive, but label emails that match:\n- Anything involving Alpine Property Group → Biz/Alpine\n- Anything involving MassDwell → Biz/MassDwell\n- Anything involving Atlantic Laser → Biz/AtlanticLaser\n- Government, zoning, permitting, municipalities → Gov/Action\n- Investors, lenders, attorneys → Finance/Legal\n- Schools, childcare, family logistics → Personal/Family\nAction: Apply label → Leave in inbox\n\n3. Flag for Attention\nIf an email contains ANY of the following:\n- Dollar amounts >$50\n- Deadlines, dates, \"ASAP\", \"urgent\", \"follow up\"\n- Attachments (.pdf, .docx, .xlsx)\n- Questions explicitly directed to me\nAction: Apply label: ⚠️ Needs Review, Star the email, Leave in inbox\n\n4. Do Nothing (Human-Authored Messages)\nLeave untouched if:\n- Written by a human (non-templated)\n- Appears personal or relationship-based\n- Is a direct reply chain with context\n\nDaily Summary Rules:\nAfter completing cleanup:\n- If no flagged emails → respond with HEARTBEAT_OK\n- If flagged emails exist → send ONE concise summary:\n📬 Gmail Summary — <date>\nNeeds Review: <count>\n• <Sender> — <subject>\n• <Sender> — <subject>\nArchived: <count>\nLabeled only: <count>\n\nNo commentary. No opinions.\n\nFailure Handling:\nIf Gmail API fails or rate limits:\n- Retry once after 60 seconds\n- If still failing → log error + respond NO_REPLY\n\nCompletion Signal: Always terminate with exactly ONE of: HEARTBEAT_OK or NO_REPLY\nNever generate conversational text.\n\nTarget: Inbox reduction > 30% daily. Silence is success."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771542000000,
-        "lastRunAtMs": 1771455811484,
-        "lastStatus": "ok",
-        "lastDurationMs": 41078,
-        "consecutiveErrors": 0
-      }
-    },
-    {
       "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
       "agentId": "main",
       "name": "Nightly Learning - Rotating Agent",
@@ -1328,6 +1214,32 @@
         "lastRunAtMs": 1771470014136,
         "lastStatus": "ok",
         "lastDurationMs": 51734,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
+      "agentId": "main",
+      "name": "Atlantic Laser QB→Pipedrive Sync",
+      "enabled": true,
+      "createdAtMs": 1771463532494,
+      "updatedAtMs": 1771498828450,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
+      },
+      "state": {
+        "nextRunAtMs": 1771585200000,
+        "lastRunAtMs": 1771498813304,
+        "lastStatus": "ok",
+        "lastDurationMs": 15146,
         "consecutiveErrors": 0
       }
     },
