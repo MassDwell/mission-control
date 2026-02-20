@@ -9,7 +9,7 @@
       "role": "Master Agent / COO",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-20T12:39:20.778Z",
+      "lastSeen": "2026-02-20T15:35:26.788Z",
       "level": "lead"
     },
     {
@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-20T15:30:34.708Z",
+      "lastSeen": "2026-02-20T16:00:31.210Z",
       "level": "intern"
     },
     {
@@ -79,7 +79,7 @@
       "role": "Developer Agent",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-20T15:00:54.439Z",
+      "lastSeen": "2026-02-20T15:30:55.904Z",
       "level": "specialist"
     }
   ],
