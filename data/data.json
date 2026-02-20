@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-20T19:00:45.681Z",
+      "lastSeen": "2026-02-20T19:30:28.205Z",
       "level": "intern"
     },
     {
@@ -79,7 +79,7 @@
       "role": "Developer Agent",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-20T18:30:31.348Z",
+      "lastSeen": "2026-02-20T19:01:36.638Z",
       "level": "specialist"
     }
   ],
