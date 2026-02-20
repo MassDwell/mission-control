@@ -66,7 +66,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771610891487,
+      "updatedAtMs": 1771618092638,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -85,10 +85,10 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771614476834,
-        "lastRunAtMs": 1771610876858,
+        "nextRunAtMs": 1771621676834,
+        "lastRunAtMs": 1771618076860,
         "lastStatus": "ok",
-        "lastDurationMs": 14629,
+        "lastDurationMs": 15778,
         "consecutiveErrors": 0
       }
     },
@@ -98,7 +98,7 @@
       "name": "Alpaca Paper Trader (Autonomous)",
       "enabled": true,
       "createdAtMs": 1770924114844,
-      "updatedAtMs": 1771614135957,
+      "updatedAtMs": 1771621339465,
       "schedule": {
         "kind": "cron",
         "expr": "*/10 9-16 * * 1-5",
@@ -116,10 +116,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771614600000,
-        "lastRunAtMs": 1771614115383,
+        "nextRunAtMs": 1771621800000,
+        "lastRunAtMs": 1771621282065,
         "lastStatus": "ok",
-        "lastDurationMs": 20574,
+        "lastDurationMs": 57400,
         "consecutiveErrors": 0
       }
     },
@@ -129,7 +129,7 @@
       "name": "Intraday Position Monitor (5-min)",
       "enabled": true,
       "createdAtMs": 1770991458945,
-      "updatedAtMs": 1771614322370,
+      "updatedAtMs": 1771621535400,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 9-16 * * 1-5",
@@ -147,10 +147,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771614600000,
-        "lastRunAtMs": 1771614314118,
+        "nextRunAtMs": 1771621800000,
+        "lastRunAtMs": 1771621523351,
         "lastStatus": "ok",
-        "lastDurationMs": 8252,
+        "lastDurationMs": 12049,
         "consecutiveErrors": 0
       }
     },
@@ -160,7 +160,7 @@
       "name": "BTC Scalper (5-min)",
       "enabled": true,
       "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771614329481,
+      "updatedAtMs": 1771621542483,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 * * * *",
@@ -178,10 +178,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771614600000,
-        "lastRunAtMs": 1771614322370,
+        "nextRunAtMs": 1771621800000,
+        "lastRunAtMs": 1771621535400,
         "lastStatus": "ok",
-        "lastDurationMs": 7111,
+        "lastDurationMs": 7083,
         "consecutiveErrors": 0
       }
     },
@@ -191,7 +191,7 @@
       "name": "Marketing Agent Heartbeat",
       "enabled": true,
       "createdAtMs": 1770408787882,
-      "updatedAtMs": 1771614044001,
+      "updatedAtMs": 1771621242658,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 8-18 * * *",
@@ -209,10 +209,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771614900000,
-        "lastRunAtMs": 1771614038153,
+        "nextRunAtMs": 1771622100000,
+        "lastRunAtMs": 1771621238081,
         "lastStatus": "ok",
-        "lastDurationMs": 5848,
+        "lastDurationMs": 4577,
         "consecutiveErrors": 0
       }
     },
@@ -222,7 +222,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771614054506,
+      "updatedAtMs": 1771621251718,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -240,10 +240,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771614900000,
-        "lastRunAtMs": 1771614049222,
+        "nextRunAtMs": 1771622100000,
+        "lastRunAtMs": 1771621247035,
         "lastStatus": "ok",
-        "lastDurationMs": 5284,
+        "lastDurationMs": 4683,
         "consecutiveErrors": 0
       }
     },
@@ -252,7 +252,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771614314118,
+      "updatedAtMs": 1771621523350,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -266,10 +266,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771615076157,
-        "lastRunAtMs": 1771614306698,
+        "nextRunAtMs": 1771622276157,
+        "lastRunAtMs": 1771621516911,
         "lastStatus": "ok",
-        "lastDurationMs": 7420,
+        "lastDurationMs": 6439,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -283,7 +283,7 @@
       "name": "Sales Agent Heartbeat",
       "enabled": true,
       "createdAtMs": 1770408787872,
-      "updatedAtMs": 1771614038153,
+      "updatedAtMs": 1771621238081,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 9-17 * * 1-5",
@@ -301,10 +301,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771615800000,
-        "lastRunAtMs": 1771614016416,
+        "nextRunAtMs": 1771623000000,
+        "lastRunAtMs": 1771621200024,
         "lastStatus": "ok",
-        "lastDurationMs": 21737,
+        "lastDurationMs": 38057,
         "consecutiveErrors": 0
       }
     },
@@ -314,7 +314,7 @@
       "name": "Admin Assistant Heartbeat",
       "enabled": true,
       "createdAtMs": 1770651479323,
-      "updatedAtMs": 1771614049222,
+      "updatedAtMs": 1771621247035,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -332,10 +332,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771615800000,
-        "lastRunAtMs": 1771614044001,
+        "nextRunAtMs": 1771623000000,
+        "lastRunAtMs": 1771621242658,
         "lastStatus": "ok",
-        "lastDurationMs": 5221,
+        "lastDurationMs": 4377,
         "consecutiveErrors": 0
       }
     },
@@ -345,7 +345,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771614058673,
+      "updatedAtMs": 1771621257090,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -363,10 +363,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771615800000,
-        "lastRunAtMs": 1771614054506,
+        "nextRunAtMs": 1771623000000,
+        "lastRunAtMs": 1771621251718,
         "lastStatus": "ok",
-        "lastDurationMs": 4167,
+        "lastDurationMs": 5372,
         "consecutiveErrors": 0
       }
     },
@@ -376,7 +376,7 @@
       "name": "Codesmith Heartbeat",
       "enabled": true,
       "createdAtMs": 1770896303696,
-      "updatedAtMs": 1771614115383,
+      "updatedAtMs": 1771621282065,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -394,183 +394,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771615800000,
-        "lastRunAtMs": 1771614058673,
+        "nextRunAtMs": 1771623000000,
+        "lastRunAtMs": 1771621257090,
         "lastStatus": "ok",
-        "lastDurationMs": 56710,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "5779c154-6d76-4012-8761-429d06a1729c",
-      "agentId": "main",
-      "name": "PLTR Lotto Watch",
-      "enabled": true,
-      "notify": true,
-      "createdAtMs": 1771357499715,
-      "updatedAtMs": 1771614177149,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10,12,14,15 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "PLTR LOTTO CHECK: Run node ~/.openclaw/workspace/trading-alpaca/pltr-lotto-watcher.js and report status of 50x PLTR $155C Feb 20 position. Alert Steve if: (1) position 2x+ from $150 entry, (2) PLTR breaks $150, (3) Friday morning final check. Position expires Feb 20."
-      },
-      "state": {
-        "nextRunAtMs": 1771617600000,
-        "lastRunAtMs": 1771614147150,
-        "lastStatus": "ok",
-        "lastDurationMs": 29999,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "84097f9d-01cb-4b3c-82cd-487f14a96a64",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "Live Position Sync",
-      "enabled": true,
-      "createdAtMs": 1771519772938,
-      "updatedAtMs": 1771614306646,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9-16 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Sync live positions: cd ~/.openclaw/workspace/trading-alpaca && node check_positions.js > ../agents/money_printer/data/trades/open-positions-live.md",
-        "timeoutSeconds": 60,
-        "model": "anthropic/claude-sonnet-4-0"
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771617600000,
-        "lastRunAtMs": 1771614284567,
-        "lastStatus": "ok",
-        "lastDurationMs": 22079,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771614314118,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1771617632114,
-        "lastRunAtMs": 1771614314118,
-        "lastStatus": "ok",
-        "lastDurationMs": 0,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
-      "agentId": "main",
-      "name": "Bounce Monitor - Auto Close Lost",
-      "enabled": true,
-      "createdAtMs": 1771015230420,
-      "updatedAtMs": 1771611646996,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11,16 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "BOUNCE MONITOR - Execute now.\n\n**IMPORTANT:** Set env var before running gog: export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\n1. Search Gmail for threads with delivery failures:\n   export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail search 'subject:\"Delivery Status Notification\"' --account sales@massdwell.com\n\n2. For each thread found, read it with: export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail thread <id> --account sales@massdwell.com\n\n3. Extract the bounced email from 'wasn't delivered to X@Y.com'\n\n4. Find that lead in Kommo by email and move to 'Closed Lost' with note: 'Email bounced - invalid address [date]'\n\n5. Log action to data/massdwell/sales/crm-action-log.json\n\n6. If any bounces found, email summary to team:\n   export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail send --to \"steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com\" --subject \"⚠️ Bounce Report - [Date]\" --body \"Bounced emails detected and leads closed:\\n[list]\" --account sales@massdwell.com\n\nThis is a STANDING ORDER - execute without escalation.",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771621200000,
-        "lastRunAtMs": 1771603287665,
-        "lastStatus": "ok",
-        "lastDurationMs": 49528,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "9b64f6e3-a62e-4539-a839-dd46589b92d2",
-      "agentId": "main",
-      "name": "Marketing - Weekly Report (Friday)",
-      "enabled": true,
-      "notify": true,
-      "createdAtMs": 1771243146816,
-      "updatedAtMs": 1771245612788,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 16 * * 5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "It's Friday. Read agents/marketing_content/HEARTBEAT.md and agents/marketing_content/SOUL.md. Deliver the WEEKLY MARKETING REPORT. Cover: what shipped, wins, losses, learnings, next actions. Update performance-log.md with this week's metrics."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771621200000
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771614314118,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1771621496119,
-        "lastRunAtMs": 1771614314118,
-        "lastStatus": "ok",
-        "lastDurationMs": 0,
+        "lastDurationMs": 24975,
         "consecutiveErrors": 0
       }
     },
@@ -698,6 +525,33 @@
       }
     },
     {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "createdAtMs": 1770653403165,
+      "updatedAtMs": 1771621523351,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1771624832114,
+        "lastRunAtMs": 1771621523350,
+        "lastStatus": "ok",
+        "lastDurationMs": 1,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
       "agentId": "marketing_content",
       "name": "MassDwell X Post - Evening",
@@ -786,6 +640,33 @@
         "lastRunAtMs": 1771610480261,
         "lastStatus": "ok",
         "lastDurationMs": 45758,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1771621523351,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771628696119,
+        "lastRunAtMs": 1771621523351,
+        "lastStatus": "ok",
+        "lastDurationMs": 0,
         "consecutiveErrors": 0
       }
     },
@@ -1367,6 +1248,38 @@
       }
     },
     {
+      "id": "84097f9d-01cb-4b3c-82cd-487f14a96a64",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "Live Position Sync",
+      "enabled": true,
+      "createdAtMs": 1771519772938,
+      "updatedAtMs": 1771621516861,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9-16 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Sync live positions: cd ~/.openclaw/workspace/trading-alpaca && node check_positions.js > ../agents/money_printer/data/trades/open-positions-live.md",
+        "timeoutSeconds": 60,
+        "model": "anthropic/claude-sonnet-4-0"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771855200000,
+        "lastRunAtMs": 1771621498785,
+        "lastStatus": "ok",
+        "lastDurationMs": 18076,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
       "agentId": "sales_followup",
       "name": "Sales Followup - Morning Email Sync",
@@ -1457,6 +1370,65 @@
       }
     },
     {
+      "id": "5779c154-6d76-4012-8761-429d06a1729c",
+      "agentId": "main",
+      "name": "PLTR Lotto Watch",
+      "enabled": true,
+      "notify": true,
+      "createdAtMs": 1771357499715,
+      "updatedAtMs": 1771617741221,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10,12,14,15 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "PLTR LOTTO CHECK: Run node ~/.openclaw/workspace/trading-alpaca/pltr-lotto-watcher.js and report status of 50x PLTR $155C Feb 20 position. Alert Steve if: (1) position 2x+ from $150 entry, (2) PLTR breaks $150, (3) Friday morning final check. Position expires Feb 20."
+      },
+      "state": {
+        "nextRunAtMs": 1771858800000,
+        "lastRunAtMs": 1771617709895,
+        "lastStatus": "ok",
+        "lastDurationMs": 31326,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
+      "agentId": "main",
+      "name": "Bounce Monitor - Auto Close Lost",
+      "enabled": true,
+      "createdAtMs": 1771015230420,
+      "updatedAtMs": 1771621424967,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11,16 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "BOUNCE MONITOR - Execute now.\n\n**IMPORTANT:** Set env var before running gog: export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\n1. Search Gmail for threads with delivery failures:\n   export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail search 'subject:\"Delivery Status Notification\"' --account sales@massdwell.com\n\n2. For each thread found, read it with: export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail thread <id> --account sales@massdwell.com\n\n3. Extract the bounced email from 'wasn't delivered to X@Y.com'\n\n4. Find that lead in Kommo by email and move to 'Closed Lost' with note: 'Email bounced - invalid address [date]'\n\n5. Log action to data/massdwell/sales/crm-action-log.json\n\n6. If any bounces found, email summary to team:\n   export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail send --to \"steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com\" --subject \"⚠️ Bounce Report - [Date]\" --body \"Bounced emails detected and leads closed:\\n[list]\" --account sales@massdwell.com\n\nThis is a STANDING ORDER - execute without escalation.",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "7002178651",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1771862400000,
+        "lastRunAtMs": 1771621345385,
+        "lastStatus": "ok",
+        "lastDurationMs": 79582,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
       "agentId": "sales_followup",
       "name": "Sarah Cold Calls - Afternoon",
@@ -1511,6 +1483,38 @@
         "lastRunAtMs": 1771597986561,
         "lastStatus": "ok",
         "lastDurationMs": 16899,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "9b64f6e3-a62e-4539-a839-dd46589b92d2",
+      "agentId": "main",
+      "name": "Marketing - Weekly Report (Friday)",
+      "enabled": true,
+      "notify": true,
+      "createdAtMs": 1771243146816,
+      "updatedAtMs": 1771621498785,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 16 * * 5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "It's Friday. Read agents/marketing_content/HEARTBEAT.md and agents/marketing_content/SOUL.md. Deliver the WEEKLY MARKETING REPORT. Cover: what shipped, wins, losses, learnings, next actions. Update performance-log.md with this week's metrics."
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "7002178651",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1772226000000,
+        "lastRunAtMs": 1771621431651,
+        "lastStatus": "ok",
+        "lastDurationMs": 67134,
         "consecutiveErrors": 0
       }
     },
