@@ -6,7 +6,7 @@
       "name": "BTC Scalper (5-min)",
       "enabled": true,
       "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771693259048,
+      "updatedAtMs": 1771700446203,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 * * * *",
@@ -24,12 +24,12 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771693500000,
-        "lastRunAtMs": 1771693253950,
+        "nextRunAtMs": 1771700700000,
+        "lastRunAtMs": 1771700441379,
         "lastStatus": "ok",
-        "lastDurationMs": 5098,
+        "lastDurationMs": 4824,
         "consecutiveErrors": 0,
-        "runningAtMs": 1771693500028
+        "runningAtMs": 1771700700028
       }
     },
     {
@@ -39,7 +39,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771690094923,
+      "updatedAtMs": 1771697292628,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -58,42 +58,11 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771693676834,
-        "lastRunAtMs": 1771690076860,
+        "nextRunAtMs": 1771700876834,
+        "lastRunAtMs": 1771697276861,
         "lastStatus": "ok",
-        "lastDurationMs": 18063,
+        "lastDurationMs": 15767,
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Midday",
-      "createdAtMs": 1770132146978,
-      "updatedAtMs": 1771607751834,
-      "schedule": {
-        "kind": "cron",
-        "expr": "15 12 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "[TIME: 12:15 PM EST]\n\nPost to @massdwell X/Twitter. Midday slot. Create engaging content following your X strategy guidelines. Focus on product showcase or engagement. Use the X API credentials in credentials/x/x-api.json. Log the post to data/massdwell/marketing_assets/x-post-log.json.",
-        "timeoutSeconds": 120,
-        "model": "anthropic/claude-haiku-4-5"
-      },
-      "state": {
-        "nextRunAtMs": 1771694100000,
-        "lastRunAtMs": 1771607700003,
-        "lastStatus": "ok",
-        "lastDurationMs": 51831,
-        "consecutiveErrors": 0
-      },
-      "enabled": true,
-      "delivery": {
-        "mode": "none"
       }
     },
     {
@@ -102,7 +71,7 @@
       "name": "Marketing Agent Heartbeat",
       "enabled": true,
       "createdAtMs": 1770408787882,
-      "updatedAtMs": 1771693207544,
+      "updatedAtMs": 1771700407531,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 8-18 * * *",
@@ -120,10 +89,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771694100000,
-        "lastRunAtMs": 1771693200024,
+        "nextRunAtMs": 1771701300000,
+        "lastRunAtMs": 1771700400027,
         "lastStatus": "ok",
-        "lastDurationMs": 7520,
+        "lastDurationMs": 7504,
         "consecutiveErrors": 0
       }
     },
@@ -133,7 +102,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771693228292,
+      "updatedAtMs": 1771700416868,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -151,10 +120,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771694100000,
-        "lastRunAtMs": 1771693223098,
+        "nextRunAtMs": 1771701300000,
+        "lastRunAtMs": 1771700413119,
         "lastStatus": "ok",
-        "lastDurationMs": 5194,
+        "lastDurationMs": 3749,
         "consecutiveErrors": 0
       }
     },
@@ -163,7 +132,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771693380348,
+      "updatedAtMs": 1771700582189,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -177,10 +146,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771694276157,
-        "lastRunAtMs": 1771693376182,
+        "nextRunAtMs": 1771701476157,
+        "lastRunAtMs": 1771700576182,
         "lastStatus": "ok",
-        "lastDurationMs": 4166,
+        "lastDurationMs": 6007,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -194,7 +163,7 @@
       "name": "Admin Assistant Heartbeat",
       "enabled": true,
       "createdAtMs": 1770651479323,
-      "updatedAtMs": 1771693213848,
+      "updatedAtMs": 1771700413119,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -212,10 +181,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771695000000,
-        "lastRunAtMs": 1771693207544,
+        "nextRunAtMs": 1771702200000,
+        "lastRunAtMs": 1771700407531,
         "lastStatus": "ok",
-        "lastDurationMs": 6304,
+        "lastDurationMs": 5588,
         "consecutiveErrors": 0
       }
     },
@@ -225,7 +194,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771693231852,
+      "updatedAtMs": 1771700421504,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -243,10 +212,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771695000000,
-        "lastRunAtMs": 1771693228292,
+        "nextRunAtMs": 1771702200000,
+        "lastRunAtMs": 1771700416868,
         "lastStatus": "ok",
-        "lastDurationMs": 3560,
+        "lastDurationMs": 4636,
         "consecutiveErrors": 0
       }
     },
@@ -256,7 +225,7 @@
       "name": "Codesmith Heartbeat",
       "enabled": true,
       "createdAtMs": 1770896303696,
-      "updatedAtMs": 1771693253950,
+      "updatedAtMs": 1771700441379,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -274,40 +243,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771695000000,
-        "lastRunAtMs": 1771693231852,
+        "nextRunAtMs": 1771702200000,
+        "lastRunAtMs": 1771700421504,
         "lastStatus": "ok",
-        "lastDurationMs": 22098,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "createdAtMs": 1771016197719,
-      "updatedAtMs": 1771679040931,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "KOMMO CRM SYNC - Execute now.\n\nRun: cd ~/.openclaw/workspace/crm-dashboard/server && node kommo-sync.js\n\nThis syncs all leads, contacts, and pipeline data from Kommo to local JSON files. After sync completes, regenerate the active-email-list.json:\n\ncat ~/.openclaw/workspace/crm-dashboard/data/leads.json | jq '[.leads[] | select(.status_id != 142 and .status_id != 143) | select(.contact_email != null and .contact_email != \"\") | {lead_id: .id, name, email: .contact_email, status_id, phone: .contact_phone}]' > ~/.openclaw/workspace/data/massdwell/sales/active-email-list.json\n\nReport: sync status, total leads, how many active vs closed.",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771696800000,
-        "lastRunAtMs": 1771678997324,
-        "lastStatus": "ok",
-        "lastDurationMs": 43607,
+        "lastDurationMs": 19875,
         "consecutiveErrors": 0
       }
     },
@@ -317,7 +256,7 @@
       "name": "Hourly Memory Summarizer",
       "enabled": true,
       "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771693259063,
+      "updatedAtMs": 1771700509085,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -331,44 +270,10 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771696832114,
-        "lastRunAtMs": 1771693259062,
+        "nextRunAtMs": 1771704032114,
+        "lastRunAtMs": 1771700509076,
         "lastStatus": "ok",
-        "lastDurationMs": 1,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "agentId": "personal_life_cos",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "enabled": true,
-      "createdAtMs": 1771495487754,
-      "updatedAtMs": 1771679134606,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,14,20 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "📧 PERSONAL GMAIL CLEANUP (vettoristeve@gmail.com)\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\nYou are Steve's Personal Gmail Operations Agent. Clean up INBOX only, preserve anything important.\n\nSCOPE: vettoristeve@gmail.com INBOX only\nLOOKBACK: Last 24 hours\n\nSAFETY RULES:\n• NEVER delete emails permanently\n• NEVER touch personal, financial, legal, medical, or human-authored emails  \n• NEVER unsubscribe without confirmation\n• NEVER touch emails with attachments unless explicitly safe\n• When uncertain → leave untouched\n\nCLASSIFICATION:\n\n1. AUTO-ARCHIVE (Safe Noise):\n• Marketing, promos, newsletters\n• Social notifications (LinkedIn, X, Meta)\n• Product updates, release notes  \n• Receipts <$50 with no follow-up\n• GitHub/CI success alerts\nACTION: export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail archive <messageId> --account vettoristeve@gmail.com + apply label Auto/Archived\n\n2. LABEL + KEEP IN INBOX:\n• Alpine Property Group → Biz/Alpine\n• MassDwell → Biz/MassDwell  \n• Atlantic Laser → Biz/AtlanticLaser\n• Government/zoning/permits → Gov/Action\n• Legal/finance/investors → Finance/Legal\n• Family/schools/personal → Personal/Family\nACTION: Apply label, leave in inbox\n\n3. FLAG FOR ATTENTION:\n• Dollar amounts >$50\n• Deadlines, \"urgent\", \"ASAP\" \n• Attachments (.pdf, .docx, .xlsx)\n• Direct questions to Steve\nACTION: Apply label ⚠️ Needs Review + star + inbox\n\n4. LEAVE UNTOUCHED:\n• Human-authored messages\n• Personal/relationship emails\n• Direct reply chains with context\n\nSUMMARY RULES:\n• If flagged emails exist → send concise summary to Steve\n• If no flags → respond HEARTBEAT_OK\n\nCOMMANDS:\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail search 'in:inbox newer_than:1d' --account vettoristeve@gmail.com\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail archive <messageId> --account vettoristeve@gmail.com  \nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail label <messageId> 'label-name' --account vettoristeve@gmail.com\n\nTarget: 30%+ inbox reduction daily. Quality over quantity.",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1771700400000,
-        "lastRunAtMs": 1771679044616,
-        "lastStatus": "ok",
-        "lastDurationMs": 89990,
+        "lastDurationMs": 9,
         "consecutiveErrors": 0
       }
     },
@@ -378,7 +283,7 @@
       "name": "Mission Control Cron Export",
       "enabled": true,
       "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771693496156,
+      "updatedAtMs": 1771700696157,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -392,10 +297,10 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1771700696119,
-        "lastRunAtMs": 1771693496142,
+        "nextRunAtMs": 1771707896119,
+        "lastRunAtMs": 1771700696144,
         "lastStatus": "ok",
-        "lastDurationMs": 14,
+        "lastDurationMs": 13,
         "consecutiveErrors": 0
       }
     },
@@ -491,6 +396,70 @@
         "lastRunAtMs": 1771693213848,
         "lastStatus": "ok",
         "lastDurationMs": 9250,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
+      "name": "Kommo CRM Sync",
+      "enabled": true,
+      "createdAtMs": 1771016197719,
+      "updatedAtMs": 1771696872902,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,13,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "KOMMO CRM SYNC - Execute now.\n\nRun: cd ~/.openclaw/workspace/crm-dashboard/server && node kommo-sync.js\n\nThis syncs all leads, contacts, and pipeline data from Kommo to local JSON files. After sync completes, regenerate the active-email-list.json:\n\ncat ~/.openclaw/workspace/crm-dashboard/data/leads.json | jq '[.leads[] | select(.status_id != 142 and .status_id != 143) | select(.contact_email != null and .contact_email != \"\") | {lead_id: .id, name, email: .contact_email, status_id, phone: .contact_phone}]' > ~/.openclaw/workspace/data/massdwell/sales/active-email-list.json\n\nReport: sync status, total leads, how many active vs closed.",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771714800000,
+        "lastRunAtMs": 1771696840912,
+        "lastStatus": "ok",
+        "lastDurationMs": 31990,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "agentId": "personal_life_cos",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "Personal Gmail Cleanup - Consolidated",
+      "enabled": true,
+      "createdAtMs": 1771495487754,
+      "updatedAtMs": 1771700509038,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,14,20 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "📧 PERSONAL GMAIL CLEANUP (vettoristeve@gmail.com)\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\nYou are Steve's Personal Gmail Operations Agent. Clean up INBOX only, preserve anything important.\n\nSCOPE: vettoristeve@gmail.com INBOX only\nLOOKBACK: Last 24 hours\n\nSAFETY RULES:\n• NEVER delete emails permanently\n• NEVER touch personal, financial, legal, medical, or human-authored emails  \n• NEVER unsubscribe without confirmation\n• NEVER touch emails with attachments unless explicitly safe\n• When uncertain → leave untouched\n\nCLASSIFICATION:\n\n1. AUTO-ARCHIVE (Safe Noise):\n• Marketing, promos, newsletters\n• Social notifications (LinkedIn, X, Meta)\n• Product updates, release notes  \n• Receipts <$50 with no follow-up\n• GitHub/CI success alerts\nACTION: export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail archive <messageId> --account vettoristeve@gmail.com + apply label Auto/Archived\n\n2. LABEL + KEEP IN INBOX:\n• Alpine Property Group → Biz/Alpine\n• MassDwell → Biz/MassDwell  \n• Atlantic Laser → Biz/AtlanticLaser\n• Government/zoning/permits → Gov/Action\n• Legal/finance/investors → Finance/Legal\n• Family/schools/personal → Personal/Family\nACTION: Apply label, leave in inbox\n\n3. FLAG FOR ATTENTION:\n• Dollar amounts >$50\n• Deadlines, \"urgent\", \"ASAP\" \n• Attachments (.pdf, .docx, .xlsx)\n• Direct questions to Steve\nACTION: Apply label ⚠️ Needs Review + star + inbox\n\n4. LEAVE UNTOUCHED:\n• Human-authored messages\n• Personal/relationship emails\n• Direct reply chains with context\n\nSUMMARY RULES:\n• If flagged emails exist → send concise summary to Steve\n• If no flags → respond HEARTBEAT_OK\n\nCOMMANDS:\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail search 'in:inbox newer_than:1d' --account vettoristeve@gmail.com\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail archive <messageId> --account vettoristeve@gmail.com  \nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail label <messageId> 'label-name' --account vettoristeve@gmail.com\n\nTarget: 30%+ inbox reduction daily. Quality over quantity.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1771722000000,
+        "lastRunAtMs": 1771700446203,
+        "lastStatus": "ok",
+        "lastDurationMs": 62835,
         "consecutiveErrors": 0
       }
     },
@@ -768,6 +737,37 @@
         "lastStatus": "ok",
         "lastDurationMs": 22149,
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
+      "agentId": "marketing_content",
+      "name": "MassDwell X Post - Midday",
+      "createdAtMs": 1770132146978,
+      "updatedAtMs": 1771694213486,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 12 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "[TIME: 12:15 PM EST]\n\nPost to @massdwell X/Twitter. Midday slot. Create engaging content following your X strategy guidelines. Focus on product showcase or engagement. Use the X API credentials in credentials/x/x-api.json. Log the post to data/massdwell/marketing_assets/x-post-log.json.",
+        "timeoutSeconds": 120,
+        "model": "anthropic/claude-haiku-4-5"
+      },
+      "state": {
+        "nextRunAtMs": 1771780500000,
+        "lastRunAtMs": 1771694100029,
+        "lastStatus": "ok",
+        "lastDurationMs": 113457,
+        "consecutiveErrors": 0
+      },
+      "enabled": true,
+      "delivery": {
+        "mode": "none"
       }
     },
     {
