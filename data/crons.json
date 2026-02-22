@@ -6,7 +6,7 @@
       "name": "BTC Scalper (5-min)",
       "enabled": true,
       "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771743619837,
+      "updatedAtMs": 1771750813268,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 * * * *",
@@ -24,12 +24,12 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771743900000,
-        "lastRunAtMs": 1771743611445,
+        "nextRunAtMs": 1771751100000,
+        "lastRunAtMs": 1771750810006,
         "lastStatus": "ok",
-        "lastDurationMs": 8392,
+        "lastDurationMs": 3262,
         "consecutiveErrors": 0,
-        "runningAtMs": 1771743900026
+        "runningAtMs": 1771751100021
       }
     },
     {
@@ -39,7 +39,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771740745553,
+      "updatedAtMs": 1771747992125,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -58,11 +58,11 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771744345553,
-        "lastRunAtMs": 1771740626635,
+        "nextRunAtMs": 1771751592125,
+        "lastRunAtMs": 1771747974474,
         "lastStatus": "error",
-        "lastDurationMs": 118918,
-        "consecutiveErrors": 11,
+        "lastDurationMs": 17651,
+        "consecutiveErrors": 13,
         "lastError": "cron announce delivery failed"
       }
     },
@@ -72,7 +72,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771743607295,
+      "updatedAtMs": 1771750805505,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -90,10 +90,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771744500000,
-        "lastRunAtMs": 1771743600028,
+        "nextRunAtMs": 1771751700000,
+        "lastRunAtMs": 1771750800024,
         "lastStatus": "ok",
-        "lastDurationMs": 7267,
+        "lastDurationMs": 5481,
         "consecutiveErrors": 0
       }
     },
@@ -102,7 +102,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771743783858,
+      "updatedAtMs": 1771750979996,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -116,10 +116,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771744676157,
-        "lastRunAtMs": 1771743776182,
+        "nextRunAtMs": 1771751876157,
+        "lastRunAtMs": 1771750976185,
         "lastStatus": "ok",
-        "lastDurationMs": 7676,
+        "lastDurationMs": 3811,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -133,7 +133,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771743611445,
+      "updatedAtMs": 1771750810006,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -151,10 +151,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771745400000,
-        "lastRunAtMs": 1771743607295,
+        "nextRunAtMs": 1771752600000,
+        "lastRunAtMs": 1771750805505,
         "lastStatus": "ok",
-        "lastDurationMs": 4150,
+        "lastDurationMs": 4501,
         "consecutiveErrors": 0
       }
     },
@@ -164,7 +164,7 @@
       "name": "Hourly Memory Summarizer",
       "enabled": true,
       "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771743632158,
+      "updatedAtMs": 1771750832159,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -178,10 +178,65 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771747232114,
-        "lastRunAtMs": 1771743632141,
+        "nextRunAtMs": 1771754432114,
+        "lastRunAtMs": 1771750832140,
         "lastStatus": "ok",
-        "lastDurationMs": 17,
+        "lastDurationMs": 19,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "ab8660cc-2f59-4b6e-8cfa-c2b4a030c188",
+      "agentId": "main",
+      "name": "MassDwell Knowledge Refresh (Weekly)",
+      "enabled": true,
+      "createdAtMs": 1771328218478,
+      "updatedAtMs": 1771328218478,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * 0",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "WEEKLY MASSDWELL KNOWLEDGE REFRESH\n\nUpdate the MassDwell knowledge base with insights from the past week.\n\n1. Check sales@massdwell.com for new patterns:\n   `gog gmail list --account sales@massdwell.com --after 7d --limit 50`\n   \n2. Check steve.vettori@massdwell.com for strategic updates:\n   `gog gmail list --account steve.vettori@massdwell.com --after 7d --limit 30`\n\n3. Review CRM for new leads/closes:\n   `cat ~/.openclaw/workspace/crm-dashboard/data/leads.json`\n\n4. Update these docs if new insights found:\n   - data/massdwell/ICP.md (new customer patterns?)\n   - data/massdwell/objections-playbook.md (new objections?)\n   - data/massdwell/voice-of-customer.md (new quotes?)\n   - data/massdwell/competitor-intel-deep.md (competitor mentions?)\n   - data/massdwell/tech-leverage.md (new tech opportunities?)\n\n5. Add dated entry to each doc showing what was updated.\n\nIf nothing significant found, reply HEARTBEAT_OK.\nIf updates made, send brief summary to Steve.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1771758000000
+      }
+    },
+    {
+      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
+      "agentId": "main",
+      "name": "Atlantic Laser QB→Pipedrive Sync",
+      "enabled": true,
+      "createdAtMs": 1771463532494,
+      "updatedAtMs": 1771671623371,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
+      },
+      "state": {
+        "nextRunAtMs": 1771758000000,
+        "lastRunAtMs": 1771671612813,
+        "lastStatus": "ok",
+        "lastDurationMs": 10558,
         "consecutiveErrors": 0
       }
     },
@@ -192,7 +247,7 @@
       "name": "Venture Engine - Heartbeat",
       "enabled": true,
       "createdAtMs": 1771733448311,
-      "updatedAtMs": 1771736731147,
+      "updatedAtMs": 1771747477494,
       "schedule": {
         "kind": "cron",
         "expr": "0 */3 * * *",
@@ -213,12 +268,12 @@
         "to": "7002178651"
       },
       "state": {
-        "nextRunAtMs": 1771747463799,
-        "lastRunAtMs": 1771736663822,
+        "nextRunAtMs": 1771758263799,
+        "lastRunAtMs": 1771747463827,
         "lastStatus": "error",
-        "lastDurationMs": 67325,
-        "lastError": "cron announce delivery failed",
-        "consecutiveErrors": 1
+        "lastDurationMs": 13667,
+        "consecutiveErrors": 2,
+        "lastError": "cron announce delivery failed"
       }
     },
     {
@@ -227,7 +282,7 @@
       "name": "Mission Control Cron Export",
       "enabled": true,
       "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771743896159,
+      "updatedAtMs": 1771751096152,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -241,12 +296,13 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1771751096119,
-        "lastRunAtMs": 1771743896142,
+        "nextRunAtMs": 1771758296119,
+        "lastRunAtMs": 1771751096140,
         "lastStatus": "ok",
-        "lastDurationMs": 17,
+        "lastDurationMs": 12,
         "consecutiveErrors": 0
       }
     }
-  ]
+  ],
+  "exportedAt": "2026-02-22T09:05:01.309Z"
 }
