@@ -1,11 +1,105 @@
 {
   "jobs": [
     {
+      "id": "71479587-9e25-474b-bce2-f929140565f9",
+      "agentId": "main",
+      "name": "BTC Scalper (5-min)",
+      "enabled": true,
+      "createdAtMs": 1771207771266,
+      "updatedAtMs": 1771765359320,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/5 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check\n\nOnly report if:\n1. A trade was executed (BUY, CLOSED_PROFIT, CLOSED_LOSS)\n2. An error occurred\n\nOtherwise reply HEARTBEAT_OK",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771765500000,
+        "lastRunAtMs": 1771765354894,
+        "lastStatus": "ok",
+        "lastDurationMs": 4426,
+        "consecutiveErrors": 0,
+        "runningAtMs": 1771765500026
+      }
+    },
+    {
+      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
+      "agentId": "marketing_content",
+      "name": "Marketing Agent Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770408787882,
+      "updatedAtMs": 1771765228012,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin marketing_content\n1. Read agents/marketing_content/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions marketing_content\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota marketing_content\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks marketing_content\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute it\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Task title\" --agent marketing_content\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771766100000,
+        "lastRunAtMs": 1771765200033,
+        "lastStatus": "ok",
+        "lastDurationMs": 27979,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
+      "agentId": "main",
+      "name": "Self-Healing: Stale Task Recovery",
+      "enabled": true,
+      "createdAtMs": 1770727337404,
+      "updatedAtMs": 1771765283192,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal\n\nReport any recovered tasks. If none, just confirm the check ran.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771766100000,
+        "lastRunAtMs": 1771765280012,
+        "lastStatus": "ok",
+        "lastDurationMs": 3180,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771758180189,
+      "updatedAtMs": 1771765436488,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -19,10 +113,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771759076157,
-        "lastRunAtMs": 1771758176253,
+        "nextRunAtMs": 1771766276157,
+        "lastRunAtMs": 1771765433005,
         "lastStatus": "ok",
-        "lastDurationMs": 3936,
+        "lastDurationMs": 3483,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -37,7 +131,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771755514491,
+      "updatedAtMs": 1771763233283,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -56,226 +150,12 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771759114491,
-        "lastRunAtMs": 1771755309651,
+        "nextRunAtMs": 1771766833283,
+        "lastRunAtMs": 1771762985010,
         "lastStatus": "error",
-        "lastDurationMs": 204840,
-        "consecutiveErrors": 15,
+        "lastDurationMs": 248273,
+        "consecutiveErrors": 17,
         "lastError": "cron announce delivery failed"
-      }
-    },
-    {
-      "id": "71479587-9e25-474b-bce2-f929140565f9",
-      "agentId": "main",
-      "name": "BTC Scalper (5-min)",
-      "enabled": true,
-      "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771758908429,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/5 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check\n\nOnly report if:\n1. A trade was executed (BUY, CLOSED_PROFIT, CLOSED_LOSS)\n2. An error occurred\n\nOtherwise reply HEARTBEAT_OK",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771759200000,
-        "lastRunAtMs": 1771758904530,
-        "lastStatus": "ok",
-        "lastDurationMs": 3899,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
-      "agentId": "main",
-      "name": "Self-Healing: Stale Task Recovery",
-      "enabled": true,
-      "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771758904530,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal\n\nReport any recovered tasks. If none, just confirm the check ran.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771759800000,
-        "lastRunAtMs": 1771758900035,
-        "lastStatus": "ok",
-        "lastDurationMs": 4495,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "agentId": "main",
-      "name": "Mission Control Status Sync",
-      "enabled": true,
-      "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771758034956,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Push Mission Control data.json to GitHub for dashboard sync.\n\nRun:\ncd /Users/openclaw/.openclaw/workspace/mission-control && git add data/data.json && git diff --cached --quiet || (git commit -m \"Auto-sync agent statuses\" && git push origin main)\n\nReply HEARTBEAT_OK when done.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771759800000,
-        "lastRunAtMs": 1771758009574,
-        "lastStatus": "ok",
-        "lastDurationMs": 25382,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
-      "agentId": "main",
-      "name": "Personal Life - Morning Scan",
-      "enabled": true,
-      "notify": false,
-      "createdAtMs": 1771242940459,
-      "updatedAtMs": 1771675246014,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771761600000,
-        "lastRunAtMs": 1771675211756,
-        "lastStatus": "ok",
-        "lastDurationMs": 34258,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771758125355,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1771761632114,
-        "lastRunAtMs": 1771758125355,
-        "lastStatus": "ok",
-        "lastDurationMs": 0,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
-      "agentId": "main",
-      "name": "Competitor Intel - Delta Only",
-      "enabled": true,
-      "createdAtMs": 1771156051938,
-      "updatedAtMs": 1771677043717,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "COMPETITOR INTEL - DELTA ONLY FORMAT\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\n**CRITICAL: Only report CHANGES. If nothing new, reply HEARTBEAT_OK.**\n\nSTEP 1: Load baseline\n- Read: data/intel/competitor-baseline.json\n- This contains ALL known competitors and their last known state\n\nSTEP 2: Search for CHANGES ONLY\nRun targeted searches with freshness=pd (past day):\n- web_search 'Massachusetts ADU news' freshness=pd\n- web_search 'modular ADU Massachusetts' freshness=pd\n- web_search 'ADU permit Massachusetts' freshness=pd\n\nSTEP 3: Compare against baseline\nFor each search result, ask:\n- Is this a NEW competitor not in baseline? → REPORT\n- Is this a PRICE CHANGE for known competitor? → REPORT\n- Is this a NEW MARKET or positioning change? → REPORT\n- Is this NEW REGULATION or state funding news? → REPORT\n- Is this just the same info we already have? → SKIP\n\nSTEP 4: Update baseline if changes found\n- Add new competitors to baseline\n- Update changed fields\n- Add to change_log array with date\n\nSTEP 5: Report format (ONLY if changes exist)\n\n📡 COMPETITOR INTEL - [Date]\n\n🆕 NEW:\n• [New competitor/news item]\n\n📈 CHANGED:\n• [What changed from baseline]\n\n📊 MARKET:\n• [New permit data or regulation changes]\n\n**If no changes detected: Reply HEARTBEAT_OK. Do NOT send the team an email of recycled info.**\n\nSTEP 6: Only email team if ACTUAL news exists\nIf you found real changes:\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail send --to 'steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com' --subject '📡 Competitor Alert - [specific change]' --body '[changes only]' --account sales@massdwell.com",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771763400000,
-        "lastRunAtMs": 1771677006414,
-        "lastStatus": "ok",
-        "lastDurationMs": 37303,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
-      "agentId": "marketing_content",
-      "name": "Marketing Agent Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770408787882,
-      "updatedAtMs": 1771717507269,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin marketing_content\n1. Read agents/marketing_content/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions marketing_content\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota marketing_content\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks marketing_content\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute it\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Task title\" --agent marketing_content\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771765200000,
-        "lastRunAtMs": 1771717500028,
-        "lastStatus": "ok",
-        "lastDurationMs": 7241,
-        "consecutiveErrors": 0
       }
     },
     {
@@ -284,7 +164,7 @@
       "name": "Admin Assistant Heartbeat",
       "enabled": true,
       "createdAtMs": 1770651479323,
-      "updatedAtMs": 1771716612848,
+      "updatedAtMs": 1771765259658,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -302,41 +182,41 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771765200000,
-        "lastRunAtMs": 1771716605699,
+        "nextRunAtMs": 1771767000000,
+        "lastRunAtMs": 1771765228012,
         "lastStatus": "ok",
-        "lastDurationMs": 7149,
+        "lastDurationMs": 31646,
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "agentId": "main",
+      "name": "Mission Control Status Sync",
       "enabled": true,
-      "createdAtMs": 1770651479338,
-      "updatedAtMs": 1771714901240,
+      "createdAtMs": 1770740199525,
+      "updatedAtMs": 1771765286467,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8,12,18 * * *",
+        "expr": "*/30 * * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
       "wakeMode": "next-heartbeat",
       "payload": {
         "kind": "agentTurn",
-        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin personal_life_cos\n1. Read agents/personal_life_cos/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions personal_life_cos\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota personal_life_cos\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks personal_life_cos\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute it\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Task title\" --agent personal_life_cos\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
+        "message": "Push Mission Control data.json to GitHub for dashboard sync.\n\nRun:\ncd /Users/openclaw/.openclaw/workspace/mission-control && git add data/data.json && git diff --cached --quiet || (git commit -m \"Auto-sync agent statuses\" && git push origin main)\n\nReply HEARTBEAT_OK when done.",
         "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 60
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771765200000,
-        "lastRunAtMs": 1771714895470,
+        "nextRunAtMs": 1771767000000,
+        "lastRunAtMs": 1771765283192,
         "lastStatus": "ok",
-        "lastDurationMs": 5770,
+        "lastDurationMs": 3275,
         "consecutiveErrors": 0
       }
     },
@@ -346,7 +226,7 @@
       "name": "Codesmith Heartbeat",
       "enabled": true,
       "createdAtMs": 1770896303696,
-      "updatedAtMs": 1771716640546,
+      "updatedAtMs": 1771765309735,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -364,88 +244,23 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771765200000,
-        "lastRunAtMs": 1771716620947,
+        "nextRunAtMs": 1771767000000,
+        "lastRunAtMs": 1771765286467,
         "lastStatus": "ok",
-        "lastDurationMs": 19599,
+        "lastDurationMs": 23268,
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
       "agentId": "main",
-      "name": "Kommo CRM Sync",
+      "name": "Hourly Memory Summarizer",
       "enabled": true,
-      "createdAtMs": 1771016197719,
-      "updatedAtMs": 1771714960406,
+      "createdAtMs": 1770653403165,
+      "updatedAtMs": 1771765436489,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "KOMMO CRM SYNC - Execute now.\n\nRun: cd ~/.openclaw/workspace/crm-dashboard/server && node kommo-sync.js\n\nThis syncs all leads, contacts, and pipeline data from Kommo to local JSON files. After sync completes, regenerate the active-email-list.json:\n\ncat ~/.openclaw/workspace/crm-dashboard/data/leads.json | jq '[.leads[] | select(.status_id != 142 and .status_id != 143) | select(.contact_email != null and .contact_email != \"\") | {lead_id: .id, name, email: .contact_email, status_id, phone: .contact_phone}]' > ~/.openclaw/workspace/data/massdwell/sales/active-email-list.json\n\nReport: sync status, total leads, how many active vs closed.",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771765200000,
-        "lastRunAtMs": 1771714927429,
-        "lastStatus": "ok",
-        "lastDurationMs": 32977,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "agentId": "personal_life_cos",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "enabled": true,
-      "createdAtMs": 1771495487754,
-      "updatedAtMs": 1771722079774,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,14,20 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "📧 PERSONAL GMAIL CLEANUP (vettoristeve@gmail.com)\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\nYou are Steve's Personal Gmail Operations Agent. Clean up INBOX only, preserve anything important.\n\nSCOPE: vettoristeve@gmail.com INBOX only\nLOOKBACK: Last 24 hours\n\nSAFETY RULES:\n• NEVER delete emails permanently\n• NEVER touch personal, financial, legal, medical, or human-authored emails  \n• NEVER unsubscribe without confirmation\n• NEVER touch emails with attachments unless explicitly safe\n• When uncertain → leave untouched\n\nCLASSIFICATION:\n\n1. AUTO-ARCHIVE (Safe Noise):\n• Marketing, promos, newsletters\n• Social notifications (LinkedIn, X, Meta)\n• Product updates, release notes  \n• Receipts <$50 with no follow-up\n• GitHub/CI success alerts\nACTION: export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail archive <messageId> --account vettoristeve@gmail.com + apply label Auto/Archived\n\n2. LABEL + KEEP IN INBOX:\n• Alpine Property Group → Biz/Alpine\n• MassDwell → Biz/MassDwell  \n• Atlantic Laser → Biz/AtlanticLaser\n• Government/zoning/permits → Gov/Action\n• Legal/finance/investors → Finance/Legal\n• Family/schools/personal → Personal/Family\nACTION: Apply label, leave in inbox\n\n3. FLAG FOR ATTENTION:\n• Dollar amounts >$50\n• Deadlines, \"urgent\", \"ASAP\" \n• Attachments (.pdf, .docx, .xlsx)\n• Direct questions to Steve\nACTION: Apply label ⚠️ Needs Review + star + inbox\n\n4. LEAVE UNTOUCHED:\n• Human-authored messages\n• Personal/relationship emails\n• Direct reply chains with context\n\nSUMMARY RULES:\n• If flagged emails exist → send concise summary to Steve\n• If no flags → respond HEARTBEAT_OK\n\nCOMMANDS:\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail search 'in:inbox newer_than:1d' --account vettoristeve@gmail.com\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail archive <messageId> --account vettoristeve@gmail.com  \nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail label <messageId> 'label-name' --account vettoristeve@gmail.com\n\nTarget: 30%+ inbox reduction daily. Quality over quantity.",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1771765200000,
-        "lastRunAtMs": 1771722016981,
-        "lastStatus": "error",
-        "lastDurationMs": 62793,
-        "consecutiveErrors": 1,
-        "lastError": "cron announce delivery failed"
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771758334579,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
+        "expr": "0 * * * *",
         "tz": "America/New_York",
         "staggerMs": 300000
       },
@@ -453,11 +268,11 @@
       "wakeMode": "next-heartbeat",
       "payload": {
         "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771765496119,
-        "lastRunAtMs": 1771758334578,
+        "nextRunAtMs": 1771768832114,
+        "lastRunAtMs": 1771765436488,
         "lastStatus": "ok",
         "lastDurationMs": 1,
         "consecutiveErrors": 0
@@ -561,6 +376,33 @@
       }
     },
     {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1771765496160,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771772696119,
+        "lastRunAtMs": 1771765496144,
+        "lastStatus": "ok",
+        "lastDurationMs": 16,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
       "agentId": "main",
       "name": "Reta Meal Prompt - Lunch",
@@ -594,6 +436,37 @@
       }
     },
     {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "agentId": "personal_life_cos",
+      "name": "Personal Life Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770651479338,
+      "updatedAtMs": 1771765280012,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin personal_life_cos\n1. Read agents/personal_life_cos/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions personal_life_cos\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota personal_life_cos\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks personal_life_cos\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute it\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Task title\" --agent personal_life_cos\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771779600000,
+        "lastRunAtMs": 1771765259658,
+        "lastStatus": "ok",
+        "lastDurationMs": 20354,
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
       "agentId": "marketing_content",
       "name": "MassDwell X Post - Midday",
@@ -622,6 +495,71 @@
       "enabled": true,
       "delivery": {
         "mode": "none"
+      }
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
+      "name": "Kommo CRM Sync",
+      "enabled": true,
+      "createdAtMs": 1771016197719,
+      "updatedAtMs": 1771765354894,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,13,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "KOMMO CRM SYNC - Execute now.\n\nRun: cd ~/.openclaw/workspace/crm-dashboard/server && node kommo-sync.js\n\nThis syncs all leads, contacts, and pipeline data from Kommo to local JSON files. After sync completes, regenerate the active-email-list.json:\n\ncat ~/.openclaw/workspace/crm-dashboard/data/leads.json | jq '[.leads[] | select(.status_id != 142 and .status_id != 143) | select(.contact_email != null and .contact_email != \"\") | {lead_id: .id, name, email: .contact_email, status_id, phone: .contact_phone}]' > ~/.openclaw/workspace/data/massdwell/sales/active-email-list.json\n\nReport: sync status, total leads, how many active vs closed.",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771783200000,
+        "lastRunAtMs": 1771765309735,
+        "lastStatus": "ok",
+        "lastDurationMs": 45159,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "agentId": "personal_life_cos",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "Personal Gmail Cleanup - Consolidated",
+      "enabled": true,
+      "createdAtMs": 1771495487754,
+      "updatedAtMs": 1771765432965,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,14,20 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "📧 PERSONAL GMAIL CLEANUP (vettoristeve@gmail.com)\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\nYou are Steve's Personal Gmail Operations Agent. Clean up INBOX only, preserve anything important.\n\nSCOPE: vettoristeve@gmail.com INBOX only\nLOOKBACK: Last 24 hours\n\nSAFETY RULES:\n• NEVER delete emails permanently\n• NEVER touch personal, financial, legal, medical, or human-authored emails  \n• NEVER unsubscribe without confirmation\n• NEVER touch emails with attachments unless explicitly safe\n• When uncertain → leave untouched\n\nCLASSIFICATION:\n\n1. AUTO-ARCHIVE (Safe Noise):\n• Marketing, promos, newsletters\n• Social notifications (LinkedIn, X, Meta)\n• Product updates, release notes  \n• Receipts <$50 with no follow-up\n• GitHub/CI success alerts\nACTION: export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail archive <messageId> --account vettoristeve@gmail.com + apply label Auto/Archived\n\n2. LABEL + KEEP IN INBOX:\n• Alpine Property Group → Biz/Alpine\n• MassDwell → Biz/MassDwell  \n• Atlantic Laser → Biz/AtlanticLaser\n• Government/zoning/permits → Gov/Action\n• Legal/finance/investors → Finance/Legal\n• Family/schools/personal → Personal/Family\nACTION: Apply label, leave in inbox\n\n3. FLAG FOR ATTENTION:\n• Dollar amounts >$50\n• Deadlines, \"urgent\", \"ASAP\" \n• Attachments (.pdf, .docx, .xlsx)\n• Direct questions to Steve\nACTION: Apply label ⚠️ Needs Review + star + inbox\n\n4. LEAVE UNTOUCHED:\n• Human-authored messages\n• Personal/relationship emails\n• Direct reply chains with context\n\nSUMMARY RULES:\n• If flagged emails exist → send concise summary to Steve\n• If no flags → respond HEARTBEAT_OK\n\nCOMMANDS:\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail search 'in:inbox newer_than:1d' --account vettoristeve@gmail.com\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail archive <messageId> --account vettoristeve@gmail.com  \nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail label <messageId> 'label-name' --account vettoristeve@gmail.com\n\nTarget: 30%+ inbox reduction daily. Quality over quantity.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1771786800000,
+        "lastRunAtMs": 1771765359320,
+        "lastStatus": "error",
+        "lastDurationMs": 73645,
+        "consecutiveErrors": 2,
+        "lastError": "cron announce delivery failed"
       }
     },
     {
@@ -809,6 +747,39 @@
       }
     },
     {
+      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
+      "agentId": "main",
+      "name": "Personal Life - Morning Scan",
+      "enabled": true,
+      "notify": false,
+      "createdAtMs": 1771242940459,
+      "updatedAtMs": 1771761650926,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "7002178651",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1771848000000,
+        "lastRunAtMs": 1771761612446,
+        "lastStatus": "error",
+        "lastDurationMs": 38480,
+        "consecutiveErrors": 1,
+        "lastError": "cron announce delivery failed"
+      }
+    },
+    {
       "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
       "agentId": "main",
       "name": "Admin - Morning Operations Scan",
@@ -837,6 +808,37 @@
         "lastRunAtMs": 1771588847759,
         "lastStatus": "ok",
         "lastDurationMs": 62247,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
+      "agentId": "main",
+      "name": "Competitor Intel - Delta Only",
+      "enabled": true,
+      "createdAtMs": 1771156051938,
+      "updatedAtMs": 1771763432459,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 7 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "COMPETITOR INTEL - DELTA ONLY FORMAT\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\n**CRITICAL: Only report CHANGES. If nothing new, reply HEARTBEAT_OK.**\n\nSTEP 1: Load baseline\n- Read: data/intel/competitor-baseline.json\n- This contains ALL known competitors and their last known state\n\nSTEP 2: Search for CHANGES ONLY\nRun targeted searches with freshness=pd (past day):\n- web_search 'Massachusetts ADU news' freshness=pd\n- web_search 'modular ADU Massachusetts' freshness=pd\n- web_search 'ADU permit Massachusetts' freshness=pd\n\nSTEP 3: Compare against baseline\nFor each search result, ask:\n- Is this a NEW competitor not in baseline? → REPORT\n- Is this a PRICE CHANGE for known competitor? → REPORT\n- Is this a NEW MARKET or positioning change? → REPORT\n- Is this NEW REGULATION or state funding news? → REPORT\n- Is this just the same info we already have? → SKIP\n\nSTEP 4: Update baseline if changes found\n- Add new competitors to baseline\n- Update changed fields\n- Add to change_log array with date\n\nSTEP 5: Report format (ONLY if changes exist)\n\n📡 COMPETITOR INTEL - [Date]\n\n🆕 NEW:\n• [New competitor/news item]\n\n📈 CHANGED:\n• [What changed from baseline]\n\n📊 MARKET:\n• [New permit data or regulation changes]\n\n**If no changes detected: Reply HEARTBEAT_OK. Do NOT send the team an email of recycled info.**\n\nSTEP 6: Only email team if ACTUAL news exists\nIf you found real changes:\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail send --to 'steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com' --subject '📡 Competitor Alert - [specific change]' --body '[changes only]' --account sales@massdwell.com",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771849800000,
+        "lastRunAtMs": 1771763407711,
+        "lastStatus": "ok",
+        "lastDurationMs": 24748,
         "consecutiveErrors": 0
       }
     },
@@ -1622,5 +1624,5 @@
       }
     }
   ],
-  "exportedAt": "2026-02-22T11:18:00.802Z"
+  "exportedAt": "2026-02-22T13:05:13.460Z"
 }
