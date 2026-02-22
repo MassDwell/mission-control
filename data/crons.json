@@ -1,13 +1,45 @@
 {
   "jobs": [
     {
+      "id": "71479587-9e25-474b-bce2-f929140565f9",
+      "agentId": "main",
+      "name": "BTC Scalper (5-min)",
+      "enabled": true,
+      "createdAtMs": 1771207771266,
+      "updatedAtMs": 1771743619837,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/5 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check\n\nOnly report if:\n1. A trade was executed (BUY, CLOSED_PROFIT, CLOSED_LOSS)\n2. An error occurred\n\nOtherwise reply HEARTBEAT_OK",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771743900000,
+        "lastRunAtMs": 1771743611445,
+        "lastStatus": "ok",
+        "lastDurationMs": 8392,
+        "consecutiveErrors": 0,
+        "runningAtMs": 1771743900026
+      }
+    },
+    {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
       "agentId": "main",
       "name": "Automaton Growth - Heartbeat",
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771733599700,
+      "updatedAtMs": 1771740745553,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -26,43 +58,12 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771736932990,
-        "lastRunAtMs": 1771733313248,
+        "nextRunAtMs": 1771744345553,
+        "lastRunAtMs": 1771740626635,
         "lastStatus": "error",
-        "lastDurationMs": 19742,
-        "consecutiveErrors": 9,
+        "lastDurationMs": 118918,
+        "consecutiveErrors": 11,
         "lastError": "cron announce delivery failed"
-      }
-    },
-    {
-      "id": "71479587-9e25-474b-bce2-f929140565f9",
-      "agentId": "main",
-      "name": "BTC Scalper (5-min)",
-      "enabled": true,
-      "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771736738825,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/5 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check\n\nOnly report if:\n1. A trade was executed (BUY, CLOSED_PROFIT, CLOSED_LOSS)\n2. An error occurred\n\nOtherwise reply HEARTBEAT_OK",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771737000000,
-        "lastRunAtMs": 1771736731160,
-        "lastStatus": "ok",
-        "lastDurationMs": 7665,
-        "consecutiveErrors": 0
       }
     },
     {
@@ -71,7 +72,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771736407363,
+      "updatedAtMs": 1771743607295,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -89,10 +90,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771737300000,
-        "lastRunAtMs": 1771736400028,
+        "nextRunAtMs": 1771744500000,
+        "lastRunAtMs": 1771743600028,
         "lastStatus": "ok",
-        "lastDurationMs": 7335,
+        "lastDurationMs": 7267,
         "consecutiveErrors": 0
       }
     },
@@ -101,7 +102,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771736581426,
+      "updatedAtMs": 1771743783858,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -115,10 +116,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771737476157,
-        "lastRunAtMs": 1771736576185,
+        "nextRunAtMs": 1771744676157,
+        "lastRunAtMs": 1771743776182,
         "lastStatus": "ok",
-        "lastDurationMs": 5241,
+        "lastDurationMs": 7676,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -132,7 +133,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771736410551,
+      "updatedAtMs": 1771743611445,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -150,10 +151,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771738200000,
-        "lastRunAtMs": 1771736407363,
+        "nextRunAtMs": 1771745400000,
+        "lastRunAtMs": 1771743607295,
         "lastStatus": "ok",
-        "lastDurationMs": 3188,
+        "lastDurationMs": 4150,
         "consecutiveErrors": 0
       }
     },
@@ -163,7 +164,7 @@
       "name": "Hourly Memory Summarizer",
       "enabled": true,
       "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771736432161,
+      "updatedAtMs": 1771743632158,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -177,37 +178,10 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771740032114,
-        "lastRunAtMs": 1771736432147,
+        "nextRunAtMs": 1771747232114,
+        "lastRunAtMs": 1771743632141,
         "lastStatus": "ok",
-        "lastDurationMs": 14,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771736731160,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1771743896119,
-        "lastRunAtMs": 1771736731160,
-        "lastStatus": "ok",
-        "lastDurationMs": 0,
+        "lastDurationMs": 17,
         "consecutiveErrors": 0
       }
     },
@@ -248,120 +222,29 @@
       }
     },
     {
-      "id": "ab8660cc-2f59-4b6e-8cfa-c2b4a030c188",
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
       "agentId": "main",
-      "name": "MassDwell Knowledge Refresh (Weekly)",
+      "name": "Mission Control Cron Export",
       "enabled": true,
-      "createdAtMs": 1771328218478,
-      "updatedAtMs": 1771328218478,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1771743896159,
       "schedule": {
         "kind": "cron",
-        "expr": "0 6 * * 0",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "WEEKLY MASSDWELL KNOWLEDGE REFRESH\n\nUpdate the MassDwell knowledge base with insights from the past week.\n\n1. Check sales@massdwell.com for new patterns:\n   `gog gmail list --account sales@massdwell.com --after 7d --limit 50`\n   \n2. Check steve.vettori@massdwell.com for strategic updates:\n   `gog gmail list --account steve.vettori@massdwell.com --after 7d --limit 30`\n\n3. Review CRM for new leads/closes:\n   `cat ~/.openclaw/workspace/crm-dashboard/data/leads.json`\n\n4. Update these docs if new insights found:\n   - data/massdwell/ICP.md (new customer patterns?)\n   - data/massdwell/objections-playbook.md (new objections?)\n   - data/massdwell/voice-of-customer.md (new quotes?)\n   - data/massdwell/competitor-intel-deep.md (competitor mentions?)\n   - data/massdwell/tech-leverage.md (new tech opportunities?)\n\n5. Add dated entry to each doc showing what was updated.\n\nIf nothing significant found, reply HEARTBEAT_OK.\nIf updates made, send brief summary to Steve.",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1771758000000
-      }
-    },
-    {
-      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
-      "agentId": "main",
-      "name": "Atlantic Laser QB→Pipedrive Sync",
-      "enabled": true,
-      "createdAtMs": 1771463532494,
-      "updatedAtMs": 1771671623371,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 6 * * *",
-        "tz": "America/New_York"
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
       },
       "sessionTarget": "main",
-      "wakeMode": "now",
+      "wakeMode": "next-heartbeat",
       "payload": {
         "kind": "systemEvent",
-        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1771758000000,
-        "lastRunAtMs": 1771671612813,
+        "nextRunAtMs": 1771751096119,
+        "lastRunAtMs": 1771743896142,
         "lastStatus": "ok",
-        "lastDurationMs": 10558,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
-      "agentId": "main",
-      "name": "Personal Life - Morning Scan",
-      "enabled": true,
-      "notify": false,
-      "createdAtMs": 1771242940459,
-      "updatedAtMs": 1771675246014,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771761600000,
-        "lastRunAtMs": 1771675211756,
-        "lastStatus": "ok",
-        "lastDurationMs": 34258,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
-      "agentId": "main",
-      "name": "Competitor Intel - Delta Only",
-      "enabled": true,
-      "createdAtMs": 1771156051938,
-      "updatedAtMs": 1771677043717,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "COMPETITOR INTEL - DELTA ONLY FORMAT\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\n**CRITICAL: Only report CHANGES. If nothing new, reply HEARTBEAT_OK.**\n\nSTEP 1: Load baseline\n- Read: data/intel/competitor-baseline.json\n- This contains ALL known competitors and their last known state\n\nSTEP 2: Search for CHANGES ONLY\nRun targeted searches with freshness=pd (past day):\n- web_search 'Massachusetts ADU news' freshness=pd\n- web_search 'modular ADU Massachusetts' freshness=pd\n- web_search 'ADU permit Massachusetts' freshness=pd\n\nSTEP 3: Compare against baseline\nFor each search result, ask:\n- Is this a NEW competitor not in baseline? → REPORT\n- Is this a PRICE CHANGE for known competitor? → REPORT\n- Is this a NEW MARKET or positioning change? → REPORT\n- Is this NEW REGULATION or state funding news? → REPORT\n- Is this just the same info we already have? → SKIP\n\nSTEP 4: Update baseline if changes found\n- Add new competitors to baseline\n- Update changed fields\n- Add to change_log array with date\n\nSTEP 5: Report format (ONLY if changes exist)\n\n📡 COMPETITOR INTEL - [Date]\n\n🆕 NEW:\n• [New competitor/news item]\n\n📈 CHANGED:\n• [What changed from baseline]\n\n📊 MARKET:\n• [New permit data or regulation changes]\n\n**If no changes detected: Reply HEARTBEAT_OK. Do NOT send the team an email of recycled info.**\n\nSTEP 6: Only email team if ACTUAL news exists\nIf you found real changes:\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail send --to 'steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com' --subject '📡 Competitor Alert - [specific change]' --body '[changes only]' --account sales@massdwell.com",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771763400000,
-        "lastRunAtMs": 1771677006414,
-        "lastStatus": "ok",
-        "lastDurationMs": 37303,
+        "lastDurationMs": 17,
         "consecutiveErrors": 0
       }
     }
