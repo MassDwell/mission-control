@@ -7,7 +7,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771790893713,
+      "updatedAtMs": 1771798104786,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -26,10 +26,10 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771794476834,
-        "lastRunAtMs": 1771790876862,
+        "nextRunAtMs": 1771801676834,
+        "lastRunAtMs": 1771798076863,
         "lastStatus": "ok",
-        "lastDurationMs": 16851,
+        "lastDurationMs": 27923,
         "consecutiveErrors": 0
       }
     },
@@ -39,7 +39,7 @@
       "name": "BTC Scalper (5-min)",
       "enabled": true,
       "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771794306498,
+      "updatedAtMs": 1771801594407,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 * * * *",
@@ -57,10 +57,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771794600000,
-        "lastRunAtMs": 1771794300026,
+        "nextRunAtMs": 1771801800000,
+        "lastRunAtMs": 1771801587282,
         "lastStatus": "ok",
-        "lastDurationMs": 6472,
+        "lastDurationMs": 7125,
         "consecutiveErrors": 0
       }
     },
@@ -71,7 +71,7 @@
       "name": "Agent Status Dashboard Sync",
       "enabled": true,
       "createdAtMs": 1771792495704,
-      "updatedAtMs": 1771794054030,
+      "updatedAtMs": 1771801580848,
       "schedule": {
         "kind": "cron",
         "expr": "*/10 * * * *",
@@ -84,10 +84,10 @@
         "text": "node scripts/agent-status-sync.js"
       },
       "state": {
-        "nextRunAtMs": 1771794600000,
-        "lastRunAtMs": 1771794046188,
+        "nextRunAtMs": 1771801800000,
+        "lastRunAtMs": 1771801434153,
         "lastStatus": "ok",
-        "lastDurationMs": 7842,
+        "lastDurationMs": 146695,
         "consecutiveErrors": 0
       }
     },
@@ -97,7 +97,7 @@
       "name": "Marketing Agent Heartbeat",
       "enabled": true,
       "createdAtMs": 1770408787882,
-      "updatedAtMs": 1771794003198,
+      "updatedAtMs": 1771801287966,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 8-18 * * *",
@@ -115,10 +115,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771794900000,
-        "lastRunAtMs": 1771794000027,
+        "nextRunAtMs": 1771802100000,
+        "lastRunAtMs": 1771801286025,
         "lastStatus": "ok",
-        "lastDurationMs": 3171,
+        "lastDurationMs": 1941,
         "consecutiveErrors": 0
       }
     },
@@ -128,7 +128,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771794013154,
+      "updatedAtMs": 1771801303362,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -146,10 +146,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771794900000,
-        "lastRunAtMs": 1771794008455,
+        "nextRunAtMs": 1771802100000,
+        "lastRunAtMs": 1771801299259,
         "lastStatus": "ok",
-        "lastDurationMs": 4699,
+        "lastDurationMs": 4103,
         "consecutiveErrors": 0
       }
     },
@@ -158,7 +158,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771794179998,
+      "updatedAtMs": 1771801587282,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -172,10 +172,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771795076157,
-        "lastRunAtMs": 1771794176183,
+        "nextRunAtMs": 1771802276157,
+        "lastRunAtMs": 1771801580897,
         "lastStatus": "ok",
-        "lastDurationMs": 3815,
+        "lastDurationMs": 6385,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -189,7 +189,7 @@
       "name": "Admin Assistant Heartbeat",
       "enabled": true,
       "createdAtMs": 1770651479323,
-      "updatedAtMs": 1771794008455,
+      "updatedAtMs": 1771801290752,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -207,10 +207,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771795800000,
-        "lastRunAtMs": 1771794003198,
+        "nextRunAtMs": 1771803000000,
+        "lastRunAtMs": 1771801287966,
         "lastStatus": "ok",
-        "lastDurationMs": 5257,
+        "lastDurationMs": 2786,
         "consecutiveErrors": 0
       }
     },
@@ -220,7 +220,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771794017604,
+      "updatedAtMs": 1771801308034,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -238,10 +238,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771795800000,
-        "lastRunAtMs": 1771794013154,
+        "nextRunAtMs": 1771803000000,
+        "lastRunAtMs": 1771801303362,
         "lastStatus": "ok",
-        "lastDurationMs": 4450,
+        "lastDurationMs": 4672,
         "consecutiveErrors": 0
       }
     },
@@ -251,7 +251,7 @@
       "name": "Codesmith Heartbeat",
       "enabled": true,
       "createdAtMs": 1770896303696,
-      "updatedAtMs": 1771794039032,
+      "updatedAtMs": 1771801337761,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -269,43 +269,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771795800000,
-        "lastRunAtMs": 1771794017604,
+        "nextRunAtMs": 1771803000000,
+        "lastRunAtMs": 1771801308034,
         "lastStatus": "ok",
-        "lastDurationMs": 21428,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
-      "agentId": "main",
-      "name": "Reta Meal Prompt - Dinner",
-      "enabled": true,
-      "createdAtMs": 1771237828283,
-      "updatedAtMs": 1771766434256,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "DAILY DINNER PROMPT for Steve (Retatrutide protocol)\n\n1. Read: agents/personal_life_cos/data/retatrutide-meal-protocol.md\n2. Send Steve a quick Telegram message with:\n   - 2-3 dinner template options\n   - Remind: protein first, veg second, carbs optional\n   - If training day, mention adding carbs\n   - Keep it brief and casual\n   - Example: \"🥩 Dinner time: Steakhouse (8oz sirloin + veg), salmon plate, or fajitas work great. Protein first!\"\n\nKeep it short. No lectures.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1771797600000,
-        "lastRunAtMs": 1771766424622,
-        "lastStatus": "ok",
-        "lastDurationMs": 9634,
+        "lastDurationMs": 29727,
         "consecutiveErrors": 0
       }
     },
@@ -315,7 +282,7 @@
       "name": "Hourly Memory Summarizer",
       "enabled": true,
       "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771794054045,
+      "updatedAtMs": 1771801587282,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -329,193 +296,10 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771797632114,
-        "lastRunAtMs": 1771794054045,
+        "nextRunAtMs": 1771804832114,
+        "lastRunAtMs": 1771801587282,
         "lastStatus": "ok",
         "lastDurationMs": 0,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Evening",
-      "createdAtMs": 1770132146984,
-      "updatedAtMs": 1771714882630,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "[TIME: 6:00 PM EST]\n\nPost to @massdwell X/Twitter. Evening slot. Create engaging content following your X strategy guidelines. Mix it up - poll, behind-the-scenes, or social proof. Use the X API credentials in credentials/x/x-api.json. Log the post to data/massdwell/marketing_assets/x-post-log.json.",
-        "timeoutSeconds": 120,
-        "model": "anthropic/claude-sonnet-4-0"
-      },
-      "state": {
-        "nextRunAtMs": 1771801200000,
-        "lastRunAtMs": 1771714800048,
-        "lastStatus": "ok",
-        "lastDurationMs": 82582,
-        "consecutiveErrors": 0
-      },
-      "enabled": true,
-      "delivery": {
-        "mode": "none"
-      }
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770651479338,
-      "updatedAtMs": 1771791450604,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,12,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "PERSONAL LIFE HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan PERSONAL-BRAIN.md for urgent health/life priorities\n2. Check Mission Control: node scripts/mission-control-v2.js checkin personal_life_cos\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks personal_life_cos\n\n**DECISION TREE:**\n- Health priority (Retatrutide, appointments) → Handle immediately\n- Personal tasks assigned → Pick and execute\n- Life admin needed → Spawn personal assistant\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 30
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771801200000,
-        "lastRunAtMs": 1771779608188,
-        "lastStatus": "ok",
-        "lastDurationMs": 8012,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "createdAtMs": 1771016197719,
-      "updatedAtMs": 1771783277291,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "KOMMO CRM SYNC - Execute now.\n\nRun: cd ~/.openclaw/workspace/crm-dashboard/server && node kommo-sync.js\n\nThis syncs all leads, contacts, and pipeline data from Kommo to local JSON files. After sync completes, regenerate the active-email-list.json:\n\ncat ~/.openclaw/workspace/crm-dashboard/data/leads.json | jq '[.leads[] | select(.status_id != 142 and .status_id != 143) | select(.contact_email != null and .contact_email != \"\") | {lead_id: .id, name, email: .contact_email, status_id, phone: .contact_phone}]' > ~/.openclaw/workspace/data/massdwell/sales/active-email-list.json\n\nReport: sync status, total leads, how many active vs closed.",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771801200000,
-        "lastRunAtMs": 1771783243780,
-        "lastStatus": "ok",
-        "lastDurationMs": 33511,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "d167f9af-c31c-4b2a-a88a-8d6d7d1ebc98",
-      "agentId": "main",
-      "name": "Clawson - Weekly Alignment Summary",
-      "enabled": true,
-      "notify": true,
-      "createdAtMs": 1771243370983,
-      "updatedAtMs": 1771243370983,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * 0",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Sunday evening. Deliver the WEEKLY ALIGNMENT summary. Read data/global/priority-register.md, review agent activity this week, assess risks. Format: PRIORITIES (max 3), PROGRESS, RISKS, DECISIONS NEEDED, NEXT WEEK FOCUS. One message, no fluff."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1771801200000
-      }
-    },
-    {
-      "id": "ab838d58-d186-4fbc-acd7-5afdb533369a",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "Venture Engine - Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1771733448311,
-      "updatedAtMs": 1771790714482,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */3 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "🚀 VENTURE ENGINE - MINIMAL CAMERA HYBRID MODEL APPROVED\n\n🎬 AI BOOTCAMP: Minimal Camera Strategy (PERFECT COMPROMISE)\nRevenue Target: $120-130K in 60 days (85-90% of full personal approach)\nSteve's Time: 3-5 hours total recording (not per module!)\n\n**MINIMAL CAMERA STRATEGY:**\n✅ Video 1: Course intro & credibility anchor (20 min)\n✅ Video 2: Framework reveal (15 min) \n✅ Video 3: Case study deep-dive with real numbers (20 min)\n✅ Video 4: Advanced results showcase (15 min)\n✅ Video 5: Personal implementation advice (10 min)\n\n**STRATEGIC POSITIONING:**\n\"Steve Vettori's AI implementations were so successful, he trained AI instructors to teach his exact methods. Get personal guidance from Steve plus 24/7 support from AI coaches trained on his $2M+ frameworks.\"\n\n**RECORDING SCHEDULE:**\n- Session 1: Videos 1-2 (~2 hours recording)\n- Session 2: Videos 3-4 (~2 hours recording)\n- Session 3: Video 5 (~1 hour recording)\n- Total: 80 minutes content, 5 hours recording time\n\n**VALUE PRESERVATION:**\n- Personal credibility established upfront\n- Real business results with actual numbers\n- Strategic appearances maintain authority\n- AI instructors handle bulk delivery and scaling\n\n**PRICING MAINTAINED:**\n- Standard: $797 (AI instruction + Steve's frameworks)\n- VIP: $1,997 (+ priority Steve access)\n- Corporate: $4,997 (+ custom consultation)\n\n**SUCCESS PROBABILITY: 90%**\nPerfect compromise - maximum credibility with minimal camera exposure.\n\n**AUTONOMOUS EXPERIMENTS:** Continue parallel execution (BSC arbitrage, crypto newsletter)\n\nFOCUS: Execute minimal camera strategy for premium revenue with minimal Steve time investment.",
-        "model": "anthropic/claude-opus-4-5",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1771801463799,
-        "lastRunAtMs": 1771790663820,
-        "lastStatus": "error",
-        "lastDurationMs": 50662,
-        "consecutiveErrors": 3,
-        "lastError": "cron announce delivery failed"
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771794296154,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1771801496119,
-        "lastRunAtMs": 1771794296145,
-        "lastStatus": "ok",
-        "lastDurationMs": 9,
         "consecutiveErrors": 0
       }
     },
@@ -552,6 +336,33 @@
         "lastDurationMs": 52240,
         "consecutiveErrors": 3,
         "lastError": "cron announce delivery failed"
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1771801587282,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771808696119,
+        "lastRunAtMs": 1771801587282,
+        "lastStatus": "ok",
+        "lastDurationMs": 0,
+        "consecutiveErrors": 0
       }
     },
     {
@@ -738,6 +549,67 @@
         "lastRunAtMs": 1771763407711,
         "lastStatus": "ok",
         "lastDurationMs": 24748,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "agentId": "personal_life_cos",
+      "name": "Personal Life Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770651479338,
+      "updatedAtMs": 1771801299259,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "PERSONAL LIFE HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan PERSONAL-BRAIN.md for urgent health/life priorities\n2. Check Mission Control: node scripts/mission-control-v2.js checkin personal_life_cos\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks personal_life_cos\n\n**DECISION TREE:**\n- Health priority (Retatrutide, appointments) → Handle immediately\n- Personal tasks assigned → Pick and execute\n- Life admin needed → Spawn personal assistant\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 30
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771851600000,
+        "lastRunAtMs": 1771801290752,
+        "lastStatus": "ok",
+        "lastDurationMs": 8507,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
+      "name": "Kommo CRM Sync",
+      "enabled": true,
+      "createdAtMs": 1771016197719,
+      "updatedAtMs": 1771801382417,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,13,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "KOMMO CRM SYNC - Execute now.\n\nRun: cd ~/.openclaw/workspace/crm-dashboard/server && node kommo-sync.js\n\nThis syncs all leads, contacts, and pipeline data from Kommo to local JSON files. After sync completes, regenerate the active-email-list.json:\n\ncat ~/.openclaw/workspace/crm-dashboard/data/leads.json | jq '[.leads[] | select(.status_id != 142 and .status_id != 143) | select(.contact_email != null and .contact_email != \"\") | {lead_id: .id, name, email: .contact_email, status_id, phone: .contact_phone}]' > ~/.openclaw/workspace/data/massdwell/sales/active-email-list.json\n\nReport: sync status, total leads, how many active vs closed.",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771851600000,
+        "lastRunAtMs": 1771801337761,
+        "lastStatus": "ok",
+        "lastDurationMs": 44656,
         "consecutiveErrors": 0
       }
     },
@@ -1381,6 +1253,71 @@
       }
     },
     {
+      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
+      "agentId": "main",
+      "name": "Reta Meal Prompt - Dinner",
+      "enabled": true,
+      "createdAtMs": 1771237828283,
+      "updatedAtMs": 1771797652448,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 17 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "DAILY DINNER PROMPT for Steve (Retatrutide protocol)\n\n1. Read: agents/personal_life_cos/data/retatrutide-meal-protocol.md\n2. Send Steve a quick Telegram message with:\n   - 2-3 dinner template options\n   - Remind: protein first, veg second, carbs optional\n   - If training day, mention adding carbs\n   - Keep it brief and casual\n   - Example: \"🥩 Dinner time: Steakhouse (8oz sirloin + veg), salmon plate, or fajitas work great. Protein first!\"\n\nKeep it short. No lectures.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1771884000000,
+        "lastRunAtMs": 1771797647658,
+        "lastStatus": "error",
+        "lastDurationMs": 4790,
+        "consecutiveErrors": 1,
+        "lastError": "cron announce delivery failed"
+      }
+    },
+    {
+      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
+      "agentId": "marketing_content",
+      "name": "MassDwell X Post - Evening",
+      "createdAtMs": 1770132146984,
+      "updatedAtMs": 1771801286025,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "[TIME: 6:00 PM EST]\n\nPost to @massdwell X/Twitter. Evening slot. Create engaging content following your X strategy guidelines. Mix it up - poll, behind-the-scenes, or social proof. Use the X API credentials in credentials/x/x-api.json. Log the post to data/massdwell/marketing_assets/x-post-log.json.",
+        "timeoutSeconds": 120,
+        "model": "anthropic/claude-sonnet-4-0"
+      },
+      "state": {
+        "nextRunAtMs": 1771887600000,
+        "lastRunAtMs": 1771801200026,
+        "lastStatus": "ok",
+        "lastDurationMs": 85999,
+        "consecutiveErrors": 0
+      },
+      "enabled": true,
+      "delivery": {
+        "mode": "none"
+      }
+    },
+    {
       "id": "9fe417e4-0083-44c2-ad96-134d9294f765",
       "agentId": "main",
       "name": "Execute CSCO Stop Loss at Market Open",
@@ -1563,6 +1500,39 @@
       }
     },
     {
+      "id": "d167f9af-c31c-4b2a-a88a-8d6d7d1ebc98",
+      "agentId": "main",
+      "name": "Clawson - Weekly Alignment Summary",
+      "enabled": true,
+      "notify": true,
+      "createdAtMs": 1771243370983,
+      "updatedAtMs": 1771801434153,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * 0",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Sunday evening. Deliver the WEEKLY ALIGNMENT summary. Read data/global/priority-register.md, review agent activity this week, assess risks. Format: PRIORITIES (max 3), PROGRESS, RISKS, DECISIONS NEEDED, NEXT WEEK FOCUS. One message, no fluff."
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "7002178651",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1772406000000,
+        "lastRunAtMs": 1771801388994,
+        "lastStatus": "error",
+        "lastDurationMs": 45159,
+        "lastError": "cron announce delivery failed",
+        "consecutiveErrors": 1
+      }
+    },
+    {
       "id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36",
       "agentId": "main",
       "name": "Instagram Token Refresh Reminder",
@@ -1650,5 +1620,5 @@
       }
     }
   ],
-  "exportedAt": "2026-02-22T21:06:26.634Z"
+  "exportedAt": "2026-02-22T23:07:18.199Z"
 }
