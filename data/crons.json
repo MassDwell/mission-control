@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-23T19:05:13.000Z",
+  "generated": "2026-02-23T21:05:32.000Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -13,7 +13,7 @@
         "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live."
       },
       "state": {
-        "nextRunAtMs": 1771873762266,
+        "nextRunAtMs": 1771880962319,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -30,7 +30,7 @@
         "message": "[AUTONOMOUS PAPER TRADING]"
       },
       "state": {
-        "nextRunAtMs": 1771873800000,
+        "nextRunAtMs": 1771881000000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -47,7 +47,7 @@
         "message": "[INTRADAY MONITOR - 5-min check]"
       },
       "state": {
-        "nextRunAtMs": 1771873800000,
+        "nextRunAtMs": 1771881000000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -64,7 +64,7 @@
         "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check"
       },
       "state": {
-        "nextRunAtMs": 1771873800000,
+        "nextRunAtMs": 1771881000000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -81,7 +81,7 @@
         "message": "Check sales@massdwell.com for replies."
       },
       "state": {
-        "nextRunAtMs": 1771873891734,
+        "nextRunAtMs": 1771881119941,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -98,7 +98,7 @@
         "message": "MARKETING HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
       },
       "state": {
-        "nextRunAtMs": 1771874100000,
+        "nextRunAtMs": 1771881300000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -115,7 +115,7 @@
         "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal"
       },
       "state": {
-        "nextRunAtMs": 1771874100000,
+        "nextRunAtMs": 1771881300000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -132,7 +132,7 @@
         "message": "SALES ENGINE HEARTBEAT"
       },
       "state": {
-        "nextRunAtMs": 1771875000000,
+        "nextRunAtMs": 1771882200000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -149,7 +149,7 @@
         "message": "ADMIN ASSISTANT HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
       },
       "state": {
-        "nextRunAtMs": 1771875000000,
+        "nextRunAtMs": 1771882200000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -166,7 +166,7 @@
         "message": "Push Mission Control data.json to GitHub for dashboard sync."
       },
       "state": {
-        "nextRunAtMs": 1771875000000,
+        "nextRunAtMs": 1771882200000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -183,75 +183,7 @@
         "message": "HEARTBEAT: Autonomous Agent Loop v2"
       },
       "state": {
-        "nextRunAtMs": 1771875000000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "84097f9d-01cb-4b3c-82cd-487f14a96a64",
-      "agentId": "main",
-      "name": "Live Position Sync",
-      "enabled": true,
-      "schedule": "0 9-16 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Sync live positions: cd ~/.openclaw/workspace/trading-alpaca && node check_positions.js > ../agents/money_printer/data/trades/open-positions-live.md"
-      },
-      "state": {
-        "nextRunAtMs": 1771876800000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "schedule": "0 * * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1771876832114,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
-      "agentId": "main",
-      "name": "Bounce Monitor - Auto Close Lost",
-      "enabled": true,
-      "schedule": "0 11,16 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "BOUNCE MONITOR - Execute now."
-      },
-      "state": {
-        "nextRunAtMs": 1771880400000,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": "0 */2 * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1771880696119,
+        "nextRunAtMs": 1771882200000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -308,6 +240,23 @@
       }
     },
     {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "schedule": "0 * * * *",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1771884032114,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
       "agentId": "marketing_content",
       "name": "MassDwell X Post - Evening",
@@ -354,6 +303,23 @@
       },
       "state": {
         "nextRunAtMs": 1771887600000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * *",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771887896119,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -407,57 +373,6 @@
         "nextRunAtMs": 1771902000000,
         "lastStatus": "error",
         "consecutiveErrors": 2
-      }
-    },
-    {
-      "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
-      "agentId": "main",
-      "name": "Reta Meal Prompt - Lunch",
-      "enabled": true,
-      "schedule": "0 11 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "DAILY LUNCH PROMPT for Steve (Retatrutide protocol)"
-      },
-      "state": {
-        "nextRunAtMs": 1771948800000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Midday",
-      "enabled": true,
-      "schedule": "15 12 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "[TIME: 12:15 PM EST] Post to @massdwell X/Twitter. Midday slot."
-      },
-      "state": {
-        "nextRunAtMs": 1771953300000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
-      "agentId": "sales_followup",
-      "name": "Sarah Cold Calls - Afternoon",
-      "enabled": true,
-      "schedule": "0 14 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "SARAH COLD CALLS - STANDING ORDER - Execute immediately."
-      },
-      "state": {
-        "nextRunAtMs": 1771959600000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
       }
     }
   ]
