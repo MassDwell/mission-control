@@ -1,23 +1,6 @@
 {
-  "generated": "2026-02-23T11:04:56.000Z",
+  "generated": "2026-02-23T13:05:08.000Z",
   "jobs": [
-    {
-      "id": "71479587-9e25-474b-bce2-f929140565f9",
-      "agentId": "main",
-      "name": "BTC Scalper (5-min)",
-      "enabled": true,
-      "schedule": "*/5 * * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check\n\nOnly report if:\n1. A trade was executed (BUY, CLOSED_PROFIT, CLOSED_LOSS)\n2. An error occurred\n\nOtherwise reply HEARTBEAT_OK"
-      },
-      "state": {
-        "nextRunAtMs": 1771844700000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
       "agentId": "main",
@@ -30,126 +13,24 @@
         "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live."
       },
       "state": {
-        "nextRunAtMs": 1771844876834,
+        "nextRunAtMs": 1771852076834,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
+      "id": "71479587-9e25-474b-bce2-f929140565f9",
       "agentId": "main",
-      "name": "Self-Healing: Stale Task Recovery",
+      "name": "BTC Scalper (5-min)",
       "enabled": true,
-      "schedule": "*/15 * * * *",
+      "schedule": "*/5 * * * *",
       "sessionTarget": "isolated",
       "payload": {
         "kind": "agentTurn",
-        "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal"
+        "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check\n\nOnly report if:\n1. A trade was executed (BUY, CLOSED_PROFIT, CLOSED_LOSS)\n2. An error occurred\n\nOtherwise reply HEARTBEAT_OK"
       },
       "state": {
-        "nextRunAtMs": 1771845300000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b5b920de-0696-442e-b98c-faeb568f6800",
-      "agentId": "sales_followup",
-      "name": "Cold Lead Reply Monitor",
-      "enabled": true,
-      "schedule": "every 15m",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Check sales@massdwell.com for replies."
-      },
-      "state": {
-        "nextRunAtMs": 1771845476157,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "agentId": "main",
-      "name": "Mission Control Status Sync",
-      "enabled": true,
-      "schedule": "*/30 * * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Push Mission Control data.json to GitHub for dashboard sync."
-      },
-      "state": {
-        "nextRunAtMs": 1771846200000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
-      "agentId": "main",
-      "name": "Personal Life - Morning Scan",
-      "enabled": true,
-      "schedule": "0 7 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
-      },
-      "state": {
-        "nextRunAtMs": 1771848000000,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
-      }
-    },
-    {
-      "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
-      "agentId": "main",
-      "name": "Admin - Morning Operations Scan",
-      "enabled": true,
-      "schedule": "0 7 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Morning operations scan. Read agents/admin_assistant/HEARTBEAT.md and execute the daily operating loop: email triage, calendar check, open loop scan. Output only if action needed. Otherwise HEARTBEAT_OK."
-      },
-      "state": {
-        "nextRunAtMs": 1771848000000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "schedule": "0 * * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1771848032114,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
-      "agentId": "main",
-      "name": "Competitor Intel - Delta Only",
-      "enabled": true,
-      "schedule": "30 7 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "COMPETITOR INTEL - DELTA ONLY FORMAT"
-      },
-      "state": {
-        "nextRunAtMs": 1771849800000,
+        "nextRunAtMs": 1771852200000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -166,7 +47,41 @@
         "message": "MARKETING HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
       },
       "state": {
-        "nextRunAtMs": 1771851600000,
+        "nextRunAtMs": 1771852500000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
+      "agentId": "main",
+      "name": "Self-Healing: Stale Task Recovery",
+      "enabled": true,
+      "schedule": "*/15 * * * *",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal"
+      },
+      "state": {
+        "nextRunAtMs": 1771852500000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b5b920de-0696-442e-b98c-faeb568f6800",
+      "agentId": "sales_followup",
+      "name": "Cold Lead Reply Monitor",
+      "enabled": true,
+      "schedule": "every 15m",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check sales@massdwell.com for replies."
+      },
+      "state": {
+        "nextRunAtMs": 1771852676157,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -183,24 +98,24 @@
         "message": "ADMIN ASSISTANT HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
       },
       "state": {
-        "nextRunAtMs": 1771851600000,
+        "nextRunAtMs": 1771853400000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "agentId": "main",
+      "name": "Mission Control Status Sync",
       "enabled": true,
-      "schedule": "0 8,12,18 * * *",
+      "schedule": "*/30 * * * *",
       "sessionTarget": "isolated",
       "payload": {
         "kind": "agentTurn",
-        "message": "PERSONAL LIFE HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
+        "message": "Push Mission Control data.json to GitHub for dashboard sync."
       },
       "state": {
-        "nextRunAtMs": 1771851600000,
+        "nextRunAtMs": 1771853400000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -217,92 +132,7 @@
         "message": "HEARTBEAT: Autonomous Agent Loop v2"
       },
       "state": {
-        "nextRunAtMs": 1771851600000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "schedule": "0 8,13,18 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "KOMMO CRM SYNC - Execute now."
-      },
-      "state": {
-        "nextRunAtMs": 1771851600000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "6d582540-c76d-4e0f-92b6-b7c3da6ad601",
-      "agentId": "main",
-      "name": "Marketing - Weekly Planning (Monday)",
-      "enabled": true,
-      "schedule": "0 8 * * 1",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "It's Monday. Read agents/marketing_content/HEARTBEAT.md and agents/marketing_content/SOUL.md. Deliver the WEEKLY MARKETING PLAN. Review last week's performance, check content backlog, plan 3-5 posts, 1 long-form piece, 1 conversion improvement. Set measurable goals."
-      },
-      "state": {
-        "nextRunAtMs": 1771851600000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "agentId": "personal_life_cos",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "enabled": true,
-      "schedule": "0 8,14,20 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "PERSONAL GMAIL CLEANUP - SPAWN SUBAGENT (BRAIN OPTIMIZED)"
-      },
-      "state": {
-        "nextRunAtMs": 1771851600000,
-        "lastStatus": "error",
-        "consecutiveErrors": 4
-      }
-    },
-    {
-      "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
-      "agentId": "main",
-      "name": "Sales Kit Market Intelligence Update",
-      "enabled": true,
-      "schedule": "0 8 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "SALES KIT MARKET INTELLIGENCE - SPAWN SUBAGENT (BRAIN OPTIMIZED)"
-      },
-      "state": {
-        "nextRunAtMs": 1771851600000,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": "0 */2 * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1771851896119,
+        "nextRunAtMs": 1771853400000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -371,6 +201,89 @@
       },
       "state": {
         "nextRunAtMs": 1771855200000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "e7827c01-9046-4688-863b-f6850a9fb576",
+      "agentId": "main",
+      "name": "Retatrutide Week 3 Check-In",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "schedule": "at 2026-02-23T14:00:00.000Z",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "REMINDER: Steve enters Week 3 of Retatrutide today. Check in on: hunger levels, weight trend, energy, any side effects. Per protocol, he should HOLD at 1.0mg through Week 4 unless hunger clearly returns for 7+ days. Ask him how he's feeling and log any updates."
+      },
+      "state": {
+        "nextRunAtMs": 1771855200000
+      }
+    },
+    {
+      "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
+      "agentId": "main",
+      "name": "Instagram Content Reminder",
+      "enabled": true,
+      "schedule": "0 9 * * 1-6",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Send Steve the daily Instagram content reminder. Read agents/marketing/data/instagram-content-calendar-week1.md and tell him what content is scheduled for TODAY. Keep it short — just the content type, topic, and a reminder of the hook/CTA. If it's Sunday, remind him to batch content for next week."
+      },
+      "state": {
+        "nextRunAtMs": 1771855200000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "84097f9d-01cb-4b3c-82cd-487f14a96a64",
+      "agentId": "main",
+      "name": "Live Position Sync",
+      "enabled": true,
+      "schedule": "0 9-16 * * 1-5",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Sync live positions: cd ~/.openclaw/workspace/trading-alpaca && node check_positions.js > ../agents/money_printer/data/trades/open-positions-live.md"
+      },
+      "state": {
+        "nextRunAtMs": 1771855200000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "a8bc7e6e-8201-49f5-aa5a-21d85338a695",
+      "agentId": "main",
+      "name": "Yard Sign Landing Page Reminder",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "schedule": "at 2026-02-23T14:00:00.000Z",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "REMINDER: Follow up on MassDwell yard sign order."
+      },
+      "state": {
+        "nextRunAtMs": 1771855200000
+      }
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "schedule": "0 * * * *",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1771855232114,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -478,6 +391,23 @@
       }
     },
     {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * *",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771859096119,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
       "agentId": "main",
       "name": "Bounce Monitor - Auto Close Lost",
@@ -512,6 +442,23 @@
       }
     },
     {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "agentId": "personal_life_cos",
+      "name": "Personal Life Heartbeat",
+      "enabled": true,
+      "schedule": "0 8,12,18 * * *",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "PERSONAL LIFE HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
+      },
+      "state": {
+        "nextRunAtMs": 1771866000000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
       "agentId": "marketing_content",
       "name": "MassDwell X Post - Midday",
@@ -524,6 +471,23 @@
       },
       "state": {
         "nextRunAtMs": 1771866900000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
+      "name": "Kommo CRM Sync",
+      "enabled": true,
+      "schedule": "0 8,13,18 * * *",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "KOMMO CRM SYNC - Execute now."
+      },
+      "state": {
+        "nextRunAtMs": 1771869600000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -543,6 +507,23 @@
         "nextRunAtMs": 1771873200000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "agentId": "personal_life_cos",
+      "name": "Personal Gmail Cleanup - Consolidated",
+      "enabled": true,
+      "schedule": "0 8,14,20 * * *",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "PERSONAL GMAIL CLEANUP - SPAWN SUBAGENT (BRAIN OPTIMIZED)"
+      },
+      "state": {
+        "nextRunAtMs": 1771873200000,
+        "lastStatus": "error",
+        "consecutiveErrors": 4
       }
     },
     {
@@ -643,6 +624,91 @@
       },
       "state": {
         "nextRunAtMs": 1771930800000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
+      "agentId": "main",
+      "name": "Personal Life - Morning Scan",
+      "enabled": true,
+      "schedule": "0 7 * * *",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
+      },
+      "state": {
+        "nextRunAtMs": 1771934400000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
+      "agentId": "main",
+      "name": "Admin - Morning Operations Scan",
+      "enabled": true,
+      "schedule": "0 7 * * 1-5",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Morning operations scan. Read agents/admin_assistant/HEARTBEAT.md and execute the daily operating loop: email triage, calendar check, open loop scan. Output only if action needed. Otherwise HEARTBEAT_OK."
+      },
+      "state": {
+        "nextRunAtMs": 1771934400000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
+      "agentId": "main",
+      "name": "Competitor Intel - Delta Only",
+      "enabled": true,
+      "schedule": "30 7 * * *",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "COMPETITOR INTEL - DELTA ONLY FORMAT"
+      },
+      "state": {
+        "nextRunAtMs": 1771936200000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
+      "agentId": "main",
+      "name": "Sales Kit Market Intelligence Update",
+      "enabled": true,
+      "schedule": "0 8 * * 1-5",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "SALES KIT MARKET INTELLIGENCE - SPAWN SUBAGENT (BRAIN OPTIMIZED)"
+      },
+      "state": {
+        "nextRunAtMs": 1771938000000,
+        "lastStatus": "error",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "6d582540-c76d-4e0f-92b6-b7c3da6ad601",
+      "agentId": "main",
+      "name": "Marketing - Weekly Planning (Monday)",
+      "enabled": true,
+      "schedule": "0 8 * * 1",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "It's Monday. Read agents/marketing_content/HEARTBEAT.md and agents/marketing_content/SOUL.md. Deliver the WEEKLY MARKETING PLAN. Review last week's performance, check content backlog, plan 3-5 posts, 1 long-form piece, 1 conversion improvement. Set measurable goals."
+      },
+      "state": {
+        "nextRunAtMs": 1772456400000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
