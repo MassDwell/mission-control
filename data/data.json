@@ -9,7 +9,7 @@
       "role": "Master Agent / COO",
       "status": "active",
       "currentTask": null,
-      "lastSeen": "2026-02-23T09:29:25.590Z",
+      "lastSeen": "2026-02-23T09:59:32.289Z",
       "level": "lead"
     },
     {
@@ -19,7 +19,7 @@
       "role": "Lead Follow-up & CRM",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-23T09:29:26.187Z",
+      "lastSeen": "2026-02-23T09:59:32.871Z",
       "level": "specialist"
     },
     {
@@ -29,7 +29,7 @@
       "role": "Content & Social Media",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-23T09:29:26.602Z",
+      "lastSeen": "2026-02-23T09:59:33.243Z",
       "level": "specialist"
     },
     {
@@ -39,7 +39,7 @@
       "role": "MassDwell Production",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-23T09:29:28.531Z",
+      "lastSeen": "2026-02-23T09:59:35.134Z",
       "level": "specialist"
     },
     {
@@ -49,7 +49,7 @@
       "role": "Trading & Investments",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-23T09:29:27.372Z",
+      "lastSeen": "2026-02-23T09:59:34.012Z",
       "level": "specialist"
     },
     {
@@ -59,7 +59,7 @@
       "role": "Administrative Tasks",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-23T09:29:27.772Z",
+      "lastSeen": "2026-02-23T09:59:34.378Z",
       "level": "intern"
     },
     {
@@ -69,7 +69,7 @@
       "role": "Personal Life Management",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-23T09:29:28.182Z",
+      "lastSeen": "2026-02-23T09:59:34.743Z",
       "level": "intern"
     },
     {
@@ -79,7 +79,7 @@
       "role": "Developer Agent",
       "status": "idle",
       "currentTask": null,
-      "lastSeen": "2026-02-23T09:29:26.996Z",
+      "lastSeen": "2026-02-23T09:59:33.618Z",
       "level": "specialist"
     }
   ],
