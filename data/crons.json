@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-23T13:05:08.000Z",
+  "generated": "2026-02-23T15:07:13.000Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -13,58 +13,7 @@
         "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live."
       },
       "state": {
-        "nextRunAtMs": 1771852076834,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "71479587-9e25-474b-bce2-f929140565f9",
-      "agentId": "main",
-      "name": "BTC Scalper (5-min)",
-      "enabled": true,
-      "schedule": "*/5 * * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check\n\nOnly report if:\n1. A trade was executed (BUY, CLOSED_PROFIT, CLOSED_LOSS)\n2. An error occurred\n\nOtherwise reply HEARTBEAT_OK"
-      },
-      "state": {
-        "nextRunAtMs": 1771852200000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
-      "agentId": "marketing_content",
-      "name": "Marketing Agent Heartbeat",
-      "enabled": true,
-      "schedule": "*/15 8-18 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "MARKETING HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
-      },
-      "state": {
-        "nextRunAtMs": 1771852500000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
-      "agentId": "main",
-      "name": "Self-Healing: Stale Task Recovery",
-      "enabled": true,
-      "schedule": "*/15 * * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal"
-      },
-      "state": {
-        "nextRunAtMs": 1771852500000,
+        "nextRunAtMs": 1771859355154,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -81,92 +30,7 @@
         "message": "Check sales@massdwell.com for replies."
       },
       "state": {
-        "nextRunAtMs": 1771852676157,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "agentId": "admin_assistant",
-      "name": "Admin Assistant Heartbeat",
-      "enabled": true,
-      "schedule": "*/30 8-18 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "ADMIN ASSISTANT HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
-      },
-      "state": {
-        "nextRunAtMs": 1771853400000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "agentId": "main",
-      "name": "Mission Control Status Sync",
-      "enabled": true,
-      "schedule": "*/30 * * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Push Mission Control data.json to GitHub for dashboard sync."
-      },
-      "state": {
-        "nextRunAtMs": 1771853400000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "agentId": "main",
-      "name": "Codesmith Heartbeat",
-      "enabled": true,
-      "schedule": "*/30 8-18 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "HEARTBEAT: Autonomous Agent Loop v2"
-      },
-      "state": {
-        "nextRunAtMs": 1771853400000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
-      "agentId": "sales_followup",
-      "name": "Sales Agent Heartbeat",
-      "enabled": true,
-      "schedule": "*/30 9-17 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "SALES ENGINE HEARTBEAT"
-      },
-      "state": {
-        "nextRunAtMs": 1771855200000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "agentId": "massdwell_factory_ops",
-      "name": "Factory Ops Heartbeat",
-      "enabled": true,
-      "schedule": "0 9,13,17 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "FACTORY OPS HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
-      },
-      "state": {
-        "nextRunAtMs": 1771855200000,
+        "nextRunAtMs": 1771859373414,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -183,7 +47,7 @@
         "message": "[AUTONOMOUS PAPER TRADING]"
       },
       "state": {
-        "nextRunAtMs": 1771855200000,
+        "nextRunAtMs": 1771859400000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -200,209 +64,126 @@
         "message": "[INTRADAY MONITOR - 5-min check]"
       },
       "state": {
-        "nextRunAtMs": 1771855200000,
+        "nextRunAtMs": 1771859400000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "e7827c01-9046-4688-863b-f6850a9fb576",
+      "id": "71479587-9e25-474b-bce2-f929140565f9",
       "agentId": "main",
-      "name": "Retatrutide Week 3 Check-In",
+      "name": "BTC Scalper (5-min)",
       "enabled": true,
-      "deleteAfterRun": true,
-      "schedule": "at 2026-02-23T14:00:00.000Z",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "REMINDER: Steve enters Week 3 of Retatrutide today. Check in on: hunger levels, weight trend, energy, any side effects. Per protocol, he should HOLD at 1.0mg through Week 4 unless hunger clearly returns for 7+ days. Ask him how he's feeling and log any updates."
-      },
-      "state": {
-        "nextRunAtMs": 1771855200000
-      }
-    },
-    {
-      "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
-      "agentId": "main",
-      "name": "Instagram Content Reminder",
-      "enabled": true,
-      "schedule": "0 9 * * 1-6",
+      "schedule": "*/5 * * * *",
       "sessionTarget": "isolated",
       "payload": {
         "kind": "agentTurn",
-        "message": "Send Steve the daily Instagram content reminder. Read agents/marketing/data/instagram-content-calendar-week1.md and tell him what content is scheduled for TODAY. Keep it short — just the content type, topic, and a reminder of the hook/CTA. If it's Sunday, remind him to batch content for next week."
+        "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check"
       },
       "state": {
-        "nextRunAtMs": 1771855200000,
+        "nextRunAtMs": 1771859400000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "84097f9d-01cb-4b3c-82cd-487f14a96a64",
-      "agentId": "main",
-      "name": "Live Position Sync",
-      "enabled": true,
-      "schedule": "0 9-16 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Sync live positions: cd ~/.openclaw/workspace/trading-alpaca && node check_positions.js > ../agents/money_printer/data/trades/open-positions-live.md"
-      },
-      "state": {
-        "nextRunAtMs": 1771855200000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "a8bc7e6e-8201-49f5-aa5a-21d85338a695",
-      "agentId": "main",
-      "name": "Yard Sign Landing Page Reminder",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "schedule": "at 2026-02-23T14:00:00.000Z",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "REMINDER: Follow up on MassDwell yard sign order."
-      },
-      "state": {
-        "nextRunAtMs": 1771855200000
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "schedule": "0 * * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1771855232114,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
-      "agentId": "sales_followup",
-      "name": "Sales Followup - Morning Email Sync",
-      "enabled": true,
-      "schedule": "10 9 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "[TIME: 9:10 AM EST] Morning email check for sales@massdwell.com."
-      },
-      "state": {
-        "nextRunAtMs": 1771855800000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
+      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
       "agentId": "marketing_content",
-      "name": "Instagram Post - Morning",
+      "name": "Marketing Agent Heartbeat",
       "enabled": true,
-      "schedule": "20 9 * * *",
+      "schedule": "*/15 8-18 * * *",
       "sessionTarget": "isolated",
       "payload": {
         "kind": "agentTurn",
-        "message": "INSTAGRAM POST DRAFT (Morning)"
+        "message": "MARKETING HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
       },
       "state": {
-        "nextRunAtMs": 1771856400000,
+        "nextRunAtMs": 1771859700000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
+      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
       "agentId": "main",
-      "name": "MassDwell Marketing Dashboard Check",
+      "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
-      "schedule": "25 9 * * *",
+      "schedule": "*/15 * * * *",
       "sessionTarget": "isolated",
       "payload": {
         "kind": "agentTurn",
-        "message": "Check MassDwell marketing dashboard. Only report if significant change from baseline. Otherwise HEARTBEAT_OK."
+        "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal"
       },
       "state": {
-        "nextRunAtMs": 1771856700000,
+        "nextRunAtMs": 1771859700000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "1b21f09e-37c2-4bc0-aa2d-bdbf7968019e",
-      "agentId": "main",
-      "name": "Market Open Trading Check",
+      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
+      "agentId": "sales_followup",
+      "name": "Sales Agent Heartbeat",
       "enabled": true,
-      "schedule": "30 9 * * 1-5",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "🔔 MARKET OPEN - Execute pending CSCO stop loss and check all positions for trading opportunities"
-      },
-      "state": {
-        "nextRunAtMs": 1771857000000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
-      "agentId": "main",
-      "name": "Daily Lead Email Outreach",
-      "enabled": true,
-      "schedule": "0 10 * * 1-5",
+      "schedule": "*/30 9-17 * * 1-5",
       "sessionTarget": "isolated",
       "payload": {
         "kind": "agentTurn",
-        "message": "DAILY LEAD OUTREACH - SPAWN SUBAGENT (BRAIN OPTIMIZED)"
+        "message": "SALES ENGINE HEARTBEAT"
       },
       "state": {
-        "nextRunAtMs": 1771858800000,
+        "nextRunAtMs": 1771860600000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "5779c154-6d76-4012-8761-429d06a1729c",
-      "agentId": "main",
-      "name": "PLTR Lotto Watch",
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "agentId": "admin_assistant",
+      "name": "Admin Assistant Heartbeat",
       "enabled": true,
-      "schedule": "0 10,12,14,15 * * 1-5",
-      "sessionTarget": "main",
+      "schedule": "*/30 8-18 * * *",
+      "sessionTarget": "isolated",
       "payload": {
-        "kind": "systemEvent",
-        "text": "PLTR LOTTO CHECK: Run node ~/.openclaw/workspace/trading-alpaca/pltr-lotto-watcher.js and report status of 50x PLTR $155C Feb 20 position."
+        "kind": "agentTurn",
+        "message": "ADMIN ASSISTANT HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
       },
       "state": {
-        "nextRunAtMs": 1771858800000,
+        "nextRunAtMs": 1771860600000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
     },
     {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
       "agentId": "main",
-      "name": "Mission Control Cron Export",
+      "name": "Mission Control Status Sync",
       "enabled": true,
-      "schedule": "0 */2 * * *",
-      "sessionTarget": "main",
+      "schedule": "*/30 * * * *",
+      "sessionTarget": "isolated",
       "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+        "kind": "agentTurn",
+        "message": "Push Mission Control data.json to GitHub for dashboard sync."
       },
       "state": {
-        "nextRunAtMs": 1771859096119,
+        "nextRunAtMs": 1771860600000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
+      "agentId": "main",
+      "name": "Codesmith Heartbeat",
+      "enabled": true,
+      "schedule": "*/30 8-18 * * *",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "HEARTBEAT: Autonomous Agent Loop v2"
+      },
+      "state": {
+        "nextRunAtMs": 1771860600000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -442,6 +223,40 @@
       }
     },
     {
+      "id": "84097f9d-01cb-4b3c-82cd-487f14a96a64",
+      "agentId": "main",
+      "name": "Live Position Sync",
+      "enabled": true,
+      "schedule": "0 9-16 * * 1-5",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Sync live positions: cd ~/.openclaw/workspace/trading-alpaca && node check_positions.js > ../agents/money_printer/data/trades/open-positions-live.md"
+      },
+      "state": {
+        "nextRunAtMs": 1771862400000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "schedule": "0 * * * *",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1771862432114,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "a8544303-c019-4675-9ab4-2570296413c8",
       "agentId": "personal_life_cos",
       "name": "Personal Life Heartbeat",
@@ -459,6 +274,40 @@
       }
     },
     {
+      "id": "5779c154-6d76-4012-8761-429d06a1729c",
+      "agentId": "main",
+      "name": "PLTR Lotto Watch",
+      "enabled": true,
+      "schedule": "0 10,12,14,15 * * 1-5",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "PLTR LOTTO CHECK: Run node ~/.openclaw/workspace/trading-alpaca/pltr-lotto-watcher.js and report status of 50x PLTR $155C Feb 20 position."
+      },
+      "state": {
+        "nextRunAtMs": 1771866000000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * *",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771866296119,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
       "agentId": "marketing_content",
       "name": "MassDwell X Post - Midday",
@@ -471,6 +320,23 @@
       },
       "state": {
         "nextRunAtMs": 1771866900000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "agentId": "massdwell_factory_ops",
+      "name": "Factory Ops Heartbeat",
+      "enabled": true,
+      "schedule": "0 9,13,17 * * 1-5",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "FACTORY OPS HEARTBEAT (BRAIN OPTIMIZED - <3s Target)"
+      },
+      "state": {
+        "nextRunAtMs": 1771869600000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -609,108 +475,6 @@
         "nextRunAtMs": 1771902000000,
         "lastStatus": "error",
         "consecutiveErrors": 2
-      }
-    },
-    {
-      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
-      "agentId": "main",
-      "name": "Atlantic Laser QB→Pipedrive Sync",
-      "enabled": true,
-      "schedule": "0 6 * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
-      },
-      "state": {
-        "nextRunAtMs": 1771930800000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
-      "agentId": "main",
-      "name": "Personal Life - Morning Scan",
-      "enabled": true,
-      "schedule": "0 7 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
-      },
-      "state": {
-        "nextRunAtMs": 1771934400000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
-      "agentId": "main",
-      "name": "Admin - Morning Operations Scan",
-      "enabled": true,
-      "schedule": "0 7 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Morning operations scan. Read agents/admin_assistant/HEARTBEAT.md and execute the daily operating loop: email triage, calendar check, open loop scan. Output only if action needed. Otherwise HEARTBEAT_OK."
-      },
-      "state": {
-        "nextRunAtMs": 1771934400000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
-      "agentId": "main",
-      "name": "Competitor Intel - Delta Only",
-      "enabled": true,
-      "schedule": "30 7 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "COMPETITOR INTEL - DELTA ONLY FORMAT"
-      },
-      "state": {
-        "nextRunAtMs": 1771936200000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
-      "agentId": "main",
-      "name": "Sales Kit Market Intelligence Update",
-      "enabled": true,
-      "schedule": "0 8 * * 1-5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "SALES KIT MARKET INTELLIGENCE - SPAWN SUBAGENT (BRAIN OPTIMIZED)"
-      },
-      "state": {
-        "nextRunAtMs": 1771938000000,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
-      }
-    },
-    {
-      "id": "6d582540-c76d-4e0f-92b6-b7c3da6ad601",
-      "agentId": "main",
-      "name": "Marketing - Weekly Planning (Monday)",
-      "enabled": true,
-      "schedule": "0 8 * * 1",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "It's Monday. Read agents/marketing_content/HEARTBEAT.md and agents/marketing_content/SOUL.md. Deliver the WEEKLY MARKETING PLAN. Review last week's performance, check content backlog, plan 3-5 posts, 1 long-form piece, 1 conversion improvement. Set measurable goals."
-      },
-      "state": {
-        "nextRunAtMs": 1772456400000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
       }
     }
   ]
