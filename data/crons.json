@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-23T09:04:56.000Z",
+  "generated": "2026-02-23T11:04:56.000Z",
   "jobs": [
     {
       "id": "71479587-9e25-474b-bce2-f929140565f9",
@@ -13,7 +13,7 @@
         "message": "Run BTC scalper check: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js check\n\nOnly report if:\n1. A trade was executed (BUY, CLOSED_PROFIT, CLOSED_LOSS)\n2. An error occurred\n\nOtherwise reply HEARTBEAT_OK"
       },
       "state": {
-        "nextRunAtMs": 1771837500000,
+        "nextRunAtMs": 1771844700000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -30,7 +30,7 @@
         "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live."
       },
       "state": {
-        "nextRunAtMs": 1771837676834,
+        "nextRunAtMs": 1771844876834,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -47,7 +47,7 @@
         "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal"
       },
       "state": {
-        "nextRunAtMs": 1771838100000,
+        "nextRunAtMs": 1771845300000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -64,7 +64,7 @@
         "message": "Check sales@massdwell.com for replies."
       },
       "state": {
-        "nextRunAtMs": 1771838276157,
+        "nextRunAtMs": 1771845476157,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -81,58 +81,7 @@
         "message": "Push Mission Control data.json to GitHub for dashboard sync."
       },
       "state": {
-        "nextRunAtMs": 1771839000000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "schedule": "0 * * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1771840832114,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
-      "agentId": "main",
-      "name": "Atlantic Laser QB→Pipedrive Sync",
-      "enabled": true,
-      "schedule": "0 6 * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
-      },
-      "state": {
-        "nextRunAtMs": 1771844400000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": "0 */2 * * *",
-      "sessionTarget": "main",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1771844696119,
+        "nextRunAtMs": 1771846200000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -167,6 +116,23 @@
       },
       "state": {
         "nextRunAtMs": 1771848000000,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "schedule": "0 * * * *",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1771848032114,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -322,6 +288,23 @@
         "nextRunAtMs": 1771851600000,
         "lastStatus": "error",
         "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * *",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1771851896119,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
       }
     },
     {
@@ -648,101 +631,20 @@
       }
     },
     {
-      "id": "9b64f6e3-a62e-4539-a839-dd46589b92d2",
+      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
       "agentId": "main",
-      "name": "Marketing - Weekly Report (Friday)",
+      "name": "Atlantic Laser QB→Pipedrive Sync",
       "enabled": true,
-      "schedule": "0 16 * * 5",
-      "sessionTarget": "isolated",
+      "schedule": "0 6 * * *",
+      "sessionTarget": "main",
       "payload": {
-        "kind": "agentTurn",
-        "message": "It's Friday. Read agents/marketing_content/HEARTBEAT.md and agents/marketing_content/SOUL.md. Deliver the WEEKLY MARKETING REPORT."
+        "kind": "systemEvent",
+        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
       },
       "state": {
-        "nextRunAtMs": 1772226000000,
+        "nextRunAtMs": 1771930800000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "fd060220-23e7-4031-afa5-8c169908351b",
-      "agentId": "main",
-      "name": "Factory Ops - Weekly Report",
-      "enabled": true,
-      "schedule": "0 17 * * 5",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Friday EOD. Read agents/massdwell_factory_ops/HEARTBEAT.md and deliver the FACTORY WEEKLY REPORT."
-      },
-      "state": {
-        "nextRunAtMs": 1772229600000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "ab8660cc-2f59-4b6e-8cfa-c2b4a030c188",
-      "agentId": "main",
-      "name": "MassDwell Knowledge Refresh (Weekly)",
-      "enabled": true,
-      "schedule": "0 6 * * 0",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "WEEKLY MASSDWELL KNOWLEDGE REFRESH"
-      },
-      "state": {
-        "nextRunAtMs": 1772362800000,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
-      }
-    },
-    {
-      "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
-      "agentId": "main",
-      "name": "Monthly Learning Consolidation",
-      "enabled": true,
-      "schedule": "0 10 1 * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "MONTHLY LEARNING CONSOLIDATION"
-      },
-      "state": {
-        "nextRunAtMs": 1772377200000
-      }
-    },
-    {
-      "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
-      "agentId": "main",
-      "name": "Bi-Weekly Memory Audit",
-      "enabled": true,
-      "schedule": "0 10 1,15 * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "MEMORY AUDIT TIME (Bi-Weekly)"
-      },
-      "state": {
-        "nextRunAtMs": 1772377200000
-      }
-    },
-    {
-      "id": "d167f9af-c31c-4b2a-a88a-8d6d7d1ebc98",
-      "agentId": "main",
-      "name": "Clawson - Weekly Alignment Summary",
-      "enabled": true,
-      "schedule": "0 18 * * 0",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Sunday evening. Deliver the WEEKLY ALIGNMENT summary."
-      },
-      "state": {
-        "nextRunAtMs": 1772406000000,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
       }
     }
   ]
