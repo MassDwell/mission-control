@@ -6,7 +6,7 @@
       "name": "BTC Scalper (5-min)",
       "enabled": true,
       "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771815616554,
+      "updatedAtMs": 1771822822407,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 * * * *",
@@ -24,12 +24,12 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771815900000,
-        "lastRunAtMs": 1771815609235,
+        "nextRunAtMs": 1771823100000,
+        "lastRunAtMs": 1771822813276,
         "lastStatus": "ok",
-        "lastDurationMs": 7319,
+        "lastDurationMs": 9131,
         "consecutiveErrors": 0,
-        "runningAtMs": 1771815900030
+        "runningAtMs": 1771823100019
       }
     },
     {
@@ -39,7 +39,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771812493473,
+      "updatedAtMs": 1771819694442,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -58,37 +58,10 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771816076834,
-        "lastRunAtMs": 1771812476860,
+        "nextRunAtMs": 1771823276834,
+        "lastRunAtMs": 1771819676853,
         "lastStatus": "ok",
-        "lastDurationMs": 16613,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "34213a39-8615-4142-a280-fd213794c5f4",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "Agent Status Dashboard Sync",
-      "enabled": true,
-      "createdAtMs": 1771792495704,
-      "updatedAtMs": 1771815743906,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/10 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "node scripts/agent-status-sync.js"
-      },
-      "state": {
-        "nextRunAtMs": 1771816200000,
-        "lastRunAtMs": 1771815732958,
-        "lastStatus": "ok",
-        "lastDurationMs": 10948,
+        "lastDurationMs": 17589,
         "consecutiveErrors": 0
       }
     },
@@ -98,7 +71,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771815603909,
+      "updatedAtMs": 1771822806323,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -116,10 +89,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771816500000,
-        "lastRunAtMs": 1771815600028,
+        "nextRunAtMs": 1771823700000,
+        "lastRunAtMs": 1771822800023,
         "lastStatus": "ok",
-        "lastDurationMs": 3881,
+        "lastDurationMs": 6300,
         "consecutiveErrors": 0
       }
     },
@@ -128,7 +101,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771815782432,
+      "updatedAtMs": 1771822980930,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -142,10 +115,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771816676157,
-        "lastRunAtMs": 1771815776189,
+        "nextRunAtMs": 1771823876157,
+        "lastRunAtMs": 1771822976199,
         "lastStatus": "ok",
-        "lastDurationMs": 6243,
+        "lastDurationMs": 4731,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -159,7 +132,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771815609234,
+      "updatedAtMs": 1771822813276,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -177,10 +150,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771817400000,
-        "lastRunAtMs": 1771815603909,
+        "nextRunAtMs": 1771824600000,
+        "lastRunAtMs": 1771822806323,
         "lastStatus": "ok",
-        "lastDurationMs": 5325,
+        "lastDurationMs": 6953,
         "consecutiveErrors": 0
       }
     },
@@ -190,7 +163,7 @@
       "name": "Hourly Memory Summarizer",
       "enabled": true,
       "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771815743924,
+      "updatedAtMs": 1771822832152,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -204,10 +177,10 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771819232114,
-        "lastRunAtMs": 1771815743923,
+        "nextRunAtMs": 1771826432114,
+        "lastRunAtMs": 1771822832140,
         "lastStatus": "ok",
-        "lastDurationMs": 1,
+        "lastDurationMs": 12,
         "consecutiveErrors": 0
       }
     },
@@ -217,7 +190,7 @@
       "name": "Mission Control Cron Export",
       "enabled": true,
       "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771815896138,
+      "updatedAtMs": 1771823096156,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -231,10 +204,10 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1771823096119,
-        "lastRunAtMs": 1771815896129,
+        "nextRunAtMs": 1771830296119,
+        "lastRunAtMs": 1771823096146,
         "lastStatus": "ok",
-        "lastDurationMs": 9,
+        "lastDurationMs": 10,
         "consecutiveErrors": 0
       }
     },
@@ -1621,5 +1594,5 @@
       }
     }
   ],
-  "exportedAt": "2026-02-23T03:05:15.730Z"
+  "exportedAt": "2026-02-23T05:05:14.405Z"
 }
