@@ -6,7 +6,7 @@
       "name": "BTC Scalper (5-min)",
       "enabled": true,
       "createdAtMs": 1771207771266,
-      "updatedAtMs": 1771808417751,
+      "updatedAtMs": 1771815616554,
       "schedule": {
         "kind": "cron",
         "expr": "*/5 * * * *",
@@ -24,12 +24,12 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771808700000,
-        "lastRunAtMs": 1771808411572,
+        "nextRunAtMs": 1771815900000,
+        "lastRunAtMs": 1771815609235,
         "lastStatus": "ok",
-        "lastDurationMs": 6179,
+        "lastDurationMs": 7319,
         "consecutiveErrors": 0,
-        "runningAtMs": 1771808700027
+        "runningAtMs": 1771815900030
       }
     },
     {
@@ -39,7 +39,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1771805292495,
+      "updatedAtMs": 1771812493473,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -58,10 +58,10 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1771808876834,
-        "lastRunAtMs": 1771805276859,
+        "nextRunAtMs": 1771816076834,
+        "lastRunAtMs": 1771812476860,
         "lastStatus": "ok",
-        "lastDurationMs": 15636,
+        "lastDurationMs": 16613,
         "consecutiveErrors": 0
       }
     },
@@ -72,7 +72,7 @@
       "name": "Agent Status Dashboard Sync",
       "enabled": true,
       "createdAtMs": 1771792495704,
-      "updatedAtMs": 1771808465638,
+      "updatedAtMs": 1771815743906,
       "schedule": {
         "kind": "cron",
         "expr": "*/10 * * * *",
@@ -85,10 +85,10 @@
         "text": "node scripts/agent-status-sync.js"
       },
       "state": {
-        "nextRunAtMs": 1771809000000,
-        "lastRunAtMs": 1771808461052,
+        "nextRunAtMs": 1771816200000,
+        "lastRunAtMs": 1771815732958,
         "lastStatus": "ok",
-        "lastDurationMs": 4586,
+        "lastDurationMs": 10948,
         "consecutiveErrors": 0
       }
     },
@@ -98,7 +98,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1771808406279,
+      "updatedAtMs": 1771815603909,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -116,10 +116,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771809300000,
-        "lastRunAtMs": 1771808400025,
+        "nextRunAtMs": 1771816500000,
+        "lastRunAtMs": 1771815600028,
         "lastStatus": "ok",
-        "lastDurationMs": 6254,
+        "lastDurationMs": 3881,
         "consecutiveErrors": 0
       }
     },
@@ -128,7 +128,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1771808580709,
+      "updatedAtMs": 1771815782432,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -142,10 +142,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1771809476157,
-        "lastRunAtMs": 1771808576183,
+        "nextRunAtMs": 1771816676157,
+        "lastRunAtMs": 1771815776189,
         "lastStatus": "ok",
-        "lastDurationMs": 4526,
+        "lastDurationMs": 6243,
         "consecutiveErrors": 0
       },
       "enabled": true,
@@ -159,7 +159,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1771808411572,
+      "updatedAtMs": 1771815609234,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -177,41 +177,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771810200000,
-        "lastRunAtMs": 1771808406279,
+        "nextRunAtMs": 1771817400000,
+        "lastRunAtMs": 1771815603909,
         "lastStatus": "ok",
-        "lastDurationMs": 5293,
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
-      "agentId": "main",
-      "name": "Nightly Learning - Rotating Agent",
-      "enabled": true,
-      "createdAtMs": 1770507380220,
-      "updatedAtMs": 1771791399746,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 21 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "NIGHTLY LEARNING - SPAWN SUBAGENT (BRAIN OPTIMIZED)\n\n**OPTIMIZATION:** Instead of loading agent context, spawn dedicated learning specialist.\n\n1. Determine today's agent using day modulo 7 pattern\n2. Spawn subagent: sessions_spawn with task: \"Learning specialist for [agent]. Research one new skill/technique relevant to this agent's domain. Write learning to agents/[agent]/MEMORY.md under Learning Log with date, technique, source, and application to MassDwell. Verify write succeeded. Return learning summary.\"\n3. Report learning completed\n\n**EXPECTED TIME:** <60 seconds (vs 300 seconds heavy context)\n\nMaintains daily learning requirement with Johann's optimization.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 120
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771812000000,
-        "lastRunAtMs": 1771725600026,
-        "lastStatus": "ok",
-        "lastDurationMs": 35790,
+        "lastDurationMs": 5325,
         "consecutiveErrors": 0
       }
     },
@@ -221,7 +190,7 @@
       "name": "Hourly Memory Summarizer",
       "enabled": true,
       "createdAtMs": 1770653403165,
-      "updatedAtMs": 1771808465680,
+      "updatedAtMs": 1771815743924,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -235,45 +204,11 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771812032114,
-        "lastRunAtMs": 1771808465680,
+        "nextRunAtMs": 1771819232114,
+        "lastRunAtMs": 1771815743923,
         "lastStatus": "ok",
-        "lastDurationMs": 0,
+        "lastDurationMs": 1,
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "0da75b0b-3a5c-46a6-bdc1-8329286ebfd4",
-      "agentId": "main",
-      "name": "BTC Scalper Daily Summary",
-      "enabled": true,
-      "createdAtMs": 1771207777946,
-      "updatedAtMs": 1771729245432,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 22 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Run BTC scalper daily report: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js report\n\nAlso read the trade log: cat ~/.openclaw/workspace/trading-alpaca/btc-scalper-log.jsonl | tail -50\n\nSummarize:\n- Trades today (buys, sells)\n- Win rate\n- Total P/L\n- Current position if any\n\nSend summary to Steve via Telegram.",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 120
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1771815600000,
-        "lastRunAtMs": 1771729217748,
-        "lastStatus": "error",
-        "lastDurationMs": 27684,
-        "consecutiveErrors": 1,
-        "lastError": "cron announce delivery failed"
       }
     },
     {
@@ -282,7 +217,7 @@
       "name": "Mission Control Cron Export",
       "enabled": true,
       "createdAtMs": 1770679531441,
-      "updatedAtMs": 1771808696134,
+      "updatedAtMs": 1771815896138,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -296,10 +231,10 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1771815896119,
-        "lastRunAtMs": 1771808696126,
+        "nextRunAtMs": 1771823096119,
+        "lastRunAtMs": 1771815896129,
         "lastStatus": "ok",
-        "lastDurationMs": 8,
+        "lastDurationMs": 9,
         "consecutiveErrors": 0
       }
     },
@@ -1319,6 +1254,71 @@
       }
     },
     {
+      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
+      "agentId": "main",
+      "name": "Nightly Learning - Rotating Agent",
+      "enabled": true,
+      "createdAtMs": 1770507380220,
+      "updatedAtMs": 1771812017647,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "NIGHTLY LEARNING - SPAWN SUBAGENT (BRAIN OPTIMIZED)\n\n**OPTIMIZATION:** Instead of loading agent context, spawn dedicated learning specialist.\n\n1. Determine today's agent using day modulo 7 pattern\n2. Spawn subagent: sessions_spawn with task: \"Learning specialist for [agent]. Research one new skill/technique relevant to this agent's domain. Write learning to agents/[agent]/MEMORY.md under Learning Log with date, technique, source, and application to MassDwell. Verify write succeeded. Return learning summary.\"\n3. Report learning completed\n\n**EXPECTED TIME:** <60 seconds (vs 300 seconds heavy context)\n\nMaintains daily learning requirement with Johann's optimization.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771898400000,
+        "lastRunAtMs": 1771812000026,
+        "lastStatus": "ok",
+        "lastDurationMs": 17621,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "0da75b0b-3a5c-46a6-bdc1-8329286ebfd4",
+      "agentId": "main",
+      "name": "BTC Scalper Daily Summary",
+      "enabled": true,
+      "createdAtMs": 1771207777946,
+      "updatedAtMs": 1771815732958,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 22 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run BTC scalper daily report: cd ~/.openclaw/workspace/trading-alpaca && node btc-scalper.js report\n\nAlso read the trade log: cat ~/.openclaw/workspace/trading-alpaca/btc-scalper-log.jsonl | tail -50\n\nSummarize:\n- Trades today (buys, sells)\n- Win rate\n- Total P/L\n- Current position if any\n\nSend summary to Steve via Telegram.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1771902000000,
+        "lastRunAtMs": 1771815616554,
+        "lastStatus": "error",
+        "lastDurationMs": 116404,
+        "consecutiveErrors": 2,
+        "lastError": "cron announce delivery failed"
+      }
+    },
+    {
       "id": "9fe417e4-0083-44c2-ad96-134d9294f765",
       "agentId": "main",
       "name": "Execute CSCO Stop Loss at Market Open",
@@ -1621,5 +1621,5 @@
       }
     }
   ],
-  "exportedAt": "2026-02-23T01:05:14.031Z"
+  "exportedAt": "2026-02-23T03:05:15.730Z"
 }
