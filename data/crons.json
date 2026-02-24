@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-24T11:04:56.159Z",
+  "lastUpdated": "2026-02-24T13:04:56.162Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -12,8 +12,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771931362635,
-        "lastRunAtMs": 1771927762635,
+        "nextRunAtMs": 1771938562684,
+        "lastRunAtMs": 1771934962684,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -29,117 +29,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771931521284,
-        "lastRunAtMs": 1771930621284,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
-      "agentId": "main",
-      "name": "Self-Healing: Stale Task Recovery",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771931700000,
-        "lastRunAtMs": 1771930800020,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "agentId": "main",
-      "name": "Mission Control Status Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771932600000,
-        "lastRunAtMs": 1771930805933,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
-      "agentId": "main",
-      "name": "Personal Life - Morning Scan",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771934400000,
-        "lastRunAtMs": 1771848017368,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
-      "agentId": "main",
-      "name": "Admin - Morning Operations Scan",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 7 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771934400000,
-        "lastRunAtMs": 1771848050977,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1771934432114,
-        "lastRunAtMs": 1771930923739,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
-      "agentId": "main",
-      "name": "Competitor Intel - Delta Only",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771936200000,
-        "lastRunAtMs": 1771849808327,
+        "nextRunAtMs": 1771938721457,
+        "lastRunAtMs": 1771937821457,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -156,8 +47,26 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771938000000,
-        "lastRunAtMs": 1771890300025,
+        "nextRunAtMs": 1771938900000,
+        "lastRunAtMs": 1771938000024,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
+      "agentId": "main",
+      "name": "Self-Healing: Stale Task Recovery",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1771938900000,
+        "lastRunAtMs": 1771938060714,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -174,26 +83,26 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771938000000,
-        "lastRunAtMs": 1771889419459,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
+        "nextRunAtMs": 1771939800000,
+        "lastRunAtMs": 1771938021577,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
       }
     },
     {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "agentId": "main",
+      "name": "Mission Control Status Sync",
       "enabled": true,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8,12,18 * * *",
+        "expr": "*/30 * * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771938000000,
-        "lastRunAtMs": 1771887720520,
+        "nextRunAtMs": 1771939800000,
+        "lastRunAtMs": 1771938066776,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -210,81 +119,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771938000000,
-        "lastRunAtMs": 1771889458545,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771938000000,
-        "lastRunAtMs": 1771887772006,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "agentId": "personal_life_cos",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,14,20 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771938000000,
-        "lastRunAtMs": 1771894812761,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
-      "agentId": "main",
-      "name": "Sales Kit Market Intelligence Update",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771938000000,
-        "lastRunAtMs": 1771592616991,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1771938296119,
-        "lastRunAtMs": 1771931096143,
+        "nextRunAtMs": 1771939800000,
+        "lastRunAtMs": 1771938074862,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -339,6 +175,25 @@
       "state": {
         "nextRunAtMs": 1771941600000,
         "lastRunAtMs": 1771855683301,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "state": {
+        "nextRunAtMs": 1771941632114,
+        "lastRunAtMs": 1771938207355,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -434,6 +289,25 @@
       }
     },
     {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "state": {
+        "nextRunAtMs": 1771945496119,
+        "lastRunAtMs": 1771938296144,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
       "agentId": "main",
       "name": "Bounce Monitor - Auto Close Lost",
@@ -470,6 +344,24 @@
       }
     },
     {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "agentId": "personal_life_cos",
+      "name": "Personal Life Heartbeat",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1771952400000,
+        "lastRunAtMs": 1771938039563,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
       "agentId": "marketing_content",
       "name": "MassDwell X Post - Midday",
@@ -488,6 +380,24 @@
       }
     },
     {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
+      "name": "Kommo CRM Sync",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,13,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1771956000000,
+        "lastRunAtMs": 1771938131045,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
       "agentId": "sales_followup",
       "name": "Sarah Cold Calls - Afternoon",
@@ -501,6 +411,24 @@
       "state": {
         "nextRunAtMs": 1771959600000,
         "lastRunAtMs": 1771873200032,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "agentId": "personal_life_cos",
+      "name": "Personal Gmail Cleanup - Consolidated",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,14,20 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1771959600000,
+        "lastRunAtMs": 1771938173431,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -594,13 +522,85 @@
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
+    },
+    {
+      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
+      "agentId": "main",
+      "name": "Personal Life - Morning Scan",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772020800000,
+        "lastRunAtMs": 1771934410037,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
+      "agentId": "main",
+      "name": "Admin - Morning Operations Scan",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772020800000,
+        "lastRunAtMs": 1771934500030,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
+      "agentId": "main",
+      "name": "Competitor Intel - Delta Only",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 7 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772022600000,
+        "lastRunAtMs": 1771936209753,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
+      "agentId": "main",
+      "name": "Sales Kit Market Intelligence Update",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772024400000,
+        "lastRunAtMs": 1771938180763,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
     }
   ],
   "stats": {
-    "totalJobs": 32,
-    "enabledJobs": 32,
-    "errorJobs": 2,
-    "isolatedJobs": 30,
+    "totalJobs": 35,
+    "enabledJobs": 35,
+    "errorJobs": 0,
+    "isolatedJobs": 33,
     "mainJobs": 2
   }
 }
