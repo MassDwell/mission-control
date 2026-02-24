@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-24T17:05:00.162Z",
+  "lastUpdated": "2026-02-24T19:05:00.162Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -12,8 +12,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771952962771,
-        "lastRunAtMs": 1771949362771,
+        "nextRunAtMs": 1771960162817,
+        "lastRunAtMs": 1771956562817,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -29,26 +29,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771953121822,
-        "lastRunAtMs": 1771952221822,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Midday",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "15 12 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771953300000,
-        "lastRunAtMs": 1771866900026,
+        "nextRunAtMs": 1771960322014,
+        "lastRunAtMs": 1771959422014,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -65,8 +47,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771953300000,
-        "lastRunAtMs": 1771952475636,
+        "nextRunAtMs": 1771960500000,
+        "lastRunAtMs": 1771959702251,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -83,8 +65,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771953300000,
-        "lastRunAtMs": 1771952534685,
+        "nextRunAtMs": 1771960500000,
+        "lastRunAtMs": 1771959740302,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -101,8 +83,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771954200000,
-        "lastRunAtMs": 1771952400023,
+        "nextRunAtMs": 1771961400000,
+        "lastRunAtMs": 1771959609574,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -119,8 +101,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771954200000,
-        "lastRunAtMs": 1771952494466,
+        "nextRunAtMs": 1771961400000,
+        "lastRunAtMs": 1771959740302,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -137,8 +119,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771954200000,
-        "lastRunAtMs": 1771952539572,
+        "nextRunAtMs": 1771961400000,
+        "lastRunAtMs": 1771959745850,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -155,44 +137,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771954200000,
-        "lastRunAtMs": 1771952544025,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "agentId": "massdwell_factory_ops",
-      "name": "Factory Ops Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9,13,17 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771956000000,
-        "lastRunAtMs": 1771941703045,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771956000000,
-        "lastRunAtMs": 1771938131045,
+        "nextRunAtMs": 1771961400000,
+        "lastRunAtMs": 1771959750270,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -210,63 +156,8 @@
       },
       "sessionTarget": "main",
       "state": {
-        "nextRunAtMs": 1771956032114,
-        "lastRunAtMs": 1771952575474,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
-      "agentId": "sales_followup",
-      "name": "Sarah Cold Calls - Afternoon",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 14 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771959600000,
-        "lastRunAtMs": 1771873200032,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "agentId": "personal_life_cos",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,14,20 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771959600000,
-        "lastRunAtMs": 1771938173431,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1771959896119,
-        "lastRunAtMs": 1771952696150,
+        "nextRunAtMs": 1771963232114,
+        "lastRunAtMs": 1771959779447,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -290,6 +181,25 @@
       }
     },
     {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "state": {
+        "nextRunAtMs": 1771967096119,
+        "lastRunAtMs": 1771959896142,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
       "agentId": "sales_followup",
       "name": "Sales Followup - EOD Email Sync",
@@ -303,6 +213,24 @@
       "state": {
         "nextRunAtMs": 1771970400000,
         "lastRunAtMs": 1771884000024,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "agentId": "massdwell_factory_ops",
+      "name": "Factory Ops Heartbeat",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9,13,17 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1771970400000,
+        "lastRunAtMs": 1771956128743,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -357,6 +285,42 @@
       "state": {
         "nextRunAtMs": 1771974000000,
         "lastRunAtMs": 1771952514346,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
+      "name": "Kommo CRM Sync",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,13,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1771974000000,
+        "lastRunAtMs": 1771956196044,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "agentId": "personal_life_cos",
+      "name": "Personal Gmail Cleanup - Consolidated",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,14,20 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1771981200000,
+        "lastRunAtMs": 1771959773905,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -573,6 +537,42 @@
       "state": {
         "nextRunAtMs": 1772035200000,
         "lastRunAtMs": 1771949024741,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
+      "agentId": "marketing_content",
+      "name": "MassDwell X Post - Midday",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 12 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772039700000,
+        "lastRunAtMs": 1771953300022,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
+      "agentId": "sales_followup",
+      "name": "Sarah Cold Calls - Afternoon",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772046000000,
+        "lastRunAtMs": 1771959600022,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
