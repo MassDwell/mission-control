@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-24T01:05:20.000Z",
+  "generated": "2026-02-24T03:05:20.000Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -13,7 +13,7 @@
         "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live."
       },
       "state": {
-        "nextRunAtMs": 1771895362401,
+        "nextRunAtMs": 1771902562450,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -30,7 +30,7 @@
         "message": "Check sales@massdwell.com for replies."
       },
       "state": {
-        "nextRunAtMs": 1771895520317,
+        "nextRunAtMs": 1771902720514,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -47,7 +47,7 @@
         "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal"
       },
       "state": {
-        "nextRunAtMs": 1771895700000,
+        "nextRunAtMs": 1771902900000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -64,24 +64,7 @@
         "message": "Push Mission Control data.json to GitHub for dashboard sync."
       },
       "state": {
-        "nextRunAtMs": 1771896600000,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
-      "agentId": "main",
-      "name": "Nightly Learning - Rotating Agent",
-      "enabled": true,
-      "schedule": "0 21 * * *",
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "NIGHTLY LEARNING - SPAWN SUBAGENT (BRAIN OPTIMIZED)"
-      },
-      "state": {
-        "nextRunAtMs": 1771898400000,
+        "nextRunAtMs": 1771903800000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -98,7 +81,7 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771898432114,
+        "nextRunAtMs": 1771905632114,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -115,7 +98,24 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1771902296119,
+        "nextRunAtMs": 1771909496119,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
+      "agentId": "main",
+      "name": "Nightly Learning - Rotating Agent",
+      "enabled": true,
+      "schedule": "0 21 * * *",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "NIGHTLY LEARNING - SPAWN SUBAGENT (BRAIN OPTIMIZED)"
+      },
+      "state": {
+        "nextRunAtMs": 1771984800000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
