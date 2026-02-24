@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-24T21:05:00.162Z",
+  "lastUpdated": "2026-02-24T23:05:00.162Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -12,8 +12,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771967362866,
-        "lastRunAtMs": 1771963762866,
+        "nextRunAtMs": 1771974562894,
+        "lastRunAtMs": 1771970962894,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -29,8 +29,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771967522195,
-        "lastRunAtMs": 1771966622195,
+        "nextRunAtMs": 1771974722378,
+        "lastRunAtMs": 1771973822378,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -47,8 +47,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771967700000,
-        "lastRunAtMs": 1771966837369,
+        "nextRunAtMs": 1771974900000,
+        "lastRunAtMs": 1771974118267,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -65,26 +65,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771967700000,
-        "lastRunAtMs": 1771966860278,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
-      "agentId": "sales_followup",
-      "name": "Sales Agent Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 9-17 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771968600000,
-        "lastRunAtMs": 1771966800023,
+        "nextRunAtMs": 1771974900000,
+        "lastRunAtMs": 1771974157786,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -101,8 +83,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771968600000,
-        "lastRunAtMs": 1771966844062,
+        "nextRunAtMs": 1771975800000,
+        "lastRunAtMs": 1771974131469,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -119,8 +101,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771968600000,
-        "lastRunAtMs": 1771966865510,
+        "nextRunAtMs": 1771975800000,
+        "lastRunAtMs": 1771974161660,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -137,62 +119,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771968600000,
-        "lastRunAtMs": 1771966870149,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
-      "agentId": "sales_followup",
-      "name": "Sales Followup - EOD Email Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771970400000,
-        "lastRunAtMs": 1771884000024,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "agentId": "massdwell_factory_ops",
-      "name": "Factory Ops Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9,13,17 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771970400000,
-        "lastRunAtMs": 1771956128743,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
-      "agentId": "main",
-      "name": "Reta Meal Prompt - Dinner",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771970400000,
-        "lastRunAtMs": 1771884169430,
+        "nextRunAtMs": 1771975800000,
+        "lastRunAtMs": 1771974166515,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -210,81 +138,8 @@
       },
       "sessionTarget": "main",
       "state": {
-        "nextRunAtMs": 1771970432114,
-        "lastRunAtMs": 1771966996499,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Evening",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771974000000,
-        "lastRunAtMs": 1771887600022,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,12,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771974000000,
-        "lastRunAtMs": 1771952514346,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771974000000,
-        "lastRunAtMs": 1771956196044,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1771974296119,
-        "lastRunAtMs": 1771967096141,
+        "nextRunAtMs": 1771977632114,
+        "lastRunAtMs": 1771974228049,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -303,6 +158,25 @@
       "state": {
         "nextRunAtMs": 1771981200000,
         "lastRunAtMs": 1771959773905,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "state": {
+        "nextRunAtMs": 1771981496119,
+        "lastRunAtMs": 1771974296144,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -398,6 +272,42 @@
       }
     },
     {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "agentId": "personal_life_cos",
+      "name": "Personal Life Heartbeat",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772024400000,
+        "lastRunAtMs": 1771974150674,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
+      "name": "Kommo CRM Sync",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,13,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772024400000,
+        "lastRunAtMs": 1771974197134,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
       "agentId": "main",
       "name": "Sales Kit Market Intelligence Update",
@@ -411,6 +321,42 @@
       "state": {
         "nextRunAtMs": 1772024400000,
         "lastRunAtMs": 1771938180763,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
+      "agentId": "sales_followup",
+      "name": "Sales Agent Heartbeat",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 9-17 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772028000000,
+        "lastRunAtMs": 1771972200014,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "agentId": "massdwell_factory_ops",
+      "name": "Factory Ops Heartbeat",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9,13,17 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772028000000,
+        "lastRunAtMs": 1771970569899,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -576,12 +522,66 @@
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
+    },
+    {
+      "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
+      "agentId": "sales_followup",
+      "name": "Sales Followup - EOD Email Sync",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 17 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772056800000,
+        "lastRunAtMs": 1771970400028,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
+      "agentId": "main",
+      "name": "Reta Meal Prompt - Dinner",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 17 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772056800000,
+        "lastRunAtMs": 1771970620880,
+        "lastStatus": "error",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
+      "agentId": "marketing_content",
+      "name": "MassDwell X Post - Evening",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772060400000,
+        "lastRunAtMs": 1771974000024,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
     }
   ],
   "stats": {
     "totalJobs": 34,
     "enabledJobs": 34,
-    "errorJobs": 0,
+    "errorJobs": 1,
     "isolatedJobs": 32,
     "mainJobs": 2
   }
