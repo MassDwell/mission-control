@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-24T19:05:00.162Z",
+  "lastUpdated": "2026-02-24T21:05:00.162Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -12,8 +12,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771960162817,
-        "lastRunAtMs": 1771956562817,
+        "nextRunAtMs": 1771967362866,
+        "lastRunAtMs": 1771963762866,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -29,8 +29,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771960322014,
-        "lastRunAtMs": 1771959422014,
+        "nextRunAtMs": 1771967522195,
+        "lastRunAtMs": 1771966622195,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -47,8 +47,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771960500000,
-        "lastRunAtMs": 1771959702251,
+        "nextRunAtMs": 1771967700000,
+        "lastRunAtMs": 1771966837369,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -65,8 +65,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771960500000,
-        "lastRunAtMs": 1771959740302,
+        "nextRunAtMs": 1771967700000,
+        "lastRunAtMs": 1771966860278,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -83,8 +83,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771961400000,
-        "lastRunAtMs": 1771959609574,
+        "nextRunAtMs": 1771968600000,
+        "lastRunAtMs": 1771966800023,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -101,8 +101,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771961400000,
-        "lastRunAtMs": 1771959740302,
+        "nextRunAtMs": 1771968600000,
+        "lastRunAtMs": 1771966844062,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -119,8 +119,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771961400000,
-        "lastRunAtMs": 1771959745850,
+        "nextRunAtMs": 1771968600000,
+        "lastRunAtMs": 1771966865510,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -137,64 +137,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771961400000,
-        "lastRunAtMs": 1771959750270,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1771963232114,
-        "lastRunAtMs": 1771959779447,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
-      "agentId": "main",
-      "name": "Bounce Monitor - Auto Close Lost",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11,16 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771966800000,
-        "lastRunAtMs": 1771948937720,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1771967096119,
-        "lastRunAtMs": 1771959896142,
+        "nextRunAtMs": 1771968600000,
+        "lastRunAtMs": 1771966870149,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -254,6 +198,25 @@
       }
     },
     {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "state": {
+        "nextRunAtMs": 1771970432114,
+        "lastRunAtMs": 1771966996499,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
       "agentId": "marketing_content",
       "name": "MassDwell X Post - Evening",
@@ -303,6 +266,25 @@
       "state": {
         "nextRunAtMs": 1771974000000,
         "lastRunAtMs": 1771956196044,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "state": {
+        "nextRunAtMs": 1771974296119,
+        "lastRunAtMs": 1771967096141,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -519,6 +501,24 @@
       "state": {
         "nextRunAtMs": 1772031600000,
         "lastRunAtMs": 1771945345213,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
+      "agentId": "main",
+      "name": "Bounce Monitor - Auto Close Lost",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11,16 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772035200000,
+        "lastRunAtMs": 1771966901607,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
