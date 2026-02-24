@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-24T05:05:20.000Z",
+  "generated": "2026-02-24T07:05:20.000Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -13,7 +13,7 @@
         "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live."
       },
       "state": {
-        "nextRunAtMs": 1771909762494,
+        "nextRunAtMs": 1771916962541,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -30,7 +30,7 @@
         "message": "Check sales@massdwell.com for replies."
       },
       "state": {
-        "nextRunAtMs": 1771909920696,
+        "nextRunAtMs": 1771917120880,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -47,7 +47,7 @@
         "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal"
       },
       "state": {
-        "nextRunAtMs": 1771910100000,
+        "nextRunAtMs": 1771917300000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -64,7 +64,7 @@
         "message": "Push Mission Control data.json to GitHub for dashboard sync."
       },
       "state": {
-        "nextRunAtMs": 1771911000000,
+        "nextRunAtMs": 1771918200000,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -81,7 +81,7 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1771912832114,
+        "nextRunAtMs": 1771920032114,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -98,7 +98,7 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1771916696119,
+        "nextRunAtMs": 1771923896119,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
