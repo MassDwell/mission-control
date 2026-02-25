@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-25T09:04:56.000Z",
+  "updated": "2026-02-25T11:04:56.000Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -17,8 +17,8 @@
         "timeoutSeconds": 300
       },
       "state": {
-        "nextRunAtMs": 1772010563121,
-        "lastRunAtMs": 1772006963121,
+        "nextRunAtMs": 1772017763154,
+        "lastRunAtMs": 1772014163154,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -39,8 +39,8 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1772010723337,
-        "lastRunAtMs": 1772009823337,
+        "nextRunAtMs": 1772017923510,
+        "lastRunAtMs": 1772017023510,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -63,8 +63,8 @@
         "timeoutSeconds": 60
       },
       "state": {
-        "nextRunAtMs": 1772010900000,
-        "lastRunAtMs": 1772010000027,
+        "nextRunAtMs": 1772018100000,
+        "lastRunAtMs": 1772017200027,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -87,8 +87,8 @@
         "timeoutSeconds": 60
       },
       "state": {
-        "nextRunAtMs": 1772011800000,
-        "lastRunAtMs": 1772010005662,
+        "nextRunAtMs": 1772019000000,
+        "lastRunAtMs": 1772017204662,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -110,8 +110,8 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1772013632114,
-        "lastRunAtMs": 1772010032136,
+        "nextRunAtMs": 1772020832114,
+        "lastRunAtMs": 1772017232140,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -132,8 +132,8 @@
         "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
       },
       "state": {
-        "nextRunAtMs": 1772017200000,
-        "lastRunAtMs": 1771930811754,
+        "nextRunAtMs": 1772103600000,
+        "lastRunAtMs": 1772017209517,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -155,30 +155,8 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1772017496119,
-        "lastRunAtMs": 1772010296146,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
-      "agentId": "main",
-      "name": "Personal Life - Morning Scan",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
-      },
-      "state": {
-        "nextRunAtMs": 1772020800000,
-        "lastRunAtMs": 1771934410037,
+        "nextRunAtMs": 1772024696119,
+        "lastRunAtMs": 1772017496147,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -201,6 +179,28 @@
       "state": {
         "nextRunAtMs": 1772020800000,
         "lastRunAtMs": 1771934500030,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
+      "agentId": "main",
+      "name": "Personal Life - Morning Scan",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
+      },
+      "state": {
+        "nextRunAtMs": 1772020800000,
+        "lastRunAtMs": 1771934410037,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
