@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-24T23:05:00.162Z",
+  "lastUpdated": "2026-02-25T01:05:00.162Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -12,8 +12,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771974562894,
-        "lastRunAtMs": 1771970962894,
+        "nextRunAtMs": 1771981762941,
+        "lastRunAtMs": 1771978162941,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -29,26 +29,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771974722378,
-        "lastRunAtMs": 1771973822378,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
-      "agentId": "marketing_content",
-      "name": "Marketing Agent Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771974900000,
-        "lastRunAtMs": 1771974118267,
+        "nextRunAtMs": 1771981922598,
+        "lastRunAtMs": 1771981022598,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -65,26 +47,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771974900000,
-        "lastRunAtMs": 1771974157786,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "agentId": "admin_assistant",
-      "name": "Admin Assistant Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771975800000,
-        "lastRunAtMs": 1771974131469,
+        "nextRunAtMs": 1771982100000,
+        "lastRunAtMs": 1771981200023,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -101,82 +65,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771975800000,
-        "lastRunAtMs": 1771974161660,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "agentId": "main",
-      "name": "Codesmith Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771975800000,
-        "lastRunAtMs": 1771974166515,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1771977632114,
-        "lastRunAtMs": 1771974228049,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "agentId": "personal_life_cos",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,14,20 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771981200000,
-        "lastRunAtMs": 1771959773905,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1771981496119,
-        "lastRunAtMs": 1771974296144,
+        "nextRunAtMs": 1771983000000,
+        "lastRunAtMs": 1771981204846,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -195,6 +85,44 @@
       "state": {
         "nextRunAtMs": 1771984800000,
         "lastRunAtMs": 1771898400025,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "state": {
+        "nextRunAtMs": 1771984832114,
+        "lastRunAtMs": 1771981232139,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "state": {
+        "nextRunAtMs": 1771988696119,
+        "lastRunAtMs": 1771981496143,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -272,6 +200,42 @@
       }
     },
     {
+      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
+      "agentId": "marketing_content",
+      "name": "Marketing Agent Heartbeat",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772024400000,
+        "lastRunAtMs": 1771976700016,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "agentId": "admin_assistant",
+      "name": "Admin Assistant Heartbeat",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772024400000,
+        "lastRunAtMs": 1771975824600,
+        "lastStatus": "error",
+        "consecutiveErrors": 1
+      }
+    },
+    {
       "id": "a8544303-c019-4675-9ab4-2570296413c8",
       "agentId": "personal_life_cos",
       "name": "Personal Life Heartbeat",
@@ -290,6 +254,24 @@
       }
     },
     {
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
+      "agentId": "main",
+      "name": "Codesmith Heartbeat",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772024400000,
+        "lastRunAtMs": 1771975863256,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
       "agentId": "main",
       "name": "Kommo CRM Sync",
@@ -303,6 +285,24 @@
       "state": {
         "nextRunAtMs": 1772024400000,
         "lastRunAtMs": 1771974197134,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "agentId": "personal_life_cos",
+      "name": "Personal Gmail Cleanup - Consolidated",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,14,20 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772024400000,
+        "lastRunAtMs": 1771981209718,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -576,13 +576,31 @@
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
+    },
+    {
+      "id": "cbe9a53b-7c97-425a-8c73-6c44ac566b55",
+      "agentId": "main",
+      "name": "Venture Engine Weekly Report",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * 1",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772492400000,
+        "lastRunAtMs": null,
+        "lastStatus": null,
+        "consecutiveErrors": 0
+      }
     }
   ],
   "stats": {
-    "totalJobs": 34,
-    "enabledJobs": 34,
-    "errorJobs": 1,
-    "isolatedJobs": 32,
+    "totalJobs": 36,
+    "enabledJobs": 36,
+    "errorJobs": 2,
+    "isolatedJobs": 34,
     "mainJobs": 2
   }
 }
