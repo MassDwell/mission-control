@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-25T19:04:56.000Z",
+  "updated": "2026-02-25T21:04:56.000Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -17,8 +17,8 @@
         "timeoutSeconds": 300
       },
       "state": {
-        "nextRunAtMs": 1772046563346,
-        "lastRunAtMs": 1772042963346,
+        "nextRunAtMs": 1772053763393,
+        "lastRunAtMs": 1772050163393,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -39,8 +39,8 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1772046786148,
-        "lastRunAtMs": 1772045886148,
+        "nextRunAtMs": 1772053986340,
+        "lastRunAtMs": 1772053086340,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -63,8 +63,8 @@
         "timeoutSeconds": 60
       },
       "state": {
-        "nextRunAtMs": 1772046900000,
-        "lastRunAtMs": 1772046110590,
+        "nextRunAtMs": 1772054100000,
+        "lastRunAtMs": 1772053286769,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -87,8 +87,8 @@
         "timeoutSeconds": 60
       },
       "state": {
-        "nextRunAtMs": 1772047800000,
-        "lastRunAtMs": 1772046115690,
+        "nextRunAtMs": 1772055000000,
+        "lastRunAtMs": 1772053292974,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -110,8 +110,8 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1772049632114,
-        "lastRunAtMs": 1772046154091,
+        "nextRunAtMs": 1772056832114,
+        "lastRunAtMs": 1772053396342,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -155,8 +155,8 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1772053496119,
-        "lastRunAtMs": 1772046296127,
+        "nextRunAtMs": 1772060696119,
+        "lastRunAtMs": 1772053496150,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
