@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-25T07:05:00.162Z",
+  "updated": "2026-02-25T09:04:56.000Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -11,9 +11,14 @@
         "everyMs": 3600000
       },
       "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live.\n\nRead state/experiments.md for current experiment status. Execute metabolism cycle:\n1. SENSE — Check analytics, lead flow, site health\n2. DECIDE — Identify optimization opportunities\n3. ACT — Make improvements (copy, conversion, SEO)\n4. MEASURE — Log metrics to state/metrics.jsonl\n5. LEARN — Document what's working\n\nFocus: Monitor and optimize. No pending approvals.\n\nIf nothing actionable, reply HEARTBEAT_OK.",
+        "timeoutSeconds": 300
+      },
       "state": {
-        "nextRunAtMs": 1772003363083,
-        "lastRunAtMs": 1771999763083,
+        "nextRunAtMs": 1772010563121,
+        "lastRunAtMs": 1772006963121,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -28,9 +33,14 @@
         "everyMs": 900000
       },
       "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check sales@massdwell.com for replies.\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\nRun: export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail search 'in:inbox is:unread' --account sales@massdwell.com\n\nOnly notify if there's a hot lead or stop request. Otherwise HEARTBEAT_OK.",
+        "model": "anthropic/claude-haiku-4-5"
+      },
       "state": {
-        "nextRunAtMs": 1772003523147,
-        "lastRunAtMs": 1772002623147,
+        "nextRunAtMs": 1772010723337,
+        "lastRunAtMs": 1772009823337,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -46,9 +56,15 @@
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal\n\nReport any recovered tasks. If none, just confirm the check ran.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
       "state": {
-        "nextRunAtMs": 1772003700000,
-        "lastRunAtMs": 1772002800033,
+        "nextRunAtMs": 1772010900000,
+        "lastRunAtMs": 1772010000027,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -64,9 +80,15 @@
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Push Mission Control data.json to GitHub for dashboard sync.\n\nRun:\ncd /Users/openclaw/.openclaw/workspace/mission-control && git add data/data.json && git diff --cached --quiet || (git commit -m \"Auto-sync agent statuses\" && git push origin main)\n\nReply HEARTBEAT_OK when done.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
       "state": {
-        "nextRunAtMs": 1772004600000,
-        "lastRunAtMs": 1772002803980,
+        "nextRunAtMs": 1772011800000,
+        "lastRunAtMs": 1772010005662,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -83,9 +105,35 @@
         "staggerMs": 300000
       },
       "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
       "state": {
-        "nextRunAtMs": 1772006432114,
-        "lastRunAtMs": 1772002832136,
+        "nextRunAtMs": 1772013632114,
+        "lastRunAtMs": 1772010032136,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
+      "agentId": "main",
+      "name": "Atlantic Laser QB→Pipedrive Sync",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
+      },
+      "state": {
+        "nextRunAtMs": 1772017200000,
+        "lastRunAtMs": 1771930811754,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -102,27 +150,13 @@
         "staggerMs": 300000
       },
       "sessionTarget": "main",
-      "state": {
-        "nextRunAtMs": 1772010296119,
-        "lastRunAtMs": 1772003096141,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
-      "agentId": "main",
-      "name": "Atlantic Laser QB→Pipedrive Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 6 * * *",
-        "tz": "America/New_York"
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
-      "sessionTarget": "main",
       "state": {
-        "nextRunAtMs": 1772017200000,
-        "lastRunAtMs": 1771930811754,
+        "nextRunAtMs": 1772017496119,
+        "lastRunAtMs": 1772010296146,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -138,6 +172,10 @@
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Morning scan. Read agents/personal_life_cos/HEARTBEAT.md and execute the protocol. Check calendar, health signals, relationships, travel, life admin. Output only if intervention needed. Otherwise HEARTBEAT_OK."
+      },
       "state": {
         "nextRunAtMs": 1772020800000,
         "lastRunAtMs": 1771934410037,
@@ -156,6 +194,10 @@
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Morning operations scan. Read agents/admin_assistant/HEARTBEAT.md and execute the daily operating loop: email triage, calendar check, open loop scan. Output only if action needed. Otherwise HEARTBEAT_OK."
+      },
       "state": {
         "nextRunAtMs": 1772020800000,
         "lastRunAtMs": 1771934500030,
@@ -174,433 +216,18 @@
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "COMPETITOR INTEL - DELTA ONLY FORMAT\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\n**CRITICAL: Only report CHANGES. If nothing new, reply HEARTBEAT_OK.**\n\nSTEP 1: Load baseline\n- Read: data/intel/competitor-baseline.json\n- This contains ALL known competitors and their last known state\n\nSTEP 2: Search for CHANGES ONLY\nRun targeted searches with freshness=pd (past day):\n- web_search 'Massachusetts ADU news' freshness=pd\n- web_search 'modular ADU Massachusetts' freshness=pd\n- web_search 'ADU permit Massachusetts' freshness=pd\n\nSTEP 3: Compare against baseline\nFor each search result, ask:\n- Is this a NEW competitor not in baseline? → REPORT\n- Is this a PRICE CHANGE for known competitor? → REPORT\n- Is this a NEW MARKET or positioning change? → REPORT\n- Is this NEW REGULATION or state funding news? → REPORT\n- Is this just the same info we already have? → SKIP\n\nSTEP 4: Update baseline if changes found\n- Add new competitors to baseline\n- Update changed fields\n- Add to change_log array with date\n\nSTEP 5: Report format (ONLY if changes exist)\n\n📡 COMPETITOR INTEL - [Date]\n\n🆕 NEW:\n• [New competitor/news item]\n\n📈 CHANGED:\n• [What changed from baseline]\n\n📊 MARKET:\n• [New permit data or regulation changes]\n\n**If no changes detected: Reply HEARTBEAT_OK. Do NOT send the team an email of recycled info.**\n\nSTEP 6: Only email team if ACTUAL news exists\nIf you found real changes:\nexport GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail send --to 'steve.vettori@massdwell.com,nick.ferreira@massdwell.com,jon.proctor@massdwell.com' --subject '📡 Competitor Alert - [specific change]' --body '[changes only]' --account sales@massdwell.com",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 180
+      },
       "state": {
         "nextRunAtMs": 1772022600000,
         "lastRunAtMs": 1771936209753,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
-    },
-    {
-      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
-      "agentId": "marketing_content",
-      "name": "Marketing Agent Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771976700016,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "agentId": "admin_assistant",
-      "name": "Admin Assistant Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771975824600,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
-      }
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,12,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771974150674,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "agentId": "main",
-      "name": "Codesmith Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771975863256,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771974197134,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "agentId": "personal_life_cos",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,14,20 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771981209718,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
-      "agentId": "main",
-      "name": "Sales Kit Market Intelligence Update",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771938180763,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
-      "agentId": "sales_followup",
-      "name": "Sales Agent Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 9-17 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772028000000,
-        "lastRunAtMs": 1771972200014,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "agentId": "massdwell_factory_ops",
-      "name": "Factory Ops Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9,13,17 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772028000000,
-        "lastRunAtMs": 1771970569899,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
-      "agentId": "main",
-      "name": "Instagram Content Reminder",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * 1-6",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772028000000,
-        "lastRunAtMs": 1771941769871,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
-      "agentId": "sales_followup",
-      "name": "Sales Followup - Morning Email Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "10 9 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772028600000,
-        "lastRunAtMs": 1771942253185,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
-      "agentId": "marketing_content",
-      "name": "Instagram Post - Morning",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "20 9 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772029200000,
-        "lastRunAtMs": 1771942800024,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
-      "agentId": "main",
-      "name": "MassDwell Marketing Dashboard Check",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "25 9 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772029500000,
-        "lastRunAtMs": 1771943100063,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
-      "agentId": "main",
-      "name": "Daily Lead Email Outreach",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772031600000,
-        "lastRunAtMs": 1771945345213,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
-      "agentId": "main",
-      "name": "Bounce Monitor - Auto Close Lost",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11,16 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772035200000,
-        "lastRunAtMs": 1771966901607,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
-      "agentId": "main",
-      "name": "Reta Meal Prompt - Lunch",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772035200000,
-        "lastRunAtMs": 1771949024741,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Midday",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "15 12 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772039700000,
-        "lastRunAtMs": 1771953300022,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
-      "agentId": "sales_followup",
-      "name": "Sarah Cold Calls - Afternoon",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 14 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772046000000,
-        "lastRunAtMs": 1771959600022,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
-      "agentId": "sales_followup",
-      "name": "Sales Followup - EOD Email Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772056800000,
-        "lastRunAtMs": 1771970400028,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
-      "agentId": "main",
-      "name": "Reta Meal Prompt - Dinner",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772056800000,
-        "lastRunAtMs": 1771970620880,
-        "lastStatus": "error",
-        "consecutiveErrors": 1
-      }
-    },
-    {
-      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Evening",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772060400000,
-        "lastRunAtMs": 1771974000024,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
-      "agentId": "main",
-      "name": "Nightly Learning - Rotating Agent",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 21 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772071200000,
-        "lastRunAtMs": 1771984800017,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "cbe9a53b-7c97-425a-8c73-6c44ac566b55",
-      "agentId": "main",
-      "name": "Venture Engine Weekly Report",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * 1",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1772492400000,
-        "lastRunAtMs": null,
-        "lastStatus": null,
-        "consecutiveErrors": 0
-      }
     }
-  ],
-  "stats": {
-    "totalJobs": 36,
-    "enabledJobs": 36,
-    "errorJobs": 1,
-    "isolatedJobs": 34,
-    "mainJobs": 2
-  }
+  ]
 }
