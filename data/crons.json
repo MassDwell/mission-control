@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-25T01:05:00.162Z",
+  "lastUpdated": "2026-02-25T03:05:00.162Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -12,8 +12,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771981762941,
-        "lastRunAtMs": 1771978162941,
+        "nextRunAtMs": 1771988962986,
+        "lastRunAtMs": 1771985362986,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -29,8 +29,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771981922598,
-        "lastRunAtMs": 1771981022598,
+        "nextRunAtMs": 1771989122786,
+        "lastRunAtMs": 1771988222786,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -47,8 +47,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771982100000,
-        "lastRunAtMs": 1771981200023,
+        "nextRunAtMs": 1771989300000,
+        "lastRunAtMs": 1771988400023,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -65,26 +65,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771983000000,
-        "lastRunAtMs": 1771981204846,
-        "lastStatus": "ok",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
-      "agentId": "main",
-      "name": "Nightly Learning - Rotating Agent",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 21 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "state": {
-        "nextRunAtMs": 1771984800000,
-        "lastRunAtMs": 1771898400025,
+        "nextRunAtMs": 1771990200000,
+        "lastRunAtMs": 1771988405542,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -102,8 +84,8 @@
       },
       "sessionTarget": "main",
       "state": {
-        "nextRunAtMs": 1771984832114,
-        "lastRunAtMs": 1771981232139,
+        "nextRunAtMs": 1771992032114,
+        "lastRunAtMs": 1771988432127,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -121,8 +103,8 @@
       },
       "sessionTarget": "main",
       "state": {
-        "nextRunAtMs": 1771988696119,
-        "lastRunAtMs": 1771981496143,
+        "nextRunAtMs": 1771995896119,
+        "lastRunAtMs": 1771988696143,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -573,6 +555,24 @@
       "state": {
         "nextRunAtMs": 1772060400000,
         "lastRunAtMs": 1771974000024,
+        "lastStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
+      "agentId": "main",
+      "name": "Nightly Learning - Rotating Agent",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "state": {
+        "nextRunAtMs": 1772071200000,
+        "lastRunAtMs": 1771984800017,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
