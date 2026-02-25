@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-25T05:05:00.162Z",
+  "lastUpdated": "2026-02-25T07:05:00.162Z",
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
@@ -12,8 +12,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771996163037,
-        "lastRunAtMs": 1771992563037,
+        "nextRunAtMs": 1772003363083,
+        "lastRunAtMs": 1771999763083,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -29,8 +29,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771996322962,
-        "lastRunAtMs": 1771995422962,
+        "nextRunAtMs": 1772003523147,
+        "lastRunAtMs": 1772002623147,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -47,8 +47,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771996500000,
-        "lastRunAtMs": 1771995607384,
+        "nextRunAtMs": 1772003700000,
+        "lastRunAtMs": 1772002800033,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -65,8 +65,8 @@
       },
       "sessionTarget": "isolated",
       "state": {
-        "nextRunAtMs": 1771997400000,
-        "lastRunAtMs": 1771995612814,
+        "nextRunAtMs": 1772004600000,
+        "lastRunAtMs": 1772002803980,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -84,8 +84,8 @@
       },
       "sessionTarget": "main",
       "state": {
-        "nextRunAtMs": 1771999232114,
-        "lastRunAtMs": 1771995632130,
+        "nextRunAtMs": 1772006432114,
+        "lastRunAtMs": 1772002832136,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -103,8 +103,8 @@
       },
       "sessionTarget": "main",
       "state": {
-        "nextRunAtMs": 1772003096119,
-        "lastRunAtMs": 1771995896143,
+        "nextRunAtMs": 1772010296119,
+        "lastRunAtMs": 1772003096141,
         "lastStatus": "ok",
         "consecutiveErrors": 0
       }
@@ -599,7 +599,7 @@
   "stats": {
     "totalJobs": 36,
     "enabledJobs": 36,
-    "errorJobs": 2,
+    "errorJobs": 1,
     "isolatedJobs": 34,
     "mainJobs": 2
   }
