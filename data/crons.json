@@ -1,657 +1,279 @@
 {
-  "exportedAt": "2026-02-26T13:05:07.000Z",
-  "totalJobs": 44,
   "jobs": [
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
       "agentId": "main",
       "name": "Automaton Growth - Heartbeat",
       "enabled": true,
+      "notify": false,
+      "createdAtMs": 1771412876834,
+      "updatedAtMs": 1772115048521,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
         "anchorMs": 1771412876834
       },
       "sessionTarget": "isolated",
-      "nextRunAtMs": 1772111363808,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live.\n\nRead state/experiments.md for current experiment status. Execute metabolism cycle:\n1. SENSE — Check analytics, lead flow, site health\n2. DECIDE — Identify optimization opportunities\n3. ACT — Make improvements (copy, conversion, SEO)\n4. MEASURE — Log metrics to state/metrics.jsonl\n5. LEARN — Document what's working\n\nFocus: Monitor and optimize. No pending approvals.\n\nIf nothing actionable, reply HEARTBEAT_OK.",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1772118563851,
+        "lastRunAtMs": 1772114963851,
+        "lastStatus": "ok",
+        "lastDurationMs": 84670,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
     },
     {
       "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
       "agentId": "main",
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
+      "createdAtMs": 1770727337404,
+      "updatedAtMs": 1772118066533,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
-      "nextRunAtMs": 1772111700000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Mission Control self-healing check. Execute: node scripts/mission-control-v2.js heal\n\nReport any recovered tasks. If none, just confirm the check ran.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772118900000,
+        "lastRunAtMs": 1772118060494,
+        "lastStatus": "ok",
+        "lastDurationMs": 6039,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
     },
     {
       "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
       "agentId": "marketing_content",
       "name": "Marketing Agent Heartbeat",
       "enabled": true,
+      "createdAtMs": 1770408787882,
+      "updatedAtMs": 1772118044553,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 8-18 * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
-      "nextRunAtMs": 1772111700000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "MARKETING HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan MASSDWELL-BRAIN.md for urgent marketing needs\n2. Check Mission Control: node scripts/mission-control-v2.js checkin marketing_content\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks marketing_content\n\n**DECISION TREE:**\n- Hot leads needing content → Spawn content creator\n- Marketing tasks assigned → Pick and execute\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 30
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772118900000,
+        "lastRunAtMs": 1772118024842,
+        "lastStatus": "ok",
+        "lastDurationMs": 19711,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
     },
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
-      "enabled": true,
+      "createdAtMs": 1770139076157,
+      "updatedAtMs": 1772118186051,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
         "anchorMs": 1770139076157
       },
       "sessionTarget": "isolated",
-      "nextRunAtMs": 1772111876157,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check sales@massdwell.com for replies.\n\n**ENV SETUP:** export GOG_KEYRING_PASSWORD=\"openclaw123\"\n\nRun: export GOG_KEYRING_PASSWORD=\"openclaw123\" && gog gmail search 'in:inbox is:unread' --account sales@massdwell.com\n\nOnly notify if there's a hot lead or stop request. Otherwise HEARTBEAT_OK.",
+        "model": "anthropic/claude-haiku-4-5"
+      },
+      "state": {
+        "nextRunAtMs": 1772119076325,
+        "lastRunAtMs": 1772118176325,
+        "lastStatus": "ok",
+        "lastDurationMs": 9726,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      },
+      "enabled": true,
+      "delivery": {
+        "mode": "none"
+      }
     },
     {
       "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
       "agentId": "main",
       "name": "Mission Control Status Sync",
       "enabled": true,
+      "createdAtMs": 1770740199525,
+      "updatedAtMs": 1772118071582,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
-      "nextRunAtMs": 1772112600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "agentId": "main",
-      "name": "Codesmith Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Push Mission Control data.json to GitHub for dashboard sync.\n\nRun:\ncd /Users/openclaw/.openclaw/workspace/mission-control && git add data/data.json && git diff --cached --quiet || (git commit -m \"Auto-sync agent statuses\" && git push origin main)\n\nReply HEARTBEAT_OK when done.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
       },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772112600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "agentId": "admin_assistant",
-      "name": "Admin Assistant Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
+      "delivery": {
+        "mode": "none"
       },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772112600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "e3644c27-b017-4c9c-8f1c-4fbedf10f6c2",
-      "agentId": "main",
-      "name": "Email Barry and Antonellis Reminder",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-26T13:30:00.000Z"
-      },
-      "sessionTarget": "main",
-      "nextRunAtMs": 1772112600000
-    },
-    {
-      "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
-      "agentId": "main",
-      "name": "Instagram Content Reminder",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * 1-6",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772114400000,
-      "lastRunStatus": "error",
-      "consecutiveErrors": 1
+      "state": {
+        "nextRunAtMs": 1772119800000,
+        "lastRunAtMs": 1772118066533,
+        "lastStatus": "ok",
+        "lastDurationMs": 5049,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
     },
     {
       "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
       "agentId": "sales_followup",
       "name": "Sales Agent Heartbeat",
       "enabled": true,
+      "createdAtMs": 1770408787872,
+      "updatedAtMs": 1772118024842,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 9-17 * * 1-5",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
-      "nextRunAtMs": 1772114400000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
-      "agentId": "massdwell_factory_ops",
-      "name": "Factory Ops Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9,13,17 * * 1-5",
-        "tz": "America/New_York"
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "SALES ENGINE HEARTBEAT\n\nRead agents/sales_followup/SOUL.md. You are a conversion system, not a note-taker.\n\n1. Check @mentions in data/global/mentions.json\n2. Check for assigned tasks: node scripts/mission-control-v2.js tasks sales_followup\n3. If tasks exist → execute with conversion mindset\n4. Run mini-sweep: any deals 7+ days stale? Follow-up or downgrade.\n5. Check sales@massdwell.com for replies needing action\n\n**OPERATING RULES:**\n- Pipeline reality > optimism\n- Every lead must move or die\n- Never 'just checking in'\n- Kill bad deals fast\n- Escalate only: >$50K, decision maker confirmed, timeline <30 days\n\n**OUTPUT:**\n- HEARTBEAT_OK if nothing needs attention\n- NO_REPLY for background hygiene\n- Message only for action required, risk, or high-leverage opportunity",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
       },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772114400000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772119800000,
+        "lastRunAtMs": 1772118000035,
+        "lastStatus": "ok",
+        "lastDurationMs": 24807,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
     },
     {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
       "agentId": "main",
-      "name": "Hourly Memory Summarizer",
+      "name": "Codesmith Heartbeat",
       "enabled": true,
+      "createdAtMs": 1770896303696,
+      "updatedAtMs": 1772118095221,
       "schedule": {
         "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "nextRunAtMs": 1772114432114,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "35de63e6-7b36-45c8-9cdf-a2f295922aae",
-      "agentId": "sales_followup",
-      "name": "Sales Followup - Morning Email Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "10 9 * * 1-5",
+        "expr": "*/30 8-18 * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
-      "nextRunAtMs": 1772115000000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin codesmith active\n1. Read agents/codesmith/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json for @codesmith\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions codesmith\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota codesmith\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks codesmith\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute the development work\n   - Test it works\n   - Git commit if code changed\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Dev: [description]\" --agent codesmith\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772119800000,
+        "lastRunAtMs": 1772118071582,
+        "lastStatus": "ok",
+        "lastDurationMs": 23639,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
     },
     {
-      "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
-      "agentId": "marketing_content",
-      "name": "Instagram Post - Morning",
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "agentId": "admin_assistant",
+      "name": "Admin Assistant Heartbeat",
       "enabled": true,
+      "createdAtMs": 1770651479323,
+      "updatedAtMs": 1772118060494,
       "schedule": {
         "kind": "cron",
-        "expr": "20 9 * * *",
+        "expr": "*/30 8-18 * * *",
         "tz": "America/New_York"
       },
       "sessionTarget": "isolated",
-      "nextRunAtMs": 1772115600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "80458079-b1f4-41bc-a260-f224a863fcce",
-      "agentId": "main",
-      "name": "MassDwell Marketing Dashboard Check",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "25 9 * * *",
-        "tz": "America/New_York"
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "ADMIN ASSISTANT HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST CROSS-BUSINESS SCAN:**\n1. Quick scan ALL BRAIN files for urgent admin needs:\n   - MASSDWELL-BRAIN.md (deadlines, permits, contracts)\n   - ATLANTIC-LASER-BRAIN.md (orders, deliveries, support)\n   - ALPINE-PROPERTY-BRAIN.md (closings, inspections, legal)\n   - PERSONAL-BRAIN.md (appointments, health, commitments)\n2. Check @mentions: data/global/mentions.json\n3. Check Mission Control tasks: admin_assistant\n\n**DECISION TREE:**\n- Urgent deadline/admin task → Spawn admin specialist\n- Cross-business coordination needed → Execute\n- All quiet → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 30
       },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772115900000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "cab97889-b2f9-49cc-8b12-3bf73889f883",
-      "agentId": "main",
-      "name": "Daily Lead Email Outreach",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10 * * 1-5",
-        "tz": "America/New_York"
+      "delivery": {
+        "mode": "none"
       },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772118000000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "nextRunAtMs": 1772118296119,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
-      "agentId": "main",
-      "name": "Bounce Monitor - Auto Close Lost",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11,16 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772121600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
-      "agentId": "main",
-      "name": "Reta Meal Prompt - Lunch",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772121600000,
-      "lastRunStatus": "error",
-      "consecutiveErrors": 1
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,12,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772125200000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Midday",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "15 12 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772126100000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772128800000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
-      "agentId": "sales_followup",
-      "name": "Sarah Cold Calls - Afternoon",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 14 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772132400000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "agentId": "personal_life_cos",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,14,20 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772132400000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
-      "agentId": "main",
-      "name": "Reta Meal Prompt - Dinner",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772143200000,
-      "lastRunStatus": "error",
-      "consecutiveErrors": 2
-    },
-    {
-      "id": "6f8a55d5-1da2-4e4f-ab2d-b8c95e802964",
-      "agentId": "sales_followup",
-      "name": "Sales Followup - EOD Email Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772143200000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Evening",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772146800000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
-      "agentId": "main",
-      "name": "Nightly Learning - Rotating Agent",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 21 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772157600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
-      "agentId": "main",
-      "name": "Atlantic Laser QB→Pipedrive Sync",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 6 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "nextRunAtMs": 1772190000000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
-      "agentId": "main",
-      "name": "Admin - Morning Operations Scan",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 7 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772193600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
-      "agentId": "main",
-      "name": "Personal Life - Morning Scan",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772193600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "5d91d1ce-3f29-461d-9592-afc1b3054eb3",
-      "agentId": "main",
-      "name": "Competitor Intel - Delta Only",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 7 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772195400000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
-      "agentId": "main",
-      "name": "Sales Kit Market Intelligence Update",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772197200000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "9b64f6e3-a62e-4539-a839-dd46589b92d2",
-      "agentId": "main",
-      "name": "Marketing - Weekly Report (Friday)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 16 * * 5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772226000000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "fd060220-23e7-4031-afa5-8c169908351b",
-      "agentId": "main",
-      "name": "Factory Ops - Weekly Report",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * 5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772229600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "ab8660cc-2f59-4b6e-8cfa-c2b4a030c188",
-      "agentId": "main",
-      "name": "MassDwell Knowledge Refresh (Weekly)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 6 * * 0",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772362800000,
-      "lastRunStatus": "error",
-      "consecutiveErrors": 1
-    },
-    {
-      "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
-      "agentId": "main",
-      "name": "Bi-Weekly Memory Audit",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10 1,15 * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772377200000
-    },
-    {
-      "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
-      "agentId": "main",
-      "name": "Monthly Learning Consolidation",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10 1 * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772377200000
-    },
-    {
-      "id": "d167f9af-c31c-4b2a-a88a-8d6d7d1ebc98",
-      "agentId": "main",
-      "name": "Clawson - Weekly Alignment Summary",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * 0",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772406000000,
-      "lastRunStatus": "error",
-      "consecutiveErrors": 1
-    },
-    {
-      "id": "6d582540-c76d-4e0f-92b6-b7c3da6ad601",
-      "agentId": "main",
-      "name": "Marketing - Weekly Planning (Monday)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8 * * 1",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772456400000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "cbe9a53b-7c97-425a-8c73-6c44ac566b55",
-      "agentId": "main",
-      "name": "Venture Engine Weekly Report",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * 1",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1772492400000
-    },
-    {
-      "id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36",
-      "agentId": "main",
-      "name": "Instagram Token Refresh Reminder",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-04-01T14:00:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1775052000000
-    },
-    {
-      "id": "9ebcbd64-1ea5-4b50-9326-92ad41e38e01",
-      "agentId": "main",
-      "name": "VRT Price Alert - Post-Earnings Entry",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "35 9 12 2 *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1802442900000
-    },
-    {
-      "id": "6b44003c-de44-4bcf-a262-d7ae2607e32c",
-      "agentId": "main",
-      "name": "Morning Scraper Test & Fix",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8 13 2 *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "nextRunAtMs": 1802523600000,
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
+      "state": {
+        "nextRunAtMs": 1772119800000,
+        "lastRunAtMs": 1772118044553,
+        "lastStatus": "ok",
+        "lastDurationMs": 15941,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
     }
-  ]
+  ],
+  "total": 43,
+  "lastUpdated": "2026-02-26T15:05:04.000Z"
 }
