@@ -7,7 +7,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1772093395665,
+      "updatedAtMs": 1772100656507,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -26,10 +26,10 @@
         "to": "7002178651"
       },
       "state": {
-        "nextRunAtMs": 1772096963695,
-        "lastRunAtMs": 1772093363695,
+        "nextRunAtMs": 1772104163758,
+        "lastRunAtMs": 1772100563758,
         "lastStatus": "ok",
-        "lastDurationMs": 31970,
+        "lastDurationMs": 92749,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -41,7 +41,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1772096294973,
+      "updatedAtMs": 1772103493203,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -55,10 +55,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1772097187479,
-        "lastRunAtMs": 1772096287479,
+        "nextRunAtMs": 1772104387691,
+        "lastRunAtMs": 1772103487691,
         "lastStatus": "ok",
-        "lastDurationMs": 7494,
+        "lastDurationMs": 5512,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -75,7 +75,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1772096406679,
+      "updatedAtMs": 1772103606027,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -93,10 +93,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772097300000,
-        "lastRunAtMs": 1772096400024,
+        "nextRunAtMs": 1772104500000,
+        "lastRunAtMs": 1772103600025,
         "lastStatus": "ok",
-        "lastDurationMs": 6655,
+        "lastDurationMs": 6002,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -109,7 +109,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1772096411799,
+      "updatedAtMs": 1772103610588,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -127,100 +127,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772098200000,
-        "lastRunAtMs": 1772096406679,
+        "nextRunAtMs": 1772105400000,
+        "lastRunAtMs": 1772103606027,
         "lastStatus": "ok",
-        "lastDurationMs": 5120,
+        "lastDurationMs": 4561,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "createdAtMs": 1770653403165,
-      "updatedAtMs": 1772096432157,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1772100032114,
-        "lastRunAtMs": 1772096432139,
-        "lastStatus": "ok",
-        "lastDurationMs": 18,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-requested"
-      }
-    },
-    {
-      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
-      "agentId": "main",
-      "name": "Atlantic Laser QB→Pipedrive Sync",
-      "enabled": true,
-      "createdAtMs": 1771463532494,
-      "updatedAtMs": 1772017222434,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 6 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
-      },
-      "state": {
-        "nextRunAtMs": 1772103600000,
-        "lastRunAtMs": 1772017209517,
-        "lastStatus": "ok",
-        "lastDurationMs": 12917,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-requested"
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1772096696161,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1772103896119,
-        "lastRunAtMs": 1772096696145,
-        "lastStatus": "ok",
-        "lastDurationMs": 16,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-requested"
       }
     },
     {
@@ -291,6 +205,35 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "createdAtMs": 1770653403165,
+      "updatedAtMs": 1772103646810,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1772107232114,
+        "lastRunAtMs": 1772103646810,
+        "lastStatus": "ok",
+        "lastDurationMs": 0,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-requested"
       }
     },
     {
@@ -568,6 +511,35 @@
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1772103896163,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1772111096119,
+        "lastRunAtMs": 1772103896145,
+        "lastStatus": "ok",
+        "lastDurationMs": 18,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-requested"
       }
     },
     {
@@ -1118,6 +1090,34 @@
       }
     },
     {
+      "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
+      "agentId": "main",
+      "name": "Atlantic Laser QB→Pipedrive Sync",
+      "enabled": true,
+      "createdAtMs": 1771463532494,
+      "updatedAtMs": 1772103646798,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run Atlantic Laser QB sync: node ~/.openclaw/workspace/scripts/atlantic-laser-qb-sync.js"
+      },
+      "state": {
+        "nextRunAtMs": 1772190000000,
+        "lastRunAtMs": 1772103610588,
+        "lastStatus": "ok",
+        "lastDurationMs": 36210,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-requested"
+      }
+    },
+    {
       "id": "9b64f6e3-a62e-4539-a839-dd46589b92d2",
       "agentId": "main",
       "name": "Marketing - Weekly Report (Friday)",
@@ -1459,5 +1459,6 @@
   "offset": 0,
   "limit": 44,
   "hasMore": false,
-  "nextOffset": null
+  "nextOffset": null,
+  "lastUpdated": "2026-02-26T11:04:56.163Z"
 }
