@@ -7,7 +7,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1772287789592,
+      "updatedAtMs": 1772295006840,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -26,10 +26,10 @@
         "to": "7002178651"
       },
       "state": {
-        "nextRunAtMs": 1772291365200,
-        "lastRunAtMs": 1772287765200,
+        "nextRunAtMs": 1772298565250,
+        "lastRunAtMs": 1772294965250,
         "lastStatus": "ok",
-        "lastDurationMs": 24392,
+        "lastDurationMs": 41590,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -43,7 +43,7 @@
       "name": "Sales Bot - Auto Engage New Leads",
       "enabled": true,
       "createdAtMs": 1772215894351,
-      "updatedAtMs": 1772287936960,
+      "updatedAtMs": 1772295109963,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -61,11 +61,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772291502174,
-        "lastRunAtMs": 1772287902174,
+        "nextRunAtMs": 1772298702267,
+        "lastRunAtMs": 1772295102267,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 34786,
+        "lastDurationMs": 7696,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -76,7 +76,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1772290798921,
+      "updatedAtMs": 1772298028547,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -90,10 +90,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1772291690956,
-        "lastRunAtMs": 1772290790956,
+        "nextRunAtMs": 1772298891158,
+        "lastRunAtMs": 1772297991158,
         "lastStatus": "ok",
-        "lastDurationMs": 7965,
+        "lastDurationMs": 37389,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -110,7 +110,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1772290833371,
+      "updatedAtMs": 1772298094539,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -128,383 +128,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772291700000,
-        "lastRunAtMs": 1772290828964,
+        "nextRunAtMs": 1772298900000,
+        "lastRunAtMs": 1772298089380,
         "lastStatus": "ok",
-        "lastDurationMs": 4407,
+        "lastDurationMs": 5159,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
-      }
-    },
-    {
-      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
-      "agentId": "marketing_content",
-      "name": "Marketing Agent Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770408787882,
-      "updatedAtMs": 1772290817163,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "MARKETING HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan MASSDWELL-BRAIN.md for urgent marketing needs\n2. Check Mission Control: node scripts/mission-control-v2.js checkin marketing_content\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks marketing_content\n\n**DECISION TREE:**\n- Hot leads needing content → Spawn content creator\n- Marketing tasks assigned → Pick and execute\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 30
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772291700000,
-        "lastRunAtMs": 1772290805464,
-        "lastStatus": "ok",
-        "lastDurationMs": 11699,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "agentId": "main",
-      "name": "Mission Control Status Sync",
-      "enabled": true,
-      "createdAtMs": 1770740199525,
-      "updatedAtMs": 1772290838179,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Push Mission Control data.json to GitHub for dashboard sync.\n\nRun:\ncd /Users/openclaw/.openclaw/workspace/mission-control && git add data/data.json && git diff --cached --quiet || (git commit -m \"Auto-sync agent statuses\" && git push origin main)\n\nReply HEARTBEAT_OK when done.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772292600000,
-        "lastRunAtMs": 1772290833371,
-        "lastStatus": "ok",
-        "lastDurationMs": 4808,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
-      "agentId": "sales_followup",
-      "name": "Sales Agent Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770408787872,
-      "updatedAtMs": 1772290805464,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 9-17 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "SALES BOT - FULL PIPELINE OWNERSHIP\n\nI am the MassDwell sales bot. I now OWN the entire pipeline from lead capture until qualification and handoff to Steve or Jon.\n\n**MY RESPONSIBILITIES:**\n1. Auto-engage ALL new incoming leads (via hourly auto-engage cron)\n2. Own follow-up sequences until qualified\n3. Qualify leads based on budget, timeline, location, contact quality\n4. Hand off qualified leads to steve.vettori@massdwell.com or Jon\n5. Never let leads go cold - every lead moves forward or gets disqualified\n\n**EXECUTE PIPELINE OWNERSHIP:**\nRun: cd ~/.openclaw/workspace/scripts && python3 sales_bot_pipeline_owner.py\n\nThis handles:\n- Follow-up sequences for engaged leads\n- Lead qualification scoring\n- Handoff to humans when qualified\n- Pipeline hygiene and progression\n\n**If no pipeline actions needed, reply HEARTBEAT_OK**\n\nI am a conversion system, not a monitor. Every lead must progress.",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772292600000,
-        "lastRunAtMs": 1772290800023,
-        "lastStatus": "ok",
-        "lastDurationMs": 5441,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "agentId": "main",
-      "name": "Codesmith Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770896303696,
-      "updatedAtMs": 1772290866946,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin codesmith active\n1. Read agents/codesmith/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json for @codesmith\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions codesmith\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota codesmith\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks codesmith\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute the development work\n   - Test it works\n   - Git commit if code changed\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Dev: [description]\" --agent codesmith\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772292600000,
-        "lastRunAtMs": 1772290838179,
-        "lastStatus": "ok",
-        "lastDurationMs": 28767,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "agentId": "admin_assistant",
-      "name": "Admin Assistant Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770651479323,
-      "updatedAtMs": 1772290828964,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 8-18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "ADMIN ASSISTANT HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST CROSS-BUSINESS SCAN:**\n1. Quick scan ALL BRAIN files for urgent admin needs:\n   - MASSDWELL-BRAIN.md (deadlines, permits, contracts)\n   - ATLANTIC-LASER-BRAIN.md (orders, deliveries, support)\n   - ALPINE-PROPERTY-BRAIN.md (closings, inspections, legal)\n   - PERSONAL-BRAIN.md (appointments, health, commitments)\n2. Check @mentions: data/global/mentions.json\n3. Check Mission Control tasks: admin_assistant\n\n**DECISION TREE:**\n- Urgent deadline/admin task → Spawn admin specialist\n- Cross-business coordination needed → Execute\n- All quiet → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 30
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772292600000,
-        "lastRunAtMs": 1772290817163,
-        "lastStatus": "ok",
-        "lastDurationMs": 11801,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
-      "agentId": "main",
-      "name": "Bounce Monitor - Auto Close Lost",
-      "enabled": true,
-      "createdAtMs": 1771015230420,
-      "updatedAtMs": 1772277527820,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11,16 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "BOUNCE MONITOR - PYTHON VERSION (FIXED)\n\nExecute the working Python-based bounce monitor:\n\nRun: cd ~/.openclaw/workspace/scripts && python3 python_bounce_monitor.py\n\nThis bypasses GOG authentication issues and directly uses Gmail API for sales@massdwell.com.\n\nReport: bounces found, leads matched, team notification status.",
-        "timeoutSeconds": 120,
-        "model": "anthropic/claude-haiku-4-5"
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1772294400000,
-        "lastRunAtMs": 1772237461732,
-        "lastStatus": "error",
-        "lastDurationMs": 120003,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "unknown",
-        "lastError": "Error: cron: job execution timed out"
-      }
-    },
-    {
-      "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
-      "agentId": "main",
-      "name": "Reta Meal Prompt - Lunch",
-      "enabled": true,
-      "createdAtMs": 1771237828244,
-      "updatedAtMs": 1772237536752,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "DAILY LUNCH PROMPT for Steve (Retatrutide protocol)\n\n1. Read: agents/personal_life_cos/data/retatrutide-meal-protocol.md\n2. Check what day of the week it is (session_status)\n3. Send Steve a quick Telegram message with:\n   - 2-3 lunch template options from the protocol\n   - If it's injection day or day after, emphasize lower-fat options\n   - Keep it casual and brief\n   - Example: \"🍽️ Lunch ideas: Grilled chicken bowl, Greek souvlaki, or sashimi. Aim for 40-45g protein. What sounds good?\"\n\nDo NOT send a wall of text. Keep it actionable and friendly.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1772294400000,
-        "lastRunAtMs": 1772237476750,
-        "lastStatus": "error",
-        "lastDurationMs": 60002,
-        "consecutiveErrors": 2,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "Error: cron: job execution timed out"
-      }
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "agentId": "main",
-      "name": "Hourly Memory Summarizer",
-      "enabled": true,
-      "createdAtMs": 1770653403165,
-      "updatedAtMs": 1772290866965,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
-      },
-      "state": {
-        "nextRunAtMs": 1772294432114,
-        "lastRunAtMs": 1772290866965,
-        "lastStatus": "ok",
-        "lastDurationMs": 0,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-requested"
-      }
-    },
-    {
-      "id": "7540439a-012d-48cf-ac8e-7782e00c2dc6",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "MeritLayer 48H Sprint Checkpoint",
-      "enabled": true,
-      "createdAtMs": 1772224271045,
-      "updatedAtMs": 1772276635933,
-      "schedule": {
-        "kind": "every",
-        "everyMs": 28800000,
-        "anchorMs": 1772276635933
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "🔄 MERITLAYER 48H SPRINT CHECKPOINT:\n\nDeadline: Monday March 2, 2026 @ 7:00 AM EST\n\nCheck progress:\n1. Read meritlayer-signal/PROGRESS.md (CodeSmith updates)\n2. Verify YouTube API integration status\n3. Check OpenAI analysis implementation\n4. Confirm any blockers\n\nExpected milestones:\n- Saturday 12 PM: YouTube API + transcripts working\n- Saturday 8 PM: OpenAI analysis live\n- Sunday 8 AM: Deployed\n- Monday 6 AM: Demo-ready\n\nOnly escalate if:\n- Behind schedule by >6 hours\n- Blocked >2 hours on any task\n- CodeSmith has gone silent >12 hours\n\nOtherwise report HEARTBEAT_OK with brief status update."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1772296271098,
-        "lastRunAtMs": 1772267471098,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 122352,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770651479338,
-      "updatedAtMs": 1772283645446,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,12,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "PERSONAL LIFE HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan PERSONAL-BRAIN.md for urgent health/life priorities\n2. Check Mission Control: node scripts/mission-control-v2.js checkin personal_life_cos\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks personal_life_cos\n\n**DECISION TREE:**\n- Health priority (Retatrutide, appointments) → Handle immediately\n- Personal tasks assigned → Pick and execute\n- Life admin needed → Spawn personal assistant\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 30
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772298000000,
-        "lastRunAtMs": 1772283634354,
-        "lastStatus": "ok",
-        "lastDurationMs": 11092,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1772291096166,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1772298296119,
-        "lastRunAtMs": 1772291096150,
-        "lastStatus": "ok",
-        "lastDurationMs": 16,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-requested"
       }
     },
     {
@@ -539,6 +170,176 @@
       "enabled": true,
       "delivery": {
         "mode": "none"
+      }
+    },
+    {
+      "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
+      "agentId": "marketing_content",
+      "name": "Marketing Agent Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770408787882,
+      "updatedAtMs": 1772298049104,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "MARKETING HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan MASSDWELL-BRAIN.md for urgent marketing needs\n2. Check Mission Control: node scripts/mission-control-v2.js checkin marketing_content\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks marketing_content\n\n**DECISION TREE:**\n- Hot leads needing content → Spawn content creator\n- Marketing tasks assigned → Pick and execute\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 30
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772298900000,
+        "lastRunAtMs": 1772298035727,
+        "lastStatus": "ok",
+        "lastDurationMs": 13377,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "agentId": "main",
+      "name": "Mission Control Status Sync",
+      "enabled": true,
+      "createdAtMs": 1770740199525,
+      "updatedAtMs": 1772298101353,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Push Mission Control data.json to GitHub for dashboard sync.\n\nRun:\ncd /Users/openclaw/.openclaw/workspace/mission-control && git add data/data.json && git diff --cached --quiet || (git commit -m \"Auto-sync agent statuses\" && git push origin main)\n\nReply HEARTBEAT_OK when done.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772299800000,
+        "lastRunAtMs": 1772298094539,
+        "lastStatus": "ok",
+        "lastDurationMs": 6814,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
+      "agentId": "sales_followup",
+      "name": "Sales Agent Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770408787872,
+      "updatedAtMs": 1772298035727,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 9-17 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "SALES BOT - FULL PIPELINE OWNERSHIP\n\nI am the MassDwell sales bot. I now OWN the entire pipeline from lead capture until qualification and handoff to Steve or Jon.\n\n**MY RESPONSIBILITIES:**\n1. Auto-engage ALL new incoming leads (via hourly auto-engage cron)\n2. Own follow-up sequences until qualified\n3. Qualify leads based on budget, timeline, location, contact quality\n4. Hand off qualified leads to steve.vettori@massdwell.com or Jon\n5. Never let leads go cold - every lead moves forward or gets disqualified\n\n**EXECUTE PIPELINE OWNERSHIP:**\nRun: cd ~/.openclaw/workspace/scripts && python3 sales_bot_pipeline_owner.py\n\nThis handles:\n- Follow-up sequences for engaged leads\n- Lead qualification scoring\n- Handoff to humans when qualified\n- Pipeline hygiene and progression\n\n**If no pipeline actions needed, reply HEARTBEAT_OK**\n\nI am a conversion system, not a monitor. Every lead must progress.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772299800000,
+        "lastRunAtMs": 1772298028562,
+        "lastStatus": "ok",
+        "lastDurationMs": 7165,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
+      "agentId": "main",
+      "name": "Codesmith Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770896303696,
+      "updatedAtMs": 1772298145793,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "HEARTBEAT: Autonomous Agent Loop v2\n\n0. CHECK IN FIRST: node scripts/mission-control-v2.js checkin codesmith active\n1. Read agents/codesmith/SOUL.md and MEMORY.md\n2. Check @mentions: data/global/mentions.json for @codesmith\n3. Check REACTIONS (inter-agent messages):\n   node scripts/mission-control-v2.js reactions codesmith\n4. Check QUOTA before creating tasks:\n   node scripts/mission-control-v2.js quota codesmith\n5. Get assigned tasks:\n   node scripts/mission-control-v2.js tasks codesmith\n6. If backlog task exists:\n   - Pick it: node scripts/mission-control-v2.js pick <task_id>\n   - Execute the development work\n   - Test it works\n   - Git commit if code changed\n   - Complete it: node scripts/mission-control-v2.js complete <task_id>\n7. To propose new work (goes through cap gate):\n   node scripts/mission-control-v2.js propose \"Dev: [description]\" --agent codesmith\n8. If no tasks and no mentions, reply HEARTBEAT_OK",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772299800000,
+        "lastRunAtMs": 1772298101353,
+        "lastStatus": "ok",
+        "lastDurationMs": 44440,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "agentId": "admin_assistant",
+      "name": "Admin Assistant Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770651479323,
+      "updatedAtMs": 1772298079120,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "ADMIN ASSISTANT HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST CROSS-BUSINESS SCAN:**\n1. Quick scan ALL BRAIN files for urgent admin needs:\n   - MASSDWELL-BRAIN.md (deadlines, permits, contracts)\n   - ATLANTIC-LASER-BRAIN.md (orders, deliveries, support)\n   - ALPINE-PROPERTY-BRAIN.md (closings, inspections, legal)\n   - PERSONAL-BRAIN.md (appointments, health, commitments)\n2. Check @mentions: data/global/mentions.json\n3. Check Mission Control tasks: admin_assistant\n\n**DECISION TREE:**\n- Urgent deadline/admin task → Spawn admin specialist\n- Cross-business coordination needed → Execute\n- All quiet → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 30
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772299800000,
+        "lastRunAtMs": 1772298049104,
+        "lastStatus": "error",
+        "lastDurationMs": 30016,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -613,6 +414,35 @@
       }
     },
     {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
+      "name": "Hourly Memory Summarizer",
+      "enabled": true,
+      "createdAtMs": 1770653403165,
+      "updatedAtMs": 1772298145809,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
+      },
+      "state": {
+        "nextRunAtMs": 1772301632114,
+        "lastRunAtMs": 1772298145808,
+        "lastStatus": "ok",
+        "lastDurationMs": 1,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-requested"
+      }
+    },
+    {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
       "agentId": "sales_followup",
       "name": "Sarah Cold Calls - Afternoon",
@@ -681,6 +511,71 @@
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
         "lastError": "cron: job execution timed out"
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1772298296168,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1772305496119,
+        "lastRunAtMs": 1772298296154,
+        "lastStatus": "ok",
+        "lastDurationMs": 14,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-requested"
+      }
+    },
+    {
+      "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
+      "agentId": "main",
+      "name": "Bounce Monitor - Auto Close Lost",
+      "enabled": true,
+      "createdAtMs": 1771015230420,
+      "updatedAtMs": 1772294507131,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11,16 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "BOUNCE MONITOR - PYTHON VERSION (FIXED)\n\nExecute the working Python-based bounce monitor:\n\nRun: cd ~/.openclaw/workspace/scripts && python3 python_bounce_monitor.py\n\nThis bypasses GOG authentication issues and directly uses Gmail API for sales@massdwell.com.\n\nReport: bounces found, leads matched, team notification status.",
+        "timeoutSeconds": 120,
+        "model": "anthropic/claude-haiku-4-5"
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "7002178651",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1772312400000,
+        "lastRunAtMs": 1772294484919,
+        "lastStatus": "ok",
+        "lastDurationMs": 22212,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       }
     },
     {
@@ -821,6 +716,75 @@
       "enabled": true,
       "delivery": {
         "mode": "none"
+      }
+    },
+    {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "agentId": "personal_life_cos",
+      "name": "Personal Life Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770651479338,
+      "updatedAtMs": 1772298089380,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "PERSONAL LIFE HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan PERSONAL-BRAIN.md for urgent health/life priorities\n2. Check Mission Control: node scripts/mission-control-v2.js checkin personal_life_cos\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks personal_life_cos\n\n**DECISION TREE:**\n- Health priority (Retatrutide, appointments) → Handle immediately\n- Personal tasks assigned → Pick and execute\n- Life admin needed → Spawn personal assistant\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 30
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772319600000,
+        "lastRunAtMs": 1772298079120,
+        "lastStatus": "ok",
+        "lastDurationMs": 10260,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "7540439a-012d-48cf-ac8e-7782e00c2dc6",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "MeritLayer 48H Sprint Checkpoint",
+      "enabled": true,
+      "createdAtMs": 1772224271045,
+      "updatedAtMs": 1772296349392,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 28800000,
+        "anchorMs": 1772276635933
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "🔄 MERITLAYER 48H SPRINT CHECKPOINT:\n\nDeadline: Monday March 2, 2026 @ 7:00 AM EST\n\nCheck progress:\n1. Read meritlayer-signal/PROGRESS.md (CodeSmith updates)\n2. Verify YouTube API integration status\n3. Check OpenAI analysis implementation\n4. Confirm any blockers\n\nExpected milestones:\n- Saturday 12 PM: YouTube API + transcripts working\n- Saturday 8 PM: OpenAI analysis live\n- Sunday 8 AM: Deployed\n- Monday 6 AM: Demo-ready\n\nOnly escalate if:\n- Behind schedule by >6 hours\n- Blocked >2 hours on any task\n- CodeSmith has gone silent >12 hours\n\nOtherwise report HEARTBEAT_OK with brief status update."
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "7002178651",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1772325071123,
+        "lastRunAtMs": 1772296271123,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 78269,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     },
     {
@@ -1148,6 +1112,44 @@
       },
       "state": {
         "nextRunAtMs": 1772377200000
+      }
+    },
+    {
+      "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
+      "agentId": "main",
+      "name": "Reta Meal Prompt - Lunch",
+      "enabled": true,
+      "createdAtMs": 1771237828244,
+      "updatedAtMs": 1772294526405,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "DAILY LUNCH PROMPT for Steve (Retatrutide protocol)\n\n1. Read: agents/personal_life_cos/data/retatrutide-meal-protocol.md\n2. Check what day of the week it is (session_status)\n3. Send Steve a quick Telegram message with:\n   - 2-3 lunch template options from the protocol\n   - If it's injection day or day after, emphasize lower-fat options\n   - Keep it casual and brief\n   - Example: \"🍽️ Lunch ideas: Grilled chicken bowl, Greek souvlaki, or sashimi. Aim for 40-45g protein. What sounds good?\"\n\nDo NOT send a wall of text. Keep it actionable and friendly.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1772380800000,
+        "lastRunAtMs": 1772294507131,
+        "lastStatus": "error",
+        "lastDurationMs": 19274,
+        "consecutiveErrors": 3,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-delivered",
+        "lastError": "⚠️ ✉️ Message failed",
+        "lastDelivered": false,
+        "lastDeliveryError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -1759,5 +1761,5 @@
     }
   ],
   "total": 52,
-  "generatedAt": "2026-02-28T15:04:56.000Z"
+  "exported": "2026-02-28T17:04:56.809Z"
 }
