@@ -4,43 +4,9 @@
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
       "agentId": "main",
       "name": "Automaton Growth - Heartbeat",
-      "enabled": true,
-      "notify": false,
-      "createdAtMs": 1771412876834,
-      "updatedAtMs": 1772244589678,
-      "schedule": {
-        "kind": "every",
-        "everyMs": 3600000,
-        "anchorMs": 1771412876834
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live.\n\nRead state/experiments.md for current experiment status. Execute metabolism cycle:\n1. SENSE — Check analytics, lead flow, site health\n2. DECIDE — Identify optimization opportunities\n3. ACT — Make improvements (copy, conversion, SEO)\n4. MEASURE — Log metrics to state/metrics.jsonl\n5. LEARN — Document what's working\n\nFocus: Monitor and optimize. No pending approvals.\n\nIf nothing actionable, reply HEARTBEAT_OK.",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1772248164872,
-        "lastRunAtMs": 1772244564872,
-        "lastStatus": "ok",
-        "lastDurationMs": 24806,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
+      "enabled": true
     }
   ],
   "total": 50,
-  "offset": 0,
-  "limit": 50,
-  "hasMore": false,
-  "nextOffset": null,
-  "generatedAt": "2026-02-28T03:04:56.853Z"
+  "generatedAt": "2026-02-28T05:04:56.853Z"
 }
