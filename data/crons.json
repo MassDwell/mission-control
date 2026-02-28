@@ -7,7 +7,7 @@
       "name": "Sales Reply Monitor - Every 15 Min",
       "enabled": true,
       "createdAtMs": 1772310054022,
-      "updatedAtMs": 1772311869487,
+      "updatedAtMs": 1772319063887,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -28,11 +28,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772312754059,
-        "lastRunAtMs": 1772311854059,
+        "nextRunAtMs": 1772319954224,
+        "lastRunAtMs": 1772319054224,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15428,
+        "lastDurationMs": 9663,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -45,7 +45,7 @@
       "enabled": true,
       "notify": false,
       "createdAtMs": 1771412876834,
-      "updatedAtMs": 1772309435339,
+      "updatedAtMs": 1772316615318,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -64,10 +64,10 @@
         "to": "7002178651"
       },
       "state": {
-        "nextRunAtMs": 1772312965349,
-        "lastRunAtMs": 1772309365349,
+        "nextRunAtMs": 1772320165385,
+        "lastRunAtMs": 1772316565385,
         "lastStatus": "ok",
-        "lastDurationMs": 69990,
+        "lastDurationMs": 49933,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -81,7 +81,7 @@
       "name": "Sales Bot - Auto Engage New Leads",
       "enabled": true,
       "createdAtMs": 1772215894351,
-      "updatedAtMs": 1772309514424,
+      "updatedAtMs": 1772316724920,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -99,11 +99,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772313102366,
-        "lastRunAtMs": 1772309502366,
+        "nextRunAtMs": 1772320302410,
+        "lastRunAtMs": 1772316702410,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12058,
+        "lastDurationMs": 22510,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -114,7 +114,7 @@
       "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
       "createdAtMs": 1770139076157,
-      "updatedAtMs": 1772312403468,
+      "updatedAtMs": 1772319614527,
       "schedule": {
         "kind": "every",
         "everyMs": 900000,
@@ -128,10 +128,10 @@
         "model": "anthropic/claude-haiku-4-5"
       },
       "state": {
-        "nextRunAtMs": 1772313291560,
-        "lastRunAtMs": 1772312391560,
+        "nextRunAtMs": 1772320491732,
+        "lastRunAtMs": 1772319591732,
         "lastStatus": "ok",
-        "lastDurationMs": 11908,
+        "lastDurationMs": 22795,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -148,7 +148,7 @@
       "name": "Self-Healing: Stale Task Recovery",
       "enabled": true,
       "createdAtMs": 1770727337404,
-      "updatedAtMs": 1772312441575,
+      "updatedAtMs": 1772319784478,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -166,10 +166,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772313300000,
-        "lastRunAtMs": 1772312437234,
+        "nextRunAtMs": 1772320500000,
+        "lastRunAtMs": 1772319781016,
         "lastStatus": "ok",
-        "lastDurationMs": 4341,
+        "lastDurationMs": 3462,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -182,7 +182,7 @@
       "name": "Marketing Agent Heartbeat",
       "enabled": true,
       "createdAtMs": 1770408787882,
-      "updatedAtMs": 1772312429011,
+      "updatedAtMs": 1772319744381,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 8-18 * * *",
@@ -200,10 +200,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772313300000,
-        "lastRunAtMs": 1772312415707,
+        "nextRunAtMs": 1772320500000,
+        "lastRunAtMs": 1772319734570,
         "lastStatus": "ok",
-        "lastDurationMs": 13304,
+        "lastDurationMs": 9811,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -216,7 +216,7 @@
       "name": "Mission Control Status Sync",
       "enabled": true,
       "createdAtMs": 1770740199525,
-      "updatedAtMs": 1772312446006,
+      "updatedAtMs": 1772319788569,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -234,86 +234,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772314200000,
-        "lastRunAtMs": 1772312441575,
+        "nextRunAtMs": 1772321400000,
+        "lastRunAtMs": 1772319784478,
         "lastStatus": "ok",
-        "lastDurationMs": 4431,
+        "lastDurationMs": 4091,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
-      }
-    },
-    {
-      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
-      "agentId": "sales_followup",
-      "name": "Sales Agent Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770408787872,
-      "updatedAtMs": 1772312415707,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 9-17 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "SALES BOT - FULL PIPELINE OWNERSHIP\n\nI am the MassDwell sales bot. I now OWN the entire pipeline from lead capture until qualification and handoff to Steve or Jon.\n\n**MY RESPONSIBILITIES:**\n1. Auto-engage ALL new incoming leads (via hourly auto-engage cron)\n2. Own follow-up sequences until qualified\n3. Qualify leads based on budget, timeline, location, contact quality\n4. Hand off qualified leads to steve.vettori@massdwell.com or Jon\n5. Never let leads go cold - every lead moves forward or gets disqualified\n\n**EXECUTE PIPELINE OWNERSHIP:**\nRun: cd ~/.openclaw/workspace/scripts && python3 sales_bot_pipeline_owner.py\n\nThis handles:\n- Follow-up sequences for engaged leads\n- Lead qualification scoring\n- Handoff to humans when qualified\n- Pipeline hygiene and progression\n\n**If no pipeline actions needed, reply HEARTBEAT_OK**\n\nI am a conversion system, not a monitor. Every lead must progress.",
-        "model": "anthropic/claude-sonnet-4-0",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772314200000,
-        "lastRunAtMs": 1772312403484,
-        "lastStatus": "ok",
-        "lastDurationMs": 12223,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
-      "id": "4a068b75-aa93-4cea-a33a-e5122fa58b37",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "Sales Bot Email Health Check - Afternoon",
-      "enabled": true,
-      "createdAtMs": 1772216258451,
-      "updatedAtMs": 1772277545259,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 16 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "SALES BOT EMAIL HEALTH CHECK - AFTERNOON\n\nRun: cd ~/.openclaw/workspace/scripts && python3 sales_bot_email_health_check.py\n\nFinal daily verification before business day ends.\n\nVerifies:\n- Gmail authentication working\n- Email send capability intact\n- Daily sales bot activity summary\n- System operational status\n\nIf issues found, escalate to Steve for immediate resolution.\n\nEnd-of-day check ensures system ready for next day's lead flow.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 120
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "7002178651",
-        "channel": "telegram",
-        "bestEffort": true
-      },
-      "state": {
-        "nextRunAtMs": 1772314200000,
-        "lastRunAtMs": 1772237598501,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 120002,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Error: cron: job execution timed out"
       }
     },
     {
@@ -322,7 +250,7 @@
       "name": "Codesmith Heartbeat",
       "enabled": true,
       "createdAtMs": 1770896303696,
-      "updatedAtMs": 1772312491973,
+      "updatedAtMs": 1772319814435,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -340,10 +268,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772314200000,
-        "lastRunAtMs": 1772312446006,
+        "nextRunAtMs": 1772321400000,
+        "lastRunAtMs": 1772319788569,
         "lastStatus": "ok",
-        "lastDurationMs": 45967,
+        "lastDurationMs": 25866,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -356,7 +284,7 @@
       "name": "Admin Assistant Heartbeat",
       "enabled": true,
       "createdAtMs": 1770651479323,
-      "updatedAtMs": 1772312437234,
+      "updatedAtMs": 1772319774408,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 8-18 * * *",
@@ -374,52 +302,43 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772314200000,
-        "lastRunAtMs": 1772312429011,
-        "lastStatus": "ok",
-        "lastDurationMs": 8223,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "nextRunAtMs": 1772321400000,
+        "lastRunAtMs": 1772319744381,
+        "lastStatus": "error",
+        "lastDurationMs": 30027,
+        "consecutiveErrors": 2,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "cron: job execution timed out"
       }
     },
     {
-      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
+      "id": "b947b0db-9818-4e3d-8124-7ce6120fcbd7",
       "agentId": "main",
-      "name": "Reta Meal Prompt - Dinner",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "Gmail Token Auto-Refresh (Preventive)",
       "enabled": true,
-      "createdAtMs": 1771237828283,
-      "updatedAtMs": 1772229694928,
+      "createdAtMs": 1772314381784,
+      "updatedAtMs": 1772319867569,
       "schedule": {
-        "kind": "cron",
-        "expr": "0 17 * * *",
-        "tz": "America/New_York"
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 0
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "DAILY DINNER PROMPT for Steve (Retatrutide protocol)\n\n1. Read: agents/personal_life_cos/data/retatrutide-meal-protocol.md\n2. Send Steve a quick Telegram message with:\n   - 2-3 dinner template options\n   - Remind: protein first, veg second, carbs optional\n   - If training day, mention adding carbs\n   - Keep it brief and casual\n   - Example: \"🥩 Dinner time: Steakhouse (8oz sirloin + veg), salmon plate, or fajitas work great. Protein first!\"\n\nKeep it short. No lectures.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "telegram",
-        "to": "7002178651"
+        "kind": "systemEvent",
+        "text": "Run Gmail token refresh preventively: cd ~/.openclaw/workspace/credentials/google && node refresh-sales-token.js > /dev/null 2>&1 || echo 'Token refresh failed but will retry in 30 min'"
       },
       "state": {
-        "nextRunAtMs": 1772316000000,
-        "lastRunAtMs": 1772229683862,
-        "lastStatus": "error",
-        "lastDurationMs": 11066,
-        "consecutiveErrors": 4,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "lastDeliveryError": "⚠️ ✉️ Message failed",
-        "lastError": "⚠️ ✉️ Message failed"
+        "nextRunAtMs": 1772321659564,
+        "lastRunAtMs": 1772319859564,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 8005,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
       }
     },
     {
@@ -428,7 +347,7 @@
       "name": "Hourly Memory Summarizer",
       "enabled": true,
       "createdAtMs": 1770653403165,
-      "updatedAtMs": 1772312509723,
+      "updatedAtMs": 1772319859564,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -442,170 +361,10 @@
         "text": "HOURLY SUMMARIZER: Run services/hourly-summarizer/run.sh to capture the last hour's activity into memory/hourly/. Then run services/vector-memory/ingest.sh to update the vector index."
       },
       "state": {
-        "nextRunAtMs": 1772316032114,
-        "lastRunAtMs": 1772312509723,
+        "nextRunAtMs": 1772323232114,
+        "lastRunAtMs": 1772319859563,
         "lastStatus": "ok",
-        "lastDurationMs": 0,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-requested"
-      }
-    },
-    {
-      "id": "259590fb-a5cf-489a-af6f-10bf754b12ba",
-      "agentId": "sales_followup",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "Lead Resurrection - Daily Report",
-      "enabled": true,
-      "createdAtMs": 1772278259626,
-      "updatedAtMs": 1772278259626,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "LEAD RESURRECTION DAILY REPORT - Generate and deliver:\n\nRun: cd ~/.openclaw/workspace/scripts && python3 sales_bot_resurrection_tracker.py\n\nThis tracker:\n- Analyzes today's campaign activity (emails sent, responses, qualifications)\n- Updates campaign totals and response rates\n- Auto-closes leads that say 'not interested' (marks as lost in Kommo)\n- Generates daily report with pipeline health metrics\n- Saves report to data/massdwell/sales/resurrection-daily-reports/\n\nDELIVER THE FULL REPORT TO STEVE. He needs daily visibility on:\n- How many emails sent today\n- Response rate\n- Qualified vs disqualified\n- Pipeline cleanup progress\n\nThis is high-priority campaign tracking.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 120
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "7002178651"
-      },
-      "state": {
-        "nextRunAtMs": 1772319600000
-      }
-    },
-    {
-      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
-      "agentId": "marketing_content",
-      "name": "MassDwell X Post - Evening",
-      "createdAtMs": 1770132146984,
-      "updatedAtMs": 1772237749307,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "[TIME: 6:00 PM EST]\n\nPost to @massdwell X/Twitter. Evening slot. Create engaging content following your X strategy guidelines. Mix it up - poll, behind-the-scenes, or social proof. Use the X API credentials in credentials/x/x-api.json. Log the post to data/massdwell/marketing_assets/x-post-log.json.",
-        "timeoutSeconds": 120,
-        "model": "anthropic/claude-sonnet-4-0"
-      },
-      "state": {
-        "nextRunAtMs": 1772319600000,
-        "lastRunAtMs": 1772237629306,
-        "lastStatus": "error",
-        "lastDurationMs": 120001,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "Error: cron: job execution timed out"
-      },
-      "enabled": true,
-      "delivery": {
-        "mode": "none"
-      }
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "agentId": "main",
-      "name": "Kommo CRM Sync",
-      "enabled": true,
-      "createdAtMs": 1771016197719,
-      "updatedAtMs": 1772301685044,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,13,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "KOMMO CRM SYNC - Execute now.\n\nRun: cd ~/.openclaw/workspace/crm-dashboard/server && node kommo-sync.js\n\nThis syncs all leads, contacts, and pipeline data from Kommo to local JSON files. After sync completes, regenerate the active-email-list.json:\n\ncat ~/.openclaw/workspace/crm-dashboard/data/leads.json | jq '[.leads[] | select(.status_id != 142 and .status_id != 143) | select(.contact_email != null and .contact_email != \"\") | {lead_id: .id, name, email: .contact_email, status_id, phone: .contact_phone}]' > ~/.openclaw/workspace/data/massdwell/sales/active-email-list.json\n\nReport: sync status, total leads, how many active vs closed.",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772319600000,
-        "lastRunAtMs": 1772301658273,
-        "lastStatus": "ok",
-        "lastDurationMs": 26771,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "agentId": "personal_life_cos",
-      "name": "Personal Life Heartbeat",
-      "enabled": true,
-      "createdAtMs": 1770651479338,
-      "updatedAtMs": 1772298089380,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,12,18 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "PERSONAL LIFE HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan PERSONAL-BRAIN.md for urgent health/life priorities\n2. Check Mission Control: node scripts/mission-control-v2.js checkin personal_life_cos\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks personal_life_cos\n\n**DECISION TREE:**\n- Health priority (Retatrutide, appointments) → Handle immediately\n- Personal tasks assigned → Pick and execute\n- Life admin needed → Spawn personal assistant\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
-        "model": "anthropic/claude-haiku-4-5",
-        "timeoutSeconds": 30
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772319600000,
-        "lastRunAtMs": 1772298079120,
-        "lastStatus": "ok",
-        "lastDurationMs": 10260,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1772312696153,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1772319896119,
-        "lastRunAtMs": 1772312696139,
-        "lastStatus": "ok",
-        "lastDurationMs": 14,
+        "lastDurationMs": 1,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-requested"
@@ -681,6 +440,35 @@
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
+      }
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1772319896154,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1772327096119,
+        "lastRunAtMs": 1772319896141,
+        "lastStatus": "ok",
+        "lastDurationMs": 13,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-requested"
       }
     },
     {
@@ -815,6 +603,73 @@
       }
     },
     {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
+      "name": "Kommo CRM Sync",
+      "enabled": true,
+      "createdAtMs": 1771016197719,
+      "updatedAtMs": 1772319844269,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,13,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "KOMMO CRM SYNC - Execute now.\n\nRun: cd ~/.openclaw/workspace/crm-dashboard/server && node kommo-sync.js\n\nThis syncs all leads, contacts, and pipeline data from Kommo to local JSON files. After sync completes, regenerate the active-email-list.json:\n\ncat ~/.openclaw/workspace/crm-dashboard/data/leads.json | jq '[.leads[] | select(.status_id != 142 and .status_id != 143) | select(.contact_email != null and .contact_email != \"\") | {lead_id: .id, name, email: .contact_email, status_id, phone: .contact_phone}]' > ~/.openclaw/workspace/data/massdwell/sales/active-email-list.json\n\nReport: sync status, total leads, how many active vs closed.",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772370000000,
+        "lastRunAtMs": 1772319814435,
+        "lastStatus": "ok",
+        "lastDurationMs": 29834,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "agentId": "personal_life_cos",
+      "name": "Personal Life Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770651479338,
+      "updatedAtMs": 1772319781016,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "PERSONAL LIFE HEARTBEAT (BRAIN OPTIMIZED - <3s Target)\n\n**FAST SCAN PATTERN:**\n1. Quick scan PERSONAL-BRAIN.md for urgent health/life priorities\n2. Check Mission Control: node scripts/mission-control-v2.js checkin personal_life_cos\n3. Check @mentions: data/global/mentions.json\n4. Check tasks: node scripts/mission-control-v2.js tasks personal_life_cos\n\n**DECISION TREE:**\n- Health priority (Retatrutide, appointments) → Handle immediately\n- Personal tasks assigned → Pick and execute\n- Life admin needed → Spawn personal assistant\n- Nothing urgent → HEARTBEAT_OK\n\n**TARGET TIME:** <3 seconds (Johann's optimization)\n\nNo heavy context loading unless spawning subagent for specific work.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 30
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772370000000,
+        "lastRunAtMs": 1772319774408,
+        "lastStatus": "ok",
+        "lastDurationMs": 6608,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    {
       "id": "78e26f74-8c03-4795-8e3f-599b767ea937",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:7002178651",
@@ -849,6 +704,40 @@
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
+      }
+    },
+    {
+      "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
+      "agentId": "sales_followup",
+      "name": "Sales Agent Heartbeat",
+      "enabled": true,
+      "createdAtMs": 1770408787872,
+      "updatedAtMs": 1772317807753,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 9-17 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "SALES BOT - FULL PIPELINE OWNERSHIP\n\nI am the MassDwell sales bot. I now OWN the entire pipeline from lead capture until qualification and handoff to Steve or Jon.\n\n**MY RESPONSIBILITIES:**\n1. Auto-engage ALL new incoming leads (via hourly auto-engage cron)\n2. Own follow-up sequences until qualified\n3. Qualify leads based on budget, timeline, location, contact quality\n4. Hand off qualified leads to steve.vettori@massdwell.com or Jon\n5. Never let leads go cold - every lead moves forward or gets disqualified\n\n**EXECUTE PIPELINE OWNERSHIP:**\nRun: cd ~/.openclaw/workspace/scripts && python3 sales_bot_pipeline_owner.py\n\nThis handles:\n- Follow-up sequences for engaged leads\n- Lead qualification scoring\n- Handoff to humans when qualified\n- Pipeline hygiene and progression\n\n**If no pipeline actions needed, reply HEARTBEAT_OK**\n\nI am a conversion system, not a monitor. Every lead must progress.",
+        "model": "anthropic/claude-sonnet-4-0",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772373600000,
+        "lastRunAtMs": 1772317800022,
+        "lastStatus": "ok",
+        "lastDurationMs": 7731,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -1186,6 +1075,153 @@
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
       },
+      "delivery": {
+        "mode": "none"
+      }
+    },
+    {
+      "id": "4a068b75-aa93-4cea-a33a-e5122fa58b37",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "Sales Bot Email Health Check - Afternoon",
+      "enabled": true,
+      "createdAtMs": 1772216258451,
+      "updatedAtMs": 1772314278656,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 16 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "SALES BOT EMAIL HEALTH CHECK - AFTERNOON\n\nRun: cd ~/.openclaw/workspace/scripts && python3 sales_bot_email_health_check.py\n\nFinal daily verification before business day ends.\n\nVerifies:\n- Gmail authentication working\n- Email send capability intact\n- Daily sales bot activity summary\n- System operational status\n\nIf issues found, escalate to Steve for immediate resolution.\n\nEnd-of-day check ensures system ready for next day's lead flow.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "7002178651",
+        "channel": "telegram",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1772400600000,
+        "lastRunAtMs": 1772314264159,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 14497,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "0aa76451-de48-4023-b891-97ba9d44f110",
+      "agentId": "main",
+      "name": "Reta Meal Prompt - Dinner",
+      "enabled": true,
+      "createdAtMs": 1771237828283,
+      "updatedAtMs": 1772316086493,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 17 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "DAILY DINNER PROMPT for Steve (Retatrutide protocol)\n\n1. Read: agents/personal_life_cos/data/retatrutide-meal-protocol.md\n2. Send Steve a quick Telegram message with:\n   - 2-3 dinner template options\n   - Remind: protein first, veg second, carbs optional\n   - If training day, mention adding carbs\n   - Keep it brief and casual\n   - Example: \"🥩 Dinner time: Steakhouse (8oz sirloin + veg), salmon plate, or fajitas work great. Protein first!\"\n\nKeep it short. No lectures.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1772402400000,
+        "lastRunAtMs": 1772316075009,
+        "lastStatus": "error",
+        "lastDurationMs": 11484,
+        "consecutiveErrors": 5,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false,
+        "lastDeliveryError": "⚠️ ✉️ Message failed",
+        "lastError": "⚠️ ✉️ Message failed"
+      }
+    },
+    {
+      "id": "259590fb-a5cf-489a-af6f-10bf754b12ba",
+      "agentId": "sales_followup",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "Lead Resurrection - Daily Report",
+      "enabled": true,
+      "createdAtMs": 1772278259626,
+      "updatedAtMs": 1772319859348,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "LEAD RESURRECTION DAILY REPORT - Generate and deliver:\n\nRun: cd ~/.openclaw/workspace/scripts && python3 sales_bot_resurrection_tracker.py\n\nThis tracker:\n- Analyzes today's campaign activity (emails sent, responses, qualifications)\n- Updates campaign totals and response rates\n- Auto-closes leads that say 'not interested' (marks as lost in Kommo)\n- Generates daily report with pipeline health metrics\n- Saves report to data/massdwell/sales/resurrection-daily-reports/\n\nDELIVER THE FULL REPORT TO STEVE. He needs daily visibility on:\n- How many emails sent today\n- Response rate\n- Qualified vs disqualified\n- Pipeline cleanup progress\n\nThis is high-priority campaign tracking.",
+        "model": "anthropic/claude-haiku-4-5",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "7002178651"
+      },
+      "state": {
+        "nextRunAtMs": 1772406000000,
+        "lastRunAtMs": 1772319844269,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 15079,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
+      "agentId": "marketing_content",
+      "name": "MassDwell X Post - Evening",
+      "createdAtMs": 1770132146984,
+      "updatedAtMs": 1772319734570,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "[TIME: 6:00 PM EST]\n\nPost to @massdwell X/Twitter. Evening slot. Create engaging content following your X strategy guidelines. Mix it up - poll, behind-the-scenes, or social proof. Use the X API credentials in credentials/x/x-api.json. Log the post to data/massdwell/marketing_assets/x-post-log.json.",
+        "timeoutSeconds": 120,
+        "model": "anthropic/claude-sonnet-4-0"
+      },
+      "state": {
+        "nextRunAtMs": 1772406000000,
+        "lastRunAtMs": 1772319614541,
+        "lastStatus": "error",
+        "lastDurationMs": 120029,
+        "consecutiveErrors": 2,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "cron: job execution timed out"
+      },
+      "enabled": true,
       "delivery": {
         "mode": "none"
       }
@@ -1798,10 +1834,10 @@
       }
     }
   ],
-  "total": 53,
+  "total": 54,
   "offset": 0,
-  "limit": 53,
+  "limit": 54,
   "hasMore": false,
   "nextOffset": null,
-  "lastUpdated": "2026-02-28T21:04:56.000Z"
+  "lastUpdated": "2026-02-28T23:04:56.000Z"
 }
