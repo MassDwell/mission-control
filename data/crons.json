@@ -1,12 +1,1 @@
-{
-  "jobs": [
-    {
-      "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
-      "agentId": "main",
-      "name": "Automaton Growth - Heartbeat",
-      "enabled": true
-    }
-  ],
-  "total": 50,
-  "generatedAt": "2026-02-28T05:04:56.853Z"
-}
+{"jobs":[{"id":"26004572-1453-4a4f-bdfe-a8b17591b22d","agentId":"main","name":"Automaton Growth - Heartbeat","enabled":true,"notify":false,"createdAtMs":1771412876834,"updatedAtMs":1772251840315,"schedule":{"kind":"every","everyMs":3600000,"anchorMs":1771412876834},"sessionTarget":"isolated","wakeMode":"now","payload":{"kind":"agentTurn","message":"AUTOMATON GROWTH HEARTBEAT: System is OPERATIONAL. All tools deployed and live.\n\nRead state/experiments.md for current experiment status. Execute metabolism cycle:\n1. SENSE — Check analytics, lead flow, site health\n2. DECIDE — Identify optimization opportunities\n3. ACT — Make improvements (copy, conversion, SEO)\n4. MEASURE — Log metrics to state/metrics.jsonl\n5. LEARN — Document what's working\n\nFocus: Monitor and optimize. No pending approvals.\n\nIf nothing actionable, reply HEARTBEAT_OK.","timeoutSeconds":300},"delivery":{"mode":"none","channel":"telegram","to":"7002178651"},"state":{"nextRunAtMs":1772255364927,"lastRunAtMs":1772251764927,"lastStatus":"ok","lastDurationMs":75388,"consecutiveErrors":0,"lastRunStatus":"ok","lastDelivered":false,"lastDeliveryStatus":"not-delivered"}}],"total":50,"offset":0,"limit":50,"hasMore":false,"nextOffset":null,"generatedAt":"2026-02-28T05:04:56.853Z"}
