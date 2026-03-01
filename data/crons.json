@@ -1,552 +1,705 @@
 {
-  "updated": "2026-02-28T20:05:13-05:00",
-  "total": 54,
+  "generated_at": "2026-02-28T22:05:00-05:00",
+  "total_jobs": 54,
   "jobs": [
     {
       "id": "09e51aed-0653-4f9f-82c2-cb52968e07fe",
+      "agentId": "sales_followup",
       "name": "Sales Reply Monitor - Every 15 Min",
-      "agent": "sales_followup",
       "enabled": true,
-      "schedule": "every 15 min",
-      "status": "error",
-      "lastRun": "2026-02-28T18:24:14-05:00",
-      "nextRun": "2026-02-28T18:39:14-05:00",
-      "error": "LLM credit balance too low"
+      "schedule": {
+        "kind": "every",
+        "everyMs": 900000
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "26004572-1453-4a4f-bdfe-a8b17591b22d",
+      "agentId": "main",
       "name": "Automaton Growth - Heartbeat",
-      "agent": "main",
       "enabled": true,
-      "schedule": "every hour",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:29:25-05:00",
-      "nextRun": "2026-02-28T19:29:25-05:00"
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "a2286aef-5fd2-44e1-9d3e-f9560eaada4b",
+      "agentId": "main",
       "name": "Sales Bot - Auto Engage New Leads",
-      "agent": "main",
       "enabled": true,
-      "schedule": "every hour",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:31:42-05:00",
-      "nextRun": "2026-02-28T19:31:42-05:00"
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "b5b920de-0696-442e-b98c-faeb568f6800",
+      "agentId": "sales_followup",
       "name": "Cold Lead Reply Monitor",
-      "agent": "sales_followup",
       "enabled": true,
-      "schedule": "every 15 min",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:26:31-05:00",
-      "nextRun": "2026-02-28T18:41:31-05:00"
+      "schedule": {
+        "kind": "every",
+        "everyMs": 900000
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "534c0bcd-1da7-4513-8b30-dc0a9dab4cc8",
+      "agentId": "main",
       "name": "Self-Healing: Stale Task Recovery",
-      "agent": "main",
       "enabled": true,
-      "schedule": "*/15 * * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:20:00-05:00",
-      "nextRun": "2026-02-28T18:35:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "agentId": "main",
       "name": "Mission Control Status Sync",
-      "agent": "main",
       "enabled": true,
-      "schedule": "*/30 * * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:20:04-05:00",
-      "nextRun": "2026-02-28T18:50:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "b947b0db-9818-4e3d-8124-7ce6120fcbd7",
+      "agentId": "main",
       "name": "Gmail Token Auto-Refresh (Preventive)",
-      "agent": "main",
       "enabled": true,
-      "schedule": "every 30 min",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:17:39-05:00",
-      "nextRun": "2026-02-28T18:47:39-05:00"
-    },
-    {
-      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
-      "name": "Nightly Learning - Rotating Agent",
-      "agent": "main",
-      "enabled": true,
-      "schedule": "0 21 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-27T21:00:05-05:00",
-      "nextRun": "2026-02-28T21:00:00-05:00"
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000
+      },
+      "sessionTarget": "main"
     },
     {
       "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "agentId": "main",
       "name": "Hourly Memory Summarizer",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 * * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:00:32-05:00",
-      "nextRun": "2026-02-28T19:00:32-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main"
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
       "name": "Mission Control Cron Export",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 */2 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T20:04:56-05:00",
-      "nextRun": "2026-02-28T22:04:56-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main"
     },
     {
       "id": "7540439a-012d-48cf-ac8e-7782e00c2dc6",
+      "agentId": "main",
       "name": "MeritLayer 48H Sprint Checkpoint",
-      "agent": "main",
       "enabled": true,
-      "schedule": "every 8 hours",
-      "status": "ok",
-      "lastRun": "2026-02-28T17:11:11-05:00",
-      "nextRun": "2026-03-01T01:11:11-05:00"
+      "schedule": {
+        "kind": "every",
+        "everyMs": 28800000
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
+      "agentId": "main",
       "name": "Atlantic Laser QB→Pipedrive Sync",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 6 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T06:01:55-05:00",
-      "nextRun": "2026-03-01T06:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main"
     },
     {
       "id": "ab8660cc-2f59-4b6e-8cfa-c2b4a030c188",
+      "agentId": "main",
       "name": "MassDwell Knowledge Refresh (Weekly)",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 6 * * 0",
-      "status": "error",
-      "lastRun": "2025-12-22T06:01:00-05:00",
-      "nextRun": "2026-03-01T06:00:00-05:00",
-      "error": "announce delivery failed"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * 0",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
+      "agentId": "main",
       "name": "Personal Life - Morning Scan",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 7 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T07:02:10-05:00",
-      "nextRun": "2026-03-03T07:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
+      "agentId": "main",
       "name": "Codesmith Heartbeat",
-      "agent": "main",
       "enabled": true,
-      "schedule": "*/30 8-18 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T13:30:37-05:00",
-      "nextRun": "2026-03-03T08:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "agentId": "main",
       "name": "Kommo CRM Sync",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 8,13,18 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T08:03:26-05:00",
-      "nextRun": "2026-03-03T08:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,13,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "agentId": "admin_assistant",
       "name": "Admin Assistant Heartbeat",
-      "agent": "admin_assistant",
       "enabled": true,
-      "schedule": "*/30 8-18 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T13:30:04-05:00",
-      "nextRun": "2026-03-03T08:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "agentId": "personal_life_cos",
       "name": "Personal Life Heartbeat",
-      "agent": "personal_life_cos",
       "enabled": true,
-      "schedule": "0 8,12,18 * * *",
-      "status": "error",
-      "lastRun": "2026-02-28T08:03:57-05:00",
-      "nextRun": "2026-03-03T08:00:00-05:00",
-      "error": "execution timed out"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,12,18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "agentId": "personal_life_cos",
       "name": "Personal Gmail Cleanup - Consolidated",
-      "agent": "personal_life_cos",
       "enabled": true,
-      "schedule": "0 8,14,20 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:20:08-05:00",
-      "nextRun": "2026-03-03T08:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,14,20 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "d34a8dee-b7d8-47cc-9894-2d35be641fc3",
+      "agentId": "marketing_content",
       "name": "Marketing Agent Heartbeat",
-      "agent": "marketing_content",
       "enabled": true,
-      "schedule": "*/15 8-18 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T12:45:00-05:00",
-      "nextRun": "2026-03-03T08:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 8-18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "78e26f74-8c03-4795-8e3f-599b767ea937",
+      "agentId": "main",
       "name": "Sales Bot Email Health Check - Morning",
-      "agent": "main",
       "enabled": true,
-      "schedule": "30 8 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-27T08:31:35-05:00",
-      "nextRun": "2026-03-03T08:30:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
+      "agentId": "sales_followup",
       "name": "Sales Agent Heartbeat",
-      "agent": "sales_followup",
       "enabled": true,
-      "schedule": "*/30 9-17 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T12:30:00-05:00",
-      "nextRun": "2026-03-03T09:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 9-17 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "86f9c475-3689-4be7-80ce-4f2401c61516",
+      "agentId": "marketing_content",
       "name": "Instagram Post - Morning",
-      "agent": "marketing_content",
       "enabled": true,
-      "schedule": "20 9 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T09:22:40-05:00",
-      "nextRun": "2026-03-03T09:20:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 9 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "80458079-b1f4-41bc-a260-f224a863fcce",
+      "agentId": "main",
       "name": "MassDwell Marketing Dashboard Check",
-      "agent": "main",
       "enabled": true,
-      "schedule": "25 9 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-27T09:25:00-05:00",
-      "nextRun": "2026-03-03T09:25:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "25 9 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "fbdb3c86-7c2a-4548-a433-eaed0f36ab35",
+      "agentId": "sales_followup",
       "name": "Lead Resurrection v2.0 - Daily Batch",
-      "agent": "sales_followup",
       "enabled": true,
-      "schedule": "30 9 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-27T09:31:04-05:00",
-      "nextRun": "2026-03-03T09:30:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
+      "agentId": "main",
       "name": "Bi-Weekly Memory Audit",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 10 1,15 * *",
-      "status": "never_run",
-      "nextRun": "2026-03-01T10:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 1,15 * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "e756c9bc-bcc6-4218-98ae-840abf784a8f",
+      "agentId": "main",
       "name": "Monthly Learning Consolidation",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 10 1 * *",
-      "status": "never_run",
-      "nextRun": "2026-03-01T10:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 1 * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
+      "agentId": "main",
       "name": "Bounce Monitor - Auto Close Lost",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 11,16 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T11:01:31-05:00",
-      "nextRun": "2026-03-03T11:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11,16 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "9cb5cee0-890b-4a7a-949a-7a57503ce915",
+      "agentId": "main",
       "name": "Reta Meal Prompt - Lunch",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 11 * * *",
-      "status": "error",
-      "lastRun": "2026-02-28T11:02:56-05:00",
-      "nextRun": "2026-03-03T11:00:00-05:00",
-      "error": "execution timed out"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
+      "agentId": "marketing_content",
       "name": "MassDwell X Post - Midday",
-      "agent": "marketing_content",
       "enabled": true,
-      "schedule": "15 12 * * *",
-      "status": "error",
-      "lastRun": "2026-02-28T12:16:31-05:00",
-      "nextRun": "2026-03-03T12:15:00-05:00",
-      "error": "execution timed out"
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 12 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "4b4da5a6-862e-4f61-b31d-5ecd60b52f44",
+      "agentId": "main",
       "name": "Sales Bot Email Health Check - Midday",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 13 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T13:01:25-05:00",
-      "nextRun": "2026-03-03T13:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 13 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
+      "agentId": "sales_followup",
       "name": "Sarah Cold Calls - Afternoon",
-      "agent": "sales_followup",
       "enabled": true,
-      "schedule": "0 14 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T14:00:08-05:00",
-      "nextRun": "2026-03-03T14:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "4a068b75-aa93-4cea-a33a-e5122fa58b37",
+      "agentId": "main",
       "name": "Sales Bot Email Health Check - Afternoon",
-      "agent": "main",
       "enabled": true,
-      "schedule": "30 16 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T16:31:04-05:00",
-      "nextRun": "2026-03-03T16:30:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 16 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "0aa76451-de48-4023-b891-97ba9d44f110",
+      "agentId": "main",
       "name": "Reta Meal Prompt - Dinner",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 17 * * *",
-      "status": "error",
-      "lastRun": "2026-02-28T17:01:15-05:00",
-      "nextRun": "2026-03-03T17:00:00-05:00",
-      "error": "Message failed"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 17 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "259590fb-a5cf-489a-af6f-10bf754b12ba",
+      "agentId": "sales_followup",
       "name": "Lead Resurrection - Daily Report",
-      "agent": "sales_followup",
       "enabled": true,
-      "schedule": "0 18 * * *",
-      "status": "ok",
-      "lastRun": "2026-02-28T18:04:04-05:00",
-      "nextRun": "2026-03-03T18:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "3255cb05-5739-4d31-a685-481e7db7fb10",
+      "agentId": "marketing_content",
       "name": "MassDwell X Post - Evening",
-      "agent": "marketing_content",
       "enabled": true,
-      "schedule": "0 18 * * *",
-      "status": "error",
-      "lastRun": "2026-02-28T18:03:41-05:00",
-      "nextRun": "2026-03-03T18:00:00-05:00",
-      "error": "execution timed out"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "d167f9af-c31c-4b2a-a88a-8d6d7d1ebc98",
+      "agentId": "main",
       "name": "Clawson - Weekly Alignment Summary",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 18 * * 0",
-      "status": "error",
-      "lastRun": "2025-12-22T18:03:08-05:00",
-      "nextRun": "2026-03-03T18:00:00-05:00",
-      "error": "announce delivery failed"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * 0",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "bd08bba4-780a-46fa-a721-f18343a86b9f",
+      "agentId": "sales_followup",
       "name": "Lead Lifecycle Manager v2.0 (Weekly)",
-      "agent": "sales_followup",
       "enabled": true,
-      "schedule": "0 20 * * 0",
-      "status": "never_run",
-      "nextRun": "2026-03-03T20:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 20 * * 0",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
+    },
+    {
+      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
+      "agentId": "main",
+      "name": "Nightly Learning - Rotating Agent",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "2be6e5b6-5415-4d9b-b93a-d588eeb85626",
+      "agentId": "main",
       "name": "Admin - Morning Operations Scan",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 7 * * 1-5",
-      "status": "ok",
-      "lastRun": "2026-02-28T07:02:25-05:00",
-      "nextRun": "2026-03-03T07:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "6d582540-c76d-4e0f-92b6-b7c3da6ad601",
+      "agentId": "main",
       "name": "Marketing - Weekly Planning (Monday)",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 8 * * 1",
-      "status": "ok",
-      "lastRun": "2025-12-16T08:02:53-05:00",
-      "nextRun": "2026-03-03T08:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * 1",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "98a816c6-79fb-41d3-b77a-36a9a4076a27",
+      "agentId": "main",
       "name": "Sales Kit Market Intelligence Update",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 8 * * 1-5",
-      "status": "error",
-      "lastRun": "2026-02-27T08:00:00-05:00",
-      "nextRun": "2026-03-03T08:00:00-05:00",
-      "error": "execution timed out"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "65ebcb2d-9e50-43d4-9125-47f65323c33b",
+      "agentId": "main",
       "name": "MassDwell Master Morning Briefing - CONSOLIDATED",
-      "agent": "main",
       "enabled": true,
-      "schedule": "30 8 * * 1-5",
-      "status": "ok",
-      "lastRun": "2026-02-27T08:22:49-05:00",
-      "nextRun": "2026-03-03T08:30:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "00d523b0-23bd-44f5-94f1-d49a599de652",
+      "agentId": "main",
       "name": "Instagram Content Reminder",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 9 * * 1-6",
-      "status": "error",
-      "lastRun": "2026-02-27T09:01:39-05:00",
-      "nextRun": "2026-03-03T09:00:00-05:00",
-      "error": "Message failed"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1-6",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "8ba23d99-1bdf-4780-ac88-0ee5881e0518",
+      "agentId": "massdwell_factory_ops",
       "name": "Factory Ops Heartbeat",
-      "agent": "massdwell_factory_ops",
       "enabled": true,
-      "schedule": "0 9,13,17 * * 1-5",
-      "status": "ok",
-      "lastRun": "2026-02-27T09:00:43-05:00",
-      "nextRun": "2026-03-03T09:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9,13,17 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "5a9d0c82-eeff-4025-a26c-e85019640488",
+      "agentId": "main",
       "name": "Money Printer Trading Cycle",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 10,14 * * 1-5",
-      "status": "error",
-      "lastRun": "2026-02-27T10:06:08-05:00",
-      "nextRun": "2026-03-03T10:00:00-05:00",
-      "error": "execution timed out"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10,14 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "ec8ba644-b9a4-4bd1-a028-fa5190f5bea1",
+      "agentId": "main",
       "name": "MassDwell Execution Cycles - Midday",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 12 * * 1-5",
-      "status": "error",
-      "lastRun": "2026-02-27T12:01:31-05:00",
-      "nextRun": "2026-03-03T12:00:00-05:00",
-      "error": "execution timed out"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "4f06d84a-ab46-489b-9dd5-7e75995e63d3",
+      "agentId": "main",
       "name": "MassDwell Execution Cycles - Afternoon",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 16 * * 1-5",
-      "status": "ok",
-      "lastRun": "2026-02-27T16:06:23-05:00",
-      "nextRun": "2026-03-03T16:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 16 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "85aab29e-0063-497b-9c48-9d25962a3cdf",
+      "agentId": "main",
       "name": "MassDwell Master Evening Briefing - CONSOLIDATED",
-      "agent": "main",
       "enabled": true,
-      "schedule": "30 17 * * 1-5",
-      "status": "ok",
-      "lastRun": "2026-02-27T17:33:33-05:00",
-      "nextRun": "2026-03-03T17:30:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 17 * * 1-5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "cbe9a53b-7c97-425a-8c73-6c44ac566b55",
+      "agentId": "main",
       "name": "Venture Engine Weekly Report",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 18 * * 1",
-      "status": "never_run",
-      "nextRun": "2026-03-03T18:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * 1",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     },
     {
       "id": "9b64f6e3-a62e-4539-a839-dd46589b92d2",
+      "agentId": "main",
       "name": "Marketing - Weekly Report (Friday)",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 16 * * 5",
-      "status": "ok",
-      "lastRun": "2026-02-28T16:01:48-05:00",
-      "nextRun": "2026-03-07T16:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 16 * * 5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "fd060220-23e7-4031-afa5-8c169908351b",
+      "agentId": "main",
       "name": "Factory Ops - Weekly Report",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 17 * * 5",
-      "status": "ok",
-      "lastRun": "2026-02-28T17:01:34-05:00",
-      "nextRun": "2026-03-07T17:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 17 * * 5",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "e959e7b5-b2e5-4e34-a366-386c9fda0d36",
+      "agentId": "main",
       "name": "Instagram Token Refresh Reminder",
-      "agent": "main",
       "enabled": true,
-      "schedule": "at 2026-04-01T14:00:00.000Z",
-      "status": "never_run",
-      "nextRun": "2026-04-01T10:00:00-04:00"
+      "deleteAfterRun": true,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-04-01T14:00:00.000Z"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "9ebcbd64-1ea5-4b50-9326-92ad41e38e01",
+      "agentId": "main",
       "name": "VRT Price Alert - Post-Earnings Entry",
-      "agent": "main",
       "enabled": true,
-      "schedule": "35 9 12 2 *",
-      "status": "never_run",
-      "nextRun": "2027-02-12T09:35:00-05:00"
+      "deleteAfterRun": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "35 9 12 2 *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated"
     },
     {
       "id": "6b44003c-de44-4bcf-a262-d7ae2607e32c",
+      "agentId": "main",
       "name": "Morning Scraper Test & Fix",
-      "agent": "main",
       "enabled": true,
-      "schedule": "0 8 13 2 *",
-      "status": "ok",
-      "lastRun": "2025-12-13T08:01:56-05:00",
-      "nextRun": "2027-02-13T08:00:00-05:00"
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 13 2 *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      }
     }
   ]
 }
