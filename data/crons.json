@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-01T11:05:00.000Z",
+  "lastUpdated": "2026-03-01T13:05:00.000Z",
   "totalJobs": 53,
   "enabledJobs": 51,
   "jobs": [
@@ -9,8 +9,8 @@
       "agentId": "sales_followup",
       "enabled": true,
       "schedule": "every 15 min",
-      "nextRun": "2026-03-01T11:25:55.531Z",
-      "lastRun": "2026-03-01T11:10:55.531Z",
+      "nextRun": "2026-03-01T13:10:55.755Z",
+      "lastRun": "2026-03-01T12:55:55.755Z",
       "status": "ok"
     },
     {
@@ -19,9 +19,9 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "every 1 hour",
-      "nextRun": "2026-03-01T11:36:05.708Z",
-      "lastRun": "2026-03-01T10:36:05.708Z",
-      "status": "error"
+      "nextRun": "2026-03-01T13:16:05.770Z",
+      "lastRun": "2026-03-01T12:16:05.770Z",
+      "status": "ok"
     },
     {
       "id": "a2286aef-5fd2-44e1-9d3e-f9560eaada4b",
@@ -29,8 +29,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "every 1 hour",
-      "nextRun": "2026-03-01T11:38:22.669Z",
-      "lastRun": "2026-03-01T10:38:22.669Z",
+      "nextRun": "2026-03-01T13:18:22.735Z",
+      "lastRun": "2026-03-01T12:18:22.735Z",
       "status": "ok"
     },
     {
@@ -39,8 +39,8 @@
       "agentId": "sales_followup",
       "enabled": true,
       "schedule": "every 15 min",
-      "nextRun": "2026-03-01T11:41:32.996Z",
-      "lastRun": "2026-03-01T11:26:32.996Z",
+      "nextRun": "2026-03-01T13:11:33.208Z",
+      "lastRun": "2026-03-01T12:56:33.208Z",
       "status": "ok"
     },
     {
@@ -49,98 +49,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: */15 * * * * (EST)",
-      "nextRun": "2026-03-01T11:45:00.000Z",
-      "lastRun": "2026-03-01T11:30:00.023Z",
-      "status": "ok"
-    },
-    {
-      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
-      "name": "Mission Control Status Sync",
-      "agentId": "main",
-      "enabled": true,
-      "schedule": "cron: */30 * * * * (EST)",
-      "nextRun": "2026-03-01T12:30:00.000Z",
-      "lastRun": "2026-03-01T11:30:04.637Z",
-      "status": "ok"
-    },
-    {
-      "id": "b947b0db-9818-4e3d-8124-7ce6120fcbd7",
-      "name": "Gmail Token Auto-Refresh (Preventive)",
-      "agentId": "main",
-      "enabled": true,
-      "schedule": "every 30 min",
-      "nextRun": "2026-03-01T12:14:34.063Z",
-      "lastRun": "2026-03-01T11:44:34.063Z",
-      "status": "ok"
-    },
-    {
-      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
-      "name": "Personal Life - Morning Scan",
-      "agentId": "main",
-      "enabled": true,
-      "schedule": "cron: 0 7 * * * (EST)",
-      "nextRun": "2026-03-02T12:00:00.000Z",
-      "lastRun": "2026-03-01T07:02:10.280Z",
-      "status": "ok"
-    },
-    {
-      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
-      "name": "Hourly Memory Summarizer",
-      "agentId": "main",
-      "enabled": true,
-      "schedule": "cron: 0 * * * * (EST)",
-      "nextRun": "2026-03-01T12:07:12.114Z",
-      "lastRun": "2026-03-01T11:44:34.063Z",
-      "status": "ok"
-    },
-    {
-      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
-      "name": "Codesmith Heartbeat",
-      "agentId": "main",
-      "enabled": true,
-      "schedule": "cron: */30 8-18 * * * (EST)",
-      "nextRun": "2026-03-01T15:00:00.000Z",
-      "lastRun": "2026-02-28T14:17:17.213Z",
-      "status": "ok"
-    },
-    {
-      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
-      "name": "Kommo CRM Sync",
-      "agentId": "main",
-      "enabled": true,
-      "schedule": "cron: 0 8,13,18 * * * (EST)",
-      "nextRun": "2026-03-01T15:00:00.000Z",
-      "lastRun": "2026-03-01T08:03:26.204Z",
-      "status": "ok"
-    },
-    {
-      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
-      "name": "Admin Assistant Heartbeat",
-      "agentId": "admin_assistant",
-      "enabled": true,
-      "schedule": "cron: */30 8-18 * * * (EST)",
-      "nextRun": "2026-03-01T15:00:00.000Z",
-      "lastRun": "2026-02-28T14:16:44.865Z",
-      "status": "ok"
-    },
-    {
-      "id": "a8544303-c019-4675-9ab4-2570296413c8",
-      "name": "Personal Life Heartbeat",
-      "agentId": "personal_life_cos",
-      "enabled": true,
-      "schedule": "cron: 0 8,12,18 * * * (EST)",
-      "nextRun": "2026-03-01T15:00:00.000Z",
-      "lastRun": "2026-03-01T08:03:57.638Z",
-      "status": "error"
-    },
-    {
-      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
-      "name": "Personal Gmail Cleanup - Consolidated",
-      "agentId": "personal_life_cos",
-      "enabled": true,
-      "schedule": "cron: 0 8,14,20 * * * (EST)",
-      "nextRun": "2026-03-01T15:00:00.000Z",
-      "lastRun": "2026-03-01T08:33:28.803Z",
+      "nextRun": "2026-03-01T13:15:00.000Z",
+      "lastRun": "2026-03-01T13:00:00.375Z",
       "status": "ok"
     },
     {
@@ -149,18 +59,28 @@
       "agentId": "marketing_content",
       "enabled": true,
       "schedule": "cron: */15 8-18 * * * (EST)",
-      "nextRun": "2026-03-01T15:00:00.000Z",
-      "lastRun": "2026-02-28T14:38:20.026Z",
+      "nextRun": "2026-03-01T13:15:00.000Z",
+      "lastRun": "2026-03-01T13:00:00.029Z",
       "status": "ok"
     },
     {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
+      "id": "03ae3f12-6724-4437-bfde-b57d2d4362b5",
+      "name": "Mission Control Status Sync",
       "agentId": "main",
       "enabled": true,
-      "schedule": "cron: 0 */2 * * * (EST)",
-      "nextRun": "2026-03-01T15:31:36.119Z",
-      "lastRun": "2026-03-01T11:44:56.133Z",
+      "schedule": "cron: */30 * * * * (EST)",
+      "nextRun": "2026-03-01T13:30:00.000Z",
+      "lastRun": "2026-03-01T13:00:00.913Z",
+      "status": "ok"
+    },
+    {
+      "id": "6d2e15b1-9f4f-4429-9d4a-db2b552ab80c",
+      "name": "Codesmith Heartbeat",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "cron: */30 8-18 * * * (EST)",
+      "nextRun": "2026-03-01T13:30:00.000Z",
+      "lastRun": "2026-03-01T13:00:00.913Z",
       "status": "ok"
     },
     {
@@ -174,6 +94,26 @@
       "status": "ok"
     },
     {
+      "id": "9147988a-935a-4fa6-b776-77cbc994611f",
+      "name": "Admin Assistant Heartbeat",
+      "agentId": "admin_assistant",
+      "enabled": true,
+      "schedule": "cron: */30 8-18 * * * (EST)",
+      "nextRun": "2026-03-01T13:30:00.000Z",
+      "lastRun": "2026-03-01T13:00:08.277Z",
+      "status": "ok"
+    },
+    {
+      "id": "b947b0db-9818-4e3d-8124-7ce6120fcbd7",
+      "name": "Gmail Token Auto-Refresh (Preventive)",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "every 30 min",
+      "nextRun": "2026-03-01T13:44:34.182Z",
+      "lastRun": "2026-03-01T13:14:34.182Z",
+      "status": "ok"
+    },
+    {
       "id": "10f65eca-cdb7-476e-95b0-2c93cfa5b02d",
       "name": "Sales Agent Heartbeat",
       "agentId": "sales_followup",
@@ -181,6 +121,16 @@
       "schedule": "cron: */30 9-17 * * * (EST)",
       "nextRun": "2026-03-03T14:00:00.000Z",
       "lastRun": "2026-02-28T14:03:20.022Z",
+      "status": "ok"
+    },
+    {
+      "id": "c0d63b29-7ab8-4522-9740-745f2e4c16c0",
+      "name": "Hourly Memory Summarizer",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "cron: 0 * * * * (EST)",
+      "nextRun": "2026-03-01T14:07:12.114Z",
+      "lastRun": "2026-03-01T13:02:00.525Z",
       "status": "ok"
     },
     {
@@ -219,7 +169,7 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 10 1,15 * * (EST)",
-      "nextRun": "2026-03-01T15:00:00.000Z",
+      "nextRun": "2026-03-15T15:00:00.000Z",
       "status": "pending"
     },
     {
@@ -228,8 +178,18 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 10 1 * * (EST)",
-      "nextRun": "2026-03-01T15:00:00.000Z",
+      "nextRun": "2026-04-01T15:00:00.000Z",
       "status": "pending"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "cron: 0 */2 * * * (EST)",
+      "nextRun": "2026-03-01T15:31:36.119Z",
+      "lastRun": "2026-03-01T13:02:16.144Z",
+      "status": "ok"
     },
     {
       "id": "4f303b01-6b5a-4d0c-b409-1d58284c7cfd",
@@ -247,9 +207,19 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 11 * * * (EST)",
-      "nextRun": "2026-03-01T16:00:00.000Z",
+      "nextRun": "2026-03-02T16:00:00.000Z",
       "lastRun": "2026-03-01T08:02:56.127Z",
       "status": "error"
+    },
+    {
+      "id": "a8544303-c019-4675-9ab4-2570296413c8",
+      "name": "Personal Life Heartbeat",
+      "agentId": "personal_life_cos",
+      "enabled": true,
+      "schedule": "cron: 0 8,12,18 * * * (EST)",
+      "nextRun": "2026-03-01T18:00:00.000Z",
+      "lastRun": "2026-03-01T13:00:30.909Z",
+      "status": "ok"
     },
     {
       "id": "7625b56d-6635-4f7d-b0b1-b68851e15c83",
@@ -257,7 +227,7 @@
       "agentId": "marketing_content",
       "enabled": true,
       "schedule": "cron: 15 12 * * * (EST)",
-      "nextRun": "2026-03-01T17:15:00.000Z",
+      "nextRun": "2026-03-02T17:15:00.000Z",
       "lastRun": "2026-03-01T08:03:11.239Z",
       "status": "error"
     },
@@ -267,8 +237,18 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 13 * * * (EST)",
-      "nextRun": "2026-03-01T18:00:00.000Z",
+      "nextRun": "2026-03-02T18:00:00.000Z",
       "lastRun": "2026-02-29T13:01:25.044Z",
+      "status": "ok"
+    },
+    {
+      "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
+      "name": "Kommo CRM Sync",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "cron: 0 8,13,18 * * * (EST)",
+      "nextRun": "2026-03-01T18:00:00.000Z",
+      "lastRun": "2026-03-01T13:01:32.273Z",
       "status": "ok"
     },
     {
@@ -277,8 +257,18 @@
       "agentId": "sales_followup",
       "enabled": true,
       "schedule": "cron: 0 14 * * * (EST)",
-      "nextRun": "2026-03-01T19:00:00.000Z",
+      "nextRun": "2026-03-03T19:00:00.000Z",
       "lastRun": "2026-02-29T14:00:08.173Z",
+      "status": "ok"
+    },
+    {
+      "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
+      "name": "Personal Gmail Cleanup - Consolidated",
+      "agentId": "personal_life_cos",
+      "enabled": true,
+      "schedule": "cron: 0 8,14,20 * * * (EST)",
+      "nextRun": "2026-03-01T19:00:00.000Z",
+      "lastRun": "2026-03-01T13:01:54.232Z",
       "status": "ok"
     },
     {
@@ -287,7 +277,7 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 30 16 * * * (EST)",
-      "nextRun": "2026-03-01T21:30:00.000Z",
+      "nextRun": "2026-03-03T21:30:00.000Z",
       "lastRun": "2026-02-29T16:31:04.159Z",
       "status": "ok"
     },
@@ -297,7 +287,7 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 17 * * * (EST)",
-      "nextRun": "2026-03-01T22:00:00.000Z",
+      "nextRun": "2026-03-03T22:00:00.000Z",
       "lastRun": "2026-02-29T17:01:15.009Z",
       "status": "error"
     },
@@ -307,7 +297,7 @@
       "agentId": "sales_followup",
       "enabled": true,
       "schedule": "cron: 0 18 * * * (EST)",
-      "nextRun": "2026-03-01T23:00:00.000Z",
+      "nextRun": "2026-03-03T23:00:00.000Z",
       "lastRun": "2026-02-28T18:00:44.269Z",
       "status": "ok"
     },
@@ -317,7 +307,7 @@
       "agentId": "marketing_content",
       "enabled": true,
       "schedule": "cron: 0 18 * * * (EST)",
-      "nextRun": "2026-03-01T23:00:00.000Z",
+      "nextRun": "2026-03-03T23:00:00.000Z",
       "lastRun": "2026-03-01T08:03:41.224Z",
       "status": "error"
     },
@@ -327,7 +317,7 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 18 * * 0 (EST)",
-      "nextRun": "2026-03-01T23:00:00.000Z",
+      "nextRun": "2026-03-02T23:00:00.000Z",
       "lastRun": "2026-02-23T18:16:28.994Z",
       "status": "error"
     },
@@ -368,6 +358,16 @@
       "schedule": "cron: 0 7 * * 1-5 (EST)",
       "nextRun": "2026-03-03T12:00:00.000Z",
       "lastRun": "2026-03-01T07:02:25.302Z",
+      "status": "ok"
+    },
+    {
+      "id": "54646cf5-49f7-4bd0-a336-9c6a3ac3bb67",
+      "name": "Personal Life - Morning Scan",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "cron: 0 7 * * * (EST)",
+      "nextRun": "2026-03-02T12:00:00.000Z",
+      "lastRun": "2026-03-01T12:06:49.996Z",
       "status": "ok"
     },
     {
