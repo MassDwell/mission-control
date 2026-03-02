@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-02T01:05:00.000Z",
+  "lastUpdated": "2026-03-02T03:05:00.000Z",
   "totalJobs": 53,
   "enabledJobs": 51,
   "jobs": [
@@ -9,8 +9,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "every 30 min",
-      "nextRun": "2026-03-02T01:25:58.207Z",
-      "lastRun": "2026-03-02T00:55:58.207Z",
+      "nextRun": "2026-03-02T03:25:58.295Z",
+      "lastRun": "2026-03-02T02:55:58.295Z",
       "status": "ok"
     },
     {
@@ -19,8 +19,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "every 1 hour",
-      "nextRun": "2026-03-02T01:50:29.481Z",
-      "lastRun": "2026-03-02T00:50:29.481Z",
+      "nextRun": "2026-03-02T03:50:29.522Z",
+      "lastRun": "2026-03-02T02:50:29.522Z",
       "status": "ok"
     },
     {
@@ -29,8 +29,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: */15 * * * * (EST)",
-      "nextRun": "2026-03-02T01:15:00.000Z",
-      "lastRun": "2026-03-02T01:00:00.022Z",
+      "nextRun": "2026-03-02T03:15:00.000Z",
+      "lastRun": "2026-03-02T03:00:00.023Z",
       "status": "ok"
     },
     {
@@ -39,8 +39,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "every 1 hour",
-      "nextRun": "2026-03-02T01:50:18.570Z",
-      "lastRun": "2026-03-02T00:50:18.570Z",
+      "nextRun": "2026-03-02T03:50:18.609Z",
+      "lastRun": "2026-03-02T02:50:18.609Z",
       "status": "ok"
     },
     {
@@ -49,18 +49,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: */30 * * * * (EST)",
-      "nextRun": "2026-03-02T01:30:00.000Z",
-      "lastRun": "2026-03-02T01:00:00.009Z",
-      "status": "ok"
-    },
-    {
-      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
-      "name": "Nightly Learning - Rotating Agent",
-      "agentId": "main",
-      "enabled": true,
-      "schedule": "cron: 0 21 * * * (EST)",
-      "nextRun": "2026-03-02T02:00:00.000Z",
-      "lastRun": "2026-03-01T02:00:00.028Z",
+      "nextRun": "2026-03-02T03:30:00.000Z",
+      "lastRun": "2026-03-02T03:00:00.913Z",
       "status": "ok"
     },
     {
@@ -69,8 +59,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 * * * * (EST)",
-      "nextRun": "2026-03-02T02:07:12.114Z",
-      "lastRun": "2026-03-02T01:02:31.707Z",
+      "nextRun": "2026-03-02T04:07:12.114Z",
+      "lastRun": "2026-03-02T03:02:44.270Z",
       "status": "ok"
     },
     {
@@ -79,8 +69,8 @@
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 */2 * * * (EST)",
-      "nextRun": "2026-03-02T03:36:56.119Z",
-      "lastRun": "2026-03-02T01:04:56.142Z",
+      "nextRun": "2026-03-02T05:36:56.119Z",
+      "lastRun": "2026-03-02T03:04:56.141Z",
       "status": "ok"
     },
     {
@@ -429,6 +419,16 @@
       "schedule": "cron: 0 18 * * 1 (EST)",
       "nextRun": "2026-03-03T23:00:00.000Z",
       "status": "pending"
+    },
+    {
+      "id": "dc6a1ba8-66c7-40cc-adcb-5aec56394b3b",
+      "name": "Nightly Learning - Rotating Agent",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "cron: 0 21 * * * (EST)",
+      "nextRun": "2026-03-03T02:00:00.000Z",
+      "lastRun": "2026-03-02T02:00:00.024Z",
+      "status": "ok"
     },
     {
       "id": "bd08bba4-780a-46fa-a721-f18343a86b9f",
