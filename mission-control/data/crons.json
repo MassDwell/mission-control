@@ -1,19 +1,25 @@
 {
-  "exportedAt": "2026-03-03T08:04:56Z",
+  "exportedAt": "2026-03-03T10:04:56Z",
   "timezone": "America/New_York",
   "total": 53,
   "summary": {
     "enabled": 52,
     "disabled": 1,
-    "lastSync": "2026-03-03T08:04:56Z"
+    "lastSync": "2026-03-03T10:04:56Z"
   },
-  "newJobsAddedToday": {
-    "moneyPrinterTradingJobs": 8,
-    "activatedAt": "2026-03-03T08:00:00Z",
-    "status": "GO LIVE FOR MARKET OPEN @ 9:30 AM"
+  "moneyPrinterStatus": {
+    "status": "LIVE AND TRADING",
+    "marketTime": "10:04 AM EST - Regular trading hours",
+    "executedCycles": [
+      "9:00 AM - MarketIntelligence",
+      "9:05 AM - SentimentIntelligence",
+      "9:15 AM - StrategyGenerator",
+      "9:20 AM - RiskGuardian",
+      "12:00 PM - SentimentIntelligence (queued)"
+    ]
   },
   "categories": {
-    "Money Printer Trading (NEW)": [
+    "Money Printer Trading (ACTIVE)": [
       "money-printer-market-intelligence-0900",
       "money-printer-sentiment-intelligence-0905",
       "money-printer-strategy-generator-0915",
@@ -81,116 +87,30 @@
       "Morning Scraper Test & Fix"
     ]
   },
-  "scheduleTypes": {
-    "every": [
-      "Gmail Token Auto-Refresh - All Accounts",
-      "Sales Bot - Auto Engage New Leads"
-    ],
-    "cron": 47,
-    "at": 1
-  },
-  "topFrequencies": [
-    {
-      "frequency": "Every minute (9 AM market open)",
-      "count": 8,
-      "jobs": [
-        "Money Printer trading cycle (9:00, 9:05, 9:15, 9:20 AM + mid-day checks)",
-        "Designed for intra-day execution and real-time sentiment analysis"
-      ]
-    },
-    {
-      "frequency": "Hourly",
-      "count": 1,
-      "jobs": [
-        "Sales Bot - Auto Engage New Leads"
-      ]
-    },
-    {
-      "frequency": "Every 15-30 min (Business Hours)",
-      "count": 3,
-      "jobs": [
-        "Self-Healing: Stale Task Recovery",
-        "Codesmith Heartbeat",
-        "Marketing Agent Heartbeat"
-      ]
-    },
-    {
-      "frequency": "Daily",
-      "count": 30,
-      "jobs": [
-        "Sales Bot Email Health Check",
-        "Handle Bounced Emails",
-        "Lead Resurrection Reports",
-        "Instagram Posts",
-        "X/Twitter Posts",
-        "Morning/Evening Briefings"
-      ]
-    },
-    {
-      "frequency": "Weekly",
-      "count": 7,
-      "jobs": [
-        "MassDwell Knowledge Refresh",
-        "Weekly Reports",
-        "Marketing Planning",
-        "Lead Lifecycle Management"
-      ]
-    },
-    {
-      "frequency": "Bi-Weekly",
-      "count": 1,
-      "jobs": [
-        "Memory Audit"
-      ]
+  "systemHealth": {
+    "timestamp": "2026-03-03T10:04:56Z",
+    "marketStatus": "REGULAR TRADING HOURS (9:30 AM - 4:00 PM)",
+    "timeUntilMarketClose": "5 hours 56 minutes",
+    "allJobsRunning": true,
+    "twoHourHeartbeatCadence": "ENABLED (12/day instead of 48)",
+    "costReduction": "92.5% ($200/day → $7-50/day)",
+    "moneyPrinterThesis": "Iran geopolitical escalation = oil supply premium",
+    "account": {
+      "platform": "Alpaca Paper Trading",
+      "id": "PA3RY5502SN6",
+      "balance": "$99,889.92",
+      "mode": "PAPER (validation phase)"
     }
-  ],
-  "agentDistribution": {
-    "main": 32,
-    "sales_followup": 3,
-    "marketing_content": 4,
-    "massdwell_factory_ops": 1,
-    "atlantic_laser_sales": 1,
-    "admin_assistant": 1,
-    "codesmith": 1,
-    "personal_life_cos": 1
   },
-  "businessHours": {
-    "definition": "8 AM - 6 PM EST, Mon-Fri",
-    "peakActivity": "9-10 AM (market open + trading), 1-2 PM, 4-6 PM",
-    "nightOps": "1-8 AM, Evening maintenance"
-  },
-  "moneyPrinterTradingSchedule": {
-    "status": "GO LIVE (Paper Trading)",
-    "account": "PA3RY5502SN6 ($99,889.92)",
-    "thesis": "Iran geopolitical escalation → oil supply disruption premium",
-    "dailyCycle": {
-      "9:00": "MarketIntelligence - Oil curve, VIX, technical analysis",
-      "9:05": "SentimentIntelligence - X/Reddit/StockTwits scraping (MiniMax)",
-      "9:15": "StrategyGenerator - Create 3-4 trade ideas (2-3 oil, 1 homerun)",
-      "9:20": "RiskGuardian - Final approval/veto on trades",
-      "12:00": "SentimentIntelligence - Mid-day conviction update",
-      "13:00": "MarketIntelligence - Mid-day checkpoint",
-      "14:00": "SentimentIntelligence - Afternoon momentum check",
-      "16:30": "PostTradeAnalytics - EOD report + P&L analysis"
-    },
-    "portfolioHeat": "6-7% (max 10%)",
-    "costPerDay": "$3.80 (Sonnet for strategy, Opus for risk gate, Haiku for monitoring)",
-    "validationPeriod": "20+ days paper trading before live"
-  },
-  "lastUpdated": "2026-03-03T08:04:56Z",
+  "lastUpdated": "2026-03-03T10:04:56Z",
   "notes": [
-    "53 total cron jobs active (up from 45)",
-    "8 new Money Printer trading jobs activated at 8:00 AM",
-    "52 enabled, 1 disabled (Instagram Token Refresh - one-off due 2026-04-01)",
-    "Trading jobs fire every minute starting 9:00 AM EST (market open)",
-    "Top-heavy on daily operations (30+ daily jobs)",
-    "Strong heartbeat monitoring every 15-30 minutes during business hours",
-    "Three master briefings per day (morning, midday, evening consolidation)",
-    "Sarah AI voice assistant cold calling enabled at 2 PM daily",
-    "Weekly executive reporting on Sundays (alignment summary)",
-    "Memory maintenance automated (weekly + bi-weekly audit)",
-    "System self-healing every 15 minutes",
-    "All times EST (America/New_York timezone)",
-    "MARKET OPEN @ 9:30 AM - Trading system fully armed and ready"
+    "53 total cron jobs active",
+    "Money Printer trading system GO LIVE (8 cron jobs executing on schedule)",
+    "Market open @ 9:30 AM EST - trading for 34 minutes",
+    "MarketIntelligence & SentimentIntelligence cycles completed",
+    "StrategyGenerator & RiskGuardian cycles completed",
+    "Next: 12:00 PM SentimentIntelligence mid-day check",
+    "All systems nominal, no blockers",
+    "Heartbeat frequency: 2-hour cadence (reduced from 30 min for cost efficiency)"
   ]
 }
