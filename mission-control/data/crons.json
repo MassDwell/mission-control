@@ -1,63 +1,160 @@
 {
-  "exportedAt": "2026-03-03T14:04:56Z",
+  "exportedAt": "2026-03-03T16:04:56Z",
   "timezone": "America/New_York",
-  "total": 56,
+  "total": 63,
   "summary": {
-    "enabled": 55,
+    "enabled": 62,
     "disabled": 1,
-    "lastSync": "2026-03-03T14:04:56Z"
+    "lastSync": "2026-03-03T16:04:56Z"
+  },
+  "systemStatus": {
+    "timestamp": "2026-03-03T16:04:56Z",
+    "marketTime": "4:04 PM EST - MARKET CLOSED (4h 4m ago)",
+    "dayOfWeek": "Tuesday",
+    "eodStatus": "POST-MARKET OPERATIONS ACTIVE"
+  },
+  "majorCategoriesCount": {
+    "Email_Intelligence": 3,
+    "Sales_Pipeline": 10,
+    "Marketing_Content": 5,
+    "Money_Printer_Trading": 8,
+    "MassDwell_Operations": 8,
+    "Personal_Admin": 7,
+    "Heartbeats": 5,
+    "Weekly_Reports": 8,
+    "Special_One_Off": 4
+  },
+  "newJobsToday": {
+    "dailySalesReport": "Daily Sales Report - 9 PM",
+    "emailIntentClassifiersAndSyncJobs": [
+      "Email Intent Classifier - MassDwell Sales (every 5 min)",
+      "Email Intent Classifier - Atlantic Laser (every 10 min)",
+      "Email to Kommo CRM Sync (every 15 min)"
+    ],
+    "followUpCadenceJobs": [
+      "Follow-Up Cadence - Day 3",
+      "Follow-Up Cadence - Day 10",
+      "Follow-Up Cadence - Day 30"
+    ],
+    "totalNewJobs": 7
+  },
+  "postMarketExecution": {
+    "completedToday": [
+      "4:04 PM - Money Printer EOD Analytics (scheduled for 4:30 PM)",
+      "Evening Briefing (5:30 PM scheduled)",
+      "Lead Resurrection Report (6:00 PM scheduled)",
+      "X/Twitter Evening Post (6:00 PM scheduled)"
+    ],
+    "upcomingEvening": [
+      "9:00 PM - Daily Sales Report",
+      "9:00 PM - Nightly Learning",
+      "1:00 AM - Nightly Drift Scan"
+    ]
+  },
+  "criticalBlockers": {
+    "kommo_credentials": {
+      "status": "UNRESOLVED",
+      "lastDetected": "2026-03-03 3:31 PM EST",
+      "impact": "12 sales leads blocked from pipeline sync",
+      "requirement": "KOMMO_ACCESS_TOKEN + KOMMO_ACCOUNT_ID configuration",
+      "escalationNeeded": true
+    }
+  },
+  "emailIntelligenceSystem": {
+    "status": "NEWLY DEPLOYED (as of ~4:00 PM EST)",
+    "purpose": "Classify incoming sales emails by intent and priority",
+    "jobs": [
+      {
+        "name": "Email Intent Classifier - MassDwell Sales",
+        "frequency": "Every 5 minutes",
+        "status": "✅ OK",
+        "lastRun": "3:50 PM",
+        "resultCount": 4,
+        "key_lead_found": "1 P0 SALES_LEAD identified (807 Chestnut, Waban)"
+      },
+      {
+        "name": "Email Intent Classifier - Atlantic Laser",
+        "frequency": "Every 10 minutes",
+        "status": "✅ OK",
+        "lastRun": "3:57 PM"
+      },
+      {
+        "name": "Email to Kommo CRM Sync",
+        "frequency": "Every 15 minutes",
+        "status": "⚠️ PARTIALLY BLOCKED",
+        "issue": "Missing Kommo credentials",
+        "leads_ready_to_sync": 12
+      }
+    ]
+  },
+  "followUpCadenceSystem": {
+    "status": "NEWLY DEPLOYED",
+    "purpose": "Automated multi-touch follow-up sequences",
+    "jobs": [
+      {
+        "name": "Follow-Up Cadence - Day 3",
+        "schedule": "10:00 AM daily",
+        "purpose": "First follow-up (3 days no response)"
+      },
+      {
+        "name": "Follow-Up Cadence - Day 10",
+        "schedule": "11:00 AM daily",
+        "purpose": "Second follow-up (10+ days no response)"
+      },
+      {
+        "name": "Follow-Up Cadence - Day 30",
+        "schedule": "12:00 PM daily",
+        "purpose": "Final follow-up / soft close (30+ days)"
+      }
+    ]
   },
   "moneyPrinterStatus": {
-    "status": "LIVE AND EXECUTING",
-    "marketTime": "2:04 PM EST - Regular trading (2h until close)",
-    "portfolioHeat": "9.8% (MAXIMUM)",
-    "latestCycle": "2:00 PM SentimentIntelligence (afternoon check completed)",
-    "nextCycle": "4:30 PM PostTradeAnalytics (EOD report)"
+    "status": "TRADING DAY COMPLETE",
+    "marketClosed": "4:00 PM EST",
+    "eodAnalytics": "Scheduled 4:30 PM (just now)",
+    "papperTrading": "Active - PA3RY5502SN6 ($99.8K)"
   },
-  "recentJobChanges": {
-    "newJobs": [
-      "Gmail Cleanup - Atlantic Laser (team@atlanticlasersolutions.com) — Added for Atlantic Laser email management"
-    ],
-    "totalJobsNow": 56,
-    "operationalStatus": "All systems running smoothly"
+  "businessOperations": {
+    "sales_bot_health": "✅ All email health checks passing",
+    "gmail_auth": "✅ Tokens refreshing every 30 min",
+    "crm_integration": "⚠️ Credentials missing (blocker)",
+    "marketing_posts": "✅ Scheduled (morning/midday/evening)"
   },
-  "systemHealth": {
-    "timestamp": "2026-03-03T14:04:56Z",
-    "timeUntilMarketClose": "1 hour 56 minutes",
-    "criticalAlert": "NONE - All trading cycles executing successfully",
-    "creditBalance": "Recovered - No recent API errors detected",
-    "agentHeartbeats": "Running on 30-min cadence (business hours)",
-    "salesBotStatus": "All email health checks passing"
+  "jobsByFrequency": {
+    "every_5_minutes": 1,
+    "every_10_minutes": 1,
+    "every_15_minutes": 1,
+    "every_30_minutes": 1,
+    "hourly": 1,
+    "daily_morning": 5,
+    "daily_midday": 4,
+    "daily_afternoon": 4,
+    "daily_evening": 4,
+    "daily_night": 2,
+    "weekly": 8,
+    "bi_weekly": 1,
+    "one_off": 2,
+    "trading_specific": 8
   },
-  "jobCategories": {
-    "MoneyPrinter Trading": 8,
-    "MassDwell Operations": 16,
-    "Agent Heartbeats": 5,
-    "Sales & Lead": 5,
-    "Marketing & Content": 5,
-    "Personal & Admin": 7,
-    "Reporting": 3,
-    "Special/OneOff": 4
+  "agentDistribution": {
+    "main": 36,
+    "sales_followup": 4,
+    "marketing_content": 5,
+    "massdwell_factory_ops": 1,
+    "atlantic_laser_sales": 1,
+    "admin_assistant": 1,
+    "codesmith": 1,
+    "personal_life_cos": 1
   },
-  "marketHoursSchedule": {
-    "9:00_AM": "MarketIntelligence ✅ COMPLETED",
-    "9:05_AM": "SentimentIntelligence ✅ COMPLETED",
-    "9:15_AM": "StrategyGenerator ✅ COMPLETED",
-    "9:20_AM": "RiskGuardian ✅ COMPLETED",
-    "12:00_PM": "SentimentIntelligence (mid-day) ✅ COMPLETED",
-    "1:00_PM": "MarketIntelligence (mid-day) ✅ COMPLETED",
-    "2:00_PM": "SentimentIntelligence (afternoon) ✅ COMPLETED",
-    "4:30_PM": "PostTradeAnalytics (EOD) ⏰ NEXT"
-  },
-  "lastUpdated": "2026-03-03T14:04:56Z",
+  "lastUpdated": "2026-03-03T16:04:56Z",
   "notes": [
-    "56 total cron jobs now (up from 55)",
-    "1 new job: Gmail Cleanup for Atlantic Laser team account",
-    "Money Printer v3.0 executing flawlessly",
-    "All afternoon sentiment intelligence checks completed successfully",
-    "Portfolio heat: 9.8% (maximum deployed)",
-    "Market close: 4:00 PM EST (1h 56m remaining)",
-    "Evening briefing due at 5:30 PM",
-    "All systems operational - no alerts or blockers"
+    "63 total cron jobs now (up from 56)",
+    "7 new jobs added: Email intent classifiers, Kommo sync, follow-up cadences, daily sales report",
+    "CRITICAL BLOCKER: Kommo CRM credentials missing — 12 leads blocked",
+    "Email intelligence system operational — 1 hot lead identified this afternoon (807 Chestnut, Waban)",
+    "Market CLOSED (4:00 PM EST) — EOD trading analytics due shortly",
+    "Evening briefing scheduled for 5:30 PM EST",
+    "All 62 enabled jobs running smoothly",
+    "62 enabled, 1 disabled (Instagram token refresh reminder - scheduled for April 1)"
   ]
 }
