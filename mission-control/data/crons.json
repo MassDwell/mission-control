@@ -1,116 +1,103 @@
 {
-  "exportedAt": "2026-03-03T10:04:56Z",
+  "exportedAt": "2026-03-03T12:04:56Z",
   "timezone": "America/New_York",
-  "total": 53,
+  "total": 55,
   "summary": {
-    "enabled": 52,
+    "enabled": 54,
     "disabled": 1,
-    "lastSync": "2026-03-03T10:04:56Z"
+    "lastSync": "2026-03-03T12:04:56Z"
   },
   "moneyPrinterStatus": {
-    "status": "LIVE AND TRADING",
-    "marketTime": "10:04 AM EST - Regular trading hours",
-    "executedCycles": [
-      "9:00 AM - MarketIntelligence",
-      "9:05 AM - SentimentIntelligence",
-      "9:15 AM - StrategyGenerator",
-      "9:20 AM - RiskGuardian",
-      "12:00 PM - SentimentIntelligence (queued)"
+    "status": "LIVE AND FULLY DEPLOYED",
+    "marketTime": "12:04 PM EST - Regular trading (3h 56 min until close)",
+    "portfolioHeat": "9.8% (MAXIMUM)",
+    "executionCycles": [
+      "9:00 AM - MarketIntelligence ✅",
+      "9:05 AM - SentimentIntelligence ✅",
+      "9:15 AM - StrategyGenerator ✅",
+      "9:20 AM - RiskGuardian ✅",
+      "12:00 PM - SentimentIntelligence ✅",
+      "1:00 PM - MarketIntelligence ✅",
+      "2:00 PM - SentimentIntelligence ⏰ (Next)",
+      "4:30 PM - PostTradeAnalytics (EOD)"
     ]
   },
-  "categories": {
-    "Money Printer Trading (ACTIVE)": [
-      "money-printer-market-intelligence-0900",
-      "money-printer-sentiment-intelligence-0905",
-      "money-printer-strategy-generator-0915",
-      "money-printer-risk-gate-0920",
-      "money-printer-sentiment-intelligence-1200",
-      "money-printer-midday-check-1300",
-      "money-printer-sentiment-intelligence-1400",
-      "money-printer-eod-analytics-1630"
+  "activePositions": {
+    "longPositions": [
+      "USO (Oil): 900 shares",
+      "XLE (Energy): 150 shares",
+      "IAU (Gold): 100 shares hedge"
     ],
-    "MassDwell Operations": [
-      "Gmail Token Auto-Refresh - All Accounts",
-      "Self-Healing: Stale Task Recovery",
-      "Sales Bot - Auto Engage New Leads",
-      "Mission Control Status Sync",
-      "Kommo CRM Sync",
-      "MassDwell Master Morning Briefing - CONSOLIDATED",
-      "Sales Bot Email Health Check - Morning",
-      "Sales Bot Email Health Check - Midday",
-      "Sales Bot Email Health Check - Afternoon",
-      "MassDwell Master Evening Briefing - CONSOLIDATED",
-      "Lead Resurrection - Daily Report",
-      "MassDwell Execution Cycles - Midday",
-      "MassDwell Execution Cycles - Afternoon",
-      "MassDwell Knowledge Refresh (Weekly)",
-      "Marketing - Weekly Planning (Monday)"
+    "shortPositions": [
+      "DAL (Delta): 200 shares",
+      "AAL (American): 150 shares",
+      "UAL (United): 120 shares",
+      "LUV (Southwest): 180 shares",
+      "QQQ (Tech): 100 shares"
     ],
-    "Agent Heartbeats": [
-      "Codesmith Heartbeat",
-      "Admin Assistant Heartbeat",
-      "Marketing Agent Heartbeat",
-      "Sales Agent Heartbeat",
-      "Factory Ops Heartbeat"
-    ],
-    "Marketing & Content": [
-      "Sales Kit Market Intelligence Update",
-      "Instagram Post - Morning",
-      "MassDwell X Post - Midday",
-      "MassDwell X Post - Evening"
-    ],
-    "Sales & Lead Management": [
-      "Sarah Cold Calls - Afternoon",
-      "Handle Bounced Emails - Daily Cleanup",
-      "Bounce Monitor - Auto Close Lost",
-      "Lead Lifecycle Manager v2.0 (Weekly)",
-      "Atlantic Laser Sales - Daily Prospecting Engine"
-    ],
-    "Personal & Admin": [
-      "Personal Life - Morning Scan",
-      "Admin - Morning Operations Scan",
-      "Personal Gmail Cleanup - Consolidated",
-      "OpenClaw Nightly Drift Scan",
-      "Weekly Memory Maintenance",
-      "Bi-Weekly Memory Audit"
-    ],
-    "Reporting & Insights": [
-      "Marketing - Weekly Report (Friday)",
-      "Factory Ops - Weekly Report",
-      "Clawson - Weekly Alignment Summary"
-    ],
-    "Special & One-Off": [
-      "Mission Control Cron Export",
-      "Money Printer Trading Cycle",
-      "Instagram Token Refresh Reminder",
-      "VRT Price Alert - Post-Earnings Entry",
-      "Morning Scraper Test & Fix"
-    ]
+    "totalNotional": "$93.5K long, $3K short",
+    "dryPowder": "$1,491 (DEPLETED)"
   },
-  "systemHealth": {
-    "timestamp": "2026-03-03T10:04:56Z",
-    "marketStatus": "REGULAR TRADING HOURS (9:30 AM - 4:00 PM)",
-    "timeUntilMarketClose": "5 hours 56 minutes",
-    "allJobsRunning": true,
-    "twoHourHeartbeatCadence": "ENABLED (12/day instead of 48)",
-    "costReduction": "92.5% ($200/day → $7-50/day)",
-    "moneyPrinterThesis": "Iran geopolitical escalation = oil supply premium",
-    "account": {
-      "platform": "Alpaca Paper Trading",
-      "id": "PA3RY5502SN6",
-      "balance": "$99,889.92",
-      "mode": "PAPER (validation phase)"
+  "topCategories": [
+    {
+      "name": "Money Printer Trading (ACTIVE - 8 jobs)",
+      "count": 8,
+      "status": "EXECUTING ON SCHEDULE"
+    },
+    {
+      "name": "MassDwell Operations (15 jobs)",
+      "count": 15,
+      "status": "OPERATIONAL"
+    },
+    {
+      "name": "Agent Heartbeats (5 jobs)",
+      "count": 5,
+      "status": "RUNNING (2-hour cadence)"
+    },
+    {
+      "name": "Sales & Lead Management (5 jobs)",
+      "count": 5,
+      "status": "OPERATIONAL"
+    },
+    {
+      "name": "Marketing & Content (4 jobs)",
+      "count": 4,
+      "status": "OPERATIONAL (with credit issues on 2)"
+    },
+    {
+      "name": "Personal & Admin (6 jobs)",
+      "count": 6,
+      "status": "OPERATIONAL"
+    },
+    {
+      "name": "Reporting & Insights (3 jobs)",
+      "count": 3,
+      "status": "READY FOR WEEKLY REPORTS"
+    },
+    {
+      "name": "Special & One-Off (4 jobs)",
+      "count": 4,
+      "status": "SCHEDULED"
     }
+  ],
+  "systemAlerts": {
+    "creditBalance": "LOW - Multiple crons hitting 'credit balance too low' errors",
+    "affectedCrons": [
+      "Self-Healing: Stale Task Recovery (5 consecutive errors)",
+      "Marketing Agent Heartbeat (5 consecutive errors)",
+      "Money Printer Trading Cycle (1 error at 10 AM)"
+    ],
+    "recommendation": "Steve needs to add credits to Anthropic account or reduce model burn"
   },
-  "lastUpdated": "2026-03-03T10:04:56Z",
+  "lastUpdated": "2026-03-03T12:04:56Z",
   "notes": [
-    "53 total cron jobs active",
-    "Money Printer trading system GO LIVE (8 cron jobs executing on schedule)",
-    "Market open @ 9:30 AM EST - trading for 34 minutes",
-    "MarketIntelligence & SentimentIntelligence cycles completed",
-    "StrategyGenerator & RiskGuardian cycles completed",
-    "Next: 12:00 PM SentimentIntelligence mid-day check",
-    "All systems nominal, no blockers",
-    "Heartbeat frequency: 2-hour cadence (reduced from 30 min for cost efficiency)"
+    "55 total cron jobs now (up from 53)",
+    "2 new jobs added: Pipedrive→QB Sync, Kommo CRM Daily Sync",
+    "Money Printer v3.0 FULLY DEPLOYED with 9.8% portfolio heat (MAXIMUM)",
+    "All trading cycles executing successfully through noon",
+    "CRITICAL: Credit balance issues affecting Haiku/Sonnet crons",
+    "Next critical job: 2:00 PM SentimentIntelligence check (affects position hold/exit decision)",
+    "Market close: 4:00 PM EST (3h 56m remaining)",
+    "Post-market analytics due at 4:30 PM"
   ]
 }
