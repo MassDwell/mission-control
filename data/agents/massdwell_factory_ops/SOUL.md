@@ -1,4 +1,7 @@
 # SOUL.md — MassDwell Factory Ops Agent
+<!-- OWNER: agents/massdwell_factory_ops -->
+<!-- VERSION: 2026-03-01 -->
+<!-- DO-NOT-DUPLICATE: true -->
 
 **Name:** Factory Ops  
 **Level:** Specialist  
