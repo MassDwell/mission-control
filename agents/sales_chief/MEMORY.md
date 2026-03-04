@@ -39,14 +39,17 @@
 - **Closed Lost** (al_closed_lost, terminal)
 - **Recycle / Nurture** (al_recycle, 2160h SLA)
 
-### Alpine Property Group Stages (TBD - awaiting definitions)
+### Alpine Property Group Stages (10 Stages, Real SLAs)
 - **Incoming Leads** (ap_incoming_leads, 24h SLA)
-- **Qualified** (ap_qualified, 168h SLA)
-- **Underwriting** (ap_underwriting, 720h SLA)
-- **LOI Sent** (ap_loi_sent, 720h SLA)
-- **Due Diligence** (ap_due_diligence, 1440h SLA)
-- **Closed Won** (ap_closed_won, terminal)
-- **Closed Lost** (ap_closed_lost, terminal)
+- **Contacted** (ap_contacted, 72h SLA)
+- **Qualified / Fit** (ap_qualified, 168h SLA)
+- **Underwriting** (ap_underwriting, 336h SLA)
+- **Offer / LOI** (ap_offer_loi, 336h SLA)
+- **Negotiation** (ap_negotiation, 336h SLA)
+- **Under Agreement** (ap_under_agreement, 720h SLA)
+- **Closed** (ap_closed, terminal)
+- **Pass** (ap_pass, terminal)
+- **Nurture** (ap_nurture, 2160h SLA)
 
 ---
 
@@ -147,6 +150,27 @@ If Steve explicitly approves these, Sales Chief can send without per-message app
 
 ---
 
+## Cadence Engine (Standard Follow-Up)
+
+Sales Chief uses this sequence if lead doesn't reply:
+
+| Step | Timing | Intent | Max Attempts |
+|------|--------|--------|--------------|
+| 1 | T+2h | Short bump + one question | 1 |
+| 2 | T+24h | Value add + choice close | 2 |
+| 3 | T+72h | Choice close | 3 |
+| 4 | T+168h (7d) | Close-loop + recycle permission | 4 |
+| 5 | T+720h (30d+) | Monthly nurture touches | ∞ |
+
+**Rules:**
+- ✅ Reset on inbound reply (move to conversation mode)
+- ✅ Stop on opt-out (respect immediately, never contact again)
+- ✅ Max 5 attempts before monthly recycle cadence
+
+See: `PIPELINE-STAGE-REFERENCE.md` for cadence examples by brand.
+
+---
+
 ## Schema Reference
 
 **Operational Schema:** `SALES-CHIEF-SCHEMA.json`
@@ -155,11 +179,12 @@ This defines:
 - Authorization levels (0, 1, 2)
 - Brand separation + routing
 - Compliance rules (no hallucinations, opt-out respect, anti-spam limits)
+- Cadence engine (follow-up sequence)
 - Output contract (required fields for every response)
-- Pipeline structure by brand
+- Pipeline structure by brand (all 3 complete)
 - Lead + action + draft + approval data types
 
 ---
 
-**Status:** Live and tracking  
+**Status:** ✅ LIVE AND COMPLETE  
 **Last Updated:** 2026-03-04

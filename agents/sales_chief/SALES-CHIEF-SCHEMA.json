@@ -39,6 +39,37 @@
         "min_hours_between_attempts_default": 24
       }
     },
+    "cadence_engine": {
+      "default_sequence_if_no_response": [
+        {
+          "step": 1,
+          "offset_hours": 2,
+          "intent": "short_bump_one_question"
+        },
+        {
+          "step": 2,
+          "offset_hours": 24,
+          "intent": "value_add_plus_choice_close"
+        },
+        {
+          "step": 3,
+          "offset_hours": 72,
+          "intent": "choice_close"
+        },
+        {
+          "step": 4,
+          "offset_hours": 168,
+          "intent": "close_loop_permission_to_recycle"
+        },
+        {
+          "step": 5,
+          "offset_hours": 720,
+          "intent": "recycle_touch_monthly"
+        }
+      ],
+      "reset_on_inbound_reply": true,
+      "stop_on_opt_out": true
+    },
     "output_contract": {
       "must_include_fields": [
         "brand_mode",
@@ -272,6 +303,7 @@
         ]
       },
       "alpine": {
+        "currency": "USD",
         "stages": [
           {
             "id": "ap_incoming_leads",
@@ -280,52 +312,71 @@
             "leads": []
           },
           {
+            "id": "ap_contacted",
+            "name": "Contacted",
+            "sla_max_hours": 72,
+            "leads": []
+          },
+          {
             "id": "ap_qualified",
-            "name": "Qualified",
+            "name": "Qualified / Fit",
             "sla_max_hours": 168,
             "leads": []
           },
           {
             "id": "ap_underwriting",
             "name": "Underwriting",
+            "sla_max_hours": 336,
+            "leads": []
+          },
+          {
+            "id": "ap_offer_loi",
+            "name": "Offer / LOI",
+            "sla_max_hours": 336,
+            "leads": []
+          },
+          {
+            "id": "ap_negotiation",
+            "name": "Negotiation",
+            "sla_max_hours": 336,
+            "leads": []
+          },
+          {
+            "id": "ap_under_agreement",
+            "name": "Under Agreement",
             "sla_max_hours": 720,
             "leads": []
           },
           {
-            "id": "ap_loi_sent",
-            "name": "LOI Sent",
-            "sla_max_hours": 720,
-            "leads": []
-          },
-          {
-            "id": "ap_due_diligence",
-            "name": "Due Diligence",
-            "sla_max_hours": 1440,
-            "leads": []
-          },
-          {
-            "id": "ap_closed_won",
-            "name": "Closed Won",
+            "id": "ap_closed",
+            "name": "Closed",
             "sla_max_hours": 0,
             "leads": []
           },
           {
-            "id": "ap_closed_lost",
-            "name": "Closed Lost",
+            "id": "ap_pass",
+            "name": "Pass",
             "sla_max_hours": 0,
+            "leads": []
+          },
+          {
+            "id": "ap_nurture",
+            "name": "Nurture",
+            "sla_max_hours": 2160,
             "leads": []
           }
         ],
         "qualification_minimum": [
-          "location_asset_type",
-          "units_far_zoning_status",
-          "seller_motivation_timeline",
-          "price_guidance_permits",
-          "broker_or_offmarket"
+          "location_and_asset_type",
+          "units_or_program",
+          "zoning_or_permitting_status",
+          "seller_motivation_and_timeline",
+          "price_guidance_and_process_owner"
         ],
         "default_ctas": [
-          "send_om_request",
-          "underwriting_questions"
+          "request_om",
+          "schedule_intro_call",
+          "request_key_docs"
         ]
       }
     },

@@ -116,25 +116,74 @@ Recycle / Nurture (90d SLA) — if lost, for future re-engagement
 
 ---
 
-## Alpine Property Group Pipeline (TBD)
+## Alpine Property Group Pipeline (10 Stages)
 
-*Data structure not yet provided. Awaiting stage definitions.*
+### Stage Progression Flow
 
-**Expected stages (placeholder):**
-- Incoming Leads (24h)
-- Qualified (7d)
-- Underwriting (30d)
-- LOI Sent (30d)
-- Due Diligence (60d)
-- Closed Won (terminal)
-- Closed Lost (terminal)
+```
+Incoming Leads (24h SLA)
+    ↓
+Contacted (72h SLA)
+    ↓
+Qualified / Fit (7d SLA)
+    ↓
+Underwriting (14d SLA)
+    ↓
+Offer / LOI (14d SLA)
+    ↓
+Negotiation (14d SLA)
+    ↓
+Under Agreement (30d SLA)
+    ↓
+[Closed (terminal) OR Pass (terminal)]
+    ↓
+Nurture (90d SLA) — if passed, for future re-engagement
+```
 
-**Qualification minimum (likely):**
-- Location + asset type
-- Units / FAR / zoning status
-- Seller motivation + timeline
-- Price guidance + permits in place
-- Broker / off-market indicator
+### Detailed Stage Definitions
+
+| Stage ID | Stage Name | SLA (hours) | SLA (days) | Entry Criteria | Exit Criteria | Owner |
+|----------|-----------|-----------|-----------|----------------|----------------|-------|
+| ap_incoming_leads | Incoming Leads | 24 | 1 | New deal received | Acknowledge + reach out | Sales Chief |
+| ap_contacted | Contacted | 72 | 3 | Initial outreach made | First qualification call or 5 questions answered | Sales Chief |
+| ap_qualified | Qualified / Fit | 168 | 7 | Lead answered 5 min questions, fits buy box | Request OM / underwriting begins | Sales Chief / Steve |
+| ap_underwriting | Underwriting | 336 | 14 | Deal OM received, underwriting started | Underwriting complete, offer decision made | Steve / Finance |
+| ap_offer_loi | Offer / LOI | 336 | 14 | Offer sent to seller OR LOI ready | LOI accepted / rejected | Steve |
+| ap_negotiation | Negotiation | 336 | 14 | LOI negotiation in progress | Deal agreed upon or seller walks | Steve |
+| ap_under_agreement | Under Agreement | 720 | 30 | Contract signed, earnest money paid | Close date (funding confirmed) | Steve |
+| ap_closed | Closed | 0 | - | Deal closed, funds transferred | PROJECT COMPLETE | Steve |
+| ap_pass | Pass | 0 | - | Deal rejected after review | PROJECT COMPLETE | Sales Chief / Steve |
+| ap_nurture | Nurture | 2160 | 90 | Deal passed or lost opportunity | Monthly warm touches, await future deal flow | Sales Chief |
+
+### Qualification Gate (Before Underwriting)
+
+**Minimum Required Data:**
+- ✅ Location & asset type (address, # units, residential/commercial)
+- ✅ Units or program (multifamily, ground-up, adaptive reuse, etc.)
+- ✅ Zoning or permitting status (zoned correctly? permits in place?)
+- ✅ Seller motivation & timeline (urgent? testing market? firm price?)
+- ✅ Price guidance & process owner (price expectation? broker/off-market?)
+
+**Default CTAs (if qualified):**
+- "Send me the OM (Offering Memorandum)"
+- "Let's schedule a 30-minute intro call"
+- "Send key docs: financials, site plan, permits"
+
+### Deal Qualification Rules (Alpine Specifics)
+
+**Buy Box Indicators:**
+- Location: Greater Boston market (core focus)
+- Asset: Multi-family (2-30+ units) or ground-up development
+- Price: $500K - $10M+ range
+- Seller: Motivated, open to negotiation
+- Zoning: Clear path to use (or developer-friendly municipality)
+
+**Red Flags (suggest Pass):**
+- Zoning complications without variances
+- Seller inflexible on price
+- Market showing weakness in specific submarket
+- Developer inexperienced
+- Site conditions unknown/unclear
 
 ---
 
@@ -269,15 +318,46 @@ Atlantic Laser Pipeline:
 
 ---
 
-## Updates Needed
+---
 
-**Alpine Property Group stages:** Waiting for stage definitions from Steve. Once provided:
-1. Add 10-stage progression (Incoming → Qualified → Underwriting → LOI → DD → Close)
-2. Define qualification gate (location, type, units, zoning, price, motivation)
-3. Add SLAs per stage
-4. Document default CTAs for Alpine
+## Cadence Engine (Standard Follow-Up Sequence)
+
+Applies across all three brands. Sales Chief uses this if lead doesn't reply.
+
+### Default Sequence (If No Response)
+
+| Step | Timing | Intent | Tone | Example |
+|------|--------|--------|------|---------|
+| 1 | T+2h | Short bump + one question | Friendly reminder | "Hey [name], just checking in — what's your timeline looking like?" |
+| 2 | T+24h | Value add + choice close | Helpful, specific | "Found a case study of a [similar property] — thought you'd find it interesting. Which resonates more: [option A] or [option B]?" |
+| 3 | T+72h | Choice close | Collaborative | "Two paths forward: we can [A] or [B]. Which works better for you?" |
+| 4 | T+168h (7d) | Close-loop + recycle permission | Respectful exit | "No pressure if this isn't the right timing. Want to stay in touch for future opportunities?" |
+| 5 | T+720h (30d+) | Recycle touch monthly | Warm, low-pressure | "[name], still thinking about deals in [market]? Would love to reconnect when timing is right." |
+
+### Cadence Rules
+
+✅ **Reset on inbound reply:** If lead replies at any point, reset the cadence and move to conversation mode  
+✅ **Stop on opt-out:** If lead says STOP, unsubscribe, or opt out, respect immediately and never contact again  
+✅ **Max 5 attempts without response:** After step 5 (30 days), move to monthly nurture cadence (no auto-escalation)
+
+### Brand-Specific Tone Adjustments
+
+**MassDwell:**
+- Warm, consultative ("Let's explore your lot together")
+- Focus on feasibility + confidence
+- Example: "I'd love to walk your property + show you what's possible"
+
+**Atlantic Laser:**
+- Technical, ROI-focused ("Here's the throughput math")
+- Emphasize efficiency gains
+- Example: "I ran the numbers on your material thickness — here's where you'd see the biggest gains"
+
+**Alpine Property:**
+- Professional, deal-sharp ("This fits your buy box perfectly")
+- Underwriting language OK
+- Example: "Your NOI target is 6.5%? Here's how this deal breaks down"
 
 ---
 
 **Last Updated:** 2026-03-04  
-**Status:** MassDwell + Atlantic complete; Alpine pending
+**Status:** ✅ MassDwell + Atlantic + Alpine COMPLETE | Cadence engine LIVE
