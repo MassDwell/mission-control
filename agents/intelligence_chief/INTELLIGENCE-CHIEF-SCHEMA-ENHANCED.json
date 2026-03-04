@@ -1,0 +1,316 @@
+{
+  "schema_version": "1.0.0",
+  "agent_id": "intel_chief",
+  "owner": {
+    "name": "Steve Vettori",
+    "timezone": "America/New_York"
+  },
+  "operating_rules": {
+    "no_fabrication": true,
+    "separate_facts_inference_recommendations": true,
+    "no_legal_advice": true,
+    "no_third_party_outreach": true,
+    "brand_separation_strict": true,
+    "output_contract_required": true
+  },
+  "domains": {
+    "businesses": [
+      "massdwell",
+      "atlantic_laser",
+      "alpine",
+      "cross_business"
+    ],
+    "intel_types": [
+      "opportunity",
+      "competitor",
+      "regulatory",
+      "tooling",
+      "risk",
+      "market_signal",
+      "other"
+    ],
+    "urgency": [
+      "now",
+      "this_week",
+      "backlog"
+    ],
+    "confidence": [
+      "high",
+      "medium",
+      "low"
+    ]
+  },
+  "watchlists": {
+    "massdwell": {
+      "competitors": [],
+      "towns_and_regions": [],
+      "regulatory_topics": [
+        "adu",
+        "zoning",
+        "permitting",
+        "inspection",
+        "incentives"
+      ],
+      "channels": [
+        "seo",
+        "facebook_groups",
+        "directories",
+        "partnerships",
+        "municipal_rfps"
+      ],
+      "tools": [
+        "crm",
+        "sms",
+        "email_automation",
+        "rendering",
+        "cad",
+        "permit_workflows"
+      ]
+    },
+    "atlantic_laser": {
+      "competitors": [],
+      "product_topics": [
+        "handheld_laser_welding",
+        "fiber_laser",
+        "training",
+        "financing",
+        "consumables"
+      ],
+      "channels": [
+        "linkedin",
+        "youtube",
+        "distributor_programs",
+        "industry_shows"
+      ],
+      "tools": [
+        "crm",
+        "quoting",
+        "demo_scheduling",
+        "support_ticketing"
+      ]
+    },
+    "alpine": {
+      "competitors": [],
+      "markets": [],
+      "regulatory_topics": [
+        "zoning_overlays",
+        "by_right_rules",
+        "affordable_requirements"
+      ],
+      "channels": [
+        "broker_networks",
+        "off_market",
+        "municipal_planning",
+        "capital_partners"
+      ],
+      "tools": [
+        "underwriting_models",
+        "construction_cost_indices",
+        "deal_sourcing_tools"
+      ]
+    },
+    "cross_business": {
+      "macro_topics": [
+        "rates",
+        "construction_costs",
+        "labor",
+        "insurance"
+      ],
+      "ai_tools": [
+        "llm_platforms",
+        "agent_frameworks",
+        "workflow_automation"
+      ],
+      "risk_topics": [
+        "vendor_risk",
+        "compliance_risk",
+        "reputation_risk"
+      ]
+    }
+  },
+  "types": {
+    "source": {
+      "id": "string (src_001, src_002, etc)",
+      "source_type": "web | doc | email | call_notes | internal_note | other",
+      "name": "string (human-readable name)",
+      "url": "string (URL or null if not web-based)",
+      "date_accessed": "ISO8601",
+      "excerpt": "string (relevant quote or summary)",
+      "reliability": "high | medium | low",
+      "tags": ["string", "string"]
+    },
+    "intel_item": {
+      "id": "string (intel_001, intel_002, etc)",
+      "business": "massdwell | atlantic_laser | alpine | cross_business",
+      "intel_type": "opportunity | competitor | regulatory | tooling | risk | market_signal | other",
+      "topic": "string (one-liner)",
+      "why_it_matters": "string (1-2 lines impact statement)",
+      "facts": [
+        "string (fact 1, with source implied)",
+        "string (fact 2)"
+      ],
+      "inferences": [
+        "string (inference 1 - what does this mean?)",
+        "string (inference 2)"
+      ],
+      "recommendation": {
+        "default": "string (action + rationale)",
+        "alternative": "string (optional second action)"
+      },
+      "next_actions": [
+        {
+          "id": "string (act_001, etc)",
+          "title": "string",
+          "owner": "steve | clawson | intel_chief | sales_chief | marketing_head | finance_director | operations_director | codesmith | other",
+          "due_at": "ISO8601 with timezone",
+          "status": "todo | doing | waiting | done | canceled",
+          "dependencies": [],
+          "notes": "string",
+          "related": {
+            "intel_item_id": "string",
+            "business": "string"
+          }
+        }
+      ],
+      "sources": [
+        "src_001",
+        "src_002"
+      ],
+      "confidence": "high | medium | low",
+      "urgency": "now | this_week | backlog",
+      "created_at": "ISO8601",
+      "updated_at": "ISO8601",
+      "status": "new | active | archived",
+      "tags": [
+        "string",
+        "string"
+      ]
+    },
+    "next_action": {
+      "id": "string (act_001, etc)",
+      "title": "string",
+      "owner": "steve | clawson | intel_chief | sales_chief | marketing_head | finance_director | operations_director | codesmith | other",
+      "due_at": "ISO8601",
+      "status": "todo | doing | waiting | done | canceled",
+      "dependencies": [],
+      "notes": "string",
+      "related": {
+        "intel_item_id": "string",
+        "business": "string"
+      }
+    },
+    "decision_needed": {
+      "id": "string (dec_001, etc)",
+      "business": "massdwell | atlantic_laser | alpine | cross_business",
+      "topic": "string",
+      "decision_question": "string (What should we do?)",
+      "default_recommendation": "string",
+      "alternatives": [
+        "string (alt 1)",
+        "string (alt 2)"
+      ],
+      "decision_needed_by": "ISO8601",
+      "status": "open | decided | deferred",
+      "chosen": "string (which was chosen?)",
+      "rationale": "string (why that choice?)",
+      "created_at": "ISO8601"
+    },
+    "daily_brief": {
+      "id": "string (brief_daily_2026_03_04, etc)",
+      "date": "ISO8601",
+      "high_signal_bullets": [
+        "string (max 10 bullets, ordered by urgency/impact)"
+      ],
+      "top_opportunities": [
+        "string (1-3 key opps to pursue)"
+      ],
+      "top_risks": [
+        "string (1-3 key risks to monitor)"
+      ],
+      "actions_created": [
+        "act_001",
+        "act_002"
+      ],
+      "sources": [
+        "src_001"
+      ],
+      "created_at": "ISO8601"
+    },
+    "weekly_pack": {
+      "id": "string (brief_weekly_2026_w10, etc)",
+      "week_of_date": "ISO8601",
+      "by_business": {
+        "massdwell": {
+          "highlights": [
+            "string"
+          ],
+          "opportunities": [
+            {
+              "opportunity": "string",
+              "potential": "string (size/scale)",
+              "timeline": "string",
+              "action": "string (what to do)"
+            }
+          ],
+          "risks": [
+            {
+              "risk": "string",
+              "impact": "string",
+              "mitigation": "string"
+            }
+          ],
+          "actions": [
+            "act_001"
+          ]
+        },
+        "atlantic_laser": {},
+        "alpine": {},
+        "cross_business": {}
+      },
+      "decisions_needed": [
+        "dec_001"
+      ],
+      "sources": [
+        "src_001"
+      ],
+      "created_at": "ISO8601"
+    }
+  },
+  "state": {
+    "intel_items": [],
+    "sources": [],
+    "daily_briefs": [],
+    "weekly_packs": [],
+    "action_queue": {
+      "to_route_to_clawson": [],
+      "routed_history": []
+    },
+    "open_questions": [],
+    "decisions_needed": []
+  },
+  "guardrails": [
+    "NEVER fabricate facts, stats, quotes, or industry averages",
+    "ALWAYS separate: (a) Facts (b) Inferences (c) Recommendations",
+    "NO legal advice — provide informational summaries + flag for counsel",
+    "NO direct outreach — recommend outreach lists + draft messages only",
+    "STRICT brand separation (MassDwell, Atlantic Laser, Alpine are separate)",
+    "ALWAYS state confidence (high/medium/low)",
+    "ALWAYS cite sources (source_id + date + excerpt if possible)",
+    "ALWAYS use output contract for intel_items",
+    "Label unverified as hypothesis, not fact"
+  ],
+  "cadence": {
+    "daily": "Scan watchlists, produce 1-page daily_brief (max 10 bullets), flag urgent escalations",
+    "weekly": "Produce weekly_pack by business (top 3 opps + top 3 risks + actions)",
+    "monthly": "Competitive landscape refresh, tooling review, regulatory summary, deep-dive"
+  },
+  "escalation_rules": {
+    "same_day_escalation_to_steve_or_clawson": [
+      "Regulatory change materially impacts ADU feasibility or deal timeline",
+      "Competitor launches strong offer/lead magnet in your market",
+      "Major vendor/tool breaks, price spikes, or becomes risky",
+      "High-leverage partnership opportunity appears",
+      "Macro change with material deal impact"
+    ]
+  }
+}
