@@ -1,6 +1,6 @@
 # Organizational Chart — Steve Vettori's Agent Ecosystem
 
-**Updated:** 2026-03-04
+**Updated:** 2026-03-03
 
 ---
 
@@ -17,15 +17,15 @@
             (Orchestrator)
                    |
     ________________|__________________________________________________________________________________________
-   |               |                 |               |               |              |              |
-   |               |                 |               |               |              |              |
+   |               |                 |               |               |              |              |              |
+   |               |                 |               |               |              |              |              |
 SALES CHIEF   MARKETING HEAD   FINANCE DIRECTOR  OPS DIRECTOR   INTEL CHIEF  CODESMITH    MONEYPRINTER   PERSONAL OPS
 (sales_       (marketing_head)  (finance_        (ops_          (intelligence (codesmith)  (trading_      (TBD)
 followup)                       director)        director)      _chief)                    revival)
-✅ ACTIVE     ✅ ACTIVE         ✅ ACTIVE         ✅ ACTIVE      ✅ ACTIVE     ✅ ACTIVE    ✅ ACTIVE
+✅ ACTIVE     ✅ ACTIVE         ✅ ACTIVE         ✅ ACTIVE      ✅ ACTIVE     ✅ NEW LIVE  ✅ ACTIVE      ❌ PENDING
    
-   Track 3      Demand &        Capital &         Order &        Market &      Engineering
-   Businesses   Content         Financial         Project        Strategic     & Automation
+   Track 3      Demand &        Capital &         Order &        Market &      Engineering  Portfolio       Personal
+   Businesses   Content         Financial         Project        Strategic     & Automation  & Trading      Life Admin
    Pipeline     Campaigns       Visibility        Execution      Research
 ```
 
@@ -51,9 +51,9 @@ followup)                       director)        director)      _chief)         
 | **Finance Director (CFO)** | finance_director | ✅ Active | Financial visibility, capital allocation, forecasting |
 | **Operations Director (COO)** | ops_director | ✅ Active | Project execution, order fulfillment, blocker management |
 | **Intelligence Chief** | intelligence_chief | ✅ Active | Strategic research, market intel, competitive analysis, regulatory monitoring |
-| **Codesmith (CTO)** | codesmith | ✅ **NEW** | Engineering, automation, integrations, dashboards, reliability |
+| **Codesmith (CTO)** | codesmith | ✅ **LIVE** | Engineering, automation, integrations, dashboards, reliability |
 | **MoneyPrinter (Trading)** | trading_revival | ✅ Active | Intraday trading, portfolio management |
-| **Personal Ops** | TBD | ❌ Not yet | Calendar, reminders, personal tasks |
+| **Personal Ops** | personal_ops | ❌ Not yet | Calendar, reminders, personal tasks |
 
 ---
 
@@ -483,10 +483,11 @@ Escalate to Steve/Clawson SAME DAY if:
 |------|--------|-------|
 | **Personal Ops** | ❌ Missing | Need: calendar, reminders, personal life management |
 
-**6 of 8 chiefs now live.** Ready to build Personal Ops next?
+**7 of 8 chiefs now live.** Codesmith just deployed. Ready to build Personal Ops (final chief)?
 
 ---
 
-_Last Updated: 2026-03-04_  
+_Last Updated: 2026-03-03_  
 _Responsible: Clawson (Chief of Staff)_  
-_Next Review: 2026-04-01_
+_Status: CODESMITH LIVE ✅_
+_Next: Personal Ops or task assignments to Codesmith_

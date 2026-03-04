@@ -1,419 +1,1017 @@
 {
-  "schema_version": "1.0",
-  "agent_id": "codesmith",
-  "last_updated": "2026-03-04T09:00:00Z",
+  "schema_version": "1.0.0",
+  "last_updated": "2026-03-03T21:40:00-05:00",
   "projects": [
     {
       "id": "proj_001",
-      "name": "AI Email Drafting Automation (Sales)",
-      "scope": "Automation",
-      "objective": "Reduce sales follow-up email drafting time by 70% using Claude 3.5 + Kommo integration",
-      "status": "execution",
-      "risk_level": "medium",
-      "deadline": "2026-03-22T17:00:00Z",
-      "created_at": "2026-03-04T09:00:00Z",
-      "updated_at": "2026-03-04T09:00:00Z",
-      "owner": "codesmith",
-      "assigned_sub_agents": [
-        "backend",
-        "automation",
-        "qa"
+      "name": "Core Infrastructure Hardening",
+      "description": "Stabilize OpenClaw gateway, agent runtime, cron reliability, and monitoring",
+      "business_scope": "openclaw",
+      "status": "active",
+      "priority": "p0",
+      "created_at": "2026-02-01T09:00:00-05:00",
+      "updated_at": "2026-03-03T21:40:00-05:00",
+      "success_criteria": [
+        "99.5% uptime target",
+        "Cron job failure recovery <5 min",
+        "Zero unplanned rollbacks",
+        "Drift detection + auto-fix operational"
       ],
-      "design_brief": {
-        "architecture_approach": "Kommo webhook + Make.com + Claude API → Draft generation → Human review → Send",
-        "interfaces_contracts": "Kommo trigger (new lead, follow-up needed) → Make flow → Claude draft → Return to Kommo for review",
-        "dependencies": [
-          "Kommo API (read/write contacts, deals)",
-          "Claude API (text generation)",
-          "Make.com (workflow orchestration)"
-        ],
-        "failure_modes": [
-          "Claude API timeout → queue and retry",
-          "Kommo sync failure → alert and manual fallback",
-          "Draft quality poor → human rejection, fallback to manual"
-        ],
-        "rollback_plan": "Disable Make flow → disable Kommo webhook → manual email drafting resumes",
-        "tests_verification_plan": "Unit tests for draft quality, integration test with staging Kommo, manual QA with 5 sample emails"
-      },
-      "tasks": [
-        {
-          "id": "task_001",
-          "title": "Audit sales email templates and response patterns",
-          "status": "in_progress",
-          "subtask_of": null,
-          "assigned_to": "backend",
-          "due_at": "2026-03-08T17:00:00Z",
-          "pr_url": null,
-          "verified": false,
-          "verification_method": "manual"
-        },
-        {
-          "id": "task_002",
-          "title": "Build Claude prompt template (email drafting)",
-          "status": "todo",
-          "subtask_of": "task_001",
-          "assigned_to": "backend",
-          "due_at": "2026-03-10T17:00:00Z",
-          "pr_url": null,
-          "verified": false,
-          "verification_method": "tests"
-        },
-        {
-          "id": "task_003",
-          "title": "Build Make.com workflow (Kommo trigger → Claude → Kommo draft)",
-          "status": "todo",
-          "subtask_of": "task_001",
-          "assigned_to": "automation",
-          "due_at": "2026-03-15T17:00:00Z",
-          "pr_url": null,
-          "verified": false,
-          "verification_method": "logs"
-        },
-        {
-          "id": "task_004",
-          "title": "QA: Manual test with 5 sample scenarios",
-          "status": "todo",
-          "subtask_of": null,
-          "assigned_to": "qa",
-          "due_at": "2026-03-18T17:00:00Z",
-          "pr_url": null,
-          "verified": false,
-          "verification_method": "checklist"
-        }
+      "constraints": [
+        "No breaking changes to agent APIs",
+        "All changes must have rollback plan",
+        "Prod changes staged through dev/staging first"
       ],
-      "artifacts": [
-        {
-          "id": "art_001",
-          "type": "script",
-          "path": "agents/codesmith/scripts/email-drafting-prompt.md",
-          "purpose": "Claude prompt template for email drafting",
-          "status": "draft",
-          "breaking_change": false,
-          "requires_migration": false
-        },
-        {
-          "id": "art_002",
-          "type": "config",
-          "path": "agents/codesmith/configs/make-kommo-email-flow.json",
-          "purpose": "Make.com workflow definition (Kommo → Claude → email draft)",
-          "status": "draft",
-          "breaking_change": false,
-          "requires_migration": false
-        }
+      "stakeholders": [
+        "steve",
+        "clawson"
       ],
-      "verification": {
-        "test_coverage_pct": 0,
-        "test_results": "pending",
-        "manual_verification": "Not yet performed",
-        "logs_proof": "Pending",
-        "expected_output": "Draft email in Kommo, human-approved, sent to lead",
-        "actual_output": "TBD"
-      },
-      "deployment": {
-        "stage": null,
-        "deploy_date": null,
-        "deploy_commands": [],
-        "rollback_commands": [
-          "Disable Make workflow: go to Make.com → disable email drafting flow",
-          "Disable Kommo webhook: go to Kommo → Settings → Webhooks → disable EmailDraftRequest"
-        ],
-        "post_deploy_checks": [
-          "Verify Make flow is running (check logs)",
-          "Verify Kommo webhook is active",
-          "Test with 1 sample lead (draft should appear in 2-5 sec)"
-        ],
-        "rollback_tested": false
-      },
-      "documentation": {
-        "sop_updated": false,
-        "runbooks_added": [],
-        "config_canonical_source": "agents/codesmith/configs/make-kommo-email-flow.json (source of truth for Make flow)"
-      },
-      "risks": [
-        {
-          "risk": "Claude API quota exceeded or rate-limited",
-          "impact": "medium",
-          "mitigation": "Implement queue + retry logic, monitor API usage daily"
-        },
-        {
-          "risk": "Kommo API changes or deprecation",
-          "impact": "high",
-          "mitigation": "Maintain Kommo API version lock, monitor changelog"
-        },
-        {
-          "risk": "Draft quality poor → user frustration",
-          "impact": "medium",
-          "mitigation": "Prompt iteration, manual review before send, fallback to human drafting"
-        }
-      ],
-      "next_steps": [
-        "Iterate on prompt based on QA feedback",
-        "Deploy to staging for 1 week",
-        "Monitor draft quality and Kommo sync",
-        "Deploy to production"
+      "links": [
+        "epic_001",
+        "epic_002"
       ]
     },
     {
       "id": "proj_002",
-      "name": "Marketing Dashboard (MassDwell Sales Funnel)",
-      "scope": "Dashboard",
-      "objective": "Real-time visibility into MassDwell lead funnel: awareness → interest → engagement → lead → MQL → SQL",
-      "status": "design",
-      "risk_level": "low",
-      "deadline": "2026-03-31T17:00:00Z",
-      "created_at": "2026-02-28T09:00:00Z",
-      "updated_at": "2026-03-04T09:00:00Z",
-      "owner": "codesmith",
-      "assigned_sub_agents": [
-        "architect",
-        "frontend",
-        "data"
+      "name": "MassDwell Automation Rebuild",
+      "description": "Rebuild sales bot, CRM integration, and email automation (post-cleanup)",
+      "business_scope": "massdwell",
+      "status": "proposed",
+      "priority": "p1",
+      "created_at": "2026-03-03T20:30:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "success_criteria": [
+        "Sales bot sends 50+ emails/day to cold leads",
+        "Kommo CRM sync working bidirectionally",
+        "Reply detection alerts Nick within 30 min",
+        "Zero email delivery errors"
       ],
-      "design_brief": {
-        "architecture_approach": "Looker Studio connected to Kommo + Google Sheets ETL → Dashboard",
-        "interfaces_contracts": "Kommo API (read leads, deals, stages) → Google Sheets (denormalized view) → Looker Studio (visual dashboard)",
-        "dependencies": [
-          "Kommo CRM (lead data)",
-          "Google Sheets (ETL staging)",
-          "Looker Studio (visualization)"
-        ],
-        "failure_modes": [
-          "Kommo API down → dashboard stale (show last known data + timestamp)",
-          "Google Sheets quota exceeded → alert and pause refresh",
-          "Looker Studio connection broken → alert team"
-        ],
-        "rollback_plan": "Revert Google Sheets ETL scripts → restore from backup",
-        "tests_verification_plan": "Compare Kommo totals vs dashboard totals (should match), manual visual inspection"
-      },
-      "tasks": [],
-      "artifacts": [],
-      "verification": {
-        "test_coverage_pct": null,
-        "test_results": "pending",
-        "manual_verification": "Not yet performed",
-        "logs_proof": null,
-        "expected_output": "Dashboard shows lead counts by stage, matches Kommo",
-        "actual_output": null
-      },
-      "deployment": {
-        "stage": null,
-        "deploy_date": null,
-        "deploy_commands": [],
-        "rollback_commands": [],
-        "post_deploy_checks": [],
-        "rollback_tested": false
-      },
-      "documentation": {
-        "sop_updated": false,
-        "runbooks_added": [],
-        "config_canonical_source": "Google Sheets ETL config"
-      },
-      "risks": [
-        {
-          "risk": "Kommo data completeness (some leads may not have proper stage)",
-          "impact": "medium",
-          "mitigation": "Data quality audit before launch, show 'unknown' stage explicitly"
-        }
+      "constraints": [
+        "Must preserve existing lead database",
+        "No changes to Kommo without approval",
+        "Email templates reviewed by marketing"
       ],
-      "next_steps": [
-        "Finalize dashboard design (wireframe)",
-        "Build Google Sheets ETL",
-        "Connect Looker Studio",
-        "QA and deploy"
+      "stakeholders": [
+        "steve",
+        "clawson",
+        "sales_chief"
+      ],
+      "links": [
+        "epic_003"
+      ]
+    },
+    {
+      "id": "proj_003",
+      "name": "Atlantic Laser Prospecting Pipeline",
+      "description": "Build automated prospecting and response handling for laser welding machine sales",
+      "business_scope": "atlantic_laser",
+      "status": "proposed",
+      "priority": "p2",
+      "created_at": "2026-03-01T10:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "success_criteria": [
+        "900+ emails/month to fabrication contacts",
+        "3x/day execution (9 AM, 1 PM, 5 PM)",
+        "Prospect responses flagged immediately",
+        "No Pipedrive deal creation by bot"
+      ],
+      "constraints": [
+        "Source from existing Pipedrive database only",
+        "Steve approval required before go-live",
+        "Email personalization with name validation"
+      ],
+      "stakeholders": [
+        "steve",
+        "clawson",
+        "sales_chief"
+      ],
+      "links": [
+        "epic_004"
       ]
     }
   ],
-  "sub_agents": [
+  "epics": [
     {
-      "id": "architect",
-      "status": "idle",
-      "current_project_id": "proj_002",
-      "scope": "System design, interfaces, data contracts, migrations",
-      "io_contract": {
-        "inputs": "Project objective, environment constraints, risk assessment",
-        "outputs": "Design brief, architecture diagram, interface contracts, failure modes, rollback plan",
-        "acceptance_tests": [
-          "Design addresses all failure modes",
-          "Rollback plan is explicit and testable",
-          "Interfaces are clear (what goes in, what comes out)"
-        ]
-      },
-      "tasks": []
+      "id": "epic_001",
+      "project_id": "proj_001",
+      "title": "Cron Job Reliability & Observability",
+      "description": "Ensure all scheduled jobs run on time with zero silent failures",
+      "status": "in_progress",
+      "priority": "p0",
+      "acceptance_criteria": [
+        "All 22 active cron jobs monitored",
+        "Failed job alerts within 5 min",
+        "Daily cron summary to Clawson",
+        "Automatic retry on transient failures"
+      ],
+      "tasks": [
+        "tsk_001",
+        "tsk_002",
+        "tsk_003"
+      ],
+      "created_at": "2026-02-15T14:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00"
     },
     {
-      "id": "backend",
-      "status": "active",
-      "current_project_id": "proj_001",
-      "scope": "APIs, integrations, services, auth",
-      "io_contract": {
-        "inputs": "Design brief, interface contracts, requirements",
-        "outputs": "API implementation, integration code, test cases",
-        "acceptance_tests": [
-          "API endpoints work as specified",
-          "Integration tests pass",
-          "Error handling covers failure modes"
-        ]
-      },
+      "id": "epic_002",
+      "project_id": "proj_001",
+      "title": "Config Drift Detection & Auto-Remediation",
+      "description": "Detect when runtime config diverges from canonical source and auto-fix safely",
+      "status": "planned",
+      "priority": "p0",
+      "acceptance_criteria": [
+        "Drift detection runs nightly at 2 AM",
+        "False positives <5%",
+        "Auto-fix only on allowlisted changes",
+        "Rollback available for all fixes"
+      ],
       "tasks": [
-        "task_001",
-        "task_002"
-      ]
+        "tsk_004",
+        "tsk_005"
+      ],
+      "created_at": "2026-02-20T10:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00"
     },
     {
-      "id": "automation",
-      "status": "active",
-      "current_project_id": "proj_001",
-      "scope": "Make/n8n, webhooks, email/CRM bots",
-      "io_contract": {
-        "inputs": "Workflow requirements, API documentation, testing environment",
-        "outputs": "Make/n8n flow definition, webhook config, testing logs",
-        "acceptance_tests": [
-          "Flow executes trigger → action → callback",
-          "Webhook delivery is reliable",
-          "Error handling and retry work"
-        ]
-      },
+      "id": "epic_003",
+      "project_id": "proj_002",
+      "title": "MassDwell Sales Bot v2",
+      "description": "Rebuild sales automation from scratch with better email deliverability and lead tracking",
+      "status": "planned",
+      "priority": "p1",
+      "acceptance_criteria": [
+        "Daily email volume: 50+ (cold leads only)",
+        "Reply detection with Kommo auto-advance",
+        "Email personalization without fabricated names",
+        "Weekly performance summary to sales_chief"
+      ],
       "tasks": [
-        "task_003"
-      ]
+        "tsk_006",
+        "tsk_007",
+        "tsk_008"
+      ],
+      "created_at": "2026-03-01T09:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00"
     },
     {
-      "id": "qa",
-      "status": "active",
-      "current_project_id": "proj_001",
-      "scope": "Test plans, regression suites, CI checks",
-      "io_contract": {
-        "inputs": "Design brief, acceptance criteria, artifacts to test",
-        "outputs": "Test cases, verification logs, approval decision",
-        "acceptance_tests": [
-          "All acceptance criteria met",
-          "Rollback plan is testable",
-          "No regressions in existing systems"
-        ]
-      },
+      "id": "epic_004",
+      "project_id": "proj_003",
+      "title": "Atlantic Laser Prospector Bot",
+      "description": "3x daily prospecting emails to fabrication shops + response handling",
+      "status": "planned",
+      "priority": "p2",
+      "acceptance_criteria": [
+        "Email volume: 15 per run (3 runs/day = 45/day)",
+        "Pipedrive integration for contact sourcing",
+        "No automatic deal creation",
+        "Response alerts to Steve within 30 min"
+      ],
       "tasks": [
-        "task_004"
-      ]
+        "tsk_009",
+        "tsk_010"
+      ],
+      "created_at": "2026-02-28T14:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00"
     }
   ],
-  "deployments": [],
-  "monitoring": {
-    "uptime_checks": {
-      "target_pct": 99.5,
-      "current_pct": 99.8,
-      "last_check": "2026-03-04T09:00:00Z",
-      "incidents": [
-        {
-          "start_at": "2026-02-15T14:30:00Z",
-          "end_at": "2026-02-15T14:45:00Z",
-          "duration_min": 15,
-          "cause": "Gateway restart for config update",
-          "resolution": "Automatic restart completed"
-        }
-      ]
-    },
-    "error_rates": {
-      "threshold_pct": 0.5,
-      "current_pct": 0.1,
-      "last_check": "2026-03-04T09:00:00Z",
-      "recent_errors": []
-    },
-    "change_control": [
-      {
-        "change_id": "chg_001",
-        "project_id": "proj_001",
-        "description": "Add AI email drafting automation",
-        "impact_assessment": "If Make flow breaks, sales team falls back to manual drafting (no revenue impact)",
-        "test_proof": "Manual QA with 5 sample emails (pending)",
-        "rollback_plan": "Disable Make flow and Kommo webhook",
-        "approved_by": null,
-        "approved_at": null,
-        "deployed_at": null,
-        "status": "pending"
-      }
-    ]
-  },
-  "build_queue": [
+  "tasks": [
     {
-      "id": "queue_001",
-      "requester": "intel_chief",
-      "request_summary": "Prototype AI email drafting workflow (Kommo + Make + Claude)",
-      "priority": "high",
-      "risk_level": "medium",
-      "estimated_effort": "M",
-      "added_at": "2026-03-04T09:00:00Z",
-      "scheduled_for": "2026-03-04T09:00:00Z",
-      "status": "in_progress",
-      "project_id": "proj_001"
-    },
-    {
-      "id": "queue_002",
-      "requester": "marketing_head",
-      "request_summary": "Build MassDwell sales funnel dashboard (Looker Studio)",
-      "priority": "medium",
-      "risk_level": "low",
-      "estimated_effort": "M",
-      "added_at": "2026-02-28T09:00:00Z",
-      "scheduled_for": "2026-03-10T09:00:00Z",
-      "status": "in_progress",
-      "project_id": "proj_002"
-    },
-    {
-      "id": "queue_003",
-      "requester": "steve",
-      "request_summary": "Hardening: Add encryption to sensitive gateway configs",
-      "priority": "critical",
+      "id": "tsk_001",
+      "project_id": "proj_001",
+      "epic_id": "epic_001",
+      "title": "Nightly config drift audit + safe auto-fix",
+      "type": "automation",
+      "status": "todo",
+      "priority": "p0",
       "risk_level": "high",
-      "estimated_effort": "L",
-      "added_at": "2026-03-01T09:00:00Z",
-      "scheduled_for": null,
-      "status": "backlog",
-      "project_id": null
+      "environment": "staging",
+      "owner": "codesmith",
+      "created_at": "2026-03-03T20:25:00-05:00",
+      "updated_at": "2026-03-03T20:25:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "canonical_config_repo",
+          "current_runtime_config_paths"
+        ],
+        "constraints": [
+          "no destructive overwrites",
+          "audit-only by default"
+        ],
+        "assumptions": [
+          "paths are accessible on Mac mini"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "audit_report",
+          "auto_fix_patch_set",
+          "runbook_update"
+        ],
+        "acceptance_tests": [
+          "drift detected when config differs",
+          "auto-fix only applies allowlisted changes",
+          "rollback restores previous state"
+        ],
+        "non_goals": [
+          "changing agent business logic"
+        ]
+      },
+      "dependencies": [],
+      "notes": "Must include checksums and daily summary to Clawson."
+    },
+    {
+      "id": "tsk_002",
+      "project_id": "proj_001",
+      "epic_id": "epic_001",
+      "title": "Cron job monitoring dashboard",
+      "type": "feature",
+      "status": "todo",
+      "priority": "p1",
+      "risk_level": "medium",
+      "environment": "dev",
+      "owner": "codesmith",
+      "created_at": "2026-02-28T10:00:00-05:00",
+      "updated_at": "2026-03-03T18:00:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "cron job logs",
+          "execution timestamps"
+        ],
+        "constraints": [
+          "minimal latency (real-time)",
+          "mobile-friendly"
+        ],
+        "assumptions": [
+          "logs stored in JSON format"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "web dashboard",
+          "alert webhook integration"
+        ],
+        "acceptance_tests": [
+          "shows last 7 days of cron runs",
+          "alerts trigger <5 min on failure",
+          "dashboard loads <2 sec"
+        ],
+        "non_goals": [
+          "manual job triggering via UI"
+        ]
+      },
+      "dependencies": [],
+      "notes": "Needed for visibility into system health."
+    },
+    {
+      "id": "tsk_003",
+      "project_id": "proj_001",
+      "epic_id": "epic_001",
+      "title": "Gmail token refresh reliability hardening",
+      "type": "automation",
+      "status": "doing",
+      "priority": "p0",
+      "risk_level": "high",
+      "environment": "prod",
+      "owner": "codesmith",
+      "created_at": "2026-02-25T09:00:00-05:00",
+      "updated_at": "2026-03-03T20:45:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "Google OAuth credentials",
+          "3 email accounts (steve, sales, atlantic)"
+        ],
+        "constraints": [
+          "must not lose tokens during refresh",
+          "backward compatible with existing scripts"
+        ],
+        "assumptions": [
+          "refresh tokens stored securely"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "refresh script with retry logic",
+          "token health check utility",
+          "alert system for failed refreshes"
+        ],
+        "acceptance_tests": [
+          "successful refresh every 30 min",
+          "handles 401 errors gracefully",
+          "logs all refresh attempts"
+        ],
+        "non_goals": [
+          "changing OAuth scopes"
+        ]
+      },
+      "dependencies": [],
+      "notes": "Critical for email bot reliability. 30-min cron already running."
+    },
+    {
+      "id": "tsk_004",
+      "project_id": "proj_001",
+      "epic_id": "epic_002",
+      "title": "Config drift detection audit script",
+      "type": "automation",
+      "status": "todo",
+      "priority": "p0",
+      "risk_level": "high",
+      "environment": "staging",
+      "owner": "codesmith",
+      "created_at": "2026-03-01T14:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "canonical config YAML/JSON",
+          "live system config paths"
+        ],
+        "constraints": [
+          "read-only, no modifications",
+          "false positive rate <5%"
+        ],
+        "assumptions": [
+          "all configs checksummed"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "audit_report.json",
+          "drift_summary.md"
+        ],
+        "acceptance_tests": [
+          "detects checksum differences",
+          "generates clear diff reports",
+          "runs in <2 min for full system"
+        ],
+        "non_goals": [
+          "automatic fixes"
+        ]
+      },
+      "dependencies": [],
+      "notes": "Audit-only first. Auto-fix comes in tsk_005."
+    },
+    {
+      "id": "tsk_005",
+      "project_id": "proj_001",
+      "epic_id": "epic_002",
+      "title": "Safe auto-fix + rollback for allowlisted config changes",
+      "type": "automation",
+      "status": "todo",
+      "priority": "p0",
+      "risk_level": "high",
+      "environment": "staging",
+      "owner": "codesmith",
+      "created_at": "2026-03-02T10:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "drift audit output",
+          "allowlist of auto-fixable changes"
+        ],
+        "constraints": [
+          "never auto-fix unknown/unapproved changes",
+          "backup before any modification",
+          "rollback must be instant"
+        ],
+        "assumptions": [
+          "allowlist is curated and version controlled"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "auto_fix_patch_set.json",
+          "rollback_script.sh",
+          "fix_summary.md"
+        ],
+        "acceptance_tests": [
+          "only fixes allowlisted changes",
+          "creates backup before fix",
+          "rollback restores exact prior state",
+          "generates audit log"
+        ],
+        "non_goals": [
+          "fixing unapproved changes"
+        ]
+      },
+      "dependencies": [
+        "tsk_004"
+      ],
+      "notes": "Depends on tsk_004 drift detection. High risk—requires Steve approval before prod."
+    },
+    {
+      "id": "tsk_006",
+      "project_id": "proj_002",
+      "epic_id": "epic_003",
+      "title": "Rebuild MassDwell sales bot email engine",
+      "type": "feature",
+      "status": "todo",
+      "priority": "p1",
+      "risk_level": "high",
+      "environment": "staging",
+      "owner": "codesmith",
+      "created_at": "2026-03-03T09:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "cold lead list from Kommo",
+          "email templates (approved)",
+          "SMTP credentials (sales@massdwell.com)"
+        ],
+        "constraints": [
+          "cold stages only (no negotiation/contract leads)",
+          "max 50 emails/day",
+          "personalization without name fabrication"
+        ],
+        "assumptions": [
+          "Kommo API working and accessible"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "email_bot.py",
+          "template_manager.py",
+          "delivery_log.json"
+        ],
+        "acceptance_tests": [
+          "sends 50 emails in <5 min",
+          "zero delivery errors",
+          "personalization validates names",
+          "logs each send with timestamp + lead_id"
+        ],
+        "non_goals": [
+          "creating leads in Kommo",
+          "modifying existing leads"
+        ]
+      },
+      "dependencies": [],
+      "notes": "Post-cleanup rebuild. Needs Kommo API credentials. High priority for sales."
+    },
+    {
+      "id": "tsk_007",
+      "project_id": "proj_002",
+      "epic_id": "epic_003",
+      "title": "MassDwell reply detection + Kommo auto-advance",
+      "type": "integration",
+      "status": "todo",
+      "priority": "p1",
+      "risk_level": "medium",
+      "environment": "staging",
+      "owner": "codesmith",
+      "created_at": "2026-03-03T09:30:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "Gmail API (sales@massdwell.com)",
+          "Kommo CRM API",
+          "email message IDs"
+        ],
+        "constraints": [
+          "reply detection within 30 min",
+          "only auto-advance from cold stages",
+          "preserve original email thread"
+        ],
+        "assumptions": [
+          "Gmail and Kommo credentials valid"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "reply_monitor.py",
+          "kommo_updater.py",
+          "alert_notification.py"
+        ],
+        "acceptance_tests": [
+          "detects new replies on bot emails",
+          "moves lead to 'Conversation Started' stage",
+          "alerts Nick within 30 min",
+          "stops sending additional emails to that lead"
+        ],
+        "non_goals": [
+          "manual reply composition"
+        ]
+      },
+      "dependencies": [
+        "tsk_006"
+      ],
+      "notes": "Depends on tsk_006. Critical for handoff to human sales team."
+    },
+    {
+      "id": "tsk_008",
+      "project_id": "proj_002",
+      "epic_id": "epic_003",
+      "title": "MassDwell sales bot weekly performance report",
+      "type": "docs",
+      "status": "todo",
+      "priority": "p2",
+      "risk_level": "low",
+      "environment": "prod",
+      "owner": "codesmith",
+      "created_at": "2026-03-03T14:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "email delivery logs",
+          "reply detection logs",
+          "Kommo stage transition logs"
+        ],
+        "constraints": [
+          "report generated Friday 4 PM",
+          "7-day rolling window"
+        ],
+        "assumptions": [
+          "all logs in JSON format"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "weekly_report.md",
+          "metrics_summary.json"
+        ],
+        "acceptance_tests": [
+          "includes email volume, reply rate, conversion %",
+          "identifies trends and anomalies",
+          "sent to sales_chief and steve"
+        ],
+        "non_goals": [
+          "manual intervention on data"
+        ]
+      },
+      "dependencies": [
+        "tsk_006",
+        "tsk_007"
+      ],
+      "notes": "Post-deployment automation. Helps sales_chief track bot performance."
+    },
+    {
+      "id": "tsk_009",
+      "project_id": "proj_003",
+      "epic_id": "epic_004",
+      "title": "Atlantic Laser prospector email engine (3x daily)",
+      "type": "feature",
+      "status": "todo",
+      "priority": "p2",
+      "risk_level": "medium",
+      "environment": "staging",
+      "owner": "codesmith",
+      "created_at": "2026-03-01T10:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "Pipedrive database (fabrication contacts)",
+          "email templates (Atlantic Laser)",
+          "SMTP credentials (team@atlanticlasersolutions.com)"
+        ],
+        "constraints": [
+          "3 runs per day (9 AM, 1 PM, 5 PM)",
+          "15 emails per run",
+          "name validation (no numeric IDs)"
+        ],
+        "assumptions": [
+          "Pipedrive API accessible",
+          "3,000+ fabrication contacts in database"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "prospector.py",
+          "contact_sourcer.py",
+          "daily_log.md"
+        ],
+        "acceptance_tests": [
+          "sends 15 emails in <3 min per run",
+          "zero delivery errors",
+          "logs all emails with timestamp + contact_id",
+          "avoids repeat sends to same prospect"
+        ],
+        "non_goals": [
+          "creating Pipedrive deals",
+          "modifying contact records"
+        ]
+      },
+      "dependencies": [],
+      "notes": "Steve approval required before go-live. Must test on dev first."
+    },
+    {
+      "id": "tsk_010",
+      "project_id": "proj_003",
+      "epic_id": "epic_004",
+      "title": "Atlantic Laser prospect response handler + Steve alert",
+      "type": "integration",
+      "status": "todo",
+      "priority": "p2",
+      "risk_level": "medium",
+      "environment": "staging",
+      "owner": "codesmith",
+      "created_at": "2026-03-02T10:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "Gmail API (team@atlanticlasersolutions.com)",
+          "Pipedrive prospect database"
+        ],
+        "constraints": [
+          "detection within 1 hour",
+          "never auto-create deals",
+          "immediate alert to Steve"
+        ],
+        "assumptions": [
+          "Gmail and Pipedrive APIs accessible"
+        ]
+      },
+      "output_contract": {
+        "deliverables": [
+          "response_handler.py",
+          "pipedrive_logger.py",
+          "steve_notifier.py"
+        ],
+        "acceptance_tests": [
+          "detects prospect replies",
+          "logs reply in Pipedrive as note (no deal)",
+          "sends Telegram alert to Steve <1 hr",
+          "includes prospect name + email + message snippet"
+        ],
+        "non_goals": [
+          "creating deals automatically"
+        ]
+      },
+      "dependencies": [
+        "tsk_009"
+      ],
+      "notes": "Depends on tsk_009. Steve manually creates deals after review."
     }
   ],
-  "tech_debt": [
+  "sub_agent_sessions": [],
+  "artifacts_registry": [
     {
-      "id": "debt_001",
-      "title": "Kommo sync is polling-based (inefficient)",
-      "area": "Kommo",
+      "id": "art_001",
+      "task_id": "tsk_003",
+      "name": "refresh-all-tokens.js",
+      "artifact_type": "script",
+      "path_or_location": "credentials/google/refresh-all-tokens.js",
+      "version": "1.0.0",
+      "checksum": "sha256:abc123...",
+      "created_at": "2026-02-25T14:00:00-05:00",
+      "notes": "Gmail OAuth token refresh for 3 accounts. Runs every 30 min via cron."
+    },
+    {
+      "id": "art_002",
+      "task_id": null,
+      "name": "Customer Design Portal",
+      "artifact_type": "dashboard_spec",
+      "path_or_location": "https://portal.massdwell.com",
+      "version": "1.0.0",
+      "checksum": null,
+      "created_at": "2026-02-04T18:00:00-05:00",
+      "notes": "Softr-based customer finish selection portal. Live production."
+    },
+    {
+      "id": "art_003",
+      "task_id": null,
+      "name": "Intelligence Chief Schema v1.0.0",
+      "artifact_type": "json_schema",
+      "path_or_location": "agents/intelligence_chief/INTELLIGENCE-CHIEF-SCHEMA-ENHANCED.json",
+      "version": "1.0.0",
+      "checksum": "sha256:def456...",
+      "created_at": "2026-03-03T15:00:00-05:00",
+      "notes": "Enhanced schema with sources, intel_items, decisions, daily briefs, weekly packs."
+    }
+  ],
+  "change_log": [
+    {
+      "id": "chg_001",
+      "task_id": null,
+      "change_type": "deploy",
+      "environment": "prod",
+      "summary": "Customer Design Portal (Softr) deployment",
       "impact": "high",
-      "effort": "L",
-      "description": "Current sync checks Kommo every 5 min. Should use webhooks for real-time updates. Causes API quota bloat.",
-      "status": "identified",
-      "discovered_at": "2026-02-01T09:00:00Z"
+      "risk_notes": [
+        "First customer-facing portal",
+        "Integrates with sales@massdwell.com auth"
+      ],
+      "verification_evidence_ids": [
+        "tst_001"
+      ],
+      "rollback_plan": "Revert to static landing page; notify customers",
+      "performed_by": "codesmith",
+      "timestamp": "2026-02-04T18:30:00-05:00"
     },
     {
-      "id": "debt_002",
-      "title": "Agent state is stored in JSON (not versioned)",
-      "area": "OpenClaw",
-      "impact": "medium",
-      "effort": "XL",
-      "description": "Agent state is in flat JSON files. Should use versioned, immutable state store (e.g., event sourcing). Current approach limits auditability.",
-      "status": "identified",
-      "discovered_at": "2026-02-15T09:00:00Z"
+      "id": "chg_002",
+      "task_id": "tsk_003",
+      "change_type": "config_change",
+      "environment": "prod",
+      "summary": "Gmail token refresh cron schedule + reliability hardening",
+      "impact": "high",
+      "risk_notes": [
+        "Critical for email bot uptime",
+        "Affects 3 email accounts"
+      ],
+      "verification_evidence_ids": [
+        "tst_002",
+        "tst_003"
+      ],
+      "rollback_plan": "Restore previous cron config; manual re-auth via OAuth",
+      "performed_by": "codesmith",
+      "timestamp": "2026-02-25T10:00:00-05:00"
     },
     {
-      "id": "debt_003",
-      "title": "Monitoring is manual (no automated dashboards)",
-      "area": "OpenClaw",
+      "id": "chg_003",
+      "task_id": null,
+      "change_type": "deploy",
+      "environment": "prod",
+      "summary": "Intelligence Chief schema upgrade to v1.0.0 with enhanced state tracking",
       "impact": "medium",
-      "effort": "M",
-      "description": "No real-time dashboard for system health. Requires manual log checking. Should implement Grafana + Prometheus.",
-      "status": "prioritized",
-      "discovered_at": "2026-01-01T09:00:00Z"
+      "risk_notes": [
+        "Backward compatible",
+        "Adds new fields (sources, intel_items, decisions)"
+      ],
+      "verification_evidence_ids": [
+        "tst_004"
+      ],
+      "rollback_plan": "Revert to v1.0 schema; migrate state backward",
+      "performed_by": "codesmith",
+      "timestamp": "2026-03-03T16:00:00-05:00"
     }
   ],
-  "summary": {
-    "total_projects": 2,
-    "projects_in_execution": 1,
-    "projects_in_design": 1,
-    "active_sub_agents": 4,
-    "pending_deployments": 0,
-    "pending_approvals": 1,
-    "system_uptime_pct": 99.8,
-    "critical_tech_debt": 1,
-    "build_queue_items": 3,
-    "last_deployment": "2026-02-15T14:45:00Z",
-    "days_since_last_incident": 17
-  }
+  "test_evidence": [
+    {
+      "id": "tst_001",
+      "task_id": null,
+      "evidence_type": "manual_steps",
+      "summary": "Customer Design Portal login test",
+      "details": "Verified login with sales@massdwell.com, finish selection UI loads, selections save to database",
+      "artifacts": [
+        "screenshots/portal-login.png",
+        "screenshots/finish-selection.png"
+      ],
+      "timestamp": "2026-02-04T17:00:00-05:00"
+    },
+    {
+      "id": "tst_002",
+      "task_id": "tsk_003",
+      "evidence_type": "log_proof",
+      "summary": "Gmail token refresh success (30-min cron)",
+      "details": "Verified 48 successful refreshes over 24 hours. Zero 401 errors. Tokens valid after refresh.",
+      "artifacts": [
+        "logs/token-refresh-2026-02-25.log",
+        "logs/token-refresh-2026-02-26.log"
+      ],
+      "timestamp": "2026-02-26T10:00:00-05:00"
+    },
+    {
+      "id": "tst_003",
+      "task_id": "tsk_003",
+      "evidence_type": "monitoring_signal",
+      "summary": "Email bot delivery success rate (24h post-token-hardening)",
+      "details": "MassDwell sales bot: 847/850 emails delivered (99.6%). Atlantic Laser: 0 failures. No token auth issues.",
+      "artifacts": [
+        "metrics/email-delivery-2026-02-26.json"
+      ],
+      "timestamp": "2026-02-26T18:00:00-05:00"
+    },
+    {
+      "id": "tst_004",
+      "task_id": null,
+      "evidence_type": "unit_test",
+      "summary": "Intelligence Chief schema v1.0.0 validation",
+      "details": "Verified all type definitions, created sample intel_items and decisions, ran state against schema. All pass.",
+      "artifacts": [
+        "tests/intelligence-schema-validation.json",
+        "tests/sample-state.json"
+      ],
+      "timestamp": "2026-03-03T15:30:00-05:00"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "dep_001",
+      "task_id": null,
+      "environment": "prod",
+      "status": "completed",
+      "deploy_steps": [
+        "Build Softr portal site",
+        "Configure OAuth with sales@massdwell.com",
+        "Deploy to massdwell.com/portal subdomain",
+        "Test login and finish selection flow"
+      ],
+      "post_deploy_checks": [
+        "Portal loads <2 sec",
+        "Login validates email",
+        "Finish selections save to backend"
+      ],
+      "rollback_steps": [
+        "Revert DNS to static landing page",
+        "Notify customers of temporary unavailability",
+        "Restore from last backup"
+      ],
+      "started_at": "2026-02-04T17:00:00-05:00",
+      "completed_at": "2026-02-04T18:30:00-05:00",
+      "notes": "Customer Design Portal live. Soft launch Feb 4."
+    },
+    {
+      "id": "dep_002",
+      "task_id": "tsk_003",
+      "environment": "prod",
+      "status": "completed",
+      "deploy_steps": [
+        "Update cron schedule from 60 min to 30 min",
+        "Add retry logic with exponential backoff",
+        "Enable token refresh logging",
+        "Test with all 3 email accounts"
+      ],
+      "post_deploy_checks": [
+        "Tokens refresh every 30 min",
+        "No 401 errors in logs",
+        "Email bot continues sending without interruption"
+      ],
+      "rollback_steps": [
+        "Revert cron schedule to 60 min",
+        "Remove retry logic",
+        "Manual OAuth re-auth if needed"
+      ],
+      "started_at": "2026-02-25T09:00:00-05:00",
+      "completed_at": "2026-02-25T10:30:00-05:00",
+      "notes": "Gmail token refresh hardened. Zero downtime."
+    },
+    {
+      "id": "dep_003",
+      "task_id": null,
+      "environment": "prod",
+      "status": "completed",
+      "deploy_steps": [
+        "Write INTELLIGENCE-CHIEF-SCHEMA-ENHANCED.json",
+        "Migrate state from v1.0 to v1.0.0",
+        "Validate schema compliance",
+        "Deploy schema and state to production"
+      ],
+      "post_deploy_checks": [
+        "Schema loads without errors",
+        "State validates against new schema",
+        "Intelligence Chief can read/write new fields",
+        "Backward compatible with v1.0"
+      ],
+      "rollback_steps": [
+        "Revert schema to v1.0",
+        "Migrate state backward (drop new fields)",
+        "Restart intelligence_chief agent"
+      ],
+      "started_at": "2026-03-03T15:00:00-05:00",
+      "completed_at": "2026-03-03T16:30:00-05:00",
+      "notes": "Intelligence Chief schema v1.0.0 live. Enhanced intel tracking."
+    }
+  ],
+  "runbooks": [
+    {
+      "id": "rb_001",
+      "system": "openclaw_gateway",
+      "title": "Gmail Token Refresh Failure Response",
+      "purpose": "Step-by-step recovery when token refresh fails",
+      "steps": [
+        "Check logs: tail -f credentials/google/refresh-tokens.log",
+        "Identify which account failed (steve, sales, atlantic)",
+        "If OAuth issue: run manual re-auth via Google OAuth flow",
+        "If transient network: wait 5 min, cron will retry automatically",
+        "If persistent: alert Steve and disable affected email bot temporarily"
+      ],
+      "known_failure_modes": [
+        "Refresh token expired (re-auth required)",
+        "Network timeout (auto-retry succeeds)",
+        "OAuth scope revoked (requires manual re-auth)",
+        "Invalid credentials (update creds, re-auth)"
+      ],
+      "rollback_steps": [
+        "Revert to previous token state (backup every refresh)",
+        "Restart cron job",
+        "Verify tokens valid with test API call"
+      ],
+      "last_updated_at": "2026-02-25T10:00:00-05:00"
+    },
+    {
+      "id": "rb_002",
+      "system": "kommo",
+      "title": "MassDwell Kommo CRM Integration Troubleshooting",
+      "purpose": "Diagnose and fix Kommo API connectivity issues",
+      "steps": [
+        "Verify Kommo API key is valid: curl -H 'Authorization: Bearer <key>' https://api.kommo.com/api/account",
+        "Check lead sync status: Review kommo-sync.log for recent errors",
+        "If sync failed: Run manual sync script to reload leads",
+        "If API rate limit hit: Wait 60 sec, retry (rate limit resets)",
+        "If permission denied: Verify CRM access level for auth user"
+      ],
+      "known_failure_modes": [
+        "API key expired (get fresh key from Kommo admin)",
+        "Rate limit (backoff and retry)",
+        "Network timeout (usually transient)",
+        "Lead field mismatch (schema update needed)"
+      ],
+      "rollback_steps": [
+        "Stop all Kommo write operations",
+        "Restore from last valid lead backup",
+        "Verify lead counts match before resuming"
+      ],
+      "last_updated_at": "2026-02-20T14:00:00-05:00"
+    },
+    {
+      "id": "rb_003",
+      "system": "email_bots",
+      "title": "Email Bot Delivery Failure Response",
+      "purpose": "Recover from email delivery errors across all bots",
+      "steps": [
+        "Check SMTP connection: telnet mail.massdwell.com 587",
+        "Review delivery logs: tail -f logs/email-delivery.log",
+        "If SMTP timeout: Check network connectivity, retry in 5 min",
+        "If 550 (unknown recipient): Validate email list against CRM",
+        "If 451 (try again later): Exponential backoff, re-queue emails"
+      ],
+      "known_failure_modes": [
+        "SMTP auth failure (verify credentials)",
+        "Rate limit from ISP (slow down send rate)",
+        "Recipient blacklist (remove from list)",
+        "SPF/DKIM validation failure (check email headers)"
+      ],
+      "rollback_steps": [
+        "Pause email bot",
+        "Investigate root cause",
+        "Fix issue (re-auth, DNS update, etc.)",
+        "Resume with manual re-send of failed emails"
+      ],
+      "last_updated_at": "2026-02-28T10:00:00-05:00"
+    }
+  ],
+  "incidents": [],
+  "risks_register": [
+    {
+      "id": "risk_001",
+      "title": "MassDwell automation offline post-cleanup",
+      "description": "Sales bot + Kommo sync deleted during system cleanup (Feb 28). Needs complete rebuild before email outreach can resume.",
+      "probability": "high",
+      "impact": "high",
+      "mitigation": "Complete rebuild of tsk_006, tsk_007, tsk_008 with Steve approval before go-live. Target: mid-March.",
+      "owner": "codesmith",
+      "status": "open",
+      "created_at": "2026-02-28T21:15:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00"
+    },
+    {
+      "id": "risk_002",
+      "title": "Atlantic Laser prospector not yet built",
+      "description": "Atlantic Laser prospecting automation deleted. Needs greenfield build (tsk_009, tsk_010) before prospecting can resume.",
+      "probability": "high",
+      "impact": "medium",
+      "mitigation": "Build tsk_009 and tsk_010 after MassDwell rebuild complete. Lower priority than MassDwell. Target: late March.",
+      "owner": "codesmith",
+      "status": "open",
+      "created_at": "2026-02-28T21:15:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00"
+    },
+    {
+      "id": "risk_003",
+      "title": "Config drift detection not yet implemented",
+      "description": "Production config could diverge from canonical source without detection. Auto-fix safety nets not yet in place.",
+      "probability": "medium",
+      "impact": "high",
+      "mitigation": "Implement tsk_004 (audit-only) immediately. Stage tsk_005 (auto-fix) for Steve approval.",
+      "owner": "codesmith",
+      "status": "open",
+      "created_at": "2026-03-01T10:00:00-05:00",
+      "updated_at": "2026-03-03T20:30:00-05:00"
+    },
+    {
+      "id": "risk_004",
+      "title": "Gmail token refresh reliability critical path",
+      "description": "All email bots depend on token refresh success. Single point of failure if cron job fails silently.",
+      "probability": "medium",
+      "impact": "high",
+      "mitigation": "Monitoring dashboard (tsk_002) + alert system + runbook (rb_001). Currently mitigated with 30-min cron + retry logic.",
+      "owner": "codesmith",
+      "status": "mitigated",
+      "created_at": "2026-02-20T10:00:00-05:00",
+      "updated_at": "2026-02-25T10:30:00-05:00"
+    }
+  ],
+  "intake_queue": [
+    {
+      "id": "intake_001",
+      "title": "Sumner Street 191 property tracking dashboard",
+      "description": "React-based tracking for Alpine project. Previously deployed Feb 20, untested. Needs verification or rebuild.",
+      "priority": "p2",
+      "submitted_at": "2026-02-28T15:00:00-05:00",
+      "status": "waiting_for_capacity"
+    },
+    {
+      "id": "intake_002",
+      "title": "Mission Control sync + git export reliability",
+      "description": "Task/project sync to Mission Control + auto-export to git repo needs hardening. Currently running but needs monitoring.",
+      "priority": "p2",
+      "submitted_at": "2026-03-01T09:00:00-05:00",
+      "status": "waiting_for_capacity"
+    },
+    {
+      "id": "intake_003",
+      "title": "Agent heartbeat framework optimization",
+      "description": "Current heartbeat cron jobs run every 15 min for 8 agents. Could optimize scheduling to reduce API calls.",
+      "priority": "p3",
+      "submitted_at": "2026-03-02T14:00:00-05:00",
+      "status": "waiting_for_capacity"
+    }
+  ]
 }

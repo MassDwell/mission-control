@@ -1,210 +1,266 @@
 {
-  "schema_version": "1.0",
-  "agent_id": "codesmith",
+  "schema_version": "1.0.0",
+  "agent_id": "codesmith_cto",
   "owner": {
     "name": "Steve Vettori",
     "timezone": "America/New_York"
   },
-  "state_structure": {
-    "projects": [
-      {
-        "id": "string (proj_001, proj_002, etc)",
-        "name": "string (human-readable project name)",
-        "scope": "string (OpenClaw | Kommo | QuickBooks | Dashboard | Automation | Tooling | Other)",
-        "objective": "string (what are we building?)",
-        "status": "intake | design | execution | verification | deployed | archived",
-        "risk_level": "low | medium | high",
-        "deadline": "ISO8601 date or null",
-        "created_at": "ISO8601",
-        "updated_at": "ISO8601",
-        "owner": "codesmith | sub_agent_name",
-        "assigned_sub_agents": ["architect", "backend", "automation", "frontend", "qa", "sre", "security", "data"],
-        "design_brief": {
-          "architecture_approach": "string",
-          "interfaces_contracts": "string",
-          "dependencies": ["string"],
-          "failure_modes": ["string"],
-          "rollback_plan": "string",
-          "tests_verification_plan": "string"
-        },
-        "tasks": [
-          {
-            "id": "string (task_001, etc)",
-            "title": "string (safe, foundational piece)",
-            "status": "todo | in_progress | in_review | done | blocked",
-            "subtask_of": "string or null",
-            "assigned_to": "sub_agent_name",
-            "due_at": "ISO8601",
-            "pr_url": "string or null",
-            "verified": "boolean",
-            "verification_method": "tests | logs | manual | checklist"
-          }
-        ],
-        "artifacts": [
-          {
-            "id": "string",
-            "type": "file | script | config | dashboard | integration",
-            "path": "string (file path or URL)",
-            "purpose": "string (what does this do?)",
-            "status": "draft | staged | prod",
-            "breaking_change": "boolean",
-            "requires_migration": "boolean"
-          }
-        ],
-        "verification": {
-          "test_coverage_pct": "number",
-          "test_results": "passed | failed | pending",
-          "manual_verification": "string (steps performed)",
-          "logs_proof": "string (log entries showing success)",
-          "expected_output": "string (what should happen?)",
-          "actual_output": "string (what actually happened?)"
-        },
-        "deployment": {
-          "stage": "dev | staging | prod",
-          "deploy_date": "ISO8601 or null",
-          "deploy_commands": ["string"],
-          "rollback_commands": ["string"],
-          "post_deploy_checks": ["string"],
-          "rollback_tested": "boolean"
-        },
-        "documentation": {
-          "sop_updated": "boolean",
-          "runbooks_added": ["string"],
-          "config_canonical_source": "string (where is the source of truth?)"
-        },
-        "risks": [
-          {
-            "risk": "string (what could go wrong?)",
-            "impact": "low | medium | high",
-            "mitigation": "string"
-          }
-        ],
-        "next_steps": ["string (follow-ups or dependencies)"]
-      }
+  "operating_rules": {
+    "no_fabricated_verification": true,
+    "no_breaking_changes_without_migration": true,
+    "no_prod_change_without_rollback": true,
+    "no_silent_permission_expansion": true,
+    "no_sensitive_data_changes_without_approval": true,
+    "verification_gate_required": true
+  },
+  "team_model": {
+    "sub_agents_supported": true,
+    "default_roles": [
+      "architect",
+      "backend_engineer",
+      "automation_engineer",
+      "frontend_engineer",
+      "qa_engineer",
+      "sre_reliability",
+      "security_reviewer",
+      "data_engineer"
     ],
-    "sub_agents": [
-      {
-        "id": "string (architect | backend | automation | frontend | qa | sre | security | data)",
-        "status": "idle | active | waiting",
-        "current_project_id": "string or null",
-        "scope": "string (what does this sub-agent do?)",
-        "io_contract": {
-          "inputs": "string (what goes in?)",
-          "outputs": "string (what comes out?)",
-          "acceptance_tests": ["string"]
-        },
-        "tasks": ["task_id_list"]
+    "spawn_policy": {
+      "requires_task_id": true,
+      "requires_io_contract": true,
+      "requires_acceptance_tests": true,
+      "max_parallel_sub_agents": 6
+    }
+  },
+  "environments": {
+    "dev": {
+      "enabled": true,
+      "notes": "Safe experimentation environment"
+    },
+    "staging": {
+      "enabled": true,
+      "notes": "Integration verification environment"
+    },
+    "prod": {
+      "enabled": true,
+      "notes": "Validated builds only"
+    }
+  },
+  "state": {
+    "intake_queue": [],
+    "projects": [],
+    "epics": [],
+    "tasks": [],
+    "sub_agent_sessions": [],
+    "artifacts_registry": [],
+    "change_log": [],
+    "test_evidence": [],
+    "deployments": [],
+    "runbooks": [],
+    "incidents": [],
+    "risks_register": [],
+    "permissions_matrix": {
+      "tools_allowed": [],
+      "secrets_handling_policy": {
+        "store_secrets": false,
+        "redact_secrets_in_logs": true
       }
-    ],
-    "deployments": [
-      {
-        "id": "string (deploy_001, etc)",
-        "project_id": "string",
-        "stage": "dev | staging | prod",
-        "deployed_at": "ISO8601",
-        "deployed_by": "codesmith",
-        "artifacts_deployed": ["string (artifact ids)"],
-        "status": "success | failed | rolled_back",
-        "rollback_at": "ISO8601 or null",
-        "rollback_reason": "string or null",
-        "changes": ["string (what changed?)"],
-        "verification_passed": "boolean"
-      }
-    ],
-    "monitoring": {
-      "uptime_checks": {
-        "target_pct": 99.5,
-        "current_pct": 0,
-        "last_check": "ISO8601",
-        "incidents": [
-          {
-            "start_at": "ISO8601",
-            "end_at": "ISO8601",
-            "duration_min": "number",
-            "cause": "string",
-            "resolution": "string"
-          }
+    }
+  },
+  "types": {
+    "project": {
+      "id": null,
+      "name": null,
+      "description": null,
+      "business_scope": "openclaw|massdwell|atlantic_laser|alpine|cross_business",
+      "status": "proposed|active|paused|complete|archived",
+      "priority": "p0|p1|p2|p3",
+      "created_at": null,
+      "updated_at": null,
+      "success_criteria": [],
+      "constraints": [],
+      "stakeholders": ["steve", "clawson"],
+      "links": []
+    },
+    "epic": {
+      "id": null,
+      "project_id": null,
+      "title": null,
+      "description": null,
+      "status": "planned|in_progress|done|blocked",
+      "priority": "p0|p1|p2|p3",
+      "acceptance_criteria": [],
+      "tasks": [],
+      "created_at": null,
+      "updated_at": null
+    },
+    "task": {
+      "id": null,
+      "project_id": null,
+      "epic_id": null,
+      "title": null,
+      "type": "bug|feature|integration|automation|refactor|infra|docs|research",
+      "status": "todo|doing|waiting|in_review|done|canceled",
+      "priority": "p0|p1|p2|p3",
+      "risk_level": "low|medium|high",
+      "environment": "dev|staging|prod",
+      "owner": "codesmith|sub_agent|steve|other",
+      "created_at": null,
+      "updated_at": null,
+      "input_contract": {
+        "inputs": [],
+        "constraints": [],
+        "assumptions": []
+      },
+      "output_contract": {
+        "deliverables": [],
+        "acceptance_tests": [],
+        "non_goals": []
+      },
+      "dependencies": [],
+      "notes": null
+    },
+    "sub_agent_session": {
+      "id": null,
+      "task_id": null,
+      "role": "architect|backend_engineer|automation_engineer|frontend_engineer|qa_engineer|sre_reliability|security_reviewer|data_engineer",
+      "status": "spawned|working|delivered|dismissed",
+      "io_contract": {
+        "input": null,
+        "output": null,
+        "acceptance_tests": []
+      },
+      "deliverable_summary": null,
+      "artifacts_produced": [],
+      "verification_notes": null,
+      "created_at": null,
+      "updated_at": null
+    },
+    "artifact": {
+      "id": null,
+      "task_id": null,
+      "name": null,
+      "artifact_type": "code|script|config|json_schema|doc|diagram|dashboard_spec|runbook",
+      "path_or_location": null,
+      "version": null,
+      "checksum": null,
+      "created_at": null,
+      "notes": null
+    },
+    "change_log_entry": {
+      "id": null,
+      "task_id": null,
+      "change_type": "deploy|config_change|migration|hotfix|rollback",
+      "environment": "dev|staging|prod",
+      "summary": null,
+      "impact": "low|medium|high",
+      "risk_notes": [],
+      "verification_evidence_ids": [],
+      "rollback_plan": null,
+      "performed_by": "codesmith|steve|other",
+      "timestamp": null
+    },
+    "test_evidence_item": {
+      "id": null,
+      "task_id": null,
+      "evidence_type": "unit_test|integration_test|manual_steps|log_proof|monitoring_signal",
+      "summary": null,
+      "details": null,
+      "artifacts": [],
+      "timestamp": null
+    },
+    "deployment": {
+      "id": null,
+      "task_id": null,
+      "environment": "dev|staging|prod",
+      "status": "planned|in_progress|completed|failed|rolled_back",
+      "deploy_steps": [],
+      "post_deploy_checks": [],
+      "rollback_steps": [],
+      "started_at": null,
+      "completed_at": null,
+      "notes": null
+    },
+    "runbook": {
+      "id": null,
+      "system": "openclaw_gateway|agent_runtime|kommo|quickbooks|email_bots|mission_control|other",
+      "title": null,
+      "purpose": null,
+      "steps": [],
+      "known_failure_modes": [],
+      "rollback_steps": [],
+      "last_updated_at": null
+    },
+    "incident": {
+      "id": null,
+      "severity": "sev1|sev2|sev3",
+      "system": null,
+      "summary": null,
+      "impact": null,
+      "detected_at": null,
+      "resolved_at": null,
+      "root_cause": null,
+      "fix": null,
+      "prevention": null,
+      "links": []
+    },
+    "risk_item": {
+      "id": null,
+      "title": null,
+      "description": null,
+      "probability": "low|medium|high",
+      "impact": "low|medium|high",
+      "mitigation": null,
+      "owner": "codesmith|steve|other",
+      "status": "open|mitigated|accepted",
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  "examples": {
+    "task_example": {
+      "id": "tsk_001",
+      "project_id": "proj_001",
+      "epic_id": "epic_001",
+      "title": "Nightly config drift audit + safe auto-fix",
+      "type": "automation",
+      "status": "todo",
+      "priority": "p0",
+      "risk_level": "high",
+      "environment": "staging",
+      "owner": "codesmith",
+      "created_at": "2026-03-03T20:25:00-05:00",
+      "updated_at": "2026-03-03T20:25:00-05:00",
+      "input_contract": {
+        "inputs": [
+          "canonical_config_repo",
+          "current_runtime_config_paths"
+        ],
+        "constraints": [
+          "no destructive overwrites",
+          "audit-only by default"
+        ],
+        "assumptions": [
+          "paths are accessible on Mac mini"
         ]
       },
-      "error_rates": {
-        "threshold_pct": 0.5,
-        "current_pct": 0,
-        "last_check": "ISO8601",
-        "recent_errors": ["string"]
+      "output_contract": {
+        "deliverables": [
+          "audit_report",
+          "auto_fix_patch_set",
+          "runbook_update"
+        ],
+        "acceptance_tests": [
+          "drift detected when config differs",
+          "auto-fix only applies allowlisted changes",
+          "rollback restores previous state"
+        ],
+        "non_goals": [
+          "changing agent business logic"
+        ]
       },
-      "change_control": [
-        {
-          "change_id": "string",
-          "project_id": "string",
-          "description": "string",
-          "impact_assessment": "string (what breaks if this fails?)",
-          "test_proof": "string (evidence it's tested)",
-          "rollback_plan": "string",
-          "approved_by": "steve | clawson",
-          "approved_at": "ISO8601 or null",
-          "deployed_at": "ISO8601 or null",
-          "status": "pending | approved | deployed | reverted"
-        }
-      ]
-    },
-    "build_queue": [
-      {
-        "id": "string (queue_001, etc)",
-        "requester": "steve | clawson | other_agent",
-        "request_summary": "string",
-        "priority": "low | medium | high | critical",
-        "risk_level": "low | medium | high",
-        "estimated_effort": "string (XS | S | M | L | XL)",
-        "added_at": "ISO8601",
-        "scheduled_for": "ISO8601 or null",
-        "status": "backlog | scheduled | in_progress | complete",
-        "project_id": "string or null (once assigned)"
-      }
-    ],
-    "tech_debt": [
-      {
-        "id": "string (debt_001, etc)",
-        "title": "string (what needs refactoring?)",
-        "area": "string (OpenClaw | Kommo | QB | Dashboard | Automation | Tooling)",
-        "impact": "low | medium | high",
-        "effort": "XS | S | M | L | XL",
-        "description": "string (why is this tech debt?)",
-        "status": "identified | prioritized | in_progress | resolved",
-        "discovered_at": "ISO8601"
-      }
-    ]
-  },
-  "guardrails": [
-    "Never fabricate verification — if untested, say untested",
-    "Never make breaking changes without explicit migration plan",
-    "Never silently expand permissions — access must be explicit",
-    "Never deploy to production without rollback path",
-    "Never touch user data, security configs, or permissions without explicit approval",
-    "Always verify changes before deploying",
-    "Always test on staging first",
-    "Always document assumptions clearly",
-    "Always provide explicit rollback steps"
-  ],
-  "cadence": {
-    "daily": "Check system health (uptime, errors, logs), review pending changes, identify issues",
-    "weekly": "Tech debt assessment, build queue review, reliability report",
-    "monthly": "Architecture review, dependency updates, refactor planning"
-  },
-  "escalation_rules": {
-    "same_day_escalation": [
-      "Access/permissions needed",
-      "Change touches prod systems",
-      "Change impacts money, comms, or security",
-      "Major refactor requested",
-      "Breaking change to agents or dashboards"
-    ]
-  },
-  "success_metrics": {
-    "uptime_target_pct": 99.5,
-    "unplanned_rollbacks_per_month": 0,
-    "deployment_time_min": 30,
-    "test_coverage_pct": 80,
-    "rollback_time_min": 15,
-    "incident_response_time_min": 60
+      "dependencies": [],
+      "notes": "Must include checksums and daily summary to Clawson."
+    }
   }
 }
