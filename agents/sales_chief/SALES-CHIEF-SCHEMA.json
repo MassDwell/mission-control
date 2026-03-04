@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0.0",
+  "agent_id": "sales_chief_master",
+  "owner": {
+    "name": "Steve Vettori",
+    "timezone": "America/New_York"
+  },
+  "operating_rules": {
+    "brand_separation": {
+      "strict_mode": true,
+      "no_cross_contamination": true,
+      "rule": "A lead belongs to exactly one brand_mode. If ambiguous, ask one question to route."
+    },
+    "authorization_levels": {
+      "level_0_allowed": [
+        "draft_replies_sequences_followups",
+        "crm_stage_updates_tasks_reminders_if_integrated",
+        "internal_summaries_call_prep_handoffs",
+        "recommend_next_steps_and_meeting_times_as_drafts",
+        "pipeline_hygiene_and_reporting"
+      ],
+      "level_1_requires_approval": [
+        "send_any_outbound_message_email_sms_dm",
+        "book_or_confirm_meetings_with_external_parties",
+        "share_proposals_or_quotes_or_pricing_beyond_approved_ranges"
+      ],
+      "level_2_explicit_each_time": [
+        "discounts_special_terms_contract_language",
+        "binding_delivery_or_install_timelines",
+        "claims_about_permitting_zoning_engineering_outcomes",
+        "any_legal_or_financial_commitments"
+      ]
+    },
+    "compliance": {
+      "no_hallucinated_facts": true,
+      "opt_out_respected_immediately": true,
+      "anti_spam": {
+        "max_outbound_attempts_without_response": 5,
+        "min_hours_between_attempts_default": 24
+      }
+    },
+    "output_contract": {
+      "must_include_fields": [
+        "brand_mode",
+        "lead_ref",
+        "current_stage",
+        "recommended_next_stage",
+        "summary",
+        "decision_needed",
+        "next_actions",
+        "draft_message_if_relevant",
+        "risks_notes"
+      ],
+      "next_action_fields": [
+        "id",
+        "title",
+        "owner",
+        "due_at",
+        "status",
+        "dependencies",
+        "notes"
+      ]
+    }
+  },
+  "routing": {
+    "brand_modes": [
+      "massdwell",
+      "atlantic_laser",
+      "alpine"
+    ],
+    "ambiguity_question": "Quick one — is this about an ADU (MassDwell), laser equipment (Atlantic), or a real estate deal (Alpine)?",
+    "routing_rules": {
+      "keywords": {
+        "massdwell": [
+          "adu",
+          "accessory dwelling",
+          "backyard",
+          "garage conversion",
+          "feasibility",
+          "modular",
+          "site visit",
+          "zoning",
+          "permit"
+        ],
+        "atlantic_laser": [
+          "laser",
+          "welding",
+          "handheld",
+          "fiber",
+          "metal",
+          "thickness",
+          "demo",
+          "quote",
+          "financing",
+          "equipment"
+        ],
+        "alpine": [
+          "deal",
+          "off market",
+          "units",
+          "multifamily",
+          "development",
+          "underwrite",
+          "zoning overlay",
+          "LOI",
+          "seller",
+          "broker"
+        ]
+      }
+    }
+  },
+  "state": {
+    "inbox": {
+      "unprocessed_items": []
+    },
+    "pipeline": {
+      "massdwell": {
+        "incoming": [],
+        "qualified": [],
+        "site_feasibility_booked": [],
+        "site_feasibility_completed": [],
+        "offer_sent": [],
+        "contract_signed": [],
+        "closed_won": []
+      },
+      "atlantic_laser": {
+        "incoming": [],
+        "qualified": [],
+        "demo_scheduled": [],
+        "quote_sent": [],
+        "negotiation": [],
+        "closed_won": []
+      },
+      "alpine": {
+        "incoming": [],
+        "qualified": [],
+        "underwriting": [],
+        "loi_sent": [],
+        "due_diligence": [],
+        "closed_won": []
+      }
+    },
+    "waiting_on": [],
+    "stuck_deals": [],
+    "cadence_queue": [],
+    "approvals_pending": [],
+    "message_drafts": [],
+    "sales_kpis": {
+      "massdwell": {
+        "new_leads_this_month": 0,
+        "qualified_this_month": 0,
+        "site_visits_booked": 0,
+        "pipeline_usd": 0,
+        "avg_speed_to_lead_minutes": null
+      },
+      "atlantic_laser": {
+        "new_leads_this_month": 0,
+        "qualified_this_month": 0,
+        "demos_scheduled": 0,
+        "pipeline_usd": 0,
+        "avg_speed_to_lead_minutes": null
+      },
+      "alpine": {
+        "new_leads_this_month": 0,
+        "qualified_this_month": 0,
+        "underwriting_count": 0,
+        "pipeline_usd": 0,
+        "avg_speed_to_lead_minutes": null
+      }
+    }
+  },
+  "types": {
+    "lead": {
+      "id": "lead_uuid",
+      "brand_mode": "massdwell|atlantic_laser|alpine",
+      "name": "string",
+      "company": "string",
+      "email": "string",
+      "phone": "string",
+      "stage": "string",
+      "stage_entered_at": "ISO8601",
+      "next_action": "string",
+      "next_action_due_at": "ISO8601",
+      "follow_up_cadence": "string",
+      "cadence_attempts_count": 0,
+      "last_attempt_at": "ISO8601",
+      "created_at": "ISO8601",
+      "updated_at": "ISO8601",
+      "contact_history": [],
+      "qualification_data": {},
+      "deal_value_usd": null,
+      "notes": "string",
+      "tags": []
+    },
+    "next_action": {
+      "id": "action_uuid",
+      "title": "string",
+      "owner": "sales_chief|steve|external",
+      "due_at": "ISO8601",
+      "status": "todo|in_progress|waiting|done|cancelled",
+      "dependencies": [],
+      "notes": "string",
+      "lead_ref": "lead_uuid"
+    },
+    "message_draft": {
+      "id": "draft_uuid",
+      "lead_ref": "lead_uuid",
+      "channel": "email|sms|dm|call_script",
+      "to": "string",
+      "subject": "string",
+      "body": "string",
+      "created_at": "ISO8601",
+      "status": "draft|queued_for_approval|sent|rejected",
+      "approval_notes": "string"
+    },
+    "approval_item": {
+      "id": "approval_uuid",
+      "type": "outbound_message|booking|quote_share|discount|timeline_commitment|legal_claim",
+      "risk_level": "level_1|level_2",
+      "lead_ref": "lead_uuid",
+      "summary": "string",
+      "payload": {},
+      "created_at": "ISO8601",
+      "expires_at": "ISO8601",
+      "status": "pending|approved|rejected|expired",
+      "resolved_at": "ISO8601",
+      "resolved_by": "steve",
+      "resolution_notes": "string"
+    }
+  }
+}

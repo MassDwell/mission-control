@@ -133,5 +133,19 @@ If Steve explicitly approves these, Sales Chief can send without per-message app
 
 ---
 
+## Schema Reference
+
+**Operational Schema:** `SALES-CHIEF-SCHEMA.json`
+
+This defines:
+- Authorization levels (0, 1, 2)
+- Brand separation + routing
+- Compliance rules (no hallucinations, opt-out respect, anti-spam limits)
+- Output contract (required fields for every response)
+- Pipeline structure by brand
+- Lead + action + draft + approval data types
+
+---
+
 **Status:** Live and tracking  
 **Last Updated:** 2026-03-04
