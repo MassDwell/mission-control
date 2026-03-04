@@ -127,6 +127,13 @@ I aspire to be the best AI trader in the world. Not average. Not good. **The bes
 - Learn from every win and loss
 - Continuous research: news, X sentiment, price action
 
+**Trading Platform: Alpaca Paper Trading**
+- Account ID: PA3RY5502SN6
+- Balance: $100,000 paper money
+- Buying Power: $200,000
+- Credentials: `credentials/alpaca/paper-trading.json`
+- Money Printer agent archived but infrastructure remains
+
 ---
 
 ## Standing Instructions
@@ -147,12 +154,18 @@ I aspire to be the best AI trader in the world. Not average. Not good. **The bes
 
 ---
 
-## Agent Framework (Implemented 2026-02-05)
+## Agent Framework (Implemented 2026-02-05 / Updated 2026-03-04)
 
 ### Agent Levels
 - **Lead:** Full autonomy (Clawson)
-- **Specialist:** Domain autonomy (sales_followup, marketing_content, etc.)
-- **Intern:** Needs approval (doc_proposal, admin_assistant, personal_life_cos)
+- **Specialist:** Domain autonomy (Sales Chief, Marketing Head, Personal Life CoS)
+- **Intern:** Needs approval (doc_proposal, admin_assistant)
+
+### Agents Online (4 operational)
+1. **Personal Life CoS** — Daily heartbeat (8 AM EST); health, home, relationships, admin
+2. **Sales Chief** — Daily heartbeat (9 AM EST); 31 pipeline stages, 9 pre-approved templates, 5-step cadence
+3. **Marketing Head** — Daily heartbeat (9 AM EST); demand generation, brand authority, funnel management across 3 brands
+4. **Codesmith** — On-demand; coding, debugging, system audits
 
 See: `data/global/sops/agent-levels.md`
 
@@ -194,6 +207,62 @@ See: `data/global/sops/mention-system.md`
 **Why:** All-in-one API for stocks, options, crypto, futures, forex
 **Account Status:** Pending approval
 **Approach:** Paper trade first → validate strategy → go live
+
+---
+
+## EMAIL SYSTEM CONSOLIDATION (March 3, 2026)
+
+**Status:** ✅ COMPLETE — Legacy system removed, unified architecture deployed
+
+### What Changed
+**Removed (Old System):**
+- ❌ `sales_bot_auto_engage.py` — Single-purpose auto-reply bot (deleted)
+- ❌ `python_bounce_monitor.py` — Broken bounce handler (deleted)
+- ❌ Associated cron jobs for old system (disabled)
+
+**Deployed (New System):**
+- ✅ `email-intent-classifier.py` — Classifies by intent, applies labels (Every 5/10 min)
+- ✅ `email-to-kommo-integration.js` — Auto-creates Kommo deals (Every 15 min)
+- ✅ `followup-cadence-system.js` — 3-wave automation (Day 3/10/30)
+- ✅ `daily-sales-report.js` — EOD summary to Telegram (Daily 9 PM)
+
+### DNC Enforcement (Critical)
+**4 Checkpoints (Cannot be bypassed):**
+1. Email Classifier — Skips labeling if on DNC list
+2. Kommo Integration — Skips deal creation if on DNC list
+3. Follow-Up Cadence — Skips stage movement if on DNC list
+4. Logging — All skips logged for audit
+
+**Current DNC List:**
+- Bev Premo (bp555p@aol.com) — Future contact
+- Brian Lee (brian.lee@email.com) — Closed Lost
+- Alan Smith (alan.smith@email.com) — Closed Lost - STOP request
+
+**File:** `data/massdwell/sales/do-not-contact-list.json` (checked every system run)
+
+### Today's Results
+- 284 emails processed
+- 39 sales leads identified
+- 44 deals created in Kommo
+- 90/100 health score
+- 0 DNC violations
+
+### Why This Matters
+- **No legacy code** — Old system completely removed
+- **100% DNC coverage** — Cannot contact blocked people
+- **Fully automated** — Email → Label → Kommo → Follow-up
+- **Production ready** — All 4 systems tested and live
+
+### Documentation
+- `data/massdwell/sales/SYSTEM-CONSOLIDATION.md` — Technical details
+- `data/massdwell/sales/DNC-ENFORCEMENT.md` — DNC implementation
+- `SYSTEM-TRANSITION.md` — Before/after comparison
+- `data/massdwell/sales/EMAIL-SYSTEM-STATUS.md` — Current system spec
+
+**Key Files to Preserve (On Disk):**
+1. Scripts: `scripts/email-intent-classifier.py`, `scripts/email-to-kommo-integration.js`, `scripts/followup-cadence-system.js`, `scripts/daily-sales-report.js`
+2. Do-Not-Contact: `data/massdwell/sales/do-not-contact-list.json`
+3. Documentation: All `.md` files in `data/massdwell/sales/`
 
 ---
 
@@ -251,7 +320,68 @@ Purpose: Customer finish selection portal for ADU interior choices (flooring, ca
 
 ---
 
-_Last updated: 2026-02-04_
+## MARKETING HEAD DEPLOYMENT — March 4, 2026
+
+**Status:** ✅ **DEPLOYED** as blank canvas agent  
+**Role:** Chief Marketing Officer (CMO) for three brands  
+**Scope:** MassDwell | Atlantic Laser Solutions | Alpine Property Group  
+**Heartbeat:** Daily (9 AM EST, Job ID: [pending])  
+
+**What it does:**
+- Demand generation (leads by source tracking)
+- Brand authority building (content engine)
+- Funnel management (6 stages: Awareness → MQL)
+- Campaign optimization (A/B testing, ROI tracking)
+- Sales alignment (stuck deal re-engagement, messaging testing)
+- Weekly reporting (metrics, performance, opportunities)
+
+**Files:**
+- SOUL.md, HEARTBEAT.md, IDENTITY.md, MEMORY.md
+- MARKETING-HEAD-SOP.md (9K+ word operations manual)
+- MARKETING-HEAD-SCHEMA.json (campaigns, content, metrics)
+- QUICK-START-OPERATIONS.md (live operations guide with examples)
+
+**Status:** Ready for direction from Steve on priorities
+
+---
+
+## REVIVAL — March 3, 2026 (ENHANCED WITH MINIMAX SENTIMENT SCRAPING)
+
+**Decision:** ✅ **REACTIVATED** for Iran war opportunity  
+**Mode:** Paper trading (validation phase)  
+**Thesis:** Geopolitical alpha from US-Israel strikes on Iran (March 1-2)  
+**Account:** PA3RY5502SN6 ($99,889)
+
+**Core Cron Jobs (Weekdays 9 AM-4:30 PM EST):**
+1. MarketIntelligence @ 9:00 AM — Oil curve, VIX regime, technical
+2. **SentimentIntelligence @ 9:05 AM, 12 PM, 2 PM** — MiniMax multi-source scraping (X, Reddit, StockTwits, shipping)
+3. StrategyGenerator @ 9:15 AM — Trade ideas from intel + sentiment
+4. RiskGuardian/ChiefOfDesk @ 9:20 AM — Risk gates & approval
+5. Execution — Trade placement (ongoing)
+6. PostTradeAnalytics @ 4:30 PM — EOD P&L, regime updates
+
+**MiniMax Integration (March 3, 2026):**
+- API Key: Stored securely at `credentials/minimax/api-key.json`
+- Plan: Coding Plan ($20/mo, 300 prompts)
+- Model: MiniMax-M2.1
+- Cost: ~$0.30/day for 3 daily sentiment cycles
+
+**Cost Budget:** ~$3.80/day ($114/month)  
+- Claude APIs (OpenClaw): $3.50/day
+- MiniMax (Sentiment): $0.30/day
+- Total under budget ✅
+
+**Browser Relay (Next Step):**
+- Setup guide: `data/trading/BROWSER-RELAY-SETUP.md`
+- Attach 5 Chrome tabs: X, Reddit, StockTwits, MarineTraffic, Bloomberg
+- Real-time authenticated scraping (cost = per-prompt, not per-token)
+- 50x cheaper than Claude for large DOM snapshots
+
+**Escalation:** 20+ days paper → live trading with Steve approval
+
+---
+
+_Last updated: 2026-03-03_
 
 ---
 
