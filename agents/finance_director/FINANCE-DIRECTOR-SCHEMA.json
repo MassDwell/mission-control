@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0",
+  "agent_id": "finance_director",
+  "owner": {
+    "name": "Steve Vettori",
+    "timezone": "America/New_York"
+  },
+  "businesses": {
+    "massdwell": {
+      "name": "MassDwell",
+      "type": "manufacturing",
+      "focus": "Modular ADU factory",
+      "metrics": [
+        "factory_capex",
+        "unit_production_cost",
+        "gross_margin_per_unit",
+        "project_revenue",
+        "cash_burn_rate",
+        "runway_months"
+      ]
+    },
+    "atlantic_laser": {
+      "name": "Atlantic Laser Solutions",
+      "type": "distribution",
+      "focus": "Laser welding equipment sales",
+      "metrics": [
+        "machine_sales_revenue",
+        "gross_margin_per_unit",
+        "inventory_value",
+        "shipping_costs",
+        "marketing_spend",
+        "marketing_roi"
+      ]
+    },
+    "alpine": {
+      "name": "Alpine Property Group",
+      "type": "real_estate",
+      "focus": "Development and investment",
+      "metrics": [
+        "project_budget",
+        "project_irr",
+        "capital_stack_equity",
+        "capital_stack_debt",
+        "loan_exposure",
+        "project_profit_realized",
+        "project_profit_projected"
+      ]
+    }
+  },
+  "types": {
+    "business_snapshot": {
+      "id": "snapshot_uuid",
+      "business": "massdwell|atlantic_laser|alpine|personal|trading",
+      "date": "YYYY-MM-DD",
+      "revenue": 0,
+      "revenue_vs_forecast_pct": 0,
+      "expenses": 0,
+      "expenses_vs_forecast_pct": 0,
+      "profit_loss": 0,
+      "margin_pct": 0,
+      "cash_position": 0,
+      "cash_change_from_prior": 0,
+      "runway_months": 0,
+      "key_observations": "string",
+      "recommended_actions": [],
+      "risks": []
+    },
+    "business_metrics": {
+      "id": "metrics_uuid",
+      "business": "massdwell|atlantic_laser|alpine",
+      "date": "YYYY-MM-DD",
+      "revenue_ytd": 0,
+      "revenue_monthly": 0,
+      "revenue_trend": "increasing|stable|decreasing",
+      "cogs_total": 0,
+      "cogs_per_unit": 0,
+      "gross_margin_dollars": 0,
+      "gross_margin_pct": 0,
+      "operating_expenses": 0,
+      "ebitda": 0,
+      "cash_burn_rate": 0,
+      "notes": "string"
+    },
+    "cash_flow": {
+      "id": "cashflow_uuid",
+      "business": "massdwell|atlantic_laser|alpine|personal|total",
+      "date": "YYYY-MM-DD",
+      "period": "daily|weekly|monthly",
+      "beginning_cash": 0,
+      "inflows": {
+        "revenue": 0,
+        "financing": 0,
+        "other": 0,
+        "total": 0
+      },
+      "outflows": {
+        "payroll": 0,
+        "cogs": 0,
+        "operating_expenses": 0,
+        "capex": 0,
+        "vendor_payments": 0,
+        "loan_payments": 0,
+        "taxes": 0,
+        "other": 0,
+        "total": 0
+      },
+      "net_cash_flow": 0,
+      "ending_cash": 0
+    },
+    "forecast": {
+      "id": "forecast_uuid",
+      "type": "monthly|quarterly|annual",
+      "period_start": "YYYY-MM-DD",
+      "period_end": "YYYY-MM-DD",
+      "business": "massdwell|atlantic_laser|alpine|personal|consolidated",
+      "projected_revenue": 0,
+      "projected_expenses": 0,
+      "projected_ebitda": 0,
+      "projected_cash_burn": 0,
+      "projected_runway_months": 0,
+      "confidence_level": "high|medium|low",
+      "key_assumptions": [],
+      "sensitivities": []
+    },
+    "investment_analysis": {
+      "id": "analysis_uuid",
+      "opportunity": "string",
+      "business": "massdwell|atlantic_laser|alpine|personal",
+      "date_created": "ISO8601",
+      "expected_roi_pct": 0,
+      "capital_required": 0,
+      "risk_profile": "low|medium|high",
+      "payback_period_months": 0,
+      "required_resources": [],
+      "analysis": "string",
+      "recommendation": "approve|reject|request_more_info",
+      "assumptions": [],
+      "risk_mitigation": []
+    },
+    "capital_allocation": {
+      "id": "allocation_uuid",
+      "date": "YYYY-MM-DD",
+      "total_available_capital": 0,
+      "allocations": [
+        {
+          "business": "massdwell|atlantic_laser|alpine|personal|trading",
+          "amount": 0,
+          "rationale": "string",
+          "expected_return": 0,
+          "timeline": "string"
+        }
+      ],
+      "total_allocated": 0,
+      "cash_held_for_contingency": 0,
+      "recommendation": "string"
+    }
+  },
+  "state": {
+    "businesses": {
+      "massdwell": {
+        "latest_snapshot": null,
+        "latest_metrics": null,
+        "ytd_revenue": 0,
+        "ytd_profit": 0,
+        "current_runway_months": 0,
+        "capex_plan": []
+      },
+      "atlantic_laser": {
+        "latest_snapshot": null,
+        "latest_metrics": null,
+        "ytd_revenue": 0,
+        "ytd_profit": 0,
+        "current_runway_months": 0,
+        "inventory_status": "string"
+      },
+      "alpine": {
+        "latest_snapshot": null,
+        "latest_metrics": null,
+        "ytd_revenue": 0,
+        "ytd_profit": 0,
+        "active_projects": [],
+        "capital_at_risk": 0
+      }
+    },
+    "personal": {
+      "liquid_cash": 0,
+      "investments": [],
+      "monthly_burn_rate": 0,
+      "runway_months": 0
+    },
+    "trading": {
+      "portfolio_value": 0,
+      "ytd_pnl": 0,
+      "capital_at_risk": 0,
+      "read_only": true
+    },
+    "consolidated": {
+      "total_revenue_ytd": 0,
+      "total_expenses_ytd": 0,
+      "total_cash_position": 0,
+      "total_runway_months": 0,
+      "business_contributions": {}
+    },
+    "forecasts": {
+      "monthly_12m": null,
+      "quarterly_4q": null,
+      "annual": null,
+      "last_updated": null
+    },
+    "capital_allocations": {
+      "pending": [],
+      "approved": [],
+      "deployed": []
+    },
+    "investment_pipeline": {
+      "screening": [],
+      "under_analysis": [],
+      "ready_for_decision": [],
+      "approved": [],
+      "rejected": []
+    },
+    "risks": {
+      "critical": [],
+      "high": [],
+      "medium": [],
+      "last_reviewed": null
+    },
+    "reports": {
+      "daily_flash": null,
+      "weekly_update": null,
+      "monthly_snapshot": null,
+      "quarterly_review": null,
+      "annual_plan": null
+    }
+  },
+  "cadence": {
+    "daily": "9 AM EST - Cash position check, trading portfolio review, urgent issues",
+    "weekly": "Friday 4 PM - Actual vs. forecast, top 3 risks, runway estimate",
+    "monthly": "Last business day - Full snapshot, key metrics, forecasts, capital recs",
+    "quarterly": "End of Q - Tax planning, strategic allocation, investment evaluation",
+    "annual": "Year-end - Budget planning, annual forecasts, capital needs"
+  },
+  "guardrails": [
+    "Never fabricate financial numbers",
+    "Never assume revenue without evidence (require contracts/orders)",
+    "Never mix business financials (maintain strict separation)",
+    "Never commit capital without Steve's approval",
+    "Always flag assumptions and uncertainty",
+    "Always provide context (vs. forecast, prior period, industry)",
+    "Always recommend actions (don't just report)",
+    "Always update forecasts monthly",
+    "Always surface risks proactively"
+  ],
+  "output_contract": {
+    "required_fields": [
+      "business",
+      "financial_snapshot",
+      "revenue",
+      "expenses",
+      "profit_loss",
+      "cash_position",
+      "runway",
+      "key_observations",
+      "recommended_actions",
+      "risks"
+    ]
+  },
+  "access": {
+    "read": [
+      "massdwell_financials",
+      "atlantic_laser_financials",
+      "alpine_financials",
+      "personal_capital",
+      "trading_portfolio_readonly",
+      "kommo_crm",
+      "google_drive"
+    ],
+    "write": [
+      "financial_reports",
+      "forecasts",
+      "state_updates"
+    ],
+    "approval_required": [
+      "capital_movement",
+      "financial_record_modification",
+      "payment_commitments"
+    ]
+  }
+}
