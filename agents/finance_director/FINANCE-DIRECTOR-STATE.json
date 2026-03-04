@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0",
+  "agent_id": "finance_director",
+  "last_updated": "2026-03-04T00:00:00Z",
+  "businesses": {
+    "massdwell": {
+      "revenue": 565000,
+      "expenses": 370000,
+      "gross_margin": 195000,
+      "production_cost_per_unit": 42000,
+      "units_produced": 13,
+      "units_sold": 13,
+      "cash_balance": 425000,
+      "runway_months": 6,
+      "ytd_status": "on_track",
+      "notes": "Strong Q1 2026 performance, +7.5% vs forecast"
+    },
+    "atlantic_laser": {
+      "revenue": 96000,
+      "expenses": 68000,
+      "gross_margin": 28000,
+      "inventory_value": 87000,
+      "machines_sold": 16,
+      "average_price_per_machine": 6000,
+      "cash_balance": 87000,
+      "runway_months": 8,
+      "ytd_status": "declining",
+      "notes": "Sales trending down -12.7% vs forecast, investigate competitive pressure"
+    },
+    "alpine": {
+      "revenue": 127000,
+      "expenses": 89000,
+      "gross_margin": 38000,
+      "projects_active": 12,
+      "capital_deployed": 2100000,
+      "projected_profit": 378000,
+      "cash_balance": 1240000,
+      "runway_months": 24,
+      "ytd_status": "on_track",
+      "blended_irr": 0.18,
+      "notes": "Stable income, large capital base, strong runway"
+    }
+  },
+  "personal": {
+    "liquid_cash": 450000,
+    "investments_total": 950000,
+    "monthly_burn_rate": 35000,
+    "runway_months": 13,
+    "notes": "Healthy personal position, no immediate concerns"
+  },
+  "trading": {
+    "portfolio_value": 127000,
+    "ytd_pnl": 27000,
+    "capital_at_risk": 100000,
+    "read_only": true,
+    "notes": "MoneyPrinter desk, +21% YTD"
+  },
+  "cash_flow": {
+    "monthly_income": 460000,
+    "monthly_expenses": 320000,
+    "net_cash_flow": 140000,
+    "monthly_change": "+3% vs forecast",
+    "last_updated": "2026-02-28"
+  },
+  "capital_allocation": {
+    "total_available": 2182000,
+    "deployed_in_massdwell": 425000,
+    "deployed_in_atlantic_laser": 87000,
+    "deployed_in_alpine": 1240000,
+    "in_trading": 127000,
+    "in_reserves": 276000,
+    "allocation_pct": {
+      "massdwell": 19.5,
+      "atlantic_laser": 4.0,
+      "alpine": 56.8,
+      "trading": 5.8,
+      "reserves": 12.6
+    }
+  },
+  "forecasts": {
+    "monthly_projection": {
+      "period": "rolling_12_months",
+      "average_monthly_revenue": 460000,
+      "average_monthly_expenses": 320000,
+      "average_monthly_profit": 140000,
+      "confidence": "high",
+      "last_updated": "2026-02-28"
+    },
+    "quarterly_projection": {
+      "q1_2026": {
+        "revenue": 1380000,
+        "expenses": 960000,
+        "profit": 420000
+      },
+      "q2_2026": {
+        "revenue": 1500000,
+        "expenses": 990000,
+        "profit": 510000
+      },
+      "q3_2026": {
+        "revenue": 1480000,
+        "expenses": 950000,
+        "profit": 530000
+      },
+      "q4_2026": {
+        "revenue": 1620000,
+        "expenses": 1010000,
+        "profit": 610000
+      }
+    },
+    "annual_projection": {
+      "year": 2026,
+      "total_revenue": 5980000,
+      "total_expenses": 3910000,
+      "total_profit": 2070000,
+      "profit_margin_pct": 34.6,
+      "confidence": "medium"
+    }
+  },
+  "financial_alerts": [],
+  "investment_opportunities": [
+    {
+      "id": "inv_001",
+      "opportunity": "Atlantic Laser equipment upgrade",
+      "amount": 35000,
+      "expected_roi_pct": 30,
+      "risk_level": "low",
+      "timeline_months": 6,
+      "submitted_date": "2026-03-04",
+      "status": "under_analysis",
+      "recommendation": "approve"
+    },
+    {
+      "id": "inv_002",
+      "opportunity": "MassDwell factory expansion",
+      "amount": 150000,
+      "expected_roi_pct": 25,
+      "risk_level": "medium",
+      "timeline_months": 12,
+      "submitted_date": "2026-03-04",
+      "status": "screening",
+      "recommendation": "hold_pending_revenue_confirmation"
+    },
+    {
+      "id": "inv_003",
+      "opportunity": "Alpine refinance opportunity",
+      "amount": 500000,
+      "expected_roi_pct": 4.2,
+      "risk_level": "low",
+      "timeline_months": 3,
+      "submitted_date": "2026-03-04",
+      "status": "ready_for_decision",
+      "recommendation": "approve_immediately"
+    }
+  ],
+  "approvals_queue": {
+    "pending": [
+      {
+        "id": "approval_001",
+        "type": "capital_allocation",
+        "business": "atlantic_laser",
+        "amount": 35000,
+        "description": "Equipment upgrade to improve production efficiency",
+        "submitted_by": "finance_director",
+        "submitted_date": "2026-03-04T14:00:00Z",
+        "expected_decision_date": "2026-03-05"
+      },
+      {
+        "id": "approval_002",
+        "type": "capital_allocation",
+        "business": "alpine",
+        "amount": 500000,
+        "description": "Refinance existing loan at better rate (5.2% -> 4.8%)",
+        "submitted_by": "finance_director",
+        "submitted_date": "2026-03-04T14:00:00Z",
+        "expected_decision_date": "2026-03-05"
+      }
+    ],
+    "history": [
+      {
+        "id": "approval_approved_001",
+        "type": "capital_allocation",
+        "business": "massdwell",
+        "amount": 50000,
+        "description": "Monthly operational capex",
+        "approved_by": "steve",
+        "approved_date": "2026-02-15",
+        "status": "deployed"
+      }
+    ]
+  },
+  "risks": {
+    "critical": [],
+    "high": [
+      {
+        "id": "risk_001",
+        "risk": "Atlantic Laser sales declining",
+        "impact": "Revenue miss could affect runway",
+        "probability": "medium",
+        "detected_date": "2026-03-04",
+        "mitigation": "Weekly sales monitoring, investigate competitive pressure, review pricing"
+      }
+    ],
+    "medium": [
+      {
+        "id": "risk_002",
+        "risk": "Interest rate environment",
+        "impact": "Alpine refinancing costs could increase",
+        "probability": "low",
+        "detected_date": "2026-03-04",
+        "mitigation": "Lock in rates when favorable, monitor quarterly"
+      }
+    ]
+  },
+  "reports": {
+    "last_daily_flash": {
+      "date": "2026-03-04T09:00:00Z",
+      "cash_position": 2182000,
+      "status": "all_clear",
+      "urgent_issues": []
+    },
+    "last_weekly_update": {
+      "date": null,
+      "week_of": null,
+      "status": "pending_first_run"
+    },
+    "last_monthly_snapshot": {
+      "date": null,
+      "month_of": null,
+      "status": "pending_first_run"
+    }
+  }
+}
