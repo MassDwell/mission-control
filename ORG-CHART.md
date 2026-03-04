@@ -10,24 +10,23 @@
                             STEVE VETTORI
                            (CEO)
                                 |
-                    ________________________|________________________
+                    ________________________|_________________________
                    |
-            CLAWSON
+            CLAWSON (🦅)
          (Chief of Staff)
             (Orchestrator)
                    |
-    _______________|________________________________________________________________________________
+    ________________|_________________________________________________________________________________
    |               |                 |               |               |              |              |
    |               |                 |               |               |              |              |
-SALES CHIEF    MARKETING HEAD    FINANCE DIRECTOR   OPS CHIEF      CODESMITH     INTELLIGENCE   MONEPRINTER    PERSONAL OPS
-(sales_       (marketing_head)   (finance_         (TBD)           (CTO)        RESEARCH       (trading_     (TBD)
-followup)                        director)                         (TBD)        (TBD)           revival)
-   |               |                 |               |               |              |              |
+SALES CHIEF   MARKETING HEAD   FINANCE DIRECTOR  OPS DIRECTOR    CODESMITH    INTELLIGENCE   MONEYPRINTER   PERSONAL OPS
+(sales_       (marketing_head)  (finance_        (ops_           (CTO)        RESEARCH       (trading_      (TBD)
+followup)                       director)        director)       (TBD)        (TBD)          revival)
+✅ ACTIVE     ✅ ACTIVE         ✅ ACTIVE         ✅ ACTIVE       ❌ Building   ❌ Building     ✅ ACTIVE
    
-   MASSDWELL
-   ATLANTIC LASER
-   ALPINE
-   
+   Track 3      Demand &        Capital &         Order &
+   Businesses   Content         Financial         Project
+   Pipeline     Campaigns       Visibility        Execution
 ```
 
 ---
@@ -49,12 +48,106 @@ followup)                        director)                         (TBD)        
 |------|-------|--------|-------|
 | **Sales Chief** | sales_followup | ✅ Active | Pipeline, forecasting, deal tracking (all 3 businesses) |
 | **Marketing Head** | marketing_head | ✅ Active | Demand gen, content, campaigns (MassDwell, Atlantic Laser, Alpine) |
-| **Finance Director (CFO)** | finance_director | ✅ **NEW** | Financial visibility, capital allocation, forecasting |
-| **Ops Chief (COO)** | TBD | ❌ Not yet | Operations, process, execution |
+| **Finance Director (CFO)** | finance_director | ✅ Active | Financial visibility, capital allocation, forecasting |
+| **Operations Director (COO)** | ops_director | ✅ **NEW** | Project execution, order fulfillment, blocker management |
 | **Codesmith (CTO)** | TBD | ❌ Not yet | Engineering, architecture, tech roadmap |
 | **Intelligence Research** | TBD | ❌ Not yet | Market intel, competitive research, data analysis |
 | **MoneyPrinter (Trading)** | trading_revival | ✅ Active | Intraday trading, portfolio management |
 | **Personal Ops** | TBD | ❌ Not yet | Calendar, reminders, personal tasks |
+
+---
+
+## 📊 Operations Director (COO) — Deep Dive
+
+**Agent ID:** ops_director  
+**Role:** Chief Operations Officer  
+**Reporting to:** Steve Vettori (final decisions), Clawson (operational coordination)
+
+### **Responsibilities**
+
+**Project & Order Execution:**
+- Track active orders and projects across all three businesses
+- Monitor timelines and delivery dates
+- Identify blockers and bottlenecks
+- Recommend mitigation strategies
+- Ensure on-time completion
+
+**Operational Metrics:**
+- On-time delivery %
+- Production/fulfillment capacity utilization
+- Quality (defect rate)
+- Backlog (months of work)
+- Resource availability
+
+**Blocker Management:**
+- Surface issues immediately (same day for critical)
+- Escalate to Steve within 24 hours
+- Track mitigation progress
+- Update timelines if blockers persistent
+
+### **Scope (What Ops Director Oversees)**
+
+**Three Operating Businesses:**
+
+1. **MassDwell** — Factory production, order fulfillment
+   - Active orders (design → materials → manufacturing → QA → delivery)
+   - Production capacity and utilization
+   - Supply chain and bottlenecks
+   - Quality and rework tracking
+
+2. **Atlantic Laser Solutions** — Machine sales and fulfillment
+   - Machine orders and inventory
+   - Shipping and logistics
+   - Inventory levels by product
+   - Fulfillment timeline
+
+3. **Alpine Property Group** — Development and investment projects
+   - Development projects (timeline, budget, blockers)
+   - Acquisition pipeline (due diligence, closing)
+   - Renovation projects (scope, timeline)
+   - Property operations (occupancy, income)
+
+### **Key Metrics Tracked**
+
+| Metric | MassDwell | Atlantic Laser | Alpine |
+|--------|-----------|----------------|--------|
+| On-Time Delivery | 85% | 95% | 80% (projects) |
+| Active Orders/Projects | 3 orders | 2 orders | 5 projects |
+| Backlog | 6 orders (1 mo) | 2 pending | Healthy pipeline |
+| Capacity | 87% utilized | Stock levels | Capital deployed |
+| Quality | 2% defect rate | N/A | Project schedule |
+
+### **Current Blockers (4 Active)**
+
+| Blocker | Business | Impact | ETA |
+|---------|----------|--------|-----|
+| AAC blocks supplier delayed | MassDwell/MAS-002 | 1-week delivery delay | 3/8 |
+| QA frame defects | MassDwell/MAS-003 | 1-week delivery delay | 3/7 |
+| Inventory low across all models | Atlantic Laser | Stock shortage risk | Reorder |
+| Zoning approval delayed | Alpine/ALP-005 | 3-4 week construction delay | 3/15 |
+
+### **Reporting Cadence**
+
+| When | What | Recipients |
+|------|------|-----------|
+| 9 AM Daily | Blocker check (alert if critical) | Steve (Telegram) |
+| Fri 2 PM | Weekly operations report | Steve (report) |
+| Month-end | Monthly operations snapshot | Steve (comprehensive) |
+
+### **Authority & Guardrails**
+
+**Can Do:**
+- ✅ Track order/project status
+- ✅ Identify and surface blockers
+- ✅ Recommend mitigation strategies
+- ✅ Alert to risks and delays
+- ✅ Suggest capacity adjustments
+
+**Cannot Do:**
+- ❌ Modify customer delivery dates without approval
+- ❌ Change project scope without approval
+- ❌ Promise delivery without capacity
+- ❌ Hide blockers
 
 ---
 
@@ -260,12 +353,11 @@ followup)                        director)                         (TBD)        
 
 | Role | Status | Notes |
 |------|--------|-------|
-| **Ops Chief (COO)** | ❌ Missing | Need: operations, process, execution authority |
 | **Codesmith (CTO)** | ❌ Missing | Need: engineering, architecture, tech roadmap |
 | **Intelligence Research** | ❌ Missing | Need: market intel, competitive analysis, data science |
 | **Personal Ops** | ❌ Missing | Need: calendar, reminders, personal life management |
 
-**Ask Steve:** Want me to build these next? Or wait until Finance Director is proven?
+**4 of 8 chiefs now live.** Ready to build the remaining 3?
 
 ---
 
