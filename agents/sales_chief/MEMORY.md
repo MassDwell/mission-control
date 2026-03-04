@@ -12,27 +12,41 @@
 
 ---
 
-## Pipeline by Stage
+## Pipeline by Stage (Reference PIPELINE-STAGE-REFERENCE.md for full details)
 
-### Incoming (24h max)
-- [ ] Lead 1
-- [ ] Lead 2
+### MassDwell Stages
+- **Incoming Leads** (md_incoming_leads, 24h SLA)
+- **Welcome Email Sent** (md_welcome_email_sent, 48h SLA)
+- **Follow-up 1** (md_followup_1, 72h SLA)
+- **Recycle Follow-up** (md_recycle_followup, 168h SLA)
+- **Conversation Started** (md_conversation_started, 168h SLA)
+- **Site Feasibility Booked** (md_site_feasibility_booked, 168h SLA)
+- **Site Feasibility Completed** (md_site_feasibility_completed, 336h SLA)
+- **Negotiation/Decision** (md_negotiation_decision, 336h SLA)
+- **Contract Signed/Deposit** (md_contract_signed_deposit, 720h SLA)
+- **FUTURE CONTACT** (md_future_contact, 2160h SLA)
+- **Recap Emails** (md_recap_emails, 336h SLA)
 
-### Qualified (3 days max)
-- [ ] Lead 1
-- [ ] Lead 2
+### Atlantic Laser Stages
+- **Incoming Leads** (al_incoming_leads, 24h SLA)
+- **Contacted / Welcome Sent** (al_contacted, 48h SLA)
+- **Qualified** (al_qualified, 168h SLA)
+- **Demo / Consult Scheduled** (al_demo_scheduled, 168h SLA)
+- **Quote Requested** (al_quote_requested, 168h SLA)
+- **Quote Sent** (al_quote_sent, 336h SLA)
+- **Negotiation** (al_negotiation, 336h SLA)
+- **Closed Won** (al_closed_won, terminal)
+- **Closed Lost** (al_closed_lost, terminal)
+- **Recycle / Nurture** (al_recycle, 2160h SLA)
 
-### Demo/Site Scheduled (7 days max)
-- [ ] Lead 1
-- [ ] Lead 2
-
-### Offer / Underwriting
-- [ ] Lead 1
-- [ ] Lead 2
-
-### Closed Won
-- [ ] Deal 1 ($___K)
-- [ ] Deal 2 ($___K)
+### Alpine Property Group Stages (TBD - awaiting definitions)
+- **Incoming Leads** (ap_incoming_leads, 24h SLA)
+- **Qualified** (ap_qualified, 168h SLA)
+- **Underwriting** (ap_underwriting, 720h SLA)
+- **LOI Sent** (ap_loi_sent, 720h SLA)
+- **Due Diligence** (ap_due_diligence, 1440h SLA)
+- **Closed Won** (ap_closed_won, terminal)
+- **Closed Lost** (ap_closed_lost, terminal)
 
 ---
 

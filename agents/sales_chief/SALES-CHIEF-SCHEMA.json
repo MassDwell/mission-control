@@ -115,29 +115,218 @@
     },
     "pipeline": {
       "massdwell": {
-        "incoming": [],
-        "qualified": [],
-        "site_feasibility_booked": [],
-        "site_feasibility_completed": [],
-        "offer_sent": [],
-        "contract_signed": [],
-        "closed_won": []
+        "stages": [
+          {
+            "id": "md_incoming_leads",
+            "name": "Incoming Leads",
+            "sla_max_hours": 24,
+            "leads": []
+          },
+          {
+            "id": "md_welcome_email_sent",
+            "name": "Welcome e-mail sent",
+            "sla_max_hours": 48,
+            "leads": []
+          },
+          {
+            "id": "md_followup_1",
+            "name": "Follow-up 1",
+            "sla_max_hours": 72,
+            "leads": []
+          },
+          {
+            "id": "md_recycle_followup",
+            "name": "recycle follow-up",
+            "sla_max_hours": 168,
+            "leads": []
+          },
+          {
+            "id": "md_conversation_started",
+            "name": "conversation started",
+            "sla_max_hours": 168,
+            "leads": []
+          },
+          {
+            "id": "md_site_feasibility_booked",
+            "name": "Site feasibility booked",
+            "sla_max_hours": 168,
+            "leads": []
+          },
+          {
+            "id": "md_site_feasibility_completed",
+            "name": "site feasibility completed",
+            "sla_max_hours": 336,
+            "leads": []
+          },
+          {
+            "id": "md_negotiation_decision",
+            "name": "Negotiation/Decision Making",
+            "sla_max_hours": 336,
+            "leads": []
+          },
+          {
+            "id": "md_contract_signed_deposit",
+            "name": "Contract Signed/Deposit paid",
+            "sla_max_hours": 720,
+            "leads": []
+          },
+          {
+            "id": "md_future_contact",
+            "name": "FUTURE CONTACT",
+            "sla_max_hours": 2160,
+            "leads": []
+          },
+          {
+            "id": "md_recap_emails",
+            "name": "recap email's",
+            "sla_max_hours": 336,
+            "leads": []
+          }
+        ],
+        "qualification_minimum": [
+          "town_or_address",
+          "goal_use_case",
+          "timeline",
+          "lot_context",
+          "budget_range_comfort"
+        ],
+        "default_ctas": [
+          "book_15_min_call",
+          "book_site_feasibility"
+        ]
       },
       "atlantic_laser": {
-        "incoming": [],
-        "qualified": [],
-        "demo_scheduled": [],
-        "quote_sent": [],
-        "negotiation": [],
-        "closed_won": []
+        "stages": [
+          {
+            "id": "al_incoming_leads",
+            "name": "Incoming Leads",
+            "sla_max_hours": 24,
+            "leads": []
+          },
+          {
+            "id": "al_contacted",
+            "name": "Contacted / Welcome Sent",
+            "sla_max_hours": 48,
+            "leads": []
+          },
+          {
+            "id": "al_qualified",
+            "name": "Qualified",
+            "sla_max_hours": 168,
+            "leads": []
+          },
+          {
+            "id": "al_demo_scheduled",
+            "name": "Demo / Consult Scheduled",
+            "sla_max_hours": 168,
+            "leads": []
+          },
+          {
+            "id": "al_quote_requested",
+            "name": "Quote Requested",
+            "sla_max_hours": 168,
+            "leads": []
+          },
+          {
+            "id": "al_quote_sent",
+            "name": "Quote Sent",
+            "sla_max_hours": 336,
+            "leads": []
+          },
+          {
+            "id": "al_negotiation",
+            "name": "Negotiation",
+            "sla_max_hours": 336,
+            "leads": []
+          },
+          {
+            "id": "al_closed_won",
+            "name": "Closed Won",
+            "sla_max_hours": 0,
+            "leads": []
+          },
+          {
+            "id": "al_closed_lost",
+            "name": "Closed Lost",
+            "sla_max_hours": 0,
+            "leads": []
+          },
+          {
+            "id": "al_recycle",
+            "name": "Recycle / Nurture",
+            "sla_max_hours": 2160,
+            "leads": []
+          }
+        ],
+        "qualification_minimum": [
+          "material_and_thickness",
+          "use_case",
+          "duty_cycle",
+          "budget_range_and_financing_need",
+          "timeline_and_decision_maker"
+        ],
+        "default_ctas": [
+          "short_consult",
+          "demo",
+          "quote"
+        ]
       },
       "alpine": {
-        "incoming": [],
-        "qualified": [],
-        "underwriting": [],
-        "loi_sent": [],
-        "due_diligence": [],
-        "closed_won": []
+        "stages": [
+          {
+            "id": "ap_incoming_leads",
+            "name": "Incoming Leads",
+            "sla_max_hours": 24,
+            "leads": []
+          },
+          {
+            "id": "ap_qualified",
+            "name": "Qualified",
+            "sla_max_hours": 168,
+            "leads": []
+          },
+          {
+            "id": "ap_underwriting",
+            "name": "Underwriting",
+            "sla_max_hours": 720,
+            "leads": []
+          },
+          {
+            "id": "ap_loi_sent",
+            "name": "LOI Sent",
+            "sla_max_hours": 720,
+            "leads": []
+          },
+          {
+            "id": "ap_due_diligence",
+            "name": "Due Diligence",
+            "sla_max_hours": 1440,
+            "leads": []
+          },
+          {
+            "id": "ap_closed_won",
+            "name": "Closed Won",
+            "sla_max_hours": 0,
+            "leads": []
+          },
+          {
+            "id": "ap_closed_lost",
+            "name": "Closed Lost",
+            "sla_max_hours": 0,
+            "leads": []
+          }
+        ],
+        "qualification_minimum": [
+          "location_asset_type",
+          "units_far_zoning_status",
+          "seller_motivation_timeline",
+          "price_guidance_permits",
+          "broker_or_offmarket"
+        ],
+        "default_ctas": [
+          "send_om_request",
+          "underwriting_questions"
+        ]
       }
     },
     "waiting_on": [],
