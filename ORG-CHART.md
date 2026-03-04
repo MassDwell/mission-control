@@ -10,23 +10,23 @@
                             STEVE VETTORI
                            (CEO)
                                 |
-                    ________________________|_________________________
+                    ________________________|__________________________
                    |
             CLAWSON (🦅)
          (Chief of Staff)
             (Orchestrator)
                    |
-    ________________|_________________________________________________________________________________
+    ________________|__________________________________________________________________________________
    |               |                 |               |               |              |              |
    |               |                 |               |               |              |              |
-SALES CHIEF   MARKETING HEAD   FINANCE DIRECTOR  OPS DIRECTOR    CODESMITH    INTELLIGENCE   MONEYPRINTER   PERSONAL OPS
-(sales_       (marketing_head)  (finance_        (ops_           (CTO)        RESEARCH       (trading_      (TBD)
-followup)                       director)        director)       (TBD)        (TBD)          revival)
-✅ ACTIVE     ✅ ACTIVE         ✅ ACTIVE         ✅ ACTIVE       ❌ Building   ❌ Building     ✅ ACTIVE
+SALES CHIEF   MARKETING HEAD   FINANCE DIRECTOR  OPS DIRECTOR   INTEL CHIEF  CODESMITH    MONEYPRINTER   PERSONAL OPS
+(sales_       (marketing_head)  (finance_        (ops_          (intelligence (CTO)       (trading_      (TBD)
+followup)                       director)        director)      _chief)       (TBD)       revival)
+✅ ACTIVE     ✅ ACTIVE         ✅ ACTIVE         ✅ ACTIVE      ✅ ACTIVE     ❌ Building  ✅ ACTIVE
    
-   Track 3      Demand &        Capital &         Order &
-   Businesses   Content         Financial         Project
-   Pipeline     Campaigns       Visibility        Execution
+   Track 3      Demand &        Capital &         Order &        Market &
+   Businesses   Content         Financial         Project        Strategic
+   Pipeline     Campaigns       Visibility        Execution      Research
 ```
 
 ---
@@ -49,9 +49,9 @@ followup)                       director)        director)       (TBD)        (T
 | **Sales Chief** | sales_followup | ✅ Active | Pipeline, forecasting, deal tracking (all 3 businesses) |
 | **Marketing Head** | marketing_head | ✅ Active | Demand gen, content, campaigns (MassDwell, Atlantic Laser, Alpine) |
 | **Finance Director (CFO)** | finance_director | ✅ Active | Financial visibility, capital allocation, forecasting |
-| **Operations Director (COO)** | ops_director | ✅ **NEW** | Project execution, order fulfillment, blocker management |
+| **Operations Director (COO)** | ops_director | ✅ Active | Project execution, order fulfillment, blocker management |
+| **Intelligence Chief** | intelligence_chief | ✅ **NEW** | Strategic research, market intel, competitive analysis, regulatory monitoring |
 | **Codesmith (CTO)** | TBD | ❌ Not yet | Engineering, architecture, tech roadmap |
-| **Intelligence Research** | TBD | ❌ Not yet | Market intel, competitive research, data analysis |
 | **MoneyPrinter (Trading)** | trading_revival | ✅ Active | Intraday trading, portfolio management |
 | **Personal Ops** | TBD | ❌ Not yet | Calendar, reminders, personal tasks |
 
@@ -354,10 +354,9 @@ followup)                       director)        director)       (TBD)        (T
 | Role | Status | Notes |
 |------|--------|-------|
 | **Codesmith (CTO)** | ❌ Missing | Need: engineering, architecture, tech roadmap |
-| **Intelligence Research** | ❌ Missing | Need: market intel, competitive analysis, data science |
 | **Personal Ops** | ❌ Missing | Need: calendar, reminders, personal life management |
 
-**4 of 8 chiefs now live.** Ready to build the remaining 3?
+**5 of 8 chiefs now live.** Ready to build Codesmith and Personal Ops?
 
 ---
 
