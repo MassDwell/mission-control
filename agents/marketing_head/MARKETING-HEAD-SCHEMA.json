@@ -1,66 +1,57 @@
 {
-  "schema_version": "1.0.0",
-  "agent_id": "marketing_head_master",
+  "schema_version": "1.0",
+  "agent_id": "marketing_head",
   "owner": {
     "name": "Steve Vettori",
     "timezone": "America/New_York"
   },
-  "brands": [
-    {
-      "id": "massdwell",
-      "name": "MassDwell",
+  "brands": {
+    "massdwell": {
       "positioning": "Modern modular ADUs built faster and smarter",
       "audiences": [
-        "homeowners_40_65",
-        "small_developers",
-        "municipalities"
+        "homeowners",
+        "small developers",
+        "municipal housing planners"
       ],
-      "key_topics": [
-        "zoning_education",
-        "property_owner_education",
-        "adu_feasibility",
-        "modular_advantages",
-        "housing_shortage"
-      ],
-      "tone": "consultative_educational_confidence"
+      "channels": [
+        "website",
+        "SEO",
+        "Facebook",
+        "Instagram",
+        "YouTube",
+        "email"
+      ]
     },
-    {
-      "id": "atlantic_laser",
-      "name": "Atlantic Laser Solutions",
-      "positioning": "Industrial laser welding solutions for modern fabrication",
+    "atlantic_laser": {
+      "positioning": "Industrial laser welding solutions",
       "audiences": [
-        "fabrication_shops",
-        "manufacturing_companies",
-        "industrial_operators"
+        "fabrication shops",
+        "manufacturers",
+        "industrial operators"
       ],
-      "key_topics": [
-        "welding_efficiency",
-        "production_throughput",
-        "cost_reduction",
-        "training_demos",
-        "roi_analysis"
-      ],
-      "tone": "technical_roi_proof_driven"
+      "channels": [
+        "website",
+        "LinkedIn",
+        "YouTube",
+        "email",
+        "paid ads"
+      ]
     },
-    {
-      "id": "alpine",
-      "name": "Alpine Property Group",
-      "positioning": "Experienced real estate developer and investment partner",
+    "alpine": {
+      "positioning": "Experienced real estate developer",
       "audiences": [
         "brokers",
         "investors",
-        "property_owners"
+        "property owners"
       ],
-      "key_topics": [
-        "development_expertise",
-        "project_highlights",
-        "investment_opportunities",
-        "zoning_opportunities",
-        "deal_sourcing"
-      ],
-      "tone": "professional_deal_sharp_partnership"
+      "channels": [
+        "website",
+        "LinkedIn",
+        "email",
+        "industry networks"
+      ]
     }
-  ],
+  },
   "funnel_stages": [
     "awareness",
     "interest",
@@ -189,12 +180,56 @@
   },
   "state": {
     "campaigns": [],
-    "content": [],
-    "lead_sources": [],
-    "weekly_metrics": [],
-    "monthly_metrics": [],
-    "sales_alignment_notes": [],
-    "brand_performance": {}
+    "content_library": {
+      "articles": [],
+      "videos": [],
+      "social_posts": [],
+      "case_studies": [],
+      "landing_pages": []
+    },
+    "funnel": {
+      "awareness": {
+        "visitors": 0
+      },
+      "interest": {
+        "engaged_users": 0
+      },
+      "engagement": {
+        "content_interactions": 0
+      },
+      "leads": {
+        "count": 0
+      },
+      "mql": {
+        "count": 0
+      },
+      "sql": {
+        "count": 0
+      }
+    },
+    "analytics": {
+      "leads_by_source": {},
+      "cost_per_lead": {},
+      "conversion_rates": {},
+      "campaign_roi": {}
+    },
+    "content_pipeline": {
+      "ideas": [],
+      "in_production": [],
+      "scheduled": [],
+      "published": []
+    },
+    "approvals_queue": {
+      "pending": [],
+      "history": []
+    },
+    "weekly_report": {
+      "week_of": null,
+      "leads_generated": 0,
+      "top_campaigns": [],
+      "top_content": [],
+      "recommendations": []
+    }
   },
   "output_contract": {
     "required_fields": [
