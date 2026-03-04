@@ -1,106 +1,169 @@
 {
-  "exportedAt": "2026-03-03T20:04:56Z",
+  "exportedAt": "2026-03-04T13:20:42Z",
   "timezone": "America/New_York",
-  "total": 67,
+  "currentTime": "1:20 PM EST Wednesday",
+  "total": 13,
   "summary": {
-    "enabled": 66,
-    "disabled": 1,
-    "lastSync": "2026-03-03T20:04:56Z"
+    "enabled": 13,
+    "disabled": 0,
+    "lastSync": "2026-03-04T13:20:42Z"
   },
   "systemStatus": {
-    "timestamp": "2026-03-03T20:04:56Z",
-    "currentTime": "8:04 PM EST",
-    "marketStatus": "CLOSED (4h 4m post-market)",
-    "dayOfWeek": "Tuesday",
-    "operationalStatus": "ALL SYSTEMS NOMINAL - Evening operations running"
+    "timestamp": "2026-03-04T13:20:42Z",
+    "currentTime": "1:20 PM EST",
+    "marketStatus": "OPEN (3h 40m remaining in regular session)",
+    "dayOfWeek": "Wednesday",
+    "operationalStatus": "MARKET ACTIVE - Trading operations in progress"
   },
-  "majorCategoriesCount": {
-    "Email_Intelligence": 4,
-    "Sales_Pipeline": 12,
-    "Marketing_Content": 5,
-    "Money_Printer_Trading": 8,
-    "MassDwell_Operations": 10,
-    "Personal_Admin": 7,
-    "Heartbeats": 5,
-    "Weekly_Reports": 8,
-    "Special_One_Off": 4,
-    "New_Prospecting_Systems": 4
-  },
-  "newJobsAddedToday": {
-    "prospectingEmailSend": [
-      "MassDwell Daily Email Send (9 AM) - Daily prospecting execution",
-      "Atlantic Laser Daily Email Send (9 AM) - Daily prospecting execution"
+  "jobs": [
+    {
+      "id": "b947b0db-9818-4e3d-8124-7ce6120fcbd7",
+      "name": "Gmail Token Auto-Refresh - All Accounts",
+      "enabled": true,
+      "schedule": "Every 30 minutes",
+      "lastStatus": "ok",
+      "nextRunAtMs": 1772650037412
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "Every 2 hours",
+      "lastStatus": "ok",
+      "nextRunAtMs": 1772651096119
+    },
+    {
+      "id": "ac9a559d-128e-4e6b-a146-a5c6ad1a1e00",
+      "name": "money-printer-market-intelligence-0900",
+      "enabled": true,
+      "schedule": "0 9 * * 1-5 (9:00 AM weekdays)",
+      "lastStatus": "error",
+      "lastError": "HTTP 401 authentication_error",
+      "nextRunAtMs": 1772719200000
+    },
+    {
+      "id": "57e2e261-b577-4d24-838f-94753d988209",
+      "name": "money-printer-sentiment-intelligence-0905",
+      "enabled": true,
+      "schedule": "5 9 * * 1-5 (9:05 AM weekdays)",
+      "lastStatus": "error",
+      "lastError": "HTTP 401 authentication_error",
+      "nextRunAtMs": 1772719500000
+    },
+    {
+      "id": "fa935d6e-f63e-4da0-bcb2-39553cef9344",
+      "name": "money-printer-strategy-generator-0915",
+      "enabled": true,
+      "schedule": "15 9 * * 1-5 (9:15 AM weekdays)",
+      "lastStatus": "error",
+      "lastError": "HTTP 401 authentication_error",
+      "nextRunAtMs": 1772720100000
+    },
+    {
+      "id": "4693b325-3969-43ef-9ac4-a7500ab2c9f9",
+      "name": "money-printer-risk-gate-0920",
+      "enabled": true,
+      "schedule": "20 9 * * 1-5 (9:20 AM weekdays)",
+      "lastStatus": "error",
+      "lastError": "HTTP 401 authentication_error",
+      "nextRunAtMs": 1772720400000
+    },
+    {
+      "id": "45b7fbd3-65ec-4c57-a41e-684ea7d5e5a3",
+      "name": "money-printer-sentiment-intelligence-1200",
+      "enabled": true,
+      "schedule": "0 12 * * 1-5 (12:00 PM weekdays)",
+      "lastStatus": "error",
+      "lastError": "HTTP 401 authentication_error",
+      "nextRunAtMs": 1772730000000
+    },
+    {
+      "id": "85f731fd-500b-4ff7-9f8b-f08b5c49a74d",
+      "name": "money-printer-midday-check-1300",
+      "enabled": true,
+      "schedule": "0 13 * * 1-5 (1:00 PM weekdays)",
+      "lastStatus": "ok",
+      "nextRunAtMs": 1772733600000
+    },
+    {
+      "id": "3b7e0bf5-c089-423e-aca1-ba07b1206fea",
+      "name": "money-printer-sentiment-intelligence-1400",
+      "enabled": true,
+      "schedule": "0 14 * * 1-5 (2:00 PM weekdays)",
+      "lastStatus": "ok",
+      "nextRunAtMs": 1772650800000
+    },
+    {
+      "id": "5a9d0c82-eeff-4025-a26c-e85019640488",
+      "name": "Money Printer Trading Cycle",
+      "enabled": true,
+      "schedule": "0 10,14 * * 1-5 (10:00 AM, 2:00 PM weekdays)",
+      "lastStatus": "error",
+      "lastError": "HTTP 401 authentication_error",
+      "nextRunAtMs": 1772650800000
+    },
+    {
+      "id": "86982f66-155e-4b92-aecd-b964e42f36ba",
+      "name": "money-printer-eod-analytics-1630",
+      "enabled": true,
+      "schedule": "30 16 * * 1-5 (4:30 PM weekdays)",
+      "lastStatus": "ok",
+      "nextRunAtMs": 1772659800000
+    },
+    {
+      "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
+      "name": "Weekly Memory Maintenance",
+      "enabled": true,
+      "schedule": "0 20 * * 0 (8:00 PM Sundays)",
+      "lastStatus": "ok",
+      "nextRunAtMs": 1773014400000
+    },
+    {
+      "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
+      "name": "Bi-Weekly Memory Audit",
+      "enabled": true,
+      "schedule": "0 10 1,15 * * (10:00 AM on 1st and 15th)",
+      "lastStatus": "ok",
+      "nextRunAtMs": 1773583200000
+    }
+  ],
+  "issuesDetected": {
+    "authenticationErrors": 5,
+    "affectedJobs": [
+      "money-printer-market-intelligence-0900",
+      "money-printer-sentiment-intelligence-0905",
+      "money-printer-strategy-generator-0915",
+      "money-printer-risk-gate-0920",
+      "money-printer-sentiment-intelligence-1200",
+      "Money Printer Trading Cycle"
     ],
-    "emailReplyMonitoring": [
-      "Email Reply Monitor & BANT Extraction - Continuous prospect qualification"
-    ],
-    "reportingEnhancements": [
-      "Daily Prospecting Summary Report (5 PM) - Daily pipeline metrics"
-    ],
-    "kommoOptimization": [
-      "MassDwell Kommo Prospects Cache Refresh (8 AM) - Daily prospect data refresh"
-    ],
-    "totalNewToday": 4
+    "recommendation": "Verify Alpaca and API credentials in ~/.openclaw/workspace/credentials/"
   },
-  "systemOptimizations": {
-    "status": "COMPLETED",
-    "improvementsApplied": [
-      "Kommo CRM credentials resolved - email-to-CRM sync now fully operational",
-      "Email intent classifier running successfully (every 5 min MassDwell, 10 min Atlantic)",
-      "Prospects cache system implemented for efficient prospecting",
-      "BANT extraction system added to qualify replies automatically",
-      "Daily prospecting email send now fully automated",
-      "Reply monitoring integrated with BANT scoring"
-    ]
-  },
-  "eveningOperationsSchedule": {
-    "5:00_PM": "Daily Prospecting Summary Report (scheduled)",
-    "5:30_PM": "MassDwell Master Evening Briefing - CONSOLIDATED (scheduled)",
-    "6:00_PM": "Lead Resurrection Daily Report (scheduled)",
-    "6:00_PM": "MassDwell X Post - Evening (scheduled)",
-    "9:00_PM": "Daily Sales Report (scheduled)",
-    "9:00_PM": "Nightly Learning - Rotating Agent (scheduled)",
-    "1:00_AM": "OpenClaw Nightly Drift Scan (scheduled)"
-  },
-  "jobsByFrequency": {
-    "every_5_minutes": 1,
-    "every_10_minutes": 1,
-    "every_15_minutes": 1,
+  "healthyJobs": 8,
+  "problemJobs": 5,
+  "healthPercentage": 61.5,
+  "jobsBySchedule": {
     "every_30_minutes": 1,
-    "hourly": 1,
-    "daily_morning": 8,
-    "daily_midday": 5,
-    "daily_afternoon": 5,
-    "daily_evening": 5,
-    "daily_night": 2,
-    "weekly": 8,
-    "bi_weekly": 1,
-    "one_off": 2,
-    "trading_specific": 8,
-    "prospecting_daily": 4
+    "every_2_hours": 1,
+    "weekday_mornings": 4,
+    "weekday_midday": 2,
+    "weekday_afternoon": 2,
+    "weekly": 1,
+    "biweekly": 1
   },
-  "agentDistribution": {
-    "main": 42,
-    "sales_followup": 4,
-    "marketing_content": 5,
-    "massdwell_factory_ops": 1,
-    "atlantic_laser_sales": 1,
-    "admin_assistant": 1,
-    "codesmith": 1,
-    "personal_life_cos": 1
-  },
-  "lastUpdated": "2026-03-03T20:04:56Z",
+  "tradingJobs": 6,
+  "memoryJobs": 2,
+  "adminJobs": 5,
   "notes": [
-    "67 total cron jobs now (up from 63)",
-    "66 enabled, 1 disabled (Instagram token refresh reminder - scheduled for April 1)",
-    "4 new jobs deployed today: Daily email sends, BANT reply monitor, prospects cache refresh, daily summary report",
-    "Email intelligence system fully operational - Kommo credentials now resolved",
-    "Prospecting automation complete: email sending, reply monitoring, BANT extraction, daily reporting",
-    "Market close @ 4:00 PM EST - evening operations in full swing",
-    "Evening operations 100% automated and running smoothly",
-    "All system health checks passing - no blockers detected",
-    "Money Printer trading: Paper trading active, full automation running",
-    "Complete sales pipeline automation end-to-end (prospecting → reply monitor → BANT qualification)",
-    "All times EST (America/New_York timezone)"
-  ]
+    "13 total cron jobs (core infrastructure)",
+    "8 healthy, 5 with API authentication errors",
+    "Trading jobs have 401 credential issues - requires API key verification",
+    "Memory maintenance jobs running on schedule",
+    "Gmail token refresh operating normally",
+    "Market hours: 9:30 AM - 4:00 PM EST (currently at 1:20 PM, 3h 40m remaining)",
+    "All times EST (America/New_York timezone)",
+    "Last full export: 2026-03-03 20:04:56 EST",
+    "Current export: 2026-03-04 13:20:42 EST"
+  ],
+  "lastUpdated": "2026-03-04T13:20:42Z"
 }
