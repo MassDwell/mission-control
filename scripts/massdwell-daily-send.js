@@ -18,6 +18,7 @@ const fs = require('fs');
 const path = require('path');
 const { google } = require('googleapis');
 
+const { isDNC } = require('./lib/dnc-check');
 const PROSPECTS_CACHE = '/Users/openclaw/.openclaw/workspace/data/massdwell/sales/kommo-prospects-cache.json';
 const TRACKING_FILE = '/Users/openclaw/.openclaw/workspace/data/massdwell/sales/email-prospecting-tracking.json';
 const TEMPLATES_DIR = '/Users/openclaw/.openclaw/workspace/data/massdwell/sales/email-templates';
@@ -92,34 +93,13 @@ async function sendEmail(to, subject, body) {
   }
 }
 
-// Load DNC list
-function loadDNCList() {
-  try {
-    if (!fs.existsSync(DNC_LIST)) return [];
-    const data = loadJSON(DNC_LIST);
-    return data.contacts.map(c => c.email.toLowerCase()) || [];
-  } catch (e) {
-    console.warn('⚠️  Could not load DNC list');
-    return [];
-  }
-}
-
-// Check if prospect is on DNC list
-function isOnDNC(email, dncList) {
-  return dncList.includes(email.toLowerCase());
-}
-
 // Get next prospect to email
 function getNextProspect(prospects, tracking) {
   const contacted = new Set(tracking.massdwell.conversations.map(c => c.prospect_id));
-  const dncList = loadDNCList();
   
   const available = prospects.filter(p => {
     if (contacted.has(p.prospect_id)) return false;
-    if (isOnDNC(p.email, dncList)) {
-      console.log(`⏭️  SKIPPING ${p.email} - on do-not-contact list`);
-      return false;
-    }
+    if (isDNC(p.email, 'massdwell-daily-send')) return false;
     return true;
   });
 

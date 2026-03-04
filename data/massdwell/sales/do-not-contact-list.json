@@ -1,0 +1,38 @@
+{
+  "description": "Contacts explicitly marked as 'Do Not Contact' by Steve. Auto-engage bot skips these. NOTE: Match by email AND by name - a person may have multiple emails.",
+  "last_updated": "2026-03-03T19:24:00.000Z",
+  "contacts": [
+    {
+      "email": "bp555p@aol.com",
+      "name": "Bev Premo",
+      "aliases": ["Beverly Pierre", "Bev Rodrigue", "Premo Beverly"],
+      "alt_emails": ["bevrodrigue26@gmail.com", "beverlypierre@gmail.com"],
+      "reason": "Future contact - marked by Steve",
+      "date_added": "2026-03-03"
+    },
+    {
+      "email": "bevrodrigue26@gmail.com",
+      "name": "Bev Rodrigue",
+      "reason": "Future contact - marked by Steve (alt email for Bev Premo)",
+      "date_added": "2026-03-03"
+    },
+    {
+      "email": "beverlypierre@gmail.com",
+      "name": "Beverly Pierre",
+      "reason": "Future contact - marked by Steve (alt email for Bev Premo)",
+      "date_added": "2026-03-03"
+    },
+    {
+      "email": "brian.lee@email.com",
+      "name": "Brian Lee",
+      "reason": "Closed Lost - Never contact again",
+      "date_added": "2026-03-03T18:19:22.961Z"
+    },
+    {
+      "email": "alan.smith@email.com",
+      "name": "Alan Smith",
+      "reason": "Closed Lost - STOP request",
+      "date_added": "2026-03-03T21:07:25.000Z"
+    }
+  ]
+}
