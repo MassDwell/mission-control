@@ -503,6 +503,82 @@
       }
     }
   },
+  "examples": {
+    "lead_example": {
+      "id": "lead_001",
+      "brand_mode": "massdwell",
+      "source": "website_form",
+      "created_at": "2026-03-03T19:55:00-05:00",
+      "last_inbound_at": "2026-03-03T19:55:00-05:00",
+      "last_outbound_at": null,
+      "status": "new",
+      "routing_confidence": 0.9,
+      "contact_ref": "contact_001",
+      "account_ref": null,
+      "notes": "Wants ADU estimate.",
+      "tags": [
+        "adu",
+        "inbound"
+      ],
+      "consent": {
+        "sms_ok": null,
+        "email_ok": true,
+        "opted_out": false,
+        "opted_out_at": null
+      },
+      "name": "Jane Doe",
+      "email": "jane@example.com",
+      "phone": "+16175551234",
+      "company": null,
+      "stage": null,
+      "stage_entered_at": null,
+      "next_action": "Respond to website inquiry",
+      "next_action_due_at": "2026-03-03T21:55:00-05:00",
+      "follow_up_cadence": "massdwell_inbound",
+      "cadence_attempts_count": 0,
+      "contact_history": [],
+      "qualification_data": {},
+      "deal_value_usd": null
+    },
+    "deal_example": {
+      "id": "deal_001",
+      "brand_mode": "massdwell",
+      "lead_ref": "lead_001",
+      "title": "ADU - Newton",
+      "value_amount": 150000,
+      "currency": "USD",
+      "pipeline_stage_id": "md_incoming_leads",
+      "stage_entered_at": "2026-03-03T19:56:00-05:00",
+      "next_action_due_at": "2026-03-03T21:56:00-05:00",
+      "owner": "agent",
+      "status": "open",
+      "qualification": {
+        "massdwell": {
+          "town_or_address": "Newton, MA",
+          "goal_use_case": "rental_income",
+          "timeline": "6_12_months",
+          "lot_context": "single_family_backyard_access_ok",
+          "budget_range_comfort": "unknown"
+        },
+        "atlantic_laser": {},
+        "alpine": {}
+      },
+      "activity_log": [
+        {
+          "id": "evt_001",
+          "deal_ref": "deal_001",
+          "timestamp": "2026-03-03T19:56:00-05:00",
+          "type": "stage_change",
+          "summary": "Created deal in Incoming Leads",
+          "meta": {
+            "from": null,
+            "to": "md_incoming_leads"
+          }
+        }
+      ],
+      "risks_notes": []
+    }
+  },
   "types": {
     "lead": {
       "id": "lead_uuid",
