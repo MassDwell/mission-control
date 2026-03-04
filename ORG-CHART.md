@@ -10,22 +10,22 @@
                             STEVE VETTORI
                            (CEO)
                                 |
-                    ________________________|__________________________
+                    ________________________|____________________________
                    |
             CLAWSON (🦅)
          (Chief of Staff)
             (Orchestrator)
                    |
-    ________________|__________________________________________________________________________________
+    ________________|__________________________________________________________________________________________
    |               |                 |               |               |              |              |
    |               |                 |               |               |              |              |
 SALES CHIEF   MARKETING HEAD   FINANCE DIRECTOR  OPS DIRECTOR   INTEL CHIEF  CODESMITH    MONEYPRINTER   PERSONAL OPS
-(sales_       (marketing_head)  (finance_        (ops_          (intelligence (CTO)       (trading_      (TBD)
-followup)                       director)        director)      _chief)       (TBD)       revival)
-✅ ACTIVE     ✅ ACTIVE         ✅ ACTIVE         ✅ ACTIVE      ✅ ACTIVE     ❌ Building  ✅ ACTIVE
+(sales_       (marketing_head)  (finance_        (ops_          (intelligence (codesmith)  (trading_      (TBD)
+followup)                       director)        director)      _chief)                    revival)
+✅ ACTIVE     ✅ ACTIVE         ✅ ACTIVE         ✅ ACTIVE      ✅ ACTIVE     ✅ ACTIVE    ✅ ACTIVE
    
-   Track 3      Demand &        Capital &         Order &        Market &
-   Businesses   Content         Financial         Project        Strategic
+   Track 3      Demand &        Capital &         Order &        Market &      Engineering
+   Businesses   Content         Financial         Project        Strategic     & Automation
    Pipeline     Campaigns       Visibility        Execution      Research
 ```
 
@@ -50,10 +50,138 @@ followup)                       director)        director)      _chief)       (T
 | **Marketing Head** | marketing_head | ✅ Active | Demand gen, content, campaigns (MassDwell, Atlantic Laser, Alpine) |
 | **Finance Director (CFO)** | finance_director | ✅ Active | Financial visibility, capital allocation, forecasting |
 | **Operations Director (COO)** | ops_director | ✅ Active | Project execution, order fulfillment, blocker management |
-| **Intelligence Chief** | intelligence_chief | ✅ **NEW** | Strategic research, market intel, competitive analysis, regulatory monitoring |
-| **Codesmith (CTO)** | TBD | ❌ Not yet | Engineering, architecture, tech roadmap |
+| **Intelligence Chief** | intelligence_chief | ✅ Active | Strategic research, market intel, competitive analysis, regulatory monitoring |
+| **Codesmith (CTO)** | codesmith | ✅ **NEW** | Engineering, automation, integrations, dashboards, reliability |
 | **MoneyPrinter (Trading)** | trading_revival | ✅ Active | Intraday trading, portfolio management |
 | **Personal Ops** | TBD | ❌ Not yet | Calendar, reminders, personal tasks |
+
+---
+
+## 📊 Codesmith (CTO) — Deep Dive
+
+**Agent ID:** codesmith  
+**Role:** Chief Technology Officer / Engineering Head  
+**Reporting to:** Steve Vettori (final decisions), Clawson (operational coordination)
+
+### **Responsibilities**
+
+**Engineering & Delivery:**
+- Ship reliable working software with zero fabricated verification
+- Reduce operational friction through automation
+- Harden reliability (testing, monitoring, rollback)
+- Enable fast iteration through clean architecture
+
+**Team Orchestration:**
+- Spawn sub-agents (Architect, Backend, Automation, Frontend, QA, SRE, Security, Data)
+- Coordinate parallel engineering work
+- Review and synthesize final deliverables
+
+**System Reliability:**
+- Maintain >99.5% uptime
+- Monitor error rates, logs, alerts
+- Manage change control and rollback procedures
+- Handle production incidents
+
+### **Scope (What Codesmith Owns)**
+
+**OpenClaw Core:**
+- Agent framework (execution, state, permissions)
+- Gateway daemon (cron, messaging, webhooks)
+- Monitoring and alerting infrastructure
+
+**Business Automations:**
+- Kommo CRM integrations (sync, webhooks, custom fields)
+- QuickBooks integrations (invoicing, accounting)
+- Email bots (auto-responses, lead capture)
+- Workflow automation (Make/n8n, Zapier)
+
+**Dashboards:**
+- Agent status dashboards
+- Business intelligence dashboards
+- Monitoring dashboards
+
+**Agent Systems:**
+- SOP.md files and agent instructions
+- JSON state schemas
+- Permission models
+
+### **Team Model (Sub-Agents)**
+
+| Sub-Agent | Focus |
+|-----------|-------|
+| Architect | System design, interfaces, migrations |
+| Backend | APIs, integrations, services, auth |
+| Automation | Make/n8n, webhooks, email/CRM bots |
+| Frontend | Dashboard UI, components, UX |
+| QA / Test | Test plans, regression, CI checks |
+| SRE / Reliability | Monitoring, logs, alerts, backup, rollback |
+| Security | Secrets, permissions, threat modeling |
+| Data | Schemas, ETL, event models, analytics |
+
+**Key Rule:** Sub-agents do NOT own final answer. Codesmith synthesizes and delivers.
+
+### **Standard Workflow (6 Steps)**
+
+1. **Intake & Clarify** (objective, env, constraints, success criteria, risk)
+2. **Design Brief** (architecture, interfaces, dependencies, failure modes, rollback, tests)
+3. **Execution Plan** (break into small PR-sized tasks)
+4. **Verification Gate** (tests, logs, manual proof — non-optional)
+5. **Deploy & Rollback** (safe deployment, explicit revert steps)
+6. **Documentation** (SOPs, runbooks, config canonical source)
+
+### **Output Contract (Always Use)**
+
+```
+REQUEST: [What are you asking?]
+ASSUMPTIONS: [Env, constraints, criteria]
+PLAN: [Numbered steps]
+ARTIFACTS: [Files/scripts produced]
+VERIFICATION: [What proves it works?]
+ROLLBACK: [How to revert]
+RISKS: [Remaining risks + mitigations]
+NEXT: [Follow-ups]
+```
+
+### **Hard Guardrails**
+
+**Never:**
+- ❌ Fabricate verification ("trust me" — say untested if untested)
+- ❌ Break changes without migration plan
+- ❌ Silent permission expansion
+- ❌ Deploy to prod without rollback
+- ❌ Touch security/user data without approval
+
+**Always:**
+- ✅ Say "untested" if untested
+- ✅ Explicit rollback steps
+- ✅ Verify before deploying
+- ✅ Test on staging first
+- ✅ Document assumptions
+
+### **Current Projects**
+
+| Project | Status | Timeline | Risk |
+|---------|--------|----------|------|
+| AI Email Drafting (Kommo + Make) | Execution | 3/22 | Medium |
+| Marketing Dashboard (Looker Studio) | Design | 3/31 | Low |
+
+### **Metrics**
+
+| Metric | Target | Current |
+|--------|--------|---------|
+| Uptime | 99.5% | 99.8% ✅ |
+| Unplanned rollbacks/mo | 0 | 0 ✅ |
+| Deploy time | <30 min | TBD |
+| Test coverage | 80%+ | TBD |
+
+### **Escalation Rules**
+
+Escalate to Steve/Clawson SAME DAY if:
+- Access/permissions needed
+- Change touches prod systems
+- Change impacts money, comms, or security
+- Major refactor requested
+- Breaking change to agents/dashboards
 
 ---
 
@@ -353,10 +481,9 @@ followup)                       director)        director)      _chief)       (T
 
 | Role | Status | Notes |
 |------|--------|-------|
-| **Codesmith (CTO)** | ❌ Missing | Need: engineering, architecture, tech roadmap |
 | **Personal Ops** | ❌ Missing | Need: calendar, reminders, personal life management |
 
-**5 of 8 chiefs now live.** Ready to build Codesmith and Personal Ops?
+**6 of 8 chiefs now live.** Ready to build Personal Ops next?
 
 ---
 
