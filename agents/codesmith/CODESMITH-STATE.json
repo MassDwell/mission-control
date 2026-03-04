@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.0",
+  "agent_id": "codesmith",
+  "last_updated": "2026-03-04T09:00:00Z",
+  "projects": [
+    {
+      "id": "proj_001",
+      "name": "AI Email Drafting Automation (Sales)",
+      "scope": "Automation",
+      "objective": "Reduce sales follow-up email drafting time by 70% using Claude 3.5 + Kommo integration",
+      "status": "execution",
+      "risk_level": "medium",
+      "deadline": "2026-03-22T17:00:00Z",
+      "created_at": "2026-03-04T09:00:00Z",
+      "updated_at": "2026-03-04T09:00:00Z",
+      "owner": "codesmith",
+      "assigned_sub_agents": [
+        "backend",
+        "automation",
+        "qa"
+      ],
+      "design_brief": {
+        "architecture_approach": "Kommo webhook + Make.com + Claude API → Draft generation → Human review → Send",
+        "interfaces_contracts": "Kommo trigger (new lead, follow-up needed) → Make flow → Claude draft → Return to Kommo for review",
+        "dependencies": [
+          "Kommo API (read/write contacts, deals)",
+          "Claude API (text generation)",
+          "Make.com (workflow orchestration)"
+        ],
+        "failure_modes": [
+          "Claude API timeout → queue and retry",
+          "Kommo sync failure → alert and manual fallback",
+          "Draft quality poor → human rejection, fallback to manual"
+        ],
+        "rollback_plan": "Disable Make flow → disable Kommo webhook → manual email drafting resumes",
+        "tests_verification_plan": "Unit tests for draft quality, integration test with staging Kommo, manual QA with 5 sample emails"
+      },
+      "tasks": [
+        {
+          "id": "task_001",
+          "title": "Audit sales email templates and response patterns",
+          "status": "in_progress",
+          "subtask_of": null,
+          "assigned_to": "backend",
+          "due_at": "2026-03-08T17:00:00Z",
+          "pr_url": null,
+          "verified": false,
+          "verification_method": "manual"
+        },
+        {
+          "id": "task_002",
+          "title": "Build Claude prompt template (email drafting)",
+          "status": "todo",
+          "subtask_of": "task_001",
+          "assigned_to": "backend",
+          "due_at": "2026-03-10T17:00:00Z",
+          "pr_url": null,
+          "verified": false,
+          "verification_method": "tests"
+        },
+        {
+          "id": "task_003",
+          "title": "Build Make.com workflow (Kommo trigger → Claude → Kommo draft)",
+          "status": "todo",
+          "subtask_of": "task_001",
+          "assigned_to": "automation",
+          "due_at": "2026-03-15T17:00:00Z",
+          "pr_url": null,
+          "verified": false,
+          "verification_method": "logs"
+        },
+        {
+          "id": "task_004",
+          "title": "QA: Manual test with 5 sample scenarios",
+          "status": "todo",
+          "subtask_of": null,
+          "assigned_to": "qa",
+          "due_at": "2026-03-18T17:00:00Z",
+          "pr_url": null,
+          "verified": false,
+          "verification_method": "checklist"
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "art_001",
+          "type": "script",
+          "path": "agents/codesmith/scripts/email-drafting-prompt.md",
+          "purpose": "Claude prompt template for email drafting",
+          "status": "draft",
+          "breaking_change": false,
+          "requires_migration": false
+        },
+        {
+          "id": "art_002",
+          "type": "config",
+          "path": "agents/codesmith/configs/make-kommo-email-flow.json",
+          "purpose": "Make.com workflow definition (Kommo → Claude → email draft)",
+          "status": "draft",
+          "breaking_change": false,
+          "requires_migration": false
+        }
+      ],
+      "verification": {
+        "test_coverage_pct": 0,
+        "test_results": "pending",
+        "manual_verification": "Not yet performed",
+        "logs_proof": "Pending",
+        "expected_output": "Draft email in Kommo, human-approved, sent to lead",
+        "actual_output": "TBD"
+      },
+      "deployment": {
+        "stage": null,
+        "deploy_date": null,
+        "deploy_commands": [],
+        "rollback_commands": [
+          "Disable Make workflow: go to Make.com → disable email drafting flow",
+          "Disable Kommo webhook: go to Kommo → Settings → Webhooks → disable EmailDraftRequest"
+        ],
+        "post_deploy_checks": [
+          "Verify Make flow is running (check logs)",
+          "Verify Kommo webhook is active",
+          "Test with 1 sample lead (draft should appear in 2-5 sec)"
+        ],
+        "rollback_tested": false
+      },
+      "documentation": {
+        "sop_updated": false,
+        "runbooks_added": [],
+        "config_canonical_source": "agents/codesmith/configs/make-kommo-email-flow.json (source of truth for Make flow)"
+      },
+      "risks": [
+        {
+          "risk": "Claude API quota exceeded or rate-limited",
+          "impact": "medium",
+          "mitigation": "Implement queue + retry logic, monitor API usage daily"
+        },
+        {
+          "risk": "Kommo API changes or deprecation",
+          "impact": "high",
+          "mitigation": "Maintain Kommo API version lock, monitor changelog"
+        },
+        {
+          "risk": "Draft quality poor → user frustration",
+          "impact": "medium",
+          "mitigation": "Prompt iteration, manual review before send, fallback to human drafting"
+        }
+      ],
+      "next_steps": [
+        "Iterate on prompt based on QA feedback",
+        "Deploy to staging for 1 week",
+        "Monitor draft quality and Kommo sync",
+        "Deploy to production"
+      ]
+    },
+    {
+      "id": "proj_002",
+      "name": "Marketing Dashboard (MassDwell Sales Funnel)",
+      "scope": "Dashboard",
+      "objective": "Real-time visibility into MassDwell lead funnel: awareness → interest → engagement → lead → MQL → SQL",
+      "status": "design",
+      "risk_level": "low",
+      "deadline": "2026-03-31T17:00:00Z",
+      "created_at": "2026-02-28T09:00:00Z",
+      "updated_at": "2026-03-04T09:00:00Z",
+      "owner": "codesmith",
+      "assigned_sub_agents": [
+        "architect",
+        "frontend",
+        "data"
+      ],
+      "design_brief": {
+        "architecture_approach": "Looker Studio connected to Kommo + Google Sheets ETL → Dashboard",
+        "interfaces_contracts": "Kommo API (read leads, deals, stages) → Google Sheets (denormalized view) → Looker Studio (visual dashboard)",
+        "dependencies": [
+          "Kommo CRM (lead data)",
+          "Google Sheets (ETL staging)",
+          "Looker Studio (visualization)"
+        ],
+        "failure_modes": [
+          "Kommo API down → dashboard stale (show last known data + timestamp)",
+          "Google Sheets quota exceeded → alert and pause refresh",
+          "Looker Studio connection broken → alert team"
+        ],
+        "rollback_plan": "Revert Google Sheets ETL scripts → restore from backup",
+        "tests_verification_plan": "Compare Kommo totals vs dashboard totals (should match), manual visual inspection"
+      },
+      "tasks": [],
+      "artifacts": [],
+      "verification": {
+        "test_coverage_pct": null,
+        "test_results": "pending",
+        "manual_verification": "Not yet performed",
+        "logs_proof": null,
+        "expected_output": "Dashboard shows lead counts by stage, matches Kommo",
+        "actual_output": null
+      },
+      "deployment": {
+        "stage": null,
+        "deploy_date": null,
+        "deploy_commands": [],
+        "rollback_commands": [],
+        "post_deploy_checks": [],
+        "rollback_tested": false
+      },
+      "documentation": {
+        "sop_updated": false,
+        "runbooks_added": [],
+        "config_canonical_source": "Google Sheets ETL config"
+      },
+      "risks": [
+        {
+          "risk": "Kommo data completeness (some leads may not have proper stage)",
+          "impact": "medium",
+          "mitigation": "Data quality audit before launch, show 'unknown' stage explicitly"
+        }
+      ],
+      "next_steps": [
+        "Finalize dashboard design (wireframe)",
+        "Build Google Sheets ETL",
+        "Connect Looker Studio",
+        "QA and deploy"
+      ]
+    }
+  ],
+  "sub_agents": [
+    {
+      "id": "architect",
+      "status": "idle",
+      "current_project_id": "proj_002",
+      "scope": "System design, interfaces, data contracts, migrations",
+      "io_contract": {
+        "inputs": "Project objective, environment constraints, risk assessment",
+        "outputs": "Design brief, architecture diagram, interface contracts, failure modes, rollback plan",
+        "acceptance_tests": [
+          "Design addresses all failure modes",
+          "Rollback plan is explicit and testable",
+          "Interfaces are clear (what goes in, what comes out)"
+        ]
+      },
+      "tasks": []
+    },
+    {
+      "id": "backend",
+      "status": "active",
+      "current_project_id": "proj_001",
+      "scope": "APIs, integrations, services, auth",
+      "io_contract": {
+        "inputs": "Design brief, interface contracts, requirements",
+        "outputs": "API implementation, integration code, test cases",
+        "acceptance_tests": [
+          "API endpoints work as specified",
+          "Integration tests pass",
+          "Error handling covers failure modes"
+        ]
+      },
+      "tasks": [
+        "task_001",
+        "task_002"
+      ]
+    },
+    {
+      "id": "automation",
+      "status": "active",
+      "current_project_id": "proj_001",
+      "scope": "Make/n8n, webhooks, email/CRM bots",
+      "io_contract": {
+        "inputs": "Workflow requirements, API documentation, testing environment",
+        "outputs": "Make/n8n flow definition, webhook config, testing logs",
+        "acceptance_tests": [
+          "Flow executes trigger → action → callback",
+          "Webhook delivery is reliable",
+          "Error handling and retry work"
+        ]
+      },
+      "tasks": [
+        "task_003"
+      ]
+    },
+    {
+      "id": "qa",
+      "status": "active",
+      "current_project_id": "proj_001",
+      "scope": "Test plans, regression suites, CI checks",
+      "io_contract": {
+        "inputs": "Design brief, acceptance criteria, artifacts to test",
+        "outputs": "Test cases, verification logs, approval decision",
+        "acceptance_tests": [
+          "All acceptance criteria met",
+          "Rollback plan is testable",
+          "No regressions in existing systems"
+        ]
+      },
+      "tasks": [
+        "task_004"
+      ]
+    }
+  ],
+  "deployments": [],
+  "monitoring": {
+    "uptime_checks": {
+      "target_pct": 99.5,
+      "current_pct": 99.8,
+      "last_check": "2026-03-04T09:00:00Z",
+      "incidents": [
+        {
+          "start_at": "2026-02-15T14:30:00Z",
+          "end_at": "2026-02-15T14:45:00Z",
+          "duration_min": 15,
+          "cause": "Gateway restart for config update",
+          "resolution": "Automatic restart completed"
+        }
+      ]
+    },
+    "error_rates": {
+      "threshold_pct": 0.5,
+      "current_pct": 0.1,
+      "last_check": "2026-03-04T09:00:00Z",
+      "recent_errors": []
+    },
+    "change_control": [
+      {
+        "change_id": "chg_001",
+        "project_id": "proj_001",
+        "description": "Add AI email drafting automation",
+        "impact_assessment": "If Make flow breaks, sales team falls back to manual drafting (no revenue impact)",
+        "test_proof": "Manual QA with 5 sample emails (pending)",
+        "rollback_plan": "Disable Make flow and Kommo webhook",
+        "approved_by": null,
+        "approved_at": null,
+        "deployed_at": null,
+        "status": "pending"
+      }
+    ]
+  },
+  "build_queue": [
+    {
+      "id": "queue_001",
+      "requester": "intel_chief",
+      "request_summary": "Prototype AI email drafting workflow (Kommo + Make + Claude)",
+      "priority": "high",
+      "risk_level": "medium",
+      "estimated_effort": "M",
+      "added_at": "2026-03-04T09:00:00Z",
+      "scheduled_for": "2026-03-04T09:00:00Z",
+      "status": "in_progress",
+      "project_id": "proj_001"
+    },
+    {
+      "id": "queue_002",
+      "requester": "marketing_head",
+      "request_summary": "Build MassDwell sales funnel dashboard (Looker Studio)",
+      "priority": "medium",
+      "risk_level": "low",
+      "estimated_effort": "M",
+      "added_at": "2026-02-28T09:00:00Z",
+      "scheduled_for": "2026-03-10T09:00:00Z",
+      "status": "in_progress",
+      "project_id": "proj_002"
+    },
+    {
+      "id": "queue_003",
+      "requester": "steve",
+      "request_summary": "Hardening: Add encryption to sensitive gateway configs",
+      "priority": "critical",
+      "risk_level": "high",
+      "estimated_effort": "L",
+      "added_at": "2026-03-01T09:00:00Z",
+      "scheduled_for": null,
+      "status": "backlog",
+      "project_id": null
+    }
+  ],
+  "tech_debt": [
+    {
+      "id": "debt_001",
+      "title": "Kommo sync is polling-based (inefficient)",
+      "area": "Kommo",
+      "impact": "high",
+      "effort": "L",
+      "description": "Current sync checks Kommo every 5 min. Should use webhooks for real-time updates. Causes API quota bloat.",
+      "status": "identified",
+      "discovered_at": "2026-02-01T09:00:00Z"
+    },
+    {
+      "id": "debt_002",
+      "title": "Agent state is stored in JSON (not versioned)",
+      "area": "OpenClaw",
+      "impact": "medium",
+      "effort": "XL",
+      "description": "Agent state is in flat JSON files. Should use versioned, immutable state store (e.g., event sourcing). Current approach limits auditability.",
+      "status": "identified",
+      "discovered_at": "2026-02-15T09:00:00Z"
+    },
+    {
+      "id": "debt_003",
+      "title": "Monitoring is manual (no automated dashboards)",
+      "area": "OpenClaw",
+      "impact": "medium",
+      "effort": "M",
+      "description": "No real-time dashboard for system health. Requires manual log checking. Should implement Grafana + Prometheus.",
+      "status": "prioritized",
+      "discovered_at": "2026-01-01T09:00:00Z"
+    }
+  ],
+  "summary": {
+    "total_projects": 2,
+    "projects_in_execution": 1,
+    "projects_in_design": 1,
+    "active_sub_agents": 4,
+    "pending_deployments": 0,
+    "pending_approvals": 1,
+    "system_uptime_pct": 99.8,
+    "critical_tech_debt": 1,
+    "build_queue_items": 3,
+    "last_deployment": "2026-02-15T14:45:00Z",
+    "days_since_last_incident": 17
+  }
+}

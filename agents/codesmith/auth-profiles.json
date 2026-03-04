@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "profiles": {
+    "anthropic:default": {
+      "type": "api_key",
+      "provider": "anthropic",
+      "key": "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"
+    }
+  },
+  "lastGood": {
+    "anthropic": "anthropic:default"
+  },
+  "usageStats": {
+    "anthropic:default": {
+      "lastUsed": 1772585887662,
+      "errorCount": 0,
+      "lastFailureAt": 1772031851123
+    }
+  }
+}

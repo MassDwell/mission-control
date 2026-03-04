@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "agent_id": "codesmith",
+  "owner": {
+    "name": "Steve Vettori",
+    "timezone": "America/New_York"
+  },
+  "state_structure": {
+    "projects": [
+      {
+        "id": "string (proj_001, proj_002, etc)",
+        "name": "string (human-readable project name)",
+        "scope": "string (OpenClaw | Kommo | QuickBooks | Dashboard | Automation | Tooling | Other)",
+        "objective": "string (what are we building?)",
+        "status": "intake | design | execution | verification | deployed | archived",
+        "risk_level": "low | medium | high",
+        "deadline": "ISO8601 date or null",
+        "created_at": "ISO8601",
+        "updated_at": "ISO8601",
+        "owner": "codesmith | sub_agent_name",
+        "assigned_sub_agents": ["architect", "backend", "automation", "frontend", "qa", "sre", "security", "data"],
+        "design_brief": {
+          "architecture_approach": "string",
+          "interfaces_contracts": "string",
+          "dependencies": ["string"],
+          "failure_modes": ["string"],
+          "rollback_plan": "string",
+          "tests_verification_plan": "string"
+        },
+        "tasks": [
+          {
+            "id": "string (task_001, etc)",
+            "title": "string (safe, foundational piece)",
+            "status": "todo | in_progress | in_review | done | blocked",
+            "subtask_of": "string or null",
+            "assigned_to": "sub_agent_name",
+            "due_at": "ISO8601",
+            "pr_url": "string or null",
+            "verified": "boolean",
+            "verification_method": "tests | logs | manual | checklist"
+          }
+        ],
+        "artifacts": [
+          {
+            "id": "string",
+            "type": "file | script | config | dashboard | integration",
+            "path": "string (file path or URL)",
+            "purpose": "string (what does this do?)",
+            "status": "draft | staged | prod",
+            "breaking_change": "boolean",
+            "requires_migration": "boolean"
+          }
+        ],
+        "verification": {
+          "test_coverage_pct": "number",
+          "test_results": "passed | failed | pending",
+          "manual_verification": "string (steps performed)",
+          "logs_proof": "string (log entries showing success)",
+          "expected_output": "string (what should happen?)",
+          "actual_output": "string (what actually happened?)"
+        },
+        "deployment": {
+          "stage": "dev | staging | prod",
+          "deploy_date": "ISO8601 or null",
+          "deploy_commands": ["string"],
+          "rollback_commands": ["string"],
+          "post_deploy_checks": ["string"],
+          "rollback_tested": "boolean"
+        },
+        "documentation": {
+          "sop_updated": "boolean",
+          "runbooks_added": ["string"],
+          "config_canonical_source": "string (where is the source of truth?)"
+        },
+        "risks": [
+          {
+            "risk": "string (what could go wrong?)",
+            "impact": "low | medium | high",
+            "mitigation": "string"
+          }
+        ],
+        "next_steps": ["string (follow-ups or dependencies)"]
+      }
+    ],
+    "sub_agents": [
+      {
+        "id": "string (architect | backend | automation | frontend | qa | sre | security | data)",
+        "status": "idle | active | waiting",
+        "current_project_id": "string or null",
+        "scope": "string (what does this sub-agent do?)",
+        "io_contract": {
+          "inputs": "string (what goes in?)",
+          "outputs": "string (what comes out?)",
+          "acceptance_tests": ["string"]
+        },
+        "tasks": ["task_id_list"]
+      }
+    ],
+    "deployments": [
+      {
+        "id": "string (deploy_001, etc)",
+        "project_id": "string",
+        "stage": "dev | staging | prod",
+        "deployed_at": "ISO8601",
+        "deployed_by": "codesmith",
+        "artifacts_deployed": ["string (artifact ids)"],
+        "status": "success | failed | rolled_back",
+        "rollback_at": "ISO8601 or null",
+        "rollback_reason": "string or null",
+        "changes": ["string (what changed?)"],
+        "verification_passed": "boolean"
+      }
+    ],
+    "monitoring": {
+      "uptime_checks": {
+        "target_pct": 99.5,
+        "current_pct": 0,
+        "last_check": "ISO8601",
+        "incidents": [
+          {
+            "start_at": "ISO8601",
+            "end_at": "ISO8601",
+            "duration_min": "number",
+            "cause": "string",
+            "resolution": "string"
+          }
+        ]
+      },
+      "error_rates": {
+        "threshold_pct": 0.5,
+        "current_pct": 0,
+        "last_check": "ISO8601",
+        "recent_errors": ["string"]
+      },
+      "change_control": [
+        {
+          "change_id": "string",
+          "project_id": "string",
+          "description": "string",
+          "impact_assessment": "string (what breaks if this fails?)",
+          "test_proof": "string (evidence it's tested)",
+          "rollback_plan": "string",
+          "approved_by": "steve | clawson",
+          "approved_at": "ISO8601 or null",
+          "deployed_at": "ISO8601 or null",
+          "status": "pending | approved | deployed | reverted"
+        }
+      ]
+    },
+    "build_queue": [
+      {
+        "id": "string (queue_001, etc)",
+        "requester": "steve | clawson | other_agent",
+        "request_summary": "string",
+        "priority": "low | medium | high | critical",
+        "risk_level": "low | medium | high",
+        "estimated_effort": "string (XS | S | M | L | XL)",
+        "added_at": "ISO8601",
+        "scheduled_for": "ISO8601 or null",
+        "status": "backlog | scheduled | in_progress | complete",
+        "project_id": "string or null (once assigned)"
+      }
+    ],
+    "tech_debt": [
+      {
+        "id": "string (debt_001, etc)",
+        "title": "string (what needs refactoring?)",
+        "area": "string (OpenClaw | Kommo | QB | Dashboard | Automation | Tooling)",
+        "impact": "low | medium | high",
+        "effort": "XS | S | M | L | XL",
+        "description": "string (why is this tech debt?)",
+        "status": "identified | prioritized | in_progress | resolved",
+        "discovered_at": "ISO8601"
+      }
+    ]
+  },
+  "guardrails": [
+    "Never fabricate verification — if untested, say untested",
+    "Never make breaking changes without explicit migration plan",
+    "Never silently expand permissions — access must be explicit",
+    "Never deploy to production without rollback path",
+    "Never touch user data, security configs, or permissions without explicit approval",
+    "Always verify changes before deploying",
+    "Always test on staging first",
+    "Always document assumptions clearly",
+    "Always provide explicit rollback steps"
+  ],
+  "cadence": {
+    "daily": "Check system health (uptime, errors, logs), review pending changes, identify issues",
+    "weekly": "Tech debt assessment, build queue review, reliability report",
+    "monthly": "Architecture review, dependency updates, refactor planning"
+  },
+  "escalation_rules": {
+    "same_day_escalation": [
+      "Access/permissions needed",
+      "Change touches prod systems",
+      "Change impacts money, comms, or security",
+      "Major refactor requested",
+      "Breaking change to agents or dashboards"
+    ]
+  },
+  "success_metrics": {
+    "uptime_target_pct": 99.5,
+    "unplanned_rollbacks_per_month": 0,
+    "deployment_time_min": 30,
+    "test_coverage_pct": 80,
+    "rollback_time_min": 15,
+    "incident_response_time_min": 60
+  }
+}
