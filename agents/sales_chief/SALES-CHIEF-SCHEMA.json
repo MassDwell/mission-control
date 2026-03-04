@@ -140,6 +140,80 @@
       }
     }
   },
+  "templates": {
+    "massdwell": {
+      "inbound_first_response": {
+        "channel": "email_or_sms",
+        "body": "Got it — happy to help. Two quick questions so I can point you the right way: (1) what town is the property in? (2) are you aiming for rental income or family use?"
+      },
+      "followup_bump": {
+        "channel": "email_or_sms",
+        "body": "Quick bump — what town is the property in? Once I have that, I can tell you the best next step."
+      },
+      "close_loop": {
+        "channel": "email_or_sms",
+        "body": "Want me to keep this on my radar, or should I close the loop for now? If you tell me your timeline (this quarter vs 6–12 months), I'll route you correctly."
+      }
+    },
+    "atlantic_laser": {
+      "inbound_first_response": {
+        "channel": "email_or_sms",
+        "body": "Thanks — I can recommend the right setup quickly. What material + thickness are you working with, and is this production or occasional use?"
+      },
+      "followup_bump": {
+        "channel": "email_or_sms",
+        "body": "Quick follow-up — what material/thickness are you welding? That determines the right system and ballpark."
+      },
+      "close_loop": {
+        "channel": "email_or_sms",
+        "body": "Should I keep this open, or circle back later? If you share your timeline and whether financing matters, I'll line up the right next step."
+      }
+    },
+    "alpine": {
+      "inbound_first_response": {
+        "channel": "email_or_sms",
+        "body": "Thanks — send the location + asset type and any notes you have (units/zoning status). I'll revert with underwriting questions and next steps."
+      },
+      "followup_bump": {
+        "channel": "email_or_sms",
+        "body": "Quick bump — can you share location + asset type + price guidance? That's enough for us to triage fit fast."
+      },
+      "close_loop": {
+        "channel": "email_or_sms",
+        "body": "Want us to keep reviewing this, or close the loop for now? If you share seller timeline + who controls the process, we can move quickly if it fits."
+      }
+    }
+  },
+  "reporting": {
+    "weekly_snapshot": {
+      "week_of_date": null,
+      "kpis": {
+        "new_leads_by_brand": {
+          "massdwell": 0,
+          "atlantic_laser": 0,
+          "alpine": 0
+        },
+        "speed_to_lead_minutes_avg": null,
+        "meetings_booked": {
+          "massdwell": 0,
+          "atlantic_laser": 0,
+          "alpine": 0
+        },
+        "pipeline_value_by_brand": {
+          "massdwell": 0,
+          "atlantic_laser": 0,
+          "alpine": 0
+        },
+        "stuck_deals_count": {
+          "massdwell": 0,
+          "atlantic_laser": 0,
+          "alpine": 0
+        }
+      },
+      "stuck_deals": [],
+      "recommendations": []
+    }
+  },
   "state": {
     "inbox": {
       "unprocessed_items": []
@@ -412,7 +486,23 @@
   "types": {
     "lead": {
       "id": "lead_uuid",
-      "brand_mode": "massdwell|atlantic_laser|alpine",
+      "brand_mode": "massdwell|atlantic_laser|alpine|unknown",
+      "source": "inbound_form|inbound_email|inbound_sms|inbound_web|referral|cold_outreach|other",
+      "created_at": "ISO8601",
+      "last_inbound_at": "ISO8601",
+      "last_outbound_at": "ISO8601",
+      "status": "new|active|nurture|opted_out|closed",
+      "routing_confidence": 0.0,
+      "contact_ref": "contact_uuid",
+      "account_ref": "account_uuid",
+      "notes": "string",
+      "tags": [],
+      "consent": {
+        "sms_ok": true,
+        "email_ok": true,
+        "opted_out": false,
+        "opted_out_at": null
+      },
       "name": "string",
       "company": "string",
       "email": "string",
@@ -423,14 +513,9 @@
       "next_action_due_at": "ISO8601",
       "follow_up_cadence": "string",
       "cadence_attempts_count": 0,
-      "last_attempt_at": "ISO8601",
-      "created_at": "ISO8601",
-      "updated_at": "ISO8601",
       "contact_history": [],
       "qualification_data": {},
-      "deal_value_usd": null,
-      "notes": "string",
-      "tags": []
+      "deal_value_usd": null
     },
     "next_action": {
       "id": "action_uuid",
