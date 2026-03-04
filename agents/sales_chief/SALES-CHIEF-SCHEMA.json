@@ -215,9 +215,29 @@
     }
   },
   "state": {
+    "leads": [],
+    "deals": [],
+    "accounts": [],
+    "contacts": [],
     "inbox": {
       "unprocessed_items": []
     },
+    "next_actions": {
+      "todo": [],
+      "doing": [],
+      "waiting": [],
+      "done": [],
+      "canceled": []
+    },
+    "approvals_queue": {
+      "pending": [],
+      "history": []
+    },
+    "message_outbox": {
+      "drafts": [],
+      "send_history": []
+    },
+    "activity_log": [],
     "pipeline": {
       "massdwell": {
         "stages": [
@@ -517,40 +537,95 @@
       "qualification_data": {},
       "deal_value_usd": null
     },
+    "deal": {
+      "id": "deal_uuid",
+      "brand_mode": "massdwell|atlantic_laser|alpine",
+      "lead_ref": "lead_uuid",
+      "title": "string",
+      "value_amount": 0,
+      "currency": "USD",
+      "pipeline_stage_id": "stage_id_string",
+      "stage_entered_at": "ISO8601",
+      "next_action_due_at": "ISO8601",
+      "owner": "steve|agent|other",
+      "status": "open|won|lost|nurture",
+      "qualification": {
+        "massdwell": {
+          "town_or_address": null,
+          "goal_use_case": null,
+          "timeline": null,
+          "lot_context": null,
+          "budget_range_comfort": null
+        },
+        "atlantic_laser": {
+          "material_and_thickness": null,
+          "use_case": null,
+          "duty_cycle": null,
+          "budget_range_and_financing_need": null,
+          "timeline_and_decision_maker": null
+        },
+        "alpine": {
+          "location_and_asset_type": null,
+          "units_or_program": null,
+          "zoning_or_permitting_status": null,
+          "seller_motivation_and_timeline": null,
+          "price_guidance_and_process_owner": null
+        }
+      },
+      "activity_log": [],
+      "risks_notes": []
+    },
     "next_action": {
       "id": "action_uuid",
+      "deal_ref": "deal_uuid",
       "title": "string",
-      "owner": "sales_chief|steve|external",
+      "owner": "steve|agent|other",
       "due_at": "ISO8601",
-      "status": "todo|in_progress|waiting|done|cancelled",
+      "status": "todo|doing|waiting|done|canceled",
       "dependencies": [],
-      "notes": "string",
-      "lead_ref": "lead_uuid"
-    },
-    "message_draft": {
-      "id": "draft_uuid",
-      "lead_ref": "lead_uuid",
-      "channel": "email|sms|dm|call_script",
-      "to": "string",
-      "subject": "string",
-      "body": "string",
-      "created_at": "ISO8601",
-      "status": "draft|queued_for_approval|sent|rejected",
-      "approval_notes": "string"
+      "notes": "string"
     },
     "approval_item": {
       "id": "approval_uuid",
-      "type": "outbound_message|booking|quote_share|discount|timeline_commitment|legal_claim",
+      "type": "send_message|book_meeting|share_quote|share_terms|discount|commitment",
       "risk_level": "level_1|level_2",
-      "lead_ref": "lead_uuid",
+      "brand_mode": "massdwell|atlantic_laser|alpine",
       "summary": "string",
       "payload": {},
       "created_at": "ISO8601",
       "expires_at": "ISO8601",
       "status": "pending|approved|rejected|expired",
-      "resolved_at": "ISO8601",
-      "resolved_by": "steve",
-      "resolution_notes": "string"
+      "resolution": {
+        "resolved_at": "ISO8601",
+        "resolved_by": "steve",
+        "notes": "string"
+      }
+    },
+    "message_draft": {
+      "id": "draft_uuid",
+      "brand_mode": "massdwell|atlantic_laser|alpine",
+      "channel": "sms|email|dm|other",
+      "to": {
+        "name": "string",
+        "address": "string"
+      },
+      "subject": "string",
+      "body": "string",
+      "created_at": "ISO8601",
+      "status": "draft|queued_for_approval|sent|canceled",
+      "approval_id": "approval_uuid",
+      "related": {
+        "lead_ref": "lead_uuid",
+        "deal_ref": "deal_uuid"
+      }
+    },
+    "activity_event": {
+      "id": "event_uuid",
+      "deal_ref": "deal_uuid",
+      "timestamp": "ISO8601",
+      "type": "inbound_message|outbound_message|call|meeting|note|stage_change|task_created|task_completed",
+      "summary": "string",
+      "meta": {}
     }
   }
 }
