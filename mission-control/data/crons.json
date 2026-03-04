@@ -1,19 +1,19 @@
 {
-  "exportedAt": "2026-03-04T13:20:42Z",
+  "exportedAt": "2026-03-04T14:04:56Z",
   "timezone": "America/New_York",
-  "currentTime": "1:20 PM EST Wednesday",
-  "total": 13,
+  "currentTime": "2:04 PM EST Wednesday",
+  "total": 5,
   "summary": {
-    "enabled": 13,
+    "enabled": 5,
     "disabled": 0,
-    "lastSync": "2026-03-04T13:20:42Z"
+    "lastSync": "2026-03-04T14:04:56Z"
   },
   "systemStatus": {
-    "timestamp": "2026-03-04T13:20:42Z",
-    "currentTime": "1:20 PM EST",
-    "marketStatus": "OPEN (3h 40m remaining in regular session)",
+    "timestamp": "2026-03-04T14:04:56Z",
+    "currentTime": "2:04 PM EST",
+    "marketStatus": "OPEN (1h 56m remaining in regular session)",
     "dayOfWeek": "Wednesday",
-    "operationalStatus": "MARKET ACTIVE - Trading operations in progress"
+    "operationalStatus": "MARKET ACTIVE - Core infrastructure operational"
   },
   "jobs": [
     {
@@ -22,148 +22,56 @@
       "enabled": true,
       "schedule": "Every 30 minutes",
       "lastStatus": "ok",
-      "nextRunAtMs": 1772650037412
+      "lastDurationMs": 16002,
+      "nextRunAtMs": 1772651837417
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
       "name": "Mission Control Cron Export",
       "enabled": true,
-      "schedule": "Every 2 hours",
+      "schedule": "Every 2 hours (0 */2 * * *)",
       "lastStatus": "ok",
-      "nextRunAtMs": 1772651096119
+      "lastDurationMs": 2,
+      "nextRunAtMs": 1772658296119
     },
     {
-      "id": "ac9a559d-128e-4e6b-a146-a5c6ad1a1e00",
-      "name": "money-printer-market-intelligence-0900",
+      "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
+      "name": "Drift Audit (Core Architecture)",
       "enabled": true,
-      "schedule": "0 9 * * 1-5 (9:00 AM weekdays)",
-      "lastStatus": "error",
-      "lastError": "HTTP 401 authentication_error",
-      "nextRunAtMs": 1772719200000
-    },
-    {
-      "id": "57e2e261-b577-4d24-838f-94753d988209",
-      "name": "money-printer-sentiment-intelligence-0905",
-      "enabled": true,
-      "schedule": "5 9 * * 1-5 (9:05 AM weekdays)",
-      "lastStatus": "error",
-      "lastError": "HTTP 401 authentication_error",
-      "nextRunAtMs": 1772719500000
-    },
-    {
-      "id": "fa935d6e-f63e-4da0-bcb2-39553cef9344",
-      "name": "money-printer-strategy-generator-0915",
-      "enabled": true,
-      "schedule": "15 9 * * 1-5 (9:15 AM weekdays)",
-      "lastStatus": "error",
-      "lastError": "HTTP 401 authentication_error",
-      "nextRunAtMs": 1772720100000
-    },
-    {
-      "id": "4693b325-3969-43ef-9ac4-a7500ab2c9f9",
-      "name": "money-printer-risk-gate-0920",
-      "enabled": true,
-      "schedule": "20 9 * * 1-5 (9:20 AM weekdays)",
-      "lastStatus": "error",
-      "lastError": "HTTP 401 authentication_error",
-      "nextRunAtMs": 1772720400000
-    },
-    {
-      "id": "45b7fbd3-65ec-4c57-a41e-684ea7d5e5a3",
-      "name": "money-printer-sentiment-intelligence-1200",
-      "enabled": true,
-      "schedule": "0 12 * * 1-5 (12:00 PM weekdays)",
-      "lastStatus": "error",
-      "lastError": "HTTP 401 authentication_error",
-      "nextRunAtMs": 1772730000000
-    },
-    {
-      "id": "85f731fd-500b-4ff7-9f8b-f08b5c49a74d",
-      "name": "money-printer-midday-check-1300",
-      "enabled": true,
-      "schedule": "0 13 * * 1-5 (1:00 PM weekdays)",
-      "lastStatus": "ok",
-      "nextRunAtMs": 1772733600000
-    },
-    {
-      "id": "3b7e0bf5-c089-423e-aca1-ba07b1206fea",
-      "name": "money-printer-sentiment-intelligence-1400",
-      "enabled": true,
-      "schedule": "0 14 * * 1-5 (2:00 PM weekdays)",
-      "lastStatus": "ok",
-      "nextRunAtMs": 1772650800000
-    },
-    {
-      "id": "5a9d0c82-eeff-4025-a26c-e85019640488",
-      "name": "Money Printer Trading Cycle",
-      "enabled": true,
-      "schedule": "0 10,14 * * 1-5 (10:00 AM, 2:00 PM weekdays)",
-      "lastStatus": "error",
-      "lastError": "HTTP 401 authentication_error",
-      "nextRunAtMs": 1772650800000
-    },
-    {
-      "id": "86982f66-155e-4b92-aecd-b964e42f36ba",
-      "name": "money-printer-eod-analytics-1630",
-      "enabled": true,
-      "schedule": "30 16 * * 1-5 (4:30 PM weekdays)",
-      "lastStatus": "ok",
-      "nextRunAtMs": 1772659800000
+      "schedule": "1:00 AM daily (0 1 * * *)",
+      "lastStatus": "pending",
+      "nextRunAtMs": 1772690400000
     },
     {
       "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
       "name": "Weekly Memory Maintenance",
       "enabled": true,
-      "schedule": "0 20 * * 0 (8:00 PM Sundays)",
-      "lastStatus": "ok",
+      "schedule": "8:00 PM Sundays (0 20 * * 0)",
+      "lastStatus": "scheduled",
       "nextRunAtMs": 1773014400000
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
       "name": "Bi-Weekly Memory Audit",
       "enabled": true,
-      "schedule": "0 10 1,15 * * (10:00 AM on 1st and 15th)",
+      "schedule": "10:00 AM on 1st & 15th (0 10 1,15 * *)",
       "lastStatus": "ok",
+      "lastDurationMs": 102731,
       "nextRunAtMs": 1773583200000
     }
   ],
-  "issuesDetected": {
-    "authenticationErrors": 5,
-    "affectedJobs": [
-      "money-printer-market-intelligence-0900",
-      "money-printer-sentiment-intelligence-0905",
-      "money-printer-strategy-generator-0915",
-      "money-printer-risk-gate-0920",
-      "money-printer-sentiment-intelligence-1200",
-      "Money Printer Trading Cycle"
-    ],
-    "recommendation": "Verify Alpaca and API credentials in ~/.openclaw/workspace/credentials/"
+  "systemInfo": {
+    "agentConfiguration": "LEAN STATE — Clawson only (core infrastructure)",
+    "totalAgents": 1,
+    "totalCronJobs": 5,
+    "healthStatus": "HEALTHY",
+    "notes": [
+      "Agent layer purged per clean slate directive (March 4, 2026, 12:59 PM)",
+      "Core infrastructure: Gmail token refresh, Memory maintenance, Drift audit, Cron export",
+      "Trading suite removed (API auth issues pending investigation)",
+      "All remaining jobs operational",
+      "Next rebuild awaiting architecture direction"
+    ]
   },
-  "healthyJobs": 8,
-  "problemJobs": 5,
-  "healthPercentage": 61.5,
-  "jobsBySchedule": {
-    "every_30_minutes": 1,
-    "every_2_hours": 1,
-    "weekday_mornings": 4,
-    "weekday_midday": 2,
-    "weekday_afternoon": 2,
-    "weekly": 1,
-    "biweekly": 1
-  },
-  "tradingJobs": 6,
-  "memoryJobs": 2,
-  "adminJobs": 5,
-  "notes": [
-    "13 total cron jobs (core infrastructure)",
-    "8 healthy, 5 with API authentication errors",
-    "Trading jobs have 401 credential issues - requires API key verification",
-    "Memory maintenance jobs running on schedule",
-    "Gmail token refresh operating normally",
-    "Market hours: 9:30 AM - 4:00 PM EST (currently at 1:20 PM, 3h 40m remaining)",
-    "All times EST (America/New_York timezone)",
-    "Last full export: 2026-03-03 20:04:56 EST",
-    "Current export: 2026-03-04 13:20:42 EST"
-  ],
-  "lastUpdated": "2026-03-04T13:20:42Z"
+  "lastUpdated": "2026-03-04T14:04:56Z"
 }
