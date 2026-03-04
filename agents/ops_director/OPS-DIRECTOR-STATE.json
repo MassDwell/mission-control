@@ -1,349 +1,600 @@
 {
   "schema_version": "1.0",
-  "agent_id": "ops_director",
+  "agent_id": "operations_director",
   "last_updated": "2026-03-04T00:00:00Z",
-  "massdwell": {
-    "active_orders": [
-      {
-        "order_id": "MAS-001",
-        "customer": "Bob Warren",
-        "location": "Mattapoisett, MA",
-        "unit_type": "Dwell Prime",
-        "contract_value": 205000,
-        "status": "design_approval_pending",
-        "created_date": "2026-02-10",
-        "expected_delivery": "2026-04-15",
-        "days_in_current_stage": 20,
-        "days_to_deadline": 42,
-        "on_track": true,
-        "blockers": [],
-        "notes": "Waiting on customer final design approval (expected 3/5)"
+  "operations": {
+    "massdwell": {
+      "projects": [
+        {
+          "order_id": "MAS-001",
+          "customer": "Bob Warren",
+          "location": "Mattapoisett, MA",
+          "unit_type": "Dwell Prime",
+          "contract_value": 205000,
+          "created_date": "2026-02-10",
+          "expected_delivery": "2026-04-15",
+          "current_stage": "design_approval_pending",
+          "stage_start_date": "2026-02-10",
+          "days_in_stage": 20,
+          "on_track": true,
+          "notes": "Waiting on customer final design approval (expected 3/5)"
+        },
+        {
+          "order_id": "MAS-002",
+          "customer": "Michael",
+          "location": "Andover, MA",
+          "unit_type": "Dwell Deluxe",
+          "contract_value": 307000,
+          "created_date": "2026-02-12",
+          "expected_delivery": "2026-05-01",
+          "current_stage": "materials_procurement",
+          "stage_start_date": "2026-02-24",
+          "days_in_stage": 18,
+          "on_track": true,
+          "notes": "Materials being sourced, AAC blocks supplier delayed"
+        },
+        {
+          "order_id": "MAS-003",
+          "customer": "Plymouth group",
+          "location": "Plymouth, MA",
+          "unit_type": "Dwell Classic",
+          "contract_value": 241000,
+          "created_date": "2025-12-15",
+          "expected_delivery": "2026-03-20",
+          "current_stage": "manufacturing",
+          "stage_start_date": "2026-02-10",
+          "days_in_stage": 35,
+          "on_track": false,
+          "notes": "QA found frame defects, rework in progress"
+        }
+      ],
+      "production_schedule": [
+        {
+          "week": "2026-03-04",
+          "planned_units": 2,
+          "projected_units": 2,
+          "status": "on_track"
+        },
+        {
+          "week": "2026-03-11",
+          "planned_units": 2,
+          "projected_units": 1,
+          "status": "at_risk",
+          "reason": "MAS-003 rework may extend"
+        },
+        {
+          "week": "2026-03-18",
+          "planned_units": 2,
+          "projected_units": 2,
+          "status": "on_track"
+        }
+      ],
+      "factory_output": {
+        "capacity_units_per_month": 8,
+        "current_backlog": 6,
+        "months_of_backlog": 1,
+        "utilization_pct": 87,
+        "quality_defect_rate_pct": 2,
+        "on_time_delivery_pct": 85,
+        "average_days_to_completion": 50
       },
-      {
-        "order_id": "MAS-002",
-        "customer": "Michael",
-        "location": "Andover, MA",
-        "unit_type": "Dwell Deluxe",
-        "contract_value": 307000,
-        "status": "materials_procurement",
-        "created_date": "2026-02-12",
-        "expected_delivery": "2026-05-01",
-        "days_in_current_stage": 18,
-        "days_to_deadline": 58,
-        "on_track": true,
-        "blockers": [
-          {
-            "id": "blocker_001",
-            "issue": "Steel supplier delayed on AAC blocks shipment",
-            "days_delayed": 4,
-            "impact": "Could push delivery 1 week",
-            "mitigation": "Finding alternate supplier, ETA resolution 3/8"
-          }
-        ],
-        "notes": "On schedule pending materials arrival"
-      },
-      {
-        "order_id": "MAS-003",
-        "customer": "Plymouth group",
-        "location": "Plymouth, MA",
-        "unit_type": "Dwell Classic",
-        "contract_value": 241000,
-        "status": "manufacturing",
-        "created_date": "2025-12-15",
-        "expected_delivery": "2026-03-20",
-        "days_in_current_stage": 35,
-        "days_to_deadline": 16,
-        "on_track": false,
-        "blockers": [
-          {
-            "id": "blocker_002",
-            "issue": "Quality inspection found minor defects in frame",
-            "days_delayed": 3,
-            "impact": "Delivery likely slides to 3/27 (1 week delay)",
-            "mitigation": "Rework in progress, reinspection 3/7"
-          }
-        ],
-        "notes": "RISK: Delivery may slip 1 week due to QA rework"
-      }
-    ],
-    "production_metrics": {
-      "total_active_orders": 3,
-      "on_track_count": 2,
-      "at_risk_count": 1,
-      "capacity_units_per_month": 8,
-      "orders_in_backlog": 6,
-      "months_of_backlog": 1,
-      "on_time_delivery_pct": 85,
-      "average_days_to_completion": 50,
-      "quality_defect_rate_pct": 2,
-      "staff_utilization_pct": 87,
-      "facility_utilization_pct": 82,
-      "notes": "Healthy backlog, approaching capacity limits"
+      "installation_pipeline": [
+        {
+          "order_id": "MAS-001",
+          "stage": "pre_installation",
+          "planned_install_date": "2026-04-20",
+          "customer_confirmed": false,
+          "notes": "Installation team assignment pending delivery"
+        }
+      ]
     },
-    "upcoming_milestones": [
-      {
-        "date": "2026-03-05",
-        "milestone": "MAS-001 design approval expected",
-        "order_id": "MAS-001"
-      },
-      {
-        "date": "2026-03-07",
-        "milestone": "MAS-003 QA reinspection",
-        "order_id": "MAS-003"
-      },
-      {
-        "date": "2026-03-08",
-        "milestone": "AAC blocks supplier resolution ETA",
-        "order_id": "MAS-002"
-      }
-    ]
+    "atlantic_laser": {
+      "orders": [
+        {
+          "order_id": "ALS-001",
+          "customer": "Fabrication Shop, Boston",
+          "machine_model": "MA1-45",
+          "contract_value": 6000,
+          "order_date": "2026-02-20",
+          "expected_delivery": "2026-03-05",
+          "current_status": "shipped",
+          "shipping_carrier": "FedEx",
+          "tracking_number": "12345",
+          "on_track": true,
+          "notes": "On schedule, customer expecting 3/5"
+        },
+        {
+          "order_id": "ALS-002",
+          "customer": "Industrial Partner, NH",
+          "machine_model": "MA1-65",
+          "contract_value": 6500,
+          "order_date": "2026-02-28",
+          "expected_delivery": "2026-03-10",
+          "current_status": "in_inventory",
+          "on_track": true,
+          "notes": "Ready to ship, waiting for customer to arrange logistics"
+        }
+      ],
+      "inventory": [
+        {
+          "machine_model": "MA1-35",
+          "units_in_stock": 1,
+          "units_reserved": 0,
+          "units_available": 1,
+          "reorder_threshold": 3,
+          "status": "low_reorder_soon",
+          "last_reorder_date": "2026-02-01",
+          "lead_time_days": 21
+        },
+        {
+          "machine_model": "MA1-45",
+          "units_in_stock": 2,
+          "units_reserved": 1,
+          "units_available": 1,
+          "reorder_threshold": 3,
+          "status": "low_reorder_soon",
+          "last_reorder_date": "2026-02-05",
+          "lead_time_days": 21
+        },
+        {
+          "machine_model": "MA1-65",
+          "units_in_stock": 2,
+          "units_reserved": 1,
+          "units_available": 1,
+          "reorder_threshold": 2,
+          "status": "at_threshold",
+          "last_reorder_date": "2026-02-10",
+          "lead_time_days": 21
+        },
+        {
+          "machine_model": "MA1-ultra",
+          "units_in_stock": 1,
+          "units_reserved": 0,
+          "units_available": 1,
+          "reorder_threshold": 2,
+          "status": "low_reorder_soon",
+          "last_reorder_date": "2026-01-20",
+          "lead_time_days": 28
+        }
+      ],
+      "shipping_schedule": [
+        {
+          "order_id": "ALS-001",
+          "ship_date": "2026-03-01",
+          "expected_delivery": "2026-03-05",
+          "carrier": "FedEx",
+          "tracking": "12345",
+          "status": "in_transit"
+        },
+        {
+          "order_id": "ALS-002",
+          "ship_date": "2026-03-08",
+          "expected_delivery": "2026-03-10",
+          "carrier": "pending_customer",
+          "tracking": null,
+          "status": "pending_shipment"
+        }
+      ],
+      "customer_installations": [
+        {
+          "order_id": "ALS-001",
+          "customer": "Fabrication Shop, Boston",
+          "installation_scheduled": false,
+          "planned_date": null,
+          "training_needed": true,
+          "notes": "Installation and training TBD post-delivery"
+        }
+      ]
+    },
+    "alpine": {
+      "developments": [
+        {
+          "project_id": "ALP-001",
+          "property": "11 Taft Hill Terrace",
+          "project_type": "development",
+          "stage": "development",
+          "timeline_months": 18,
+          "months_elapsed": 10,
+          "months_remaining": 8,
+          "budget": 750000,
+          "spent": 425000,
+          "spent_pct": 56.7,
+          "on_track": true,
+          "next_milestone": "Permitting approval (expected 3/20)",
+          "notes": "Construction progressing on schedule"
+        },
+        {
+          "project_id": "ALP-002",
+          "property": "41 Chesley Road",
+          "project_type": "development",
+          "stage": "design",
+          "timeline_months": 12,
+          "months_elapsed": 6,
+          "months_remaining": 6,
+          "budget": 600000,
+          "spent": 180000,
+          "spent_pct": 30,
+          "on_track": true,
+          "next_milestone": "Design review complete (3/10)",
+          "notes": "Design phase finishing on schedule"
+        },
+        {
+          "project_id": "ALP-003",
+          "property": "55 Derby Street",
+          "project_type": "acquisition",
+          "stage": "due_diligence",
+          "timeline_months": 3,
+          "months_elapsed": 1.5,
+          "months_remaining": 1.5,
+          "acquisition_price": 1200000,
+          "spent": 45000,
+          "spent_pct": 3.75,
+          "on_track": true,
+          "next_milestone": "Due diligence complete (3/25)",
+          "notes": "Underwriting progressing, closing on track for end Q1"
+        },
+        {
+          "project_id": "ALP-004",
+          "property": "5 Bellflower Street",
+          "project_type": "stabilization",
+          "stage": "leasing",
+          "timeline_months": 6,
+          "months_elapsed": 4,
+          "months_remaining": 2,
+          "on_track": true,
+          "occupancy_pct": 92,
+          "monthly_noi": 8500,
+          "next_milestone": "Lease-up complete (4/30)",
+          "notes": "High occupancy, nearly stabilized, preparing for sale"
+        },
+        {
+          "project_id": "ALP-005",
+          "property": "82 Rossmore Road",
+          "project_type": "development",
+          "stage": "design",
+          "timeline_months": 24,
+          "months_elapsed": 8,
+          "months_remaining": 16,
+          "budget": 900000,
+          "spent": 220000,
+          "spent_pct": 24.4,
+          "on_track": false,
+          "next_milestone": "Zoning approval (expected 3/15)",
+          "notes": "AT RISK: Municipal zoning approval delayed 14 days"
+        }
+      ],
+      "construction_timeline": [
+        {
+          "project_id": "ALP-001",
+          "phase": "foundation",
+          "start_date": "2025-08-01",
+          "end_date": "2026-01-15",
+          "status": "complete",
+          "percent_complete": 100
+        },
+        {
+          "project_id": "ALP-001",
+          "phase": "framing_and_rough_in",
+          "start_date": "2026-01-15",
+          "end_date": "2026-04-30",
+          "status": "in_progress",
+          "percent_complete": 65
+        }
+      ],
+      "permits": [
+        {
+          "project_id": "ALP-001",
+          "permit_type": "building_permit",
+          "permit_number": "BP-2025-001",
+          "issued_date": "2025-07-15",
+          "status": "active",
+          "expiration_date": "2027-07-15",
+          "next_inspection": "2026-03-20"
+        },
+        {
+          "project_id": "ALP-005",
+          "permit_type": "zoning_variance",
+          "status": "pending",
+          "submitted_date": "2026-01-20",
+          "decision_expected": "2026-03-15",
+          "risk": "14 days delayed",
+          "impact": "Construction start at risk"
+        }
+      ],
+      "inspections": [
+        {
+          "project_id": "ALP-001",
+          "inspection_type": "structural_inspection",
+          "scheduled_date": "2026-03-20",
+          "status": "scheduled",
+          "inspector": "Town of [X]",
+          "previous_result": "passed"
+        },
+        {
+          "project_id": "ALP-002",
+          "inspection_type": "design_review",
+          "scheduled_date": "2026-03-10",
+          "status": "pending",
+          "approval_body": "Architectural Review Board"
+        }
+      ]
+    }
   },
-  "atlantic_laser": {
-    "active_orders": [
-      {
-        "order_id": "ALS-001",
-        "customer": "Fabrication Shop, Boston",
-        "machine_model": "MA1-45",
-        "contract_value": 6000,
-        "status": "shipped",
-        "order_date": "2026-02-20",
-        "expected_delivery": "2026-03-05",
-        "days_to_delivery": 1,
-        "on_track": true,
-        "tracking": "FedEx #12345, in transit",
-        "notes": "On schedule, customer expecting 3/5"
-      },
-      {
-        "order_id": "ALS-002",
-        "customer": "Industrial Partner, NH",
-        "machine_model": "MA1-65",
-        "contract_value": 6500,
-        "status": "in_inventory",
-        "order_date": "2026-02-28",
-        "expected_delivery": "2026-03-10",
-        "days_to_delivery": 6,
-        "on_track": true,
-        "inventory_status": "Ready to ship",
-        "notes": "Waiting for customer to arrange pickup/delivery"
-      }
-    ],
-    "inventory_status": {
-      "ma1_35": {
-        "units_in_stock": 1,
-        "reorder_threshold": 3,
-        "status": "low_reorder_soon"
-      },
-      "ma1_45": {
-        "units_in_stock": 2,
-        "reorder_threshold": 3,
-        "status": "low_reorder_soon"
-      },
-      "ma1_65": {
-        "units_in_stock": 2,
-        "reorder_threshold": 2,
-        "status": "at_threshold"
-      },
-      "ma1_ultra": {
-        "units_in_stock": 1,
-        "reorder_threshold": 2,
-        "status": "low_reorder_soon"
-      }
-    },
-    "fulfillment_metrics": {
-      "orders_pending": 2,
-      "orders_shipped_this_month": 4,
-      "average_days_to_ship": 3,
-      "on_time_delivery_pct": 95,
-      "inventory_days_on_hand": 30,
-      "notes": "Inventory levels low across all models - reorder recommended"
-    },
-    "upcoming_milestones": [
-      {
-        "date": "2026-03-05",
-        "milestone": "ALS-001 delivery expected"
-      },
-      {
-        "date": "2026-03-10",
-        "milestone": "ALS-002 delivery expected"
-      }
-    ]
-  },
-  "alpine": {
-    "active_projects": [
-      {
-        "project_id": "ALP-001",
-        "property": "11 Taft Hill Terrace",
-        "project_type": "development",
-        "stage": "development",
-        "timeline_months": 18,
-        "months_elapsed": 10,
-        "months_remaining": 8,
-        "budget": 750000,
-        "spent": 425000,
-        "spent_pct": 56.7,
-        "on_track": true,
-        "blockers": [],
-        "next_milestone": "Permitting approval (expected 3/20)",
-        "notes": "Construction progressing on schedule"
-      },
-      {
-        "project_id": "ALP-002",
-        "property": "41 Chesley Road",
-        "project_type": "development",
-        "stage": "development",
-        "timeline_months": 12,
-        "months_elapsed": 6,
-        "months_remaining": 6,
-        "budget": 600000,
-        "spent": 180000,
-        "spent_pct": 30,
-        "on_track": true,
-        "blockers": [],
-        "next_milestone": "Design review complete (3/10)",
-        "notes": "On schedule, design phase finishing"
-      },
-      {
-        "project_id": "ALP-003",
-        "property": "55 Derby Street",
-        "project_type": "acquisition",
-        "stage": "acquisition",
-        "timeline_months": 3,
-        "months_elapsed": 1.5,
-        "months_remaining": 1.5,
-        "acquisition_price": 1200000,
-        "due_diligence_spent": 45000,
-        "on_track": true,
-        "blockers": [],
-        "next_milestone": "Due diligence complete (3/25)",
-        "notes": "Underwriting progressing, closing on track for end Q1"
-      },
-      {
-        "project_id": "ALP-004",
-        "property": "5 Bellflower Street",
-        "project_type": "stabilization",
-        "stage": "stabilization",
-        "timeline_months": 6,
-        "months_elapsed": 4,
-        "months_remaining": 2,
-        "portfolio_status": "occupied_generating_income",
-        "occupancy_pct": 92,
-        "monthly_noi": 8500,
-        "on_track": true,
-        "blockers": [],
-        "next_milestone": "Lease-up complete (4/30)",
-        "notes": "High occupancy, nearly stabilized, preparing for sale"
-      },
-      {
-        "project_id": "ALP-005",
-        "property": "82 Rossmore Road",
-        "project_type": "development",
-        "stage": "development",
-        "timeline_months": 24,
-        "months_elapsed": 8,
-        "months_remaining": 16,
-        "budget": 900000,
-        "spent": 220000,
-        "spent_pct": 24.4,
-        "on_track": false,
-        "blockers": [
-          {
-            "id": "blocker_001",
-            "issue": "Municipal zoning approval delayed",
-            "days_delayed": 14,
-            "impact": "Could push construction start 3-4 weeks",
-            "mitigation": "Meeting with town planner 3/6, expect decision by 3/15"
-          }
-        ],
-        "next_milestone": "Zoning approval (expected 3/15)",
-        "notes": "AT RISK: Municipal approval delay could impact timeline"
-      }
-    ],
-    "project_metrics": {
-      "total_active_projects": 5,
-      "on_schedule_count": 4,
-      "delayed_count": 1,
-      "total_blockers": 1,
-      "total_capital_deployed": 2100000,
-      "capital_in_active_projects": 850000,
-      "notes": "Strong project pipeline, one zoning delay, rest on track"
-    },
-    "upcoming_milestones": [
-      {
-        "date": "2026-03-06",
-        "milestone": "Zoning approval meeting (ALP-005)"
-      },
-      {
-        "date": "2026-03-10",
-        "milestone": "Design review complete (ALP-002)"
-      },
-      {
-        "date": "2026-03-15",
-        "milestone": "Zoning approval decision (ALP-005)"
-      },
-      {
-        "date": "2026-03-20",
-        "milestone": "Permitting approval (ALP-001)"
-      },
-      {
-        "date": "2026-03-25",
-        "milestone": "Due diligence complete (ALP-003)"
-      }
-    ]
-  },
-  "operational_alerts": [
+  "milestones": [
     {
-      "id": "alert_001",
+      "id": "milestone_001",
+      "date": "2026-03-05",
+      "business": "massdwell",
+      "milestone": "MAS-001 design approval expected",
+      "order_id": "MAS-001",
+      "status": "pending",
+      "criticality": "high"
+    },
+    {
+      "id": "milestone_002",
+      "date": "2026-03-07",
+      "business": "massdwell",
+      "milestone": "MAS-003 QA reinspection",
+      "order_id": "MAS-003",
+      "status": "pending",
+      "criticality": "high"
+    },
+    {
+      "id": "milestone_003",
+      "date": "2026-03-08",
+      "business": "massdwell",
+      "milestone": "AAC blocks supplier resolution ETA",
+      "order_id": "MAS-002",
+      "status": "pending",
+      "criticality": "high"
+    },
+    {
+      "id": "milestone_004",
+      "date": "2026-03-05",
+      "business": "atlantic_laser",
+      "milestone": "ALS-001 delivery expected",
+      "order_id": "ALS-001",
+      "status": "pending",
+      "criticality": "medium"
+    },
+    {
+      "id": "milestone_005",
+      "date": "2026-03-10",
+      "business": "atlantic_laser",
+      "milestone": "ALS-002 delivery expected",
+      "order_id": "ALS-002",
+      "status": "pending",
+      "criticality": "medium"
+    },
+    {
+      "id": "milestone_006",
+      "date": "2026-03-06",
+      "business": "alpine",
+      "milestone": "ALP-005 zoning approval meeting with planner",
+      "project_id": "ALP-005",
+      "status": "pending",
+      "criticality": "high"
+    },
+    {
+      "id": "milestone_007",
+      "date": "2026-03-10",
+      "business": "alpine",
+      "milestone": "ALP-002 design review complete",
+      "project_id": "ALP-002",
+      "status": "pending",
+      "criticality": "medium"
+    },
+    {
+      "id": "milestone_008",
+      "date": "2026-03-15",
+      "business": "alpine",
+      "milestone": "ALP-005 zoning approval decision",
+      "project_id": "ALP-005",
+      "status": "pending",
+      "criticality": "high"
+    },
+    {
+      "id": "milestone_009",
+      "date": "2026-03-20",
+      "business": "alpine",
+      "milestone": "ALP-001 permitting approval",
+      "project_id": "ALP-001",
+      "status": "pending",
+      "criticality": "medium"
+    },
+    {
+      "id": "milestone_010",
+      "date": "2026-03-25",
+      "business": "alpine",
+      "milestone": "ALP-003 due diligence complete",
+      "project_id": "ALP-003",
+      "status": "pending",
+      "criticality": "medium"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "blocker_001",
       "severity": "high",
       "business": "massdwell",
+      "order_id": "MAS-002",
       "issue": "AAC blocks supplier delayed on shipment (4 days late)",
-      "affected_orders": ["MAS-002"],
-      "impact": "Delivery risk: could push 1 week",
-      "mitigation": "Finding alternate supplier, expect resolution 3/8",
-      "owner": "Supply Chain",
-      "eta_resolution": "2026-03-08"
+      "root_cause": "Supplier capacity constraint",
+      "impact": "Materials delivery risk, could delay MAS-002 completion by 1 week",
+      "affected_timeline": "Expected delivery 2026-05-01 → Risk: 2026-05-08",
+      "discovered_date": "2026-02-28",
+      "mitigation_strategy": "Source alternate supplier for AAC blocks",
+      "mitigation_status": "in_progress",
+      "eta_resolution": "2026-03-08",
+      "owner": "Supply Chain Manager",
+      "escalation_level": "high"
     },
     {
-      "id": "alert_002",
+      "id": "blocker_002",
       "severity": "high",
       "business": "massdwell",
-      "issue": "MAS-003 quality inspection found frame defects, rework needed",
-      "affected_orders": ["MAS-003"],
-      "impact": "Delivery risk: 1 week delay (3/20 → 3/27)",
-      "mitigation": "Rework in progress, reinspection scheduled 3/7",
-      "owner": "Quality",
-      "eta_resolution": "2026-03-07"
+      "order_id": "MAS-003",
+      "issue": "Quality inspection found frame defects requiring rework",
+      "root_cause": "Manufacturing defect in frame assembly",
+      "impact": "Unit must be reworked, delivery delayed by ~1 week",
+      "affected_timeline": "Expected delivery 2026-03-20 → Risk: 2026-03-27",
+      "discovered_date": "2026-03-02",
+      "mitigation_strategy": "Rework frame assembly, perform additional QA inspection",
+      "mitigation_status": "in_progress",
+      "eta_resolution": "2026-03-07",
+      "owner": "Quality Assurance",
+      "escalation_level": "high"
     },
     {
-      "id": "alert_003",
+      "id": "blocker_003",
       "severity": "medium",
       "business": "atlantic_laser",
       "issue": "Inventory low across all machine models",
-      "affected_orders": [],
-      "impact": "Risk of not fulfilling orders if new machines come in",
-      "mitigation": "Recommend immediate reorder of MA1-35, MA1-45, MA1-65, MA1-Ultra",
-      "owner": "Inventory",
-      "eta_resolution": "2026-03-08"
+      "root_cause": "Higher than expected sales volume, slower reorder",
+      "impact": "Risk of stockout if new orders arrive before reorder received",
+      "affected_timeline": "Reorder in transit, ETA 2026-03-21",
+      "discovered_date": "2026-03-01",
+      "mitigation_strategy": "Accelerate reorder, manage customer expectations",
+      "mitigation_status": "pending",
+      "eta_resolution": "2026-03-08",
+      "owner": "Inventory Manager",
+      "escalation_level": "medium"
     },
     {
-      "id": "alert_004",
+      "id": "blocker_004",
       "severity": "high",
       "business": "alpine",
-      "issue": "ALP-005 zoning approval delayed by municipality (14 days)",
-      "affected_orders": [],
-      "impact": "Construction start risk: could delay 3-4 weeks",
-      "mitigation": "Meeting with planner 3/6, expect decision by 3/15",
-      "owner": "Permitting",
-      "eta_resolution": "2026-03-15"
+      "project_id": "ALP-005",
+      "issue": "Municipal zoning approval delayed by municipality (14 days late)",
+      "root_cause": "Municipal review board backlog",
+      "impact": "Construction start at risk, could delay entire project 3-4 weeks",
+      "affected_timeline": "Expected decision 2026-03-01 → Actual ETA: 2026-03-15",
+      "discovered_date": "2026-02-25",
+      "mitigation_strategy": "Direct engagement with municipal planner, expedite review request",
+      "mitigation_status": "in_progress",
+      "eta_resolution": "2026-03-15",
+      "owner": "Permitting Manager",
+      "escalation_level": "high"
     }
   ],
+  "task_assignments": [
+    {
+      "id": "task_001",
+      "blocker_id": "blocker_001",
+      "task": "Contact alternate AAC suppliers for expedited quote",
+      "assigned_to": "Supply Chain Manager",
+      "due_date": "2026-03-05",
+      "status": "in_progress",
+      "priority": "critical"
+    },
+    {
+      "id": "task_002",
+      "blocker_id": "blocker_002",
+      "task": "Perform frame rework on MAS-003",
+      "assigned_to": "Manufacturing Team",
+      "due_date": "2026-03-06",
+      "status": "in_progress",
+      "priority": "critical"
+    },
+    {
+      "id": "task_003",
+      "blocker_id": "blocker_002",
+      "task": "Schedule QA reinspection for MAS-003",
+      "assigned_to": "Quality Assurance",
+      "due_date": "2026-03-07",
+      "status": "pending",
+      "priority": "critical"
+    },
+    {
+      "id": "task_004",
+      "blocker_id": "blocker_003",
+      "task": "Accelerate reorder delivery from supplier",
+      "assigned_to": "Inventory Manager",
+      "due_date": "2026-03-08",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "task_005",
+      "blocker_id": "blocker_004",
+      "task": "Meet with municipal planner to expedite zoning decision",
+      "assigned_to": "Permitting Manager",
+      "due_date": "2026-03-06",
+      "status": "scheduled",
+      "priority": "critical"
+    }
+  ],
+  "approvals_queue": {
+    "pending": [
+      {
+        "id": "approval_001",
+        "type": "scope_change",
+        "business": "massdwell",
+        "order_id": "MAS-003",
+        "request": "Extend MAS-003 delivery date from 3/20 to 3/27 due to QA rework",
+        "submitted_by": "ops_director",
+        "submitted_date": "2026-03-02",
+        "priority": "high",
+        "approver": "steve",
+        "notes": "Customer impact assessment needed"
+      },
+      {
+        "id": "approval_002",
+        "type": "supplier_change",
+        "business": "massdwell",
+        "order_id": "MAS-002",
+        "request": "Switch to alternate AAC blocks supplier to expedite MAS-002 materials",
+        "submitted_by": "ops_director",
+        "submitted_date": "2026-03-03",
+        "priority": "high",
+        "approver": "steve",
+        "notes": "Pricing impact TBD from alternate supplier"
+      },
+      {
+        "id": "approval_003",
+        "type": "inventory_reorder",
+        "business": "atlantic_laser",
+        "request": "Accelerate and increase reorder of MA1-35, MA1-45, MA1-65, MA1-Ultra",
+        "submitted_by": "ops_director",
+        "submitted_date": "2026-03-01",
+        "priority": "medium",
+        "approver": "finance_director",
+        "notes": "Budget impact: additional $15K capital needed"
+      }
+    ],
+    "history": [
+      {
+        "id": "approval_approved_001",
+        "type": "capacity_planning",
+        "request": "Hire 2 additional manufacturing staff for MassDwell factory",
+        "approved_by": "steve",
+        "approved_date": "2026-02-15",
+        "status": "approved",
+        "implementation_status": "onboarding_in_progress"
+      },
+      {
+        "id": "approval_approved_002",
+        "type": "project_timeline",
+        "request": "Extend ALP-001 timeline by 2 months due to permitting delays",
+        "approved_by": "steve",
+        "approved_date": "2026-01-30",
+        "status": "approved",
+        "implementation_status": "active"
+      }
+    ]
+  },
   "summary": {
     "total_active_orders": 5,
-    "on_track_orders": 4,
-    "at_risk_orders": 1,
+    "orders_on_track": 4,
+    "orders_at_risk": 1,
     "total_active_projects": 5,
-    "on_track_projects": 4,
-    "delayed_projects": 1,
-    "critical_blockers": 4,
-    "operational_status": "⚠️ MONITOR - 2 high priority issues requiring attention"
+    "projects_on_track": 4,
+    "projects_delayed": 1,
+    "total_blockers": 4,
+    "critical_blockers": 3,
+    "high_blockers": 3,
+    "pending_approvals": 3,
+    "operational_status": "⚠️ MONITOR - 3 critical blockers requiring attention",
+    "last_updated": "2026-03-04T09:00:00Z"
   }
 }
