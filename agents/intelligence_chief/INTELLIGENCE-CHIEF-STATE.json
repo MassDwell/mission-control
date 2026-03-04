@@ -1,0 +1,390 @@
+{
+  "schema_version": "1.0",
+  "agent_id": "intelligence_chief",
+  "last_updated": "2026-03-04T00:00:00Z",
+  "watchlist": {
+    "massdwell": [
+      {
+        "category": "competitor",
+        "item": "Monitor ADU builder pricing and lead magnets",
+        "status": "active",
+        "last_checked": "2026-03-04",
+        "alert_threshold": "Price drop >15% or new market entry"
+      },
+      {
+        "category": "regulatory",
+        "item": "Massachusetts ADU zoning law changes (state + town level)",
+        "status": "active",
+        "last_checked": "2026-03-04",
+        "alert_threshold": "Any permitting requirement change or timeline impact"
+      },
+      {
+        "category": "tooling",
+        "item": "AI content generation tools for sales/marketing",
+        "status": "active",
+        "last_checked": "2026-02-28",
+        "alert_threshold": "New tool reduces content production by >30%"
+      }
+    ],
+    "atlantic_laser": [
+      {
+        "category": "competitor",
+        "item": "Laser welding equipment competitors (new products, pricing)",
+        "status": "active",
+        "last_checked": "2026-03-04",
+        "alert_threshold": "Competitor launches product <$5K or 2x speed improvement"
+      },
+      {
+        "category": "market",
+        "item": "Fabrication shop sentiment (social media, forums)",
+        "status": "active",
+        "last_checked": "2026-02-28",
+        "alert_threshold": "Negative trend or demand spike signal"
+      }
+    ],
+    "alpine": [
+      {
+        "category": "regulatory",
+        "item": "Boston/Greater Boston zoning and permitting changes",
+        "status": "active",
+        "last_checked": "2026-03-04",
+        "alert_threshold": "New incentives or barriers affecting feasibility"
+      },
+      {
+        "category": "market",
+        "item": "Real estate market cap rates, cost trends, comp signals",
+        "status": "active",
+        "last_checked": "2026-03-01",
+        "alert_threshold": "Cap rates change >50bps or construction costs spike >10%"
+      }
+    ],
+    "cross_business": [
+      {
+        "category": "tooling",
+        "item": "CRM/automation stack improvements (Kommo, Make, n8n)",
+        "status": "active",
+        "last_checked": "2026-02-28",
+        "alert_threshold": "New feature reduces manual work by >25%"
+      },
+      {
+        "category": "macro",
+        "item": "Interest rates, construction costs, labor markets",
+        "status": "active",
+        "last_checked": "2026-03-04",
+        "alert_threshold": "Rates up >50bps, labor shortage signal, material cost spike"
+      }
+    ]
+  },
+  "recent_research": [
+    {
+      "id": "research_001",
+      "date": "2026-03-04",
+      "business": "massdwell",
+      "topic": "ADU Competitor Landscape Q1 2026",
+      "type": "competitor",
+      "status": "completed",
+      "key_finding": "3 new competitors entered MA market, average pricing $165K-$195K (vs MassDwell $141K-$186K)",
+      "confidence": "High",
+      "sources": ["LinkedIn company pages", "Google Alerts", "Crunchbase"],
+      "recommendation": "Monitor pricing pressure, emphasize MassDwell's faster timeline (8-12 weeks)",
+      "next_actions": [
+        {
+          "action": "Draft competitive positioning memo",
+          "owner": "Intel Chief",
+          "due": "2026-03-05"
+        },
+        {
+          "action": "Share with Marketing + Sales for positioning refresh",
+          "owner": "Clawson",
+          "due": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": "research_002",
+      "date": "2026-03-03",
+      "business": "massdwell",
+      "topic": "Massachusetts ADU Zoning Updates",
+      "type": "regulatory",
+      "status": "completed",
+      "key_finding": "5 towns updated ADU regulations (Framingham, Newton, Wellesley, Arlington, Lexington) - all with positive ADU provisions",
+      "confidence": "High",
+      "sources": ["Mass.gov", "Town planning sites", "Housing Wire newsletter"],
+      "recommendation": "Prioritize outreach to these 5 towns for lead generation",
+      "next_actions": [
+        {
+          "action": "Identify town/municipal contacts for outreach",
+          "owner": "Sales Chief",
+          "due": "2026-03-08"
+        },
+        {
+          "action": "Draft local government partnership proposal",
+          "owner": "Intel Chief",
+          "due": "2026-03-10"
+        }
+      ]
+    },
+    {
+      "id": "research_003",
+      "date": "2026-03-02",
+      "business": "atlantic_laser",
+      "topic": "Competitor Pricing & Product Moves",
+      "type": "competitor",
+      "status": "completed",
+      "key_finding": "Primary arc welder competitor dropped MA1-equivalent price from $7.2K to $6.1K (15% reduction). No feature changes.",
+      "confidence": "Medium",
+      "sources": ["Competitor website", "LinkedIn announcement"],
+      "recommendation": "Emphasize ROI advantage (4x faster, 80% less energy). Consider bundled packages (machine + training) at current price.",
+      "next_actions": [
+        {
+          "action": "Analyze Atlantic Laser margin impact",
+          "owner": "Finance Director",
+          "due": "2026-03-05"
+        },
+        {
+          "action": "Draft value prop response (faster payback messaging)",
+          "owner": "Marketing Head",
+          "due": "2026-03-07"
+        }
+      ]
+    },
+    {
+      "id": "research_004",
+      "date": "2026-02-28",
+      "business": "cross_business",
+      "topic": "AI Tools for Sales & Marketing Workflow Acceleration",
+      "type": "tooling",
+      "status": "completed",
+      "key_finding": "Claude 3.5 Sonnet + OpenAI GPT-4o now support real-time tool use. Reduces sales follow-up email drafting by 60-70% of time.",
+      "confidence": "High",
+      "sources": ["Anthropic docs", "OpenAI blog", "Product Hunt"],
+      "recommendation": "Integrate AI tool into sales workflow. Consider using for email drafting, proposal generation, objection handling.",
+      "next_actions": [
+        {
+          "action": "Audit current sales email templates and response patterns",
+          "owner": "Sales Chief",
+          "due": "2026-03-06"
+        },
+        {
+          "action": "Prototype AI-assisted email drafting workflow",
+          "owner": "Clawson",
+          "due": "2026-03-10"
+        }
+      ]
+    }
+  ],
+  "pending_research": [
+    {
+      "id": "pending_001",
+      "date_requested": "2026-03-04",
+      "business": "alpine",
+      "topic": "Boston Submarket Cap Rate Trends (Last 12 months)",
+      "type": "market",
+      "urgency": "this_week",
+      "requestor": "Finance Director",
+      "status": "in_progress",
+      "research_plan": [
+        "Identify top 5 Boston submarkets (by deal flow)",
+        "Gather cap rate data (CoStar, public transactions, broker surveys)",
+        "Compare 12-month trend (Q1 2025 vs Q1 2026)",
+        "Flag opportunities (cap rate compression, expansion risks)"
+      ]
+    },
+    {
+      "id": "pending_002",
+      "date_requested": "2026-03-03",
+      "business": "massdwell",
+      "topic": "Lead Generation Channel Analysis (What's working for competitors?)",
+      "type": "sales_intelligence",
+      "urgency": "this_week",
+      "requestor": "Sales Chief",
+      "status": "in_progress",
+      "research_plan": [
+        "Identify top 5 ADU competitors (Blokable, Nomad Homes, etc.)",
+        "Reverse-engineer their lead sources (landing pages, ads, partnerships)",
+        "Identify gaps in MassDwell's current channel mix",
+        "Recommend top 2-3 new channels to test"
+      ]
+    },
+    {
+      "id": "pending_003",
+      "date_requested": "2026-02-28",
+      "business": "cross_business",
+      "topic": "Kommo CRM + Make/n8n Integration Automation Opportunities",
+      "type": "tooling",
+      "urgency": "backlog",
+      "requestor": "Ops Director",
+      "status": "queued",
+      "research_plan": [
+        "Map current Kommo workflows (lead capture, follow-up, reporting)",
+        "Identify 3-5 high-friction manual steps",
+        "Evaluate Make vs n8n for integration capability",
+        "Cost-benefit analysis (time saved vs tool cost)"
+      ]
+    }
+  ],
+  "intelligence_alerts": [
+    {
+      "id": "alert_001",
+      "date_created": "2026-03-04",
+      "severity": "high",
+      "business": "atlantic_laser",
+      "category": "competitor",
+      "alert": "Competitor price cut 15% (MA1-equivalent $7.2K → $6.1K)",
+      "impact": "Price pressure on Atlantic Laser margins, competitive positioning at risk",
+      "recommendation": "Emphasize speed/efficiency ROI. Consider bundled packages.",
+      "action_required": "Finance + Marketing response by 3/7",
+      "status": "escalated_to_finance"
+    },
+    {
+      "id": "alert_002",
+      "date_created": "2026-03-03",
+      "severity": "medium",
+      "business": "massdwell",
+      "category": "regulatory",
+      "alert": "5 MA towns updated ADU zoning rules (all positive)",
+      "impact": "Lead generation opportunity in Framingham, Newton, Wellesley, Arlington, Lexington",
+      "recommendation": "Prioritize outreach to these towns for partnerships + lead gen",
+      "action_required": "Sales outreach plan by 3/8",
+      "status": "escalated_to_sales"
+    }
+  ],
+  "monthly_briefings": [
+    {
+      "id": "brief_202603",
+      "month": "2026-03",
+      "status": "in_progress",
+      "sections": {
+        "massdwell": {
+          "top_3_opportunities": [
+            {
+              "opportunity": "5 MA towns with new ADU zoning rules",
+              "potential": "15-20 leads/municipalities",
+              "timeline": "Q2 2026",
+              "action": "Direct municipal outreach"
+            },
+            {
+              "opportunity": "Partnership with modular home builders (cross-selling)",
+              "potential": "5-10 new sales channels",
+              "timeline": "Q2-Q3 2026",
+              "action": "Identify + pitch potential partners"
+            },
+            {
+              "opportunity": "AI content marketing (reduce production time 60%)",
+              "potential": "2-3x content output with same resources",
+              "timeline": "Now",
+              "action": "Prototype + deploy"
+            }
+          ],
+          "top_3_risks": [
+            {
+              "risk": "3 new competitors in MA market",
+              "impact": "Pricing pressure, market share erosion",
+              "mitigation": "Emphasize speed + timeline advantage"
+            },
+            {
+              "risk": "Potential zoning pushback in wealthy suburbs",
+              "impact": "Reduced addressable market in some towns",
+              "mitigation": "Target pro-housing towns first, build case studies"
+            },
+            {
+              "risk": "Rising construction costs (labor, materials)",
+              "impact": "Unit cost pressure, margin compression",
+              "mitigation": "Monitor monthly, adjust pricing if needed"
+            }
+          ]
+        },
+        "atlantic_laser": {
+          "top_3_opportunities": [
+            {
+              "opportunity": "Fabrication shops seeking efficiency gains",
+              "potential": "TAM signal (high interest in faster welding)",
+              "timeline": "Ongoing",
+              "action": "Social listening, industry event presence"
+            }
+          ],
+          "top_3_risks": [
+            {
+              "risk": "Competitor 15% price cut",
+              "impact": "Margin pressure, competitive positioning risk",
+              "mitigation": "Bundled packages, ROI emphasis, speed/efficiency"
+            }
+          ]
+        },
+        "alpine": {
+          "top_3_opportunities": [
+            {
+              "opportunity": "Boston submarket cap rate compression (opportunity)",
+              "potential": "Higher returns on new acquisitions",
+              "timeline": "Ongoing",
+              "action": "Quarterly comp analysis"
+            }
+          ],
+          "top_3_risks": [
+            {
+              "risk": "Interest rate risk (5+ year refi exposure)",
+              "impact": "Loan cost increase on portfolio",
+              "mitigation": "Refinance timing strategy, hedge options"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "source_library": [
+    {
+      "id": "source_001",
+      "name": "Mass.gov Housing + Zoning Updates",
+      "type": "government",
+      "url": "https://www.mass.gov/",
+      "frequency": "weekly_check",
+      "last_checked": "2026-03-04"
+    },
+    {
+      "id": "source_002",
+      "name": "Housing Wire (Industry Newsletter)",
+      "type": "publication",
+      "url": "https://www.housingwire.com/",
+      "frequency": "daily_digest",
+      "last_checked": "2026-03-04"
+    },
+    {
+      "id": "source_003",
+      "name": "CoStar Commercial Real Estate Data",
+      "type": "commercial_platform",
+      "url": "https://www.costar.com/",
+      "frequency": "monthly_pull",
+      "last_checked": "2026-02-28"
+    },
+    {
+      "id": "source_004",
+      "name": "LinkedIn (Company pages, news feed)",
+      "type": "social",
+      "frequency": "daily_scan",
+      "last_checked": "2026-03-04"
+    },
+    {
+      "id": "source_005",
+      "name": "Reddit (r/realestate, r/construction, r/smallbiz)",
+      "type": "forum",
+      "frequency": "weekly_scan",
+      "last_checked": "2026-03-02"
+    },
+    {
+      "id": "source_006",
+      "name": "Twitter/X (Industry accounts, competitors)",
+      "type": "social",
+      "frequency": "daily_scan",
+      "last_checked": "2026-03-04"
+    }
+  ],
+  "summary": {
+    "active_watchlist_items": 12,
+    "completed_research_this_month": 4,
+    "pending_research": 3,
+    "active_intelligence_alerts": 2,
+    "escalations_this_month": 2,
+    "top_priority": "Massachusetts ADU zoning changes (5 towns with positive rules - lead gen opportunity)",
+    "last_updated": "2026-03-04T09:00:00Z"
+  }
+}

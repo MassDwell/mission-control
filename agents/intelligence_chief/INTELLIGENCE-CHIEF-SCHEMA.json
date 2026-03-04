@@ -1,0 +1,254 @@
+{
+  "schema_version": "1.0",
+  "agent_id": "intelligence_chief",
+  "owner": {
+    "name": "Steve Vettori",
+    "timezone": "America/New_York"
+  },
+  "state_structure": {
+    "watchlist": {
+      "massdwell": [
+        {
+          "category": "competitor | regulatory | tooling | market | macro",
+          "item": "string (what to monitor)",
+          "status": "active | paused | archived",
+          "last_checked": "ISO8601 date",
+          "alert_threshold": "string (what triggers alert?)"
+        }
+      ],
+      "atlantic_laser": [],
+      "alpine": [],
+      "cross_business": []
+    },
+    "recent_research": [
+      {
+        "id": "string (research_001, etc)",
+        "date": "ISO8601 date",
+        "business": "massdwell | atlantic_laser | alpine | cross_business",
+        "topic": "string",
+        "type": "competitor | regulatory | market | tooling | sales_intelligence | macro | other",
+        "status": "completed | in_progress | paused",
+        "key_finding": "string (headline finding)",
+        "confidence": "High | Medium | Low",
+        "sources": ["string", "string"],
+        "recommendation": "string (what to do)",
+        "next_actions": [
+          {
+            "action": "string",
+            "owner": "string (role/name)",
+            "due": "ISO8601 date"
+          }
+        ],
+        "full_memo": "string (optional detailed writeup)"
+      }
+    ],
+    "pending_research": [
+      {
+        "id": "string (pending_001, etc)",
+        "date_requested": "ISO8601 date",
+        "business": "massdwell | atlantic_laser | alpine | cross_business",
+        "topic": "string",
+        "type": "competitor | regulatory | market | tooling | sales_intelligence | macro | other",
+        "urgency": "now | this_week | backlog",
+        "requestor": "string (who asked for this?)",
+        "status": "queued | in_progress | completed",
+        "research_plan": ["sub_question_1", "sub_question_2", "sub_question_3"]
+      }
+    ],
+    "intelligence_alerts": [
+      {
+        "id": "string (alert_001, etc)",
+        "date_created": "ISO8601 date",
+        "severity": "critical | high | medium | low",
+        "business": "massdwell | atlantic_laser | alpine | cross_business",
+        "category": "competitor | regulatory | tooling | market | macro | risk",
+        "alert": "string (what happened?)",
+        "impact": "string (what's the business impact?)",
+        "recommendation": "string (what should we do?)",
+        "action_required": "string (who, what, by when)",
+        "status": "new | escalated_to_steve | escalated_to_clawson | escalated_to_finance | escalated_to_sales | escalated_to_marketing | acknowledged | resolved"
+      }
+    ],
+    "monthly_briefings": [
+      {
+        "id": "string (brief_202603, etc)",
+        "month": "YYYY-MM",
+        "status": "in_progress | completed",
+        "sections": {
+          "massdwell": {
+            "top_3_opportunities": [
+              {
+                "opportunity": "string",
+                "potential": "string (size/scale)",
+                "timeline": "string",
+                "action": "string (recommended action)"
+              }
+            ],
+            "top_3_risks": [
+              {
+                "risk": "string",
+                "impact": "string",
+                "mitigation": "string"
+              }
+            ]
+          },
+          "atlantic_laser": {},
+          "alpine": {},
+          "cross_business": {}
+        }
+      }
+    ],
+    "source_library": [
+      {
+        "id": "string (source_001, etc)",
+        "name": "string (source name)",
+        "type": "government | publication | forum | social | commercial_platform | internal",
+        "url": "string (URL or N/A)",
+        "frequency": "daily_scan | weekly_check | monthly_pull | as_needed",
+        "last_checked": "ISO8601 date"
+      }
+    ]
+  },
+  "reference": {
+    "research_type_values": [
+      "competitor",
+      "regulatory",
+      "market",
+      "tooling",
+      "sales_intelligence",
+      "macro",
+      "other"
+    ],
+    "business_values": [
+      "massdwell",
+      "atlantic_laser",
+      "alpine",
+      "cross_business"
+    ],
+    "status_values": [
+      "queued",
+      "in_progress",
+      "completed",
+      "paused"
+    ],
+    "alert_status_values": [
+      "new",
+      "escalated_to_steve",
+      "escalated_to_clawson",
+      "escalated_to_finance",
+      "escalated_to_sales",
+      "escalated_to_marketing",
+      "acknowledged",
+      "resolved"
+    ],
+    "severity_levels": [
+      "critical",
+      "high",
+      "medium",
+      "low"
+    ],
+    "confidence_levels": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "urgency_levels": [
+      "now",
+      "this_week",
+      "backlog"
+    ]
+  },
+  "output_contract": {
+    "required_fields": [
+      "business",
+      "topic",
+      "why_it_matters",
+      "key_findings",
+      "inference",
+      "recommendation",
+      "next_actions",
+      "sources",
+      "confidence"
+    ],
+    "format": {
+      "business": "string",
+      "topic": "string",
+      "why_it_matters": "string (1-2 lines)",
+      "key_findings": ["fact_1", "fact_2", "fact_3"],
+      "inference": ["inference_1", "inference_2"],
+      "recommendation": {
+        "default": "string (action + owner + due)",
+        "alternative": "string (optional)"
+      },
+      "next_actions": [
+        {
+          "action": "string",
+          "owner": "string",
+          "due": "ISO8601 date"
+        }
+      ],
+      "sources": ["source_1", "source_2"],
+      "confidence": "High | Medium | Low"
+    }
+  },
+  "update_frequency": {
+    "watchlist": "weekly (check for changes)",
+    "recent_research": "as_completed (add new research)",
+    "pending_research": "daily (progress updates)",
+    "intelligence_alerts": "real_time (alert on discovery)",
+    "monthly_briefings": "monthly (full briefing pack)",
+    "source_library": "as_needed (add new sources)"
+  },
+  "cadence": {
+    "daily": "Scan watchlist, produce 1-page brief (max 10 bullets), flag urgent escalations",
+    "weekly": "Intel Briefing Pack by business (Top 3 opps + Top 3 risks), route to Clawson",
+    "monthly": "Competitive landscape refresh, tooling stack review, regulatory summary, deep-dive on 1 strategic topic"
+  },
+  "escalation_rules": {
+    "same_day_escalation": [
+      "Regulatory change materially impacts ADU feasibility or timeline",
+      "Competitor launches strong offer/lead magnet in your market",
+      "Major vendor/tool breaks, price spikes, or becomes risky",
+      "High-leverage partnership opportunity appears",
+      "Macro change with material deal impact (rates, costs, labor)"
+    ],
+    "escalate_to": "Steve | Clawson (decide based on urgency/type)",
+    "format": "Slack message with: Alert + Impact + Recommendation + Action needed"
+  },
+  "guardrails": [
+    "Never fabricate facts, stats, quotes, or 'industry averages'",
+    "Always separate: Facts vs Inferences vs Recommendations",
+    "No legal advice; provide informational summaries + 'talk to counsel' flags",
+    "No direct outreach to third parties; only recommend lists + draft messages",
+    "Maintain strict brand separation (MassDwell, Atlantic Laser, Alpine)",
+    "State confidence level explicitly (High/Medium/Low)",
+    "Cite sources (URL, doc, date, excerpt) for all claims",
+    "Label unverified info as hypothesis, not fact"
+  ],
+  "success_metrics": {
+    "signal_to_noise_ratio": {
+      "target": "<5% false alerts, >90% actionable insights",
+      "measurement": "Track alerts vs actual impact"
+    },
+    "opportunity_discovery": {
+      "target": "1+ vetted opportunity per month per business",
+      "measurement": "Count opportunities recommended + acted on"
+    },
+    "escalation_timeliness": {
+      "target": "Same-day flagging of material changes",
+      "measurement": "Time from discovery to escalation"
+    },
+    "source_quality": {
+      "target": ">80% verified sources, clear confidence levels",
+      "measurement": "Source audit, confidence tracking"
+    },
+    "decision_impact": {
+      "target": "Recommendations lead to actions Steve/Clawson take",
+      "measurement": "Track recommendation → action adoption rate"
+    },
+    "regulatory_timeliness": {
+      "target": "Policy changes flagged before they affect operations",
+      "measurement": "Flag date vs impact date"
+    }
+  }
+}
