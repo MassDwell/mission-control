@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0",
+  "agent_id": "ops_director",
+  "owner": {
+    "name": "Steve Vettori",
+    "timezone": "America/New_York"
+  },
+  "state_structure": {
+    "massdwell": {
+      "active_orders": [
+        {
+          "order_id": "string (MAS-001, MAS-002, etc)",
+          "customer": "string",
+          "location": "string",
+          "unit_type": "string",
+          "contract_value": "number",
+          "status": "design_approval_pending | materials_procurement | manufacturing | qa | delivery | complete",
+          "created_date": "ISO8601 date",
+          "expected_delivery": "ISO8601 date",
+          "days_in_current_stage": "number",
+          "days_to_deadline": "number",
+          "on_track": "boolean",
+          "blockers": [
+            {
+              "id": "string",
+              "issue": "string",
+              "days_delayed": "number",
+              "impact": "string",
+              "mitigation": "string"
+            }
+          ],
+          "notes": "string"
+        }
+      ],
+      "production_metrics": {
+        "total_active_orders": "number",
+        "on_track_count": "number",
+        "at_risk_count": "number",
+        "capacity_units_per_month": "number",
+        "orders_in_backlog": "number",
+        "months_of_backlog": "number",
+        "on_time_delivery_pct": "number",
+        "average_days_to_completion": "number",
+        "quality_defect_rate_pct": "number",
+        "staff_utilization_pct": "number",
+        "facility_utilization_pct": "number",
+        "notes": "string"
+      },
+      "upcoming_milestones": [
+        {
+          "date": "ISO8601 date",
+          "milestone": "string",
+          "order_id": "string"
+        }
+      ]
+    },
+    "atlantic_laser": {
+      "active_orders": [
+        {
+          "order_id": "string (ALS-001, etc)",
+          "customer": "string",
+          "machine_model": "string",
+          "contract_value": "number",
+          "status": "in_inventory | shipped | delivered",
+          "order_date": "ISO8601 date",
+          "expected_delivery": "ISO8601 date",
+          "days_to_delivery": "number",
+          "on_track": "boolean",
+          "tracking": "string",
+          "notes": "string"
+        }
+      ],
+      "inventory_status": {
+        "[model_name]": {
+          "units_in_stock": "number",
+          "reorder_threshold": "number",
+          "status": "optimal | low_reorder_soon | at_threshold"
+        }
+      },
+      "fulfillment_metrics": {
+        "orders_pending": "number",
+        "orders_shipped_this_month": "number",
+        "average_days_to_ship": "number",
+        "on_time_delivery_pct": "number",
+        "inventory_days_on_hand": "number",
+        "notes": "string"
+      },
+      "upcoming_milestones": [
+        {
+          "date": "ISO8601 date",
+          "milestone": "string"
+        }
+      ]
+    },
+    "alpine": {
+      "active_projects": [
+        {
+          "project_id": "string (ALP-001, ALP-002, etc)",
+          "property": "string",
+          "project_type": "development | acquisition | stabilization | exit",
+          "stage": "design | acquisition | due_diligence | development | construction | stabilization | leasing | exit",
+          "timeline_months": "number",
+          "months_elapsed": "number",
+          "months_remaining": "number",
+          "budget": "number (if applicable)",
+          "spent": "number (if applicable)",
+          "spent_pct": "number",
+          "on_track": "boolean",
+          "blockers": [
+            {
+              "id": "string",
+              "issue": "string",
+              "days_delayed": "number",
+              "impact": "string",
+              "mitigation": "string"
+            }
+          ],
+          "next_milestone": "string",
+          "portfolio_status": "pre_acquisition | under_contract | in_development | in_construction | occupied_generating_income | stabilized | ready_for_sale",
+          "occupancy_pct": "number (if stabilized)",
+          "monthly_noi": "number (if stabilized)",
+          "notes": "string"
+        }
+      ],
+      "project_metrics": {
+        "total_active_projects": "number",
+        "on_schedule_count": "number",
+        "delayed_count": "number",
+        "total_blockers": "number",
+        "total_capital_deployed": "number",
+        "capital_in_active_projects": "number",
+        "notes": "string"
+      },
+      "upcoming_milestones": [
+        {
+          "date": "ISO8601 date",
+          "milestone": "string"
+        }
+      ]
+    },
+    "operational_alerts": [
+      {
+        "id": "string (alert_001, etc)",
+        "severity": "critical | high | medium",
+        "business": "massdwell | atlantic_laser | alpine",
+        "issue": "string",
+        "affected_orders": ["order_id", "..."],
+        "impact": "string",
+        "mitigation": "string",
+        "owner": "string (responsible person/team)",
+        "eta_resolution": "ISO8601 date"
+      }
+    ],
+    "summary": {
+      "total_active_orders": "number",
+      "on_track_orders": "number",
+      "at_risk_orders": "number",
+      "total_active_projects": "number",
+      "on_track_projects": "number",
+      "delayed_projects": "number",
+      "critical_blockers": "number",
+      "operational_status": "string (summary)"
+    }
+  },
+  "reference": {
+    "order_status_values": [
+      "design_approval_pending",
+      "materials_procurement",
+      "manufacturing",
+      "qa",
+      "delivery",
+      "complete"
+    ],
+    "project_type_values": [
+      "development",
+      "acquisition",
+      "stabilization",
+      "exit"
+    ],
+    "project_stage_values": [
+      "design",
+      "acquisition",
+      "due_diligence",
+      "development",
+      "construction",
+      "stabilization",
+      "leasing",
+      "exit"
+    ],
+    "project_status_values": [
+      "pre_acquisition",
+      "under_contract",
+      "in_development",
+      "in_construction",
+      "occupied_generating_income",
+      "stabilized",
+      "ready_for_sale"
+    ],
+    "inventory_status_values": [
+      "optimal",
+      "low_reorder_soon",
+      "at_threshold"
+    ],
+    "severity_levels": [
+      "critical",
+      "high",
+      "medium"
+    ]
+  },
+  "update_frequency": {
+    "active_orders": "daily (status updates)",
+    "production_metrics": "weekly (summary refresh)",
+    "inventory_status": "daily (stock levels)",
+    "fulfillment_metrics": "weekly (summary refresh)",
+    "active_projects": "daily (status updates)",
+    "project_metrics": "weekly (summary refresh)",
+    "operational_alerts": "real-time (add as issues arise, update mitigation daily)",
+    "blockers": "daily (critical), weekly (routine)"
+  },
+  "cadence": {
+    "daily": "9 AM EST - Check critical blockers, monitor at-risk orders/projects",
+    "weekly": "Friday 2 PM - Full operations status, metrics, upcoming milestones",
+    "monthly": "Last business day - Comprehensive snapshot, performance vs. plan"
+  },
+  "guardrails": [
+    "Never modify project scope or customer delivery dates without approval",
+    "Never promise delivery you can't guarantee",
+    "Never hide blockers - surface them immediately",
+    "Never over-commit capacity",
+    "Always report blockers the day discovered",
+    "Always provide timeline impact assessment",
+    "Always suggest mitigation strategies",
+    "Always escalate blocking issues to Steve",
+    "Always track mitigation progress",
+    "Always keep customers informed of changes"
+  ],
+  "escalation_matrix": {
+    "critical": {
+      "examples": [
+        "Critical supplier issue (can't source materials)",
+        "Customer dissatisfaction (complaint received)",
+        "Safety/quality issue (defect, safety risk)",
+        "Capacity crisis (can't fulfill orders)",
+        "Delivery date at risk (miss deadline)",
+        "Blocker affecting multiple orders/projects"
+      ],
+      "escalate_to": "Steve",
+      "timeframe": "Immediately"
+    },
+    "high": {
+      "examples": [
+        "Supplier delay (>2 weeks impact)",
+        "Quality issue (minor defect, rework needed)",
+        "Customer concern (not yet complaint)",
+        "Blocker affecting single order/project",
+        "Resource shortage (staff, equipment)"
+      ],
+      "escalate_to": "Steve or Clawson",
+      "timeframe": "Within 24 hours"
+    },
+    "medium": {
+      "examples": [
+        "Minor delays (< 1 week)",
+        "Expected bottlenecks",
+        "Normal supply chain variations"
+      ],
+      "escalate_to": "Internal monitoring",
+      "timeframe": "Weekly review"
+    }
+  },
+  "success_metrics": {
+    "on_time_delivery_pct": {
+      "target": ">90%",
+      "current": "~85-95% (varies by business)"
+    },
+    "blocker_response_time": {
+      "target": "<24 hours for critical",
+      "current": "TBD"
+    },
+    "blocker_resolution_time": {
+      "target": "<1 week for high priority",
+      "current": "TBD"
+    },
+    "capacity_utilization": {
+      "target": "80-90%",
+      "current": "~82-87%"
+    },
+    "quality_defect_rate": {
+      "target": "<2%",
+      "current": "~2%"
+    },
+    "customer_satisfaction": {
+      "target": "No escalated complaints",
+      "current": "TBD"
+    }
+  }
+}
