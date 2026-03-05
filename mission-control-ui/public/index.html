@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mission Control V1 — Dashboard</title>
+  <title>Mission Control — Palantir Mode</title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/drilldown.css" />
   <link rel="stylesheet" href="/venture-detail.css" />
@@ -13,6 +13,81 @@
   <link rel="stylesheet" href="/blocked-work.css" />
   <link rel="stylesheet" href="/workstream-flow.css" />
   <link rel="stylesheet" href="/system-status.css" />
+  <!-- CR-MC-PALANTIR-OPERATOR-LOOPS -->
+  <link rel="stylesheet" href="/insights-panel.css" />
+  <link rel="stylesheet" href="/momentum-tracker.css" />
+  <link rel="stylesheet" href="/venture-graph.css" />
+
+  <style>
+    /* Palantir Mode layout overrides */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 270px 1fr 300px;
+      grid-template-rows: 1fr;
+      gap: 8px;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .palantir-left   { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-y: auto; }
+    .palantir-center { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-y: auto; }
+    .palantir-right  { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-y: auto; }
+
+    /* Venture graph section */
+    #venture-graph-container {
+      height: 280px;
+      background: var(--bg-panel, #0f1117);
+      border: 1px solid var(--border, #1e2435);
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    #venture-graph-container .graph-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--border, #1e2435);
+      background: var(--bg-section, #161a25);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary, #8892a4);
+      text-transform: uppercase;
+    }
+
+    #venture-graph-canvas {
+      height: calc(280px - 37px);
+    }
+
+    /* Insights panel in left col */
+    .insights-panel {
+      flex-shrink: 0;
+    }
+
+    /* Scrollable panels */
+    .palantir-left::-webkit-scrollbar,
+    .palantir-center::-webkit-scrollbar,
+    .palantir-right::-webkit-scrollbar {
+      width: 4px;
+    }
+    .palantir-left::-webkit-scrollbar-thumb,
+    .palantir-center::-webkit-scrollbar-thumb,
+    .palantir-right::-webkit-scrollbar-thumb {
+      background: #2a3047;
+      border-radius: 2px;
+    }
+
+    /* Top bar SSOT enhancement */
+    .top-bar-palantir-badge {
+      font-size: 9px;
+      color: #22c55e;
+      opacity: 0.7;
+      margin-left: 3px;
+    }
+  </style>
 </head>
 <body>
   <div class="dashboard-container">
@@ -22,19 +97,22 @@
       <span id="staleness-age" style="margin-left: auto;"></span>
     </div>
 
-    <!-- TOP BAR (60px) -->
+    <!-- TOP BAR — Palantir Mode: Active Agents from SSOT -->
     <div class="top-bar">
       <div class="top-bar-item">
-        <div class="metric-label">System Health</div>
-        <div class="metric-value" id="system-health">--</div>
+        <div class="metric-label">
+          Active Agents
+          <span class="top-bar-palantir-badge" title="Source: agents_runtime.json (SSOT)">⬤ SSOT</span>
+        </div>
+        <div class="metric-value" id="active-agents" title="Live from agents_runtime.json">--</div>
       </div>
       <div class="top-bar-item">
         <div class="metric-label">Opportunity Velocity</div>
         <div class="metric-value" id="opportunity-velocity">--</div>
       </div>
       <div class="top-bar-item">
-        <div class="metric-label">Active Agents</div>
-        <div class="metric-value" id="active-agents">--</div>
+        <div class="metric-label">System Health</div>
+        <div class="metric-value" id="system-health">--</div>
       </div>
       <div class="top-bar-item" id="venture-scoreboard-container">
         <div style="font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">VENTURE SCOREBOARD</div>
@@ -54,31 +132,79 @@
         </button>
       </div>
       <div class="top-bar-item">
+        <div class="metric-label">
+          Insights
+          <span id="insights-badge" class="insights-badge"></span>
+        </div>
+        <div class="metric-value" id="insights-header-count" style="font-size:12px;">—</div>
+      </div>
+      <div class="top-bar-item">
         <div class="metric-label">Time</div>
         <div class="metric-value" id="current-time">--:--</div>
       </div>
     </div>
 
-    <!-- MAIN GRID: Left + Center + Right -->
+    <!-- MAIN GRID: 3 Columns (Palantir Mode) -->
     <div class="main-grid">
-      <!-- LEFT PANEL (20%) - Activity Feed (CR-005) -->
-      <div class="left-panel">
-        <div class="panel-header">
-          Agent Activity
-          <span style="font-size: 9px; color: var(--text-muted); margin-left: auto;">Real-time feed</span>
+
+      <!-- ═══ LEFT COLUMN: System Insights + Momentum Tracker ═══ -->
+      <div class="palantir-left">
+
+        <!-- System Insights Panel -->
+        <div class="insights-panel">
+          <div class="insights-panel-header">
+            System Insights
+            <span id="insights-header-count" style="font-size:10px;font-weight:400;"></span>
+          </div>
+          <div class="insights-list" id="insights-list">
+            <div class="insights-empty">Loading insights...</div>
+          </div>
+          <div class="insights-footer">
+            <span>Auto-computed · 10s refresh</span>
+            <span id="insights-footer-time"></span>
+          </div>
         </div>
-        <div class="panel-content" id="agent-activity-content">
-          <div class="loading">Loading activity feed...</div>
+
+        <!-- Momentum Tracker Panel -->
+        <div class="palantir-panel">
+          <div class="palantir-panel-header">
+            Momentum
+            <span style="font-size:9px;font-weight:400;color:#5a6478;">This Week</span>
+          </div>
+          <div id="momentum-content">
+            <div class="insights-empty">Loading momentum...</div>
+          </div>
         </div>
+
+        <!-- Venture Pipeline (moved from right) -->
+        <div class="palantir-panel">
+          <div class="palantir-panel-header">Venture Pipeline</div>
+          <div class="pipeline-stages" id="pipeline-content" style="padding:8px;">
+            <div class="pipeline-stage"><div class="stage-label">Opportunity</div><div class="stage-count">0</div></div>
+            <div class="pipeline-stage"><div class="stage-label">Qualified</div><div class="stage-count">0</div></div>
+            <div class="pipeline-stage"><div class="stage-label">In Progress</div><div class="stage-count">0</div></div>
+            <div class="pipeline-stage"><div class="stage-label">Due Diligence</div><div class="stage-count">0</div></div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- CENTER PANEL (50%) -->
-      <div class="center-panel">
+      <!-- ═══ CENTER COLUMN: Active Work + Blocked Work + Flow + Graph ═══ -->
+      <div class="palantir-center">
+
         <!-- Active Work Section -->
         <div class="center-section">
           <div class="section-header">Active Work</div>
           <div class="section-content" id="active-work-content">
             <div class="loading">Loading active work...</div>
+          </div>
+        </div>
+
+        <!-- Blocked Work Section -->
+        <div class="center-section">
+          <div class="section-header">Blocked Work</div>
+          <div class="section-content" id="blocked-work-content">
+            <div class="loading">Loading blocked items...</div>
           </div>
         </div>
 
@@ -90,56 +216,61 @@
           </div>
         </div>
 
-        <!-- Blocked Work Section -->
-        <div class="center-section">
-          <div class="section-header">Blocked Work</div>
-          <div class="section-content" id="blocked-work-content">
-            <div class="loading">Loading blocked items...</div>
+        <!-- Relationship Graph Section -->
+        <div id="venture-graph-container">
+          <div class="graph-panel-header">
+            Relationship Graph
+            <div class="graph-legend">
+              <span class="legend-item"><span class="legend-dot venture"></span>Venture</span>
+              <span class="legend-item"><span class="legend-dot workstream"></span>Workstream</span>
+              <span class="legend-item"><span class="legend-dot agent"></span>Agent</span>
+              <span class="legend-item"><span class="legend-dot blocker"></span>Blocker</span>
+            </div>
           </div>
+          <div id="venture-graph-canvas"></div>
         </div>
+
       </div>
 
-      <!-- RIGHT PANEL (30%) -->
-      <div class="right-panel">
-        <div class="panel-header">Venture Pipeline</div>
-        <div class="pipeline-stages" id="pipeline-content">
-          <div class="pipeline-stage">
-            <div class="stage-label">Opportunity</div>
-            <div class="stage-count">0</div>
+      <!-- ═══ RIGHT COLUMN: Agent Activity + Opportunity Discovery + Operator Impact ═══ -->
+      <div class="palantir-right">
+
+        <!-- Agent Activity -->
+        <div class="panel-header">
+          Agent Activity
+          <span style="font-size: 9px; color: var(--text-muted); margin-left: auto;">Real-time feed</span>
+        </div>
+        <div class="panel-content" id="agent-activity-content" style="max-height:220px;overflow-y:auto;">
+          <div class="loading">Loading activity feed...</div>
+        </div>
+
+        <!-- Opportunity Discovery Panel -->
+        <div class="palantir-panel">
+          <div class="palantir-panel-header">
+            Opportunity Discovery
+            <span style="font-size:9px;font-weight:400;color:#5a6478;">30s refresh</span>
           </div>
-          <div class="pipeline-stage">
-            <div class="stage-label">Qualified</div>
-            <div class="stage-count">0</div>
-          </div>
-          <div class="pipeline-stage">
-            <div class="stage-label">In Progress</div>
-            <div class="stage-count">0</div>
-          </div>
-          <div class="pipeline-stage">
-            <div class="stage-label">Due Diligence</div>
-            <div class="stage-count">0</div>
-          </div>
-          <div class="pipeline-stage">
-            <div class="stage-label">Negotiation</div>
-            <div class="stage-count">0</div>
-          </div>
-          <div class="pipeline-stage">
-            <div class="stage-label">Approval</div>
-            <div class="stage-count">0</div>
-          </div>
-          <div class="pipeline-stage">
-            <div class="stage-label">Closing</div>
-            <div class="stage-count">0</div>
-          </div>
-          <div class="pipeline-stage">
-            <div class="stage-label">Closed</div>
-            <div class="stage-count">0</div>
+          <div id="opportunities-content">
+            <div class="insights-empty">Scanning for opportunities...</div>
           </div>
         </div>
+
+        <!-- Operator Impact Panel -->
+        <div class="palantir-panel">
+          <div class="palantir-panel-header">
+            Your Impact
+            <span style="font-size:9px;font-weight:400;color:#5a6478;">Operator metrics</span>
+          </div>
+          <div id="impact-content">
+            <div class="insights-empty">Loading impact...</div>
+          </div>
+        </div>
+
       </div>
+
     </div>
 
-    <!-- BOTTOM BAR (100-200px) -->
+    <!-- BOTTOM BAR -->
     <div class="bottom-bar">
       <div class="alerts-section">
         <div class="section-header">Alerts & System Status</div>
@@ -152,7 +283,7 @@
       </div>
       <div class="status-footer">
         <span id="last-updated">Last updated: --</span>
-        <span id="refresh-indicator">● Auto-refresh: 10s</span>
+        <span id="refresh-indicator">● Palantir Mode · 10s refresh</span>
       </div>
     </div>
   </div>
@@ -296,6 +427,9 @@
       <div class="drawer-loading">Select a venture to view details</div>
     </div>
 
+    <!-- Palantir Command Center — rendered dynamically for active venture -->
+    <div id="command-center-mount"></div>
+
     <div class="detail-keyboard-hints">
       <span class="kbd-hint">←→</span><span style="font-size:10px;color:var(--text-muted)">prev/next venture</span>
       <span class="kbd-hint">Esc</span><span style="font-size:10px;color:var(--text-muted)">back to list</span>
@@ -303,15 +437,51 @@
   </div>
 
   <!-- CR-MC-VENTURE-DRILLDOWN-V2: Detail Drawer V2 -->
-  <!-- The overlay and drawer are injected dynamically by venture-detail.js -->
   <script src="/venture-detail.js"></script>
   <script src="/drilldown.js"></script>
   <script src="/script.js"></script>
-  <!-- CR-MC-OPS-PANELS-UPGRADE: Operational panels (take over from script.js stubs) -->
+  <!-- CR-MC-OPS-PANELS-UPGRADE: Operational panels -->
   <script src="/agent-activity.js"></script>
   <script src="/active-work.js"></script>
   <script src="/blocked-work.js"></script>
   <script src="/workstream-flow.js"></script>
   <script src="/system-status.js"></script>
+  <!-- CR-MC-PALANTIR-OPERATOR-LOOPS: Palantir Mode components -->
+  <script src="/venture-graph.js"></script>
+  <script src="/insights-panel.js"></script>
+  <script src="/momentum-tracker.js"></script>
+  <script src="/opportunity-discovery.js"></script>
+  <script src="/operator-impact.js"></script>
+  <script src="/command-center.js"></script>
+  <script>
+    // Initialize venture graph after DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.VentureGraph) VentureGraph.init('venture-graph-canvas');
+      });
+    } else {
+      if (window.VentureGraph) VentureGraph.init('venture-graph-canvas');
+    }
+
+    // Inject command center into venture detail drawer when venture opens
+    document.addEventListener('mc:venture-detail-opened', function(e) {
+      const ventureId = e.detail && e.detail.venture_id;
+      if (ventureId && window.CommandCenter) {
+        CommandCenter.renderInto('command-center-mount', ventureId);
+      }
+    });
+
+    // Validation ping — run on startup
+    fetch('/api/validate')
+      .then(r => r.json())
+      .then(d => {
+        if (!d.healthy) {
+          console.warn('[PALANTIR] SSOT validation issues:', d.failed, d.stale);
+        } else {
+          console.log('[PALANTIR] SSOT validation: all files healthy ✓');
+        }
+      })
+      .catch(() => {});
+  </script>
 </body>
 </html>

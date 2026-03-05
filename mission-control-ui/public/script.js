@@ -14,6 +14,28 @@ const DECISIONS_ACTION_ENDPOINT = '/api/decisions/action';
 const VENTURE_SCOREBOARD_ENDPOINT = '/api/venture-scoreboard';
 const MC_DECISION_TOKEN = 'local_dev_token_12345'; // Matches server default
 
+// CR-MC-PALANTIR: SSOT endpoints
+const AGENTS_ENDPOINT        = '/api/agents';
+const INSIGHTS_ENDPOINT      = '/api/insights';
+const MOMENTUM_ENDPOINT      = '/api/momentum';
+const IMPACT_ENDPOINT        = '/api/impact';
+const OPPORTUNITIES_ENDPOINT = '/api/opportunities';
+
+/**
+ * Phase 1: SSOT — fetch active agents from agents_runtime.json
+ * Replaces hardcoded agent count with dynamic SSOT read.
+ */
+async function getActiveAgents() {
+  try {
+    const res = await fetch(AGENTS_ENDPOINT);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.error('[AGENTS-SSOT] Error:', err.message);
+    return { count: 0, agents: [] };
+  }
+}
+
 let refreshIntervalId = null;
 let lastUpdateTime = null;
 let decisionsRefreshIntervalId = null;
@@ -60,12 +82,11 @@ function updateMetrics(data) {
     velocityEl.textContent = Object.keys(workstreams).length > 0 ? 'Active' : 'Idle';
   }
 
-  // Active Agents
-  const agentsEl = document.getElementById('active-agents');
-  if (agentsEl) {
-    const agents = data.agentActivity || {};
-    agentsEl.textContent = Object.keys(agents).length || '0';
-  }
+  // Active Agents — Phase 1 SSOT: read from agents_runtime.json via /api/agents
+  // NOTE: updateMetrics no longer uses data.agentActivity for agent count.
+  // The SSOT call is made separately in refreshDashboard() → updateActiveAgentsSSO()
+  // This stub is kept for backward compatibility.
+  void data;
 }
 
 /**
@@ -494,6 +515,9 @@ async function refreshDashboard() {
   // CR-009: Fetch and update venture scoreboard
   const scoreboard = await fetchVentureScoreboard();
   updateVentureScoreboard(scoreboard);
+
+  // Phase 1 SSOT: Update active agents from agents_runtime.json
+  await updateActiveAgentsSSO();
   
   updateTimestamp();
 }
@@ -505,6 +529,19 @@ function renderAgentActivity() { /* handled by agent-activity.js */ }
 function renderActiveWork()    { /* handled by active-work.js    */ }
 function renderWorkstreamFlow(){ /* handled by workstream-flow.js */ }
 function renderBlockedWork()   { /* handled by blocked-work.js   */ }
+
+/**
+ * Phase 1 SSOT: Update active agents count from agents_runtime.json
+ * Replaces any hardcoded or cache-derived count.
+ */
+async function updateActiveAgentsSSO() {
+  const agentsData = await getActiveAgents();
+  const agentsEl   = document.getElementById('active-agents');
+  if (agentsEl) {
+    agentsEl.textContent = agentsData.count ?? '0';
+    agentsEl.title       = `Active agents: ${(agentsData.agents || []).map(a => a.name).join(', ')} (from agents_runtime.json)`;
+  }
+}
 
 /**
  * Initialize dashboard

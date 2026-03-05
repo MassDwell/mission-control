@@ -178,6 +178,10 @@
       }
       state.data = data;
       renderAll(data);
+      // CR-MC-PALANTIR: Notify command center that a venture is open
+      document.dispatchEvent(new CustomEvent('mc:venture-detail-opened', {
+        detail: { venture_id: ventureId, venture: data }
+      }));
     } catch (err) {
       console.error('[VD] Fetch error:', err);
       renderError(err.message, ventureId);

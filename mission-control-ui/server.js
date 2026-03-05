@@ -506,6 +506,220 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// ===========================================================================
+// CR-MC-PALANTIR-OPERATOR-LOOPS: Palantir Mode API
+// ===========================================================================
+
+const palantir = require('./api/palantir');
+
+/**
+ * GET /api/agents
+ * Phase 1: SSOT — returns agents_runtime.json (dynamic agent count)
+ */
+app.get('/api/agents', (req, res) => {
+  try {
+    const result = palantir.getActiveAgents();
+    res.json(result);
+  } catch (err) {
+    console.error('[AGENTS] Error:', err.message);
+    res.status(500).json({ error: err.message, ssotPath: err.ssotPath || null });
+  }
+});
+
+/**
+ * GET /api/venture-graph
+ * Returns venture_relationships.json for graph visualization
+ */
+app.get('/api/venture-graph', (req, res) => {
+  try {
+    const result = palantir.getVentureGraph();
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTURE-GRAPH] Error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/commands/pause/:venture_id
+ * Phase 2: Pause a venture
+ */
+app.post('/api/commands/pause/:venture_id', (req, res) => {
+  try {
+    const result = palantir.pauseVenture(req.params.venture_id, req.body.actor || 'Steve Vettori');
+    res.json(result);
+  } catch (err) {
+    console.error('[CMD-PAUSE] Error:', err.message);
+    res.status(400).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * POST /api/commands/resume/:venture_id
+ * Phase 2: Resume a paused venture
+ */
+app.post('/api/commands/resume/:venture_id', (req, res) => {
+  try {
+    const result = palantir.resumeVenture(req.params.venture_id, req.body.actor || 'Steve Vettori');
+    res.json(result);
+  } catch (err) {
+    console.error('[CMD-RESUME] Error:', err.message);
+    res.status(400).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * POST /api/commands/kill/:venture_id
+ * Phase 2: Kill a venture (requires reason)
+ */
+app.post('/api/commands/kill/:venture_id', (req, res) => {
+  try {
+    const { reason, actor } = req.body;
+    const result = palantir.killVenture(req.params.venture_id, reason, actor || 'Steve Vettori');
+    res.json(result);
+  } catch (err) {
+    console.error('[CMD-KILL] Error:', err.message);
+    res.status(400).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * POST /api/commands/advance/:venture_id
+ * Phase 2: Advance venture stage (blocked by critical blockers)
+ */
+app.post('/api/commands/advance/:venture_id', (req, res) => {
+  try {
+    const result = palantir.advanceVentureStage(req.params.venture_id, req.body.actor || 'Steve Vettori');
+    res.json(result);
+  } catch (err) {
+    console.error('[CMD-ADVANCE] Error:', err.message);
+    res.status(400).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * POST /api/commands/spawn-workstream
+ * Phase 2: Spawn a new workstream
+ * Body: { venture_id, name, owner, phase, eta }
+ */
+app.post('/api/commands/spawn-workstream', (req, res) => {
+  try {
+    const { venture_id, name, owner, phase, eta, actor } = req.body;
+    if (!venture_id || !name || !owner) {
+      return res.status(400).json({ success: false, error: 'Required: venture_id, name, owner' });
+    }
+    const result = palantir.spawnWorkstream(venture_id, { name, owner, phase, eta }, actor || 'Steve Vettori');
+    res.json(result);
+  } catch (err) {
+    console.error('[CMD-SPAWN] Error:', err.message);
+    res.status(400).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * POST /api/commands/assign-agent
+ * Phase 2: Assign agent to workstream
+ * Body: { workstream_id, owner }
+ */
+app.post('/api/commands/assign-agent', (req, res) => {
+  try {
+    const { workstream_id, owner, actor } = req.body;
+    if (!workstream_id || !owner) {
+      return res.status(400).json({ success: false, error: 'Required: workstream_id, owner' });
+    }
+    const result = palantir.assignAgent(workstream_id, owner, actor || 'Steve Vettori');
+    res.json(result);
+  } catch (err) {
+    console.error('[CMD-ASSIGN] Error:', err.message);
+    res.status(400).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * GET /api/insights
+ * Phase 3: Compute + return live system insights
+ */
+app.get('/api/insights', (req, res) => {
+  try {
+    const result = palantir.computeInsights();
+    res.json(result);
+  } catch (err) {
+    console.error('[INSIGHTS] Error:', err.message);
+    res.status(500).json({ error: err.message, insights: [] });
+  }
+});
+
+/**
+ * DELETE /api/insights/:id
+ * Phase 3: Dismiss an insight
+ */
+app.delete('/api/insights/:id', (req, res) => {
+  try {
+    const result = palantir.dismissInsight(req.params.id);
+    res.json(result);
+  } catch (err) {
+    console.error('[INSIGHTS-DISMISS] Error:', err.message);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * GET /api/momentum
+ * Phase 4: Momentum tracker metrics
+ */
+app.get('/api/momentum', (req, res) => {
+  try {
+    const result = palantir.getMomentum();
+    res.json(result);
+  } catch (err) {
+    console.error('[MOMENTUM] Error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/impact
+ * Phase 4: Operator impact tracker
+ * Query: horizon=today|week|month|all
+ */
+app.get('/api/impact', (req, res) => {
+  try {
+    const result = palantir.getOperatorImpact(req.query.horizon || 'today');
+    res.json(result);
+  } catch (err) {
+    console.error('[IMPACT] Error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/opportunities
+ * Phase 4: Opportunity discovery feed
+ */
+app.get('/api/opportunities', (req, res) => {
+  try {
+    const result = palantir.getOpportunities();
+    res.json(result);
+  } catch (err) {
+    console.error('[OPPORTUNITIES] Error:', err.message);
+    res.status(500).json({ error: err.message, opportunities: [] });
+  }
+});
+
+/**
+ * GET /api/validate
+ * Phase 5: SSOT validation pipeline
+ */
+app.get('/api/validate', (req, res) => {
+  try {
+    const result = palantir.validateSSO();
+    res.json(result);
+  } catch (err) {
+    console.error('[VALIDATE] Error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Serve index.html for root
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -537,6 +751,21 @@ const server = app.listen(PORT, 'localhost', () => {
   console.log('  GET /api/system-status             - Agent health monitor (CR-MC-OPS-PANELS)');
   console.log('  GET /api/workstream-flow           - Stage distribution (CR-MC-OPS-PANELS)');
   console.log('[CR-008] Decision token:', MC_DECISION_TOKEN ? '✓ Set (from MC_DECISION_TOKEN env)' : '✗ Using default dev token');
+  console.log('[PALANTIR] New endpoints (CR-MC-PALANTIR-OPERATOR-LOOPS):');
+  console.log('  GET  /api/agents                   - Active agents (SSOT: agents_runtime.json)');
+  console.log('  GET  /api/venture-graph            - Relationship graph data');
+  console.log('  POST /api/commands/pause/:id       - Pause venture');
+  console.log('  POST /api/commands/resume/:id      - Resume venture');
+  console.log('  POST /api/commands/kill/:id        - Kill venture');
+  console.log('  POST /api/commands/advance/:id     - Advance stage');
+  console.log('  POST /api/commands/spawn-workstream- Spawn workstream');
+  console.log('  POST /api/commands/assign-agent    - Assign agent');
+  console.log('  GET  /api/insights                 - Live system insights');
+  console.log('  DELETE /api/insights/:id           - Dismiss insight');
+  console.log('  GET  /api/momentum                 - Momentum tracker');
+  console.log('  GET  /api/impact                   - Operator impact');
+  console.log('  GET  /api/opportunities            - Opportunity discovery');
+  console.log('  GET  /api/validate                 - SSOT validation');
 });
 
 process.on('SIGINT', () => {
