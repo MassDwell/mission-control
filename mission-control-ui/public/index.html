@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission Control V1 — Dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/drilldown.css" />
+  <link rel="stylesheet" href="/venture-detail.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- DATA STALENESS ALERT BANNER -->
+    <div id="staleness-banner" style="display: none; padding: 12px 16px; font-weight: bold; text-align: center; font-size: 13px; gap: 8px;">
+      <span id="staleness-banner-text"></span>
+      <span id="staleness-age" style="margin-left: auto;"></span>
+    </div>
+
+    <!-- TOP BAR (60px) -->
+    <div class="top-bar">
+      <div class="top-bar-item">
+        <div class="metric-label">System Health</div>
+        <div class="metric-value" id="system-health">--</div>
+      </div>
+      <div class="top-bar-item">
+        <div class="metric-label">Opportunity Velocity</div>
+        <div class="metric-value" id="opportunity-velocity">--</div>
+      </div>
+      <div class="top-bar-item">
+        <div class="metric-label">Active Agents</div>
+        <div class="metric-value" id="active-agents">--</div>
+      </div>
+      <div class="top-bar-item" id="venture-scoreboard-container">
+        <div style="font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">VENTURE SCOREBOARD</div>
+        <div style="display: flex; gap: 12px; font-size: 11px;">
+          <div><span style="color: var(--text-muted);">Ideas:</span> <span id="scoreboard-ideas">0</span></div>
+          <div><span style="color: var(--text-muted);">MVPs:</span> <span id="scoreboard-mvps">0</span></div>
+          <div><span style="color: var(--text-muted);">Running:</span> <span id="scoreboard-running">0</span></div>
+          <div><span style="color: var(--text-muted);">Live:</span> <span id="scoreboard-live">0</span></div>
+          <div><span style="color: var(--text-muted);">Killed:</span> <span id="scoreboard-killed">0</span></div>
+          <div><span style="color: var(--text-muted);">Success:</span> <span id="scoreboard-success">0%</span></div>
+        </div>
+      </div>
+      <div class="top-bar-item" id="decisions-badge-container" style="display: none;">
+        <button class="decisions-badge" id="decisions-badge">
+          <span style="font-size: 16px; margin-right: 4px;">⚡</span>
+          <span>Decisions: <span id="decisions-count">0</span></span>
+        </button>
+      </div>
+      <div class="top-bar-item">
+        <div class="metric-label">Time</div>
+        <div class="metric-value" id="current-time">--:--</div>
+      </div>
+    </div>
+
+    <!-- MAIN GRID: Left + Center + Right -->
+    <div class="main-grid">
+      <!-- LEFT PANEL (20%) - Activity Feed (CR-005) -->
+      <div class="left-panel">
+        <div class="panel-header">
+          Agent Activity
+          <span style="font-size: 9px; color: var(--text-muted); margin-left: auto;">Real-time feed</span>
+        </div>
+        <div class="panel-content" id="agent-activity-content">
+          <div class="loading">Loading activity feed...</div>
+        </div>
+      </div>
+
+      <!-- CENTER PANEL (50%) -->
+      <div class="center-panel">
+        <!-- Active Work Section -->
+        <div class="center-section">
+          <div class="section-header">Active Work</div>
+          <div class="section-content" id="active-work-content">
+            <div class="loading">Loading active work...</div>
+          </div>
+        </div>
+
+        <!-- Workstream Flow Section -->
+        <div class="center-section">
+          <div class="section-header">Workstream Flow</div>
+          <div class="section-content" id="workstream-flow-content">
+            <div class="loading">Loading workstreams...</div>
+          </div>
+        </div>
+
+        <!-- Blocked Work Section -->
+        <div class="center-section">
+          <div class="section-header">Blocked Work</div>
+          <div class="section-content" id="blocked-work-content">
+            <div class="loading">Loading blocked items...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL (30%) -->
+      <div class="right-panel">
+        <div class="panel-header">Venture Pipeline</div>
+        <div class="pipeline-stages" id="pipeline-content">
+          <div class="pipeline-stage">
+            <div class="stage-label">Opportunity</div>
+            <div class="stage-count">0</div>
+          </div>
+          <div class="pipeline-stage">
+            <div class="stage-label">Qualified</div>
+            <div class="stage-count">0</div>
+          </div>
+          <div class="pipeline-stage">
+            <div class="stage-label">In Progress</div>
+            <div class="stage-count">0</div>
+          </div>
+          <div class="pipeline-stage">
+            <div class="stage-label">Due Diligence</div>
+            <div class="stage-count">0</div>
+          </div>
+          <div class="pipeline-stage">
+            <div class="stage-label">Negotiation</div>
+            <div class="stage-count">0</div>
+          </div>
+          <div class="pipeline-stage">
+            <div class="stage-label">Approval</div>
+            <div class="stage-count">0</div>
+          </div>
+          <div class="pipeline-stage">
+            <div class="stage-label">Closing</div>
+            <div class="stage-count">0</div>
+          </div>
+          <div class="pipeline-stage">
+            <div class="stage-label">Closed</div>
+            <div class="stage-count">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR (100-200px) -->
+    <div class="bottom-bar">
+      <div class="alerts-section">
+        <div class="section-header">Alerts & System Status</div>
+        <div id="alerts-content" class="alerts-list">
+          <div class="alert-item">
+            <span class="alert-time">--:--:--</span>
+            <span class="alert-text">Waiting for data...</span>
+          </div>
+        </div>
+      </div>
+      <div class="status-footer">
+        <span id="last-updated">Last updated: --</span>
+        <span id="refresh-indicator">● Auto-refresh: 10s</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CR-008: Decisions Panel (Overlay) -->
+  <div class="decisions-overlay" id="decisions-overlay" style="display: none;">
+    <div class="decisions-panel">
+      <div class="decisions-panel-header">
+        <h2>Decisions Required</h2>
+        <button class="decisions-close-btn" id="decisions-close-btn">×</button>
+      </div>
+      <div class="decisions-panel-content" id="decisions-panel-content">
+        <div class="loading">Loading decisions...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CR-008: Confirmation Modal -->
+  <div class="confirmation-modal-overlay" id="confirmation-modal-overlay" style="display: none;">
+    <div class="confirmation-modal">
+      <div class="modal-header">
+        <h3>Confirm Decision Action</h3>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <label class="modal-label">Decision</label>
+          <div class="modal-value" id="modal-decision-title">--</div>
+          <div class="modal-description" id="modal-decision-desc">--</div>
+        </div>
+        <div class="modal-section">
+          <label class="modal-label">Your Action</label>
+          <div class="modal-value" id="modal-action">--</div>
+        </div>
+        <div class="modal-section">
+          <label class="modal-label">Impact</label>
+          <div class="modal-description" id="modal-impact">--</div>
+        </div>
+        <div class="modal-warning">
+          <span style="font-weight: 600;">⚠️ This request will:</span>
+          <ul>
+            <li>Be queued in decision_actions_queue.json</li>
+            <li>Be validated by Clawson processor</li>
+            <li>Be logged in decision_actions_log.json</li>
+            <li>Be fully auditable and reversible</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn modal-cancel-btn" id="modal-cancel-btn">Cancel</button>
+        <button class="modal-btn modal-confirm-btn" id="modal-confirm-btn">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CR-008: Action Status Toast -->
+  <div class="action-toast" id="action-toast" style="display: none;">
+    <div class="toast-icon" id="toast-icon">⏳</div>
+    <div class="toast-message" id="toast-message">Queuing action...</div>
+  </div>
+
+  <!-- CR-MC-UI-1.2 Phase 2: Drilldown Overlay -->
+  <div id="drilldown-overlay" class="drilldown-overlay"></div>
+  <div id="drilldown-drawer" class="drilldown-drawer">
+    <div class="drilldown-header">
+      <div>
+        <div class="drilldown-title" id="dd-stage-title">Stage</div>
+      </div>
+      <span class="drilldown-count" id="dd-stage-count">0</span>
+      <button class="drilldown-close" id="dd-close-btn" title="Close (Esc)">×</button>
+    </div>
+
+    <div class="drilldown-search-wrap">
+      <input type="text" class="drilldown-search" id="dd-search"
+             placeholder="Search ventures… (press / to focus)" autocomplete="off" />
+    </div>
+
+    <div class="drilldown-filters">
+      <div class="filter-row">
+        <span class="filter-label">Status</span>
+        <div id="dd-status-filters" style="display:flex;gap:4px;flex-wrap:wrap;">
+          <button class="filter-btn" data-value="active">Active</button>
+          <button class="filter-btn" data-value="paused">Paused</button>
+          <button class="filter-btn" data-value="killed">Killed</button>
+          <button class="filter-btn" data-value="launched">Launched</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Owner</span>
+        <div id="dd-owner-filters" style="display:flex;gap:4px;flex-wrap:wrap;">
+          <button class="filter-btn" data-value="codesmith">Codesmith</button>
+          <button class="filter-btn" data-value="moonshot">Moonshot</button>
+          <button class="filter-btn" data-value="clawson">Clawson</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Priority</span>
+        <div id="dd-priority-filters" style="display:flex;gap:4px;flex-wrap:wrap;">
+          <button class="filter-btn" data-value="high">High</button>
+          <button class="filter-btn" data-value="medium">Medium</button>
+          <button class="filter-btn" data-value="low">Low</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="drilldown-sort-row">
+      <span class="sort-label">Sort</span>
+      <select class="sort-select" id="dd-sort-select">
+        <option value="last_event_desc">Last Event ↓</option>
+        <option value="name_asc">Name A–Z</option>
+        <option value="mrr_desc">MRR ↓</option>
+      </select>
+      <span class="drilldown-result-count" id="dd-result-count">0 ventures</span>
+    </div>
+
+    <div class="venture-list" id="dd-venture-list">
+      <div class="venture-list-empty">Select a stage to view ventures</div>
+    </div>
+
+    <div class="drilldown-keyboard-hints">
+      <span class="kbd-hint">↑↓</span><span style="font-size:10px;color:var(--text-muted)">navigate</span>
+      <span class="kbd-hint">Enter</span><span style="font-size:10px;color:var(--text-muted)">open</span>
+      <span class="kbd-hint">/</span><span style="font-size:10px;color:var(--text-muted)">search</span>
+      <span class="kbd-hint">Esc</span><span style="font-size:10px;color:var(--text-muted)">close</span>
+    </div>
+  </div>
+
+  <!-- CR-MC-UI-1.2 Phase 2: Detail Overlay -->
+  <div id="detail-overlay" class="detail-overlay"></div>
+  <div id="detail-drawer" class="detail-drawer">
+    <div class="detail-header">
+      <button class="detail-nav-btn" id="detail-nav-prev" title="Previous venture (←)" disabled>←</button>
+      <div class="detail-venture-title">
+        <div class="detail-venture-name" id="detail-venture-name">Venture</div>
+        <div class="detail-venture-sub" id="detail-venture-sub"></div>
+      </div>
+      <button class="detail-nav-btn" id="detail-nav-next" title="Next venture (→)" disabled>→</button>
+      <button class="detail-close" id="detail-close-btn" title="Close (Esc)">×</button>
+    </div>
+
+    <div class="detail-content" id="detail-content">
+      <div class="drawer-loading">Select a venture to view details</div>
+    </div>
+
+    <div class="detail-keyboard-hints">
+      <span class="kbd-hint">←→</span><span style="font-size:10px;color:var(--text-muted)">prev/next venture</span>
+      <span class="kbd-hint">Esc</span><span style="font-size:10px;color:var(--text-muted)">back to list</span>
+    </div>
+  </div>
+
+  <!-- CR-MC-VENTURE-DRILLDOWN-V2: Detail Drawer V2 -->
+  <!-- The overlay and drawer are injected dynamically by venture-detail.js -->
+  <script src="/venture-detail.js"></script>
+  <script src="/drilldown.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
