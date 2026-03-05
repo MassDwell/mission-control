@@ -219,6 +219,140 @@ app.post('/api/decisions/action', (req, res) => {
 });
 
 // ===========================================================================
+// CR-MC-OPS-PANELS-UPGRADE: Workstreams, Blockers, System Status API
+// ===========================================================================
+
+const workstreamsModule = require('./api/workstreams');
+
+/**
+ * GET /api/workstreams
+ * Returns all active workstreams with health + blocked flags.
+ */
+app.get('/api/workstreams', (req, res) => {
+  try {
+    const result = workstreamsModule.getWorkstreams();
+    res.json(result);
+  } catch (err) {
+    console.error('[WORKSTREAMS] Error loading workstreams:', err.message);
+    res.status(500).json({
+      error: 'SSOT file missing or unreadable',
+      path: err.ssotPath || null,
+      message: err.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+/**
+ * GET /api/workstreams/:id
+ * Returns full workstream detail.
+ */
+app.get('/api/workstreams/:id', (req, res) => {
+  try {
+    const result = workstreamsModule.getWorkstreamDetail(req.params.id);
+    if (!result) {
+      return res.status(404).json({
+        error: 'Workstream not found',
+        id: req.params.id,
+        timestamp: new Date().toISOString()
+      });
+    }
+    res.json(result);
+  } catch (err) {
+    console.error('[WORKSTREAMS] Error loading workstream detail:', err.message);
+    res.status(500).json({
+      error: 'SSOT file missing or unreadable',
+      path: err.ssotPath || null,
+      message: err.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+/**
+ * GET /api/blockers
+ * Returns all blockers with SLA calculations.
+ */
+app.get('/api/blockers', (req, res) => {
+  try {
+    const result = workstreamsModule.getBlockers();
+    res.json(result);
+  } catch (err) {
+    console.error('[BLOCKERS] Error loading blockers:', err.message);
+    res.status(500).json({
+      error: 'SSOT file missing or unreadable',
+      path: err.ssotPath || null,
+      message: err.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+/**
+ * GET /api/blockers/:id
+ * Returns full blocker detail.
+ */
+app.get('/api/blockers/:id', (req, res) => {
+  try {
+    const result = workstreamsModule.getBlockerDetail(req.params.id);
+    if (!result) {
+      return res.status(404).json({
+        error: 'Blocker not found',
+        id: req.params.id,
+        timestamp: new Date().toISOString()
+      });
+    }
+    res.json(result);
+  } catch (err) {
+    console.error('[BLOCKERS] Error loading blocker detail:', err.message);
+    res.status(500).json({
+      error: 'SSOT file missing or unreadable',
+      path: err.ssotPath || null,
+      message: err.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+/**
+ * GET /api/system-status
+ * Returns agent health monitor data.
+ */
+app.get('/api/system-status', (req, res) => {
+  try {
+    const result = workstreamsModule.getSystemStatus();
+    res.json(result);
+  } catch (err) {
+    console.error('[SYSTEM-STATUS] Error loading system status:', err.message);
+    res.status(500).json({
+      error: 'SSOT file missing or unreadable',
+      path: err.ssotPath || null,
+      message: err.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+/**
+ * GET /api/workstream-flow
+ * Returns stage distribution for Workstream Flow panel.
+ */
+app.get('/api/workstream-flow', (req, res) => {
+  try {
+    const result = workstreamsModule.getWorkstreamFlow();
+    res.json(result);
+  } catch (err) {
+    console.error('[WORKSTREAM-FLOW] Error loading flow data:', err.message);
+    res.status(500).json({
+      error: 'SSOT file missing or unreadable',
+      path: err.ssotPath || null,
+      message: err.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+// ===========================================================================
 // CR-MC-UI-1.2: Venture Pipeline API (read-only, SSOT-direct)
 // ===========================================================================
 
@@ -384,7 +518,7 @@ app.use((req, res) => {
 
 // Start server (localhost only for security)
 const server = app.listen(PORT, 'localhost', () => {
-  console.log(`[CR-002/CR-005/CR-008/CR-MC-UI-1.2] Mission Control UI running on http://localhost:${PORT}`);
+  console.log(`[CR-002/CR-005/CR-008/CR-MC-UI-1.2/CR-MC-OPS-PANELS] Mission Control UI running on http://localhost:${PORT}`);
   console.log('[MC-UI] Serving dashboard at /');
   console.log('[MC-UI] API endpoints:');
   console.log('  GET /api/status                    - Full dashboard data');
@@ -396,6 +530,12 @@ const server = app.listen(PORT, 'localhost', () => {
   console.log('  GET /api/ventures/:venture_id      - Venture detail + related data (CR-MC-UI-1.2)');
   console.log('  GET /api/stages                    - Stage definitions + counts (CR-MC-UI-1.2)');
   console.log('  GET /api/health                    - Health check');
+  console.log('  GET /api/workstreams               - Active workstreams + health (CR-MC-OPS-PANELS)');
+  console.log('  GET /api/workstreams/:id           - Workstream detail (CR-MC-OPS-PANELS)');
+  console.log('  GET /api/blockers                  - All blockers + SLA (CR-MC-OPS-PANELS)');
+  console.log('  GET /api/blockers/:id              - Blocker detail (CR-MC-OPS-PANELS)');
+  console.log('  GET /api/system-status             - Agent health monitor (CR-MC-OPS-PANELS)');
+  console.log('  GET /api/workstream-flow           - Stage distribution (CR-MC-OPS-PANELS)');
   console.log('[CR-008] Decision token:', MC_DECISION_TOKEN ? '✓ Set (from MC_DECISION_TOKEN env)' : '✗ Using default dev token');
 });
 

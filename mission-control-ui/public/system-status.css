@@ -1,0 +1,177 @@
+/**
+ * CR-MC-OPS-PANELS-UPGRADE: System Status Panel Styles
+ * Agent health monitor
+ */
+
+.ss-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.ss-error {
+  padding: 8px 12px;
+  background: rgba(255, 80, 80, 0.08);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  border-radius: 4px;
+  margin: 6px;
+  font-size: 11px;
+  color: var(--accent-red, #ff5050);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ss-retry-btn {
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  color: inherit;
+  cursor: pointer;
+  font-size: 10px;
+  padding: 2px 6px;
+  margin-left: auto;
+}
+
+/* ── Summary Bar ────────────────────────────────────────────────────────── */
+
+.ss-summary {
+  display: flex;
+  gap: 10px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border-color, #1e1e1e);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.ss-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted, #666);
+}
+
+.ss-summary-item .count {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.ss-summary-item.online  .count { color: var(--accent-green, #4caf50); }
+.ss-summary-item.idle    .count { color: var(--accent-yellow, #f5a623); }
+.ss-summary-item.offline .count { color: var(--accent-red, #ff5050); }
+
+/* ── Agent Cards ────────────────────────────────────────────────────────── */
+
+.ss-agents {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.ss-agent-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color, #1a1a1a);
+  align-items: center;
+  transition: background 0.1s;
+}
+
+.ss-agent-card:hover {
+  background: var(--bg-hover, #1c1c1c);
+}
+
+/* Status dot */
+.ss-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ss-status-dot.online  { background: var(--accent-green, #4caf50); box-shadow: 0 0 4px var(--accent-green, #4caf50); }
+.ss-status-dot.idle    { background: var(--accent-yellow, #f5a623); }
+.ss-status-dot.offline { background: var(--accent-red, #ff5050); }
+
+/* Agent info */
+.ss-agent-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ss-agent-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary, #e0e0e0);
+}
+
+.ss-agent-task {
+  font-size: 10px;
+  color: var(--text-muted, #666);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ss-agent-heartbeat {
+  font-size: 10px;
+  color: var(--text-muted, #555);
+}
+
+/* Right column: stats */
+.ss-agent-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.ss-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted, #666);
+}
+
+.ss-stat .val {
+  font-weight: 600;
+  color: var(--text-secondary, #aaa);
+  font-variant-numeric: tabular-nums;
+}
+
+.ss-stat .val.error {
+  color: var(--accent-red, #ff5050);
+}
+
+/* Status badge */
+.ss-status-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.ss-status-badge.online  { background: rgba(76, 175, 80, 0.12); color: var(--accent-green, #4caf50); }
+.ss-status-badge.idle    { background: rgba(245, 166, 35, 0.12); color: var(--accent-yellow, #f5a623); }
+.ss-status-badge.offline { background: rgba(255, 80, 80, 0.12);  color: var(--accent-red, #ff5050); }
+
+/* Source citation */
+.ss-source {
+  font-size: 9px;
+  color: var(--text-muted, #444);
+  padding: 3px 10px;
+  border-top: 1px solid var(--border-color, #1e1e1e);
+  flex-shrink: 0;
+}
