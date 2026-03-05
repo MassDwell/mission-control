@@ -1,0 +1,472 @@
+{
+  "timestamp": "2026-03-05T17:27:14.594351+00:00",
+  "agents": {
+    "clawson": {
+      "id": "main",
+      "name": "Clawson",
+      "status": "online",
+      "uptime_percent": 100,
+      "tasks_executed_today": 5,
+      "current_task": "OpenClaw v2 architecture hardening",
+      "last_activity": "2026-03-05T09:42:02.686Z",
+      "model_used": "anthropic/claude-haiku-4-5"
+    },
+    "codesmith": {
+      "id": "codesmith",
+      "name": "Codesmith",
+      "status": "idle",
+      "uptime_percent": 100,
+      "tasks_executed_today": 0,
+      "current_task": null,
+      "last_activity": null,
+      "model_used": null,
+      "waiting_for": "Change Request from Clawson"
+    },
+    "moonshot": {
+      "id": "moonshot",
+      "name": "Moonshot",
+      "status": "idle",
+      "uptime_percent": 100,
+      "tasks_executed_today": 0,
+      "current_task": null,
+      "last_activity": null,
+      "model_used": null,
+      "waiting_for": "Discovery assignment"
+    },
+    "personal_assistant": {
+      "id": "personal-assistant",
+      "name": "Personal Assistant",
+      "status": "idle",
+      "uptime_percent": 100,
+      "tasks_executed_today": 0,
+      "current_task": null,
+      "last_activity": null,
+      "model_used": null
+    }
+  },
+  "summary": {
+    "online": 1,
+    "idle": 3,
+    "offline": 0
+  },
+  "activity_stream": [
+    {
+      "id": "act-codesmith-cr-mc-ops-panels-20260305122714",
+      "timestamp": "2026-03-05T17:27:14.594197+00:00",
+      "agent": "Codesmith",
+      "action": "Implemented Mission Control Operations Panels Upgrade",
+      "description": "5 panels redesigned (Agent Activity, Active Work, Blocked Work, Workstream Flow, System Status). All SSOT-sourced, fail-loud, keyboard-friendly. 4 drawers (activity, workstream, blocker, system). Auto-refresh 10s. 68 tests passing. ESLint clean (0 errors). Performance <500ms. Commit: c531da67",
+      "severity": "info",
+      "source": "github",
+      "meta": {
+        "cr": "CR-MC-OPS-PANELS-UPGRADE",
+        "commit": "c531da67",
+        "phases_completed": [
+          "phase-1-api",
+          "phase-2-frontend",
+          "phase-3-panels",
+          "phase-4-polish"
+        ]
+      }
+    },
+    {
+      "id": "act_mc_restore_2026",
+      "timestamp": "2026-03-05T09:42:02.686Z",
+      "agent": "Clawson",
+      "action": "Mission Control Data Pipeline Restored",
+      "description": "Fixed critical data staleness issue, restored 2-hour refresh cycle, implemented fail-loud monitoring",
+      "severity": "critical",
+      "status": "completed"
+    },
+    {
+      "id": "act_arch_cleanup_2026",
+      "timestamp": "2026-03-05T09:37:02.699Z",
+      "agent": "Clawson",
+      "action": "System Context Rebuild & Architecture Hardening",
+      "description": "Completed OpenClaw v2 cleanup - removed legacy agents, integrations, and experimental code",
+      "severity": "high",
+      "status": "completed"
+    },
+    {
+      "id": "act_drift_audit_2026",
+      "timestamp": "2026-03-05T09:12:02.699Z",
+      "agent": "Clawson",
+      "action": "Drift Audit Executed",
+      "description": "Ran full system drift audit - all checks passed, canonical architecture validated",
+      "severity": "info",
+      "status": "completed"
+    },
+    {
+      "id": "act_session_start_2026",
+      "timestamp": "2026-03-05T08:42:02.699Z",
+      "agent": "Clawson",
+      "action": "Session Started",
+      "description": "Clawson initialized, reading canonical configuration and system state",
+      "severity": "info",
+      "status": "completed"
+    }
+  ],
+  "activities": [
+    {
+      "timestamp": "2026-03-05T17:07:04Z",
+      "agent": "Codesmith",
+      "action": "Built Venture Detail Drawer V2",
+      "description": "Complete implementation of CR-MC-VENTURE-DRILLDOWN-V2 \u2014 7-section SSOT-sourced detail drawer. Includes enhanced API endpoints (/api/ventures V2 + /api/ventures/:id V2), new venture-detail.js module, venture-detail.css, keyboard navigation (Esc), data freshness indicators, copy buttons, 5s TTL cache, 49 tests passing (37 unit + 12 integration), ESLint clean, all 4 phases delivered. Drawers open <1ms first load, <2ms cached. Commit: adb9b5ef",
+      "severity": "info",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "cr": "CR-MC-VENTURE-DRILLDOWN-V2",
+        "source": "github",
+        "commit": "adb9b5ef",
+        "tests_passed": 49,
+        "eslint": "0 errors"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T03:41:38.000Z",
+      "agent": "Clawson",
+      "action": "Session Started",
+      "description": "Clawson initialized, reading canonical configuration and system state",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T04:11:38.000Z",
+      "agent": "Clawson",
+      "action": "Drift Audit Executed",
+      "description": "Ran full system drift audit - all checks passed, canonical architecture validated",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T04:36:38.000Z",
+      "agent": "Clawson",
+      "action": "System Context Rebuild & Architecture Hardening",
+      "description": "Completed OpenClaw v2 cleanup - removed legacy agents, integrations, and experimental code",
+      "severity": "high",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T04:41:38.000Z",
+      "agent": "Clawson",
+      "action": "Mission Control Data Pipeline Restored",
+      "description": "Fixed critical data staleness issue, restored 2-hour refresh cycle, implemented fail-loud monitoring",
+      "severity": "critical",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T09:46:56.851Z",
+      "agent": "System",
+      "action": "Mission Control Data Export",
+      "description": "Periodic refresh of all dashboard data files",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T09:50:23.963Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T04:55:00.000Z",
+      "agent": "Clawson",
+      "action": "Generated LeadScore.ai venture specification",
+      "description": "Completed venture_memo.md, prd.md, and experiment_plan.md for AI lead qualification system (MVP target: 8 weeks, $5K+ MRR)",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T04:55:30.000Z",
+      "agent": "Clawson",
+      "action": "Approved CR-LEADSCORE-001",
+      "description": "Change Request created: LeadScore.ai MVP implementation (8-week timeline, assigned to Codesmith)",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T04:55:45.000Z",
+      "agent": "Codesmith",
+      "action": "LeadScore.ai MVP build initiated",
+      "description": "Architecture review started, project structure created in /ventures/leadscore, assigned to build CR-LEADSCORE-001",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T05:24:00.000Z",
+      "agent": "Steve",
+      "action": "Approved LeadScore.ai venture launch",
+      "description": "CR-LEADSCORE-001 green-lit. Codesmith cleared for Week 1 build phase (API scaffolding, scoring engine, database schema)",
+      "severity": "critical",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:25:03.666Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:26:23.093Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:26:53.433Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:27:05.310Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:27:12.402Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:27:29.760Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:27:48.477Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:30:17.777Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T10:31:50.712Z",
+      "agent": "TEST-STREAMING",
+      "action": "SteveVettori SEV-1 Incident Response - Real-Time Streaming Test",
+      "description": "Testing live data streaming from SSOT, proving Mission Control UI reflects current data",
+      "severity": "critical",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T11:10:24.820Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T11:14:49.662Z",
+      "agent": "Clawson",
+      "action": "Approved CR-MC-UI-1.2: Interactive Venture Pipeline",
+      "description": "Clickable stage tiles, drilldowns, search, filters, keyboard nav, detail view. Assigned to Codesmith. Timeline: 2-3 weeks.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T11:19:02.004Z",
+      "agent": "Steve",
+      "action": "Approved CR-MC-UI-1.2 (Option A: Direct Build)",
+      "description": "Codesmith approved to code UI enhancements directly without Claude Code. API + UI components + keyboard nav + deep linking. Timeline: 2-3 weeks. No Claude Code scaffolding needed.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T11:38:08.795Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T11:55:54.525Z",
+      "agent": "Steve",
+      "action": "Approved system review and cleared for next phase",
+      "description": "Reviewed: LeadScore.ai spec, Mission Control hardening, CR-MC-UI-1.2. All approved. Moving to next execution phase.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T12:01:29.707Z",
+      "agent": "Steve",
+      "action": "APPROVED: Codesmith begins CR-MC-UI-1.2 Phase 1",
+      "description": "Proceeding with Option 1: Codesmith starts API endpoints immediately. Timeline: 3-4 days for Phase 1. Then Phase 2 UI components (Week 2). Full spec: /mission-control-ui/CR-MC-UI-1.2.md",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T12:18:04.624Z",
+      "agent": "Steve",
+      "action": "APPROVED: Codesmith Phase 2 \u2014 UI Components & Keyboard Nav",
+      "description": "Phase 1 API endpoints complete and tested. Proceeding with Phase 2: clickable stage tiles, drilldown drawer, search/filters, detail view, keyboard navigation (\u2190/\u2192/\u2191/\u2193/Enter/Esc), deep linking (#stage, #venture). Timeline: 1 week (by 2026-03-12 EOD).",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T12:30:34.489Z",
+      "agent": "Steve",
+      "action": "APPROVED: Codesmith Phase 3 \u2014 CR-MC-UI-1.2 Polish & Verification",
+      "description": "Phase 1 (API) and Phase 2 (UI) complete. Proceeding with Phase 3: final polish, performance testing, verification report, rollback plan. Timeline: 1 week (by 2026-03-12 EOD).",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T12:42:37.625Z",
+      "agent": "Clawson",
+      "action": "Aligned VENTURE SCOREBOARD to reality",
+      "description": "Updated venture_scoreboard.json metrics: Ideas:1, MVPs:0, Running:1 (LeadScore.ai), Live:0, Killed:0, Success:0%. Matches actual pipeline data.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T13:38:09.029Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T14:36:40.769Z",
+      "agent": "Clawson",
+      "action": "SYSTEM AMENDMENT: Cron Job Renamed for Operational Clarity",
+      "description": "Renamed: personal_inbox_maintenance \u2192 gmail_inbox_automation_loop. Schedule: Every 2 hours (7 AM-9 PM EST, runs at 7,9,11,13,15,17,19,21:00). Agent: personal-assistant. Functions: Gmail inbox automation for vettoristeve@gmail.com, sales@massdwell.com, team@atlanticlasersolutions.com. Governance: Operational query resolution rule + naming clarity amendment implemented.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T14:41:31.234Z",
+      "agent": "Clawson",
+      "action": "Personal Assistant spawn capability restored and executing",
+      "description": "Configuration update: Added personal_assistant to allowAgents in main agent. Gateway restarted. Personal Assistant now spawnable as internal worker. Executing gmail_inbox_automation_loop immediately. Session ID: agent:personal_assistant:subagent:fd5aa227-8bfc-4900-af0a-05559eb9c4e9. Run ID: 4b7e2238-8a4d-4dde-869c-70002428b27e.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T15:38:09.148Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T16:11:37.582Z",
+      "agent": "Personal Assistant",
+      "action": "Gmail OAuth token healthy",
+      "description": "Token valid and refresh_token present. Ready for automation.",
+      "severity": "info",
+      "source": "oauth_watchdog"
+    },
+    {
+      "timestamp": "2026-03-05T16:11:46.467Z",
+      "agent": "Clawson",
+      "action": "SEV-1 PERMANENT FIX: Gmail OAuth Reliability Hardening COMPLETE",
+      "description": "Steps 2-6 implemented: OAuth health check script (30min watchdog), credentials_health.json SSOT, cron job registered (gmail_oauth_health_check), gmail_inbox_automation_loop updated with fail-loud behavior. Health check tested: refresh_token present + accessible. Status: HEALTHY. Awaiting Step 1: User must run \"gog auth add vettoristeve@gmail.com --services gmail\" once to ensure fresh OAuth token. After Step 1, email cleanup will never fail silently again.",
+      "severity": "critical",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T16:22:40.274Z",
+      "agent": "Personal Assistant",
+      "action": "Gmail OAuth token healthy",
+      "description": "Token valid and refresh_token present. Ready for automation.",
+      "severity": "info",
+      "source": "oauth_watchdog"
+    },
+    {
+      "timestamp": "2026-03-05T16:22:47.922Z",
+      "agent": "Personal Assistant",
+      "action": "Gmail OAuth health check: CRITICAL",
+      "description": "Token file missing. Re-authentication required.",
+      "severity": "critical",
+      "source": "oauth_watchdog"
+    },
+    {
+      "timestamp": "2026-03-05T16:22:56.300Z",
+      "agent": "Personal Assistant",
+      "action": "Gmail OAuth health check: CRITICAL",
+      "description": "Token file missing. Re-authentication required.",
+      "severity": "critical",
+      "source": "oauth_watchdog"
+    },
+    {
+      "timestamp": "2026-03-05T16:22:59.172Z",
+      "agent": "Personal Assistant",
+      "action": "Gmail OAuth token healthy",
+      "description": "Token valid and refresh_token present. Ready for automation.",
+      "severity": "info",
+      "source": "oauth_watchdog"
+    },
+    {
+      "timestamp": "2026-03-05T16:23:36.851Z",
+      "agent": "Clawson",
+      "action": "SEV-1 VERIFICATION COMPLETE \u2014 Gmail OAuth Bulletproof",
+      "description": "All 7 steps verified and tested. OAuth token healthy. Watchdog active (every 30 min). Failure detection proven (tested with simulated auth loss \u2014 CRITICAL alert fired correctly). Recovery path documented. Email cleanup will never fail silently. Report: /observability/SEV-1-VERIFICATION-REPORT.md",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T16:30:50.949Z",
+      "agent": "System",
+      "action": "OPERATOR LOCK PATTERN IMPLEMENTED",
+      "description": "Mission Control now enforces SSOT-only reporting. No synthetic data. Fail-loud on missing data. Script: scripts/ssot-health-check.js. Active agents read from canon/registry.json (1 enabled). Workstreams: 0. Blocked: 0. Ventures: 1 (LeadScore in Progress). Activity: 40 entries. All data verified from source files.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T16:51:02.294Z",
+      "agent": "Clawson",
+      "action": "PROPOSED: CR-MC-VENTURE-DRILLDOWN-V2",
+      "description": "Full specification created for robust venture detail drawer. Features: header, timeline, artifacts, workstreams, blockers, checklist, metrics. All SSOT-sourced (no fabrication). Fail-loud constraints enforced. Timeline: 2-3 weeks. Awaiting approval.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T16:52:17.253Z",
+      "agent": "Steve",
+      "action": "APPROVED: CR-MC-VENTURE-DRILLDOWN-V2 \u2014 Full Implementation",
+      "description": "Schema provided, engineering requirements defined, acceptance criteria set. Codesmith assigned to execute Phases 1-4 (2-3 weeks). ventures.json created. Implementation begins now: Phase 1 (API endpoints), Phase 2 (UI components), Phase 3 (Polish), Phase 4 (Testing). Auto-announces on completion.",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T17:11:38.714Z",
+      "agent": "Steve",
+      "action": "APPROVED: CR-MC-OPS-PANELS-UPGRADE \u2014 Full Implementation",
+      "description": "Upgrade 5 Mission Control operational panels: Agent Activity (live timeline, filters, search), Active Work (real workstreams table), Blocked Work (blocker console with SLA), Workstream Flow (stage distribution), System Status (agent health monitor). All SSOT-sourced, fail-loud, keyboard-friendly. Codesmith assigned to execute Phases 1-4 (3-4 weeks). Auto-announces on completion.",
+      "severity": "info",
+      "source": "system"
+    }
+  ],
+  "lastUpdated": "2026-03-05T17:11:38.714Z",
+  "total": 5
+}
