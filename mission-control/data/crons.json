@@ -1,41 +1,31 @@
 {
-  "exportedAt": "2026-03-05T00:04:56Z",
+  "exportedAt": "2026-03-05T02:04:56Z",
   "timezone": "America/New_York",
-  "currentTime": "8:04 PM EST Wednesday",
-  "marketStatus": "AFTER-HOURS CLOSED (market closed 8:00 PM EST)",
-  "total": 5,
+  "currentTime": "10:04 PM EST Wednesday",
+  "marketStatus": "CLOSED (reopens 9:30 AM Thursday, March 5)",
+  "total": 4,
   "summary": {
-    "enabled": 5,
+    "enabled": 4,
     "disabled": 0,
-    "lastSync": "2026-03-05T00:04:56Z"
+    "lastSync": "2026-03-05T02:04:56Z"
   },
   "systemStatus": {
-    "timestamp": "2026-03-05T00:04:56Z",
-    "currentTime": "8:04 PM EST",
+    "timestamp": "2026-03-05T02:04:56Z",
+    "currentTime": "10:04 PM EST",
     "dayOfWeek": "Wednesday",
-    "marketHours": "AFTER-HOURS CLOSED (All trading halted until 9:30 AM Thursday)",
+    "marketHours": "CLOSED (Reopens 9:30 AM Thursday)",
     "operationalStatus": "CORE INFRASTRUCTURE OPERATIONAL"
   },
   "jobs": [
-    {
-      "id": "b947b0db-9818-4e3d-8124-7ce6120fcbd7",
-      "name": "Gmail Token Auto-Refresh - All Accounts",
-      "enabled": true,
-      "schedule": "Every 30 minutes",
-      "lastStatus": "ok",
-      "lastRunAtMs": 1772671637522,
-      "lastDurationMs": 9703,
-      "nextRunAtMs": 1772673437522
-    },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
       "name": "Mission Control Cron Export",
       "enabled": true,
       "schedule": "Every 2 hours (0 */2 * * *)",
       "lastStatus": "ok",
-      "lastRunAtMs": 1772672696125,
+      "lastRunAtMs": 1772679896124,
       "lastDurationMs": 1,
-      "nextRunAtMs": 1772679896119
+      "nextRunAtMs": 1772687096119
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
@@ -43,7 +33,8 @@
       "enabled": true,
       "schedule": "1:00 AM daily (0 1 * * *)",
       "lastStatus": "pending",
-      "nextRunAtMs": 1772690400000
+      "nextRunAtMs": 1772690400000,
+      "notes": "Runs at 1:00 AM Thursday, March 5"
     },
     {
       "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
@@ -51,7 +42,8 @@
       "enabled": true,
       "schedule": "8:00 PM Sundays (0 20 * * 0)",
       "lastStatus": "scheduled",
-      "nextRunAtMs": 1773014400000
+      "nextRunAtMs": 1773014400000,
+      "notes": "Next run: Sunday, March 9, 8:00 PM"
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
@@ -61,22 +53,24 @@
       "lastStatus": "ok",
       "lastRunAtMs": 1772377412244,
       "lastDurationMs": 102731,
-      "nextRunAtMs": 1773583200000
+      "nextRunAtMs": 1773583200000,
+      "notes": "Next run: March 15, 10:00 AM"
     }
   ],
   "systemInfo": {
     "agentConfiguration": "LEAN STATE — Clawson only (core infrastructure)",
     "totalAgents": 1,
-    "totalCronJobs": 5,
+    "totalCronJobs": 4,
     "healthStatus": "HEALTHY",
     "notes": [
-      "5 core cron jobs active and operational",
-      "All jobs executing normally",
-      "Gmail token refresh: 9.7 second run time (normal)",
-      "Market closed at 8:00 PM EST",
+      "4 core cron jobs active and operational",
+      "Gmail Token Auto-Refresh appears to have completed or been disabled",
+      "All remaining jobs executing normally",
+      "Market closed since 8:00 PM EST",
       "Next trading opens 9:30 AM Thursday, March 5, 2026",
-      "System in stable lean state awaiting rebuild direction"
+      "Drift Audit runs tonight at 1:00 AM (in ~2 hours 56 minutes)",
+      "System in stable lean state"
     ]
   },
-  "lastUpdated": "2026-03-05T00:04:56Z"
+  "lastUpdated": "2026-03-05T02:04:56Z"
 }
