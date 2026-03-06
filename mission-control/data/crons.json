@@ -1,17 +1,17 @@
 {
-  "exportedAt": "2026-03-06T06:04:56Z",
+  "exportedAt": "2026-03-06T09:05:10Z",
   "timezone": "America/New_York",
-  "currentTime": "2:04 AM EST Friday",
+  "currentTime": "4:05 AM EST Friday",
   "marketStatus": "CLOSED (Pre-market opens 4:00 AM, regular opens 9:30 AM)",
   "total": 4,
   "summary": {
     "enabled": 4,
     "disabled": 0,
-    "lastSync": "2026-03-06T06:04:56Z"
+    "lastSync": "2026-03-06T09:05:10Z"
   },
   "systemStatus": {
-    "timestamp": "2026-03-06T06:04:56Z",
-    "currentTime": "2:04 AM EST",
+    "timestamp": "2026-03-06T09:05:10Z",
+    "currentTime": "4:05 AM EST",
     "dayOfWeek": "Friday",
     "marketHours": "CLOSED (Pre-market: 4:00 AM - 9:30 AM, Regular: 9:30 AM - 4:00 PM)",
     "operationalStatus": "CORE INFRASTRUCTURE OPERATIONAL"
@@ -26,7 +26,7 @@
       "lastRunAtMs": 1772762696128,
       "lastDurationMs": 2,
       "nextRunAtMs": 1772769896119,
-      "notes": "Next run: 4:04 AM"
+      "notes": "Next run: 6:05 AM"
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
@@ -69,9 +69,9 @@
       "4 core cron jobs active and operational",
       "Drift Audit completed at 1:00 AM Friday",
       "All jobs executing normally",
-      "Pre-market opens in ~2 hours (4:00 AM EST)",
+      "Pre-market opens in ~15 minutes (9:30 AM UTC / 4:30 AM EST)",
       "System in stable lean state"
     ]
   },
-  "lastUpdated": "2026-03-06T06:04:56Z"
+  "lastUpdated": "2026-03-06T09:05:10Z"
 }
