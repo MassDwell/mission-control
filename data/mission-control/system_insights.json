@@ -1,0 +1,50 @@
+{
+  "lastUpdated": "2026-03-06T00:41:39.209Z",
+  "insights": [
+    {
+      "id": "insight-overload-codesmith",
+      "type": "agent_overload",
+      "severity": "warning",
+      "agent_id": "codesmith",
+      "message": "Codesmith owns 4 workstreams (monitor capacity)",
+      "action": "view_workstreams",
+      "timestamp": "2026-03-06T00:41:39.208Z"
+    },
+    {
+      "id": "insight-progress-backend-api-scaffolding",
+      "type": "fast_progress",
+      "severity": "positive",
+      "workstream_id": "backend-api-scaffolding",
+      "venture_id": "leadscore-ai",
+      "message": "Backend API Scaffolding is 90% complete (high momentum)",
+      "action": "celebrate",
+      "timestamp": "2026-03-05T23:00:15.032Z"
+    },
+    {
+      "id": "insight-001",
+      "type": "fast_progress",
+      "venture_id": "leadscore-ai",
+      "message": "LeadScore.ai backend 90% complete (acceleration: +90% in 6h)",
+      "severity": "positive",
+      "timestamp": "2026-03-05T12:00:00.000Z",
+      "action": "celebrate"
+    },
+    {
+      "id": "insight-002",
+      "type": "agent_status",
+      "agent_id": "codesmith",
+      "message": "Codesmith owns 3 active workstreams, last activity 3m ago (appears highly active)",
+      "severity": "info",
+      "timestamp": "2026-03-05T12:40:00.000Z",
+      "action": "view"
+    },
+    {
+      "id": "insight-003",
+      "type": "automation_opportunity",
+      "message": "5 manual approval steps detected in LeadScore.ai workflow — can save 2h/week with automation",
+      "severity": "info",
+      "timestamp": "2026-03-05T12:30:00.000Z",
+      "action": "create_task"
+    }
+  ]
+}

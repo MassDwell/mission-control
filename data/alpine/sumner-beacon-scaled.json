@@ -1,0 +1,70 @@
+{
+  "project": "191 Sumner Street (Beacon Scaled)",
+  "units": 16,
+  "gross_sf": 35020,
+  "sellable_sf": 26300,
+  "description": "16-unit residential development scaled from Beacon template",
+  "budget_items": [
+    {
+      "category": "Land/Site Acquisition",
+      "budgeted": 4705677,
+      "actual": 4705677,
+      "notes": "Scaled from Beacon: $10.00M × 47.1%",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Utilities & Site Work",
+      "budgeted": 70585,
+      "actual": 70585,
+      "notes": "Scaled from Beacon: $0.15M × 47.1%",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Construction - Units",
+      "budgeted": 13134768,
+      "actual": 13134768,
+      "notes": "Scaled from Beacon: $27.91M × 47.1%",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Construction Loan Interest",
+      "budgeted": 1317590,
+      "actual": 1317590,
+      "notes": "Scaled from Beacon: $2.80M × 47.1%",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Hard Cost Contingency",
+      "budgeted": 672236,
+      "actual": 672236,
+      "notes": "Scaled from Beacon: $1.43M × 47.1%",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Soft Cost Contingency",
+      "budgeted": 70091,
+      "actual": 70091,
+      "notes": "Scaled from Beacon: $0.15M × 47.1%",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Soft Costs (Total)",
+      "budgeted": 1402056,
+      "actual": 1402056,
+      "notes": "Scaled from Beacon: $2.98M × 47.1%",
+      "section": "SOFT COSTS"
+    }
+  ],
+  "totals": {
+    "hard_costs": 19970947,
+    "soft_costs": 1402056,
+    "total_development": 21373003
+  },
+  "scaling_reference": {
+    "beacon_units": 34,
+    "beacon_gross_sf": 74424,
+    "sumner_units": 16,
+    "sumner_gross_sf": 35020,
+    "scaling_factor": 0.470567685313403
+  }
+}

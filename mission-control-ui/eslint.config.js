@@ -31,7 +31,7 @@ export default [
   {
     files: ['public/**/*.js'],
     rules: {
-      'no-unused-vars': 'warn',
+      'no-unused-vars': ['warn', { 'argsIgnorePattern': '^_', 'varsIgnorePattern': '^_', 'caughtErrorsIgnorePattern': '^_' }],
       'no-undef': 'error',
       'no-console': 'off'
     },
@@ -63,13 +63,26 @@ export default [
         CustomEvent: 'readonly',
         Event: 'readonly',
         HTMLElement: 'readonly',
+        // Browser storage & observers
+        localStorage: 'readonly',
+        sessionStorage: 'readonly',
+        ResizeObserver: 'readonly',
+        MutationObserver: 'readonly',
+        // JS built-ins
+        Object: 'readonly',
+        Array: 'readonly',
         // App globals
         MissionControlDrilldown: 'writable',
         AgentActivity: 'writable',
         ActiveWork: 'writable',
         BlockedWork: 'writable',
         WorkstreamFlow: 'writable',
-        SystemStatus: 'writable'
+        SystemStatus: 'writable',
+        MCMode: 'writable',
+        MCStorage: 'writable',
+        VentureOS: 'writable',
+        VentureGraph: 'writable',
+        CommandCenter: 'writable'
       }
     }
   }

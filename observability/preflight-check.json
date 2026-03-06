@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-03-04T19:48:35Z",
+  "status": "warning",
+  "checks": {
+    "canon_directory": "✅",
+    "registry_json": "✅",
+    "no_orphaned_files": "⚠️",
+    "agent_registry_match": "✅",
+    "no_duplicates": "✅",
+    "schema_validation": "✅",
+    "permissions_valid": "✅",
+    "no_unapproved_agents": "✅"
+  },
+  "errors": 0,
+  "warnings": 3,
+  "critical": 0,
+  "quarantined_files": 0
+}

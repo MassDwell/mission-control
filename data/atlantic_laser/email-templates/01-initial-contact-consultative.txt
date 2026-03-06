@@ -1,0 +1,30 @@
+Subject: 4x faster welding — quick question for {{company_name}}
+
+Hi {{first_name}},
+
+I'm reaching out because we work with fabrication shops in {{region}} that are looking to cut welding time and labor costs.
+
+We distribute the Theo MA1 Series — handheld laser welders that are:
+- 4x faster than arc/TIG welding
+- 80% less energy than traditional methods
+- Trainable in hours (not weeks)
+- CE/FDA certified
+
+Most shops we talk to fall into one of these buckets:
+1. High-volume work where speed/consistency directly impacts margin
+2. Custom/precision jobs where weld quality is the selling point
+3. Staffing challenges (harder to find experienced welders)
+
+Does one of those hit home for {{company_name}}, or is it something else?
+
+I'm not trying to push anything — just seeing if there's a fit. If there is, I'd love to show you a quick demo (10 min, no obligation) or send you a case study from a similar shop in {{region}}.
+
+Are you open to a brief conversation?
+
+Best,
+{{sender_name}}
+Atlantic Laser Solutions
+{{phone}}
+{{website}}
+
+P.S. - Financing available for equipment, and training is included. Most shops see ROI in 3-6 months on labor savings alone.

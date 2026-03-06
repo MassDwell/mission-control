@@ -1,0 +1,23 @@
+{
+  "venture": "api-test-venture",
+  "stage": "KILLED",
+  "stage_entered": "2026-03-05T23:33:46.691Z",
+  "owner_agent": "codesmith",
+  "artifacts_complete": false,
+  "next_stage": "EVIDENCE",
+  "gates_passed": [],
+  "gates_pending": [
+    "IDEA",
+    "EVIDENCE",
+    "OPPORTUNITY_SCORE",
+    "PRD",
+    "BUILD",
+    "BETA",
+    "REVENUE",
+    "SCALE"
+  ],
+  "last_updated": "2026-03-05T23:33:47.138Z",
+  "kill_date": "2026-03-05T23:33:47.138Z",
+  "kill_reason": "Test kill - API validation complete",
+  "killed_by": "clawson"
+}

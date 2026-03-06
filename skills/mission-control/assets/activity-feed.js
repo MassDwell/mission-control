@@ -25,7 +25,7 @@ const ActivityFeed = {
         this.render();
     },
     
-    // Load recent activities from Supabase
+    // Load recent activities from Supabase (with fallback to local JSON)
     async loadRecent(limit = 50) {
         try {
             const response = await fetch(
@@ -40,9 +40,10 @@ const ActivityFeed = {
             
             if (response.ok) {
                 this.activities = await response.json();
-                console.log(`[ActivityFeed] Loaded ${this.activities.length} activities`);
+                console.log(`[ActivityFeed] Loaded ${this.activities.length} activities from Supabase`);
+                return;
             } else {
-                // Fallback to agent_actions if unified_activity view doesn't exist yet
+                // Fallback to agent_actions table
                 const fallbackResponse = await fetch(
                     `${SUPABASE_URL}/rest/v1/agent_actions?order=created_at.desc&limit=${limit}`,
                     {
@@ -66,10 +67,35 @@ const ActivityFeed = {
                         severity: 'info',
                         created_at: a.created_at
                     }));
+                    console.log(`[ActivityFeed] Loaded ${this.activities.length} activities from agent_actions table`);
+                    return;
                 }
             }
         } catch (err) {
-            console.error('[ActivityFeed] Failed to load:', err);
+            console.error('[ActivityFeed] Supabase fetch failed:', err);
+        }
+        
+        // FALLBACK: Load from local JSON file if Supabase fails
+        try {
+            console.log('[ActivityFeed] Falling back to local agent_activity.json...');
+            const localResponse = await fetch('./data/agent_activity.json');
+            if (localResponse.ok) {
+                const localData = await localResponse.json();
+                // Map local activity stream to the activity feed format
+                this.activities = (localData.activity_stream || []).map(a => ({
+                    id: a.id,
+                    event_type: 'agent_action',
+                    source: a.agent || 'system',
+                    title: a.action,
+                    description: a.description,
+                    severity: a.severity || 'info',
+                    created_at: a.timestamp,
+                    metadata: { status: a.status }
+                }));
+                console.log(`[ActivityFeed] Loaded ${this.activities.length} activities from local JSON`);
+            }
+        } catch (err) {
+            console.error('[ActivityFeed] Local JSON fallback also failed:', err);
         }
     },
     

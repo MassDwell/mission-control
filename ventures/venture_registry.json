@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "lastUpdated": "2026-03-06T00:09:06.233Z",
+  "ventures": [],
+  "counts": {
+    "active": 0,
+    "killed": 0,
+    "total": 0,
+    "by_stage": {
+      "KILLED": 0,
+      "IDEA": 0,
+      "EVIDENCE": 0,
+      "OPPORTUNITY_SCORE": 0,
+      "PRD": 0,
+      "BUILD": 0,
+      "BETA": 0,
+      "REVENUE": 0,
+      "SCALE": 0
+    }
+  },
+  "portfolio_mrr": 0,
+  "success_rate": 0,
+  "kill_rate": 0
+}

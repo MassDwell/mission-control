@@ -1,0 +1,5 @@
+{
+  "_comment": "Replace with your actual Unusual Whales API key from https://unusualwhales.com/",
+  "api_key": "uw_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "base_url": "https://api.unusualwhales.com"
+}

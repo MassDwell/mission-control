@@ -1,0 +1,24 @@
+{
+  "venture": "leadscore-ai",
+  "stage": "KILLED",
+  "stage_entered": "2026-03-05T18:30:00Z",
+  "owner_agent": "codesmith",
+  "artifacts_complete": true,
+  "next_stage": "BETA",
+  "gates_passed": [
+    "IDEA (2026-03-05)",
+    "EVIDENCE (2026-03-05)",
+    "OPPORTUNITY_SCORE (2026-03-05)",
+    "PRD (2026-03-05)"
+  ],
+  "gates_pending": [
+    "BETA",
+    "REVENUE",
+    "SCALE"
+  ],
+  "opportunity_score": 38,
+  "last_updated": "2026-03-06T00:09:06.228Z",
+  "kill_date": "2026-03-06T00:09:06.228Z",
+  "kill_reason": "test",
+  "killed_by": "random"
+}

@@ -1,0 +1,38 @@
+Subject: Reduce welding labor costs by 40% — {{company_name}}
+
+Hi {{first_name}},
+
+Quick question: Are you looking to reduce welding labor costs at {{company_name}}?
+
+We work with fabrication shops in {{region}} and have helped them cut welding time by 75% using the Theo MA1 laser welders. Here's what's typical:
+
+**Before:** Arc/TIG welding, ~$45/hour labor, 4-hour job = $180 in labor
+**After:** MA1 laser, ~$25/hour (less skilled operator), 1-hour job = $25 in labor
+**Result:** $155 savings per job. At 20 jobs/month = $3,100/month = $37K/year
+
+We've worked with shops like ABC Fabrication and XYZ Manufacturing who saw ROI in 3-4 months.
+
+The Theo MA1 Series is:
+- 4x faster than traditional welding
+- 80% less energy than arc
+- Trainable in hours (not weeks)
+- Financing available
+
+Most shops fit one of these categories:
+1. High-volume production (speed = profit)
+2. Precision/quality work (laser consistency = better reputation)
+3. Labor shortage issues (need fewer skilled welders)
+
+Which of those applies to {{company_name}}?
+
+If there's a fit, I'd like to send you a quick case study from a similar shop + walk you through the ROI. No pitch, just proof.
+
+Worth 10 minutes?
+
+Best,
+{{sender_name}}
+Atlantic Laser Solutions
+{{phone}}
+{{website}}
+
+P.S. - We just placed 12 units with shops in {{region}} in the last 6 months. Happy to provide references if helpful.

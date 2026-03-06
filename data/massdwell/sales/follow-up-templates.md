@@ -5,6 +5,19 @@
 
 ---
 
+## ⚠️ EMAIL PERSONALIZATION - IMPORTANT
+
+**The placeholders "[First Name]" and "[Name]" in this document are examples only.**
+
+**When actually sending emails, ALWAYS follow:**
+`~/.openclaw/workspace/data/massdwell/EMAIL-PERSONALIZATION-RULES.md`
+
+**Key Rule:** Use customer name from Kommo. If numeric ID → extract first name. If no name → "Hi,"
+
+❌ NEVER use numeric IDs in actual emails
+
+---
+
 ## Template 1: Value Drop (Re-engagement)
 
 **Use when:** Lead went cold 30+ days ago, no recent contact

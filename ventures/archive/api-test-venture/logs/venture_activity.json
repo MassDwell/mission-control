@@ -1,0 +1,30 @@
+{
+  "venture": "api-test-venture",
+  "entries": [
+    {
+      "timestamp": "2026-03-05T23:33:46.692Z",
+      "action": "CREATED",
+      "message": "Created venture: API Test Venture",
+      "actor": "codesmith"
+    },
+    {
+      "timestamp": "2026-03-05T23:33:47.100Z",
+      "action": "METRICS_UPDATED",
+      "message": "Updated metrics: build_progress: 0 → 0.25",
+      "actor": "system",
+      "metadata": {
+        "build_progress": 0.25
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:33:47.139Z",
+      "action": "KILLED",
+      "message": "KILLED: Test kill - API validation complete",
+      "actor": "clawson",
+      "metadata": {
+        "kill_reason": "Test kill - API validation complete",
+        "decision_maker": "clawson"
+      }
+    }
+  ]
+}

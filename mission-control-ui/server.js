@@ -19,6 +19,8 @@ app.use(express.json());
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
+// CR-MC-TOOLTIP-CLARITY-SYSTEM: Serve config directory (panel_tooltips.json etc.)
+app.use('/config', express.static(path.join(__dirname, 'config')));
 
 // Data endpoints
 const dataModule = require('./api/data');

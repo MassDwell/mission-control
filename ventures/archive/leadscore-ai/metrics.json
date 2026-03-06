@@ -1,0 +1,30 @@
+{
+  "venture": "leadscore-ai",
+  "timestamp": "2026-03-05T18:30:00Z",
+  "metrics": {
+    "mrr": 0,
+    "users": 0,
+    "activation_rate": 0,
+    "nps": null,
+    "build_progress": 0.32,
+    "experiments_run": 0,
+    "paying_customers": 0,
+    "cac": null,
+    "ltv": null
+  },
+  "targets": {
+    "mrr": 5000,
+    "users": 10,
+    "activation_rate": 0.5,
+    "nps": 8.0,
+    "build_progress": 1.0
+  },
+  "history": [
+    {
+      "timestamp": "2026-03-05T18:30:00Z",
+      "metrics": {
+        "build_progress": 0.32
+      }
+    }
+  ]
+}

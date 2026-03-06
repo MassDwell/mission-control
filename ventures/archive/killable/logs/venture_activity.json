@@ -1,0 +1,21 @@
+{
+  "venture": "killable",
+  "entries": [
+    {
+      "timestamp": "2026-03-05T23:18:03.984Z",
+      "action": "CREATED",
+      "message": "Created venture: Killable",
+      "actor": "codesmith"
+    },
+    {
+      "timestamp": "2026-03-05T23:18:03.985Z",
+      "action": "KILLED",
+      "message": "KILLED: No market fit",
+      "actor": "clawson",
+      "metadata": {
+        "kill_reason": "No market fit",
+        "decision_maker": "clawson"
+      }
+    }
+  ]
+}

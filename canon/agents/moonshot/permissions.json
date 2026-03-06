@@ -1,0 +1,161 @@
+{
+  "agent_id": "moonshot",
+  "name": "Moonshot",
+  "permission_profile": "moonshot",
+  "scopes": ["code"],
+  "permissions": ["read", "write"],
+  "created": "2026-03-04",
+  "status": "registered_disabled",
+  "access_matrix": {
+    "moonshot_files": {
+      "scope": "code",
+      "path": "canon/agents/moonshot/**",
+      "operations": ["read", "write"],
+      "restrictions": "Can create/edit moonshot-specific files (memos, PRDs, experiments). Cannot delete.",
+      "allowed": true
+    },
+    "system_templates": {
+      "scope": "code",
+      "path": "canon/system/moonshot_*.md, canon/system/prd_template.md, canon/system/experiment_template.md",
+      "operations": ["read"],
+      "restrictions": "Can read templates, cannot modify core templates.",
+      "allowed": true
+    },
+    "research_output": {
+      "scope": "code",
+      "path": "canon/agents/moonshot/memos/**, canon/agents/moonshot/prds/**, canon/agents/moonshot/experiments/**",
+      "operations": ["read", "write"],
+      "restrictions": "Can create research deliverables (memos, PRDs, experiment plans).",
+      "allowed": true
+    },
+    "mission_control": {
+      "scope": "code",
+      "service": "mission_control",
+      "operations": ["read", "write"],
+      "restrictions": "Can create/update moonshot tasks, cannot modify other agent tasks.",
+      "allowed": true
+    },
+    "web_research": {
+      "scope": "code",
+      "service": "web",
+      "operations": ["read"],
+      "restrictions": "Read-only web research for validation.",
+      "allowed": true
+    },
+    "change_requests": {
+      "scope": "code",
+      "path": "canon/system/change_request_template.md",
+      "operations": ["read"],
+      "restrictions": "Can read CR template to structure proposals to Clawson.",
+      "allowed": true
+    },
+    "registry": {
+      "scope": "code",
+      "path": "canon/registry.json",
+      "operations": ["read"],
+      "restrictions": "Read-only. Cannot modify registry (Codesmith only).",
+      "allowed": true
+    },
+    "execute_shell": {
+      "scope": "system",
+      "service": "shell",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot execute shell commands or scripts.",
+      "allowed": false
+    },
+    "deploy": {
+      "scope": "system",
+      "service": "deploy",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot run deploy scripts or modify system config.",
+      "allowed": false
+    },
+    "cron": {
+      "scope": "system",
+      "service": "cron",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot create or modify cron jobs.",
+      "allowed": false
+    },
+    "routing": {
+      "scope": "system",
+      "service": "routing",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot create or modify Telegram routes.",
+      "allowed": false
+    },
+    "gmail": {
+      "scope": "email",
+      "service": "google_workspace",
+      "operations": [],
+      "restrictions": "FORBIDDEN - No email access.",
+      "allowed": false
+    },
+
+    "financial": {
+      "scope": "financial",
+      "service": "financial_systems",
+      "operations": [],
+      "restrictions": "FORBIDDEN - No financial data access.",
+      "allowed": false
+    },
+    "credentials": {
+      "scope": "system",
+      "service": "credential_storage",
+      "operations": [],
+      "restrictions": "FORBIDDEN - No access to secrets or API keys.",
+      "allowed": false
+    }
+  },
+  "escalation_rules": {
+    "approval_required": [
+      "Change Request proposals to Clawson",
+      "Ideas proposing >$1M budget",
+      "Ideas affecting core product strategy"
+    ],
+    "escalation_target": "Clawson (via structured proposal)",
+    "block_rules": [
+      "Any code execution attempt",
+      "Any shell access attempt",
+      "Any deploy script execution",
+      "Any registry modification",
+      "Any cron job creation",
+      "Any route modification",
+      "Any email/CRM access"
+    ]
+  },
+  "discovery_workflow": {
+    "enabled": true,
+    "cycle_phases": [
+      "identify",
+      "validate",
+      "specify",
+      "propose",
+      "iterate"
+    ],
+    "required_deliverables": [
+      "moonshot_memo.md",
+      "prd.md",
+      "experiment_plan.md"
+    ],
+    "proposal_target": "Clawson",
+    "implementation_target": "Codesmith (via Change Request)"
+  },
+  "audit_logging": {
+    "enabled": true,
+    "log_location": "observability/agents/moonshot/activity-log.json",
+    "log_all_proposals": true,
+    "log_denials": true,
+    "log_approvals": true,
+    "retention": "90 days"
+  },
+  "data_isolation": {
+    "cannot_execute_code": true,
+    "cannot_deploy": true,
+    "cannot_modify_system_config": true,
+    "cannot_create_routes": true,
+    "cannot_access_email_or_crm": true,
+    "can_only_propose_to_clawson": true
+  },
+  "notes": "R&D strategist focused on idea generation, validation, and specification. Works in discovery cycles. Proposes Change Requests to Clawson for implementation by Codesmith. Never executes code or deploys. Internal worker only (no user-facing routes)."
+}

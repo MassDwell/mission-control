@@ -1,0 +1,135 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2026-03-04T14:00:00Z",
+  "description": "Agent Permission Profiles — Define what each agent can access",
+  
+  "permission_types": {
+    "read": "Can read data from system",
+    "write": "Can create/modify data",
+    "execute": "Can run code/scripts",
+    "approve": "Can approve/authorize actions",
+    "delete": "Can delete/archive data"
+  },
+
+  "access_scopes": {
+    "email": {
+      "description": "Gmail/email access",
+      "resources": ["gmail_accounts", "email_compose", "email_read"],
+      "examples": ["sales@massdwell.com", "vettoristeve@gmail.com", "team@atlanticlasersolutions.com"]
+    },
+    "crm": {
+      "description": "CRM system access (Kommo)",
+      "resources": ["contacts", "deals", "notes", "stages"],
+      "examples": ["create_deals", "move_stages", "add_notes"]
+    },
+    "code": {
+      "description": "Code & config files",
+      "resources": ["scripts", "configs", "canon_files"],
+      "examples": ["scripts/", "config/"]
+    },
+    "calendar": {
+      "description": "Calendar & schedule access",
+      "resources": ["events", "scheduling"],
+      "examples": ["google_calendar", "scheduling"]
+    },
+    "financial": {
+      "description": "Financial data & reports",
+      "resources": ["budgets", "forecasts", "p&l", "metrics"],
+      "examples": ["alpine_data", "financial_models"]
+    },
+    "content": {
+      "description": "Marketing content & campaigns",
+      "resources": ["posts", "campaigns", "analytics"],
+      "examples": ["social_media", "email_campaigns"]
+    },
+    "personal": {
+      "description": "Personal files & context",
+      "resources": ["personal_notes", "personal_calendar", "health_data"],
+      "examples": ["MEMORY.md", "personal/"]
+    },
+    "system": {
+      "description": "System control & governance",
+      "resources": ["cron_jobs", "gateway_config", "agent_registry", "permissions"],
+      "examples": ["canon/", "config/", "registry.json"]
+    }
+  },
+
+  "profiles": {
+    "clawson": {
+      "name": "Clawson - Chief of Staff",
+      "description": "Full system access, owns governance",
+      "scopes": ["email", "crm", "code", "calendar", "financial", "content", "personal", "system"],
+      "permissions": ["read", "write", "execute", "approve", "delete"],
+      "restrictions": "NONE - Full autonomy",
+      "escalation_required": false
+    },
+
+    "codesmith": {
+      "name": "Codesmith - Code & Config",
+      "description": "Development, coding, configuration management",
+      "scopes": ["code"],
+      "permissions": ["read", "write", "execute"],
+      "restrictions": "Cannot modify: canon/SOUL.md.canon, canon/registry.json, production credentials",
+      "escalation_required": true,
+      "escalation_rules": "Clawson approval for: code in production, config changes, credential access"
+    },
+
+    "finance": {
+      "name": "Finance Chief - Financial Data",
+      "description": "Financial analysis, forecasting, reporting",
+      "scopes": ["financial"],
+      "permissions": ["read", "write"],
+      "restrictions": "Cannot: execute code, approve transactions, modify budgets without review",
+      "escalation_required": true,
+      "escalation_rules": "Clawson approval for: budget changes >$10K, forecast updates, P&L publication"
+    },
+
+    "sales": {
+      "name": "Sales Chief - CRM & Outreach",
+      "description": "Sales automation, lead management, outreach",
+      "scopes": ["crm", "email"],
+      "permissions": ["read", "write"],
+      "restrictions": "Cannot: approve contracts, modify pricing, access personal email (only sales@massdwell.com)",
+      "escalation_required": true,
+      "escalation_rules": "Clawson approval for: >$500K deals, contract terms, discount >20%"
+    },
+
+    "marketing": {
+      "name": "Marketing Head - Content & Campaigns",
+      "description": "Content creation, campaign management, brand authority",
+      "scopes": ["content", "email"],
+      "permissions": ["read", "write", "execute"],
+      "restrictions": "Cannot: approve budget >$50K, modify company policy, post on behalf of Clawson",
+      "escalation_required": true,
+      "escalation_rules": "Clawson approval for: budget >$50K, major brand changes, multi-channel campaigns"
+    },
+
+    "personal_assistant": {
+      "name": "Personal Assistant - Personal Affairs",
+      "description": "Personal schedule, email, health, family matters",
+      "scopes": ["personal", "calendar"],
+      "permissions": ["read", "write"],
+      "restrictions": "Cannot: access business data, approve anything, execute code",
+      "escalation_required": false,
+      "escalation_rules": "None - personal domain"
+    },
+
+    "moonshot": {
+      "name": "Moonshot - R&D Strategist",
+      "description": "Idea generation, validation, product specification",
+      "scopes": ["code"],
+      "permissions": ["read", "write"],
+      "restrictions": "Cannot: execute code, deploy, modify system config, create routes, access email/CRM/financial",
+      "escalation_required": true,
+      "escalation_rules": "Clawson approval for: Change Request proposals, ideas proposing >$1M budget, strategic decisions"
+    }
+  },
+
+  "enforcement": {
+    "compile_time": true,
+    "runtime": true,
+    "audit_all_access": true,
+    "log_location": "observability/permissions/access-log.json",
+    "violation_action": "DENY + LOG + ALERT"
+  }
+}

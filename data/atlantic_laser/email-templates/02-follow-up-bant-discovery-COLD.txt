@@ -1,0 +1,27 @@
+Subject: Re: Reduce welding labor costs by 40% — {{company_name}}
+
+Hi {{first_name}},
+
+Thanks for getting back to me. Let me ask a few quick questions so I can send you exactly what's relevant:
+
+1. **Current welding:** What's your primary method right now? (Arc, TIG, MIG, stainless?)
+
+2. **Volume:** How many welding jobs/week do you do? (Helps me calculate your specific ROI)
+
+3. **Main pain point:** Is it speed, weld quality, labor costs, or finding skilled welders?
+
+4. **Timeline:** Are you actively looking to improve in the next 3-6 months, or more exploratory?
+
+5. **Decision:** Are you the person who makes equipment decisions, or are there others I should involve?
+
+Once I know those, I can:
+- Calculate YOUR specific ROI (not just generic numbers)
+- Show you a case study from a shop doing exactly what you do
+- Provide references you can call directly
+- Walk through financing options (most shops pay it off in 12 months)
+
+What are your thoughts on those questions?
+
+Best,
+{{sender_name}}
+Atlantic Laser Solutions

@@ -1,0 +1,125 @@
+[
+  {
+    "name": "Gmail Token Auto-Refresh - All Accounts",
+    "schedule": {
+      "kind": "every",
+      "everyMs": 1800000
+    },
+    "sessionTarget": "main",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "Run Gmail token refresh for all accounts: cd ~/.openclaw/workspace/credentials/google && node refresh-all-tokens.js > /dev/null 2>&1 || echo 'Token refresh failed but will retry in 30 min'"
+    },
+    "enabled": true,
+    "description": "Critical: Maintains OAuth tokens for Google Workspace (Gmail x3, Drive, Calendar)"
+  },
+  {
+    "name": "Mission Control Cron Export",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 */2 * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+    },
+    "enabled": true,
+    "description": "Syncs cron job state to Mission Control dashboard every 2 hours"
+  },
+  {
+    "name": "Weekly Memory Maintenance",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 20 * * 0",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "⏰ Weekly Memory Maintenance\n\nExecute: cd ~/.openclaw/workspace && ./scripts/memory-maintenance.sh\n\nThis will:\n1. Check file sizes (WORKING.md, MEMORY.md)\n2. Archive daily logs >30 days old\n3. Generate review report\n4. Git commit changes\n\nAfter automated tasks, complete manual review:\n- Review last 7 daily logs for lessons\n- Extract insights to MEMORY.md\n- Clean WORKING.md if needed\n\nSOP: data/global/sops/memory-maintenance.md"
+    },
+    "enabled": true,
+    "description": "Compacts memory files, archives old logs, generates review report"
+  },
+  {
+    "name": "Bi-Weekly Memory Audit",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 10 1,15 * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "🔍 Bi-Weekly Memory Audit (Clawson)\n\nPerform memory health check:\n\n1. Review memory/WORKING.md - is it current?\n2. Review MEMORY.md - any outdated info to archive?\n3. Check daily logs for patterns worth promoting\n4. Compact any files over 50KB\n5. Archive old daily logs (>14 days) to memory/archive/\n\nReport summary to Steve:\n- Files reviewed\n- Context saved (tokens)\n- Patterns promoted\n- Recommendations\n\nKeeps the system lean and compounds learning."
+    },
+    "enabled": true,
+    "description": "Health check on memory system, pattern extraction, file compaction"
+  },
+  {
+    "name": "Drift Audit (Core Architecture)",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 1 * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "🔍 Drift Audit — CORE ARCHITECTURE SPEC\n\nRun: scripts/deploy/drift-audit.sh\n\nChecks:\n1. Canonical files integrity (canon/ directory)\n2. Generated configs match canonical source (config/)\n3. No forbidden changes (Kommo refs, unauthorized agents)\n4. Directory structure correct\n5. All cron jobs match manifest\n6. No drift detected\n\nOutput: observability/drift-audit/audit-result-YYYYMMDD.json\n\nAllowed auto-fixes (safe):\n- Regenerate config/ from canon/\n- Create missing directories\n- Increment patch version\n\nManual flags (require review):\n- Canon file content changes\n- Breaking cron job changes\n- New credentials\n- Active code modifications\n\nAlert Steve if flags found."
+    },
+    "enabled": true,
+    "description": "Daily drift audit, safe auto-fixes, manual flags for risky changes"
+  },
+  {
+    "name": "personal_inbox_maintenance",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 7-21/2 * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "personal-assistant",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "📧 PERSONAL GMAIL INBOX MAINTENANCE (v2.0)\n\nTarget: vettoristeve@gmail.com\n\nEvery run:\n1. Scan inbox\n2. Auto-archive using ENHANCED rules (v2.0):\n   - Precedence: bulk | list | junk\n   - Auto-Submitted: auto-generated | auto-replied\n   - X-Auto-Response-Suppress: All | OOF\n   - List-Id: [any value]\n   - List-Unsubscribe: [header present]\n   - Gmail promotional label\n   - Sender: newsletter/updates/no-reply/marketing\n3. SMART ARCHIVING: Check contact status FIRST\n   - If sender in contacts/VIP/previous correspondent → Don't archive, classify as FYI instead\n   - If sender NOT known → Archive\n4. Categorize remaining: urgent, action-required, waiting, informational\n5. Flag urgent and action-required emails\n6. Count archived emails\n\nAt briefing times (8 AM, 1 PM, 6 PM EST only):\nSend to Clawson:\n\n📋 PERSONAL INBOX BRIEFING\n\nUrgent:\n<list items>\n\nNeeds Reply:\n<list items>\n\nFYI:\n<list items>\n\nArchived Automatically:\n<count>\n\nSafety rules (UNCHANGED):\n- NEVER auto-reply\n- NEVER delete emails\n- NEVER unsubscribe\n- Only archive low-priority bulk/marketing\n- Known contacts never archived (even if bulk headers)\n\nRules reference: canon/agents/personal-assistant/email-cleanup-rules.md",
+      "timeoutSeconds": 300
+    },
+    "enabled": true,
+    "delivery": {
+      "mode": "announce",
+      "channel": "telegram",
+      "to": "agent:main:telegram:direct:7002178651"
+    },
+    "description": "Personal Gmail inbox maintenance (v2.0): enhanced bulk detection (headers), smart contact checking, send briefings to Clawson at 8 AM, 1 PM, 6 PM"
+  },
+  {
+    "name": "moonshot_weekly_briefing",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * 1",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "moonshot",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "📊 MOONSHOT WEEKLY BRIEFING\n\nEvery Monday 9:00 AM EST, produce structured output:\n\n═══════════════════════════════════════════════════════════════\n📊 MOONSHOT WEEKLY BRIEFING — [Date]\n═══════════════════════════════════════════════════════════════\n\n🔍 NEW OPPORTUNITIES\nIdeas discovered this week (research findings)\n\n• [Idea Name]\n  Market: [Size/Sector]\n  Why Now: [Market/tech/timing trigger]\n  Status: Researching\n  Next: [Discovery phase]\n\n• [Idea Name]\n  Market: [Size/Sector]\n  Why Now: [Market/tech/timing trigger]\n  Status: Researching\n  Next: [Discovery phase]\n\n═══════════════════════════════════════════════════════════════\n\n⚗️ EXPERIMENTS RUNNING\nValidation work in progress\n\n• [Experiment Name]\n  Hypothesis: [What we're testing]\n  Metric: [Success measurement]\n  Progress: [Current status]\n  Week: [Week X of Y]\n  Next Action: [What happens this week]\n\n═══════════════════════════════════════════════════════════════\n\n✅ EXPERIMENTS COMPLETED\nValidation results from last week\n\n• [Experiment Name]\n  Result: [Go/Iterate/Pivot/No-Go]\n  Insight: [What we learned]\n  Next Action: [Proceed to spec / Pivot / Archive]\n\n═══════════════════════════════════════════════════════════════\n\n🚀 TOP OPPORTUNITY THIS WEEK\nPriority idea for Codesmith\n\n[Idea Name]\n\nMemo: [Link to moon shot_memo_[id].md]\nPRD: [Link to prd_[id].md]\nExperiment: [Link to experiment_plan_[id].md]\n\nProposed CR:\n\"Approved: moonshot — [Idea description]\"\n\nAwait: Clawson decision (Approve / Revise / Reject)\n\n═══════════════════════════════════════════════════════════════\n\nDLIVER TO: Clawson (agent:main)\nFORMAT: Structured briefing (copy-paste ready)",
+      "timeoutSeconds": 600
+    },
+    "enabled": true,
+    "delivery": {
+      "mode": "announce",
+      "channel": "telegram",
+      "to": "agent:main:telegram:direct:7002178651"
+    },
+    "description": "Moonshot weekly briefing (Mondays 9 AM EST): structured output with new opportunities, running experiments, completed experiments, and top priority idea for Codesmith"
+  }
+]

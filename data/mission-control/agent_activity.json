@@ -108,10 +108,269 @@
   ],
   "activities": [
     {
+      "id": "e88ab98f-8e21-4752-8531-5775911d7702",
+      "timestamp": "2026-03-06T00:40:49.606Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "bd9ec585-a8a4-4b32-b317-a38c108eb856",
+      "timestamp": "2026-03-06T00:40:22.373Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "328f9ba4-ea91-48fd-8488-23249eb31c0e",
+      "timestamp": "2026-03-06T00:39:27.568Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 6 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "5d0bf980-7b1d-437e-aa6d-838f19745aa8",
+      "timestamp": "2026-03-06T00:19:39.124Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "1be84213-b127-4dfc-8848-4c4ba0781b2c",
+      "timestamp": "2026-03-06T00:09:50.727Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "7341403c-1020-4ffd-9029-673df1139ee6",
+      "timestamp": "2026-03-06T00:09:50.714Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "19e784bb-ccd5-4280-980f-b9437d75d147",
+      "timestamp": "2026-03-06T00:09:50.713Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "472f1e45-8a0a-43fe-b76f-1d3235ab55ff",
+      "timestamp": "2026-03-06T00:09:50.712Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "cc33d6b7-0729-47f2-8790-87adc96ce36f",
+      "timestamp": "2026-03-06T00:09:01.581Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "aeeaeea3-8b85-4465-8f0b-1453a0715d2f",
+      "timestamp": "2026-03-06T00:09:01.567Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "ca01f23e-dada-4e72-9a27-46b865c26ed2",
+      "timestamp": "2026-03-06T00:09:01.566Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "87550c04-dc9c-47ae-a3a2-cbea8747231e",
+      "timestamp": "2026-03-06T00:09:01.565Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 6 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "e8b2e87b-ed90-44c5-98a6-9c6afebc4cee",
+      "timestamp": "2026-03-05T23:45:46.316Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "f4492d2d-c72c-4c91-b8af-e4f063ccfc47",
+      "timestamp": "2026-03-05T23:43:54.267Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "2fb37a81-8248-4134-a0f9-57bbe6e173ff",
+      "timestamp": "2026-03-05T23:43:54.254Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "92cb3cc2-cfc6-4e08-a5de-3d4cb8b6d8c9",
+      "timestamp": "2026-03-05T23:43:54.253Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "27ae7a44-99c7-4717-afc5-3fbdae6c0953",
+      "timestamp": "2026-03-05T23:43:54.252Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "d1931fe0-2e1f-4032-9374-20374a9cfa3c",
+      "timestamp": "2026-03-05T23:04:43.810Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 6 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "ddffa132-f1fe-46da-a3aa-f309a5a905ea",
+      "timestamp": "2026-03-05T22:48:24.897Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 7 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "0624237e-d5a1-4d84-bfb8-dfd2887e9cae",
+      "timestamp": "2026-03-05T17:59:31.548Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "6972979c-7ffb-4548-9569-c1f3512256dd",
+      "timestamp": "2026-03-05T17:59:16.775666Z",
+      "agent": "codesmith",
+      "action": "Implemented Mission Control Palantir Mode: SSOT enforcement (agents_runtime.json), relationship graph (venture_relationships.json), command center (pause/kill/advance/spawn/assign), intelligence (system_insights.json), engagement loops (momentum/discovery/impact). Full strategic system upgrade. 18 unit tests + integration tests passing. ESLint clean. Committed: b505b88f",
+      "severity": "info",
+      "source": "system",
+      "command": "palantir_mode_implemented"
+    },
+    {
+      "id": "9d39fef5-e432-4c0a-bcea-ef636ada988c",
+      "timestamp": "2026-03-05T17:58:23.061Z",
+      "agent": "Steve Vettori",
+      "action": "Reassigned Auth Layer Integration from codesmith to Moonshot",
+      "severity": "info",
+      "source": "operator",
+      "workstream_id": "ws-1772733503009-trf0f",
+      "command": "assign_agent",
+      "from_owner": "codesmith",
+      "to_owner": "moonshot"
+    },
+    {
+      "id": "c5ec11d7-4dca-44d5-a97d-aea29e8536d8",
+      "timestamp": "2026-03-05T17:58:23.010Z",
+      "agent": "Steve Vettori",
+      "action": "Created workstream: Auth Layer Integration (build) for leadscore",
+      "severity": "info",
+      "source": "operator",
+      "venture_id": "leadscore",
+      "workstream_id": "ws-1772733503009-trf0f",
+      "command": "spawn_workstream"
+    },
+    {
+      "id": "93a8b5b0-ddff-4829-a666-a89ee710af25",
+      "timestamp": "2026-03-05T17:58:16.515Z",
+      "agent": "Steve Vettori",
+      "action": "Resumed venture: LeadScore.ai",
+      "severity": "info",
+      "source": "operator",
+      "venture_id": "leadscore",
+      "command": "resume_venture"
+    },
+    {
+      "id": "bc3d648d-08dd-4ecd-a256-699f4da3b614",
+      "timestamp": "2026-03-05T17:58:16.480Z",
+      "agent": "Steve Vettori",
+      "action": "Paused venture: LeadScore.ai",
+      "severity": "warning",
+      "source": "operator",
+      "venture_id": "leadscore",
+      "command": "pause_venture"
+    },
+    {
+      "id": "ccbd2467-7016-4ff5-9207-97d3bd34c1f5",
+      "timestamp": "2026-03-05T17:58:01.173Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "51f72885-521e-46fa-9607-2d0b88c3f3bf",
+      "timestamp": "2026-03-05T17:57:35.726Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "23f92879-6042-4dbd-b0eb-ca7df46e3c3b",
+      "timestamp": "2026-03-05T17:57:35.725Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 6 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
       "timestamp": "2026-03-05T17:07:04Z",
       "agent": "Codesmith",
       "action": "Built Venture Detail Drawer V2",
-      "description": "Complete implementation of CR-MC-VENTURE-DRILLDOWN-V2 \u2014 7-section SSOT-sourced detail drawer. Includes enhanced API endpoints (/api/ventures V2 + /api/ventures/:id V2), new venture-detail.js module, venture-detail.css, keyboard navigation (Esc), data freshness indicators, copy buttons, 5s TTL cache, 49 tests passing (37 unit + 12 integration), ESLint clean, all 4 phases delivered. Drawers open <1ms first load, <2ms cached. Commit: adb9b5ef",
+      "description": "Complete implementation of CR-MC-VENTURE-DRILLDOWN-V2 — 7-section SSOT-sourced detail drawer. Includes enhanced API endpoints (/api/ventures V2 + /api/ventures/:id V2), new venture-detail.js module, venture-detail.css, keyboard navigation (Esc), data freshness indicators, copy buttons, 5s TTL cache, 49 tests passing (37 unit + 12 integration), ESLint clean, all 4 phases delivered. Drawers open <1ms first load, <2ms cached. Commit: adb9b5ef",
       "severity": "info",
       "meta": {
         "venture_id": "leadscore-ai",
@@ -325,15 +584,15 @@
     {
       "timestamp": "2026-03-05T12:18:04.624Z",
       "agent": "Steve",
-      "action": "APPROVED: Codesmith Phase 2 \u2014 UI Components & Keyboard Nav",
-      "description": "Phase 1 API endpoints complete and tested. Proceeding with Phase 2: clickable stage tiles, drilldown drawer, search/filters, detail view, keyboard navigation (\u2190/\u2192/\u2191/\u2193/Enter/Esc), deep linking (#stage, #venture). Timeline: 1 week (by 2026-03-12 EOD).",
+      "action": "APPROVED: Codesmith Phase 2 — UI Components & Keyboard Nav",
+      "description": "Phase 1 API endpoints complete and tested. Proceeding with Phase 2: clickable stage tiles, drilldown drawer, search/filters, detail view, keyboard navigation (←/→/↑/↓/Enter/Esc), deep linking (#stage, #venture). Timeline: 1 week (by 2026-03-12 EOD).",
       "severity": "info",
       "source": "system"
     },
     {
       "timestamp": "2026-03-05T12:30:34.489Z",
       "agent": "Steve",
-      "action": "APPROVED: Codesmith Phase 3 \u2014 CR-MC-UI-1.2 Polish & Verification",
+      "action": "APPROVED: Codesmith Phase 3 — CR-MC-UI-1.2 Polish & Verification",
       "description": "Phase 1 (API) and Phase 2 (UI) complete. Proceeding with Phase 3: final polish, performance testing, verification report, rollback plan. Timeline: 1 week (by 2026-03-12 EOD).",
       "severity": "info",
       "source": "system"
@@ -358,7 +617,7 @@
       "timestamp": "2026-03-05T14:36:40.769Z",
       "agent": "Clawson",
       "action": "SYSTEM AMENDMENT: Cron Job Renamed for Operational Clarity",
-      "description": "Renamed: personal_inbox_maintenance \u2192 gmail_inbox_automation_loop. Schedule: Every 2 hours (7 AM-9 PM EST, runs at 7,9,11,13,15,17,19,21:00). Agent: personal-assistant. Functions: Gmail inbox automation for vettoristeve@gmail.com, sales@massdwell.com, team@atlanticlasersolutions.com. Governance: Operational query resolution rule + naming clarity amendment implemented.",
+      "description": "Renamed: personal_inbox_maintenance → gmail_inbox_automation_loop. Schedule: Every 2 hours (7 AM-9 PM EST, runs at 7,9,11,13,15,17,19,21:00). Agent: personal-assistant. Functions: Gmail inbox automation for vettoristeve@gmail.com, sales@massdwell.com, team@atlanticlasersolutions.com. Governance: Operational query resolution rule + naming clarity amendment implemented.",
       "severity": "info",
       "source": "system"
     },
@@ -429,8 +688,8 @@
     {
       "timestamp": "2026-03-05T16:23:36.851Z",
       "agent": "Clawson",
-      "action": "SEV-1 VERIFICATION COMPLETE \u2014 Gmail OAuth Bulletproof",
-      "description": "All 7 steps verified and tested. OAuth token healthy. Watchdog active (every 30 min). Failure detection proven (tested with simulated auth loss \u2014 CRITICAL alert fired correctly). Recovery path documented. Email cleanup will never fail silently. Report: /observability/SEV-1-VERIFICATION-REPORT.md",
+      "action": "SEV-1 VERIFICATION COMPLETE — Gmail OAuth Bulletproof",
+      "description": "All 7 steps verified and tested. OAuth token healthy. Watchdog active (every 30 min). Failure detection proven (tested with simulated auth loss — CRITICAL alert fired correctly). Recovery path documented. Email cleanup will never fail silently. Report: /observability/SEV-1-VERIFICATION-REPORT.md",
       "severity": "info",
       "source": "system"
     },
@@ -453,7 +712,7 @@
     {
       "timestamp": "2026-03-05T16:52:17.253Z",
       "agent": "Steve",
-      "action": "APPROVED: CR-MC-VENTURE-DRILLDOWN-V2 \u2014 Full Implementation",
+      "action": "APPROVED: CR-MC-VENTURE-DRILLDOWN-V2 — Full Implementation",
       "description": "Schema provided, engineering requirements defined, acceptance criteria set. Codesmith assigned to execute Phases 1-4 (2-3 weeks). ventures.json created. Implementation begins now: Phase 1 (API endpoints), Phase 2 (UI components), Phase 3 (Polish), Phase 4 (Testing). Auto-announces on completion.",
       "severity": "info",
       "source": "system"
@@ -461,12 +720,1724 @@
     {
       "timestamp": "2026-03-05T17:11:38.714Z",
       "agent": "Steve",
-      "action": "APPROVED: CR-MC-OPS-PANELS-UPGRADE \u2014 Full Implementation",
+      "action": "APPROVED: CR-MC-OPS-PANELS-UPGRADE — Full Implementation",
       "description": "Upgrade 5 Mission Control operational panels: Agent Activity (live timeline, filters, search), Active Work (real workstreams table), Blocked Work (blocker console with SLA), Workstream Flow (stage distribution), System Status (agent health monitor). All SSOT-sourced, fail-loud, keyboard-friendly. Codesmith assigned to execute Phases 1-4 (3-4 weeks). Auto-announces on completion.",
       "severity": "info",
       "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T17:38:09.327Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T17:45:18.755Z",
+      "agent": "Steve",
+      "action": "APPROVED: CR-MC-PALANTIR-OPERATOR-LOOPS — Strategic System Upgrade",
+      "description": "Full architectural redesign: SSOT enforcement (agents_runtime.json), Palantir relationship graph (venture_relationships.json), command center capabilities (pause/kill/advance/spawn), intelligence layer (system_insights.json), engagement loops (momentum, discovery, impact tracker). 4-6 weeks, 2 FTE. Codesmith assigned. SSOT files created. Phases: 1-Foundation, 2-Graph+Commands, 3-Intelligence, 4-Loops, 5-Polish+Validation.",
+      "severity": "critical",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T19:38:09.438Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T21:38:09.586Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.631Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test Venture Alpha",
+      "description": "New venture \"Test Venture Alpha\" (test-venture-alpha) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-venture-alpha",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.633Z",
+      "agent": "codesmith",
+      "action": "Created venture: Dup Test",
+      "description": "New venture \"Dup Test\" (dup-test) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "dup-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.634Z",
+      "agent": "codesmith",
+      "action": "Created venture: Gate Test Bare",
+      "description": "New venture \"Gate Test Bare\" (gate-test-bare) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "gate-test-bare",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.635Z",
+      "agent": "codesmith",
+      "action": "Created venture: Killable",
+      "description": "New venture \"Killable\" (killable) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.637Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Killable (reason: No market fit)",
+      "description": "Venture \"Killable\" killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "reason": "No market fit",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.637Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":1250}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 1250
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.638Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture One",
+      "description": "New venture \"Venture One\" (venture-one) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.639Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture Two",
+      "description": "New venture \"Venture Two\" (venture-two) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-two",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.639Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Venture One (reason: Test kill)",
+      "description": "Venture \"Venture One\" killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "reason": "Test kill",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.640Z",
+      "agent": "codesmith",
+      "action": "Created venture: Lifecycle Venture",
+      "description": "New venture \"Lifecycle Venture\" (lifecycle-venture) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.641Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: OPPORTUNITY → INVESTIGATION",
+      "description": "Venture \"Lifecycle Venture\" advanced from opportunity to investigation. Gate: moonshot.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "opportunity",
+        "to_stage": "investigation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.642Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: INVESTIGATION → APPROVAL",
+      "description": "Venture \"Lifecycle Venture\" advanced from investigation to approval. Gate: clawson.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "investigation",
+        "to_stage": "approval"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.643Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: APPROVAL → IMPLEMENTATION",
+      "description": "Venture \"Lifecycle Venture\" advanced from approval to implementation. Gate: steve.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "approval",
+        "to_stage": "implementation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:27.644Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: IMPLEMENTATION → LAUNCH",
+      "description": "Venture \"Lifecycle Venture\" advanced from implementation to launch. Gate: codesmith.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "implementation",
+        "to_stage": "launch"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.956Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test Venture Alpha",
+      "description": "New venture \"Test Venture Alpha\" (test-venture-alpha) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-venture-alpha",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.957Z",
+      "agent": "codesmith",
+      "action": "Created venture: Dup Test",
+      "description": "New venture \"Dup Test\" (dup-test) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "dup-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.959Z",
+      "agent": "codesmith",
+      "action": "Created venture: Gate Test Bare",
+      "description": "New venture \"Gate Test Bare\" (gate-test-bare) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "gate-test-bare",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.960Z",
+      "agent": "codesmith",
+      "action": "Created venture: Killable",
+      "description": "New venture \"Killable\" (killable) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.960Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Killable (reason: No market fit)",
+      "description": "Venture \"Killable\" killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "reason": "No market fit",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.961Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":1250}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 1250
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.962Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture One",
+      "description": "New venture \"Venture One\" (venture-one) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.963Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture Two",
+      "description": "New venture \"Venture Two\" (venture-two) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-two",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.963Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Venture One (reason: Test kill)",
+      "description": "Venture \"Venture One\" killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "reason": "Test kill",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.964Z",
+      "agent": "codesmith",
+      "action": "Created venture: Lifecycle Venture",
+      "description": "New venture \"Lifecycle Venture\" (lifecycle-venture) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.965Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: OPPORTUNITY → INVESTIGATION",
+      "description": "Venture \"Lifecycle Venture\" advanced from opportunity to investigation. Gate: moonshot.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "opportunity",
+        "to_stage": "investigation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.965Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: INVESTIGATION → APPROVAL",
+      "description": "Venture \"Lifecycle Venture\" advanced from investigation to approval. Gate: clawson.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "investigation",
+        "to_stage": "approval"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.966Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: APPROVAL → IMPLEMENTATION",
+      "description": "Venture \"Lifecycle Venture\" advanced from approval to implementation. Gate: steve.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "approval",
+        "to_stage": "implementation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:20:41.966Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: IMPLEMENTATION → LAUNCH",
+      "description": "Venture \"Lifecycle Venture\" advanced from implementation to launch. Gate: codesmith.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "implementation",
+        "to_stage": "launch"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.268Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test Venture Alpha",
+      "description": "New venture \"Test Venture Alpha\" (test-venture-alpha) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-venture-alpha",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.269Z",
+      "agent": "codesmith",
+      "action": "Created venture: Dup Test",
+      "description": "New venture \"Dup Test\" (dup-test) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "dup-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.271Z",
+      "agent": "codesmith",
+      "action": "Created venture: Gate Test Bare",
+      "description": "New venture \"Gate Test Bare\" (gate-test-bare) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "gate-test-bare",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.272Z",
+      "agent": "codesmith",
+      "action": "Created venture: Killable",
+      "description": "New venture \"Killable\" (killable) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.273Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Killable (reason: No market fit)",
+      "description": "Venture \"Killable\" killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "reason": "No market fit",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.273Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":1250}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 1250
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.274Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture One",
+      "description": "New venture \"Venture One\" (venture-one) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.275Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture Two",
+      "description": "New venture \"Venture Two\" (venture-two) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-two",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.275Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Venture One (reason: Test kill)",
+      "description": "Venture \"Venture One\" killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "reason": "Test kill",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.276Z",
+      "agent": "codesmith",
+      "action": "Created venture: Lifecycle Venture",
+      "description": "New venture \"Lifecycle Venture\" (lifecycle-venture) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.277Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: OPPORTUNITY → INVESTIGATION",
+      "description": "Venture \"Lifecycle Venture\" advanced from opportunity to investigation. Gate: moonshot.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "opportunity",
+        "to_stage": "investigation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.277Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: INVESTIGATION → APPROVAL",
+      "description": "Venture \"Lifecycle Venture\" advanced from investigation to approval. Gate: clawson.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "investigation",
+        "to_stage": "approval"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.278Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: APPROVAL → IMPLEMENTATION",
+      "description": "Venture \"Lifecycle Venture\" advanced from approval to implementation. Gate: steve.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "approval",
+        "to_stage": "implementation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:00.279Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: IMPLEMENTATION → LAUNCH",
+      "description": "Venture \"Lifecycle Venture\" advanced from implementation to launch. Gate: codesmith.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "implementation",
+        "to_stage": "launch"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.761Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test Venture Alpha",
+      "description": "New venture \"Test Venture Alpha\" (test-venture-alpha) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-venture-alpha",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.763Z",
+      "agent": "codesmith",
+      "action": "Created venture: Dup Test",
+      "description": "New venture \"Dup Test\" (dup-test) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "dup-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.764Z",
+      "agent": "codesmith",
+      "action": "Created venture: Gate Test Bare",
+      "description": "New venture \"Gate Test Bare\" (gate-test-bare) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "gate-test-bare",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.766Z",
+      "agent": "codesmith",
+      "action": "Created venture: Killable",
+      "description": "New venture \"Killable\" (killable) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.766Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Killable (reason: No market fit)",
+      "description": "Venture \"Killable\" killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "reason": "No market fit",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.768Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":1250}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 1250
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.768Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture One",
+      "description": "New venture \"Venture One\" (venture-one) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.769Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture Two",
+      "description": "New venture \"Venture Two\" (venture-two) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-two",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.769Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Venture One (reason: Test kill)",
+      "description": "Venture \"Venture One\" killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "reason": "Test kill",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.771Z",
+      "agent": "codesmith",
+      "action": "Created venture: Lifecycle Venture",
+      "description": "New venture \"Lifecycle Venture\" (lifecycle-venture) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.772Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: OPPORTUNITY → INVESTIGATION",
+      "description": "Venture \"Lifecycle Venture\" advanced from opportunity to investigation. Gate: moonshot.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "opportunity",
+        "to_stage": "investigation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.772Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: INVESTIGATION → APPROVAL",
+      "description": "Venture \"Lifecycle Venture\" advanced from investigation to approval. Gate: clawson.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "investigation",
+        "to_stage": "approval"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.773Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: APPROVAL → IMPLEMENTATION",
+      "description": "Venture \"Lifecycle Venture\" advanced from approval to implementation. Gate: steve.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "approval",
+        "to_stage": "implementation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.773Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: IMPLEMENTATION → LAUNCH",
+      "description": "Venture \"Lifecycle Venture\" advanced from implementation to launch. Gate: codesmith.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "implementation",
+        "to_stage": "launch"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.789Z",
+      "agent": "codesmith",
+      "action": "Created venture: HTTP Test Venture",
+      "description": "New venture \"HTTP Test Venture\" (http-test-venture) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "http-test-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:26.791Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":500}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 500
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:36.718Z",
+      "agent": "codesmith",
+      "action": "Created venture: Proof Test",
+      "description": "New venture \"Proof Test\" (proof-test) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "proof-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:36.726Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Proof Test (reason: E2E proof test complete)",
+      "description": "Venture \"Proof Test\" killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "proof-test",
+        "reason": "E2E proof test complete",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:22:53.000Z",
+      "agent": "codesmith",
+      "action": "IMPLEMENTED: VentureOS v1 complete",
+      "description": "Implemented VentureOS v1: Venture governance system with 5-stage pipeline, stage gates, kill rules, and Mission Control integration. 8 endpoints live. 44 tests passing. SSOT: 4 JSON files in /data/ventures/. Ready for portfolio governance.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "cr": "CR-VENTUREOS-V1",
+        "endpoints": 8,
+        "tests_passing": 44,
+        "phases_complete": 5,
+        "ssot_files": [
+          "venture_scoreboard.json",
+          "venture_pipeline.json",
+          "venture_work_links.json",
+          "ventures.json"
+        ],
+        "stages": [
+          "opportunity",
+          "investigation",
+          "approval",
+          "implementation",
+          "launch",
+          "killed"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:23:10.781Z",
+      "agent": "codesmith",
+      "action": "Created venture: Endpoint Test",
+      "description": "New venture \"Endpoint Test\" (endpoint-test) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "endpoint-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:23:10.838Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Endpoint Test (reason: endpoint test complete)",
+      "description": "Venture \"Endpoint Test\" killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "endpoint-test",
+        "reason": "endpoint test complete",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:23:10.856Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":0}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:23:16.922Z",
+      "agent": "codesmith",
+      "action": "Created venture: HTTP Test Venture",
+      "description": "New venture \"HTTP Test Venture\" (http-test-venture) created in OPPORTUNITY stage.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "http-test-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:23:16.924Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":500}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 500
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.429Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test Venture Alpha",
+      "description": "\"Test Venture Alpha\" (test-venture-alpha) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-venture-alpha",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.431Z",
+      "agent": "codesmith",
+      "action": "Created venture: Dup Test",
+      "description": "\"Dup Test\" (dup-test) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "dup-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.432Z",
+      "agent": "codesmith",
+      "action": "Created venture: Gate Test Bare",
+      "description": "\"Gate Test Bare\" (gate-test-bare) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "gate-test-bare",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.433Z",
+      "agent": "codesmith",
+      "action": "Created venture: Killable",
+      "description": "\"Killable\" (killable) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.434Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Killable (reason: No market fit)",
+      "description": "Killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "reason": "No market fit",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.435Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":1250}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 1250
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.437Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture One",
+      "description": "\"Venture One\" (venture-one) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.437Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture Two",
+      "description": "\"Venture Two\" (venture-two) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-two",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.438Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Venture One (reason: Test kill)",
+      "description": "Killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "reason": "Test kill",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.439Z",
+      "agent": "codesmith",
+      "action": "Created venture: Lifecycle Venture",
+      "description": "\"Lifecycle Venture\" (lifecycle-venture) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.440Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: OPPORTUNITY → INVESTIGATION",
+      "description": "Venture \"Lifecycle Venture\" from opportunity to investigation.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "opportunity",
+        "to_stage": "investigation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.441Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: INVESTIGATION → APPROVAL",
+      "description": "Venture \"Lifecycle Venture\" from investigation to approval.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "investigation",
+        "to_stage": "approval"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.442Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: APPROVAL → IMPLEMENTATION",
+      "description": "Venture \"Lifecycle Venture\" from approval to implementation.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "approval",
+        "to_stage": "implementation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:51.442Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: IMPLEMENTATION → LAUNCH",
+      "description": "Venture \"Lifecycle Venture\" from implementation to launch.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "implementation",
+        "to_stage": "launch"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.561Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test Venture Alpha",
+      "description": "\"Test Venture Alpha\" (test-venture-alpha) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-venture-alpha",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.562Z",
+      "agent": "codesmith",
+      "action": "Created venture: Dup Test",
+      "description": "\"Dup Test\" (dup-test) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "dup-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.564Z",
+      "agent": "codesmith",
+      "action": "Created venture: Gate Test Bare",
+      "description": "\"Gate Test Bare\" (gate-test-bare) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "gate-test-bare",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.565Z",
+      "agent": "codesmith",
+      "action": "Created venture: Killable",
+      "description": "\"Killable\" (killable) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.566Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Killable (reason: No market fit)",
+      "description": "Killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "reason": "No market fit",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.567Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":1250}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 1250
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.568Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture One",
+      "description": "\"Venture One\" (venture-one) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.569Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture Two",
+      "description": "\"Venture Two\" (venture-two) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-two",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.570Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Venture One (reason: Test kill)",
+      "description": "Killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "reason": "Test kill",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.571Z",
+      "agent": "codesmith",
+      "action": "Created venture: Lifecycle Venture",
+      "description": "\"Lifecycle Venture\" (lifecycle-venture) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.572Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: OPPORTUNITY → INVESTIGATION",
+      "description": "Venture \"Lifecycle Venture\" from opportunity to investigation.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "opportunity",
+        "to_stage": "investigation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.572Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: INVESTIGATION → APPROVAL",
+      "description": "Venture \"Lifecycle Venture\" from investigation to approval.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "investigation",
+        "to_stage": "approval"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.573Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: APPROVAL → IMPLEMENTATION",
+      "description": "Venture \"Lifecycle Venture\" from approval to implementation.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "approval",
+        "to_stage": "implementation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.574Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: IMPLEMENTATION → LAUNCH",
+      "description": "Venture \"Lifecycle Venture\" from implementation to launch.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "implementation",
+        "to_stage": "launch"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.588Z",
+      "agent": "codesmith",
+      "action": "Created venture: HTTP Test Venture",
+      "description": "\"HTTP Test Venture\" (http-test-venture) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "http-test-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:25:56.590Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":500}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 500
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.219Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test Venture Alpha",
+      "description": "\"Test Venture Alpha\" (test-venture-alpha) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-venture-alpha",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.221Z",
+      "agent": "codesmith",
+      "action": "Created venture: Dup Test",
+      "description": "\"Dup Test\" (dup-test) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "dup-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.223Z",
+      "agent": "codesmith",
+      "action": "Created venture: Gate Test Bare",
+      "description": "\"Gate Test Bare\" (gate-test-bare) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "gate-test-bare",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.224Z",
+      "agent": "codesmith",
+      "action": "Created venture: Killable",
+      "description": "\"Killable\" (killable) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.225Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Killable (reason: No market fit)",
+      "description": "Killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "reason": "No market fit",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.226Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":1250}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 1250
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.227Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture One",
+      "description": "\"Venture One\" (venture-one) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.228Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture Two",
+      "description": "\"Venture Two\" (venture-two) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-two",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.229Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Venture One (reason: Test kill)",
+      "description": "Killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "reason": "Test kill",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.230Z",
+      "agent": "codesmith",
+      "action": "Created venture: Lifecycle Venture",
+      "description": "\"Lifecycle Venture\" (lifecycle-venture) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.231Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: OPPORTUNITY → INVESTIGATION",
+      "description": "Venture \"Lifecycle Venture\" from opportunity to investigation.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "opportunity",
+        "to_stage": "investigation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.232Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: INVESTIGATION → APPROVAL",
+      "description": "Venture \"Lifecycle Venture\" from investigation to approval.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "investigation",
+        "to_stage": "approval"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.233Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: APPROVAL → IMPLEMENTATION",
+      "description": "Venture \"Lifecycle Venture\" from approval to implementation.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "approval",
+        "to_stage": "implementation"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.234Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: IMPLEMENTATION → LAUNCH",
+      "description": "Venture \"Lifecycle Venture\" from implementation to launch.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "implementation",
+        "to_stage": "launch"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.245Z",
+      "agent": "codesmith",
+      "action": "Created venture: HTTP Test Venture",
+      "description": "\"HTTP Test Venture\" (http-test-venture) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "http-test-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:26:08.248Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":500}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 500
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:31:50.369Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test API Venture",
+      "description": "\"Test API Venture\" (test-api-venture) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-api-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:31:50.491Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: Test API Venture",
+      "description": "Metrics updated for \"Test API Venture\": {}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-api-venture",
+        "metrics": {}
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:31:50.548Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Test API Venture (reason: Test kill - API endpoint test)",
+      "description": "Killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-api-venture",
+        "reason": "Test kill - API endpoint test",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:31:58.364Z",
+      "agent": "codesmith",
+      "action": "Created venture: VentureOS Test",
+      "description": "\"VentureOS Test\" (ventureos-test) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "ventureos-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:38:09.708Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.202Z",
+      "agent": "codesmith",
+      "action": "Created venture: Test Venture Alpha",
+      "description": "\"Test Venture Alpha\" (test-venture-alpha) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "test-venture-alpha",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.203Z",
+      "agent": "codesmith",
+      "action": "Created venture: Dup Test",
+      "description": "\"Dup Test\" (dup-test) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "dup-test",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.205Z",
+      "agent": "codesmith",
+      "action": "Created venture: Gate Test Bare",
+      "description": "\"Gate Test Bare\" (gate-test-bare) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "gate-test-bare",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.206Z",
+      "agent": "codesmith",
+      "action": "Created venture: Killable",
+      "description": "\"Killable\" (killable) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.207Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Killable (reason: No market fit)",
+      "description": "Killed by clawson. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "killable",
+        "reason": "No market fit",
+        "decision_maker": "clawson",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.208Z",
+      "agent": "codesmith",
+      "action": "Updated metrics: LeadScore.ai",
+      "description": "Metrics updated for \"LeadScore.ai\": {\"mrr_current\":1250}",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "leadscore-ai",
+        "metrics": {
+          "mrr_current": 1250
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.210Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture One",
+      "description": "\"Venture One\" (venture-one) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.211Z",
+      "agent": "codesmith",
+      "action": "Created venture: Venture Two",
+      "description": "\"Venture Two\" (venture-two) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-two",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.211Z",
+      "agent": "codesmith",
+      "action": "Killed venture: Venture One (reason: Test kill)",
+      "description": "Killed by steve. Was in: opportunity.",
+      "severity": "critical",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "venture-one",
+        "reason": "Test kill",
+        "decision_maker": "steve",
+        "prev_stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.212Z",
+      "agent": "codesmith",
+      "action": "Created venture: Lifecycle Venture",
+      "description": "\"Lifecycle Venture\" (lifecycle-venture) created in OPPORTUNITY.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "stage": "opportunity"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.213Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: OPPORTUNITY → INVESTIGATION",
+      "description": "Venture \"Lifecycle Venture\" from opportunity to investigation.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "opportunity",
+        "to_stage": "investigation"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.214Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: INVESTIGATION → APPROVAL",
+      "description": "Venture \"Lifecycle Venture\" from investigation to approval.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "investigation",
+        "to_stage": "approval"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.215Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: APPROVAL → IMPLEMENTATION",
+      "description": "Venture \"Lifecycle Venture\" from approval to implementation.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "approval",
+        "to_stage": "implementation"
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.216Z",
+      "agent": "codesmith",
+      "action": "Advanced Lifecycle Venture: IMPLEMENTATION → LAUNCH",
+      "description": "Venture \"Lifecycle Venture\" from implementation to launch.",
+      "severity": "info",
+      "source": "ventureos",
+      "meta": {
+        "venture_id": "lifecycle-venture",
+        "from_stage": "implementation",
+        "to_stage": "launch"
+      }
     }
   ],
-  "lastUpdated": "2026-03-05T17:11:38.714Z",
-  "total": 5
+  "lastUpdated": "2026-03-06T00:40:49.606Z",
+  "total": 199
 }

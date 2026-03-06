@@ -1,0 +1,180 @@
+{
+  "panels": {
+    "active-work": {
+      "title": "⚡ Active Work",
+      "description": "All active workstreams currently in progress, with real-time status and owning agent.",
+      "watch_for": [
+        "Workstreams with no update in >8h (stalled)",
+        "Red blocker indicators on any workstream",
+        "Agent overload (1 agent owning too many)"
+      ],
+      "actions": [
+        "Expand a workstream to see task details",
+        "Assign a resource to an unowned workstream",
+        "Clear a blocker to restore velocity"
+      ],
+      "data_sources": ["workstreams.json", "agents_runtime.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "blocked-work": {
+      "title": "🚧 Blocked Work",
+      "description": "All workstreams and tasks currently blocked, with SLA countdown timers and severity levels.",
+      "watch_for": [
+        "SLA violations (timer turns red)",
+        "Critical severity blockers — these kill velocity",
+        "Blockers older than 24h with no owner"
+      ],
+      "actions": [
+        "Assign a resolver agent to the blocker",
+        "Escalate to founder if SLA at risk",
+        "Manually mark as unblocked when resolved"
+      ],
+      "data_sources": ["blocked_work.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "operator-guidance": {
+      "title": "🎯 Operator Guidance",
+      "description": "AI-generated action recommendations based on live SSOT data analysis. Rules-engine driven, no hallucinations.",
+      "watch_for": [
+        "HIGH priority items — these need immediate attention",
+        "Stalled work signals with no recent activity",
+        "Idle agents that could be reassigned"
+      ],
+      "actions": [
+        "Click 'Detail' on any item to drill into the issue",
+        "Act on HIGH priority items first",
+        "Use guidance to batch decisions efficiently"
+      ],
+      "data_sources": ["workstreams.json", "agents_runtime.json", "blocked_work.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "founder-decisions": {
+      "title": "🧭 Founder Decisions",
+      "description": "Strategic recommendations for venture advancement and resource allocation, requiring founder judgment.",
+      "watch_for": [
+        "High-confidence recommendations (>80%) — act on these",
+        "Ventures ready to advance to next gate",
+        "Kill recommendations — review carefully before acting"
+      ],
+      "actions": [
+        "Advance a venture to the next pipeline stage",
+        "Rebalance agent assignments across ventures",
+        "Trigger a kill review for underperforming ventures"
+      ],
+      "data_sources": ["ventures.json", "agents_runtime.json", "workstreams.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "insights": {
+      "title": "🧠 System Insights",
+      "description": "Auto-computed patterns and anomalies detected across all SSOT data sources. Surfaces trends before they become problems.",
+      "watch_for": [
+        "Velocity drops — completions trending down",
+        "Repeated blocker patterns on same venture",
+        "Agent health degradation signals"
+      ],
+      "actions": [
+        "Click an insight to drill into the affected area",
+        "Dismiss resolved insights to keep the list clean",
+        "Use insights to preempt blockers before they occur"
+      ],
+      "data_sources": ["system_insights.json", "workstreams.json", "agents_runtime.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "opportunity-discovery": {
+      "title": "🔭 Opportunity Discovery",
+      "description": "New venture and market signals detected by Moonshot agent. Shows incoming opportunity pipeline.",
+      "watch_for": [
+        "High-signal opportunities with strong market evidence",
+        "Opportunities matching existing team capabilities",
+        "Time-sensitive market windows closing"
+      ],
+      "actions": [
+        "Qualify a strong signal into a new venture",
+        "Assign Moonshot to deep-dive a specific opportunity",
+        "Dismiss low-quality signals to keep list focused"
+      ],
+      "data_sources": ["agent_activity.json", "ventures.json"],
+      "refresh_interval": "30 seconds"
+    },
+    "momentum": {
+      "title": "📈 Momentum",
+      "description": "Weekly velocity trends — completions, launches, blockers resolved, and growth signals.",
+      "watch_for": [
+        "Declining weekly completions (velocity drop)",
+        "Growth signals: high launch rate, rising completions",
+        "Blocker resolution rate falling behind creation rate"
+      ],
+      "actions": [
+        "If velocity down: identify bottleneck in Blocked Work panel",
+        "If momentum strong: double down on top venture",
+        "Share weekly momentum report with stakeholders"
+      ],
+      "data_sources": ["workstreams.json", "agent_activity.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "operator-impact": {
+      "title": "🎯 Your Impact",
+      "description": "Your personal operator metrics — decisions made, blockers cleared, ventures advanced, and velocity contributed.",
+      "watch_for": [
+        "Decision backlog growing (>5 pending decisions)",
+        "Low blocker resolution rate",
+        "Ventures stalled without operator input"
+      ],
+      "actions": [
+        "Clear your decision queue in the Founder Decisions panel",
+        "Manually unblock items awaiting your approval",
+        "Review ventures awaiting gate advancement"
+      ],
+      "data_sources": ["decision_actions_log.json", "blocked_work.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "agent-activity": {
+      "title": "🤖 Agent Activity",
+      "description": "Real-time feed of agent actions, task completions, errors, and status changes across all active agents.",
+      "watch_for": [
+        "Agent errors (red entries) — may need restart",
+        "Idle agents with no activity for >2h",
+        "Unusual activity spikes — could be loops or retries"
+      ],
+      "actions": [
+        "Click an entry to see full task detail",
+        "Reassign idle agents to active workstreams",
+        "Investigate and resolve error patterns"
+      ],
+      "data_sources": ["agent_activity.json", "agents_runtime.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "workstream-flow": {
+      "title": "🌊 Workstream Flow",
+      "description": "Pipeline stage distribution of all workstreams — from backlog through to completed. Shows flow health.",
+      "watch_for": [
+        "Backlog pile-up (too many in early stages)",
+        "In-progress bottleneck (too many stuck mid-flow)",
+        "Zero completions this week"
+      ],
+      "actions": [
+        "Prioritize backlog items with highest venture impact",
+        "Break down large in-progress items blocking the pipe",
+        "Celebrate completions and update venture metrics"
+      ],
+      "data_sources": ["workstreams.json"],
+      "refresh_interval": "10 seconds"
+    },
+    "venture-pipeline": {
+      "title": "🚀 Venture Pipeline",
+      "description": "Full venture portfolio across all 8 VentureOS stages — from Idea to Live. Includes relationship graph.",
+      "watch_for": [
+        "Ventures at kill thresholds (no progress)",
+        "Ventures ready to advance (gate criteria met)",
+        "Clustering in early stages (too many ideas, not enough MVPs)"
+      ],
+      "actions": [
+        "Click a venture to view full detail and advance/kill",
+        "Use gate advancement to push strong ventures forward",
+        "Review relationship graph for hidden dependencies"
+      ],
+      "data_sources": ["ventures.json", "venture_relationships.json", "workstreams.json"],
+      "refresh_interval": "30 seconds"
+    }
+  }
+}

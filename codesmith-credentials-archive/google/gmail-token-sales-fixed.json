@@ -1,0 +1,7 @@
+{
+  "access_token": "EXPIRED_PLACEHOLDER",
+  "refresh_token": "NEEDS_SETUP", 
+  "scope": "https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send",
+  "token_type": "Bearer",
+  "expiry_date": 1
+}

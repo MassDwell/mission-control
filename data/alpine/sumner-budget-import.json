@@ -1,0 +1,71 @@
+{
+  "project": "191 Sumner Street",
+  "units": 16,
+  "gross_sf": 35020,
+  "sellable_sf": 26300,
+  "description": "16-unit residential development (14 market + 2 affordable)",
+  "budget_items": [
+    {
+      "category": "Site Acquisition",
+      "budgeted": 6500000,
+      "actual": 6500000,
+      "notes": "Land purchase cost",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Utilities & Site Work",
+      "budgeted": 75000,
+      "actual": 75000,
+      "notes": "Sewer, water, electric connections",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Construction - Units",
+      "budgeted": 12937125,
+      "actual": 12937125,
+      "notes": "Building construction, $375/SF",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Construction Loan Interest",
+      "budgeted": 1344000,
+      "actual": 1344000,
+      "notes": "Financing costs during construction phase",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Hard Cost Contingency",
+      "budgeted": 646856,
+      "actual": 646856,
+      "notes": "5% contingency on hard costs",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Soft Cost Contingency",
+      "budgeted": 27775,
+      "actual": 27775,
+      "notes": "5% contingency on soft costs",
+      "section": "HARD COSTS"
+    },
+    {
+      "category": "Soft Costs (Total)",
+      "budgeted": 3311007,
+      "actual": 3311007,
+      "notes": "Architecture, legal, permits, marketing, financing fees",
+      "section": "SOFT COSTS"
+    }
+  ],
+  "totals": {
+    "hard_costs": 21530756,
+    "soft_costs": 3311007,
+    "total_development": 24841763
+  },
+  "scaling_reference": {
+    "beacon_units": 34,
+    "beacon_gross_sf": 74424,
+    "sumner_units": 16,
+    "sumner_gross_sf": 35020,
+    "scaling_factor": 0.47,
+    "note": "Scaled Beacon total = $23.7M, Actual Sumner = $24.8M (variance +4.7%, excellent match)"
+  }
+}

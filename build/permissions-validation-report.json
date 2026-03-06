@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-03-04T19:35:35Z",
+  "status": "passed",
+  "errors": 0,
+  "checks": {
+    "schema_valid": "✅ PASS",
+    "enabled_agents_have_profiles": "✅ PASS",
+    "disabled_agents_have_profiles": "✅ PASS",
+    "clawson_has_full_permissions": "✅ PASS",
+    "only_clawson_has_system_scope": "✅ PASS",
+    "disabled_agents_within_limits": "✅ PASS"
+  }
+}

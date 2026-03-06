@@ -1,0 +1,19 @@
+{
+  "schema_version": "ventureos-1.0",
+  "lastUpdated": "2026-03-05T23:31:58.363Z",
+  "description": "Venture → workstream mapping. Used for filtering work by venture.",
+  "links": [
+    {
+      "venture_id": "leadscore-ai",
+      "workstream_ids": [
+        "backend-api-scaffolding",
+        "worker-job-processor",
+        "web-dashboard-alpha"
+      ]
+    },
+    {
+      "venture_id": "ventureos-test",
+      "workstream_ids": []
+    }
+  ]
+}

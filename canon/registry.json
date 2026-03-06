@@ -1,0 +1,120 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2026-03-04T13:55:00Z",
+  "description": "Canonical agent registry — ONLY place to declare agents, routes, permissions",
+  "schema_notes": "enabled:true/false per agent. compile step reads this and canon/agents/* to generate config/agents-compiled.json",
+  
+  "agents": [
+    {
+      "id": "main",
+      "name": "Clawson",
+      "role": "Chief of Staff / Master Agent / COO",
+      "enabled": true,
+      "type": "system",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "scope": "full",
+      "permissions": ["read", "write", "execute", "approve", "delete"],
+      "permission_profile": "clawson",
+      "access_scopes": ["email", "crm", "code", "calendar", "financial", "content", "personal", "system"],
+      "integrations": ["google_workspace", "mission_control"],
+      "created": "2026-03-04",
+      "approved": true,
+      "approved_by": "System",
+      "approved_date": "2026-03-04",
+      "notes": "Primary agent, always enabled, owns system governance",
+      "restrictions": "NONE - Full autonomy"
+    }
+  ],
+
+  "disabled_agents_registry": [
+    {
+      "id": "personal-assistant",
+      "name": "Personal Assistant",
+      "role": "Steve's executive personal assistant",
+      "enabled": true,
+      "type": "specialist",
+      "config_path": "canon/agents/personal-assistant/",
+      "scope": "personal",
+      "permission_profile": "personal_assistant",
+      "access_scopes": ["personal", "calendar"],
+      "permissions": ["read", "write"],
+      "integrations": ["google_workspace"],
+      "created": "2026-03-04",
+      "activated": "2026-03-04T14:01:00Z",
+      "approved": true,
+      "approved_by": "Steve Vettori",
+      "approved_date": "2026-03-04",
+      "status": "active",
+      "routing": "internal_worker_only",
+      "sessionKey": null,
+      "user_facing": false,
+      "notes": "Internal worker agent. Receives delegated tasks from Clawson only. No direct Telegram routing. Sends briefings to Clawson, not Steve.",
+      "restrictions": "Cannot: access business email, access CRM, execute code, access financial data, modify system config, has NO direct user routing",
+      "escalation_rules": "Send all briefings and reports to Clawson (main agent), not Steve"
+    },
+    {
+      "id": "codesmith",
+      "name": "Codesmith",
+      "role": "Engineering / Automations Lead for OpenClaw",
+      "enabled": true,
+      "type": "specialist",
+      "config_path": "canon/agents/codesmith/",
+      "scope": "engineering",
+      "permission_profile": "codesmith",
+      "access_scopes": ["code"],
+      "permissions": ["read", "write", "execute"],
+      "integrations": ["mission_control"],
+      "created": "2026-03-04",
+      "activated": "2026-03-04T14:32:00Z",
+      "approved": true,
+      "approved_by": "Steve Vettori",
+      "approved_date": "2026-03-04",
+      "status": "active",
+      "routing": "internal_worker_only",
+      "sessionKey": null,
+      "user_facing": false,
+      "notes": "World-class engineering agent. Deploy pipeline, integrations, scripts, reliability. Governed by Change Request workflow. Strict quality gates. All MED/HIGH changes require Clawson approval. Internal worker only (no Telegram user-facing).",
+      "restrictions": "Cannot: create/modify Telegram routes, modify /generated directly, access Gmail/CRM/financial, delete canon files without approval, skip quality gates, proceed without change request",
+      "escalation_rules": "Clawson approval required for: MED/HIGH risk changes, registry schema changes, security changes, production code"
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot",
+      "role": "Venture Studio / R&D Strategist",
+      "enabled": true,
+      "type": "specialist",
+      "config_path": "canon/agents/moonshot/",
+      "scope": "research",
+      "permission_profile": "moonshot",
+      "access_scopes": ["code"],
+      "permissions": ["read", "write"],
+      "integrations": ["mission_control"],
+      "created": "2026-03-04",
+      "activated": "2026-03-04T14:37:00Z",
+      "approved": true,
+      "approved_by": "Steve Vettori",
+      "approved_date": "2026-03-04",
+      "status": "active",
+      "routing": "internal_worker_only",
+      "sessionKey": null,
+      "user_facing": false,
+      "notes": "Venture studio agent for idea generation, validation, and product specification. Works in discovery cycles. Proposes Change Requests to Clawson for implementation by Codesmith. Never executes code or deploys.",
+      "restrictions": "Cannot: execute code, deploy, modify system config, modify routes, modify registry, modify cron, access email/CRM/financial"
+    }
+  ],
+
+  "governance": {
+    "single_agent_lock": true,
+    "only_enabled_compile": true,
+    "drift_detection": true,
+    "quarantine_unauthorized": true,
+    "rollback_on_conflict": true
+  },
+
+  "compile_rules": {
+    "read_from": ["canon/registry.json", "canon/agents/*/"],
+    "generate": ["config/agents-compiled.json", "config/routes.json"],
+    "include_only": "agents where enabled=true",
+    "skip_disabled": true
+  }
+}

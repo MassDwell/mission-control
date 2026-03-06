@@ -1,0 +1,25 @@
+Subject: Re: 4x faster welding — quick question for {{company_name}}
+
+Hi {{first_name}},
+
+Really glad you're open to learning more.
+
+Before I send over specific information, let me ask a few quick questions so I'm not wasting your time:
+
+1. **Current welding:** What's your primary method right now? (Arc, TIG, MIG, stainless?)
+
+2. **Volume/Timeline:** Are you actively looking to upgrade in the next 3-6 months, or more exploratory?
+
+3. **Main pain point:** Is it speed, quality consistency, labor costs, or something else?
+
+4. **Budget range:** Are you thinking $35K-$75K (MA1-35/45), $75K-$150K (MA1-65), or open to custom configurations?
+
+5. **Decision maker:** Are you the person who'd make this call, or are there others involved?
+
+Once I know those, I can send you specific ROI numbers from shops like yours, a demo video, or even schedule a brief walk-through.
+
+What's your take on those?
+
+Best,
+{{sender_name}}
+Atlantic Laser Solutions

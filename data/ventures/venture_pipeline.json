@@ -1,0 +1,22 @@
+{
+  "schema_version": "ventureos-1.0",
+  "lastUpdated": "2026-03-06T00:09:06.200Z",
+  "description": "Stage distribution and portfolio-level metrics. Updated on every stage change.",
+  "stages": {
+    "opportunity": 1,
+    "investigation": 0,
+    "approval": 0,
+    "implementation": 1,
+    "launch": 0,
+    "killed": 1
+  },
+  "total": 3,
+  "active": 2,
+  "success_rate": 0,
+  "metrics": {
+    "avg_time_to_launch_weeks": null,
+    "kill_rate": 1,
+    "portfolio_mrr": 0,
+    "portfolio_mrr_target": 5000
+  }
+}

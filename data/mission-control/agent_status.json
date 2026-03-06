@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-03-05T23:38:09.708Z",
+  "agents": [
+    {
+      "id": "main",
+      "name": "Clawson",
+      "status": "online",
+      "last_heartbeat": "2026-03-05T23:38:09.708Z"
+    },
+    {
+      "id": "codesmith",
+      "name": "Codesmith",
+      "status": "idle",
+      "last_heartbeat": null
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot",
+      "status": "idle",
+      "last_heartbeat": null
+    },
+    {
+      "id": "personal-assistant",
+      "name": "Personal Assistant",
+      "status": "idle",
+      "last_heartbeat": null
+    }
+  ]
+}

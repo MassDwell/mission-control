@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "venture_id": "VENTURE_ID_PLACEHOLDER",
+  "name": "Venture Name",
+  "owner_agent": "moonshot",
+  "origin_agent": "moonshot",
+  "stage": "discovery",
+  "status": "active",
+  "created_at": "CREATED_AT_PLACEHOLDER",
+  "updated_at": "UPDATED_AT_PLACEHOLDER",
+  "timeline": {
+    "started": "STARTED_DATE_PLACEHOLDER",
+    "estimated_mvp": "ESTIMATED_MVP_PLACEHOLDER",
+    "days_elapsed": 0,
+    "days_remaining": 21
+  },
+  "problem_statement": "Problem being solved",
+  "target_customer": "Who this is for",
+  "value_proposition": "Why they need it",
+  "mvp_scope": "Minimal viable product definition",
+  "success_metric": "How we measure success",
+  "success_criteria": {
+    "metric_1": "Target value",
+    "metric_2": "Target value"
+  },
+  "experiment_status": "not_started",
+  "experiment_hypothesis": "What we think will happen",
+  "experiment_success_criteria": "What success looks like",
+  "experiment_duration_days": 21,
+  "current_phase": "research",
+  "phases": [
+    {
+      "phase": "research",
+      "status": "active",
+      "duration_days": 7,
+      "deliverables": [
+        "Customer interviews",
+        "Problem validation",
+        "Market sizing"
+      ]
+    },
+    {
+      "phase": "prototype",
+      "status": "pending",
+      "duration_days": 7,
+      "deliverables": [
+        "MVP spec",
+        "Architecture design",
+        "Sample data"
+      ]
+    },
+    {
+      "phase": "validation",
+      "status": "pending",
+      "duration_days": 7,
+      "deliverables": [
+        "10 customer interviews",
+        "Conversion rate",
+        "Pivot/proceed decision"
+      ]
+    }
+  ],
+  "team": {
+    "moonshot": {
+      "role": "R&D Strategist",
+      "responsibilities": "Research, PRD, experiment design"
+    },
+    "codesmith": {
+      "role": "Engineering Lead",
+      "responsibilities": "Architecture, code review, deployment"
+    },
+    "clawson": {
+      "role": "Oversight",
+      "responsibilities": "CR approval, decision gate, reporting"
+    }
+  },
+  "metrics": {
+    "users": {
+      "target": 100,
+      "current": 0,
+      "unit": "active users"
+    },
+    "signups": {
+      "target": 50,
+      "current": 0,
+      "unit": "signups"
+    },
+    "paying_customers": {
+      "target": 10,
+      "current": 0,
+      "unit": "customers"
+    },
+    "mrr": {
+      "target": 5000,
+      "current": 0,
+      "unit": "USD/month"
+    },
+    "conversion_rate": {
+      "target": 0.20,
+      "current": 0,
+      "unit": "signup_to_paying"
+    }
+  },
+  "links": {
+    "prd": "PRD.md",
+    "experiment_plan": "experiment_plan.md",
+    "metrics_tracker": "metrics.md",
+    "changelog": "CHANGELOG.md",
+    "build_log": "logs/build_log.md",
+    "deployment": "deploy/deployment_notes.md"
+  },
+  "mission_control": {
+    "workstream_id": "WORKSTREAM_ID_PLACEHOLDER",
+    "venture_work_link_id": "VENTURE_LINK_ID_PLACEHOLDER",
+    "track_in_pipeline": true,
+    "pipeline_stage": "discovery"
+  },
+  "notes": "Add venture-specific notes here"
+}

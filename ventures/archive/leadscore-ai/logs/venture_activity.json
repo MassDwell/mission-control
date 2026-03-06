@@ -1,0 +1,121 @@
+{
+  "venture": "leadscore-ai",
+  "entries": [
+    {
+      "timestamp": "2026-03-05T18:00:00Z",
+      "action": "CREATED",
+      "message": "Created venture: LeadScore.ai",
+      "actor": "codesmith"
+    },
+    {
+      "timestamp": "2026-03-05T18:05:00Z",
+      "action": "ADVANCED",
+      "message": "Advanced: IDEA → EVIDENCE",
+      "actor": "moonshot",
+      "from_stage": "IDEA",
+      "to_stage": "EVIDENCE"
+    },
+    {
+      "timestamp": "2026-03-05T18:10:00Z",
+      "action": "ADVANCED",
+      "message": "Advanced: EVIDENCE → OPPORTUNITY_SCORE",
+      "actor": "moonshot",
+      "from_stage": "EVIDENCE",
+      "to_stage": "OPPORTUNITY_SCORE"
+    },
+    {
+      "timestamp": "2026-03-05T18:15:00Z",
+      "action": "ADVANCED",
+      "message": "Advanced: OPPORTUNITY_SCORE → PRD (Score: 38/40)",
+      "actor": "clawson",
+      "from_stage": "OPPORTUNITY_SCORE",
+      "to_stage": "PRD",
+      "metadata": {
+        "opportunity_score": 38
+      }
+    },
+    {
+      "timestamp": "2026-03-05T18:20:00Z",
+      "action": "ADVANCED",
+      "message": "Advanced: PRD → BUILD",
+      "actor": "codesmith",
+      "from_stage": "PRD",
+      "to_stage": "BUILD"
+    },
+    {
+      "timestamp": "2026-03-05T18:30:00Z",
+      "action": "METRICS_UPDATED",
+      "message": "Updated metrics: build_progress 0% → 32%",
+      "actor": "codesmith",
+      "metadata": {
+        "build_progress": 0.32
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:18:03.978Z",
+      "action": "KILLED",
+      "message": "KILLED: test",
+      "actor": "random",
+      "metadata": {
+        "kill_reason": "test",
+        "decision_maker": "random"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:23:16.904Z",
+      "action": "KILLED",
+      "message": "KILLED: test",
+      "actor": "random",
+      "metadata": {
+        "kill_reason": "test",
+        "decision_maker": "random"
+      }
+    },
+    {
+      "timestamp": "2026-03-05T23:34:04.852Z",
+      "action": "SYSTEM_IMPLEMENTED",
+      "message": "Implemented VentureOS v1: 8-stage pipeline, artifact enforcement, opportunity scoring, kill rules, multi-venture portfolio. 67 tests. Ready for production venture governance.",
+      "actor": "codesmith",
+      "metadata": {
+        "phases_complete": 5,
+        "tests_passing": 67,
+        "stages": [
+          "IDEA",
+          "EVIDENCE",
+          "OPPORTUNITY_SCORE",
+          "PRD",
+          "BUILD",
+          "BETA",
+          "REVENUE",
+          "SCALE"
+        ],
+        "endpoints": [
+          "POST /api/ventures/create",
+          "POST /api/ventures/:slug/advance",
+          "POST /api/ventures/:slug/kill",
+          "GET /api/ventures/portfolio",
+          "GET /api/ventures/:slug/detail",
+          "POST /api/ventures/:slug/metrics",
+          "GET /api/ventures/stages",
+          "POST /api/ventures/:slug/check-kill"
+        ],
+        "kill_triggers": [
+          "low_opportunity_score",
+          "low_activation_rate",
+          "low_mrr_90_days",
+          "no_users_60_days"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-06T00:09:06.228Z",
+      "action": "KILLED",
+      "message": "KILLED: test",
+      "actor": "random",
+      "metadata": {
+        "kill_reason": "test",
+        "decision_maker": "random"
+      }
+    }
+  ]
+}

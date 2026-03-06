@@ -4,6 +4,19 @@
 
 ---
 
+## ⚠️ EMAIL PERSONALIZATION - IMPORTANT
+
+**The placeholders "[First Name]" and "[Name]" in this document are examples only.**
+
+**When actually sending emails, ALWAYS follow:**
+`~/.openclaw/workspace/data/massdwell/EMAIL-PERSONALIZATION-RULES.md`
+
+**Key Rule:** Use customer name from Kommo. If numeric ID → extract first name. If no name → "Hi,"
+
+❌ NEVER use numeric IDs in actual emails
+
+---
+
 ## Revised Opportunity Analysis
 
 | Segment | Count | Value | Action |

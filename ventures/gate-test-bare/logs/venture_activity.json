@@ -1,0 +1,11 @@
+{
+  "venture": "gate-test-bare",
+  "entries": [
+    {
+      "timestamp": "2026-03-05T23:23:16.903Z",
+      "action": "CREATED",
+      "message": "Created venture: Gate Test Bare",
+      "actor": "codesmith"
+    }
+  ]
+}

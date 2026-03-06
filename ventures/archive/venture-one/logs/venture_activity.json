@@ -1,0 +1,21 @@
+{
+  "venture": "venture-one",
+  "entries": [
+    {
+      "timestamp": "2026-03-05T23:18:03.987Z",
+      "action": "CREATED",
+      "message": "Created venture: Venture One",
+      "actor": "codesmith"
+    },
+    {
+      "timestamp": "2026-03-05T23:18:03.987Z",
+      "action": "KILLED",
+      "message": "KILLED: Test kill",
+      "actor": "steve",
+      "metadata": {
+        "kill_reason": "Test kill",
+        "decision_maker": "steve"
+      }
+    }
+  ]
+}

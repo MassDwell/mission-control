@@ -1,0 +1,106 @@
+#!/usr/bin/env node
+/**
+ * Universal Gmail Token Refresher
+ * Refreshes OAuth tokens for all Gmail accounts
+ */
+
+const fs = require('fs');
+const https = require('https');
+const path = require('path');
+
+const ACCOUNTS = [
+  {
+    name: 'vettoristeve@gmail.com',
+    tokenPath: 'gmail-token-steve.vettori.json',
+    credsPath: 'gmail-oauth-credentials.json'
+  },
+  {
+    name: 'sales@massdwell.com',
+    tokenPath: 'gmail-token-sales-fixed.json',
+    credsPath: 'gmail-oauth-credentials.json'
+  },
+  {
+    name: 'team@atlanticlasersolutions.com',
+    tokenPath: 'gmail-token-atlantic-laser.json',
+    credsPath: 'atlantic-laser-oauth-credentials.json'
+  }
+];
+
+async function refreshToken(account) {
+  return new Promise((resolve, reject) => {
+    const tokenPath = path.join(__dirname, account.tokenPath);
+    const credsPath = path.join(__dirname, account.credsPath);
+
+    if (!fs.existsSync(tokenPath)) {
+      console.log(`⚠️  ${account.name}: Token file not found, skipping`);
+      resolve({ account: account.name, status: 'skipped', reason: 'no token file' });
+      return;
+    }
+
+    const token = JSON.parse(fs.readFileSync(tokenPath));
+    const creds = JSON.parse(fs.readFileSync(credsPath));
+    const client = creds.installed || creds.web;
+
+    const postData = new URLSearchParams({
+      client_id: client.client_id,
+      client_secret: client.client_secret,
+      refresh_token: token.refresh_token,
+      grant_type: 'refresh_token'
+    }).toString();
+
+    const options = {
+      hostname: 'oauth2.googleapis.com',
+      path: '/token',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Length': postData.length
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        if (res.statusCode === 200) {
+          const newToken = JSON.parse(data);
+          token.access_token = newToken.access_token;
+          token.expires_in = newToken.expires_in;
+          token.expiry_date = Date.now() + (newToken.expires_in * 1000);
+          fs.writeFileSync(tokenPath, JSON.stringify(token, null, 2));
+          console.log(`✅ ${account.name}: Token refreshed`);
+          resolve({ account: account.name, status: 'success' });
+        } else {
+          console.error(`❌ ${account.name}: Refresh failed (${res.statusCode})`);
+          resolve({ account: account.name, status: 'failed', error: data });
+        }
+      });
+    });
+
+    req.on('error', (e) => {
+      console.error(`❌ ${account.name}: Request error:`, e.message);
+      resolve({ account: account.name, status: 'error', error: e.message });
+    });
+
+    req.write(postData);
+    req.end();
+  });
+}
+
+async function main() {
+  console.log(`🔄 Refreshing Gmail tokens for ${ACCOUNTS.length} accounts...`);
+  console.log();
+
+  const results = await Promise.all(ACCOUNTS.map(refreshToken));
+
+  console.log();
+  console.log('📊 Summary:');
+  const success = results.filter(r => r.status === 'success').length;
+  const failed = results.filter(r => r.status === 'failed').length;
+  const skipped = results.filter(r => r.status === 'skipped').length;
+  console.log(`  ✅ ${success} refreshed`);
+  if (failed > 0) console.log(`  ❌ ${failed} failed`);
+  if (skipped > 0) console.log(`  ⚠️  ${skipped} skipped`);
+}
+
+main().catch(console.error);

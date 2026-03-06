@@ -1,0 +1,168 @@
+{
+  "agent_id": "codesmith",
+  "name": "Codesmith",
+  "permission_profile": "codesmith",
+  "scopes": ["code"],
+  "permissions": ["read", "write", "execute"],
+  "created": "2026-03-04",
+  "status": "registered_disabled",
+  "access_matrix": {
+    "canon_files": {
+      "scope": "code",
+      "path": "canon/**",
+      "operations": ["read", "write"],
+      "restrictions": "Full write access to all canon files (including system governance). Cannot delete canon files or change registry schema without explicit HIGH RISK approval.",
+      "allowed": true
+    },
+    "scripts": {
+      "scope": "code",
+      "path": "scripts/**",
+      "operations": ["read", "write", "execute"],
+      "restrictions": "Full write access to all scripts. Can execute: compile-configs.sh, deploy.sh, preflight-check.sh, drift-audit.sh, health/status commands.",
+      "allowed": true
+    },
+    "config_generated": {
+      "scope": "code",
+      "path": "config/**, /generated/**",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot directly edit. Must use compile pipeline (bash scripts/deploy/compile-configs.sh) to generate/update configs.",
+      "allowed": false
+    },
+    "deploy_pipeline": {
+      "scope": "code",
+      "service": "deploy",
+      "operations": ["read", "execute"],
+      "restrictions": "Can run compile/deploy/verify. Cannot change pipeline architecture without HIGH RISK approval.",
+      "allowed": true
+    },
+    "logs_and_reports": {
+      "scope": "code",
+      "path": "logs/**, observability/**, build/**",
+      "operations": ["read"],
+      "restrictions": "Read-only access for debugging and verification",
+      "allowed": true
+    },
+    "backups": {
+      "scope": "code",
+      "path": "backups/**",
+      "operations": ["read"],
+      "restrictions": "Read-only. Can reference for rollback, cannot delete.",
+      "allowed": true
+    },
+    "compiled_configs": {
+      "scope": "code",
+      "path": "config/**",
+      "operations": ["read"],
+      "restrictions": "Read-only. Can verify compilations but must use compile pipeline to generate.",
+      "allowed": true
+    },
+    "mission_control": {
+      "scope": "code",
+      "service": "mission_control",
+      "operations": ["read", "write"],
+      "restrictions": "Task tracking only. Can log work items, status updates, incident notes.",
+      "allowed": true
+    },
+    "gmail": {
+      "scope": "email",
+      "service": "google_workspace",
+      "emails": ["*"],
+      "operations": [],
+      "restrictions": "FORBIDDEN - No email access (personal or business)",
+      "allowed": false
+    },
+
+    "financial": {
+      "scope": "financial",
+      "service": "financial_systems",
+      "operations": [],
+      "restrictions": "FORBIDDEN - No financial data access",
+      "allowed": false
+    },
+    "credentials": {
+      "scope": "system",
+      "service": "credential_storage",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Never access or print API keys, tokens, secrets",
+      "allowed": false
+    },
+    "telegram": {
+      "scope": "system",
+      "service": "telegram",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot create or modify Telegram routes. Internal worker only.",
+      "allowed": false
+    },
+    "user_data": {
+      "scope": "personal",
+      "service": "user_data",
+      "operations": [],
+      "restrictions": "FORBIDDEN - No access to personal/business data",
+      "allowed": false
+    }
+  },
+  "escalation_rules": {
+    "high_risk_actions": [
+      "Registry schema changes",
+      "Deploy pipeline modifications",
+      "Authentication/security changes",
+      "Breaking code changes"
+    ],
+    "escalation_target": "Clawson (via Change Request)",
+    "block_rules": [
+      "Any email access attempt",
+      "Any CRM access attempt",
+      "Any credential read attempt",
+      "Any Telegram route modification",
+      "Canon file deletion without approval",
+      "Deploy pipeline changes without CR"
+    ]
+  },
+  "change_control": {
+    "requires_change_request": true,
+    "cr_template": "canon/system/change_request_template.md",
+    "requires_clawson_approval": true,
+    "approval_format": "Approved: [agent] — [description]",
+    "risk_tiers": {
+      "low": "formatting, docs, logging",
+      "medium": "cron, permissions, integrations",
+      "high": "schema, pipeline, security"
+    }
+  },
+  "quality_gates": {
+    "format_check": "bash scripts/format-check.sh (if configured)",
+    "lint": "bash scripts/lint.sh (if configured)",
+    "typecheck": "bash scripts/typecheck.sh (if configured)",
+    "tests": "bash scripts/test.sh (if exist)",
+    "smoke_test": "bash scripts/smoke-test.sh (post-deploy)",
+    "preflight": "bash scripts/preflight-check.sh (mandatory)",
+    "drift_audit": "bash scripts/drift-audit.sh (mandatory)",
+    "fail_closed": true,
+    "rollback_on_failure": true
+  },
+  "model_policy": {
+    "enabled": true,
+    "requirement": "Use most powerful LLM for all engineering tasks",
+    "reasoning": "Architecture, planning, debugging, validation",
+    "execution": "Same strongest model",
+    "rationale": "Quality > cost for engineering excellence",
+    "reporting": "Every completion includes 'Model Used: [model]'"
+  },
+  "audit_logging": {
+    "enabled": true,
+    "log_location": "observability/agents/codesmith/access-log.json",
+    "log_all_access": true,
+    "log_denials": true,
+    "log_change_requests": true,
+    "retention": "90 days"
+  },
+  "data_isolation": {
+    "cannot_access_email": true,
+    "cannot_access_crm": true,
+    "cannot_access_financial": true,
+    "cannot_modify_telegram": true,
+    "cannot_print_secrets": true,
+    "cannot_delete_canon_without_approval": true
+  },
+  "notes": "World-class engineering agent. Governed by Change Request workflow. Strict quality gates. All MED/HIGH changes require Clawson approval. Fail closed. Always reversible. Internal worker only (no Telegram user-facing). Must use most powerful LLM for engineering decisions."
+}

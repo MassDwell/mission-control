@@ -885,16 +885,129 @@ function initDecisionPanel() {
 }
 
 /**
+ * CR-MC-UI-HARDENING: Panel Controls (collapse, fullwidth, resize persistence)
+ */
+
+function initPanelControls() {
+  const PANEL_IDS = window.MCStorage ? window.MCStorage.PANEL_IDS : [];
+  const grid = document.getElementById('mc-dashboard-grid');
+
+  /**
+   * Toggle collapse/expand on a panel.
+   */
+  function toggleCollapse(panelEl, btn) {
+    const body = panelEl.querySelector('.mc-panel-body');
+    const isCollapsed = panelEl.classList.contains('mc-collapsed');
+
+    if (isCollapsed) {
+      panelEl.classList.remove('mc-collapsed');
+      if (body) body.style.display = '';
+      btn.textContent = '−';
+      btn.title = 'Collapse';
+    } else {
+      panelEl.classList.add('mc-collapsed');
+      if (body) body.style.display = 'none';
+      btn.textContent = '+';
+      btn.title = 'Expand';
+    }
+
+    if (window.MCStorage) window.MCStorage.saveLayout();
+  }
+
+  /**
+   * Toggle full-width mode on a panel.
+   */
+  function toggleFullwidth(panelEl, btn) {
+    const isFullwidth = panelEl.classList.contains('mc-fullwidth');
+
+    if (isFullwidth) {
+      // Exit full-width: restore grid
+      panelEl.classList.remove('mc-fullwidth');
+      if (grid) grid.classList.remove('mc-single-panel-mode');
+      // Show all siblings
+      PANEL_IDS.forEach(function(sid) {
+        const sibling = document.getElementById(sid);
+        if (sibling) sibling.style.display = '';
+      });
+      // Also show panel-venture-pipeline
+      const pipeline = document.getElementById('panel-venture-pipeline');
+      if (pipeline) pipeline.style.display = '';
+      btn.textContent = '⇔';
+      btn.title = 'Full Width';
+    } else {
+      // Enter full-width: hide siblings
+      panelEl.classList.add('mc-fullwidth');
+      if (grid) grid.classList.add('mc-single-panel-mode');
+      const panelId = panelEl.id;
+      PANEL_IDS.forEach(function(sid) {
+        if (sid !== panelId) {
+          const sibling = document.getElementById(sid);
+          if (sibling) sibling.style.display = 'none';
+        }
+      });
+      // Also hide pipeline unless that's the active one
+      if (panelId !== 'panel-venture-pipeline') {
+        const pipeline = document.getElementById('panel-venture-pipeline');
+        if (pipeline) pipeline.style.display = 'none';
+      }
+      btn.textContent = '↩';
+      btn.title = 'Exit Full Width';
+    }
+
+    if (window.MCStorage) window.MCStorage.saveLayout();
+  }
+
+  // Attach click handlers to all panel control buttons
+  document.querySelectorAll('.mc-ctrl-btn').forEach(function(btn) {
+    const panelId = btn.getAttribute('data-panel');
+    const action  = btn.getAttribute('data-action');
+    if (!panelId || !action) return;
+    const panelEl = document.getElementById(panelId);
+    if (!panelEl) return;
+
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (action === 'collapse') {
+        toggleCollapse(panelEl, btn);
+      } else if (action === 'fullwidth') {
+        toggleFullwidth(panelEl, btn);
+      }
+    });
+  });
+
+  // Set up ResizeObserver on each panel to persist size changes
+  if (window.ResizeObserver && window.MCStorage) {
+    const ro = new ResizeObserver(function() {
+      window.MCStorage.saveLayout();
+    });
+    PANEL_IDS.forEach(function(panelId) {
+      const el = document.getElementById(panelId);
+      if (el) ro.observe(el);
+    });
+    // Also observe venture pipeline
+    const pipeline = document.getElementById('panel-venture-pipeline');
+    if (pipeline) ro.observe(pipeline);
+  }
+
+  // Restore layout from localStorage
+  if (window.MCStorage) {
+    window.MCStorage.restoreLayout();
+  }
+}
+
+/**
  * DOMContentLoaded
  */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initDashboard().catch(err => console.error('[INIT] Dashboard init error:', err));
     initDecisionPanel();
+    initPanelControls();
   });
 } else {
   initDashboard().catch(err => console.error('[INIT] Dashboard init error:', err));
   initDecisionPanel();
+  initPanelControls();
 }
 
 /**

@@ -1,0 +1,6 @@
+{
+  "killed_at": "2026-03-05T23:31:50.547Z",
+  "reason": "Test kill - API endpoint test",
+  "decision_maker": "clawson",
+  "prev_stage": "opportunity"
+}

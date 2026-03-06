@@ -1,0 +1,37 @@
+Memory Maintenance Report
+Generated: 2026-03-03 02:44:29
+════════════════════════════════════════════════════════════
+
+FILE SIZE STATUS:
+  WORKING.md:        78 lines (target: 100, alert: 150)
+  MEMORY.md:        276 lines (target: 1500, alert: 2000)
+  WORKFLOW_AUTO.md: 204 lines (target: 300, alert: 500)
+
+DAILY LOGS:
+  Current count:        8 files
+  Archived: 0 files (older than 30 days)
+  Today's log: ✓ exists
+
+MANUAL REVIEW NEEDED:
+  [ ] Review last 7 daily logs for lessons learned
+  [ ] Extract key insights → MEMORY.md
+  [ ] Clean WORKING.md (remove completed/stale entries)
+  [ ] Update MEMORY.md (people, integrations, standing instructions)
+  [ ] Verify WORKFLOW_AUTO.md matches current automation
+
+RECENT DAILY LOGS (last 7 days):
+  - 2026-03-03.md
+  - 2026-03-02.md
+  - 2026-03-01.md
+  - 2026-02-06.md
+  - 2026-02-04.md
+  - 2026-02-03.md
+  - 2025-02-03.md
+  - 2025-02-02.md
+
+FILES NEEDING ATTENTION:
+  ✓ All files within acceptable thresholds
+
+════════════════════════════════════════════════════════════
+Next maintenance: 2026-03-10
+SOP: data/global/sops/memory-maintenance.md

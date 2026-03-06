@@ -1,0 +1,192 @@
+{
+  "schema_version": "ventureos-1.0",
+  "lastUpdated": "2026-03-05T23:31:58.362Z",
+  "description": "VentureOS master scoreboard. Authoritative list of all ventures (active + killed).",
+  "valid_stages": [
+    "opportunity",
+    "investigation",
+    "approval",
+    "implementation",
+    "launch",
+    "killed"
+  ],
+  "valid_statuses": [
+    "active",
+    "killed"
+  ],
+  "ventures": [
+    {
+      "id": "leadscore-ai",
+      "name": "LeadScore.ai",
+      "description": "AI-powered lead qualification system for B2B SaaS sales teams",
+      "owner_agent": "codesmith",
+      "owner_human": "steve",
+      "stage": "implementation",
+      "status": "active",
+      "created_at": "2026-03-05",
+      "timeline_weeks": 8,
+      "target_mrr": 5000,
+      "target_launch": "2026-04-30",
+      "team": [
+        "codesmith"
+      ],
+      "blockers": [],
+      "stage_history": [
+        {
+          "stage": "opportunity",
+          "entered_at": "2026-03-05T00:00:00.000Z",
+          "exited_at": "2026-03-05T06:00:00.000Z"
+        },
+        {
+          "stage": "investigation",
+          "entered_at": "2026-03-05T06:00:00.000Z",
+          "exited_at": "2026-03-05T10:00:00.000Z"
+        },
+        {
+          "stage": "approval",
+          "entered_at": "2026-03-05T10:00:00.000Z",
+          "exited_at": "2026-03-05T15:00:00.000Z"
+        },
+        {
+          "stage": "implementation",
+          "entered_at": "2026-03-05T15:00:00.000Z",
+          "exited_at": null
+        }
+      ],
+      "metrics": {
+        "accuracy_target": 0.95,
+        "nps_target": 8,
+        "customer_target": 10,
+        "mrr_target": 5000,
+        "accuracy_current": null,
+        "nps_current": null,
+        "customer_current": 0,
+        "mrr_current": 0,
+        "metrics_updated_at": "2026-03-05T23:23:10.855Z"
+      },
+      "financials": {
+        "budget": 10000,
+        "budget_approved": true,
+        "burn_rate_weekly": 500
+      },
+      "artifacts": {
+        "memo": "/ventures/leadscore/docs/venture_memo.md",
+        "prd": "/ventures/leadscore/docs/prd.md",
+        "cr": "/ventures/leadscore/CR-LEADSCORE-001.md",
+        "repo": "/ventures/leadscore"
+      },
+      "market_opportunity": {
+        "tam": 50000000,
+        "description": "B2B SaaS lead qualification market",
+        "competitors": [
+          "Clearbit",
+          "MadKudu",
+          "6sense"
+        ],
+        "icp": "VP Sales / Sales Ops at B2B SaaS (100-10K employees)"
+      },
+      "kill_date": null,
+      "kill_reason": null,
+      "kill_decision_maker": null
+    },
+    {
+      "id": "test-api-venture",
+      "name": "Test API Venture",
+      "description": "API endpoint test",
+      "owner_agent": "codesmith",
+      "owner_human": "steve",
+      "stage": "killed",
+      "status": "killed",
+      "created_at": "2026-03-05T23:31:50.367Z",
+      "timeline_weeks": 8,
+      "target_mrr": 0,
+      "target_launch": null,
+      "team": [
+        "codesmith"
+      ],
+      "blockers": [],
+      "stage_history": [
+        {
+          "stage": "opportunity",
+          "entered_at": "2026-03-05T23:31:50.367Z",
+          "exited_at": "2026-03-05T23:31:50.547Z"
+        },
+        {
+          "stage": "killed",
+          "entered_at": "2026-03-05T23:31:50.547Z",
+          "exited_at": null,
+          "gate_keeper": "clawson"
+        }
+      ],
+      "metrics": {
+        "mrr_target": 0,
+        "mrr_current": 0,
+        "customer_target": null,
+        "customer_current": 0,
+        "accuracy_target": null,
+        "accuracy_current": null,
+        "nps_target": null,
+        "nps_current": null,
+        "metrics_updated_at": "2026-03-05T23:31:50.490Z"
+      },
+      "financials": {
+        "budget": 0,
+        "budget_approved": false,
+        "burn_rate_weekly": 0
+      },
+      "artifacts": {
+        "memo": null
+      },
+      "market_opportunity": null,
+      "kill_date": "2026-03-05T23:31:50.547Z",
+      "kill_reason": "Test kill - API endpoint test",
+      "kill_decision_maker": "clawson"
+    },
+    {
+      "id": "ventureos-test",
+      "name": "VentureOS Test",
+      "description": "",
+      "owner_agent": "codesmith",
+      "owner_human": "steve",
+      "stage": "opportunity",
+      "status": "active",
+      "created_at": "2026-03-05T23:31:58.362Z",
+      "timeline_weeks": 8,
+      "target_mrr": 0,
+      "target_launch": null,
+      "team": [
+        "codesmith"
+      ],
+      "blockers": [],
+      "stage_history": [
+        {
+          "stage": "opportunity",
+          "entered_at": "2026-03-05T23:31:58.362Z",
+          "exited_at": null
+        }
+      ],
+      "metrics": {
+        "mrr_target": 0,
+        "mrr_current": 0,
+        "customer_target": null,
+        "customer_current": 0,
+        "accuracy_target": null,
+        "accuracy_current": null,
+        "nps_target": null,
+        "nps_current": null
+      },
+      "financials": {
+        "budget": 0,
+        "budget_approved": false,
+        "burn_rate_weekly": 0
+      },
+      "artifacts": {
+        "memo": null
+      },
+      "market_opportunity": null,
+      "kill_date": null,
+      "kill_reason": null,
+      "kill_decision_maker": null
+    }
+  ]
+}

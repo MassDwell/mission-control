@@ -1,0 +1,120 @@
+{
+  "version": "2026-03-01",
+  "description": "OpenClaw Cron Job Registry - Tracks allowed jobs and prevents duplicates",
+  
+  "active_jobs": {
+    "sales_bot": [
+      "Sales Bot - Auto Engage New Leads",
+      "Sales Agent Heartbeat",
+      "Lead Resurrection v2.0 - Daily Batch",
+      "Lead Lifecycle Manager v2.0 (Weekly)",
+      "Lead Resurrection - Daily Report"
+    ],
+    "atlantic_laser_sales": [
+      "Atlantic Laser Sales - Daily Prospecting Engine"
+    ],
+    "marketing_content": [
+      "Marketing Agent Heartbeat",
+      "Instagram Post - Morning",
+      "MassDwell X Post - Midday",
+      "MassDwell X Post - Evening"
+    ],
+    "admin_assistant": [
+      "Admin Assistant Heartbeat",
+      "Admin - Morning Operations Scan"
+    ],
+    "personal_life_cos": [
+      "Personal Life Heartbeat",
+      "Personal Life - Morning Scan",
+      "Personal Gmail Cleanup - Consolidated",
+      "Reta Meal Prompt - Lunch",
+      "Reta Meal Prompt - Dinner"
+    ],
+    "codesmith": [
+      "Codesmith Heartbeat"
+    ],
+    "massdwell_factory_ops": [
+      "Factory Ops Heartbeat"
+    ],
+    "main": [
+      "Mission Control Status Sync",
+      "Self-Healing: Stale Task Recovery",
+      "Hourly Memory Summarizer",
+      "Gmail Token Auto-Refresh (Preventive)",
+      "Nightly Learning - Rotating Agent",
+      "Atlantic Laser QB→Pipedrive Sync",
+      "Kommo CRM Sync",
+      "Mission Control Cron Export",
+      "MassDwell Master Morning Briefing - CONSOLIDATED",
+      "MassDwell Execution Cycles - Midday",
+      "MassDwell Execution Cycles - Afternoon",
+      "MassDwell Master Evening Briefing - CONSOLIDATED",
+      "Sales Bot Email Health Check - Morning",
+      "Sales Bot Email Health Check - Midday",
+      "Sales Bot Email Health Check - Afternoon",
+      "Bounce Monitor - Auto Close Lost",
+      "Money Printer Trading Cycle",
+      "MassDwell Marketing Dashboard Check",
+      "Bi-Weekly Memory Audit",
+      "Monthly Learning Consolidation",
+      "Clawson - Weekly Alignment Summary",
+      "MassDwell Knowledge Refresh (Weekly)",
+      "Marketing - Weekly Planning (Monday)",
+      "Marketing - Weekly Report (Friday)",
+      "Factory Ops - Weekly Report",
+      "Automaton Growth - Heartbeat",
+      "OpenClaw Nightly Drift Scan"
+    ]
+  },
+  
+  "deprecated": [
+    "Cold Lead Reply Monitor",
+    "DISABLED - Cold Lead Reply Monitor (duplicate of Sales Reply Monitor)",
+    "Sales Reply Monitor - Every 15 Min",
+    "DISABLED - Sales Reply Monitor (sales bot has full control)",
+    "DISABLED - Sales Morning Email Sync (replaced by consolidated)",
+    "DISABLED - Competitor Intel (replaced by consolidated)",
+    "DISABLED - Sales EOD Email Sync (replaced by consolidated)",
+    "DISABLED - Daily Lead Outreach (replaced by consolidated)",
+    "Lead Resurrection - Follow-Up (Touches 2 & 3)",
+    "Instagram Post - Afternoon",
+    "Instagram Token Refresh Reminder",
+    "VRT Price Alert - Post-Earnings Entry",
+    "Morning Scraper Test & Fix",
+    "ADU Building Dept Outreach - Daily Batch"
+  ],
+  
+  "allowed_overlap": [
+    {
+      "reason": "Email health checks at different times of day",
+      "jobs": [
+        "Sales Bot Email Health Check - Morning",
+        "Sales Bot Email Health Check - Midday",
+        "Sales Bot Email Health Check - Afternoon"
+      ]
+    },
+    {
+      "reason": "Execution cycles at different times of day",
+      "jobs": [
+        "MassDwell Execution Cycles - Midday",
+        "MassDwell Execution Cycles - Afternoon"
+      ]
+    },
+    {
+      "reason": "X posts at different times of day",
+      "jobs": [
+        "MassDwell X Post - Midday",
+        "MassDwell X Post - Evening"
+      ]
+    }
+  ],
+  
+  "rules": {
+    "max_jobs_per_agent": 10,
+    "min_interval_minutes": 15,
+    "require_unique_names": true,
+    "deprecated_must_be_disabled": true
+  },
+  
+  "notes": "This registry is the source of truth for which cron jobs should be active. The nightly drift scanner validates against this file."
+}

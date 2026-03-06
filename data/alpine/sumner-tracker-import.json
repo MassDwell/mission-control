@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "exportDate": "2026-03-03T18:28:38.492Z",
+  "data": {
+    "PROJECTS": [
+      {
+        "id": "project-sumner-191",
+        "name": "191 Sumner Street (Beacon Scaled)",
+        "description": "16-unit residential development scaled from Beacon template",
+        "units": 16,
+        "grossSF": 35020,
+        "sellableSF": 26300,
+        "createdAt": "2026-03-03T18:28:38.493Z",
+        "updatedAt": "2026-03-03T18:28:38.493Z"
+      }
+    ],
+    "BUDGETS": [
+      {
+        "projectId": "project-sumner-191",
+        "lineItems": [
+          {
+            "category": "Land/Site Acquisition",
+            "description": "Scaled from Beacon: $10.00M × 47.1%",
+            "originalBudget": 4705677,
+            "currentBudget": 4705677,
+            "actualSpend": 4705677,
+            "variance": 0,
+            "section": "HARD COSTS"
+          },
+          {
+            "category": "Utilities & Site Work",
+            "description": "Scaled from Beacon: $0.15M × 47.1%",
+            "originalBudget": 70585,
+            "currentBudget": 70585,
+            "actualSpend": 70585,
+            "variance": 0,
+            "section": "HARD COSTS"
+          },
+          {
+            "category": "Construction - Units",
+            "description": "Scaled from Beacon: $27.91M × 47.1%",
+            "originalBudget": 13134768,
+            "currentBudget": 13134768,
+            "actualSpend": 13134768,
+            "variance": 0,
+            "section": "HARD COSTS"
+          },
+          {
+            "category": "Construction Loan Interest",
+            "description": "Scaled from Beacon: $2.80M × 47.1%",
+            "originalBudget": 1317590,
+            "currentBudget": 1317590,
+            "actualSpend": 1317590,
+            "variance": 0,
+            "section": "HARD COSTS"
+          },
+          {
+            "category": "Hard Cost Contingency",
+            "description": "Scaled from Beacon: $1.43M × 47.1%",
+            "originalBudget": 672236,
+            "currentBudget": 672236,
+            "actualSpend": 672236,
+            "variance": 0,
+            "section": "HARD COSTS"
+          },
+          {
+            "category": "Soft Cost Contingency",
+            "description": "Scaled from Beacon: $0.15M × 47.1%",
+            "originalBudget": 70091,
+            "currentBudget": 70091,
+            "actualSpend": 70091,
+            "variance": 0,
+            "section": "HARD COSTS"
+          },
+          {
+            "category": "Soft Costs (Total)",
+            "description": "Scaled from Beacon: $2.98M × 47.1%",
+            "originalBudget": 1402056,
+            "currentBudget": 1402056,
+            "actualSpend": 1402056,
+            "variance": 0,
+            "section": "SOFT COSTS"
+          }
+        ],
+        "totals": {
+          "hardCosts": 19970947,
+          "softCosts": 1402056,
+          "total": 21373003
+        },
+        "createdAt": "2026-03-03T18:28:38.493Z"
+      }
+    ],
+    "COGS": null,
+    "SETTINGS": null
+  }
+}

@@ -1,7 +1,4 @@
 # SOUL.md - Who You Are
-<!-- OWNER: agents/codesmith -->
-<!-- VERSION: 2026-03-01 -->
-<!-- DO-NOT-DUPLICATE: true -->
 
 _You're not a chatbot. You're becoming someone._
 

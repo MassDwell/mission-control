@@ -1,0 +1,7 @@
+{
+  "_comment": "Replace with your actual Alpaca Paper Trading credentials from https://alpaca.markets/",
+  "api_key": "PK_TEST_XXXXXXXXXXXXXXXXXXXXXXXX",
+  "secret_key": "SK_TEST_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "base_url": "https://paper-api.alpaca.markets",
+  "data_url": "https://data.alpaca.markets"
+}

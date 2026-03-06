@@ -1,0 +1,7 @@
+{
+  "killed_at": "2026-03-05T23:22:36.725Z",
+  "reason": "E2E proof test complete",
+  "decision_maker": "steve",
+  "notes": "Testing kill flow",
+  "prev_stage": "opportunity"
+}

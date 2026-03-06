@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "lastUpdated": "2026-03-05T17:58:16.514Z",
+  "timestamp": "2026-03-05T12:42:00.000Z",
+  "last_updated": "2026-03-05T12:42:00.000Z",
+  "description": "Venture lifecycle performance scoreboard",
+  "ideas_generated": 1,
+  "mvps_built": 0,
+  "experiments_running": 1,
+  "ventures_live": 0,
+  "ventures_killed": 0,
+  "success_rate": 0,
+  "stage_order": [
+    "Opportunity",
+    "Qualified",
+    "In Progress",
+    "Due Diligence",
+    "Negotiation",
+    "Approval",
+    "Closing",
+    "Closed"
+  ],
+  "ventures": [
+    {
+      "venture_id": "leadscore",
+      "name": "LeadScore.ai",
+      "description": "AI lead qualification system for B2B SaaS",
+      "stage": "In Progress",
+      "status": "active",
+      "owner_agent": "codesmith",
+      "priority": "high",
+      "mrr": 0,
+      "mrr_target": 5000,
+      "timeline_weeks": 8,
+      "started_date": "2026-03-05",
+      "tags": [
+        "AI",
+        "B2B",
+        "SaaS",
+        "Qualification"
+      ],
+      "icps": [
+        "VP Sales",
+        "Sales Ops Manager"
+      ],
+      "links": {
+        "prd": "/ventures/leadscore/docs/prd.md",
+        "cr": "/ventures/leadscore/CR-LEADSCORE-001.md",
+        "repo_path": "/ventures/leadscore",
+        "demo_url": null
+      },
+      "last_event": {
+        "timestamp": "2026-03-05T07:30:00.000Z",
+        "summary": "Phase 3 testing complete, production ready",
+        "severity": "info"
+      },
+      "metrics": {
+        "accuracy_target": 0.85,
+        "nps_target": 30,
+        "customers_target": 5,
+        "mrr_target": 1000
+      },
+      "previousStatus": null,
+      "updatedAt": "2026-03-05T17:58:16.514Z"
+    }
+  ],
+  "summary": {
+    "total_ventures": 1,
+    "by_stage": {
+      "Opportunity": 0,
+      "Qualified": 0,
+      "In Progress": 1,
+      "Due Diligence": 0,
+      "Negotiation": 0,
+      "Approval": 0,
+      "Closing": 0,
+      "Closed": 0
+    },
+    "by_status": {
+      "active": 1,
+      "paused": 0,
+      "killed": 0,
+      "launched": 0
+    }
+  }
+}

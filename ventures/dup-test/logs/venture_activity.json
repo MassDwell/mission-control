@@ -1,0 +1,11 @@
+{
+  "venture": "dup-test",
+  "entries": [
+    {
+      "timestamp": "2026-03-05T23:23:16.902Z",
+      "action": "CREATED",
+      "message": "Created venture: Dup Test",
+      "actor": "codesmith"
+    }
+  ]
+}

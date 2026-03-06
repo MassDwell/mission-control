@@ -1,0 +1,28 @@
+{
+  "integrations": {
+    "google_workspace": {
+      "status": "active",
+      "accounts": 3,
+      "emails": ["sales@massdwell.com", "vettoristeve@gmail.com", "team@atlanticlasersolutions.com"],
+      "permissions": ["read", "send", "modify"],
+      "credentials": "credentials/google/"
+    },
+    "mission_control": {
+      "status": "active",
+      "type": "dashboard",
+      "repo": "massdwell-mission-control"
+    },
+    "kommo_crm": {
+      "status": "disabled",
+      "reason": "Credentials revoked 2026-03-04"
+    },
+    "alpaca": {
+      "status": "preserved",
+      "purpose": "historical reference",
+      "type": "paper_trading"
+    }
+  },
+  "credentials_total": 36,
+  "credentials_active": ["google", "alpaca", "instagram", "x", "gemini", "brave"],
+  "compiled": "2026-03-04"
+}

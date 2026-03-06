@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-04T20:04:00Z",
+  "items": [
+    {
+      "action_id": "dbd09a46-af54-4219-b826-e90b76ff17a1",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "approve",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:06:54.575Z",
+      "source": "mission_control_ui",
+      "note": null,
+      "status": "completed",
+      "result": "Approved ws_ws_005: implementation → experiment",
+      "completed_at": "2026-03-05T01:20:59.239Z"
+    },
+    {
+      "action_id": "05910b9f-d17c-41a3-a435-7b978a68b8fd",
+      "decision_id": "dec_venture_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:21.198Z",
+      "source": "mission_control_ui",
+      "note": null,
+      "status": "completed",
+      "result": "reject: venture alpine_41_chesley",
+      "completed_at": "2026-03-05T01:20:59.240Z"
+    },
+    {
+      "action_id": "63ed8218-2287-4e9a-9460-c07935db33fa",
+      "decision_id": "dec_blocker_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:29.883Z",
+      "source": "mission_control_ui",
+      "note": null,
+      "status": "completed",
+      "result": "reject: blocker block_financing_docs",
+      "completed_at": "2026-03-05T01:20:59.240Z"
+    },
+    {
+      "action_id": "d984d9e4-2ad0-411c-b9de-4bdaadeb5982",
+      "decision_id": "dec_blocker_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:51.924Z",
+      "source": "mission_control_ui",
+      "note": null,
+      "status": "completed",
+      "result": "reject: blocker block_financing_docs",
+      "completed_at": "2026-03-05T01:20:59.240Z"
+    },
+    {
+      "action_id": "66de9d64-ee39-4a00-a65b-c4652890c229",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "review",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:59.696Z",
+      "source": "mission_control_ui",
+      "note": null,
+      "status": "completed",
+      "result": "Reviewed ws_ws_005 at stage experiment",
+      "completed_at": "2026-03-05T01:20:59.240Z"
+    },
+    {
+      "action_id": "6167e66a-bfe5-4369-976d-3a006b70a3a6",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "approve",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:15:06.379Z",
+      "source": "mission_control_ui",
+      "note": null,
+      "status": "completed",
+      "result": "Approved ws_ws_005: experiment → results",
+      "completed_at": "2026-03-05T01:20:59.240Z"
+    },
+    {
+      "action_id": "868bc937-1699-4739-8157-856859b642bb",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "approve",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:21:42.974Z",
+      "source": "mission_control_ui",
+      "note": null,
+      "status": "queued",
+      "result": null,
+      "completed_at": null,
+      "error": null
+    }
+  ]
+}

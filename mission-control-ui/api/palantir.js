@@ -385,7 +385,7 @@ function computeInsights() {
   const relData      = readJSONSafe('venture_relationships.json', { workstreams: [], ventures: [] });
   const activities   = Array.isArray(activityData.activities) ? activityData.activities : [];
 
-  // --- Rule 1: Stalled workstreams (last event > 12h ago) ---
+  // --- Rule 1: Stalled workstreams (last event > 8h ago) ---
   const workstreams = Array.isArray(wsData.active)
     ? wsData.active
     : Array.isArray(relData.workstreams)
@@ -397,7 +397,7 @@ function computeInsights() {
     if (!lastEvent) return;
     const ageMs = now - new Date(lastEvent).getTime();
     const ageH  = ageMs / (1000 * 60 * 60);
-    if (ageH > 12) {
+    if (ageH > 8) {
       insights.push({
         id:           `insight-stalled-${ws.id || ws.name}`,
         type:         'stalled_workstream',
@@ -433,13 +433,13 @@ function computeInsights() {
     });
   });
 
-  // --- Rule 3: Agent overload (5+ workstreams) ---
+  // --- Rule 3: Agent overload (4+ workstreams) ---
   const agents = Array.isArray(agentsData.agents) ? agentsData.agents : [];
   agents.forEach(agent => {
     const count = typeof agent.owned_workstreams === 'number'
       ? agent.owned_workstreams
       : workstreams.filter(w => w.owner === agent.id).length;
-    if (count >= 5) {
+    if (count >= 4) {
       insights.push({
         id:       `insight-overload-${agent.id}`,
         type:     'agent_overload',
@@ -452,17 +452,27 @@ function computeInsights() {
     }
   });
 
-  // --- Rule 4: Fast progress (workstream progress > 50% recent) ---
+  // --- Rule 4: Fast progress (actual evidence only — requires completion events in activity log) ---
+  // Only trigger if there are real completion or progress-update events for this workstream
   const relWorkstreams = Array.isArray(relData.workstreams) ? relData.workstreams : [];
   relWorkstreams.forEach(ws => {
-    if ((ws.progress || 0) >= 80) {
+    if (!ws.id) return;
+    // Require actual completion events as evidence
+    const completionEvents = activities.filter(e =>
+      (e.workstream_id === ws.id || e.related_workstream === ws.id) &&
+      (
+        (e.action && (e.action.toLowerCase().includes('completed') || e.action.toLowerCase().includes('progress update'))) ||
+        e.type === 'completed' || e.type === 'progress_update'
+      )
+    );
+    if (completionEvents.length > 0 && (ws.progress || 0) >= 50) {
       insights.push({
         id:            `insight-progress-${ws.id}`,
         type:          'fast_progress',
         severity:      'positive',
         workstream_id: ws.id,
         venture_id:    ws.venture_id,
-        message:       `${ws.name} is ${ws.progress}% complete (high momentum)`,
+        message:       `${ws.name} is ${ws.progress}% complete — backed by ${completionEvents.length} completion event(s)`,
         action:        'celebrate',
         timestamp:     new Date().toISOString()
       });
@@ -510,7 +520,19 @@ function computeInsights() {
     insights:    insights.slice(0, 20)
   });
 
-  return { insights: insights.slice(0, 20), computed_at: new Date().toISOString() };
+  return {
+    insights:    insights.slice(0, 20),
+    timestamp:   new Date().toISOString(),
+    computed_at: new Date().toISOString(),
+    sources: {
+      workstreams:    'workstreams.json',
+      agent_activity: 'agent_activity.json',
+      blocked_work:   'blocked_work.json',
+      agents_runtime: 'agents_runtime.json',
+      relationships:  'venture_relationships.json',
+      system_insights:'system_insights.json'
+    }
+  };
 }
 
 /**
@@ -601,7 +623,14 @@ function getMomentum() {
     trend_emoji:            trendEmoji,
     biggest_momentum:       biggestMomentum,
     next_target:            nextTarget,
-    computed_at:            new Date().toISOString()
+    timestamp:              new Date().toISOString(),
+    computed_at:            new Date().toISOString(),
+    sources: {
+      agent_activity:    'agent_activity.json',
+      venture_scoreboard:'venture_scoreboard.json',
+      workstreams:       'workstreams.json',
+      relationships:     'venture_relationships.json'
+    }
   };
 }
 
@@ -675,7 +704,12 @@ function getOperatorImpact(horizon = 'today') {
       automations_created: weekOps.filter(a => a.command === 'spawn_workstream').length,
       stages_advanced:     weekOps.filter(a => a.command === 'advance_stage').length
     },
-    computed_at: new Date().toISOString()
+    timestamp:   new Date().toISOString(),
+    computed_at: new Date().toISOString(),
+    sources: {
+      agent_activity: 'agent_activity.json',
+      workstreams:    'workstreams.json'
+    }
   };
 }
 
@@ -738,7 +772,15 @@ function getOpportunities() {
       });
     });
 
-  return { opportunities: opportunities.slice(0, 10), computed_at: new Date().toISOString() };
+  return {
+    opportunities: opportunities.slice(0, 10),
+    timestamp:     new Date().toISOString(),
+    computed_at:   new Date().toISOString(),
+    sources: {
+      agent_activity:  'agent_activity.json',
+      system_insights: 'system_insights.json'
+    }
+  };
 }
 
 // ---------------------------------------------------------------------------

@@ -1,0 +1,26 @@
+Subject: Quick question about ADU on {{property_address}}
+
+Hi {{first_name}},
+
+I noticed your property at {{property_address}} and thought of you when I saw the lot size and layout.
+
+Most homeowners we talk to are thinking about ADUs for one of three reasons:
+1. Rental income (secondary dwelling revenue)
+2. Family/caregiver housing (aging parents, adult kids)
+3. Future home value (ADUs add 15-25% to property value in MA)
+
+Which one resonates most for you, or is it something else entirely?
+
+The reason I ask is because we've built 100+ ADUs across Massachusetts in 8-12 weeks post-approval. Most people are surprised how quick and turnkey it is.
+
+If you're even mildly curious about what's possible on your property, I'd love to grab 15 minutes and show you what we're seeing in your area. No pressure, just information.
+
+Are you open to a quick conversation?
+
+Best,
+{{sender_name}}
+MassDwell
+{{phone}}
+{{website}}
+
+P.S. - We handle the permitting, the design, the financing help — everything. Most families our size qualify for better financing than they expect because ADUs are seen as de-risking investment properties.

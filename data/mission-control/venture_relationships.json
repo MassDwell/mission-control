@@ -1,0 +1,65 @@
+{
+  "lastUpdated": "2026-03-05T12:43:00.000Z",
+  "ventures": [
+    {
+      "id": "leadscore-ai",
+      "name": "LeadScore.ai",
+      "stage": "in_progress",
+      "owner_agent": "codesmith",
+      "workstreams": [
+        "backend-api-scaffolding",
+        "worker-job-processor",
+        "web-dashboard-alpha"
+      ],
+      "blockers": [],
+      "related_ventures": [],
+      "recent_activity_count": 20
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "backend-api-scaffolding",
+      "name": "Backend API Scaffolding",
+      "venture_id": "leadscore-ai",
+      "owner_agent": "codesmith",
+      "phase": "build",
+      "progress": 90,
+      "blockers": [],
+      "dependencies": []
+    },
+    {
+      "id": "worker-job-processor",
+      "name": "Worker Job Processor",
+      "venture_id": "leadscore-ai",
+      "owner_agent": "codesmith",
+      "phase": "investigation",
+      "progress": 20,
+      "blockers": [],
+      "dependencies": ["backend-api-scaffolding"]
+    },
+    {
+      "id": "web-dashboard-alpha",
+      "name": "Web Dashboard Alpha",
+      "venture_id": "leadscore-ai",
+      "owner_agent": "codesmith",
+      "phase": "design",
+      "progress": 5,
+      "blockers": [],
+      "dependencies": ["backend-api-scaffolding"]
+    }
+  ],
+  "agents": [
+    {
+      "id": "codesmith",
+      "name": "Codesmith",
+      "owned_ventures": ["leadscore-ai"],
+      "owned_workstreams": [
+        "backend-api-scaffolding",
+        "worker-job-processor",
+        "web-dashboard-alpha"
+      ],
+      "error_count_24h": 0
+    }
+  ],
+  "blockers": []
+}

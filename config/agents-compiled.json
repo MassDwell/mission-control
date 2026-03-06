@@ -1,0 +1,7 @@
+{
+  "id": "main",
+  "name": "Clawson",
+  "role": "Chief of Staff / Master Agent / COO",
+  "enabled": true,
+  "config_path": "canon/agents/main/"
+}

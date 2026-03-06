@@ -1,0 +1,131 @@
+{
+  "agent_id": "personal-assistant",
+  "name": "Personal Assistant",
+  "permission_profile": "personal_assistant",
+  "scopes": ["personal", "calendar"],
+  "permissions": ["read", "write"],
+  "created": "2026-03-04",
+  "status": "registered_disabled",
+  "access_matrix": {
+    "personal_email": {
+      "scope": "personal",
+      "service": "google_workspace",
+      "email": "vettoristeve@gmail.com",
+      "operations": ["read", "write_reply"],
+      "restrictions": "No delete, no forward to business email",
+      "allowed": true
+    },
+    "calendar": {
+      "scope": "calendar",
+      "service": "google_workspace",
+      "calendar": "personal",
+      "operations": ["read", "write_event", "read_availability"],
+      "restrictions": "Personal calendar only, no business calendars",
+      "allowed": true
+    },
+    "reminders": {
+      "scope": "personal",
+      "service": "reminders_api",
+      "operations": ["read", "write", "complete"],
+      "restrictions": "Personal reminders only",
+      "allowed": true
+    },
+    "task_tracking": {
+      "scope": "personal",
+      "service": "mission_control",
+      "operations": ["read", "write_personal_board"],
+      "restrictions": "Personal tasks only, no business tasks",
+      "allowed": true
+    },
+    "web_search": {
+      "scope": "personal",
+      "service": "brave_search_api",
+      "operations": ["search"],
+      "restrictions": "Research only, no data exfiltration",
+      "allowed": true
+    },
+    "weather": {
+      "scope": "personal",
+      "service": "weather_api",
+      "operations": ["read"],
+      "restrictions": "Read-only forecast",
+      "allowed": true
+    },
+    "business_email": {
+      "scope": "email",
+      "service": "google_workspace",
+      "emails": ["sales@massdwell.com", "team@atlanticlasersolutions.com"],
+      "operations": [],
+      "restrictions": "FORBIDDEN - Access not allowed",
+      "allowed": false
+    },
+
+    "code": {
+      "scope": "code",
+      "service": "git",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot execute, modify, or read code",
+      "allowed": false
+    },
+    "financial": {
+      "scope": "financial",
+      "service": "financial_systems",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot access financial data",
+      "allowed": false
+    },
+    "system": {
+      "scope": "system",
+      "service": "openclaw",
+      "operations": [],
+      "restrictions": "FORBIDDEN - Cannot access system config or registry",
+      "allowed": false
+    },
+    "credentials": {
+      "scope": "system",
+      "service": "credential_storage",
+      "operations": [],
+      "restrictions": "FORBIDDEN - No access to API keys, secrets, or passwords",
+      "allowed": false
+    }
+  },
+  "escalation_rules": {
+    "high_risk_actions": [
+      "Travel booking >$2K",
+      "Personal financial decisions >$1K",
+      "Health-related research requiring decisions"
+    ],
+    "escalation_target": "Steve (direct chat)",
+    "block_rules": [
+      "Any business data access attempt",
+      "Any code execution attempt",
+      "Any credential access attempt",
+      "Any CRM access attempt"
+    ]
+  },
+  "audit_logging": {
+    "enabled": true,
+    "log_location": "observability/agents/personal-assistant/access-log.json",
+    "log_all_access": true,
+    "log_denials": true,
+    "retention": "90 days"
+  },
+  "data_isolation": {
+    "cannot_access_business_data": true,
+    "cannot_execute_code": true,
+    "cannot_modify_system_config": true,
+    "cannot_read_other_agents_data": true
+  },
+  "heartbeat_config": {
+    "enabled": true,
+    "frequency": "daily",
+    "time": "08:00 EST",
+    "checks": [
+      "calendar_conflicts",
+      "personal_email_summary",
+      "task_list_review",
+      "weather_forecast"
+    ]
+  },
+  "notes": "Personal Assistant for Steve Vettori. Handles personal logistics, calendar, email, and research. Zero access to business systems. All escalations to Steve directly or to Clawson for business decisions."
+}

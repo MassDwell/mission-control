@@ -1,0 +1,183 @@
+[
+  {
+    "name": "Gmail OAuth Token Auto-Refresh",
+    "schedule": {
+      "kind": "every",
+      "everyMs": 1500000
+    },
+    "sessionTarget": "main",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "Run Gmail OAuth token refresh: cd ~/.openclaw/workspace && node scripts/gmail-token-refresh-oauth.js >> /dev/null 2>&1"
+    },
+    "enabled": true,
+    "description": "Permanent automation: OAuth token refresh every 25 min (before 60-min expiry). Zero manual intervention. Keeps all Gmail operations fresh."
+  },
+  {
+    "name": "Mission Control UI Auto-Start",
+    "schedule": {
+      "kind": "cron",
+      "expr": "*/5 * * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "Auto-start Mission Control UI dashboard: pgrep -f \"node.*mission-control-ui/server.js\" > /dev/null || (cd ~/.openclaw/workspace/mission-control-ui && nohup node server.js >> ~/.openclaw/workspace/data/logs/mission-control-ui.log 2>&1 &)"
+    },
+    "enabled": true,
+    "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible."
+  },
+  {
+    "name": "Mission Control Cron Export",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 */2 * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+    },
+    "enabled": true,
+    "description": "Syncs cron job state to Mission Control dashboard every 2 hours"
+  },
+  {
+    "name": "Weekly Memory Maintenance",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 20 * * 0",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "⏰ Weekly Memory Maintenance\n\nExecute: cd ~/.openclaw/workspace && ./scripts/memory-maintenance.sh\n\nThis will:\n1. Check file sizes (WORKING.md, MEMORY.md)\n2. Archive daily logs >30 days old\n3. Generate review report\n4. Git commit changes\n\nAfter automated tasks, complete manual review:\n- Review last 7 daily logs for lessons\n- Extract insights to MEMORY.md\n- Clean WORKING.md if needed\n\nSOP: data/global/sops/memory-maintenance.md"
+    },
+    "enabled": true,
+    "description": "Compacts memory files, archives old logs, generates review report"
+  },
+  {
+    "name": "Bi-Weekly Memory Audit",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 10 1,15 * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "🔍 Bi-Weekly Memory Audit (Clawson)\n\nPerform memory health check:\n\n1. Review memory/WORKING.md - is it current?\n2. Review MEMORY.md - any outdated info to archive?\n3. Check daily logs for patterns worth promoting\n4. Compact any files over 50KB\n5. Archive old daily logs (>14 days) to memory/archive/\n\nReport summary to Steve:\n- Files reviewed\n- Context saved (tokens)\n- Patterns promoted\n- Recommendations\n\nKeeps the system lean and compounds learning."
+    },
+    "enabled": true,
+    "description": "Health check on memory system, pattern extraction, file compaction"
+  },
+  {
+    "name": "Drift Audit (Core Architecture)",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 1 * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "🔍 Drift Audit — CORE ARCHITECTURE SPEC\n\nRun: scripts/deploy/drift-audit.sh\n\nChecks:\n1. Canonical files integrity (canon/ directory)\n2. Generated configs match canonical source (config/)\n3. No forbidden changes (Kommo refs, unauthorized agents)\n4. Directory structure correct\n5. All cron jobs match manifest\n6. No drift detected\n\nOutput: observability/drift-audit/audit-result-YYYYMMDD.json\n\nAllowed auto-fixes (safe):\n- Regenerate config/ from canon/\n- Create missing directories\n- Increment patch version\n\nManual flags (require review):\n- Canon file content changes\n- Breaking cron job changes\n- New credentials\n- Active code modifications\n\nAlert Steve if flags found."
+    },
+    "enabled": true,
+    "description": "Daily drift audit, safe auto-fixes, manual flags for risky changes"
+  },
+  {
+    "name": "personal_inbox_maintenance",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 7-21/2 * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "personal-assistant",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "📧 PERSONAL GMAIL INBOX MAINTENANCE (v2.0)\n\nTarget: vettoristeve@gmail.com\n\nEvery run:\n1. Scan inbox\n2. Auto-archive using ENHANCED rules (v2.0):\n   - Precedence: bulk | list | junk\n   - Auto-Submitted: auto-generated | auto-replied\n   - X-Auto-Response-Suppress: All | OOF\n   - List-Id: [any value]\n   - List-Unsubscribe: [header present]\n   - Gmail promotional label\n   - Sender: newsletter/updates/no-reply/marketing\n3. SMART ARCHIVING: Check contact status FIRST\n   - If sender in contacts/VIP/previous correspondent → Don't archive, classify as FYI instead\n   - If sender NOT known → Archive\n4. Categorize remaining: urgent, action-required, waiting, informational\n5. Flag urgent and action-required emails\n6. Count archived emails\n\nAt briefing times (8 AM, 1 PM, 6 PM EST only):\nSend to Clawson:\n\n📋 PERSONAL INBOX BRIEFING\n\nUrgent:\n<list items>\n\nNeeds Reply:\n<list items>\n\nFYI:\n<list items>\n\nArchived Automatically:\n<count>\n\nSafety rules (UNCHANGED):\n- NEVER auto-reply\n- NEVER delete emails\n- NEVER unsubscribe\n- Only archive low-priority bulk/marketing\n- Known contacts never archived (even if bulk headers)\n\nRules reference: canon/agents/personal-assistant/email-cleanup-rules.md",
+      "timeoutSeconds": 300
+    },
+    "enabled": true,
+    "delivery": {
+      "mode": "announce",
+      "channel": "telegram",
+      "to": "agent:main:telegram:direct:7002178651"
+    },
+    "description": "Personal Gmail inbox maintenance (v2.0): enhanced bulk detection (headers), smart contact checking, send briefings to Clawson at 8 AM, 1 PM, 6 PM"
+  },
+  {
+    "name": "mission_control_morning_brief",
+    "schedule": {
+      "kind": "cron",
+      "expr": "30 8 * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "🤖 MISSION CONTROL — MORNING BRIEF\n\nRetrieve from data/mission-control/:\n  • workstreams.json → ACTIVE WORK section\n  • blocked_work.json → BLOCKED WORK section\n  • venture_velocity.json → OPPORTUNITY VELOCITY\n  • observability → SYSTEM HEALTH\n\nFormat and send daily operational briefing to Steve:\n\n📊 SYSTEM HEALTH\n• Agent Status: [count online / 4]\n• Cron Health: [pass rate]\n• Error Rate: [last 24h]\n• Uptime: [avg %]\n\n🤖 AGENT ACTIVITY (Last 12h)\n[For each agent: Clawson, Codesmith, Moonshot, Personal Assistant]\n• Tasks: [count]\n• Current: [active task]\n• Status: [online/idle]\n\n🚀 ACTIVE WORK\n[Top 5 workstreams from workstreams.json]\n• Workstream ID\n• Current Stage\n• Agent\n• Timeline\n\n🚫 BLOCKED WORK\n[All blocked items from blocked_work.json]\n• Item\n• Blocker Type\n• Duration\n• Impact\n\n🎯 VENTURE PIPELINE\n[Counts from venture_work_links.json by stage]\n• Stage 1: X\n• Stage 2: X\n• ... Stage 8: X\n\n📈 OPPORTUNITY VELOCITY\n[From venture_velocity.json]\n• Validated: X ventures (this quarter)\n• Trend: [up/down/stable]\n• Target Rate: [baseline]\n\nDelivery: Telegram to Steve via Clawson"
+    },
+    "enabled": true,
+    "delivery": {
+      "mode": "announce",
+      "channel": "telegram",
+      "to": "agent:main:telegram:direct:7002178651"
+    },
+    "description": "Mission Control morning briefing (8:30 AM EST): System health, agent activity, active work, blocked items, pipeline status, venture velocity"
+  },
+  {
+    "name": "mission_control_evening_summary",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 18 * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "🌙 MISSION CONTROL — EVENING SUMMARY\n\nRetrieve from data/mission-control/:\n  • Daily snapshot (today vs yesterday)\n  • workstreams.json → stage changes\n  • blocked_work.json → resolved items\n  • venture_velocity.json → progress\n  • agent activity logs → completions\n\nFormat and send end-of-day operational summary to Steve:\n\n✅ AGENT WORK COMPLETED TODAY\n[Count tasks completed per agent]\n• Clawson: X tasks\n• Codesmith: X tasks\n• Moonshot: X tasks\n• Personal Assistant: X tasks\n• Total: X tasks\n\n🆕 NEW WORKSTREAMS CREATED\n[New items from workstreams.json created today]\n• Moonshot Proposals: X submitted\n• Change Requests Opened: X by Clawson\n• Details: [list with stage]\n\n⏭️ WORKSTREAM PROGRESS\n[Workstreams that moved stages today]\n• Workstream: [from stage → to stage]\n• Owner: [agent]\n• Timeline impact: [on track/at risk]\n\n🚫 BLOCKED WORK STATUS\n[Compare blocked_work.json to yesterday]\n• Newly Blocked: X\n• Resolved: X\n• Still Blocked: X\n• Oldest Blocker: [hours]\n\n🎯 VENTURE PROGRESS\n[From venture_work_links.json - any stage changes]\n• Moved to Build: X ideas\n• Moved to Experiment: X ideas\n• Completed: X ideas\n\n⚠️ SYSTEM ALERTS\n[If any]\n• Cron failures: [count]\n• Error spikes: [y/n]\n• Agent offline: [y/n]\n• Drift detected: [y/n]\n• None: [if all clear]\n\nDelivery: Telegram to Steve via Clawson"
+    },
+    "enabled": true,
+    "delivery": {
+      "mode": "announce",
+      "channel": "telegram",
+      "to": "agent:main:telegram:direct:7002178651"
+    },
+    "description": "Mission Control evening summary (6:00 PM EST): Work completed, new workstreams, stage progress, blocked work resolution, venture progress, system alerts"
+  },
+  {
+    "name": "moonshot_weekly_briefing",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * 1",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "moonshot",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "📊 MOONSHOT WEEKLY BRIEFING\n\nEvery Monday 9:00 AM EST, produce structured output:\n\n═══════════════════════════════════════════════════════════════\n📊 MOONSHOT WEEKLY BRIEFING — [Date]\n═══════════════════════════════════════════════════════════════\n\n🔍 NEW OPPORTUNITIES\nIdeas discovered this week (research findings)\n\n• [Idea Name]\n  Market: [Size/Sector]\n  Why Now: [Market/tech/timing trigger]\n  Status: Researching\n  Next: [Discovery phase]\n\n• [Idea Name]\n  Market: [Size/Sector]\n  Why Now: [Market/tech/timing trigger]\n  Status: Researching\n  Next: [Discovery phase]\n\n═══════════════════════════════════════════════════════════════\n\n⚗️ EXPERIMENTS RUNNING\nValidation work in progress\n\n• [Experiment Name]\n  Hypothesis: [What we're testing]\n  Metric: [Success measurement]\n  Progress: [Current status]\n  Week: [Week X of Y]\n  Next Action: [What happens this week]\n\n═══════════════════════════════════════════════════════════════\n\n✅ EXPERIMENTS COMPLETED\nValidation results from last week\n\n• [Experiment Name]\n  Result: [Go/Iterate/Pivot/No-Go]\n  Insight: [What we learned]\n  Next Action: [Proceed to spec / Pivot / Archive]\n\n═══════════════════════════════════════════════════════════════\n\n🚀 TOP OPPORTUNITY THIS WEEK\nPriority idea for Codesmith\n\n[Idea Name]\n\nMemo: [Link to moonshot_memo_[id].md]\nPRD: [Link to prd_[id].md]\nExperiment: [Link to experiment_plan_[id].md]\n\nProposed CR:\n\"Approved: moonshot — [Idea description]\"\n\nAwait: Clawson decision (Approve / Revise / Reject)\n\n═══════════════════════════════════════════════════════════════\n\n📈 EXPERIMENT SUCCESS RATE\nValidated Experiments / Total Experiments\n\nSuccess Rate: [X%]\nSuccesses: [X] | Total: [X]\nTarget: ≥40%\nStatus: [On track / Needs attention]\n\n📋 QUALITY CONTROL STATUS\n[Auto-tightening based on success rate]\n\nMode: [Normal | Tightened | Strict | Paused]\nValidation Rigor: [5 interviews | 10+ | Prototype | Process audit]\nIdeas/Week: [3-5 | 1-2 | 0 | 0]\n\nRef: canon/system/moonshot_metrics.md\n\n═══════════════════════════════════════════════════════════════\n\nDELIVER TO: Clawson (agent:main)\nFORMAT: Structured briefing (copy-paste ready)",
+      "timeoutSeconds": 600
+    },
+    "enabled": true,
+    "delivery": {
+      "mode": "announce",
+      "channel": "telegram",
+      "to": "agent:main:telegram:direct:7002178651"
+    },
+    "description": "Moonshot weekly briefing (Mondays 9 AM EST): structured output with new opportunities, running experiments, completed experiments, top priority idea, and experiment success rate metric"
+  }
+]

@@ -1,0 +1,405 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-04T20:04:00Z",
+  "entries": [
+    {
+      "log_id": "6ea2f70f-82e8-4e3c-aaf7-df06774c2a6d",
+      "action_id": "dbd09a46-af54-4219-b826-e90b76ff17a1",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "approve",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:06:54.575Z",
+      "completed_at": "2026-03-05T01:20:31.352Z",
+      "status": "failed",
+      "result": "",
+      "error": "Cannot read properties of undefined (reading 'findIndex')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "a0d117bd-579f-44cb-9e99-b8105d0f046f",
+      "action_id": "05910b9f-d17c-41a3-a435-7b978a68b8fd",
+      "decision_id": "dec_venture_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:21.198Z",
+      "completed_at": "2026-03-05T01:20:31.353Z",
+      "status": "failed",
+      "result": "Venture reject: alpine_41_chesley",
+      "error": "Cannot read properties of undefined (reading 'unshift')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "a0d117bd-579f-44cb-9e99-b8105d0f046f",
+      "action_id": "05910b9f-d17c-41a3-a435-7b978a68b8fd",
+      "decision_id": "dec_venture_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:21.198Z",
+      "completed_at": "2026-03-05T01:20:31.353Z",
+      "status": "failed",
+      "result": "Venture reject: alpine_41_chesley",
+      "error": "Cannot read properties of undefined (reading 'unshift')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "2b84f314-6291-4d70-97de-ba17b946d5fb",
+      "action_id": "63ed8218-2287-4e9a-9460-c07935db33fa",
+      "decision_id": "dec_blocker_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:29.883Z",
+      "completed_at": "2026-03-05T01:20:31.353Z",
+      "status": "failed",
+      "result": "Blocker acknowledged (reject): block_financing_docs",
+      "error": "Cannot read properties of undefined (reading 'unshift')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "2b84f314-6291-4d70-97de-ba17b946d5fb",
+      "action_id": "63ed8218-2287-4e9a-9460-c07935db33fa",
+      "decision_id": "dec_blocker_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:29.883Z",
+      "completed_at": "2026-03-05T01:20:31.353Z",
+      "status": "failed",
+      "result": "Blocker acknowledged (reject): block_financing_docs",
+      "error": "Cannot read properties of undefined (reading 'unshift')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "86ba374e-26d0-4e90-a5ad-76bb8425797e",
+      "action_id": "d984d9e4-2ad0-411c-b9de-4bdaadeb5982",
+      "decision_id": "dec_blocker_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:51.924Z",
+      "completed_at": "2026-03-05T01:20:31.353Z",
+      "status": "failed",
+      "result": "Blocker acknowledged (reject): block_financing_docs",
+      "error": "Cannot read properties of undefined (reading 'unshift')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "86ba374e-26d0-4e90-a5ad-76bb8425797e",
+      "action_id": "d984d9e4-2ad0-411c-b9de-4bdaadeb5982",
+      "decision_id": "dec_blocker_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:51.924Z",
+      "completed_at": "2026-03-05T01:20:31.353Z",
+      "status": "failed",
+      "result": "Blocker acknowledged (reject): block_financing_docs",
+      "error": "Cannot read properties of undefined (reading 'unshift')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "62998316-3442-412c-bcbc-5f409769c742",
+      "action_id": "66de9d64-ee39-4a00-a65b-c4652890c229",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "review",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:59.696Z",
+      "completed_at": "2026-03-05T01:20:31.353Z",
+      "status": "failed",
+      "result": "",
+      "error": "Cannot read properties of undefined (reading 'findIndex')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "ae816bd1-3dcd-48a0-b1f0-36e665f561f9",
+      "action_id": "6167e66a-bfe5-4369-976d-3a006b70a3a6",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "approve",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:15:06.379Z",
+      "completed_at": "2026-03-05T01:20:31.353Z",
+      "status": "failed",
+      "result": "",
+      "error": "Cannot read properties of undefined (reading 'findIndex')",
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "3762e0a3-901f-4682-b117-e764254cd5ae",
+      "action_id": "dbd09a46-af54-4219-b826-e90b76ff17a1",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "approve",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:06:54.575Z",
+      "completed_at": "2026-03-05T01:20:59.239Z",
+      "status": "completed",
+      "result": "Approved ws_ws_005: implementation → experiment",
+      "error": null,
+      "executed_by": "clawson_processor",
+      "system_changes": [
+        {
+          "file": "data/mission-control/workstreams.json",
+          "operation": "update_stage_or_status",
+          "before": {
+            "workstream_id": "ws_005",
+            "title": "Mission Control Phase 2 (Interactive Decisions + Controlled Actions)",
+            "origin_agent": "clawson",
+            "moonshot_id": null,
+            "current_stage": "implementation",
+            "current_agent": "codesmith",
+            "status": "in_progress",
+            "progress_percent": 0,
+            "last_update": "2026-03-04T20:03:00Z",
+            "current_task": "Decisions panel, action queue, Clawson processor, full auditability",
+            "timeline": {
+              "started": "2026-03-04",
+              "estimated_completion": "2026-03-05",
+              "days_elapsed": 0,
+              "days_remaining": 1
+            },
+            "stages_completed": [
+              "approval_pending",
+              "change_request"
+            ],
+            "next_stage": "experiment",
+            "description": "Upgrade Mission Control to interactive decision-making: decisions panel, two-step commit, full audit trail, zero breaking changes",
+            "linked_work": {
+              "cr_id": "CR-008",
+              "build_id": "mission-control-phase2"
+            },
+            "notes": "Two-step commit: UI queues → Clawson validates → logs immutably. Allowed ops: stage moves, status updates, blocker clearing, venture updates."
+          },
+          "after": {
+            "workstream_id": "ws_005",
+            "title": "Mission Control Phase 2 (Interactive Decisions + Controlled Actions)",
+            "origin_agent": "clawson",
+            "moonshot_id": null,
+            "current_stage": "results",
+            "current_agent": "codesmith",
+            "status": "in_progress",
+            "progress_percent": 30,
+            "last_update": "2026-03-05T01:20:59.240Z",
+            "current_task": "Decisions panel, action queue, Clawson processor, full auditability",
+            "timeline": {
+              "started": "2026-03-04",
+              "estimated_completion": "2026-03-05",
+              "days_elapsed": 0,
+              "days_remaining": 1
+            },
+            "stages_completed": [
+              "approval_pending",
+              "change_request"
+            ],
+            "next_stage": "experiment",
+            "description": "Upgrade Mission Control to interactive decision-making: decisions panel, two-step commit, full audit trail, zero breaking changes",
+            "linked_work": {
+              "cr_id": "CR-008",
+              "build_id": "mission-control-phase2"
+            },
+            "notes": "Two-step commit: UI queues → Clawson validates → logs immutably. Allowed ops: stage moves, status updates, blocker clearing, venture updates."
+          }
+        }
+      ]
+    },
+    {
+      "log_id": "abe0764a-7622-485c-aa91-704f6b4def28",
+      "action_id": "05910b9f-d17c-41a3-a435-7b978a68b8fd",
+      "decision_id": "dec_venture_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:21.198Z",
+      "completed_at": "2026-03-05T01:20:59.240Z",
+      "status": "completed",
+      "result": "reject: venture alpine_41_chesley",
+      "error": null,
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "e901369d-ca3c-457a-be84-e156d31f3645",
+      "action_id": "63ed8218-2287-4e9a-9460-c07935db33fa",
+      "decision_id": "dec_blocker_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:29.883Z",
+      "completed_at": "2026-03-05T01:20:59.240Z",
+      "status": "completed",
+      "result": "reject: blocker block_financing_docs",
+      "error": null,
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "03467df0-3001-46d8-a243-241a34bd74d2",
+      "action_id": "d984d9e4-2ad0-411c-b9de-4bdaadeb5982",
+      "decision_id": "dec_blocker_001",
+      "action": "reject",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:51.924Z",
+      "completed_at": "2026-03-05T01:20:59.240Z",
+      "status": "completed",
+      "result": "reject: blocker block_financing_docs",
+      "error": null,
+      "executed_by": "clawson_processor",
+      "system_changes": []
+    },
+    {
+      "log_id": "63773962-a8e3-4feb-8a8a-007321b53896",
+      "action_id": "66de9d64-ee39-4a00-a65b-c4652890c229",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "review",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:14:59.696Z",
+      "completed_at": "2026-03-05T01:20:59.240Z",
+      "status": "completed",
+      "result": "Reviewed ws_ws_005 at stage experiment",
+      "error": null,
+      "executed_by": "clawson_processor",
+      "system_changes": [
+        {
+          "file": "data/mission-control/workstreams.json",
+          "operation": "update_stage_or_status",
+          "before": {
+            "workstream_id": "ws_005",
+            "title": "Mission Control Phase 2 (Interactive Decisions + Controlled Actions)",
+            "origin_agent": "clawson",
+            "moonshot_id": null,
+            "current_stage": "experiment",
+            "current_agent": "codesmith",
+            "status": "in_progress",
+            "progress_percent": 15,
+            "last_update": "2026-03-05T01:20:59.239Z",
+            "current_task": "Decisions panel, action queue, Clawson processor, full auditability",
+            "timeline": {
+              "started": "2026-03-04",
+              "estimated_completion": "2026-03-05",
+              "days_elapsed": 0,
+              "days_remaining": 1
+            },
+            "stages_completed": [
+              "approval_pending",
+              "change_request"
+            ],
+            "next_stage": "experiment",
+            "description": "Upgrade Mission Control to interactive decision-making: decisions panel, two-step commit, full audit trail, zero breaking changes",
+            "linked_work": {
+              "cr_id": "CR-008",
+              "build_id": "mission-control-phase2"
+            },
+            "notes": "Two-step commit: UI queues → Clawson validates → logs immutably. Allowed ops: stage moves, status updates, blocker clearing, venture updates."
+          },
+          "after": {
+            "workstream_id": "ws_005",
+            "title": "Mission Control Phase 2 (Interactive Decisions + Controlled Actions)",
+            "origin_agent": "clawson",
+            "moonshot_id": null,
+            "current_stage": "results",
+            "current_agent": "codesmith",
+            "status": "in_progress",
+            "progress_percent": 30,
+            "last_update": "2026-03-05T01:20:59.240Z",
+            "current_task": "Decisions panel, action queue, Clawson processor, full auditability",
+            "timeline": {
+              "started": "2026-03-04",
+              "estimated_completion": "2026-03-05",
+              "days_elapsed": 0,
+              "days_remaining": 1
+            },
+            "stages_completed": [
+              "approval_pending",
+              "change_request"
+            ],
+            "next_stage": "experiment",
+            "description": "Upgrade Mission Control to interactive decision-making: decisions panel, two-step commit, full audit trail, zero breaking changes",
+            "linked_work": {
+              "cr_id": "CR-008",
+              "build_id": "mission-control-phase2"
+            },
+            "notes": "Two-step commit: UI queues → Clawson validates → logs immutably. Allowed ops: stage moves, status updates, blocker clearing, venture updates."
+          }
+        }
+      ]
+    },
+    {
+      "log_id": "06c0cb1c-0648-446c-93df-9e5a01c5ec4e",
+      "action_id": "6167e66a-bfe5-4369-976d-3a006b70a3a6",
+      "decision_id": "dec_ws_001_ph2",
+      "action": "approve",
+      "requested_by": "steve",
+      "requested_at": "2026-03-05T01:15:06.379Z",
+      "completed_at": "2026-03-05T01:20:59.240Z",
+      "status": "completed",
+      "result": "Approved ws_ws_005: experiment → results",
+      "error": null,
+      "executed_by": "clawson_processor",
+      "system_changes": [
+        {
+          "file": "data/mission-control/workstreams.json",
+          "operation": "update_stage_or_status",
+          "before": {
+            "workstream_id": "ws_005",
+            "title": "Mission Control Phase 2 (Interactive Decisions + Controlled Actions)",
+            "origin_agent": "clawson",
+            "moonshot_id": null,
+            "current_stage": "experiment",
+            "current_agent": "codesmith",
+            "status": "in_progress",
+            "progress_percent": 15,
+            "last_update": "2026-03-05T01:20:59.239Z",
+            "current_task": "Decisions panel, action queue, Clawson processor, full auditability",
+            "timeline": {
+              "started": "2026-03-04",
+              "estimated_completion": "2026-03-05",
+              "days_elapsed": 0,
+              "days_remaining": 1
+            },
+            "stages_completed": [
+              "approval_pending",
+              "change_request"
+            ],
+            "next_stage": "experiment",
+            "description": "Upgrade Mission Control to interactive decision-making: decisions panel, two-step commit, full audit trail, zero breaking changes",
+            "linked_work": {
+              "cr_id": "CR-008",
+              "build_id": "mission-control-phase2"
+            },
+            "notes": "Two-step commit: UI queues → Clawson validates → logs immutably. Allowed ops: stage moves, status updates, blocker clearing, venture updates."
+          },
+          "after": {
+            "workstream_id": "ws_005",
+            "title": "Mission Control Phase 2 (Interactive Decisions + Controlled Actions)",
+            "origin_agent": "clawson",
+            "moonshot_id": null,
+            "current_stage": "results",
+            "current_agent": "codesmith",
+            "status": "in_progress",
+            "progress_percent": 30,
+            "last_update": "2026-03-05T01:20:59.240Z",
+            "current_task": "Decisions panel, action queue, Clawson processor, full auditability",
+            "timeline": {
+              "started": "2026-03-04",
+              "estimated_completion": "2026-03-05",
+              "days_elapsed": 0,
+              "days_remaining": 1
+            },
+            "stages_completed": [
+              "approval_pending",
+              "change_request"
+            ],
+            "next_stage": "experiment",
+            "description": "Upgrade Mission Control to interactive decision-making: decisions panel, two-step commit, full audit trail, zero breaking changes",
+            "linked_work": {
+              "cr_id": "CR-008",
+              "build_id": "mission-control-phase2"
+            },
+            "notes": "Two-step commit: UI queues → Clawson validates → logs immutably. Allowed ops: stage moves, status updates, blocker clearing, venture updates."
+          }
+        }
+      ]
+    }
+  ]
+}

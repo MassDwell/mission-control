@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-03-05T23:38:09.708Z",
+  "leadscore-001": {
+    "venture_id": "leadscore-001",
+    "name": "LeadScore.ai",
+    "stage": "In Progress",
+    "status": "building",
+    "owner": "Codesmith",
+    "cr_number": "CR-LEADSCORE-001",
+    "mrr_current": 0,
+    "mrr_target": 5000,
+    "timeline_weeks": 8,
+    "started_date": "2026-03-05"
+  },
+  "metadata": {
+    "stage_summary": {
+      "Opportunity": 3,
+      "Qualified": 0,
+      "In Progress": 1,
+      "Due Diligence": 0,
+      "Negotiation": 0,
+      "Approval": 0,
+      "Closing": 0,
+      "Closed": 0
+    }
+  },
+  "leadscore": {
+    "venture_id": "leadscore",
+    "workstreams": [
+      "ws-1772733503009-trf0f"
+    ]
+  }
+}

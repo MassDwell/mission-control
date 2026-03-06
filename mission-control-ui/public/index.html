@@ -18,12 +18,15 @@
   <link rel="stylesheet" href="/insights-panel.css" />
   <link rel="stylesheet" href="/momentum-tracker.css" />
   <link rel="stylesheet" href="/venture-graph.css" />
+  <!-- CR-MC-TOOLTIP-CLARITY-SYSTEM -->
+  <link rel="stylesheet" href="/clarity-system.css" />
 
   <style>
     /* CR-MC-UI-HARDENING: Dashboard container adapts to new grid */
+    /* CR-MC-TOOLTIP-CLARITY-SYSTEM: Added signal strip row (auto) */
     .dashboard-container {
       display: grid;
-      grid-template-rows: 60px 1fr 130px;
+      grid-template-rows: 60px auto 1fr 130px;
       height: 100vh;
       overflow: hidden;
     }
@@ -145,6 +148,11 @@
       </div>
     </div>
 
+    <!-- CR-MC-TOOLTIP-CLARITY-SYSTEM: Signal Highlight Strip -->
+    <div class="signal-strip" id="clarity-signal-strip">
+      <div class="signal-strip-empty">Initializing signal monitor…</div>
+    </div>
+
     <!-- CR-MC-UI-HARDENING: NEW DASHBOARD GRID (Priority-ordered panels) -->
     <!-- Priority: Work → Blockers → Insights → Discovery → Momentum → Impact → Agent Activity → Flow -->
     <div id="mc-dashboard-grid">
@@ -157,7 +165,7 @@
           <span class="mc-panel-title">⚡ Active Work</span>
           <div class="mc-panel-controls">
             <button class="tooltip-btn" data-panel="active-work" title="What is this panel?">?</button>
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-active-work" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-active-work" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-active-work" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -182,7 +190,7 @@
           <span class="mc-panel-title">🚧 Blocked Work</span>
           <div class="mc-panel-controls">
             <button class="tooltip-btn" data-panel="blocked-work" title="What is this panel?">?</button>
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-blocked-work" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-blocked-work" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-blocked-work" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -213,6 +221,7 @@
           </span>
           <div class="mc-panel-controls">
             <button class="tooltip-btn" data-panel="operator-guidance" title="What is this panel?">?</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-operator-guidance" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-operator-guidance" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-operator-guidance" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -240,6 +249,7 @@
           </span>
           <div class="mc-panel-controls">
             <button class="tooltip-btn" data-panel="founder-decisions" title="What is this panel?">?</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-founder-decisions" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-founder-decisions" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-founder-decisions" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -268,7 +278,7 @@
             <span id="insights-header-count" style="font-size:9px;font-weight:400;margin-left:6px;"></span>
           </span>
           <div class="mc-panel-controls">
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-insights" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-insights" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-insights" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -290,7 +300,7 @@
           <span class="mc-panel-title">🔭 Opportunity Discovery</span>
           <span style="font-size:9px;font-weight:400;color:var(--text-muted);">30s refresh</span>
           <div class="mc-panel-controls">
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-opportunity-discovery" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-opportunity-discovery" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-opportunity-discovery" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -310,7 +320,7 @@
           <span class="mc-panel-title">📈 Momentum</span>
           <span style="font-size:9px;font-weight:400;color:var(--text-muted);">This Week</span>
           <div class="mc-panel-controls">
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-momentum" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-momentum" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-momentum" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -328,7 +338,7 @@
           <span class="mc-panel-title">🎯 Your Impact</span>
           <span style="font-size:9px;font-weight:400;color:var(--text-muted);">Operator metrics</span>
           <div class="mc-panel-controls">
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-operator-impact" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-operator-impact" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-operator-impact" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -348,7 +358,7 @@
           <span class="mc-panel-title">🤖 Agent Activity</span>
           <span style="font-size:9px;font-weight:400;color:var(--text-muted);">Real-time feed</span>
           <div class="mc-panel-controls">
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-agent-activity" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-agent-activity" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-agent-activity" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -365,7 +375,7 @@
         <div class="mc-panel-header">
           <span class="mc-panel-title">🌊 Workstream Flow</span>
           <div class="mc-panel-controls">
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-workstream-flow" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-workstream-flow" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-workstream-flow" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -382,7 +392,7 @@
         <div class="mc-panel-header">
           <span class="mc-panel-title">🚀 Venture Pipeline</span>
           <div class="mc-panel-controls">
-            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-focus-btn" data-focus-panel="panel-venture-pipeline" title="Focus Mode">⛶</button>
             <button class="mc-ctrl-btn" data-panel="panel-venture-pipeline" data-action="collapse" title="Collapse / Expand">−</button>
             <button class="mc-ctrl-btn" data-panel="panel-venture-pipeline" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
@@ -606,6 +616,8 @@
   <script src="/opportunity-discovery.js"></script>
   <script src="/operator-impact.js"></script>
   <script src="/command-center.js"></script>
+  <!-- CR-MC-TOOLTIP-CLARITY-SYSTEM: Tooltips, Progressive Disclosure, Focus Mode, Signal Strip -->
+  <script src="/clarity-system.js"></script>
   <script>
     // Initialize VentureOS pipeline widget (CR-VENTUREOS-V1)
     function initVentureOS() {
