@@ -1,0 +1,20 @@
+{
+  "venture": "test-venture-001",
+  "stage": "IDEA",
+  "stage_entered": "2026-03-06T12:26:13.874Z",
+  "owner_agent": "clawson",
+  "artifacts_complete": false,
+  "next_stage": "EVIDENCE",
+  "gates_passed": [],
+  "gates_pending": [
+    "IDEA",
+    "EVIDENCE",
+    "OPPORTUNITY_SCORE",
+    "PRD",
+    "BUILD",
+    "BETA",
+    "REVENUE",
+    "SCALE"
+  ],
+  "last_updated": "2026-03-06T12:26:13.874Z"
+}

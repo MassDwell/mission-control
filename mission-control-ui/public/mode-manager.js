@@ -151,11 +151,36 @@
           el.style.display = '';
           el.dataset.mcHidden = '0';
         }
+        // Force visibility via CSS (the !important rules in mode-styles.css will take over)
       } else {
         el.style.display = 'none';
         el.dataset.mcHidden = '1';
       }
     });
+
+    // Failsafe: Verify panels are visible after a brief delay for CSS cascade
+    setTimeout(function() {
+      const visible = PANEL_MODES[mode] || [];
+      let hiddenCount = 0;
+      
+      ALL_PANEL_IDS.forEach(function(panelId) {
+        const el = document.getElementById(panelId);
+        if (!el) return;
+        
+        if (visible.includes(panelId)) {
+          const computed = window.getComputedStyle(el);
+          if (computed.display === 'none') {
+            console.warn('[MODE-MANAGER] Panel ' + panelId + ' still hidden after CSS cascade, forcing visibility');
+            el.style.display = 'grid';
+            hiddenCount++;
+          }
+        }
+      });
+      
+      if (hiddenCount > 0) {
+        console.warn('[MODE-MANAGER] Failsafe: Fixed ' + hiddenCount + ' panels that remained hidden');
+      }
+    }, 100);
   }
 
   // ─── Layout Persistence ───────────────────────────────────────────

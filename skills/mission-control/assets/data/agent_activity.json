@@ -1,6 +1,174 @@
 {
-  "lastUpdated": "2026-03-06T09:38:10.509Z",
+  "lastUpdated": "2026-03-06T13:38:10.730Z",
   "activities": [
+    {
+      "id": "08eb2e87-b1db-411e-b81f-fd5bb293b66a",
+      "timestamp": "2026-03-06T12:27:51.105Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "062aaaed-e624-4fc4-a5fd-5b87164f789d",
+      "timestamp": "2026-03-06T12:26:54.618Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "agent": "Clawson",
+      "action": "Spawn Workstream",
+      "description": "test-venture-001 \"Phase 2 Test Workstream\" owner: codesmith (via mission_control)",
+      "severity": "info",
+      "source": "mission_control",
+      "timestamp": "2026-03-06T12:26:35.665Z"
+    },
+    {
+      "agent": "Clawson",
+      "action": "Advance Venture Stage",
+      "description": "test-venture-001 → EVIDENCE (via mission_control)",
+      "severity": "info",
+      "source": "mission_control",
+      "timestamp": "2026-03-06T12:26:31.040Z"
+    },
+    {
+      "agent": "Clawson",
+      "action": "Pause Venture",
+      "description": "test-venture-001 (Testing Phase 2 pause action) (via mission_control)",
+      "severity": "info",
+      "source": "mission_control",
+      "timestamp": "2026-03-06T12:26:26.790Z"
+    },
+    {
+      "id": "333f96a0-c8e6-4a8b-b409-400c404a8e50",
+      "timestamp": "2026-03-06T12:25:04.176Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "f4a91238-4d15-49de-ae0e-e7e900ac50b2",
+      "timestamp": "2026-03-06T12:18:40.229Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "73d5a06e-33de-461f-9edd-ccb9f9fe3e35",
+      "timestamp": "2026-03-06T12:09:18.168Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "e6310581-2238-425f-ad2b-6202db6f5136",
+      "timestamp": "2026-03-06T12:08:37.596Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "04fdc23d-5d53-469e-9c8b-4dd85c3d3bc5",
+      "timestamp": "2026-03-06T12:06:12.398Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 7 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "185a6e7b-2fde-4f9c-a479-60bb0a665527",
+      "timestamp": "2026-03-06T11:42:38.473Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "32f4bb10-bf42-4279-8543-1feb16cc6e8e",
+      "timestamp": "2026-03-06T11:35:04.589Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "a893e41f-97f5-4edf-9727-c58597bdabd3",
+      "timestamp": "2026-03-06T11:29:29.404Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "9289b894-ad1f-47d6-8c02-92183c1d1f36",
+      "timestamp": "2026-03-06T11:28:30.245Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "ad9e53eb-4018-4b8a-8055-7194cee8ed98",
+      "timestamp": "2026-03-06T11:25:18.477Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "9deea2bb-8304-4726-9076-1cfb6bac86c0",
+      "timestamp": "2026-03-06T11:24:29.934Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "1dbd62de-e0cf-4a28-9abf-3c10123e1edf",
+      "timestamp": "2026-03-06T11:23:54.305Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "5466fe18-c4b4-4f3d-8ee5-6a8c136823a7",
+      "timestamp": "2026-03-06T11:23:36.258Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "8918358b-7520-4836-9d89-9ecfa1e54d97",
+      "timestamp": "2026-03-06T11:23:29.273Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 7 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
     {
       "agent": "Clawson",
       "action": "Advance Venture Stage",
@@ -184,9 +352,49 @@
       "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
       "severity": "info",
       "source": "system"
+    },
+    {
+      "timestamp": "2026-03-06T11:38:10.512Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
+    },
+    {
+      "timestamp": "2026-03-06T13:38:10.730Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
     }
   ],
   "feed": [
+    {
+      "agent": "Clawson",
+      "action": "Spawn Workstream",
+      "description": "test-venture-001 \"Phase 2 Test Workstream\" owner: codesmith (via mission_control)",
+      "severity": "info",
+      "source": "mission_control",
+      "timestamp": "2026-03-06T12:26:35.665Z"
+    },
+    {
+      "agent": "Clawson",
+      "action": "Advance Venture Stage",
+      "description": "test-venture-001 → EVIDENCE (via mission_control)",
+      "severity": "info",
+      "source": "mission_control",
+      "timestamp": "2026-03-06T12:26:31.040Z"
+    },
+    {
+      "agent": "Clawson",
+      "action": "Pause Venture",
+      "description": "test-venture-001 (Testing Phase 2 pause action) (via mission_control)",
+      "severity": "info",
+      "source": "mission_control",
+      "timestamp": "2026-03-06T12:26:26.790Z"
+    },
     {
       "agent": "Clawson",
       "action": "Advance Venture Stage",

@@ -474,6 +474,78 @@ function updateMetrics(slug, updates, actor) {
            kill_triggered: killCheck.shouldKill, kill_result: killResult, changes };
 }
 
+/**
+ * Get ventures at risk: overdue, stale blockers, metrics below target.
+ * Used by dashboard /api/venture-at-risk endpoint.
+ * @returns {Array} List of at-risk ventures with highest_severity
+ */
+function getAtRisk() {
+  try {
+    const reg = _readRegistry();
+    if (!reg || !reg.ventures) return [];
+    
+    const atRisk = [];
+    reg.ventures.forEach(v => {
+      if (v.status === 'killed' || v.status === 'archived') return;
+      
+      let severity = null;
+      let reasons = [];
+      
+      // Check MRR targets based on stage
+      const metrics = _readMetrics(v.slug);
+      if (metrics && metrics.metrics) {
+        const mrr = metrics.metrics.mrr || 0;
+        
+        // REVENUE stage should have MRR >= $1000
+        if (v.stage === 'REVENUE' && mrr < 1000) {
+          severity = 'critical';
+          reasons.push(`MRR below target ($${mrr} < $1000)`);
+        }
+        // SCALE stage should have MRR >= $5000
+        if (v.stage === 'SCALE' && mrr < 5000) {
+          severity = severity === 'critical' ? 'critical' : 'warning';
+          reasons.push(`MRR below scaling target ($${mrr} < $5000)`);
+        }
+        
+        // Check activation rate for BETA stage
+        const activation = metrics.metrics.activation_rate || 0;
+        if (v.stage === 'BETA' && activation < 0.5) {
+          severity = severity === 'critical' ? 'critical' : 'warning';
+          reasons.push(`Activation below 50% (${(activation * 100).toFixed(1)}%)`);
+        }
+      }
+      
+      // Check stage tenure (more than 6 months should be reviewed)
+      const stageData = _readStage(v.slug);
+      if (stageData && stageData.stage_entered) {
+        const daysSinceEnter = Math.floor((Date.now() - new Date(stageData.stage_entered).getTime()) / 86400000);
+        if (daysSinceEnter > 180) {
+          severity = severity === 'critical' ? 'critical' : 'warning';
+          reasons.push(`Stage tenure ${daysSinceEnter} days (>180 days)`);
+        }
+      }
+      
+      if (severity) {
+        atRisk.push({
+          slug: v.slug,
+          name: v.name,
+          stage: v.stage,
+          status: v.status,
+          highest_severity: severity,
+          reasons: reasons,
+          last_updated: v.last_updated || new Date().toISOString()
+        });
+      }
+    });
+    
+    return atRisk;
+  } catch (err) {
+    console.error('[VENTUREOS] getAtRisk error:', err.message);
+    // Return safe empty response instead of throwing
+    return [];
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Exports
 // ---------------------------------------------------------------------------
@@ -492,6 +564,7 @@ module.exports = {
   getVentureDetail,
   listVentures,
   updateMetrics,
+  getAtRisk,
   // Internal helpers (for tests)
   _ventureDir,
   _readStage,

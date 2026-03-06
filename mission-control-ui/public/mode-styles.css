@@ -121,6 +121,17 @@ body.mode-operator #mc-dashboard-grid {
   grid-template-rows: auto auto auto;
 }
 
+/* Visible panels in OPERATOR mode */
+body.mode-operator #panel-active-work,
+body.mode-operator #panel-blocked-work,
+body.mode-operator #panel-agent-activity,
+body.mode-operator #panel-venture-pipeline,
+body.mode-operator #panel-insights,
+body.mode-operator #panel-operator-guidance,
+body.mode-operator #panel-founder-decisions {
+  display: grid !important;
+}
+
 body.mode-operator #panel-active-work          { grid-column: 1; grid-row: 1; min-height: 260px; }
 body.mode-operator #panel-blocked-work         { grid-column: 2; grid-row: 1; min-height: 260px; }
 body.mode-operator #panel-agent-activity       { grid-column: 3; grid-row: 1; min-height: 260px; }
@@ -145,6 +156,18 @@ body.mode-operations #mc-dashboard-grid {
   grid-template-rows: auto auto auto auto;
 }
 
+/* Visible panels in OPERATIONS mode */
+body.mode-operations #panel-active-work,
+body.mode-operations #panel-blocked-work,
+body.mode-operations #panel-workstream-flow,
+body.mode-operations #panel-venture-pipeline,
+body.mode-operations #panel-agent-activity,
+body.mode-operations #panel-insights,
+body.mode-operations #panel-operator-guidance,
+body.mode-operations #panel-founder-decisions {
+  display: grid !important;
+}
+
 body.mode-operations #panel-active-work          { grid-column: 1; grid-row: 1; min-height: 280px; }
 body.mode-operations #panel-blocked-work         { grid-column: 2; grid-row: 1; min-height: 280px; }
 body.mode-operations #panel-workstream-flow      { grid-column: 1 / -1; grid-row: 2; min-height: 280px; }
@@ -167,6 +190,21 @@ body.mode-operations #panel-operator-impact {
 body.mode-intelligence #mc-dashboard-grid {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto auto auto;
+}
+
+/* Visible panels in INTELLIGENCE mode (ALL panels) */
+body.mode-intelligence #panel-active-work,
+body.mode-intelligence #panel-blocked-work,
+body.mode-intelligence #panel-insights,
+body.mode-intelligence #panel-opportunity-discovery,
+body.mode-intelligence #panel-momentum,
+body.mode-intelligence #panel-operator-impact,
+body.mode-intelligence #panel-agent-activity,
+body.mode-intelligence #panel-workstream-flow,
+body.mode-intelligence #panel-venture-pipeline,
+body.mode-intelligence #panel-operator-guidance,
+body.mode-intelligence #panel-founder-decisions {
+  display: grid !important;
 }
 
 body.mode-intelligence #panel-active-work          { grid-column: 1; grid-row: 1; min-height: 280px; }

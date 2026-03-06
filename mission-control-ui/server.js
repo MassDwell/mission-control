@@ -681,20 +681,30 @@ app.get('/api/venture-pipeline', (req, res) => {
 /**
  * GET /api/venture-at-risk
  * List ventures at risk: overdue, stale blockers, metrics below target.
+ * Graceful degradation: Always returns 200 with safe empty response if error.
  */
 app.get('/api/venture-at-risk', (req, res) => {
   try {
     const atRisk = ventureOS.getAtRisk();
     res.json({
-      at_risk: atRisk,
+      ventures_at_risk: atRisk,
       total:   atRisk.length,
       critical: atRisk.filter(v => v.highest_severity === 'critical').length,
       warning:  atRisk.filter(v => v.highest_severity === 'warning').length,
-      timestamp: new Date().toISOString()
+      lastUpdated: new Date().toISOString(),
+      error: null
     });
   } catch (err) {
     console.error('[VENTUREOS] getAtRisk error:', err.message);
-    res.status(500).json({ error: err.message, at_risk: [], timestamp: new Date().toISOString() });
+    // Graceful degradation: Return 200 with empty array, NOT 500
+    res.json({
+      ventures_at_risk: [],
+      total: 0,
+      critical: 0,
+      warning: 0,
+      lastUpdated: new Date().toISOString(),
+      error: err.message
+    });
   }
 });
 
