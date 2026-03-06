@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mission Control — Palantir Mode</title>
+  <title>Operator Command — Mission Control</title>
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/mode-styles.css" />
   <link rel="stylesheet" href="/drilldown.css" />
   <link rel="stylesheet" href="/venture-detail.css" />
   <!-- CR-MC-OPS-PANELS-UPGRADE -->
@@ -19,65 +20,12 @@
   <link rel="stylesheet" href="/venture-graph.css" />
 
   <style>
-    /* Palantir Mode layout overrides */
-    .main-grid {
+    /* CR-MC-UI-HARDENING: Dashboard container adapts to new grid */
+    .dashboard-container {
       display: grid;
-      grid-template-columns: 270px 1fr 300px;
-      grid-template-rows: 1fr;
-      gap: 8px;
-      flex: 1;
-      min-height: 0;
+      grid-template-rows: 60px 1fr 130px;
+      height: 100vh;
       overflow: hidden;
-    }
-
-    .palantir-left   { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-y: auto; }
-    .palantir-center { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-y: auto; }
-    .palantir-right  { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-y: auto; }
-
-    /* Venture graph section */
-    #venture-graph-container {
-      height: 280px;
-      background: var(--bg-panel, #0f1117);
-      border: 1px solid var(--border, #1e2435);
-      border-radius: 6px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    #venture-graph-container .graph-panel-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 14px;
-      border-bottom: 1px solid var(--border, #1e2435);
-      background: var(--bg-section, #161a25);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--text-secondary, #8892a4);
-      text-transform: uppercase;
-    }
-
-    #venture-graph-canvas {
-      height: calc(280px - 37px);
-    }
-
-    /* Insights panel in left col */
-    .insights-panel {
-      flex-shrink: 0;
-    }
-
-    /* Scrollable panels */
-    .palantir-left::-webkit-scrollbar,
-    .palantir-center::-webkit-scrollbar,
-    .palantir-right::-webkit-scrollbar {
-      width: 4px;
-    }
-    .palantir-left::-webkit-scrollbar-thumb,
-    .palantir-center::-webkit-scrollbar-thumb,
-    .palantir-right::-webkit-scrollbar-thumb {
-      background: #2a3047;
-      border-radius: 2px;
     }
 
     /* Top bar SSOT enhancement */
@@ -86,6 +34,52 @@
       color: #22c55e;
       opacity: 0.7;
       margin-left: 3px;
+    }
+
+    /* Venture graph section */
+    #venture-graph-container {
+      background: var(--bg-panel, #0f1117);
+      border: 1px solid var(--border-color, #3a4557);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    #venture-graph-container .graph-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--border-color, #3a4557);
+      background: var(--bg-section, #252d3d);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary, #b0b8c8);
+      text-transform: uppercase;
+    }
+
+    #venture-graph-canvas {
+      height: 200px;
+    }
+
+    /* insights-panel class used inside mc-panel-body */
+    .mc-panel-body.insights-panel {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+    .mc-panel-body.insights-panel .insights-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px 14px;
+    }
+    .mc-panel-body.insights-panel .insights-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 14px;
+      border-top: 1px solid var(--border-color, #3a4557);
+      font-size: 10px;
+      color: var(--text-muted, #7a8494);
     }
   </style>
 </head>
@@ -97,8 +91,15 @@
       <span id="staleness-age" style="margin-left: auto;"></span>
     </div>
 
-    <!-- TOP BAR — Palantir Mode: Active Agents from SSOT -->
+    <!-- TOP BAR — Operator Command: Active Agents from SSOT -->
     <div class="top-bar">
+      <!-- 3-MODE TOGGLE -->
+      <div class="mode-toggle-container">
+        <button class="mode-btn active" data-mode="operator" title="Calm daily-use. Glanceable in &lt;3 seconds.">OPERATOR</button>
+        <button class="mode-btn" data-mode="operations" title="Active workflow management.">OPERATIONS</button>
+        <button class="mode-btn" data-mode="intelligence" title="Full deep telemetry — Operator Intelligence mode.">INTELLIGENCE</button>
+      </div>
+      <span id="mc-mode-indicator" class="mode-label-indicator mode-indicator-operator">OPERATOR</span>
       <div class="top-bar-item">
         <div class="metric-label">
           Active Agents
@@ -144,128 +145,272 @@
       </div>
     </div>
 
-    <!-- MAIN GRID: 3 Columns (Palantir Mode) -->
-    <div class="main-grid">
+    <!-- CR-MC-UI-HARDENING: NEW DASHBOARD GRID (Priority-ordered panels) -->
+    <!-- Priority: Work → Blockers → Insights → Discovery → Momentum → Impact → Agent Activity → Flow -->
+    <div id="mc-dashboard-grid">
 
-      <!-- ═══ LEFT COLUMN: System Insights + Momentum Tracker ═══ -->
-      <div class="palantir-left">
+      <!-- ═══ ROW 1: Active Work (left) + Blocked Work (right) ═══ -->
 
-        <!-- System Insights Panel -->
-        <div class="insights-panel">
-          <div class="insights-panel-header">
-            System Insights
-            <span id="insights-header-count" style="font-size:10px;font-weight:400;"></span>
+      <!-- Active Work Panel -->
+      <div id="panel-active-work" class="mc-panel mc-panel-primary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">⚡ Active Work</span>
+          <div class="mc-panel-controls">
+            <button class="tooltip-btn" data-panel="active-work" title="What is this panel?">?</button>
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-active-work" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-active-work" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
+        </div>
+        <div class="tooltip-popup" id="tooltip-active-work" style="display:none;">
+          <p><strong>Active Work</strong></p>
+          <p>All active workstreams with current progress and owning agent.</p>
+          <p><strong>Use this to:</strong> Track build velocity and identify stalled work.</p>
+          <p><strong>Watch for:</strong> Red blockers, workstreams with no update &gt;8h.</p>
+          <p><strong>Actions:</strong> Expand a workstream, assign resources, or clear blockers.</p>
+        </div>
+        <div class="mc-panel-body">
+          <div id="active-work-content">
+            <div class="loading">Loading active work...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blocked Work Panel -->
+      <div id="panel-blocked-work" class="mc-panel mc-panel-primary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">🚧 Blocked Work</span>
+          <div class="mc-panel-controls">
+            <button class="tooltip-btn" data-panel="blocked-work" title="What is this panel?">?</button>
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-blocked-work" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-blocked-work" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="tooltip-popup" id="tooltip-blocked-work" style="display:none;">
+          <p><strong>Blocked Work</strong></p>
+          <p>All workstreams and items currently blocked, with SLA timers.</p>
+          <p><strong>Use this to:</strong> Spot SLA violations and unblock the critical path.</p>
+          <p><strong>Watch for:</strong> Red SLA items — these are costing velocity.</p>
+          <p><strong>Actions:</strong> Assign a resolver, escalate, or manually unblock.</p>
+        </div>
+        <div class="mc-panel-body">
+          <div id="blocked-work-content">
+            <div class="loading">Loading blocked items...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 2: Operator Guidance (left) + Founder Decisions (right) ═══ -->
+      <!-- CR-OPERATOR-COMMAND-UPGRADE: Primary guidance panels -->
+
+      <!-- Operator Guidance Panel -->
+      <div id="panel-operator-guidance" class="mc-panel mc-panel-primary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">
+            🎯 Operator Guidance
+            <span id="guidance-header-count" style="font-size:9px;font-weight:400;margin-left:6px;"></span>
+          </span>
+          <div class="mc-panel-controls">
+            <button class="tooltip-btn" data-panel="operator-guidance" title="What is this panel?">?</button>
+            <button class="mc-ctrl-btn" data-panel="panel-operator-guidance" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-operator-guidance" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="tooltip-popup" id="tooltip-operator-guidance" style="display:none;">
+          <p><strong>Operator Guidance</strong></p>
+          <p>AI-generated action recommendations based on live SSOT data.</p>
+          <p><strong>Use this to:</strong> Identify the highest-value action right now.</p>
+          <p><strong>Watch for:</strong> HIGH priority items — stalled work, idle agents.</p>
+          <p><strong>Actions:</strong> Click "Detail" on any item to drill into the issue.</p>
+        </div>
+        <div class="mc-panel-body">
+          <div id="operator-guidance-content">
+            <div class="loading">Loading guidance...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder Decisions Panel -->
+      <div id="panel-founder-decisions" class="mc-panel mc-panel-primary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">
+            🧭 Founder Decisions
+            <span id="decisions-header-count" style="font-size:9px;font-weight:400;margin-left:6px;"></span>
+          </span>
+          <div class="mc-panel-controls">
+            <button class="tooltip-btn" data-panel="founder-decisions" title="What is this panel?">?</button>
+            <button class="mc-ctrl-btn" data-panel="panel-founder-decisions" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-founder-decisions" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="tooltip-popup" id="tooltip-founder-decisions" style="display:none;">
+          <p><strong>Founder Decisions</strong></p>
+          <p>Strategic recommendations for venture advancement and resource allocation.</p>
+          <p><strong>Use this to:</strong> Make high-confidence decisions on what to build next.</p>
+          <p><strong>Watch for:</strong> High-confidence recommendations with clear reasoning.</p>
+          <p><strong>Actions:</strong> Advance venture, rebalance agents, or trigger kill review.</p>
+        </div>
+        <div class="mc-panel-body">
+          <div id="founder-decisions-content">
+            <div class="loading">Loading decisions...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 3: System Insights (left) + Opportunity Discovery (right) ═══ -->
+
+      <!-- System Insights Panel -->
+      <div id="panel-insights" class="mc-panel mc-panel-secondary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">
+            🧠 System Insights
+            <span id="insights-header-count" style="font-size:9px;font-weight:400;margin-left:6px;"></span>
+          </span>
+          <div class="mc-panel-controls">
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-insights" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-insights" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="mc-panel-body insights-panel">
           <div class="insights-list" id="insights-list">
             <div class="insights-empty">Loading insights...</div>
           </div>
-          <div class="insights-footer">
+          <div class="insights-footer" style="padding-top:8px;font-size:10px;color:var(--text-muted);">
             <span>Auto-computed · 10s refresh</span>
-            <span id="insights-footer-time"></span>
+            <span id="insights-footer-time" style="margin-left:auto;"></span>
           </div>
         </div>
+      </div>
 
-        <!-- Momentum Tracker Panel -->
-        <div class="palantir-panel">
-          <div class="palantir-panel-header">
-            Momentum
-            <span style="font-size:9px;font-weight:400;color:#5a6478;">This Week</span>
+      <!-- Opportunity Discovery Panel -->
+      <div id="panel-opportunity-discovery" class="mc-panel mc-panel-secondary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">🔭 Opportunity Discovery</span>
+          <span style="font-size:9px;font-weight:400;color:var(--text-muted);">30s refresh</span>
+          <div class="mc-panel-controls">
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-opportunity-discovery" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-opportunity-discovery" data-action="fullwidth" title="Full Width">⇔</button>
           </div>
+        </div>
+        <div class="mc-panel-body">
+          <div id="opportunities-content">
+            <div class="insights-empty">Scanning for opportunities...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 3: Momentum (left) + Operator Impact (right) ═══ -->
+
+      <!-- Momentum Panel -->
+      <div id="panel-momentum" class="mc-panel mc-panel-secondary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">📈 Momentum</span>
+          <span style="font-size:9px;font-weight:400;color:var(--text-muted);">This Week</span>
+          <div class="mc-panel-controls">
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-momentum" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-momentum" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="mc-panel-body">
           <div id="momentum-content">
             <div class="insights-empty">Loading momentum...</div>
           </div>
         </div>
+      </div>
 
-        <!-- Venture Pipeline (moved from right) -->
-        <div class="palantir-panel">
-          <div class="palantir-panel-header">Venture Pipeline</div>
-          <div class="pipeline-stages" id="pipeline-content" style="padding:8px;">
+      <!-- Operator Impact Panel -->
+      <div id="panel-operator-impact" class="mc-panel mc-panel-secondary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">🎯 Your Impact</span>
+          <span style="font-size:9px;font-weight:400;color:var(--text-muted);">Operator metrics</span>
+          <div class="mc-panel-controls">
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-operator-impact" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-operator-impact" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="mc-panel-body">
+          <div id="impact-content">
+            <div class="insights-empty">Loading impact...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 4: Agent Activity (left) + Workstream Flow (right) ═══ -->
+
+      <!-- Agent Activity Panel -->
+      <div id="panel-agent-activity" class="mc-panel mc-panel-secondary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">🤖 Agent Activity</span>
+          <span style="font-size:9px;font-weight:400;color:var(--text-muted);">Real-time feed</span>
+          <div class="mc-panel-controls">
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-agent-activity" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-agent-activity" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="mc-panel-body">
+          <div id="agent-activity-content">
+            <div class="loading">Loading activity feed...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workstream Flow Panel -->
+      <div id="panel-workstream-flow" class="mc-panel mc-panel-secondary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">🌊 Workstream Flow</span>
+          <div class="mc-panel-controls">
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-workstream-flow" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-workstream-flow" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="mc-panel-body">
+          <div id="workstream-flow-content">
+            <div class="loading">Loading workstreams...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 5: Venture Pipeline (full width) ═══ -->
+      <div id="panel-venture-pipeline" class="mc-panel mc-panel-secondary">
+        <div class="mc-panel-header">
+          <span class="mc-panel-title">🚀 Venture Pipeline</span>
+          <div class="mc-panel-controls">
+            <button class="mc-focus-btn" title="Focus Mode (80%)">⛶</button>
+            <button class="mc-ctrl-btn" data-panel="panel-venture-pipeline" data-action="collapse" title="Collapse / Expand">−</button>
+            <button class="mc-ctrl-btn" data-panel="panel-venture-pipeline" data-action="fullwidth" title="Full Width">⇔</button>
+          </div>
+        </div>
+        <div class="mc-panel-body" style="display:flex;flex-direction:column;gap:10px;">
+          <!-- VentureOS Pipeline Widget (CR-VENTUREOS-V1) -->
+          <div id="ventureos-pipeline-widget"></div>
+          <!-- Legacy Pipeline Stages (CR-MC-UI-1.2 — kept for backward compat) -->
+          <div class="pipeline-stages" id="pipeline-content" style="padding:0;display:none;">
             <div class="pipeline-stage"><div class="stage-label">Opportunity</div><div class="stage-count">0</div></div>
             <div class="pipeline-stage"><div class="stage-label">Qualified</div><div class="stage-count">0</div></div>
             <div class="pipeline-stage"><div class="stage-label">In Progress</div><div class="stage-count">0</div></div>
             <div class="pipeline-stage"><div class="stage-label">Due Diligence</div><div class="stage-count">0</div></div>
           </div>
-        </div>
-
-      </div>
-
-      <!-- ═══ CENTER COLUMN: Active Work + Blocked Work + Flow + Graph ═══ -->
-      <div class="palantir-center">
-
-        <!-- Active Work Section -->
-        <div class="center-section">
-          <div class="section-header">Active Work</div>
-          <div class="section-content" id="active-work-content">
-            <div class="loading">Loading active work...</div>
-          </div>
-        </div>
-
-        <!-- Blocked Work Section -->
-        <div class="center-section">
-          <div class="section-header">Blocked Work</div>
-          <div class="section-content" id="blocked-work-content">
-            <div class="loading">Loading blocked items...</div>
-          </div>
-        </div>
-
-        <!-- Workstream Flow Section -->
-        <div class="center-section">
-          <div class="section-header">Workstream Flow</div>
-          <div class="section-content" id="workstream-flow-content">
-            <div class="loading">Loading workstreams...</div>
-          </div>
-        </div>
-
-        <!-- Relationship Graph Section -->
-        <div id="venture-graph-container">
-          <div class="graph-panel-header">
-            Relationship Graph
-            <div class="graph-legend">
-              <span class="legend-item"><span class="legend-dot venture"></span>Venture</span>
-              <span class="legend-item"><span class="legend-dot workstream"></span>Workstream</span>
-              <span class="legend-item"><span class="legend-dot agent"></span>Agent</span>
-              <span class="legend-item"><span class="legend-dot blocker"></span>Blocker</span>
+          <!-- Relationship Graph (embedded in venture panel) -->
+          <div id="venture-graph-container" style="height:240px;flex-shrink:0;">
+            <div class="graph-panel-header">
+              Relationship Graph
+              <div class="graph-legend">
+                <span class="legend-item"><span class="legend-dot venture"></span>Venture</span>
+                <span class="legend-item"><span class="legend-dot workstream"></span>Workstream</span>
+                <span class="legend-item"><span class="legend-dot agent"></span>Agent</span>
+                <span class="legend-item"><span class="legend-dot blocker"></span>Blocker</span>
+              </div>
             </div>
-          </div>
-          <div id="venture-graph-canvas"></div>
-        </div>
-
-      </div>
-
-      <!-- ═══ RIGHT COLUMN: Agent Activity + Opportunity Discovery + Operator Impact ═══ -->
-      <div class="palantir-right">
-
-        <!-- Agent Activity -->
-        <div class="panel-header">
-          Agent Activity
-          <span style="font-size: 9px; color: var(--text-muted); margin-left: auto;">Real-time feed</span>
-        </div>
-        <div class="panel-content" id="agent-activity-content" style="max-height:220px;overflow-y:auto;">
-          <div class="loading">Loading activity feed...</div>
-        </div>
-
-        <!-- Opportunity Discovery Panel -->
-        <div class="palantir-panel">
-          <div class="palantir-panel-header">
-            Opportunity Discovery
-            <span style="font-size:9px;font-weight:400;color:#5a6478;">30s refresh</span>
-          </div>
-          <div id="opportunities-content">
-            <div class="insights-empty">Scanning for opportunities...</div>
+            <div id="venture-graph-canvas"></div>
           </div>
         </div>
-
-        <!-- Operator Impact Panel -->
-        <div class="palantir-panel">
-          <div class="palantir-panel-header">
-            Your Impact
-            <span style="font-size:9px;font-weight:400;color:#5a6478;">Operator metrics</span>
-          </div>
-          <div id="impact-content">
-            <div class="insights-empty">Loading impact...</div>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -283,7 +428,7 @@
       </div>
       <div class="status-footer">
         <span id="last-updated">Last updated: --</span>
-        <span id="refresh-indicator">● Palantir Mode · 10s refresh</span>
+        <span id="refresh-indicator">● Operator Command · 10s refresh</span>
       </div>
     </div>
   </div>
@@ -436,6 +581,10 @@
     </div>
   </div>
 
+  <!-- CR-MC-UI-HARDENING: Layout persistence -->
+  <script src="/storage.js"></script>
+  <!-- CR-MC-3MODE-OPERATOR-CONSOLE: Mode architecture -->
+  <script src="/mode-manager.js"></script>
   <!-- CR-MC-VENTURE-DRILLDOWN-V2: Detail Drawer V2 -->
   <script src="/venture-detail.js"></script>
   <script src="/drilldown.js"></script>
@@ -446,7 +595,11 @@
   <script src="/blocked-work.js"></script>
   <script src="/workstream-flow.js"></script>
   <script src="/system-status.js"></script>
-  <!-- CR-MC-PALANTIR-OPERATOR-LOOPS: Palantir Mode components -->
+  <!-- CR-VENTUREOS-V1: VentureOS Pipeline + At-Risk Widget -->
+  <script src="/ventureos-panel.js"></script>
+  <!-- CR-OPERATOR-COMMAND-UPGRADE: Guidance + Decisions panels -->
+  <script src="/operator-guidance-panel.js"></script>
+  <!-- CR-MC-PALANTIR-OPERATOR-LOOPS: Operator Intelligence components -->
   <script src="/venture-graph.js"></script>
   <script src="/insights-panel.js"></script>
   <script src="/momentum-tracker.js"></script>
@@ -454,6 +607,20 @@
   <script src="/operator-impact.js"></script>
   <script src="/command-center.js"></script>
   <script>
+    // Initialize VentureOS pipeline widget (CR-VENTUREOS-V1)
+    function initVentureOS() {
+      if (window.VentureOS) {
+        VentureOS.init('ventureos-pipeline-widget');
+        // Auto-refresh every 30 seconds
+        setInterval(function() { VentureOS.refresh('ventureos-pipeline-widget'); }, 30000);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initVentureOS);
+    } else {
+      initVentureOS();
+    }
+
     // Initialize venture graph after DOM ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() {
@@ -476,9 +643,9 @@
       .then(r => r.json())
       .then(d => {
         if (!d.healthy) {
-          console.warn('[PALANTIR] SSOT validation issues:', d.failed, d.stale);
+          console.warn('[OPERATOR-COMMAND] SSOT validation issues:', d.failed, d.stale);
         } else {
-          console.log('[PALANTIR] SSOT validation: all files healthy ✓');
+          console.log('[OPERATOR-COMMAND] SSOT validation: all files healthy ✓');
         }
       })
       .catch(() => {});

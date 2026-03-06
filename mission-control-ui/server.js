@@ -26,6 +26,9 @@ const dataModule = require('./api/data');
 // CR-MC-UI-1.2: Venture pipeline endpoints
 const venturesModule = require('./api/ventures');
 
+// CR-VENTUREOS-V1: VentureOS governance engine (stage gates, kill rules, metrics)
+const ventureOS = require('./api/ventureos'); // CR-VENTUREOS-V1-ENHANCED (8-stage pipeline)
+
 // CR-008: Decision token for action validation
 const MC_DECISION_TOKEN = process.env.MC_DECISION_TOKEN || 'local_dev_token_12345';
 
@@ -414,6 +417,38 @@ app.get('/api/ventures/stage/:stage', (req, res) => {
   }
 });
 
+// CR-VENTUREOS-V1-ENHANCED: Static VentureOS GET routes — MUST be before /:venture_id
+// ==================================================================================
+
+/**
+ * GET /api/ventures/portfolio
+ * List all active ventures (VentureOS portfolio index).
+ */
+app.get('/api/ventures/portfolio', (req, res) => {
+  try {
+    const filters = {};
+    if (req.query.stage) filters.stage = req.query.stage;
+    if (req.query.status) filters.status = req.query.status;
+    res.json(ventureOS.listVentures(filters));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/ventures/stages
+ * All 8 stage definitions with requirements.
+ */
+app.get('/api/ventures/stages', (req, res) => {
+  try {
+    res.json({ stages: ventureOS.getAllStageRequirements(), pipeline: ventureOS.STAGES });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ==================================================================================
+
 /**
  * GET /api/ventures/:venture_id
  * Returns full venture detail + related_workstreams + blockers + recent_activity.
@@ -507,10 +542,154 @@ app.get('/api/health', (req, res) => {
 });
 
 // ===========================================================================
+// CR-VENTUREOS-V1: VentureOS Governance API
+// 8 endpoints: list, detail, create, gate, kill, metrics, pipeline, at-risk
+// ===========================================================================
+
+/**
+ * GET /api/ventureos/ventures
+ * List all ventures with summary + portfolio counts.
+ */
+app.get('/api/ventureos/ventures', (req, res) => {
+  try {
+    const { stage, status } = req.query;
+    const result = ventureOS.listVentures({ stage, status });
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] listVentures error:', err.message);
+    res.status(err.statusCode || 500).json({ error: err.message, timestamp: new Date().toISOString() });
+  }
+});
+
+/**
+ * GET /api/ventureos/ventures/:venture_id
+ * Full venture detail (scoreboard + ventures.json merged).
+ */
+app.get('/api/ventureos/ventures/:venture_id', (req, res) => {
+  try {
+    const { venture_id } = req.params;
+    const venture = ventureOS.getVentureDetailFull(venture_id);
+    if (!venture) return res.status(404).json({ error: `Venture not found: ${venture_id}` });
+    res.json({ venture, timestamp: new Date().toISOString() });
+  } catch (err) {
+    console.error('[VENTUREOS] getVentureDetail error:', err.message);
+    res.status(err.statusCode || 500).json({ error: err.message, timestamp: new Date().toISOString() });
+  }
+});
+
+/**
+ * POST /api/ventureos/ventures
+ * Create a new venture in OPPORTUNITY stage.
+ * Body: { name, description, owner, market_opportunity?, memo_url?, timeline_weeks?, target_mrr?, financials? }
+ */
+app.post('/api/ventureos/ventures', (req, res) => {
+  try {
+    const result = ventureOS.createVenture(req.body);
+    res.status(201).json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] createVenture error:', err.message);
+    res.status(err.statusCode || 500).json({ error: err.message, timestamp: new Date().toISOString() });
+  }
+});
+
+/**
+ * POST /api/ventureos/ventures/:venture_id/gate
+ * Advance venture to next stage (validates gate preconditions).
+ * Body: { next_stage }
+ */
+app.post('/api/ventureos/ventures/:venture_id/gate', (req, res) => {
+  try {
+    const { venture_id } = req.params;
+    const { next_stage } = req.body;
+    if (!next_stage) return res.status(400).json({ error: 'next_stage is required' });
+    const result = ventureOS.advanceStage(venture_id, next_stage);
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] advanceStage error:', err.message);
+    const payload = { error: err.message, timestamp: new Date().toISOString() };
+    if (err.missing) payload.missing_requirements = err.missing;
+    if (err.gate)    payload.gate = err.gate;
+    res.status(err.statusCode || 500).json(payload);
+  }
+});
+
+/**
+ * POST /api/ventureos/ventures/:venture_id/kill
+ * Kill venture. No appeal.
+ * Body: { reason, decision_maker, notes? }
+ * decision_maker must be: clawson | steve
+ */
+app.post('/api/ventureos/ventures/:venture_id/kill', (req, res) => {
+  try {
+    const { venture_id }                  = req.params;
+    const { reason, decision_maker, notes } = req.body;
+    const result = ventureOS.killVenture(venture_id, reason, decision_maker, notes);
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] killVenture error:', err.message);
+    res.status(err.statusCode || 500).json({ error: err.message, timestamp: new Date().toISOString() });
+  }
+});
+
+/**
+ * POST /api/ventureos/ventures/:venture_id/metrics
+ * Update success metrics.
+ * Body: { mrr_current?, customer_current?, accuracy_current?, nps_current? }
+ */
+app.post('/api/ventureos/ventures/:venture_id/metrics', (req, res) => {
+  try {
+    const { venture_id } = req.params;
+    const result = ventureOS.updateMetrics(venture_id, req.body);
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] updateMetrics error:', err.message);
+    res.status(err.statusCode || 500).json({ error: err.message, timestamp: new Date().toISOString() });
+  }
+});
+
+/**
+ * GET /api/venture-pipeline
+ * Stage distribution for Mission Control widget.
+ */
+app.get('/api/venture-pipeline', (req, res) => {
+  try {
+    const result = ventureOS.getPipeline();
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] getPipeline error:', err.message);
+    res.status(500).json({ error: err.message, timestamp: new Date().toISOString() });
+  }
+});
+
+/**
+ * GET /api/venture-at-risk
+ * List ventures at risk: overdue, stale blockers, metrics below target.
+ */
+app.get('/api/venture-at-risk', (req, res) => {
+  try {
+    const atRisk = ventureOS.getAtRisk();
+    res.json({
+      at_risk: atRisk,
+      total:   atRisk.length,
+      critical: atRisk.filter(v => v.highest_severity === 'critical').length,
+      warning:  atRisk.filter(v => v.highest_severity === 'warning').length,
+      timestamp: new Date().toISOString()
+    });
+  } catch (err) {
+    console.error('[VENTUREOS] getAtRisk error:', err.message);
+    res.status(500).json({ error: err.message, at_risk: [], timestamp: new Date().toISOString() });
+  }
+});
+
+// ===========================================================================
 // CR-MC-PALANTIR-OPERATOR-LOOPS: Palantir Mode API
 // ===========================================================================
 
 const palantir = require('./api/palantir');
+
+// CR-OPERATOR-COMMAND-UPGRADE: Guidance engines
+const operatorGuidance = require('./api/operator-guidance');
+const founderDecisions = require('./api/founder-decisions');
 
 /**
  * GET /api/agents
@@ -720,6 +899,230 @@ app.get('/api/validate', (req, res) => {
   }
 });
 
+// ===========================================================================
+// CR-VENTUREOS-V1-ENHANCED: VentureOS Operator Commands (6 endpoints)
+// ===========================================================================
+
+/**
+ * POST /api/ventures/create
+ * Create a new venture at IDEA stage.
+ * Body: { name, owner, description?, idea_md? }
+ */
+app.post('/api/ventures/create', (req, res) => {
+  try {
+    const { name, owner, description, idea_md } = req.body;
+    if (!name || !owner) {
+      return res.status(400).json({ error: 'Missing required fields: name, owner' });
+    }
+    const result = ventureOS.createVenture({ name, owner, description, idea_md });
+    console.log(`[VENTUREOS] Created venture: ${result.slug}`);
+    res.status(201).json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] Create error:', err.message);
+    const status = err.message.includes('already exists') ? 409 : 400;
+    res.status(status).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/ventures/:slug/advance
+ * Advance venture to next stage (with gate validation).
+ * Body: { next_stage }
+ */
+app.post('/api/ventures/:slug/advance', (req, res) => {
+  try {
+    const { slug } = req.params;
+    const { next_stage, actor } = req.body;
+    if (!next_stage) {
+      return res.status(400).json({ error: 'Missing required field: next_stage' });
+    }
+    const result = ventureOS.advanceVenture(slug, next_stage.toUpperCase(), actor);
+    if (!result.success) {
+      return res.status(400).json({
+        error: result.error || 'Gate preconditions not met',
+        missing: result.missing || [],
+        errors: result.errors || []
+      });
+    }
+    console.log(`[VENTUREOS] Advanced: ${slug} → ${next_stage}`);
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] Advance error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/ventures/:slug/kill
+ * Kill a venture (final, no appeal).
+ * Body: { reason, decision_maker }
+ */
+app.post('/api/ventures/:slug/kill', (req, res) => {
+  try {
+    const { slug } = req.params;
+    const { reason, decision_maker } = req.body;
+    if (!reason) {
+      return res.status(400).json({ error: 'Missing required field: reason' });
+    }
+    // Validate authority
+    const validAuthority = ['clawson', 'steve', 'system', 'system (auto-kill)'];
+    const actor = (decision_maker || '').toLowerCase();
+    if (decision_maker && !validAuthority.some(a => actor.includes(a))) {
+      return res.status(403).json({
+        error: `Unauthorized: Kill decisions require clawson or steve authority. Got: ${decision_maker}`
+      });
+    }
+    const result = ventureOS.killVenture(slug, reason, decision_maker || 'clawson');
+    console.log(`[VENTUREOS] Killed: ${slug} — ${reason}`);
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] Kill error:', err.message);
+    const status = err.message.includes('not found') ? 404 : 500;
+    res.status(status).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/ventures/portfolio
+ * List all active ventures from venture_registry.json.
+ * Query: ?stage=BUILD&status=active
+ *
+ * Note: This route must come before GET /api/ventures/:slug to avoid
+ * "portfolio" being treated as a slug.
+ */
+app.get('/api/ventures/portfolio', (req, res) => {
+  try {
+    const filters = {};
+    if (req.query.stage) filters.stage = req.query.stage;
+    if (req.query.status) filters.status = req.query.status;
+    const result = ventureOS.listVentures(filters);
+    res.json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] List error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/ventures/:slug/detail
+ * Get full venture detail (stage + metrics + artifacts + activity).
+ */
+app.get('/api/ventures/:slug/detail', (req, res) => {
+  try {
+    const { slug } = req.params;
+    const detail = ventureOS.getVentureDetail(slug);
+    if (!detail) {
+      return res.status(404).json({ error: `Venture not found: ${slug}` });
+    }
+    res.json(detail);
+  } catch (err) {
+    console.error('[VENTUREOS] Detail error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/ventures/:slug/metrics
+ * Update venture metrics (MRR, users, activation_rate, build_progress, etc.)
+ * Automatically checks kill triggers.
+ * Body: { mrr?, users?, activation_rate?, build_progress?, ... }
+ */
+app.post('/api/ventures/:slug/metrics', (req, res) => {
+  try {
+    const { slug } = req.params;
+    const { actor, ...metrics } = req.body;
+    if (Object.keys(metrics).length === 0) {
+      return res.status(400).json({ error: 'No metrics provided to update' });
+    }
+    const result = ventureOS.updateMetrics(slug, metrics, actor);
+    const statusCode = result.kill_triggered ? 200 : 200;
+    console.log(`[VENTUREOS] Metrics updated: ${slug} — ${result.changes.join(', ')}`);
+    res.status(statusCode).json(result);
+  } catch (err) {
+    console.error('[VENTUREOS] Metrics error:', err.message);
+    const status = err.message.includes('Cannot read') ? 404 : 500;
+    res.status(status).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/ventures/stages
+ * Get all 8 stage definitions with requirements.
+ */
+app.get('/api/ventures/stages', (req, res) => {
+  try {
+    const stages = ventureOS.getAllStageRequirements();
+    res.json({ stages, pipeline: ventureOS.STAGES });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/ventures/:slug/check-kill
+ * Manually trigger kill rule check for a venture.
+ */
+app.post('/api/ventures/:slug/check-kill', (req, res) => {
+  try {
+    const { slug } = req.params;
+    const result = ventureOS.checkKillTriggers(slug);
+    res.json({ slug, ...result });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ============================================================================
+// CR-OPERATOR-COMMAND-UPGRADE: Operator Guidance + Founder Decision endpoints
+// ============================================================================
+
+/**
+ * GET /api/operator-guidance
+ * Returns up to 4 prioritised operator recommendations (rules engine, SSOT).
+ */
+app.get('/api/operator-guidance', (req, res) => {
+  try {
+    const guidance = operatorGuidance.generateOperatorGuidance();
+    res.json({
+      guidance,
+      count: guidance.length,
+      timestamp: new Date().toISOString(),
+      sources: {
+        workstreams: 'workstreams.json',
+        blocked_work: 'blocked_work.json',
+        agents: 'agents_runtime.json',
+        pipeline: 'venture_velocity.json',
+        activity: 'agent_activity.json'
+      }
+    });
+  } catch (err) {
+    console.error('[OPERATOR-GUIDANCE] Error:', err.message);
+    res.status(500).json({ error: err.message, guidance: [], count: 0 });
+  }
+});
+
+/**
+ * GET /api/founder-decisions
+ * Returns strategic recommendations for venture advancement & resource decisions.
+ */
+app.get('/api/founder-decisions', (req, res) => {
+  try {
+    const decisions = founderDecisions.generateFounderDecisions();
+    res.json({
+      decisions,
+      decision_count: Object.keys(decisions).length,
+      timestamp: new Date().toISOString(),
+      sources: {
+        ventures: 'venture_scoreboard.json',
+        agents: 'agents_runtime.json'
+      }
+    });
+  } catch (err) {
+    console.error('[FOUNDER-DECISIONS] Error:', err.message);
+    res.status(500).json({ error: err.message, decisions: {} });
+  }
+});
+
 // Serve index.html for root
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -732,7 +1135,7 @@ app.use((req, res) => {
 
 // Start server (localhost only for security)
 const server = app.listen(PORT, 'localhost', () => {
-  console.log(`[CR-002/CR-005/CR-008/CR-MC-UI-1.2/CR-MC-OPS-PANELS] Mission Control UI running on http://localhost:${PORT}`);
+  console.log(`[CR-OPERATOR-COMMAND-UPGRADE] Operator Command running on http://localhost:${PORT}`);
   console.log('[MC-UI] Serving dashboard at /');
   console.log('[MC-UI] API endpoints:');
   console.log('  GET /api/status                    - Full dashboard data');
@@ -750,7 +1153,25 @@ const server = app.listen(PORT, 'localhost', () => {
   console.log('  GET /api/blockers/:id              - Blocker detail (CR-MC-OPS-PANELS)');
   console.log('  GET /api/system-status             - Agent health monitor (CR-MC-OPS-PANELS)');
   console.log('  GET /api/workstream-flow           - Stage distribution (CR-MC-OPS-PANELS)');
+  console.log('[VENTUREOS-V1] VentureOS endpoints (CR-VENTUREOS-V1):');
+  console.log('  GET  /api/ventureos/ventures           - List all ventures (VentureOS)');
+  console.log('  GET  /api/ventureos/ventures/:id       - Full venture detail (VentureOS)');
+  console.log('  POST /api/ventureos/ventures           - Create new venture (VentureOS)');
+  console.log('  POST /api/ventureos/ventures/:id/gate  - Advance stage gate (VentureOS)');
+  console.log('  POST /api/ventureos/ventures/:id/kill  - Kill venture (VentureOS)');
+  console.log('  POST /api/ventureos/ventures/:id/metrics - Update metrics (VentureOS)');
+  console.log('  GET  /api/venture-pipeline             - Pipeline distribution (VentureOS)');
+  console.log('  GET  /api/venture-at-risk              - At-risk ventures (VentureOS)');
   console.log('[CR-008] Decision token:', MC_DECISION_TOKEN ? '✓ Set (from MC_DECISION_TOKEN env)' : '✗ Using default dev token');
+  console.log('[VENTUREOS] VentureOS endpoints (CR-VENTUREOS-V1-ENHANCED):');
+  console.log('  POST /api/ventures/create              - Create venture (IDEA stage)');
+  console.log('  POST /api/ventures/:slug/advance       - Advance stage (with gate validation)');
+  console.log('  POST /api/ventures/:slug/kill          - Kill venture (final)');
+  console.log('  GET  /api/ventures/portfolio           - List portfolio (?stage=&status=)');
+  console.log('  GET  /api/ventures/:slug/detail        - Full venture detail');
+  console.log('  POST /api/ventures/:slug/metrics       - Update metrics (+ auto kill-check)');
+  console.log('  GET  /api/ventures/stages              - Stage pipeline definitions');
+  console.log('  POST /api/ventures/:slug/check-kill    - Manual kill trigger check');
   console.log('[PALANTIR] New endpoints (CR-MC-PALANTIR-OPERATOR-LOOPS):');
   console.log('  GET  /api/agents                   - Active agents (SSOT: agents_runtime.json)');
   console.log('  GET  /api/venture-graph            - Relationship graph data');
@@ -766,6 +1187,9 @@ const server = app.listen(PORT, 'localhost', () => {
   console.log('  GET  /api/impact                   - Operator impact');
   console.log('  GET  /api/opportunities            - Opportunity discovery');
   console.log('  GET  /api/validate                 - SSOT validation');
+  console.log('[OPERATOR-COMMAND-UPGRADE] New guidance endpoints (CR-OPERATOR-COMMAND-UPGRADE):');
+  console.log('  GET  /api/operator-guidance        - Operator action recommendations (rules engine)');
+  console.log('  GET  /api/founder-decisions        - Strategic founder decision recommendations');
 });
 
 process.on('SIGINT', () => {
