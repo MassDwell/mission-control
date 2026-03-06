@@ -15,6 +15,22 @@
     "description": "Permanent automation: OAuth token refresh every 25 min (before 60-min expiry). Zero manual intervention. Keeps all Gmail operations fresh."
   },
   {
+    "name": "Gmail OAuth Health Check (Watchdog)",
+    "schedule": {
+      "kind": "cron",
+      "expr": "*/30 * * * *",
+      "tz": "America/New_York"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "systemEvent",
+      "text": "Run Gmail OAuth health check: cd ~/.openclaw/workspace && node scripts/gmail-oauth-health-check.js 2>&1 | tee ~/.openclaw/workspace/logs/gmail-oauth-health-check.log"
+    },
+    "enabled": true,
+    "description": "OAuth health watchdog: Runs every 30 minutes. Validates refresh_token presence, checks token expiry, refreshes if needed. On critical failure: logs CRITICAL event, updates credentials_health.json, sends Telegram alert."
+  },
+  {
     "name": "Mission Control UI Auto-Start",
     "schedule": {
       "kind": "cron",
@@ -95,7 +111,7 @@
     "description": "Daily drift audit, safe auto-fixes, manual flags for risky changes"
   },
   {
-    "name": "personal_inbox_maintenance",
+    "name": "gmail_inbox_automation_loop",
     "schedule": {
       "kind": "cron",
       "expr": "0 7-21/2 * * *",
@@ -105,7 +121,7 @@
     "wakeMode": "now",
     "payload": {
       "kind": "agentTurn",
-      "message": "📧 PERSONAL GMAIL INBOX MAINTENANCE (v2.0)\n\nTarget: vettoristeve@gmail.com\n\nEvery run:\n1. Scan inbox\n2. Auto-archive using ENHANCED rules (v2.0):\n   - Precedence: bulk | list | junk\n   - Auto-Submitted: auto-generated | auto-replied\n   - X-Auto-Response-Suppress: All | OOF\n   - List-Id: [any value]\n   - List-Unsubscribe: [header present]\n   - Gmail promotional label\n   - Sender: newsletter/updates/no-reply/marketing\n3. SMART ARCHIVING: Check contact status FIRST\n   - If sender in contacts/VIP/previous correspondent → Don't archive, classify as FYI instead\n   - If sender NOT known → Archive\n4. Categorize remaining: urgent, action-required, waiting, informational\n5. Flag urgent and action-required emails\n6. Count archived emails\n\nAt briefing times (8 AM, 1 PM, 6 PM EST only):\nSend to Clawson:\n\n📋 PERSONAL INBOX BRIEFING\n\nUrgent:\n<list items>\n\nNeeds Reply:\n<list items>\n\nFYI:\n<list items>\n\nArchived Automatically:\n<count>\n\nSafety rules (UNCHANGED):\n- NEVER auto-reply\n- NEVER delete emails\n- NEVER unsubscribe\n- Only archive low-priority bulk/marketing\n- Known contacts never archived (even if bulk headers)\n\nRules reference: canon/agents/personal-assistant/email-cleanup-rules.md",
+      "message": "📧 PERSONAL GMAIL INBOX MAINTENANCE (v2.0 — ROBUST)\n\n⚡ PRE-FLIGHT: Verify Gmail OAuth health\nBefore processing: Check that refresh_token is valid.\nIf auth is broken: Abort immediately with single action.\nIf auth is healthy: Proceed to inbox cleanup.\n\nTarget: vettoristeve@gmail.com\n\nEvery run:\n1. Scan inbox\n2. Auto-archive using ENHANCED rules (v2.0):\n   - Precedence: bulk | list | junk\n   - Auto-Submitted: auto-generated | auto-replied\n   - X-Auto-Response-Suppress: All | OOF\n   - List-Id: [any value]\n   - List-Unsubscribe: [header present]\n   - Gmail promotional label\n   - Sender: newsletter/updates/no-reply/marketing\n3. SMART ARCHIVING: Check contact status FIRST\n   - If sender in contacts/VIP/previous correspondent → Don't archive, classify as FYI instead\n   - If sender NOT known → Archive\n4. Categorize remaining: urgent, action-required, waiting, informational\n5. Flag urgent and action-required emails\n6. Count archived emails\n\nAt briefing times (8 AM, 1 PM, 6 PM EST only):\nSend to Clawson:\n\n📋 PERSONAL INBOX BRIEFING\n\nUrgent:\n<list items>\n\nNeeds Reply:\n<list items>\n\nFYI:\n<list items>\n\nArchived Automatically:\n<count>\n\nFAIL-LOUD on OAuth failure: Log CRITICAL, notify Steve via Telegram.\n\nSafety rules (STRICT):\n- NEVER auto-reply\n- NEVER permanently delete emails\n- NEVER unsubscribe\n- Only archive low-priority bulk/marketing\n- Known contacts NEVER archived (even if bulk headers)\n\nRules reference: canon/agents/personal-assistant/email-cleanup-rules.md",
       "timeoutSeconds": 300
     },
     "enabled": true,
@@ -114,7 +130,7 @@
       "channel": "telegram",
       "to": "agent:main:telegram:direct:7002178651"
     },
-    "description": "Personal Gmail inbox maintenance (v2.0): enhanced bulk detection (headers), smart contact checking, send briefings to Clawson at 8 AM, 1 PM, 6 PM"
+    "description": "Gmail Inbox Automation Loop (v2.0 — Robust): Pre-flight OAuth health check. Enhanced bulk detection + smart contact checking. Briefings to Clawson at 8 AM, 1 PM, 6 PM EST. Executes: 7 AM, 9 AM, 11 AM, 1 PM, 3 PM, 5 PM, 7 PM, 9 PM EST daily. FAIL-LOUD on auth failure."
   },
   {
     "name": "mission_control_morning_brief",

@@ -238,6 +238,21 @@ function getAllActivities() {
  */
 function getVentureContext(ventureId, ventureWorkLinks) {
   if (!ventureId || !ventureWorkLinks) return null;
+
+  // New schema: pipeline array
+  if (Array.isArray(ventureWorkLinks.pipeline)) {
+    const entry = ventureWorkLinks.pipeline.find(v => v.venture_id === ventureId);
+    if (!entry) return null;
+    return {
+      venture_id: entry.venture_id,
+      name: entry.name,
+      stage: entry.stage,
+      status: entry.status,
+      owner: entry.owner
+    };
+  }
+
+  // Legacy schema: map keyed by venture_id
   const entry = ventureWorkLinks[ventureId];
   if (!entry || typeof entry !== 'object') return null;
   return {
@@ -268,12 +283,15 @@ function getWorkstreams() {
   const vwlData   = loadVentureWorkLinksFile();
   const actData   = loadAgentActivityFile();
 
-  const blockers   = Array.isArray(bkData.items)     ? bkData.items     : [];
+  // Support new schema (.blocked) and legacy (.items)
+  const blockers   = Array.isArray(bkData.blocked)   ? bkData.blocked   :
+                     Array.isArray(bkData.items)      ? bkData.items     : [];
   const activities = getAllActivities();
   const ventureLinks = vwlData;
 
-  // Primary workstream source: wsData.active array
-  let workstreams = Array.isArray(wsData.active) ? wsData.active : [];
+  // Support new schema (.workstreams) and legacy (.active array)
+  let workstreams = Array.isArray(wsData.workstreams) ? wsData.workstreams :
+                    Array.isArray(wsData.active)       ? wsData.active      : [];
 
   // Normalize and enrich each workstream
   const result = workstreams.map(ws => {
@@ -358,10 +376,12 @@ function getWorkstreamDetail(id) {
   const bkData    = loadBlockedWorkFile();
   const vwlData   = loadVentureWorkLinksFile();
 
-  const blockers   = Array.isArray(bkData.items)     ? bkData.items     : [];
+  const blockers   = Array.isArray(bkData.blocked)   ? bkData.blocked   :
+                     Array.isArray(bkData.items)      ? bkData.items     : [];
   const activities = getAllActivities();
 
-  const allWorkstreams = Array.isArray(wsData.active) ? wsData.active : [];
+  const allWorkstreams = Array.isArray(wsData.workstreams) ? wsData.workstreams :
+                         Array.isArray(wsData.active)       ? wsData.active      : [];
   const ws = allWorkstreams.find(w => w.id === id);
 
   if (!ws) return null; // Caller handles 404
@@ -438,7 +458,8 @@ function getBlockers() {
   const bkData  = loadBlockedWorkFile();
   const vwlData = loadVentureWorkLinksFile();
 
-  const rawBlockers = Array.isArray(bkData.items) ? bkData.items : [];
+  const rawBlockers = Array.isArray(bkData.blocked) ? bkData.blocked :
+                      Array.isArray(bkData.items)   ? bkData.items   : [];
 
   const blockers = rawBlockers.map(b => {
     const sla = calculateSLA(b);
@@ -500,7 +521,8 @@ function getBlockerDetail(id) {
   const vwlData  = loadVentureWorkLinksFile();
   const actData  = loadAgentActivityFile();
 
-  const rawBlockers = Array.isArray(bkData.items) ? bkData.items : [];
+  const rawBlockers = Array.isArray(bkData.blocked) ? bkData.blocked :
+                      Array.isArray(bkData.items)   ? bkData.items   : [];
   const b = rawBlockers.find(x =>
     (x.blocker_id || x.id) === id
   );
@@ -575,7 +597,8 @@ function getSystemStatus() {
   const wsData  = loadWorkstreamsFile();
   const activities = getAllActivities();
 
-  const allWorkstreams = Array.isArray(wsData.active) ? wsData.active : [];
+  const allWorkstreams = Array.isArray(wsData.workstreams) ? wsData.workstreams :
+                         Array.isArray(wsData.active)       ? wsData.active      : [];
   const agentStatusMap = actData.agents || {};
 
   // Registry agents available for future use (agent enumeration from canon)
@@ -686,7 +709,8 @@ function getWorkstreamFlow() {
   const wsData  = loadWorkstreamsFile();
   const vwlData = loadVentureWorkLinksFile();
 
-  const allWorkstreams = Array.isArray(wsData.active) ? wsData.active : [];
+  const allWorkstreams = Array.isArray(wsData.workstreams) ? wsData.workstreams :
+                         Array.isArray(wsData.active)       ? wsData.active      : [];
 
   // Known stages in order
   const STAGES = ['Discovery', 'Design', 'Build', 'Test', 'Deploy', 'Experiment'];

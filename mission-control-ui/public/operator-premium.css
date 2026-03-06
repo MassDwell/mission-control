@@ -1,0 +1,328 @@
+/**
+ * CR-MC-OPERATOR-VISUAL-UNIFIED-COMMAND-BUS
+ * Operator Premium Visual Refinement
+ * Phase 1 + 9: Premium, calm executive control surface
+ *
+ * Target feeling: ✨ Beautiful | 🧘 Calm | 🤝 Trustworthy | 📉 Less Cluttered
+ */
+
+/* ============================================================
+   OPERATOR MODE OVERRIDES
+   Only activate in operator mode (body.mode-operator)
+   ============================================================ */
+
+body.mode-operator {
+  --op-bg-base:    #0c0f16;
+  --op-bg-panel:   #111620;
+  --op-bg-section: #161d2c;
+  --op-bg-hover:   rgba(255,255,255,0.03);
+  --op-border:     #1e2840;
+  --op-border-mid: #2a3550;
+  --op-text-primary: #dde4f0;
+  --op-text-secondary: #8090a8;
+  --op-text-muted: #4a5670;
+  --op-shadow:     0 2px 16px rgba(0,0,0,0.3);
+  --op-radius:     10px;
+}
+
+/* ─── Panel Spacing ──────────────────────────────────────────── */
+
+body.mode-operator .mc-panel {
+  background: var(--op-bg-panel) !important;
+  border: 1px solid var(--op-border) !important;
+  border-radius: var(--op-radius) !important;
+  box-shadow: var(--op-shadow) !important;
+  overflow: hidden;
+}
+
+body.mode-operator .mc-panel-header {
+  padding: 14px 24px !important;
+  background: var(--op-bg-section) !important;
+  border-bottom: 1px solid var(--op-border) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--op-text-secondary) !important;
+}
+
+body.mode-operator .mc-panel-title {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: var(--op-text-secondary) !important;
+  letter-spacing: 0.1em !important;
+}
+
+body.mode-operator .mc-panel-body {
+  line-height: 1.8 !important;
+}
+
+/* ─── Blocker Panel Premium ──────────────────────────────────── */
+
+body.mode-operator .blocked-work-list .blocker-item {
+  padding: 14px 24px !important;
+  border-bottom: 1px solid var(--op-border) !important;
+  line-height: 1.8 !important;
+  transition: background 0.15s ease;
+}
+
+body.mode-operator .blocked-work-list .blocker-item:hover {
+  background: var(--op-bg-hover) !important;
+}
+
+body.mode-operator .blocker-item .blocker-title {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--op-text-primary) !important;
+  margin-bottom: 3px !important;
+}
+
+body.mode-operator .blocker-item .blocker-meta {
+  font-size: 11px !important;
+  color: var(--op-text-muted) !important;
+}
+
+/* Hide timestamps on blockers in operator mode, show on hover */
+body.mode-operator .blocker-item .blocker-age,
+body.mode-operator .blocker-item .blocker-since {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+  font-size: 10px !important;
+}
+
+body.mode-operator .blocker-item:hover .blocker-age,
+body.mode-operator .blocker-item:hover .blocker-since {
+  opacity: 1 !important;
+}
+
+/* ─── Insights Panel Premium ─────────────────────────────────── */
+
+body.mode-operator .insight-item {
+  padding: 14px 24px !important;
+  border-bottom: 1px solid var(--op-border) !important;
+  line-height: 1.8 !important;
+}
+
+body.mode-operator .insight-item:hover {
+  background: var(--op-bg-hover) !important;
+}
+
+body.mode-operator .insight-title {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--op-text-primary) !important;
+}
+
+body.mode-operator .insight-description {
+  font-size: 12px !important;
+  color: var(--op-text-secondary) !important;
+  margin-top: 2px !important;
+  line-height: 1.7 !important;
+}
+
+body.mode-operator .insight-meta {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+body.mode-operator .insight-item:hover .insight-meta {
+  opacity: 1 !important;
+}
+
+/* ─── Active Work Panel Premium ──────────────────────────────── */
+
+body.mode-operator .workstream-item,
+body.mode-operator .active-work-item {
+  padding: 14px 24px !important;
+  border-bottom: 1px solid var(--op-border) !important;
+  line-height: 1.8 !important;
+}
+
+body.mode-operator .workstream-name,
+body.mode-operator .active-work-name {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--op-text-primary) !important;
+}
+
+body.mode-operator .workstream-meta,
+body.mode-operator .active-work-meta {
+  font-size: 11px !important;
+  color: var(--op-text-secondary) !important;
+}
+
+/* ─── Agent Activity Premium ─────────────────────────────────── */
+
+body.mode-operator .activity-item {
+  padding: 10px 24px !important;
+  border-bottom: 1px solid var(--op-border) !important;
+  line-height: 1.7 !important;
+}
+
+body.mode-operator .activity-description {
+  font-size: 12px !important;
+  color: var(--op-text-secondary) !important;
+}
+
+body.mode-operator .activity-meta {
+  font-size: 10px !important;
+  color: var(--op-text-muted) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+body.mode-operator .activity-item:hover .activity-meta {
+  opacity: 1 !important;
+}
+
+/* ─── Venture Pipeline Panel Premium ─────────────────────────── */
+
+body.mode-operator .venture-item {
+  padding: 14px 24px !important;
+  border-bottom: 1px solid var(--op-border) !important;
+  line-height: 1.8 !important;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+body.mode-operator .venture-item:hover {
+  background: var(--op-bg-hover) !important;
+}
+
+body.mode-operator .venture-name {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--op-text-primary) !important;
+}
+
+body.mode-operator .venture-stage-badge {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+}
+
+/* ─── Operator Guidance Panel Premium ────────────────────────── */
+
+body.mode-operator .guidance-item {
+  padding: 14px 24px !important;
+  border-bottom: 1px solid var(--op-border) !important;
+  line-height: 1.8 !important;
+}
+
+body.mode-operator .guidance-text {
+  font-size: 13px !important;
+  color: var(--op-text-primary) !important;
+  font-weight: 500 !important;
+}
+
+body.mode-operator .guidance-action {
+  font-size: 11px !important;
+  color: var(--op-text-secondary) !important;
+  margin-top: 3px !important;
+}
+
+/* ─── Color Discipline ───────────────────────────────────────── */
+
+/* In operator mode, only use bright colors for critical/warning/opportunity */
+/* Healthy states should feel QUIET */
+
+body.mode-operator .severity-info,
+body.mode-operator .blocker-item.severity-info .blocker-severity-badge,
+body.mode-operator .insight-item.type-info {
+  border-left-color: #2a3550 !important; /* muted, not green */
+}
+
+body.mode-operator .severity-critical,
+body.mode-operator .blocker-item.severity-critical {
+  border-left-color: #ef4444 !important;
+}
+
+body.mode-operator .severity-warning,
+body.mode-operator .blocker-item.severity-warning {
+  border-left-color: #f59e0b !important;
+}
+
+body.mode-operator .type-opportunity,
+body.mode-operator .insight-item.type-opportunity {
+  border-left-color: #60a5fa !important;
+}
+
+/* ─── Empty States ───────────────────────────────────────────── */
+
+body.mode-operator .no-data-msg,
+body.mode-operator .panel-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px !important;
+  font-size: 13px !important;
+  color: #4a5670 !important;
+  text-align: center;
+  line-height: 1.7;
+  font-weight: 400 !important;
+}
+
+/* ─── Font Sizes ─────────────────────────────────────────────── */
+
+body.mode-operator .panel-kpi-number,
+body.mode-operator .stat-number,
+body.mode-operator .mc-stat-value {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+}
+
+body.mode-operator .panel-kpi-label,
+body.mode-operator .stat-label,
+body.mode-operator .mc-stat-label {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--op-text-muted) !important;
+}
+
+/* ─── Grid Spacing ───────────────────────────────────────────── */
+
+body.mode-operator .panels-grid {
+  gap: 16px !important;
+  padding: 16px !important;
+}
+
+/* ─── Today's Priorities Injection ───────────────────────────── */
+
+#operator-priorities-inject {
+  display: none; /* shown by JS in operator mode */
+}
+
+body.mode-operator #operator-priorities-inject {
+  display: block;
+}
+
+/* ─── Top Bar Mode Badge ─────────────────────────────────────── */
+
+body.mode-operator .mode-label-indicator {
+  background: rgba(20, 30, 20, 0.8) !important;
+  color: #22c55e !important;
+  border-color: rgba(34, 197, 94, 0.2) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* ─── Scroll behavior ────────────────────────────────────────── */
+
+body.mode-operator .mc-panel-body {
+  scroll-behavior: smooth;
+}
+
+/* ─── Workstream Stage Color Tags ────────────────────────────── */
+
+body.mode-operator .ws-phase-tag {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 2px 7px !important;
+  border-radius: 4px !important;
+  opacity: 0.9 !important;
+}

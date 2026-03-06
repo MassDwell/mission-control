@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-03-05T12:43:00.000Z",
+  "lastUpdated": "2026-03-05T20:23:00.000Z",
   "agents": [
     {
       "id": "clawson",
       "name": "Clawson",
       "status": "active",
       "role": "orchestrator",
-      "last_heartbeat": "2026-03-05T12:43:00.000Z",
+      "last_heartbeat": "2026-03-05T20:22:00.000Z",
       "owned_workstreams": 0,
       "recent_errors": 0
     },
@@ -15,7 +15,7 @@
       "name": "Codesmith",
       "status": "active",
       "role": "engineering",
-      "last_heartbeat": "2026-03-05T12:40:00.000Z",
+      "last_heartbeat": "2026-03-05T20:23:00.000Z",
       "owned_workstreams": 4,
       "recent_errors": 0
     },
@@ -24,7 +24,7 @@
       "name": "Moonshot",
       "status": "active",
       "role": "venture_discovery",
-      "last_heartbeat": "2026-03-05T11:20:00.000Z",
+      "last_heartbeat": "2026-03-05T20:15:00.000Z",
       "owned_workstreams": 0,
       "recent_errors": 0
     },
@@ -33,7 +33,7 @@
       "name": "Personal Assistant",
       "status": "active",
       "role": "operations",
-      "last_heartbeat": "2026-03-05T12:30:00.000Z",
+      "last_heartbeat": "2026-03-05T20:18:00.000Z",
       "owned_workstreams": 2,
       "recent_errors": 0
     }

@@ -1,0 +1,19 @@
+{
+  "lastUpdated": "2026-03-05T20:23:00.000Z",
+  "total": 1,
+  "active": 1,
+  "success_rate": 0.0,
+  "stages": {
+    "opportunity": 0,
+    "investigation": 0,
+    "approval": 0,
+    "implementation": 1,
+    "launch": 0,
+    "killed": 0
+  },
+  "metrics": {
+    "kill_rate": 0.0,
+    "portfolio_mrr": 0,
+    "portfolio_mrr_target": 5000
+  }
+}

@@ -1,14 +1,20 @@
 /**
  * CR-MC-PALANTIR: Operator Command Center
  * Phase 2: Venture commands (pause/kill/advance/spawn/assign)
- * Rendered in venture detail drilldown + standalone command panel
+ * CR-MC-OPERATOR-VISUAL-UNIFIED-COMMAND-BUS: All commands now route through
+ * the unified command bus queue. NO direct state mutations.
  *
  * Commands:
- *  - Pause/Resume venture
- *  - Kill venture (with reason)
- *  - Advance stage (blocked by critical blockers)
- *  - Spawn workstream (modal form)
- *  - Assign agent (modal form)
+ *  - Pause/Resume venture → queue
+ *  - Kill venture (with reason) → queue (confirmation modal)
+ *  - Advance stage → queue (confirmation modal)
+ *  - Spawn workstream (modal form) → queue (confirmation modal)
+ *  - Assign agent (modal form) → queue
+ *  - Clear Blocker → queue
+ *  - Mark Workstream Complete → queue
+ *  - Reopen Workstream → queue
+ *  - Trigger Experiment → queue
+ *  - Approve/Reject Decision Gate → queue
  */
 
 (function() {
@@ -57,87 +63,97 @@
     if (el) { el.style.display = 'none'; el.classList.remove('open'); }
   }
 
-  // ─── Commands ─────────────────────────────────────────────────────────────
+  /**
+   * Queue an action via the unified command bus.
+   * Returns the queue result.
+   * NO direct mutations — Clawson is sole executor.
+   */
+  async function queueAction(action_type, payload = {}, target_type = 'venture') {
+    if (!activeVentureId && target_type === 'venture') {
+      setStatus('No active venture', 'error');
+      return null;
+    }
+
+    const target_id = payload._target_id || activeVentureId;
+    delete payload._target_id;
+
+    setStatus(`Queuing: ${action_type.replace(/_/g, ' ')}…`);
+
+    try {
+      const res = await fetch('/api/command-bus/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action_type,
+          target_type,
+          target_id,
+          operator: 'Steve',
+          source: 'mission_control',
+          payload,
+        })
+      });
+      const data = await res.json();
+
+      if (data.status === 'duplicate') {
+        setStatus(
+          `Already queued from ${data.existing?.source || 'another channel'} — ID: ${(data.duplicate_of || '').slice(0,8)}…`,
+          'error'
+        );
+        return data;
+      }
+
+      if (data.status === 'queued') {
+        setStatus(`Queued → Clawson executing… (ID: ${data.action_id?.slice(0,8)})`, 'success');
+        document.dispatchEvent(new CustomEvent('mc:action-queued', {
+          detail: { action: data.action, action_id: data.action_id }
+        }));
+        return data;
+      }
+
+      setStatus(data.message || 'Unknown error', 'error');
+      return data;
+
+    } catch (err) {
+      setStatus(err.message, 'error');
+      return null;
+    }
+  }
+
+  // ─── Commands → Queue (NO direct mutations) ───────────────────────────────
 
   async function cmdPause() {
     if (!activeVentureId) return;
-    setStatus('Pausing venture…');
-    try {
-      const res = await fetch(`/api/commands/pause/${activeVentureId}`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ actor: 'Steve Vettori' })
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus(data.message, 'success');
-        refreshCommandButtons();
-        document.dispatchEvent(new CustomEvent('mc:venture-updated', { detail: { venture_id: activeVentureId } }));
-      } else {
-        setStatus(data.error || 'Pause failed', 'error');
-      }
-    } catch (err) { setStatus(err.message, 'error'); }
+    await queueAction('pause_venture');
   }
 
   async function cmdResume() {
     if (!activeVentureId) return;
-    setStatus('Resuming venture…');
-    try {
-      const res = await fetch(`/api/commands/resume/${activeVentureId}`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ actor: 'Steve Vettori' })
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus(data.message, 'success');
-        refreshCommandButtons();
-        document.dispatchEvent(new CustomEvent('mc:venture-updated', { detail: { venture_id: activeVentureId } }));
-      } else {
-        setStatus(data.error || 'Resume failed', 'error');
-      }
-    } catch (err) { setStatus(err.message, 'error'); }
+    await queueAction('resume_venture');
   }
 
   async function cmdAdvance() {
     if (!activeVentureId) return;
-    setStatus('Advancing stage…');
-    try {
-      const res = await fetch(`/api/commands/advance/${activeVentureId}`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ actor: 'Steve Vettori' })
+    // High-impact: route through CommandBusClient confirmation modal if available
+    if (window.CommandBusClient) {
+      await CommandBusClient.submit({
+        action_type: 'advance_stage',
+        target_type: 'venture',
+        target_id:   activeVentureId,
+        payload: { current_stage: activeVenture?.stage || '' },
       });
-      const data = await res.json();
-      if (data.success) {
-        setStatus(`Advanced: ${data.fromStage} → ${data.toStage}`, 'success');
-        refreshCommandButtons();
-        document.dispatchEvent(new CustomEvent('mc:venture-updated', { detail: { venture_id: activeVentureId } }));
-      } else {
-        setStatus(data.error || 'Advance failed', 'error');
-      }
-    } catch (err) { setStatus(err.message, 'error'); }
+    } else {
+      await queueAction('advance_stage', { current_stage: activeVenture?.stage || '' });
+    }
   }
 
   async function cmdKillConfirm() {
     const reason = document.getElementById('kill-reason-input')?.value?.trim();
+    if (!reason) {
+      setStatus('Reason is required', 'error');
+      return;
+    }
     hideModal('kill-modal');
-    setStatus('Killing venture…');
-    try {
-      const res = await fetch(`/api/commands/kill/${activeVentureId}`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ reason, actor: 'Steve Vettori' })
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus(data.message, 'success');
-        document.dispatchEvent(new CustomEvent('mc:venture-updated', { detail: { venture_id: activeVentureId } }));
-        // Close detail drawer after kill
-        setTimeout(() => {
-          const closeBtn = document.getElementById('detail-close-btn');
-          if (closeBtn) closeBtn.click();
-        }, 1500);
-      } else {
-        setStatus(data.error || 'Kill failed', 'error');
-      }
-    } catch (err) { setStatus(err.message, 'error'); }
+    await queueAction('kill_venture', { reason });
   }
 
   async function cmdSpawnConfirm() {
@@ -151,25 +167,7 @@
       return;
     }
     hideModal('spawn-modal');
-    setStatus('Creating workstream…');
-
-    try {
-      const res = await fetch('/api/commands/spawn-workstream', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          venture_id: activeVentureId,
-          name, owner, phase, eta,
-          actor: 'Steve Vettori'
-        })
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus(data.message, 'success');
-        document.dispatchEvent(new CustomEvent('mc:workstream-created', { detail: data.workstream }));
-      } else {
-        setStatus(data.error || 'Spawn failed', 'error');
-      }
-    } catch (err) { setStatus(err.message, 'error'); }
+    await queueAction('spawn_workstream', { name, owner, phase, eta, venture_id: activeVentureId });
   }
 
   async function cmdAssignConfirm() {
@@ -181,21 +179,25 @@
       return;
     }
     hideModal('assign-modal');
-    setStatus('Assigning agent…');
+    await queueAction('assign_agent', {
+      _target_id: workstreamId,
+      owner: newOwner,
+      venture_id: activeVentureId
+    }, 'workstream');
+  }
 
-    try {
-      const res = await fetch('/api/commands/assign-agent', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ workstream_id: workstreamId, owner: newOwner, actor: 'Steve Vettori' })
+  async function cmdTriggerExperiment() {
+    if (!activeVentureId) return;
+    if (window.CommandBusClient) {
+      await CommandBusClient.submit({
+        action_type: 'trigger_experiment',
+        target_type: 'venture',
+        target_id:   activeVentureId,
+        payload:     {},
       });
-      const data = await res.json();
-      if (data.success) {
-        setStatus(data.message, 'success');
-        document.dispatchEvent(new CustomEvent('mc:agent-assigned', { detail: data }));
-      } else {
-        setStatus(data.message || data.error || 'Assign failed', 'error');
-      }
-    } catch (err) { setStatus(err.message, 'error'); }
+    } else {
+      await queueAction('trigger_experiment');
+    }
   }
 
   // ─── Button state refresh ─────────────────────────────────────────────────
@@ -253,31 +255,38 @@
         <div class="command-center-header">
           <span>⚡ Commands</span>
           ${ventureId ? `<span style="font-size:9px;opacity:.6;">${ventureId}</span>` : ''}
+          <span style="font-size:9px;color:#22c55e55;margin-left:auto;">→ queue</span>
         </div>
         <div class="command-center-body">
           <div class="command-btn-row">
-            <button class="cmd-btn" id="cmd-pause-btn" title="Pause venture">
+            <button class="cmd-btn" id="cmd-pause-btn" title="Pause venture → command bus">
               <span class="cmd-btn-icon">⏸</span> Pause
             </button>
-            <button class="cmd-btn" id="cmd-resume-btn" style="display:none" title="Resume venture">
+            <button class="cmd-btn" id="cmd-resume-btn" style="display:none" title="Resume venture → command bus">
               <span class="cmd-btn-icon">▶</span> Resume
             </button>
-            <button class="cmd-btn danger" id="cmd-kill-btn" title="Kill venture">
+            <button class="cmd-btn danger" id="cmd-kill-btn" title="Kill venture → command bus (confirmation required)">
               <span class="cmd-btn-icon">✕</span> Kill
             </button>
-            <button class="cmd-btn success" id="cmd-advance-btn" title="Advance to next stage">
+            <button class="cmd-btn success" id="cmd-advance-btn" title="Advance to next stage → command bus (confirmation required)">
               <span class="cmd-btn-icon">→</span> Advance Stage
             </button>
           </div>
           <div class="command-btn-row">
-            <button class="cmd-btn" id="cmd-spawn-btn" title="Create new workstream">
+            <button class="cmd-btn" id="cmd-spawn-btn" title="Create new workstream → command bus">
               <span class="cmd-btn-icon">+</span> Spawn Workstream
             </button>
-            <button class="cmd-btn" id="cmd-assign-btn" title="Assign agent to workstream">
+            <button class="cmd-btn" id="cmd-assign-btn" title="Assign agent to workstream → command bus">
               <span class="cmd-btn-icon">👤</span> Assign Agent
+            </button>
+            <button class="cmd-btn" id="cmd-experiment-btn" title="Trigger experiment → command bus">
+              <span class="cmd-btn-icon">🧪</span> Experiment
             </button>
           </div>
           <div class="command-status" id="command-status"></div>
+          <div style="font-size:9px;color:#3a4557;padding:4px 8px;border-top:1px solid #1e2535;margin-top:4px;">
+            All actions queued via unified command bus. Clawson executes.
+          </div>
         </div>
       </div>
 
@@ -361,13 +370,14 @@
       </div>
     `;
 
-    // Wire up buttons
-    document.getElementById('cmd-pause-btn')?.addEventListener('click',   cmdPause);
-    document.getElementById('cmd-resume-btn')?.addEventListener('click',  cmdResume);
-    document.getElementById('cmd-advance-btn')?.addEventListener('click', cmdAdvance);
-    document.getElementById('cmd-kill-btn')?.addEventListener('click',    () => showModal('kill-modal'));
-    document.getElementById('cmd-spawn-btn')?.addEventListener('click',   () => showModal('spawn-modal'));
-    document.getElementById('cmd-assign-btn')?.addEventListener('click',  () => showModal('assign-modal'));
+    // Wire up buttons — ALL route through command bus queue
+    document.getElementById('cmd-pause-btn')?.addEventListener('click',      cmdPause);
+    document.getElementById('cmd-resume-btn')?.addEventListener('click',     cmdResume);
+    document.getElementById('cmd-advance-btn')?.addEventListener('click',    cmdAdvance);
+    document.getElementById('cmd-kill-btn')?.addEventListener('click',       () => showModal('kill-modal'));
+    document.getElementById('cmd-spawn-btn')?.addEventListener('click',      () => showModal('spawn-modal'));
+    document.getElementById('cmd-assign-btn')?.addEventListener('click',     () => showModal('assign-modal'));
+    document.getElementById('cmd-experiment-btn')?.addEventListener('click', cmdTriggerExperiment);
 
     // Kill modal
     document.getElementById('kill-cancel-btn')?.addEventListener('click',   () => hideModal('kill-modal'));

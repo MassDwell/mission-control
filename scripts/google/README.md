@@ -20,9 +20,6 @@ node scripts/google/google-api.js search "invoice"
 # Refresh token manually
 node scripts/google/google-api.js refresh
 
-# Full Gmail scan (cross-ref with Kommo)
-node scripts/google/gmail-scanner.js
-
 # Full Drive index
 node scripts/google/drive-indexer.js
 ```
@@ -34,7 +31,6 @@ node scripts/google/drive-indexer.js
 | Script | Purpose |
 |--------|---------|
 | `google-api.js` | Unified API helper with CLI |
-| `gmail-scanner.js` | Scans inbox, cross-refs with Kommo |
 | `drive-indexer.js` | Full Drive file inventory |
 
 ---

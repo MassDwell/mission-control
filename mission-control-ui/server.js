@@ -25,6 +25,9 @@ app.use('/config', express.static(path.join(__dirname, 'config')));
 // Data endpoints
 const dataModule = require('./api/data');
 
+// CR-MC-OPERATOR-VISUAL-UNIFIED-COMMAND-BUS: Unified Command Bus
+const commandBus = require('./api/command-bus');
+
 // CR-MC-UI-1.2: Venture pipeline endpoints
 const venturesModule = require('./api/ventures');
 
@@ -655,8 +658,20 @@ app.post('/api/ventureos/ventures/:venture_id/metrics', (req, res) => {
  */
 app.get('/api/venture-pipeline', (req, res) => {
   try {
-    const result = ventureOS.getPipeline();
-    res.json(result);
+    // Load pipeline directly from SSOT (venture_pipeline.json)
+    const pipelineData = dataModule.loadJSON('venture_pipeline.json');
+    const scoreboard   = dataModule.loadVentureScoreboard();
+    res.json({
+      ...pipelineData,
+      ideas_generated:      scoreboard.ideas_generated      || 0,
+      mvps_built:           scoreboard.mvps_built           || 0,
+      experiments_running:  scoreboard.experiments_running  || 0,
+      ventures_live:        scoreboard.ventures_live        || 0,
+      ventures_killed:      scoreboard.ventures_killed      || 0,
+      success_rate:         scoreboard.success_rate         || 0,
+      timestamp:            new Date().toISOString(),
+      ssot:                 'venture_pipeline.json + venture_scoreboard.json'
+    });
   } catch (err) {
     console.error('[VENTUREOS] getPipeline error:', err.message);
     res.status(500).json({ error: err.message, timestamp: new Date().toISOString() });
@@ -1122,6 +1137,176 @@ app.get('/api/founder-decisions', (req, res) => {
   } catch (err) {
     console.error('[FOUNDER-DECISIONS] Error:', err.message);
     res.status(500).json({ error: err.message, decisions: {} });
+  }
+});
+
+// ===========================================================================
+// CR-MC-OPERATOR-VISUAL-UNIFIED-COMMAND-BUS: Unified Command Bus API
+// ALL operator actions (UI + Telegram) pass through this queue.
+// Clawson is the ONLY executor. No direct state mutations allowed.
+// ===========================================================================
+
+/**
+ * POST /api/command-bus/submit
+ * Submit an operator action to the unified command queue.
+ * Used by BOTH Mission Control UI and Telegram handler.
+ *
+ * Body:
+ *   action_type:  string (pause_venture|advance_stage|kill_venture|...)
+ *   target_type:  string (venture|workstream|blocker|agent)
+ *   target_id:    string
+ *   operator:     string (default: 'Steve')
+ *   source:       'mission_control' | 'telegram'
+ *   payload:      object (action-specific data)
+ */
+app.post('/api/command-bus/submit', (req, res) => {
+  try {
+    const { action_type, target_type, target_id, operator, source, payload } = req.body;
+
+    if (!action_type || !target_id || !source) {
+      return res.status(400).json({
+        status: 'error',
+        error: 'missing_fields',
+        message: 'Required: action_type, target_id, source'
+      });
+    }
+
+    const result = commandBus.submitAction({
+      action_type,
+      target_type: target_type || 'venture',
+      target_id,
+      operator: operator || 'Steve',
+      source,
+      payload: payload || {}
+    });
+
+    if (result.duplicate) {
+      return res.status(200).json({
+        status: 'duplicate',
+        message: 'Action already submitted from another channel',
+        existing: result.existing,
+        duplicate_of: result.existing.id,
+        duplicate_source: result.existing.source,
+        queued_at: result.existing.created_at
+      });
+    }
+
+    return res.status(202).json({
+      status: 'queued',
+      action: result.action,
+      message: `Action queued for Clawson execution`,
+      action_id: result.action.id
+    });
+
+  } catch (err) {
+    console.error('[CMD-BUS] Submit error:', err.message);
+    return res.status(400).json({
+      status: 'error',
+      error: 'submit_failed',
+      message: err.message
+    });
+  }
+});
+
+/**
+ * GET /api/command-bus/queue
+ * Get the current action queue (all actions, newest first).
+ * Query: ?status=pending|executed|rejected|failed&limit=50
+ */
+app.get('/api/command-bus/queue', (req, res) => {
+  try {
+    const { status, limit = 50 } = req.query;
+    let actions = commandBus.getRecentActions(parseInt(limit));
+    if (status) actions = actions.filter(a => a.status === status);
+    res.json({
+      actions,
+      stats: commandBus.getQueueStats(),
+      timestamp: new Date().toISOString()
+    });
+  } catch (err) {
+    console.error('[CMD-BUS] Queue error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/command-bus/action/:id
+ * Get a specific action by ID (for polling status from UI).
+ */
+app.get('/api/command-bus/action/:id', (req, res) => {
+  try {
+    const action = commandBus.getAction(req.params.id);
+    if (!action) return res.status(404).json({ error: 'Action not found', id: req.params.id });
+    res.json({ action, timestamp: new Date().toISOString() });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/command-bus/stats
+ * Queue statistics summary.
+ */
+app.get('/api/command-bus/stats', (req, res) => {
+  try {
+    res.json({ ...commandBus.getQueueStats(), timestamp: new Date().toISOString() });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/command-bus/execute/:id
+ * Mark a queued action as executed. Called by Clawson after execution.
+ * Body: { result: string }
+ */
+app.post('/api/command-bus/execute/:id', (req, res) => {
+  try {
+    const action = commandBus.markExecuted(req.params.id, req.body.result || 'executed');
+    res.json({ status: 'executed', action, timestamp: new Date().toISOString() });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/command-bus/reject/:id
+ * Mark a queued action as rejected. Called by Clawson.
+ * Body: { reason: string }
+ */
+app.post('/api/command-bus/reject/:id', (req, res) => {
+  try {
+    const action = commandBus.markRejected(req.params.id, req.body.reason || 'rejected');
+    res.json({ status: 'rejected', action, timestamp: new Date().toISOString() });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/command-bus/fail/:id
+ * Mark a queued action as failed.
+ * Body: { error: string }
+ */
+app.post('/api/command-bus/fail/:id', (req, res) => {
+  try {
+    const action = commandBus.markFailed(req.params.id, req.body.error || 'failed');
+    res.json({ status: 'failed', action, timestamp: new Date().toISOString() });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/command-bus/pending
+ * Get all pending actions (for Clawson to process).
+ */
+app.get('/api/command-bus/pending', (req, res) => {
+  try {
+    const actions = commandBus.getPendingActions();
+    res.json({ actions, count: actions.length, timestamp: new Date().toISOString() });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 

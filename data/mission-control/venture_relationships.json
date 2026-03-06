@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-05T12:43:00.000Z",
+  "lastUpdated": "2026-03-05T20:23:00.000Z",
   "ventures": [
     {
       "id": "leadscore-ai",
@@ -35,7 +35,9 @@
       "phase": "investigation",
       "progress": 20,
       "blockers": [],
-      "dependencies": ["backend-api-scaffolding"]
+      "dependencies": [
+        "backend-api-scaffolding"
+      ]
     },
     {
       "id": "web-dashboard-alpha",
@@ -45,14 +47,18 @@
       "phase": "design",
       "progress": 5,
       "blockers": [],
-      "dependencies": ["backend-api-scaffolding"]
+      "dependencies": [
+        "backend-api-scaffolding"
+      ]
     }
   ],
   "agents": [
     {
       "id": "codesmith",
       "name": "Codesmith",
-      "owned_ventures": ["leadscore-ai"],
+      "owned_ventures": [
+        "leadscore-ai"
+      ],
       "owned_workstreams": [
         "backend-api-scaffolding",
         "worker-job-processor",

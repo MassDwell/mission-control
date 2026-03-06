@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-05T12:00:00.000Z",
+  "lastUpdated": "2026-03-05T20:23:00.000Z",
   "ventures": [
     {
       "venture_id": "leadscore-ai",
@@ -15,7 +15,12 @@
         "cr": "/ventures/leadscore/CR-LEADSCORE-001.md",
         "repo": "/ventures/leadscore"
       },
-      "tags": ["mrr", "b2b", "ai", "qualification"],
+      "tags": [
+        "mrr",
+        "b2b",
+        "ai",
+        "qualification"
+      ],
       "notes": "Week 1 backend scaffolding in progress. Target: 8 weeks to MVP, $5K MRR by month 3."
     }
   ]
