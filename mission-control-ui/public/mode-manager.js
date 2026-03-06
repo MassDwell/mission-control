@@ -117,6 +117,15 @@
     // Restore persisted layout for this mode
     restoreLayout(mode);
 
+    // Re-initialize resize handlers after mode transition
+    // (handles may have been recreated or detached during CSS transitions)
+    setTimeout(function() {
+      if (window.ResizeHandlers && window.ResizeHandlers.initializeResizing) {
+        window.ResizeHandlers.initializeResizing();
+        console.log('[MODE-MANAGER] Re-initialized resize handlers for mode:', mode);
+      }
+    }, 350);
+
     // Update mode label indicator in top bar
     updateModeIndicator(mode);
 

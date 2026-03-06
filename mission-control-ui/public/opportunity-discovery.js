@@ -61,6 +61,236 @@
     }
   }
 
+  function openOpportunityDrilldown(opp) {
+    // Remove existing drilldown
+    const existing = document.querySelector('.opp-drilldown-drawer');
+    if (existing) existing.remove();
+
+    // Create drilldown drawer
+    const drawer = document.createElement('div');
+    drawer.className = 'opp-drilldown-drawer';
+    
+    const drawerHTML = `
+      <div class="opp-drilldown-content">
+        <div class="opp-drilldown-header">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 700;">${escapeHTML(opp.title || opp.message || '')}</h3>
+          <button class="opp-drilldown-close" style="background:none;border:none;color:#7a8494;cursor:pointer;font-size:20px;padding:0;width:24px;height:24px;display:flex;align-items:center;justify-content:center;">×</button>
+        </div>
+        
+        <div class="opp-drilldown-body">
+          <div class="opp-drilldown-section">
+            <label class="opp-drilldown-label">Opportunity Type</label>
+            <div class="opp-drilldown-value">${escapeHTML(OPP_TYPE_LABELS[opp.type] || opp.type || 'Unknown')}</div>
+          </div>
+
+          <div class="opp-drilldown-section">
+            <label class="opp-drilldown-label">Problem Summary</label>
+            <div class="opp-drilldown-value">${escapeHTML(opp.problem || opp.description || 'No problem summary provided')}</div>
+          </div>
+
+          <div class="opp-drilldown-section">
+            <label class="opp-drilldown-label">Market Evidence / Impact</label>
+            <div class="opp-drilldown-value">${escapeHTML(opp.market_evidence || opp.impact || 'No market evidence available')}</div>
+          </div>
+
+          <div class="opp-drilldown-section">
+            <label class="opp-drilldown-label">Opportunity Score</label>
+            <div class="opp-drilldown-value" style="font-size:18px;font-weight:700;color:var(--accent-green,#10b981);">
+              ${(opp.score || opp.confidence || 'N/A')}
+            </div>
+          </div>
+
+          <div class="opp-drilldown-section">
+            <label class="opp-drilldown-label">Discovery Notes</label>
+            <div class="opp-drilldown-value">${escapeHTML(opp.notes || opp.details || 'No additional notes')}</div>
+          </div>
+
+          <div class="opp-drilldown-section">
+            <label class="opp-drilldown-label">Next Action</label>
+            <div class="opp-drilldown-value">${escapeHTML(opp.next_action || opp.recommendation || 'No next action recommended')}</div>
+          </div>
+
+          <div class="opp-drilldown-section" style="margin-top: 12px;">
+            <label class="opp-drilldown-label">Source</label>
+            <div class="opp-drilldown-value" style="font-size:12px;color:var(--text-muted,#7a8494);">
+              ${escapeHTML(opp.source || 'system')} · ${opp.timestamp ? getRelTime(opp.timestamp) : 'recently'}
+            </div>
+          </div>
+        </div>
+
+        <div class="opp-drilldown-actions">
+          <button class="opp-drilldown-action-btn opp-action-create-venture" data-opp="${opp.id}">+ Create Venture</button>
+          <button class="opp-drilldown-action-btn opp-action-create-task" data-opp="${opp.id}">+ Create Task</button>
+          <button class="opp-drilldown-action-btn opp-action-dismiss" data-opp="${opp.id}">Dismiss</button>
+        </div>
+      </div>
+    `;
+
+    drawer.innerHTML = drawerHTML;
+    document.body.appendChild(drawer);
+
+    // Add CSS if not already added
+    if (!document.getElementById('opp-drilldown-styles')) {
+      const style = document.createElement('style');
+      style.id = 'opp-drilldown-styles';
+      style.textContent = `
+        .opp-drilldown-drawer {
+          position: fixed;
+          right: 0;
+          top: 0;
+          width: 400px;
+          height: 100vh;
+          background: var(--bg-panel, #1a1f2e);
+          border-left: 1px solid var(--border-color, #3a4557);
+          box-shadow: -2px 0 12px rgba(0,0,0,0.3);
+          z-index: 1000;
+          display: flex;
+          flex-direction: column;
+          animation: slideInRight 0.3s ease;
+          overflow: hidden;
+        }
+
+        @keyframes slideInRight {
+          from { transform: translateX(100%); }
+          to { transform: translateX(0); }
+        }
+
+        .opp-drilldown-content {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+
+        .opp-drilldown-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px;
+          border-bottom: 1px solid var(--border-color, #3a4557);
+          background: var(--bg-section, #252d3d);
+          flex-shrink: 0;
+        }
+
+        .opp-drilldown-close:hover {
+          background: rgba(255,255,255,0.1);
+          border-radius: 3px;
+        }
+
+        .opp-drilldown-body {
+          flex: 1;
+          overflow-y: auto;
+          padding: 16px;
+        }
+
+        .opp-drilldown-section {
+          margin-bottom: 16px;
+        }
+
+        .opp-drilldown-label {
+          display: block;
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--text-muted, #7a8494);
+          margin-bottom: 6px;
+        }
+
+        .opp-drilldown-value {
+          font-size: 13px;
+          color: var(--text-secondary, #b0b8c8);
+          line-height: 1.5;
+          word-break: break-word;
+        }
+
+        .opp-drilldown-actions {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding: 16px;
+          border-top: 1px solid var(--border-color, #3a4557);
+          background: var(--bg-section, #252d3d);
+          flex-shrink: 0;
+        }
+
+        .opp-drilldown-action-btn {
+          padding: 10px 14px;
+          background: rgba(59, 130, 246, 0.1);
+          border: 1px solid var(--accent-blue, #3b82f6);
+          border-radius: 4px;
+          color: var(--accent-blue, #3b82f6);
+          font-size: 12px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .opp-drilldown-action-btn:hover {
+          background: rgba(59, 130, 246, 0.2);
+          border-color: var(--accent-blue, #3b82f6);
+        }
+
+        .opp-drilldown-action-btn.opp-action-dismiss {
+          background: rgba(122, 132, 148, 0.1);
+          border-color: var(--border-color, #3a4557);
+          color: var(--text-muted, #7a8494);
+        }
+
+        .opp-drilldown-action-btn.opp-action-dismiss:hover {
+          background: rgba(122, 132, 148, 0.2);
+        }
+
+        @media (max-width: 768px) {
+          .opp-drilldown-drawer {
+            width: 100%;
+            right: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Attach handlers
+    const closeBtn = drawer.querySelector('.opp-drilldown-close');
+    closeBtn.addEventListener('click', function() {
+      drawer.remove();
+    });
+
+    // Close on backdrop click (outside drawer)
+    drawer.addEventListener('click', function(e) {
+      if (e.target === drawer) {
+        drawer.remove();
+      }
+    });
+
+    // Action buttons
+    drawer.querySelectorAll('.opp-drilldown-action-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const oppId = this.getAttribute('data-opp');
+        const opp = opps.find(o => o.id === oppId);
+        if (!opp) return;
+
+        if (this.classList.contains('opp-action-create-venture')) {
+          handleAction(opp, 'create_venture');
+        } else if (this.classList.contains('opp-action-create-task')) {
+          handleAction(opp, 'create_task');
+        } else if (this.classList.contains('opp-action-dismiss')) {
+          handleAction(opp, 'dismiss');
+        }
+        drawer.remove();
+      });
+    });
+
+    // Close on ESC key
+    const closeOnEsc = (e) => {
+      if (e.key === 'Escape') {
+        drawer.remove();
+        document.removeEventListener('keydown', closeOnEsc);
+      }
+    };
+    document.addEventListener('keydown', closeOnEsc);
+  }
+
   function buildOppActionBtns(opp) {
     const actions = opp.actions || ['dismiss'];
     return actions.map(a => {
@@ -82,11 +312,11 @@
     const relTime   = opp.timestamp ? getRelTime(opp.timestamp) : '';
 
     return `
-      <div class="opp-item ${typeCSS}" data-opp-id="${opp.id}">
+      <div class="opp-item ${typeCSS}" data-opp-id="${opp.id}" style="cursor: pointer; transition: all 0.2s ease;">
         <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5a6478;margin-bottom:4px;">
           ${typeLabel}
         </div>
-        <div class="opp-item-title">${escapeHTML(opp.title || opp.message || '')}</div>
+        <div class="opp-item-title" style="font-weight: 600; margin-bottom: 4px;">${escapeHTML(opp.title || opp.message || '')}</div>
         ${relTime ? `<div class="opp-item-source">Source: ${escapeHTML(opp.source || 'system')} · ${relTime}</div>` : ''}
         <div class="opp-item-actions">${buildOppActionBtns(opp)}</div>
       </div>
@@ -144,11 +374,21 @@
 
     // Attach action handlers
     container.querySelectorAll('.opp-action-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent tile click from firing
         const oppId  = btn.getAttribute('data-opp');
         const action = btn.getAttribute('data-action');
         const opp    = opps.find(o => o.id === oppId);
         if (opp) handleAction(opp, action);
+      });
+    });
+
+    // Attach tile click handlers for drilldown
+    container.querySelectorAll('.opp-item').forEach(tile => {
+      tile.addEventListener('click', function(e) {
+        const oppId = this.getAttribute('data-opp-id');
+        const opp   = opps.find(o => o.id === oppId);
+        if (opp) openOpportunityDrilldown(opp);
       });
     });
   }
