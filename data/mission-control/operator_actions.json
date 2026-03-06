@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "description": "Unified Command Bus",
-  "lastUpdated": "2026-03-06T12:38:06.219Z",
+  "lastUpdated": "2026-03-06T17:17:19.034Z",
   "rules": {
     "executor": "clawson",
     "sources": [
@@ -162,6 +162,20 @@
       "executed_at": null,
       "result": null,
       "signature": "b281d5e624f80d14"
+    },
+    {
+      "id": "42fccfbc-2b79-4dcd-b399-4a1669e890d6",
+      "source": "paperclip",
+      "operator": "paperclip-adapter",
+      "action_type": "advance_stage",
+      "target_type": "venture",
+      "target_id": "LeadScore.ai",
+      "payload": {},
+      "status": "pending",
+      "created_at": "2026-03-06T17:17:19.033Z",
+      "executed_at": null,
+      "result": null,
+      "signature": "b7bfb78b14a61dfb"
     }
   ]
 }

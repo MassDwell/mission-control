@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-06T14:34:11.288Z",
+  "lastUpdated": "2026-03-06T17:17:51.295Z",
   "insights": [
     {
       "id": "insight-overload-codesmith",
@@ -8,7 +8,7 @@
       "agent_id": "codesmith",
       "message": "Codesmith owns 4 workstreams (monitor capacity)",
       "action": "view_workstreams",
-      "timestamp": "2026-03-06T14:34:11.287Z"
+      "timestamp": "2026-03-06T17:17:51.295Z"
     },
     {
       "id": "insight-progress-backend-api-scaffolding",
