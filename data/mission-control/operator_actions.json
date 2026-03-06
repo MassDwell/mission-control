@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "description": "Unified Command Bus",
-  "lastUpdated": "2026-03-06T17:47:06.372Z",
+  "lastUpdated": "2026-03-06T17:58:11.233Z",
   "rules": {
     "executor": "clawson",
     "sources": [
@@ -23,11 +23,26 @@
       "payload": {
         "next_stage": "INVESTIGATION"
       },
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T12:38:05.375Z",
       "executed_at": null,
-      "result": null,
-      "signature": "e96559b9dc730241"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_whitelisted",
+          "details": {
+            "allowed": false,
+            "action": "advance_stage",
+            "approved": [
+              "spawn_workstream",
+              "assign_agent"
+            ]
+          }
+        }
+      },
+      "signature": "e96559b9dc730241",
+      "claimed_at": "2026-03-06T17:58:09.224Z",
+      "claim_lock": true
     },
     {
       "id": "45b64482-e6c3-4449-90ae-7fbfd60c3ca0",
@@ -39,11 +54,26 @@
       "payload": {
         "reason": "stress test"
       },
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T12:38:05.480Z",
       "executed_at": null,
-      "result": null,
-      "signature": "753aaf68f02a54bd"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_whitelisted",
+          "details": {
+            "allowed": false,
+            "action": "pause_venture",
+            "approved": [
+              "spawn_workstream",
+              "assign_agent"
+            ]
+          }
+        }
+      },
+      "signature": "753aaf68f02a54bd",
+      "claimed_at": "2026-03-06T17:58:09.225Z",
+      "claim_lock": true
     },
     {
       "id": "b21b2398-fab4-4576-b15b-d12a990fa7c2",
@@ -57,11 +87,23 @@
         "owner": "codesmith",
         "phase": "testing"
       },
-      "status": "pending",
+      "status": "cancelled",
       "created_at": "2026-03-06T12:38:05.585Z",
       "executed_at": null,
-      "result": null,
-      "signature": "7cb4f1a91ea32532"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "action_stale",
+          "details": {
+            "isStale": true,
+            "age": 19203641,
+            "maxAge": 3600000
+          }
+        }
+      },
+      "signature": "7cb4f1a91ea32532",
+      "claimed_at": "2026-03-06T17:58:09.226Z",
+      "claim_lock": true
     },
     {
       "id": "86ddbf49-2ce3-4ed9-a7c0-a32561b6fa6e",
@@ -73,11 +115,26 @@
       "payload": {
         "next_stage": "APPROVAL"
       },
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T12:38:05.691Z",
       "executed_at": null,
-      "result": null,
-      "signature": "2ccaaf9e62d97c01"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_whitelisted",
+          "details": {
+            "allowed": false,
+            "action": "advance_stage",
+            "approved": [
+              "spawn_workstream",
+              "assign_agent"
+            ]
+          }
+        }
+      },
+      "signature": "2ccaaf9e62d97c01",
+      "claimed_at": "2026-03-06T17:58:09.227Z",
+      "claim_lock": true
     },
     {
       "id": "73938186-f397-464c-898e-2044091934e3",
@@ -89,11 +146,26 @@
       "payload": {
         "reason": "test resumption"
       },
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T12:38:05.796Z",
       "executed_at": null,
-      "result": null,
-      "signature": "04472a70387f260f"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_whitelisted",
+          "details": {
+            "allowed": false,
+            "action": "resume_venture",
+            "approved": [
+              "spawn_workstream",
+              "assign_agent"
+            ]
+          }
+        }
+      },
+      "signature": "04472a70387f260f",
+      "claimed_at": "2026-03-06T17:58:09.227Z",
+      "claim_lock": true
     },
     {
       "id": "9e4de34c-e41b-482a-a972-cd75c256d3e6",
@@ -107,11 +179,25 @@
         "owner": "operations",
         "phase": "testing"
       },
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T12:38:05.901Z",
       "executed_at": null,
-      "result": null,
-      "signature": "c9443e2b24da635c"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_in_sandbox",
+          "details": {
+            "allowed": false,
+            "target": "MassDwell.ai",
+            "approved": [
+              "LeadScore.ai"
+            ]
+          }
+        }
+      },
+      "signature": "c9443e2b24da635c",
+      "claimed_at": "2026-03-06T17:58:19.229Z",
+      "claim_lock": true
     },
     {
       "id": "2cd1d799-7c0d-4ba4-a6b4-502517d04d13",
@@ -123,11 +209,26 @@
       "payload": {
         "next_stage": "IMPLEMENTATION"
       },
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T12:38:06.005Z",
       "executed_at": null,
-      "result": null,
-      "signature": "fe32889f96599d62"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_whitelisted",
+          "details": {
+            "allowed": false,
+            "action": "advance_stage",
+            "approved": [
+              "spawn_workstream",
+              "assign_agent"
+            ]
+          }
+        }
+      },
+      "signature": "fe32889f96599d62",
+      "claimed_at": "2026-03-06T17:58:19.230Z",
+      "claim_lock": true
     },
     {
       "id": "85fec3bc-6675-46a6-ae66-ae4dc6320917",
@@ -139,11 +240,26 @@
       "payload": {
         "reason": "testing pause"
       },
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T12:38:06.113Z",
       "executed_at": null,
-      "result": null,
-      "signature": "3e00b1557f5b3299"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_whitelisted",
+          "details": {
+            "allowed": false,
+            "action": "pause_venture",
+            "approved": [
+              "spawn_workstream",
+              "assign_agent"
+            ]
+          }
+        }
+      },
+      "signature": "3e00b1557f5b3299",
+      "claimed_at": "2026-03-06T17:58:19.231Z",
+      "claim_lock": true
     },
     {
       "id": "1af3d2b6-8158-460e-83ed-d3fbcc09eb2d",
@@ -157,11 +273,25 @@
         "owner": "operations",
         "phase": "validation"
       },
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T12:38:06.219Z",
       "executed_at": null,
-      "result": null,
-      "signature": "b281d5e624f80d14"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_in_sandbox",
+          "details": {
+            "allowed": false,
+            "target": "Alpine.ai",
+            "approved": [
+              "LeadScore.ai"
+            ]
+          }
+        }
+      },
+      "signature": "b281d5e624f80d14",
+      "claimed_at": "2026-03-06T17:58:19.232Z",
+      "claim_lock": true
     },
     {
       "id": "42fccfbc-2b79-4dcd-b399-4a1669e890d6",
@@ -171,11 +301,26 @@
       "target_type": "venture",
       "target_id": "LeadScore.ai",
       "payload": {},
-      "status": "pending",
+      "status": "failed",
       "created_at": "2026-03-06T17:17:19.033Z",
       "executed_at": null,
-      "result": null,
-      "signature": "b7bfb78b14a61dfb"
+      "result": {
+        "validation_failed": {
+          "valid": false,
+          "reason": "not_whitelisted",
+          "details": {
+            "allowed": false,
+            "action": "advance_stage",
+            "approved": [
+              "spawn_workstream",
+              "assign_agent"
+            ]
+          }
+        }
+      },
+      "signature": "b7bfb78b14a61dfb",
+      "claimed_at": "2026-03-06T17:58:19.233Z",
+      "claim_lock": true
     },
     {
       "id": "0d0e986f-1da4-4263-a1e0-bf8504d77e30",
@@ -188,11 +333,18 @@
         "task_name": "E2E Test Workstream (Paperclip Phase 2.5)",
         "description": "Sandbox test for full orchestration loop validation"
       },
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-03-06T17:22:52.060Z",
-      "executed_at": null,
-      "result": null,
-      "signature": "4932cd406e6b503e"
+      "executed_at": "2026-03-06T17:58:29.235Z",
+      "result": {
+        "success": true,
+        "workstream_id": "ws-0d0e986f",
+        "ssot_file": "workstreams.json"
+      },
+      "signature": "4932cd406e6b503e",
+      "claimed_at": "2026-03-06T17:58:29.232Z",
+      "claim_lock": true,
+      "execution_started_at": "2026-03-06T17:58:29.234Z"
     },
     {
       "id": "3e687c55-17f4-4a29-99ef-48d30394cb42",
@@ -217,6 +369,30 @@
       "claimed_at": "2026-03-06T17:47:06.373Z",
       "claim_lock": true,
       "execution_started_at": "2026-03-06T17:47:06.373Z"
+    },
+    {
+      "id": "a00194f0-bea3-4f1a-8a19-96e67fc10926",
+      "source": "paperclip",
+      "operator": "paperclip-adapter",
+      "action_type": "spawn_workstream",
+      "target_type": "venture",
+      "target_id": "LeadScore.ai",
+      "payload": {
+        "task_name": "Live Polling Test",
+        "description": "Simple polling integration test"
+      },
+      "status": "completed",
+      "created_at": "2026-03-06T17:58:11.233Z",
+      "executed_at": "2026-03-06T17:58:29.240Z",
+      "result": {
+        "success": true,
+        "workstream_id": "ws-a00194f0",
+        "ssot_file": "workstreams.json"
+      },
+      "signature": "ba833cb49a4dea7b",
+      "claimed_at": "2026-03-06T17:58:29.237Z",
+      "claim_lock": true,
+      "execution_started_at": "2026-03-06T17:58:29.239Z"
     }
   ]
 }
