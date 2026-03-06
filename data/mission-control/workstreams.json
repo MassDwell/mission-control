@@ -1,10 +1,62 @@
 {
-  "timestamp": "2026-03-06T09:38:10.509Z",
-  "total": 0,
-  "active": [],
+  "timestamp": "2026-03-06T11:30:00.000Z",
+  "total": 3,
+  "active": [
+    {
+      "id": "backend-api-scaffolding",
+      "name": "Backend API Scaffolding",
+      "venture_id": "leadscore-ai",
+      "venture_name": "LeadScore.ai",
+      "stage": "in_progress",
+      "status": "active",
+      "owner": "codesmith",
+      "progress": 45,
+      "priority": "high",
+      "last_update": "2026-03-06T11:15:00.000Z",
+      "description": "REST API endpoints for lead qualification and scoring",
+      "workstream_type": "engineering",
+      "assigned_agents": ["codesmith"],
+      "completion_target": "2026-03-13",
+      "blockers": 1
+    },
+    {
+      "id": "worker-processor",
+      "name": "Worker Processor",
+      "venture_id": "leadscore-ai",
+      "venture_name": "LeadScore.ai",
+      "stage": "in_progress",
+      "status": "active",
+      "owner": "codesmith",
+      "progress": 30,
+      "priority": "high",
+      "last_update": "2026-03-06T11:10:00.000Z",
+      "description": "Background job processor for lead enrichment and scoring",
+      "workstream_type": "engineering",
+      "assigned_agents": ["codesmith"],
+      "completion_target": "2026-03-15",
+      "blockers": 0
+    },
+    {
+      "id": "web-dashboard",
+      "name": "Web Dashboard",
+      "venture_id": "leadscore-ai",
+      "venture_name": "LeadScore.ai",
+      "stage": "backlog",
+      "status": "waiting",
+      "owner": "codesmith",
+      "progress": 0,
+      "priority": "medium",
+      "last_update": "2026-03-06T10:00:00.000Z",
+      "description": "Frontend dashboard for viewing qualified leads and metrics",
+      "workstream_type": "frontend",
+      "assigned_agents": [],
+      "completion_target": "2026-03-20",
+      "blockers": 0
+    }
+  ],
   "stages": {
-    "backlog": 0,
-    "in_progress": 0,
+    "backlog": 1,
+    "in_progress": 2,
     "review": 0,
     "done": 0
   }

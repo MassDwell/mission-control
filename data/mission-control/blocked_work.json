@@ -1,5 +1,38 @@
 {
-  "timestamp": "2026-03-06T09:38:10.509Z",
-  "total": 0,
-  "items": []
+  "timestamp": "2026-03-06T11:30:00.000Z",
+  "total": 2,
+  "items": [
+    {
+      "id": "blocker-001",
+      "blocker": "Database schema validation failing on large payloads",
+      "blocked_item_type": "workstream",
+      "blocked_item_id": "backend-api-scaffolding",
+      "blocked_item_name": "Backend API Scaffolding",
+      "venture_id": "leadscore-ai",
+      "venture_name": "LeadScore.ai",
+      "blocked_since": "2026-03-05T14:30:00.000Z",
+      "owner": "codesmith",
+      "severity": "critical",
+      "impact": "Blocks API testing with realistic data sizes",
+      "description": "Schema validation is rejecting payloads > 10MB. Need to increase limits or use streaming.",
+      "assigned_to": "codesmith",
+      "status": "active"
+    },
+    {
+      "id": "blocker-002",
+      "blocker": "Waiting on design approval for dashboard layout",
+      "blocked_item_type": "workstream",
+      "blocked_item_id": "web-dashboard",
+      "blocked_item_name": "Web Dashboard",
+      "venture_id": "leadscore-ai",
+      "venture_name": "LeadScore.ai",
+      "blocked_since": "2026-03-04T10:00:00.000Z",
+      "owner": "moonshot",
+      "severity": "warning",
+      "impact": "Delays frontend implementation start",
+      "description": "Design team needs to finalize layout before engineering can begin.",
+      "assigned_to": "moonshot",
+      "status": "active"
+    }
+  ]
 }

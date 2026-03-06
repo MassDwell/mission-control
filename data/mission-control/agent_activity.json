@@ -1,6 +1,24 @@
 {
-  "lastUpdated": "2026-03-06T11:25:18.477Z",
+  "lastUpdated": "2026-03-06T11:29:29.404Z",
   "activities": [
+    {
+      "id": "a893e41f-97f5-4edf-9727-c58597bdabd3",
+      "timestamp": "2026-03-06T11:29:29.404Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 3 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "9289b894-ad1f-47d6-8c02-92183c1d1f36",
+      "timestamp": "2026-03-06T11:28:30.245Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
     {
       "id": "ad9e53eb-4018-4b8a-8055-7194cee8ed98",
       "timestamp": "2026-03-06T11:25:18.477Z",
