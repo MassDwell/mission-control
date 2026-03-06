@@ -1,19 +1,19 @@
 {
-  "exportedAt": "2026-03-06T00:04:56Z",
+  "exportedAt": "2026-03-06T02:04:56Z",
   "timezone": "America/New_York",
-  "currentTime": "8:04 PM EST Thursday",
-  "marketStatus": "CLOSED (After-hours ends at 8:00 PM, market closed for day)",
+  "currentTime": "10:04 PM EST Thursday",
+  "marketStatus": "CLOSED (Market closed, pre-market opens 4:00 AM Friday)",
   "total": 4,
   "summary": {
     "enabled": 4,
     "disabled": 0,
-    "lastSync": "2026-03-06T00:04:56Z"
+    "lastSync": "2026-03-06T02:04:56Z"
   },
   "systemStatus": {
-    "timestamp": "2026-03-06T00:04:56Z",
-    "currentTime": "8:04 PM EST",
+    "timestamp": "2026-03-06T02:04:56Z",
+    "currentTime": "10:04 PM EST",
     "dayOfWeek": "Thursday",
-    "marketHours": "CLOSED (After-hours ended 8:00 PM)",
+    "marketHours": "CLOSED (Pre-market Friday: 4:00 AM - 9:30 AM)",
     "operationalStatus": "CORE INFRASTRUCTURE OPERATIONAL"
   },
   "jobs": [
@@ -23,10 +23,10 @@
       "enabled": true,
       "schedule": "Every 2 hours (0 */2 * * *)",
       "lastStatus": "ok",
-      "lastRunAtMs": 1772746696128,
+      "lastRunAtMs": 1772754696128,
       "lastDurationMs": 2,
-      "nextRunAtMs": 1772753896119,
-      "notes": "Next run: 10:04 PM"
+      "nextRunAtMs": 1772761896119,
+      "notes": "Next run: 12:04 AM (Friday)"
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
@@ -69,9 +69,9 @@
       "4 core cron jobs active and operational",
       "Drift Audit completed successfully at 1:00 AM",
       "All jobs executing normally",
-      "Market closed for the day (after-hours ended 8:00 PM)",
+      "Market closed for the day, next session Friday",
       "System in stable lean state"
     ]
   },
-  "lastUpdated": "2026-03-06T00:04:56Z"
+  "lastUpdated": "2026-03-06T02:04:56Z"
 }
