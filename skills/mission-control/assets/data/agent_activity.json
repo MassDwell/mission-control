@@ -1,6 +1,33 @@
 {
   "activities": [
     {
+      "id": "f0106f06-fe92-495f-8793-39c4d4c9addb",
+      "timestamp": "2026-03-06T16:31:25.688Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "8d06c05f-7b7f-4da6-a556-1251881a3e6e",
+      "timestamp": "2026-03-06T16:28:18.669Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 5 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
+      "id": "7a742ed7-afb2-4f01-be0e-bf6d691eef28",
+      "timestamp": "2026-03-06T16:21:47.996Z",
+      "agent": "system",
+      "action": "Data validation FAILED: 0 missing, 6 stale",
+      "severity": "warning",
+      "source": "system",
+      "command": "validation"
+    },
+    {
       "id": "a0d870f9-c1b1-4325-bf15-c624b84420ce",
       "timestamp": "2026-03-06T14:52:18.145Z",
       "agent": "system",
@@ -25,7 +52,15 @@
       "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
       "severity": "info",
       "source": "system"
+    },
+    {
+      "timestamp": "2026-03-06T17:38:11.078Z",
+      "agent": "System",
+      "action": "Mission Control export completed",
+      "description": "Agents online: 1, Workstreams active: 0, Blocked items: 0, Ventures building: 0",
+      "severity": "info",
+      "source": "system"
     }
   ],
-  "lastUpdated": "2026-03-06T15:38:10.924Z"
+  "lastUpdated": "2026-03-06T17:38:11.078Z"
 }

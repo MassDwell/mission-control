@@ -1,7 +1,19 @@
 {
-  "timestamp": "2026-03-06T15:38:10.924Z",
+  "timestamp": "2026-03-06T17:38:11.078Z",
   "total": 0,
-  "active": [],
+  "active": [
+    {
+      "id": "ws-3e687c55",
+      "name": "Phase 1 E2E Test Workstream",
+      "description": "Sandbox test for full orchestration loop: Paperclip → Adapter → Executor → SSOT",
+      "venture_id": "LeadScore.ai",
+      "status": "in_progress",
+      "progress": 0,
+      "created_at": "2026-03-06T17:47:06.374Z",
+      "created_by": "clawson_executor",
+      "source_action": "3e687c55-17f4-4a29-99ef-48d30394cb42"
+    }
+  ],
   "stages": {
     "backlog": 0,
     "in_progress": 0,
