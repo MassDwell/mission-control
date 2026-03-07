@@ -1,20 +1,20 @@
 {
-  "exportedAt": "2026-03-06T23:05:02Z",
+  "exportedAt": "2026-03-07T01:05:02Z",
   "timezone": "America/New_York",
-  "currentTime": "6:05 PM EST Friday",
-  "marketStatus": "AFTER-HOURS (4:00 PM - 8:00 PM EST)",
+  "currentTime": "8:05 PM EST Friday",
+  "marketStatus": "CLOSED (After-hours ended at 8:00 PM EST)",
   "total": 4,
   "summary": {
     "enabled": 4,
     "disabled": 0,
-    "lastSync": "2026-03-06T23:05:02Z"
+    "lastSync": "2026-03-07T01:05:02Z"
   },
   "systemStatus": {
-    "timestamp": "2026-03-06T23:05:02Z",
-    "currentTime": "6:05 PM EST",
+    "timestamp": "2026-03-07T01:05:02Z",
+    "currentTime": "8:05 PM EST",
     "dayOfWeek": "Friday",
-    "marketHours": "AFTER-HOURS (4:00 PM - 8:00 PM EST)",
-    "operationalStatus": "CRITICAL - Cron scheduler unresponsive (515+ minutes)"
+    "marketHours": "CLOSED (After-hours ended 8:00 PM EST, markets open Monday 9:30 AM EST)",
+    "operationalStatus": "CRITICAL - Cron scheduler unresponsive (635+ minutes / 10.5+ hours)"
   },
   "jobs": [
     {
@@ -23,10 +23,10 @@
       "enabled": true,
       "schedule": "Every 2 hours (0 */2 * * *)",
       "lastStatus": "ok",
-      "lastRunAtMs": 1772819999000,
+      "lastRunAtMs": 1772827199000,
       "lastDurationMs": 2,
-      "nextRunAtMs": 1772827200000,
-      "notes": "Next run: 8:04 PM (pending cron recovery)"
+      "nextRunAtMs": 1772834400000,
+      "notes": "Next run: Sunday 10:04 PM (pending cron recovery)"
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
@@ -36,8 +36,8 @@
       "lastStatus": "ok",
       "lastRunAtMs": 1772776800008,
       "lastDurationMs": 1,
-      "nextRunAtMs": 1772863200000,
-      "notes": "Completed at 1:00 AM. Next run: Saturday, March 7, 1:00 AM"
+      "nextRunAtMs": 1772949600000,
+      "notes": "Completed Friday 1:00 AM. Next run: Saturday, March 7, 1:00 AM"
     },
     {
       "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
@@ -65,21 +65,29 @@
     "totalAgents": 1,
     "totalCronJobs": 4,
     "healthStatus": "CRITICAL",
+    "outageTimeline": {
+      "onset": "2026-03-06 09:30 AM EST (market open)",
+      "duration": "635+ minutes (10 hours 35 minutes)",
+      "endOfDay": "2026-03-06 08:00 PM EST (after-hours close)"
+    },
     "alertFlags": [
-      "Cron scheduler unresponsive for 515+ minutes (8.5+ hours since 9:30 AM)",
+      "Cron scheduler unresponsive for 635+ minutes (10.5+ hours)",
+      "Outage spans entire trading day: 9:30 AM to 8:00 PM EST",
       "3 cron jobs stalled",
       "Command bus queue at 13 total items",
-      "Data aging: venture_pipeline.json 8+ hours behind",
-      "6 export cycles missed during trading hours and after-hours"
+      "Data aging: venture_pipeline.json 10+ hours behind",
+      "7 export cycles missed (12:04 PM, 2:04 PM, 4:04 PM, 6:04 PM + scheduled)"
     ],
     "notes": [
       "4 core cron jobs configured and enabled",
-      "Market AFTER-HOURS (4:00 PM - 8:00 PM EST, closes at 8:00 PM)",
-      "Data pipeline critically degraded — sustained 8.5+ hour export outage",
+      "Markets NOW CLOSED - end of trading day",
+      "After-hours: ended at 8:00 PM EST",
+      "Next open: Monday, March 7, 9:30 AM EST",
+      "Data pipeline critically degraded — 10.5-hour sustained outage",
       "Agent activity stable at 2 entries",
       "Gateway process running but scheduler offline",
-      "SYSTEM REQUIRES URGENT INTERVENTION — extends beyond trading hours"
+      "SYSTEM REQUIRES URGENT INTERVENTION — weekend recovery needed"
     ]
   },
-  "lastUpdated": "2026-03-06T23:05:02Z"
+  "lastUpdated": "2026-03-07T01:05:02Z"
 }
