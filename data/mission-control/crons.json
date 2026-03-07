@@ -1,5 +1,92 @@
 {
-  "timestamp": "2026-03-06T17:38:11.078Z",
-  "error": "cron list not available",
-  "fallback": true
+  "exportedAtMs": 1741325040000,
+  "exportedAt": "2026-03-07T09:04:00.000Z",
+  "timezone": "America/New_York",
+  "total": 7,
+  "jobs": [
+    {
+      "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
+      "name": "Mission Control UI Auto-Start",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "*/5 * * * * (every 5 minutes)",
+      "timezone": "America/New_York",
+      "lastRunAtMs": 1772874000007,
+      "lastRunStatus": "ok",
+      "nextRunAtMs": 1772874300000,
+      "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible."
+    },
+    {
+      "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
+      "name": "Gateway Auto-Recovery Loop (RELIABILITY)",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "*/10 * * * * (every 10 minutes, +30s stagger)",
+      "timezone": "America/New_York",
+      "lastRunAtMs": 1772874024706,
+      "lastRunStatus": "ok",
+      "nextRunAtMs": 1772874624699,
+      "description": "Health check and auto-recovery for gateway process"
+    },
+    {
+      "id": "f3730e0e-e840-4cd2-b265-0a9ee1899070",
+      "name": "Cron Watchdog Loop (RELIABILITY)",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "*/15 * * * * (every 15 minutes, +60s stagger)",
+      "timezone": "America/New_York",
+      "lastRunAtMs": 1772874055095,
+      "lastRunStatus": "ok",
+      "nextRunAtMs": 1772874955089,
+      "description": "Cron execution health and SSOT data freshness monitoring"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "0 */2 * * * (every 2 hours at :00, +5min stagger)",
+      "timezone": "America/New_York",
+      "lastRunAtMs": 1772874296124,
+      "lastRunStatus": "ok",
+      "nextRunAtMs": 1772881496119,
+      "description": "Refresh mission-control/data/crons.json with latest cron jobs and git commit"
+    },
+    {
+      "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
+      "name": "Drift Audit (Core Architecture)",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "0 1 * * * (daily at 1:00 AM)",
+      "timezone": "America/New_York",
+      "lastRunAtMs": 1772863200007,
+      "lastRunStatus": "ok",
+      "nextRunAtMs": 1772949600000,
+      "description": "Core architecture drift detection and safe auto-fixes"
+    },
+    {
+      "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
+      "name": "Weekly Memory Maintenance",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "0 20 * * 0 (Sundays at 8:00 PM)",
+      "timezone": "America/New_York",
+      "lastRunAtMs": null,
+      "lastRunStatus": null,
+      "nextRunAtMs": 1773014400000,
+      "description": "Weekly memory file review, archival, and MEMORY.md maintenance"
+    },
+    {
+      "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
+      "name": "Bi-Weekly Memory Audit",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "0 10 1,15 * * (1st and 15th of month at 10:00 AM)",
+      "timezone": "America/New_York",
+      "lastRunAtMs": 1772377412244,
+      "lastRunStatus": "ok",
+      "nextRunAtMs": 1773583200000,
+      "description": "Bi-weekly memory health check, compaction, and audit"
+    }
+  ]
 }
