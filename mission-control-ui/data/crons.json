@@ -1,42 +1,11 @@
 {
   "jobs": [
     {
-      "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
-      "name": "Mission Control UI Auto-Start",
-      "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible.",
-      "enabled": true,
-      "createdAtMs": 1772796190679,
-      "updatedAtMs": 1772956807794,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/5 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Auto-start Mission Control UI: pgrep -f \"node.*mission-control-ui/server.js\" > /dev/null || (cd ~/.openclaw/workspace/mission-control-ui && nohup node server.js >> ~/.openclaw/workspace/data/logs/mission-control-ui.log 2>&1 &)"
-      },
-      "state": {
-        "nextRunAtMs": 1772957100000,
-        "lastRunAtMs": 1772956800010,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 7784,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "runningAtMs": 1772957100004
-      }
-    },
-    {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
       "name": "Gateway Auto-Recovery Loop (RELIABILITY)",
       "enabled": true,
       "createdAtMs": 1772807155062,
-      "updatedAtMs": 1772956240521,
+      "updatedAtMs": 1772964028785,
       "schedule": {
         "kind": "cron",
         "expr": "*/10 * * * *",
@@ -50,11 +19,11 @@
         "text": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
       },
       "state": {
-        "nextRunAtMs": 1772957424699,
-        "lastRunAtMs": 1772956224707,
+        "nextRunAtMs": 1772964624699,
+        "lastRunAtMs": 1772964024702,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15814,
+        "lastDurationMs": 4083,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -64,7 +33,7 @@
       "name": "Cron Watchdog Loop (RELIABILITY)",
       "enabled": true,
       "createdAtMs": 1772807152828,
-      "updatedAtMs": 1772956868301,
+      "updatedAtMs": 1772964061397,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -78,11 +47,41 @@
         "text": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
       },
       "state": {
-        "nextRunAtMs": 1772957755089,
-        "lastRunAtMs": 1772956855100,
+        "nextRunAtMs": 1772964955089,
+        "lastRunAtMs": 1772964055092,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 13201,
+        "lastDurationMs": 6305,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
+      "name": "Mission Control UI Auto-Start",
+      "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible.",
+      "enabled": true,
+      "createdAtMs": 1772796190679,
+      "updatedAtMs": 1772964007520,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Auto-start Mission Control UI: pgrep -f \"node.*mission-control-ui/server.js\" > /dev/null || (cd ~/.openclaw/workspace/mission-control-ui && nohup node server.js >> ~/.openclaw/workspace/data/logs/mission-control-ui.log 2>&1 &)"
+      },
+      "state": {
+        "nextRunAtMs": 1772965800000,
+        "lastRunAtMs": 1772964000002,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 7518,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -93,7 +92,7 @@
       "name": "Mission Control Cron Export",
       "enabled": true,
       "createdAtMs": 1770679531441,
-      "updatedAtMs": 1772957096130,
+      "updatedAtMs": 1772964296129,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -107,8 +106,8 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1772964296119,
-        "lastRunAtMs": 1772957096128,
+        "nextRunAtMs": 1772971496119,
+        "lastRunAtMs": 1772964296127,
         "lastStatus": "ok",
         "lastDurationMs": 2,
         "consecutiveErrors": 0,
@@ -206,6 +205,6 @@
   "limit": 7,
   "hasMore": false,
   "nextOffset": null,
-  "exportedAtMs": 1772957096000,
-  "exportedAt": "2026-03-08T08:04:56.000Z"
+  "exportedAtMs": 1772964296000,
+  "exportedAt": "2026-03-08T10:04:56.000Z"
 }
