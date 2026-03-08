@@ -1,6 +1,6 @@
 {
-  "exportedAtMs": 1772932800000,
-  "exportedAt": "2026-03-08T01:20:00.000Z",
+  "exportedAtMs": 1772940000000,
+  "exportedAt": "2026-03-08T03:20:00.000Z",
   "timezone": "America/New_York",
   "total": 7,
   "jobs": [
@@ -11,9 +11,9 @@
       "enabled": true,
       "schedule": "*/5 * * * * (every 5 minutes)",
       "timezone": "America/New_York",
-      "lastRunAtMs": 1772931600007,
+      "lastRunAtMs": 1772938800009,
       "lastRunStatus": "ok",
-      "nextRunAtMs": 1772931900000,
+      "nextRunAtMs": 1772939100000,
       "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible."
     },
     {
@@ -23,9 +23,9 @@
       "enabled": true,
       "schedule": "*/10 * * * * (every 10 minutes, +30s stagger)",
       "timezone": "America/New_York",
-      "lastRunAtMs": 1772931624706,
+      "lastRunAtMs": 1772938824708,
       "lastRunStatus": "ok",
-      "nextRunAtMs": 1772932224699,
+      "nextRunAtMs": 1772939424699,
       "description": "Health check and auto-recovery for gateway process"
     },
     {
@@ -35,9 +35,9 @@
       "enabled": true,
       "schedule": "*/15 * * * * (every 15 minutes, +60s stagger)",
       "timezone": "America/New_York",
-      "lastRunAtMs": 1772931655096,
+      "lastRunAtMs": 1772938855096,
       "lastRunStatus": "ok",
-      "nextRunAtMs": 1772932555089,
+      "nextRunAtMs": 1772939755089,
       "description": "Cron execution health and SSOT data freshness monitoring"
     },
     {
@@ -47,9 +47,9 @@
       "enabled": true,
       "schedule": "0 */2 * * * (every 2 hours at :00, +5min stagger)",
       "timezone": "America/New_York",
-      "lastRunAtMs": 1772931896125,
+      "lastRunAtMs": 1772939096126,
       "lastRunStatus": "ok",
-      "nextRunAtMs": 1772939096119,
+      "nextRunAtMs": 1772946296119,
       "description": "Refresh mission-control/data/crons.json with latest cron jobs and git commit"
     },
     {
