@@ -1,6 +1,6 @@
 {
-  "exportedAtMs": 1772947200000,
-  "exportedAt": "2026-03-08T05:20:00.000Z",
+  "exportedAtMs": 1772954400000,
+  "exportedAt": "2026-03-08T07:20:00.000Z",
   "timezone": "America/New_York",
   "total": 7,
   "jobs": [
@@ -11,9 +11,9 @@
       "enabled": true,
       "schedule": "*/5 * * * * (every 5 minutes)",
       "timezone": "America/New_York",
-      "lastRunAtMs": 1772946000010,
+      "lastRunAtMs": 1772953200008,
       "lastRunStatus": "ok",
-      "nextRunAtMs": 1772946300000,
+      "nextRunAtMs": 1772953500000,
       "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible."
     },
     {
@@ -23,9 +23,9 @@
       "enabled": true,
       "schedule": "*/10 * * * * (every 10 minutes, +30s stagger)",
       "timezone": "America/New_York",
-      "lastRunAtMs": 1772946024707,
+      "lastRunAtMs": 1772953224707,
       "lastRunStatus": "ok",
-      "nextRunAtMs": 1772946624699,
+      "nextRunAtMs": 1772953824699,
       "description": "Health check and auto-recovery for gateway process"
     },
     {
@@ -35,9 +35,9 @@
       "enabled": true,
       "schedule": "*/15 * * * * (every 15 minutes, +60s stagger)",
       "timezone": "America/New_York",
-      "lastRunAtMs": 1772946055094,
+      "lastRunAtMs": 1772953255097,
       "lastRunStatus": "ok",
-      "nextRunAtMs": 1772946955089,
+      "nextRunAtMs": 1772954155089,
       "description": "Cron execution health and SSOT data freshness monitoring"
     },
     {
@@ -47,22 +47,10 @@
       "enabled": true,
       "schedule": "0 */2 * * * (every 2 hours at :00, +5min stagger)",
       "timezone": "America/New_York",
-      "lastRunAtMs": 1772946296126,
+      "lastRunAtMs": 1772953496128,
       "lastRunStatus": "ok",
-      "nextRunAtMs": 1772953496119,
+      "nextRunAtMs": 1772957096119,
       "description": "Refresh mission-control/data/crons.json with latest cron jobs and git commit"
-    },
-    {
-      "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
-      "name": "Drift Audit (Core Architecture)",
-      "agentId": "main",
-      "enabled": true,
-      "schedule": "0 1 * * * (daily at 1:00 AM)",
-      "timezone": "America/New_York",
-      "lastRunAtMs": 1772863200007,
-      "lastRunStatus": "ok",
-      "nextRunAtMs": 1772949600000,
-      "description": "Core architecture drift detection and safe auto-fixes"
     },
     {
       "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
@@ -75,6 +63,18 @@
       "lastRunStatus": null,
       "nextRunAtMs": 1773014400000,
       "description": "Weekly memory file review, archival, and MEMORY.md maintenance"
+    },
+    {
+      "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
+      "name": "Drift Audit (Core Architecture)",
+      "agentId": "main",
+      "enabled": true,
+      "schedule": "0 1 * * * (daily at 1:00 AM)",
+      "timezone": "America/New_York",
+      "lastRunAtMs": 1772949600007,
+      "lastRunStatus": "ok",
+      "nextRunAtMs": 1773032400000,
+      "description": "Core architecture drift detection and safe auto-fixes"
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
