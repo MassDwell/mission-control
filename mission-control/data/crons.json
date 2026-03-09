@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T14:04:56.000Z",
+  "exportedAt": "2026-03-09T16:04:56.000Z",
   "jobs": [
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
@@ -69,8 +69,8 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRun": "9h ago",
-      "nextRun": "in 15h",
+      "lastRun": "11h ago",
+      "nextRun": "in 13h",
       "description": "Run drift-audit.sh — checks canonical files, generated configs, forbidden changes"
     },
     {
@@ -93,7 +93,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRun": "14h ago",
+      "lastRun": "16h ago",
       "nextRun": "in 6d",
       "description": "Run memory-maintenance.sh — archive old logs, review daily logs, update MEMORY.md"
     }
