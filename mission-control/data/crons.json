@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T10:04:56.000Z",
+  "exportedAt": "2026-03-09T12:04:56.000Z",
   "jobs": [
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
@@ -7,12 +7,10 @@
       "enabled": true,
       "schedule": "*/10 * * * *",
       "tz": "America/New_York",
-      "staggerMs": 30000,
       "sessionTarget": "main",
-      "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 7828,
-      "consecutiveErrors": 0,
+      "lastRun": "5m ago",
+      "nextRun": "in 5m",
       "description": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
     },
     {
@@ -21,12 +19,10 @@
       "enabled": true,
       "schedule": "*/15 * * * *",
       "tz": "America/New_York",
-      "staggerMs": 60000,
       "sessionTarget": "main",
-      "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 8360,
-      "consecutiveErrors": 0,
+      "lastRun": "4m ago",
+      "nextRun": "in 11m",
       "description": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
     },
     {
@@ -36,10 +32,9 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "sessionTarget": "main",
-      "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 4455,
-      "consecutiveErrors": 0,
+      "lastRun": "5m ago",
+      "nextRun": "in 25m",
       "description": "Auto-start PaperclipAI: pgrep -f 'dev-runner.mjs' > /dev/null || start paperclip"
     },
     {
@@ -49,10 +44,9 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "sessionTarget": "main",
-      "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 5732,
-      "consecutiveErrors": 0,
+      "lastRun": "5m ago",
+      "nextRun": "in 25m",
       "description": "Auto-start Mission Control UI on localhost:3000"
     },
     {
@@ -61,12 +55,10 @@
       "enabled": true,
       "schedule": "0 */2 * * *",
       "tz": "America/New_York",
-      "staggerMs": 300000,
       "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
-      "lastDurationMs": 0,
-      "consecutiveErrors": 0,
+      "lastRun": "<1m ago",
+      "nextRun": "in 2h",
       "description": "Refresh mission-control/data/crons.json with latest cron jobs and push to git"
     },
     {
@@ -76,10 +68,9 @@
       "schedule": "0 1 * * *",
       "tz": "America/New_York",
       "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
-      "lastDurationMs": 4,
-      "consecutiveErrors": 0,
+      "lastRun": "7h ago",
+      "nextRun": "in 17h",
       "description": "Run drift-audit.sh — checks canonical files, generated configs, forbidden changes"
     },
     {
@@ -89,10 +80,9 @@
       "schedule": "0 10 1,15 * *",
       "tz": "America/New_York",
       "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
-      "lastDurationMs": 102731,
-      "consecutiveErrors": 0,
+      "lastRun": "8d ago",
+      "nextRun": "in 6d",
       "description": "Memory health check — review WORKING.md, MEMORY.md, compact large files, archive old logs"
     },
     {
@@ -102,10 +92,9 @@
       "schedule": "0 20 * * 0",
       "tz": "America/New_York",
       "sessionTarget": "main",
-      "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 80901,
-      "consecutiveErrors": 0,
+      "lastRun": "12h ago",
+      "nextRun": "in 6d",
       "description": "Run memory-maintenance.sh — archive old logs, review daily logs, update MEMORY.md"
     }
   ],
