@@ -288,7 +288,59 @@ Purpose: Customer finish selection portal for ADU interior choices (flooring, ca
 
 ---
 
-_Last updated: 2026-03-04_
+_Last updated: 2026-03-08_
+
+---
+
+## Paperclip Orchestration (March 2026)
+
+**Status:** ✅ OPERATIONAL — Phase 1 observation complete, Phase 2 pending approval
+
+**Architecture:**
+- Paperclip frontend: ports 3100/3101
+- 4 agents deployed: Clawson, Codesmith, Moonshot, Personal Assistant
+- Claude Code adapter: operational
+- Phase 1 executor + polling loop: live (10s interval)
+- Whitelist: spawn_workstream, assign_agent (sandbox: LeadScore.ai only)
+
+**Files:**
+- `canon/system/clawson-queue-executor.js` — executor with claim-lock, validation, SSOT mutation
+- `canon/agents/clawson/clawson-integration.js` — polling loop
+- `canon/system/PHASE1_COMPLETION_REPORT.md` — completion doc
+
+**Known Issue:** Agent runs succeed (exit 0) but issue status sometimes stays `in_progress` — task completion state transition is inconsistent.
+
+---
+
+## Gmail MCP for Paperclip — Fix Applied 2026-03-08
+
+**Problem:** `@shinzolabs/gmail-mcp` was an HTTP web UI, not a proper stdio MCP server — Claude Code couldn't communicate with it.
+
+**Fix:** Replaced with `@gongrzhe/server-gmail-autoauth-mcp`
+- Credentials: `~/.gmail-mcp/credentials.json` (vettoristeve@gmail.com refresh token)
+- Config: `personal-assistant-mcp.json` updated
+- 18 Gmail tools verified working
+
+**Rule:** When MCP servers fail silently in Claude Code, check if the package is actually a stdio server vs. a web UI.
+
+---
+
+## GitHub Push Protection — Ongoing Issue (2026-03-06+)
+
+Pre-existing secrets in repo block all pushes:
+- Supabase Secret Key in: `data/supabase/run-migration.js`, `data/supabase/run-sql.mjs`, `scripts/log-activity.sh`
+- OpenAI API Key in: `projects/ai-data-marketplace/frontend/.next/...`
+
+**Status:** Unresolved — requires Steve to rotate keys or clean repo history (BFG/filter-repo).
+**Impact:** All git pushes to mission-control repo fail.
+
+---
+
+## Cron Scheduler Pattern (2026-03-06+)
+
+**Observed:** Cron scheduler shows "unresponsive" in health checks but all jobs execute normally.
+**Root cause:** Health endpoint unreliable, not the scheduler itself.
+**Rule:** Don't escalate "scheduler unresponsive" unless jobs are actually not running.
 
 ---
 
