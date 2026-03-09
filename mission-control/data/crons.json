@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T06:04:56.000Z",
+  "exportedAt": "2026-03-09T08:04:56.000Z",
   "jobs": [
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
@@ -11,8 +11,9 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 3989,
-      "consecutiveErrors": 0
+      "lastDurationMs": 13379,
+      "consecutiveErrors": 0,
+      "description": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
     },
     {
       "id": "f3730e0e-e840-4cd2-b265-0a9ee1899070",
@@ -24,8 +25,9 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 4436,
-      "consecutiveErrors": 0
+      "lastDurationMs": 7699,
+      "consecutiveErrors": 0,
+      "description": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
     },
     {
       "id": "7ee45eab-fed8-4b69-8bc1-9d68c4d5b42b",
@@ -36,8 +38,9 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 4145,
-      "consecutiveErrors": 0
+      "lastDurationMs": 9619,
+      "consecutiveErrors": 0,
+      "description": "Auto-start PaperclipAI: pgrep -f 'dev-runner.mjs' > /dev/null || start paperclip"
     },
     {
       "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
@@ -48,8 +51,9 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 6535,
-      "consecutiveErrors": 0
+      "lastDurationMs": 10507,
+      "consecutiveErrors": 0,
+      "description": "Auto-start Mission Control UI on localhost:3000"
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
@@ -61,8 +65,9 @@
       "sessionTarget": "main",
       "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
-      "lastDurationMs": 1,
-      "consecutiveErrors": 0
+      "lastDurationMs": 0,
+      "consecutiveErrors": 0,
+      "description": "Refresh mission-control/data/crons.json with latest cron jobs and push to git"
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
@@ -74,7 +79,8 @@
       "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
       "lastDurationMs": 4,
-      "consecutiveErrors": 0
+      "consecutiveErrors": 0,
+      "description": "Run drift-audit.sh — checks canonical files, generated configs, forbidden changes"
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
@@ -86,7 +92,8 @@
       "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
       "lastDurationMs": 102731,
-      "consecutiveErrors": 0
+      "consecutiveErrors": 0,
+      "description": "Memory health check — review WORKING.md, MEMORY.md, compact large files, archive old logs"
     },
     {
       "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
@@ -98,7 +105,8 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "lastDurationMs": 80901,
-      "consecutiveErrors": 0
+      "consecutiveErrors": 0,
+      "description": "Run memory-maintenance.sh — archive old logs, review daily logs, update MEMORY.md"
     }
   ],
   "total": 8
