@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T08:04:56.000Z",
+  "exportedAt": "2026-03-09T10:04:56.000Z",
   "jobs": [
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
@@ -11,7 +11,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 13379,
+      "lastDurationMs": 7828,
       "consecutiveErrors": 0,
       "description": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
     },
@@ -25,7 +25,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 7699,
+      "lastDurationMs": 8360,
       "consecutiveErrors": 0,
       "description": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
     },
@@ -38,7 +38,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 9619,
+      "lastDurationMs": 4455,
       "consecutiveErrors": 0,
       "description": "Auto-start PaperclipAI: pgrep -f 'dev-runner.mjs' > /dev/null || start paperclip"
     },
@@ -51,7 +51,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 10507,
+      "lastDurationMs": 5732,
       "consecutiveErrors": 0,
       "description": "Auto-start Mission Control UI on localhost:3000"
     },
