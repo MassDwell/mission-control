@@ -8,7 +8,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773144024704,
+      "lastRunAtMs": 1773151224705,
       "consecutiveErrors": 0
     },
     {
@@ -19,7 +19,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773144055098,
+      "lastRunAtMs": 1773151255098,
       "consecutiveErrors": 0
     },
     {
@@ -30,7 +30,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773144007028,
+      "lastRunAtMs": 1773151207724,
       "consecutiveErrors": 0
     },
     {
@@ -41,7 +41,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773144000007,
+      "lastRunAtMs": 1773151200009,
       "consecutiveErrors": 0
     },
     {
@@ -52,7 +52,40 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773144296128,
+      "lastRunAtMs": 1773151496133,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
+      "name": "Personal Gmail Cleanup — Morning (7 AM)",
+      "enabled": true,
+      "schedule": "0 7 * * 1-5",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "lastRunStatus": null,
+      "lastRunAtMs": null,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
+      "name": "Personal Gmail Cleanup — Midday (1 PM)",
+      "enabled": true,
+      "schedule": "0 13 * * 1-5",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "lastRunStatus": null,
+      "lastRunAtMs": null,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "bd1c4149-3c3b-474a-a222-9830e663553f",
+      "name": "Personal Gmail Cleanup — Evening (6 PM)",
+      "enabled": true,
+      "schedule": "0 18 * * 1-5",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "lastRunStatus": null,
+      "lastRunAtMs": null,
       "consecutiveErrors": 0
     },
     {
@@ -89,6 +122,6 @@
       "consecutiveErrors": 0
     }
   ],
-  "total": 8,
-  "exportedAt": "2026-03-10T12:04:00.000Z"
+  "total": 11,
+  "exportedAt": "2026-03-10T14:04:00.000Z"
 }
