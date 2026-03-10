@@ -5,7 +5,7 @@
       "name": "Gateway Auto-Recovery Loop (RELIABILITY)",
       "enabled": true,
       "createdAtMs": 1772807155062,
-      "updatedAtMs": 1773100829411,
+      "updatedAtMs": 1773108029289,
       "schedule": {
         "kind": "cron",
         "expr": "*/10 * * * *",
@@ -19,11 +19,11 @@
         "text": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
       },
       "state": {
-        "nextRunAtMs": 1773101424699,
-        "lastRunAtMs": 1773100824707,
+        "nextRunAtMs": 1773108624699,
+        "lastRunAtMs": 1773108024706,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 4704,
+        "lastDurationMs": 4583,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -33,7 +33,7 @@
       "name": "Cron Watchdog Loop (RELIABILITY)",
       "enabled": true,
       "createdAtMs": 1772807152828,
-      "updatedAtMs": 1773100859201,
+      "updatedAtMs": 1773108059704,
       "schedule": {
         "kind": "cron",
         "expr": "*/15 * * * *",
@@ -47,11 +47,11 @@
         "text": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
       },
       "state": {
-        "nextRunAtMs": 1773101755089,
-        "lastRunAtMs": 1773100855099,
+        "nextRunAtMs": 1773108955089,
+        "lastRunAtMs": 1773108055094,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 4102,
+        "lastDurationMs": 4610,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -63,7 +63,7 @@
       "name": "Auto-start PaperclipAI",
       "enabled": true,
       "createdAtMs": 1772975194927,
-      "updatedAtMs": 1773100808259,
+      "updatedAtMs": 1773108008742,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -76,11 +76,11 @@
         "text": "Auto-start PaperclipAI: pgrep -f 'dev-runner.mjs' > /dev/null || (cd ~/.openclaw/workspace/tools/paperclip && nohup node scripts/dev-runner.mjs dev >> ~/.openclaw/workspace/data/logs/paperclip.log 2>&1 &)"
       },
       "state": {
-        "nextRunAtMs": 1773102600000,
-        "lastRunAtMs": 1773100804408,
+        "nextRunAtMs": 1773109800000,
+        "lastRunAtMs": 1773108005226,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 3851,
+        "lastDurationMs": 3516,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -93,7 +93,7 @@
       "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible.",
       "enabled": true,
       "createdAtMs": 1772796190679,
-      "updatedAtMs": 1773100804408,
+      "updatedAtMs": 1773108005226,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -106,11 +106,11 @@
         "text": "Auto-start Mission Control UI: lsof -ti:3000 > /dev/null 2>&1 || (cd ~/.openclaw/workspace/mission-control-ui && nohup node server.js >> ~/.openclaw/workspace/data/logs/mission-control-ui.log 2>&1 &)"
       },
       "state": {
-        "nextRunAtMs": 1773102600000,
-        "lastRunAtMs": 1773100800009,
+        "nextRunAtMs": 1773109800000,
+        "lastRunAtMs": 1773108000011,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 4399,
+        "lastDurationMs": 5215,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -121,7 +121,7 @@
       "name": "Mission Control Cron Export",
       "enabled": true,
       "createdAtMs": 1770679531441,
-      "updatedAtMs": 1773101096128,
+      "updatedAtMs": 1773108296127,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -135,8 +135,8 @@
         "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
       },
       "state": {
-        "nextRunAtMs": 1773108296119,
-        "lastRunAtMs": 1773101096127,
+        "nextRunAtMs": 1773115496119,
+        "lastRunAtMs": 1773108296126,
         "lastStatus": "ok",
         "lastDurationMs": 1,
         "consecutiveErrors": 0,
