@@ -1,110 +1,243 @@
 {
-  "exportedAt": "2026-03-09T22:04:56.000Z",
-  "total": 8,
   "jobs": [
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
       "name": "Gateway Auto-Recovery Loop (RELIABILITY)",
       "enabled": true,
-      "schedule": "*/10 * * * *",
-      "tz": "America/New_York",
+      "createdAtMs": 1772807155062,
+      "updatedAtMs": 1773100829411,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/10 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 30000
+      },
       "sessionTarget": "main",
       "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773093624709,
-      "nextRunAtMs": 1773094224699,
-      "consecutiveErrors": 0
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
+      },
+      "state": {
+        "nextRunAtMs": 1773101424699,
+        "lastRunAtMs": 1773100824707,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 4704,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
     },
     {
       "id": "f3730e0e-e840-4cd2-b265-0a9ee1899070",
       "name": "Cron Watchdog Loop (RELIABILITY)",
       "enabled": true,
-      "schedule": "*/15 * * * *",
-      "tz": "America/New_York",
+      "createdAtMs": 1772807152828,
+      "updatedAtMs": 1773100859201,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 * * * *",
+        "tz": "America/New_York",
+        "staggerMs": 60000
+      },
       "sessionTarget": "main",
       "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773093655097,
-      "nextRunAtMs": 1773094555089,
-      "consecutiveErrors": 0
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
+      },
+      "state": {
+        "nextRunAtMs": 1773101755089,
+        "lastRunAtMs": 1773100855099,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 4102,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
     },
     {
       "id": "7ee45eab-fed8-4b69-8bc1-9d68c4d5b42b",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Auto-start PaperclipAI",
       "enabled": true,
-      "schedule": "*/30 * * * *",
-      "tz": "America/New_York",
+      "createdAtMs": 1772975194927,
+      "updatedAtMs": 1773100808259,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "tz": "America/New_York"
+      },
       "sessionTarget": "main",
       "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773093604633,
-      "nextRunAtMs": 1773095400000,
-      "consecutiveErrors": 0
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Auto-start PaperclipAI: pgrep -f 'dev-runner.mjs' > /dev/null || (cd ~/.openclaw/workspace/tools/paperclip && nohup node scripts/dev-runner.mjs dev >> ~/.openclaw/workspace/data/logs/paperclip.log 2>&1 &)"
+      },
+      "state": {
+        "nextRunAtMs": 1773102600000,
+        "lastRunAtMs": 1773100804408,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 3851,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
     },
     {
       "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Mission Control UI Auto-Start",
+      "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible.",
       "enabled": true,
-      "schedule": "*/30 * * * *",
-      "tz": "America/New_York",
+      "createdAtMs": 1772796190679,
+      "updatedAtMs": 1773100804408,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "tz": "America/New_York"
+      },
       "sessionTarget": "main",
       "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773093600006,
-      "nextRunAtMs": 1773095400000,
-      "consecutiveErrors": 0
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Auto-start Mission Control UI: lsof -ti:3000 > /dev/null 2>&1 || (cd ~/.openclaw/workspace/mission-control-ui && nohup node server.js >> ~/.openclaw/workspace/data/logs/mission-control-ui.log 2>&1 &)"
+      },
+      "state": {
+        "nextRunAtMs": 1773102600000,
+        "lastRunAtMs": 1773100800009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 4399,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "agentId": "main",
       "name": "Mission Control Cron Export",
       "enabled": true,
-      "schedule": "0 */2 * * *",
-      "tz": "America/New_York",
+      "createdAtMs": 1770679531441,
+      "updatedAtMs": 1773101096128,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "America/New_York",
+        "staggerMs": 300000
+      },
       "sessionTarget": "main",
       "wakeMode": "next-heartbeat",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773093896125,
-      "nextRunAtMs": 1773101096119,
-      "consecutiveErrors": 0
+      "payload": {
+        "kind": "systemEvent",
+        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
+      },
+      "state": {
+        "nextRunAtMs": 1773108296119,
+        "lastRunAtMs": 1773101096127,
+        "lastStatus": "ok",
+        "lastDurationMs": 1,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-requested"
+      }
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Drift Audit (Core Architecture)",
       "enabled": true,
-      "schedule": "0 1 * * *",
-      "tz": "America/New_York",
+      "createdAtMs": 1772649732922,
+      "updatedAtMs": 1773032400012,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 1 * * *",
+        "tz": "America/New_York"
+      },
       "sessionTarget": "main",
       "wakeMode": "next-heartbeat",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773032400008,
-      "nextRunAtMs": 1773118800000,
-      "consecutiveErrors": 0
+      "payload": {
+        "kind": "systemEvent",
+        "text": "🔍 Drift Audit — CORE ARCHITECTURE\n\nRun: bash ~/.openclaw/workspace/scripts/deploy/drift-audit.sh\n\nChecks:\n1. Canonical files integrity\n2. Generated configs match source\n3. No forbidden changes (Kommo refs, unauthorized agents)\n4. Directory structure correct\n5. All cron jobs match manifest\n\nAllowed auto-fixes (safe):\n- Regenerate config/ from canon/\n- Create missing directories\n- Increment patch version\n\nManual flags (require review):\n- Canon file content changes\n- Breaking cron job changes\n- New credentials\n- Active code modifications\n\nOutput: observability/drift-audit/audit-result-YYYYMMDD.json"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1773118800000,
+        "lastRunAtMs": 1773032400008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 4,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
+      "agentId": "main",
       "name": "Bi-Weekly Memory Audit",
       "enabled": true,
-      "schedule": "0 10 1,15 * *",
-      "tz": "America/New_York",
+      "createdAtMs": 1771188598351,
+      "updatedAtMs": 1772649376546,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 1,15 * *",
+        "tz": "America/New_York"
+      },
       "sessionTarget": "main",
       "wakeMode": "next-heartbeat",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1772377412244,
-      "nextRunAtMs": 1773583200000,
-      "consecutiveErrors": 0
+      "payload": {
+        "kind": "systemEvent",
+        "text": "🔍 Bi-Weekly Memory Audit (Clawson)\n\nPerform memory health check:\n\n1. Review memory/WORKING.md - is it current?\n2. Review MEMORY.md - any outdated info to archive?\n3. Check daily logs for patterns worth promoting\n4. Compact any files over 50KB\n5. Archive old daily logs (>14 days) to memory/archive/\n\nReport summary to Steve:\n- Files reviewed\n- Context saved (tokens)\n- Patterns promoted\n- Recommendations\n\nKeeps the system lean and compounds learning."
+      },
+      "state": {
+        "nextRunAtMs": 1773583200000,
+        "lastRunAtMs": 1772377412244,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 102731,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
     },
     {
       "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Weekly Memory Maintenance",
       "enabled": true,
-      "schedule": "0 20 * * 0",
-      "tz": "America/New_York",
+      "createdAtMs": 1772523683103,
+      "updatedAtMs": 1773014480908,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 20 * * 0",
+        "tz": "America/New_York"
+      },
       "sessionTarget": "main",
       "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773014400007,
-      "nextRunAtMs": 1773619200000,
-      "consecutiveErrors": 0
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ Weekly Memory Maintenance\n\nExecute: cd ~/.openclaw/workspace && ./scripts/memory-maintenance.sh\n\nThis will:\n1. Check file sizes (WORKING.md, MEMORY.md)\n2. Archive daily logs >30 days old\n3. Generate review report\n4. Git commit changes\n\nAfter automated tasks, complete manual review:\n- Review last 7 daily logs for lessons\n- Extract insights to MEMORY.md\n- Clean WORKING.md if needed\n\nSOP: data/global/sops/memory-maintenance.md"
+      },
+      "state": {
+        "nextRunAtMs": 1773619200000,
+        "lastRunAtMs": 1773014400007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 80901,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
     }
-  ]
+  ],
+  "total": 8,
+  "offset": 0,
+  "limit": 8,
+  "hasMore": false,
+  "nextOffset": null
 }
