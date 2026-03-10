@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-10T08:04:56.000Z",
+  "exportedAt": "2026-03-10T10:04:56.000Z",
   "total": 8,
   "jobs": [
     {
@@ -12,10 +12,10 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 6460,
+      "lastDurationMs": 5257,
       "consecutiveErrors": 0,
-      "nextRunAt": "2026-03-10T08:10:24.699Z",
-      "lastRunAt": "2026-03-10T08:00:24.704Z"
+      "nextRunAt": "2026-03-10T10:10:24.699Z",
+      "lastRunAt": "2026-03-10T10:00:24.703Z"
     },
     {
       "id": "f3730e0e-e840-4cd2-b265-0a9ee1899070",
@@ -27,10 +27,10 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 6597,
+      "lastDurationMs": 5309,
       "consecutiveErrors": 0,
-      "nextRunAt": "2026-03-10T08:15:55.089Z",
-      "lastRunAt": "2026-03-10T08:00:55.099Z"
+      "nextRunAt": "2026-03-10T10:15:55.089Z",
+      "lastRunAt": "2026-03-10T10:00:55.092Z"
     },
     {
       "id": "7ee45eab-fed8-4b69-8bc1-9d68c4d5b42b",
@@ -41,10 +41,10 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 7420,
+      "lastDurationMs": 7088,
       "consecutiveErrors": 0,
-      "nextRunAt": "2026-03-10T08:30:00.000Z",
-      "lastRunAt": "2026-03-10T08:00:11.625Z"
+      "nextRunAt": "2026-03-10T10:30:00.000Z",
+      "lastRunAt": "2026-03-10T10:00:07.429Z"
     },
     {
       "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
@@ -55,10 +55,10 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 11618,
+      "lastDurationMs": 7423,
       "consecutiveErrors": 0,
-      "nextRunAt": "2026-03-10T08:30:00.000Z",
-      "lastRunAt": "2026-03-10T08:00:00.007Z"
+      "nextRunAt": "2026-03-10T10:30:00.000Z",
+      "lastRunAt": "2026-03-10T10:00:00.006Z"
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
@@ -70,10 +70,10 @@
       "sessionTarget": "main",
       "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
-      "lastDurationMs": 0,
+      "lastDurationMs": 1,
       "consecutiveErrors": 0,
-      "nextRunAt": "2026-03-10T10:04:56.119Z",
-      "lastRunAt": "2026-03-10T08:04:56.130Z"
+      "nextRunAt": "2026-03-10T12:04:56.119Z",
+      "lastRunAt": "2026-03-10T10:04:56.127Z"
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
