@@ -37,15 +37,6 @@
       "consecutiveErrors": 0
     },
     {
-      "id": "bd1c4149-3c3b-474a-a222-9830e663553f",
-      "name": "Personal Gmail Cleanup — Evening (6 PM)",
-      "enabled": true,
-      "schedule": "0 18 * * 1-5",
-      "tz": "America/New_York",
-      "lastRunStatus": null,
-      "consecutiveErrors": 0
-    },
-    {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
       "name": "Mission Control Cron Export",
       "enabled": true,
@@ -82,6 +73,15 @@
       "consecutiveErrors": 0
     },
     {
+      "id": "bd1c4149-3c3b-474a-a222-9830e663553f",
+      "name": "Personal Gmail Cleanup — Evening (6 PM)",
+      "enabled": true,
+      "schedule": "0 18 * * 1-5",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0
+    },
+    {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
       "name": "Bi-Weekly Memory Audit",
       "enabled": true,
@@ -101,5 +101,5 @@
     }
   ],
   "total": 11,
-  "exportedAt": "2026-03-10T20:04:56.000Z"
+  "exportedAt": "2026-03-10T22:04:56.000Z"
 }
