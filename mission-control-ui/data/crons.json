@@ -8,7 +8,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773158424707,
+      "lastRunAtMs": 1773165624704,
       "consecutiveErrors": 0
     },
     {
@@ -19,7 +19,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773158455096,
+      "lastRunAtMs": 1773165655093,
       "consecutiveErrors": 0
     },
     {
@@ -30,7 +30,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773158406508,
+      "lastRunAtMs": 1773165608824,
       "consecutiveErrors": 0
     },
     {
@@ -41,7 +41,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773158400005,
+      "lastRunAtMs": 1773165600004,
       "consecutiveErrors": 0
     },
     {
@@ -52,7 +52,7 @@
       "tz": "America/New_York",
       "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773158696131,
+      "lastRunAtMs": 1773165896124,
       "consecutiveErrors": 0
     },
     {
@@ -73,8 +73,8 @@
       "schedule": "0 13 * * 1-5",
       "tz": "America/New_York",
       "sessionTarget": "main",
-      "lastRunStatus": null,
-      "lastRunAtMs": null,
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773162018398,
       "consecutiveErrors": 0
     },
     {
@@ -123,5 +123,5 @@
     }
   ],
   "total": 11,
-  "exportedAt": "2026-03-10T16:04:00.000Z"
+  "exportedAt": "2026-03-10T18:04:00.000Z"
 }
