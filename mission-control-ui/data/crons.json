@@ -6,9 +6,7 @@
       "enabled": true,
       "schedule": "*/10 * * * *",
       "tz": "America/New_York",
-      "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773165624704,
       "consecutiveErrors": 0
     },
     {
@@ -17,9 +15,7 @@
       "enabled": true,
       "schedule": "*/15 * * * *",
       "tz": "America/New_York",
-      "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773165655093,
       "consecutiveErrors": 0
     },
     {
@@ -28,9 +24,7 @@
       "enabled": true,
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
-      "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773165608824,
       "consecutiveErrors": 0
     },
     {
@@ -39,42 +33,7 @@
       "enabled": true,
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
-      "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773165600004,
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": "0 */2 * * *",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773165896124,
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
-      "name": "Personal Gmail Cleanup — Morning (7 AM)",
-      "enabled": true,
-      "schedule": "0 7 * * 1-5",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "lastRunStatus": null,
-      "lastRunAtMs": null,
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
-      "name": "Personal Gmail Cleanup — Midday (1 PM)",
-      "enabled": true,
-      "schedule": "0 13 * * 1-5",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773162018398,
       "consecutiveErrors": 0
     },
     {
@@ -83,9 +42,16 @@
       "enabled": true,
       "schedule": "0 18 * * 1-5",
       "tz": "America/New_York",
-      "sessionTarget": "main",
       "lastRunStatus": null,
-      "lastRunAtMs": null,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
       "consecutiveErrors": 0
     },
     {
@@ -94,9 +60,25 @@
       "enabled": true,
       "schedule": "0 1 * * *",
       "tz": "America/New_York",
-      "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773118800010,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
+      "name": "Personal Gmail Cleanup — Morning (7 AM)",
+      "enabled": true,
+      "schedule": "0 7 * * 1-5",
+      "tz": "America/New_York",
+      "lastRunStatus": null,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
+      "name": "Personal Gmail Cleanup — Midday (1 PM)",
+      "enabled": true,
+      "schedule": "0 13 * * 1-5",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
       "consecutiveErrors": 0
     },
     {
@@ -105,9 +87,7 @@
       "enabled": true,
       "schedule": "0 10 1,15 * *",
       "tz": "America/New_York",
-      "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1772377412244,
       "consecutiveErrors": 0
     },
     {
@@ -116,12 +96,10 @@
       "enabled": true,
       "schedule": "0 20 * * 0",
       "tz": "America/New_York",
-      "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773014400007,
       "consecutiveErrors": 0
     }
   ],
   "total": 11,
-  "exportedAt": "2026-03-10T18:04:00.000Z"
+  "exportedAt": "2026-03-10T20:04:56.000Z"
 }
