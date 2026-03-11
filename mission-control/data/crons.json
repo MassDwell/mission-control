@@ -1,388 +1,136 @@
 {
+  "exportedAt": "2026-03-11T20:04:56.000Z",
+  "total": 13,
   "jobs": [
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
       "name": "Gateway Auto-Recovery Loop (RELIABILITY)",
       "enabled": true,
-      "createdAtMs": 1772807155062,
-      "updatedAtMs": 1773252031325,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/10 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 30000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
-      },
-      "state": {
-        "nextRunAtMs": 1773252624699,
-        "lastRunAtMs": 1773252024707,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 6618,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "*/10 * * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773259224709,
+      "consecutiveErrors": 0
     },
     {
       "id": "f3730e0e-e840-4cd2-b265-0a9ee1899070",
       "name": "Cron Watchdog Loop (RELIABILITY)",
       "enabled": true,
-      "createdAtMs": 1772807152828,
-      "updatedAtMs": 1773252062043,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 * * * *",
-        "tz": "America/New_York",
-        "staggerMs": 60000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
-      },
-      "state": {
-        "nextRunAtMs": 1773252955089,
-        "lastRunAtMs": 1773252055097,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 6946,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "*/15 * * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773259255098,
+      "consecutiveErrors": 0
     },
     {
       "id": "24589521-ba28-4e21-af70-77e2034266dd",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Auto-start Telegram Adapter",
       "enabled": true,
-      "createdAtMs": 1773183138819,
-      "updatedAtMs": 1773252017357,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Auto-start Telegram Adapter: pgrep -f 'telegram-paperclip-adapter' > /dev/null || (cd ~/.openclaw/workspace/tools/paperclip && TELEGRAM_BOT_TOKEN=8401174291:AAGSZzpjiNgm8N_CuuI5MZpok2Y-6DMJwMQ TELEGRAM_ALLOWED_USER_ID=7002178651 PAPERCLIP_API_URL=http://127.0.0.1:3100 PAPERCLIP_COMPANY_ID=6e53f2a5-1a3f-4557-99d6-790eeb70ce67 PAPERCLIP_AGENT_ID=b81862ce-f532-489d-8613-a08ceacc6906 PAPERCLIP_COMPANY_PREFIX=CLA MISSION_CONTROL_BASE_URL=http://localhost:3101 nohup node adapter/telegram-paperclip-adapter.js >> ~/.openclaw/workspace/data/logs/telegram-adapter.log 2>&1 &)"
-      },
-      "state": {
-        "nextRunAtMs": 1773253800000,
-        "lastRunAtMs": 1773252012836,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 4521,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "*/30 * * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773259209764,
+      "consecutiveErrors": 0
     },
     {
       "id": "7ee45eab-fed8-4b69-8bc1-9d68c4d5b42b",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Auto-start PaperclipAI",
       "enabled": true,
-      "createdAtMs": 1772975194927,
-      "updatedAtMs": 1773252012836,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Auto-start PaperclipAI: pgrep -f 'dev-runner.mjs' > /dev/null || (cd ~/.openclaw/workspace/tools/paperclip && nohup node scripts/dev-runner.mjs dev >> ~/.openclaw/workspace/data/logs/paperclip.log 2>&1 &)"
-      },
-      "state": {
-        "nextRunAtMs": 1773253800000,
-        "lastRunAtMs": 1773252007983,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 4853,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "*/30 * * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773259205398,
+      "consecutiveErrors": 0
     },
     {
       "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Mission Control UI Auto-Start",
-      "description": "Permanent automation: Check every 5 minutes if Mission Control server is running. If not, auto-start. Ensures http://localhost:3000 always accessible.",
       "enabled": true,
-      "createdAtMs": 1772796190679,
-      "updatedAtMs": 1773252007983,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Auto-start Mission Control UI: lsof -ti:3000 > /dev/null 2>&1 || (cd ~/.openclaw/workspace/mission-control-ui && nohup node server.js >> ~/.openclaw/workspace/data/logs/mission-control-ui.log 2>&1 &)"
-      },
-      "state": {
-        "nextRunAtMs": 1773253800000,
-        "lastRunAtMs": 1773252000009,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 7974,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "*/30 * * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773259200010,
+      "consecutiveErrors": 0
     },
     {
       "id": "ed579efc-a0d8-4b34-8b67-e1fa9bc26414",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Auto-start Paperclip Notifier",
       "enabled": true,
-      "createdAtMs": 1773183595073,
-      "updatedAtMs": 1773252023783,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 * * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Auto-start Paperclip Notifier: pgrep -f 'paperclip-notifier' > /dev/null || (cd ~/.openclaw/workspace/tools/paperclip && TELEGRAM_BOT_TOKEN=8401174291:AAGSZzpjiNgm8N_CuuI5MZpok2Y-6DMJwMQ TELEGRAM_ALLOWED_USER_ID=7002178651 PAPERCLIP_API_URL=http://127.0.0.1:3100 PAPERCLIP_COMPANY_ID=6e53f2a5-1a3f-4557-99d6-790eeb70ce67 nohup node adapter/paperclip-notifier.js >> ~/.openclaw/workspace/data/logs/paperclip-notifier.log 2>&1 &)"
-      },
-      "state": {
-        "nextRunAtMs": 1773253800000,
-        "lastRunAtMs": 1773252017357,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 6426,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "agentId": "main",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "createdAtMs": 1770679531441,
-      "updatedAtMs": 1773252296126,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */2 * * *",
-        "tz": "America/New_York",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "CRON EXPORT: Refresh mission-control/data/crons.json with latest cron jobs. Run: cron list, then write formatted output to the file, then git commit and push."
-      },
-      "state": {
-        "nextRunAtMs": 1773259496119,
-        "lastRunAtMs": 1773252296126,
-        "lastStatus": "ok",
-        "lastDurationMs": 0,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-requested"
-      }
+      "schedule": "*/30 * * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773259213572,
+      "consecutiveErrors": 0
     },
     {
       "id": "bd1c4149-3c3b-474a-a222-9830e663553f",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Personal Gmail Cleanup — Evening (6 PM)",
       "enabled": true,
-      "createdAtMs": 1773147152568,
-      "updatedAtMs": 1773180079466,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Execute: bash /Users/openclaw/.openclaw/workspace/scripts/gmail-cleanup-personal.sh"
-      },
-      "state": {
-        "nextRunAtMs": 1773266400000,
-        "lastRunAtMs": 1773180015136,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 64330,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "0 18 * * 1-5",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773180015136,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773259496128,
+      "consecutiveErrors": 0
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Drift Audit (Core Architecture)",
       "enabled": true,
-      "createdAtMs": 1772649732922,
-      "updatedAtMs": 1773205200010,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 1 * * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "🔍 Drift Audit — CORE ARCHITECTURE\n\nRun: bash ~/.openclaw/workspace/scripts/deploy/drift-audit.sh\n\nChecks:\n1. Canonical files integrity\n2. Generated configs match source\n3. No forbidden changes (Kommo refs, unauthorized agents)\n4. Directory structure correct\n5. All cron jobs match manifest\n\nAllowed auto-fixes (safe):\n- Regenerate config/ from canon/\n- Create missing directories\n- Increment patch version\n\nManual flags (require review):\n- Canon file content changes\n- Breaking cron job changes\n- New credentials\n- Active code modifications\n\nOutput: observability/drift-audit/audit-result-YYYYMMDD.json"
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1773291600000,
-        "lastRunAtMs": 1773205200009,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 1,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "0 1 * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773205200009,
+      "consecutiveErrors": 0
     },
     {
       "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Personal Gmail Cleanup — Morning (7 AM)",
       "enabled": true,
-      "createdAtMs": 1773147148747,
-      "updatedAtMs": 1773226822697,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 7 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Execute: bash /Users/openclaw/.openclaw/workspace/scripts/gmail-cleanup-personal.sh"
-      },
-      "state": {
-        "nextRunAtMs": 1773313200000,
-        "lastRunAtMs": 1773226810462,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 12235,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "0 7 * * 1-5",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773226810462,
+      "consecutiveErrors": 0
     },
     {
       "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Personal Gmail Cleanup — Midday (1 PM)",
       "enabled": true,
-      "createdAtMs": 1773147152544,
-      "updatedAtMs": 1773248504053,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 13 * * 1-5",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Execute: bash /Users/openclaw/.openclaw/workspace/scripts/gmail-cleanup-personal.sh"
-      },
-      "state": {
-        "nextRunAtMs": 1773334800000,
-        "lastRunAtMs": 1773248483041,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 21012,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "0 13 * * 1-5",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773248483041,
+      "consecutiveErrors": 0
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
-      "agentId": "main",
       "name": "Bi-Weekly Memory Audit",
       "enabled": true,
-      "createdAtMs": 1771188598351,
-      "updatedAtMs": 1772649376546,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10 1,15 * *",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "🔍 Bi-Weekly Memory Audit (Clawson)\n\nPerform memory health check:\n\n1. Review memory/WORKING.md - is it current?\n2. Review MEMORY.md - any outdated info to archive?\n3. Check daily logs for patterns worth promoting\n4. Compact any files over 50KB\n5. Archive old daily logs (>14 days) to memory/archive/\n\nReport summary to Steve:\n- Files reviewed\n- Context saved (tokens)\n- Patterns promoted\n- Recommendations\n\nKeeps the system lean and compounds learning."
-      },
-      "state": {
-        "nextRunAtMs": 1773583200000,
-        "lastRunAtMs": 1772377412244,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 102731,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
-      }
+      "schedule": "0 10 1,15 * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1772377412244,
+      "consecutiveErrors": 0
     },
     {
       "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7002178651",
       "name": "Weekly Memory Maintenance",
       "enabled": true,
-      "createdAtMs": 1772523683103,
-      "updatedAtMs": 1773014480908,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 20 * * 0",
-        "tz": "America/New_York"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "⏰ Weekly Memory Maintenance\n\nExecute: cd ~/.openclaw/workspace && ./scripts/memory-maintenance.sh\n\nThis will:\n1. Check file sizes (WORKING.md, MEMORY.md)\n2. Archive daily logs >30 days old\n3. Generate review report\n4. Git commit changes\n\nAfter automated tasks, complete manual review:\n- Review last 7 daily logs for lessons\n- Extract insights to MEMORY.md\n- Clean WORKING.md if needed\n\nSOP: data/global/sops/memory-maintenance.md"
-      },
-      "state": {
-        "nextRunAtMs": 1773619200000,
-        "lastRunAtMs": 1773014400007,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 80901,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
-      }
+      "schedule": "0 20 * * 0",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773014400007,
+      "consecutiveErrors": 0
     }
-  ],
-  "total": 13,
-  "offset": 0,
-  "limit": 13,
-  "hasMore": false,
-  "nextOffset": null
+  ]
 }
