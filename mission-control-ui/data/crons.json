@@ -19,6 +19,15 @@
       "consecutiveErrors": 0
     },
     {
+      "id": "24589521-ba28-4e21-af70-77e2034266dd",
+      "name": "Auto-start Telegram Adapter",
+      "enabled": true,
+      "schedule": "*/30 * * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0
+    },
+    {
       "id": "7ee45eab-fed8-4b69-8bc1-9d68c4d5b42b",
       "name": "Auto-start PaperclipAI",
       "enabled": true,
@@ -30,6 +39,15 @@
     {
       "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
       "name": "Mission Control UI Auto-Start",
+      "enabled": true,
+      "schedule": "*/30 * * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "ed579efc-a0d8-4b34-8b67-e1fa9bc26414",
+      "name": "Auto-start Paperclip Notifier",
       "enabled": true,
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
@@ -100,6 +118,6 @@
       "consecutiveErrors": 0
     }
   ],
-  "total": 11,
-  "exportedAt": "2026-03-10T22:04:56.000Z"
+  "total": 13,
+  "exportedAt": "2026-03-11T00:04:56.000Z"
 }
