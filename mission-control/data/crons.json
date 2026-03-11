@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-11T10:04:56.000Z",
+  "exportedAt": "2026-03-11T12:04:56.000Z",
   "total": 13,
   "jobs": [
     {
@@ -11,7 +11,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 5166,
+      "lastDurationMs": 5548,
       "consecutiveErrors": 0,
       "payload": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
     },
@@ -24,7 +24,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 8920,
+      "lastDurationMs": 4437,
       "consecutiveErrors": 0,
       "payload": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
     },
@@ -37,7 +37,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 5232,
+      "lastDurationMs": 6081,
       "consecutiveErrors": 0,
       "payload": "Auto-start Telegram Adapter"
     },
@@ -50,7 +50,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 5739,
+      "lastDurationMs": 5775,
       "consecutiveErrors": 0,
       "payload": "Auto-start PaperclipAI"
     },
@@ -63,7 +63,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 5307,
+      "lastDurationMs": 5961,
       "consecutiveErrors": 0,
       "payload": "Auto-start Mission Control UI on port 3000"
     },
@@ -76,21 +76,9 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 4998,
+      "lastDurationMs": 5592,
       "consecutiveErrors": 0,
       "payload": "Auto-start Paperclip Notifier"
-    },
-    {
-      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
-      "name": "Personal Gmail Cleanup — Morning (7 AM)",
-      "enabled": true,
-      "schedule": "0 7 * * 1-5 (weekdays 7 AM)",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "lastRunStatus": null,
-      "consecutiveErrors": 0,
-      "payload": "Execute: bash scripts/gmail-cleanup-personal.sh"
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
@@ -139,8 +127,22 @@
       "sessionTarget": "main",
       "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
+      "lastDurationMs": 1,
       "consecutiveErrors": 0,
       "payload": "Drift Audit — run drift-audit.sh, output to observability/drift-audit/"
+    },
+    {
+      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
+      "name": "Personal Gmail Cleanup — Morning (7 AM)",
+      "enabled": true,
+      "schedule": "0 7 * * 1-5 (weekdays 7 AM)",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "lastRunStatus": "ok",
+      "lastDurationMs": 12235,
+      "consecutiveErrors": 0,
+      "payload": "Execute: bash scripts/gmail-cleanup-personal.sh"
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
@@ -151,6 +153,7 @@
       "sessionTarget": "main",
       "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
+      "lastDurationMs": 102731,
       "consecutiveErrors": 0,
       "payload": "Bi-Weekly Memory Audit — review WORKING.md, MEMORY.md, compact, archive"
     },
