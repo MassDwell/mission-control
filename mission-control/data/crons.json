@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-11T08:04:56.000Z",
+  "exportedAt": "2026-03-11T10:04:56.000Z",
   "total": 13,
   "jobs": [
     {
@@ -11,7 +11,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 5742,
+      "lastDurationMs": 5166,
       "consecutiveErrors": 0,
       "payload": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/gateway_health_loop.sh"
     },
@@ -24,7 +24,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 6060,
+      "lastDurationMs": 8920,
       "consecutiveErrors": 0,
       "payload": "Execute: /Users/openclaw/.openclaw/workspace/scripts/watchdogs/cron_watchdog_loop.sh"
     },
@@ -37,7 +37,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 8098,
+      "lastDurationMs": 5232,
       "consecutiveErrors": 0,
       "payload": "Auto-start Telegram Adapter"
     },
@@ -50,7 +50,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 8063,
+      "lastDurationMs": 5739,
       "consecutiveErrors": 0,
       "payload": "Auto-start PaperclipAI"
     },
@@ -63,7 +63,7 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 8882,
+      "lastDurationMs": 5307,
       "consecutiveErrors": 0,
       "payload": "Auto-start Mission Control UI on port 3000"
     },
@@ -76,21 +76,9 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "lastRunStatus": "ok",
-      "lastDurationMs": 6060,
+      "lastDurationMs": 4998,
       "consecutiveErrors": 0,
       "payload": "Auto-start Paperclip Notifier"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": "0 */2 * * * (every 2 hours, stagger 5 min)",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0,
-      "payload": "CRON EXPORT: Refresh mission-control/data/crons.json"
     },
     {
       "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
@@ -103,6 +91,18 @@
       "lastRunStatus": null,
       "consecutiveErrors": 0,
       "payload": "Execute: bash scripts/gmail-cleanup-personal.sh"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * * (every 2 hours, stagger 5 min)",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0,
+      "payload": "CRON EXPORT: Refresh mission-control/data/crons.json"
     },
     {
       "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
