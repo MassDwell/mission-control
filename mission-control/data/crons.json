@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-12T04:05:03.918Z",
+  "exportedAt": "2026-03-12T06:05:04.201Z",
   "total": 13,
   "jobs": [
     {
@@ -9,7 +9,7 @@
       "schedule": "*/10 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773288024708,
+      "lastRunAtMs": 1773295224708,
       "consecutiveErrors": 0
     },
     {
@@ -19,7 +19,7 @@
       "schedule": "*/15 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773288055099,
+      "lastRunAtMs": 1773295255097,
       "consecutiveErrors": 0
     },
     {
@@ -29,7 +29,7 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773288009066,
+      "lastRunAtMs": 1773295211442,
       "consecutiveErrors": 0
     },
     {
@@ -39,7 +39,7 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773288004794,
+      "lastRunAtMs": 1773295205261,
       "consecutiveErrors": 0
     },
     {
@@ -49,7 +49,7 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773288000020,
+      "lastRunAtMs": 1773295200008,
       "consecutiveErrors": 0
     },
     {
@@ -59,17 +59,7 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773288014050,
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
-      "name": "Drift Audit (Core Architecture)",
-      "enabled": true,
-      "schedule": "0 1 * * *",
-      "tz": "America/New_York",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773205200009,
+      "lastRunAtMs": 1773295216912,
       "consecutiveErrors": 0
     },
     {
@@ -79,7 +69,7 @@
       "schedule": "0 */2 * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773288296128,
+      "lastRunAtMs": 1773295496127,
       "consecutiveErrors": 0
     },
     {
@@ -110,6 +100,16 @@
       "tz": "America/New_York",
       "lastRunStatus": "ok",
       "lastRunAtMs": 1773266414349,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
+      "name": "Drift Audit (Core Architecture)",
+      "enabled": true,
+      "schedule": "0 1 * * *",
+      "tz": "America/New_York",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773291600012,
       "consecutiveErrors": 0
     },
     {
