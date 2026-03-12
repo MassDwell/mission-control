@@ -1,15 +1,7 @@
 {
-  "exportedAt": "2026-03-12T00:05:05.435Z",
-  "total": 14,
+  "exportedAt": "2026-03-12T02:05:03.998Z",
+  "total": 13,
   "jobs": [
-    {
-      "id": "feb15d59-cd88-42ac-bf89-d5903760950e",
-      "name": "MeritLayer Clerk DNS Verification Monitor",
-      "enabled": true,
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773273831675,
-      "consecutiveErrors": 0
-    },
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
       "name": "Gateway Auto-Recovery Loop (RELIABILITY)",
@@ -17,7 +9,7 @@
       "schedule": "*/10 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773273634656,
+      "lastRunAtMs": 1773280824708,
       "consecutiveErrors": 0
     },
     {
@@ -27,7 +19,7 @@
       "schedule": "*/15 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773273655097,
+      "lastRunAtMs": 1773280855098,
       "consecutiveErrors": 0
     },
     {
@@ -37,7 +29,7 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773273615515,
+      "lastRunAtMs": 1773280810389,
       "consecutiveErrors": 0
     },
     {
@@ -47,7 +39,7 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773273607951,
+      "lastRunAtMs": 1773280805981,
       "consecutiveErrors": 0
     },
     {
@@ -57,7 +49,7 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773273600008,
+      "lastRunAtMs": 1773280800008,
       "consecutiveErrors": 0
     },
     {
@@ -67,7 +59,7 @@
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773273623036,
+      "lastRunAtMs": 1773280816179,
       "consecutiveErrors": 0
     },
     {
@@ -77,7 +69,7 @@
       "schedule": "0 */2 * * *",
       "tz": "America/New_York",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773273896129,
+      "lastRunAtMs": 1773281096128,
       "consecutiveErrors": 0
     },
     {
