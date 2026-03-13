@@ -1,4 +1,6 @@
 {
+  "exported_at": "2026-03-13T12:04:56.000Z",
+  "total": 13,
   "jobs": [
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
@@ -6,7 +8,9 @@
       "enabled": true,
       "schedule": "*/10 * * * *",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773403224705,
       "consecutiveErrors": 0
     },
     {
@@ -15,7 +19,9 @@
       "enabled": true,
       "schedule": "*/15 * * * *",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773403255099,
       "consecutiveErrors": 0
     },
     {
@@ -24,7 +30,9 @@
       "enabled": true,
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773403212276,
       "consecutiveErrors": 0
     },
     {
@@ -33,7 +41,9 @@
       "enabled": true,
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773403206059,
       "consecutiveErrors": 0
     },
     {
@@ -42,7 +52,9 @@
       "enabled": true,
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773403200006,
       "consecutiveErrors": 0
     },
     {
@@ -51,7 +63,9 @@
       "enabled": true,
       "schedule": "*/30 * * * *",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773403218448,
       "consecutiveErrors": 0
     },
     {
@@ -60,25 +74,9 @@
       "enabled": true,
       "schedule": "0 */2 * * *",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
-      "name": "Drift Audit (Core Architecture)",
-      "enabled": true,
-      "schedule": "0 1 * * *",
-      "tz": "America/New_York",
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
-      "name": "Personal Gmail Cleanup — Morning (7 AM)",
-      "enabled": true,
-      "schedule": "0 7 * * 1-5",
-      "tz": "America/New_York",
-      "lastRunStatus": null,
+      "lastRunAtMs": 1773403496128,
       "consecutiveErrors": 0
     },
     {
@@ -87,7 +85,9 @@
       "enabled": true,
       "schedule": "0 13 * * 1-5",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773334815454,
       "consecutiveErrors": 0
     },
     {
@@ -96,7 +96,20 @@
       "enabled": true,
       "schedule": "0 18 * * 1-5",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773352809901,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
+      "name": "Drift Audit (Core Architecture)",
+      "enabled": true,
+      "schedule": "0 1 * * *",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773378000011,
       "consecutiveErrors": 0
     },
     {
@@ -105,7 +118,9 @@
       "enabled": true,
       "schedule": "0 10 1,15 * *",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1772377412244,
       "consecutiveErrors": 0
     },
     {
@@ -114,10 +129,21 @@
       "enabled": true,
       "schedule": "0 20 * * 0",
       "tz": "America/New_York",
+      "sessionTarget": "main",
       "lastRunStatus": "ok",
+      "lastRunAtMs": 1773014400007,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
+      "name": "Personal Gmail Cleanup — Morning (7 AM)",
+      "enabled": true,
+      "schedule": "0 7 * * 1-5",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773399610430,
       "consecutiveErrors": 0
     }
-  ],
-  "total": 13,
-  "exportedAt": "2026-03-11T02:04:56.000Z"
+  ]
 }
