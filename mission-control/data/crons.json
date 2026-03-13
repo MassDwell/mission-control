@@ -1,5 +1,6 @@
 {
-  "exported": "2026-03-13T14:04:56.000Z",
+  "exportedAt": "2026-03-13T16:06:00.000Z",
+  "exportedAtEDT": "2026-03-13 12:06 EDT",
   "total": 13,
   "jobs": [
     {
@@ -10,7 +11,8 @@
       "tz": "America/New_York",
       "target": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773410480581,
+      "lastRunAtMs": 1773417759166,
+      "nextRunAtMs": 1773418224699,
       "consecutiveErrors": 0
     },
     {
@@ -21,7 +23,8 @@
       "tz": "America/New_York",
       "target": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773410473271,
+      "lastRunAtMs": 1773417753924,
+      "nextRunAtMs": 1773418555089,
       "consecutiveErrors": 0
     },
     {
@@ -32,7 +35,8 @@
       "tz": "America/New_York",
       "target": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773410461013,
+      "lastRunAtMs": 1773417741447,
+      "nextRunAtMs": 1773419400000,
       "consecutiveErrors": 0
     },
     {
@@ -43,7 +47,8 @@
       "tz": "America/New_York",
       "target": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773410454113,
+      "lastRunAtMs": 1773417736240,
+      "nextRunAtMs": 1773419400000,
       "consecutiveErrors": 0
     },
     {
@@ -54,7 +59,8 @@
       "tz": "America/New_York",
       "target": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773410400011,
+      "lastRunAtMs": 1773417600011,
+      "nextRunAtMs": 1773419400000,
       "consecutiveErrors": 0
     },
     {
@@ -65,18 +71,8 @@
       "tz": "America/New_York",
       "target": "main",
       "lastRunStatus": "ok",
-      "lastRunAtMs": 1773410465438,
-      "consecutiveErrors": 0
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": "0 */2 * * *",
-      "tz": "America/New_York",
-      "target": "main",
-      "lastRunStatus": "ok",
-      "lastRunAtMs": 1773410696128,
+      "lastRunAtMs": 1773417746170,
+      "nextRunAtMs": 1773419400000,
       "consecutiveErrors": 0
     },
     {
@@ -88,6 +84,19 @@
       "target": "main",
       "lastRunStatus": "ok",
       "lastRunAtMs": 1773334815454,
+      "nextRunAtMs": 1773421200000,
+      "consecutiveErrors": 0
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * *",
+      "tz": "America/New_York",
+      "target": "main",
+      "lastRunStatus": "ok",
+      "lastRunAtMs": 1773417896127,
+      "nextRunAtMs": 1773425096119,
       "consecutiveErrors": 0
     },
     {
@@ -99,6 +108,7 @@
       "target": "main",
       "lastRunStatus": "ok",
       "lastRunAtMs": 1773352809901,
+      "nextRunAtMs": 1773439200000,
       "consecutiveErrors": 0
     },
     {
@@ -110,6 +120,7 @@
       "target": "main",
       "lastRunStatus": "ok",
       "lastRunAtMs": 1773378000011,
+      "nextRunAtMs": 1773464400000,
       "consecutiveErrors": 0
     },
     {
@@ -121,6 +132,7 @@
       "target": "main",
       "lastRunStatus": "ok",
       "lastRunAtMs": 1772377412244,
+      "nextRunAtMs": 1773583200000,
       "consecutiveErrors": 0
     },
     {
@@ -132,6 +144,7 @@
       "target": "main",
       "lastRunStatus": "ok",
       "lastRunAtMs": 1773014400007,
+      "nextRunAtMs": 1773619200000,
       "consecutiveErrors": 0
     },
     {
@@ -143,6 +156,7 @@
       "target": "main",
       "lastRunStatus": "ok",
       "lastRunAtMs": 1773399610430,
+      "nextRunAtMs": 1773658800000,
       "consecutiveErrors": 0
     }
   ]
