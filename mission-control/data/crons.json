@@ -1,18 +1,30 @@
 {
-  "exportedAt": "2026-03-14T10:04:56.000Z",
-  "total": 14,
+  "exportedAt": "2026-03-14T12:04:56.000Z",
+  "total": 16,
   "jobs": [
+    {
+      "id": "d41e1b15-b3d9-4b99-9842-4ac97c99b263",
+      "name": "Auto-start MetaClaw",
+      "enabled": true,
+      "schedule": "*/5 * * * *",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0,
+      "nextRunAtMs": 1773489900000
+    },
     {
       "id": "28a31b0d-23f9-498f-9b2a-5f13cf147a96",
       "name": "Auto-start Chrome (debug port 9222)",
       "enabled": true,
       "schedule": "every 5 minutes",
-      "tz": "America/New_York",
+      "tz": null,
       "sessionTarget": "main",
       "wakeMode": "now",
-      "lastRunStatus": null,
+      "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773482983007
+      "nextRunAtMs": 1773490183096
     },
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
@@ -24,7 +36,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773483024699
+      "nextRunAtMs": 1773490224699
     },
     {
       "id": "f3730e0e-e840-4cd2-b265-0a9ee1899070",
@@ -36,7 +48,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773483355089
+      "nextRunAtMs": 1773490555089
     },
     {
       "id": "24589521-ba28-4e21-af70-77e2034266dd",
@@ -48,7 +60,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773484200000
+      "nextRunAtMs": 1773491400000
     },
     {
       "id": "7ee45eab-fed8-4b69-8bc1-9d68c4d5b42b",
@@ -60,7 +72,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773484200000
+      "nextRunAtMs": 1773491400000
     },
     {
       "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
@@ -72,7 +84,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773484200000
+      "nextRunAtMs": 1773491400000
     },
     {
       "id": "ed579efc-a0d8-4b34-8b67-e1fa9bc26414",
@@ -84,19 +96,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773484200000
-    },
-    {
-      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
-      "name": "Personal Gmail Cleanup — Morning (7 AM)",
-      "enabled": true,
-      "schedule": "0 7 * * *",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0,
-      "nextRunAtMs": 1773486000000
+      "nextRunAtMs": 1773491400000
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
@@ -108,7 +108,7 @@
       "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773489896119
+      "nextRunAtMs": 1773497096119
     },
     {
       "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
@@ -145,6 +145,30 @@
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
       "nextRunAtMs": 1773550800000
+    },
+    {
+      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
+      "name": "Personal Gmail Cleanup — Morning (7 AM)",
+      "enabled": true,
+      "schedule": "0 7 * * *",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0,
+      "nextRunAtMs": 1773572400000
+    },
+    {
+      "id": "eac05891-c76b-4aa0-a6b3-cc733ada5b7a",
+      "name": "Weekly Skill Health Review",
+      "enabled": true,
+      "schedule": "0 9 * * 0",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "lastRunStatus": null,
+      "consecutiveErrors": 0,
+      "nextRunAtMs": 1773579600000
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
