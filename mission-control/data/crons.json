@@ -1,7 +1,19 @@
 {
-  "exportedAt": "2026-03-14T08:04:56.000Z",
-  "total": 13,
+  "exportedAt": "2026-03-14T10:04:56.000Z",
+  "total": 14,
   "jobs": [
+    {
+      "id": "28a31b0d-23f9-498f-9b2a-5f13cf147a96",
+      "name": "Auto-start Chrome (debug port 9222)",
+      "enabled": true,
+      "schedule": "every 5 minutes",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "lastRunStatus": null,
+      "consecutiveErrors": 0,
+      "nextRunAtMs": 1773482983007
+    },
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
       "name": "Gateway Auto-Recovery Loop (RELIABILITY)",
@@ -12,7 +24,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773475824699
+      "nextRunAtMs": 1773483024699
     },
     {
       "id": "f3730e0e-e840-4cd2-b265-0a9ee1899070",
@@ -24,7 +36,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773476155089
+      "nextRunAtMs": 1773483355089
     },
     {
       "id": "24589521-ba28-4e21-af70-77e2034266dd",
@@ -36,7 +48,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773477000000
+      "nextRunAtMs": 1773484200000
     },
     {
       "id": "7ee45eab-fed8-4b69-8bc1-9d68c4d5b42b",
@@ -48,7 +60,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773477000000
+      "nextRunAtMs": 1773484200000
     },
     {
       "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
@@ -60,7 +72,7 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773477000000
+      "nextRunAtMs": 1773484200000
     },
     {
       "id": "ed579efc-a0d8-4b34-8b67-e1fa9bc26414",
@@ -72,7 +84,19 @@
       "wakeMode": "now",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773477000000
+      "nextRunAtMs": 1773484200000
+    },
+    {
+      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
+      "name": "Personal Gmail Cleanup — Morning (7 AM)",
+      "enabled": true,
+      "schedule": "0 7 * * *",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0,
+      "nextRunAtMs": 1773486000000
     },
     {
       "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
@@ -84,7 +108,31 @@
       "wakeMode": "next-heartbeat",
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
-      "nextRunAtMs": 1773482696119
+      "nextRunAtMs": 1773489896119
+    },
+    {
+      "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
+      "name": "Personal Gmail Cleanup — Midday (1 PM)",
+      "enabled": true,
+      "schedule": "0 13 * * *",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0,
+      "nextRunAtMs": 1773507600000
+    },
+    {
+      "id": "bd1c4149-3c3b-474a-a222-9830e663553f",
+      "name": "Personal Gmail Cleanup — Evening (6 PM)",
+      "enabled": true,
+      "schedule": "0 18 * * *",
+      "tz": "America/New_York",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "lastRunStatus": "ok",
+      "consecutiveErrors": 0,
+      "nextRunAtMs": 1773525600000
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
@@ -121,42 +169,6 @@
       "lastRunStatus": "ok",
       "consecutiveErrors": 0,
       "nextRunAtMs": 1773619200000
-    },
-    {
-      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
-      "name": "Personal Gmail Cleanup — Morning (7 AM)",
-      "enabled": true,
-      "schedule": "0 7 * * 1-5",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0,
-      "nextRunAtMs": 1773658800000
-    },
-    {
-      "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
-      "name": "Personal Gmail Cleanup — Midday (1 PM)",
-      "enabled": true,
-      "schedule": "0 13 * * 1-5",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0,
-      "nextRunAtMs": 1773680400000
-    },
-    {
-      "id": "bd1c4149-3c3b-474a-a222-9830e663553f",
-      "name": "Personal Gmail Cleanup — Evening (6 PM)",
-      "enabled": true,
-      "schedule": "0 18 * * 1-5",
-      "tz": "America/New_York",
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "lastRunStatus": "ok",
-      "consecutiveErrors": 0,
-      "nextRunAtMs": 1773698400000
     }
   ]
 }
