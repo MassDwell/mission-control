@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-03-15T10:04:00.000Z",
+  "exported_at": "2026-03-15T12:04:56.000Z",
   "total": 16,
   "jobs": [
     {
@@ -7,90 +7,72 @@
       "name": "Auto-start MetaClaw",
       "enabled": true,
       "schedule": "*/5 * * * * (America/New_York)",
-      "last_run": "2026-03-15T10:00:41Z",
+      "last_run": "2026-03-15T12:00:25Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:05:00Z"
+      "next_run": "2026-03-15T12:05:00Z"
     },
     {
       "id": "28a31b0d-23f9-498f-9b2a-5f13cf147a96",
       "name": "Auto-start Chrome (debug port 9222)",
       "enabled": true,
       "schedule": "every 5 minutes",
-      "last_run": "2026-03-15T10:04:43Z",
+      "last_run": "2026-03-15T12:04:43Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:09:43Z"
+      "next_run": "2026-03-15T12:09:43Z"
     },
     {
       "id": "d439f2ac-b84c-4d56-b0b7-66b381b26491",
       "name": "Gateway Auto-Recovery Loop (RELIABILITY)",
       "enabled": true,
       "schedule": "*/10 * * * * (America/New_York) +30s stagger",
-      "last_run": "2026-03-15T10:00:48Z",
+      "last_run": "2026-03-15T12:00:34Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:10:24Z"
+      "next_run": "2026-03-15T12:10:25Z"
     },
     {
       "id": "f3730e0e-e840-4cd2-b265-0a9ee1899070",
       "name": "Cron Watchdog Loop (RELIABILITY)",
       "enabled": true,
       "schedule": "*/15 * * * * (America/New_York) +60s stagger",
-      "last_run": "2026-03-15T10:00:55Z",
+      "last_run": "2026-03-15T12:00:55Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:15:55Z"
+      "next_run": "2026-03-15T12:15:55Z"
     },
     {
       "id": "24589521-ba28-4e21-af70-77e2034266dd",
       "name": "Auto-start Telegram Adapter",
       "enabled": true,
       "schedule": "*/30 * * * * (America/New_York)",
-      "last_run": "2026-03-15T10:00:33Z",
+      "last_run": "2026-03-15T12:00:13Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:30:00Z"
+      "next_run": "2026-03-15T12:30:00Z"
     },
     {
       "id": "7ee45eab-fed8-4b69-8bc1-9d68c4d5b42b",
       "name": "Auto-start PaperclipAI",
       "enabled": true,
       "schedule": "*/30 * * * * (America/New_York)",
-      "last_run": "2026-03-15T10:00:28Z",
+      "last_run": "2026-03-15T12:00:06Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:30:00Z"
+      "next_run": "2026-03-15T12:30:00Z"
     },
     {
       "id": "a24ef29b-9c00-4548-be2d-c644c4d96437",
       "name": "Mission Control UI Auto-Start",
       "enabled": true,
       "schedule": "*/30 * * * * (America/New_York)",
-      "last_run": "2026-03-15T10:00:14Z",
+      "last_run": "2026-03-15T12:00:00Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:30:00Z"
+      "next_run": "2026-03-15T12:30:00Z"
     },
     {
       "id": "ed579efc-a0d8-4b34-8b67-e1fa9bc26414",
       "name": "Auto-start Paperclip Notifier",
       "enabled": true,
       "schedule": "*/30 * * * * (America/New_York)",
-      "last_run": "2026-03-15T10:00:37Z",
+      "last_run": "2026-03-15T12:00:18Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:30:00Z"
-    },
-    {
-      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
-      "name": "Mission Control Cron Export",
-      "enabled": true,
-      "schedule": "0 */2 * * * (America/New_York) +5min stagger",
-      "last_run": "2026-03-15T10:04:56Z",
-      "last_status": "ok",
-      "next_run": "2026-03-15T12:04:56Z"
-    },
-    {
-      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
-      "name": "Personal Gmail Cleanup — Morning (7 AM)",
-      "enabled": true,
-      "schedule": "0 7 * * * (America/New_York)",
-      "last_run": "2026-03-14T07:00:04Z",
-      "last_status": "ok",
-      "next_run": "2026-03-15T07:00:00Z"
+      "next_run": "2026-03-15T12:30:00Z"
     },
     {
       "id": "eac05891-c76b-4aa0-a6b3-cc733ada5b7a",
@@ -99,7 +81,7 @@
       "schedule": "0 9 * * 0 (America/New_York)",
       "last_run": null,
       "last_status": null,
-      "next_run": "2026-03-15T09:00:00Z"
+      "next_run": "2026-03-15T13:00:00Z"
     },
     {
       "id": "0d8672c3-69b7-42a7-a842-8271a99a5241",
@@ -108,25 +90,34 @@
       "schedule": "0 10 1,15 * * (America/New_York)",
       "last_run": "2026-02-27T15:03:32Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T10:00:00Z"
+      "next_run": "2026-03-15T14:00:00Z"
+    },
+    {
+      "id": "036b8a6f-82ba-4b73-bc86-47cad5b482d8",
+      "name": "Mission Control Cron Export",
+      "enabled": true,
+      "schedule": "0 */2 * * * (America/New_York) +5min stagger",
+      "last_run": "2026-03-15T12:04:56Z",
+      "last_status": "ok",
+      "next_run": "2026-03-15T14:04:56Z"
     },
     {
       "id": "96ad4227-d841-47ef-bacf-ef144386ea75",
       "name": "Personal Gmail Cleanup — Midday (1 PM)",
       "enabled": true,
       "schedule": "0 13 * * * (America/New_York)",
-      "last_run": "2026-03-14T13:00:08Z",
+      "last_run": "2026-03-14T17:00:09Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T13:00:00Z"
+      "next_run": "2026-03-15T17:00:00Z"
     },
     {
       "id": "bd1c4149-3c3b-474a-a222-9830e663553f",
       "name": "Personal Gmail Cleanup — Evening (6 PM)",
       "enabled": true,
       "schedule": "0 18 * * * (America/New_York)",
-      "last_run": "2026-03-15T09:58:03Z",
+      "last_run": "2026-03-15T09:58:04Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T18:00:00Z"
+      "next_run": "2026-03-15T22:00:00Z"
     },
     {
       "id": "d4402ea5-ae3e-4d07-ab0f-0d92f0db91a4",
@@ -135,16 +126,25 @@
       "schedule": "0 20 * * 0 (America/New_York)",
       "last_run": "2026-03-08T20:00:00Z",
       "last_status": "ok",
-      "next_run": "2026-03-15T20:00:00Z"
+      "next_run": "2026-03-15T00:00:00Z"
     },
     {
       "id": "b2b8939f-cc20-4b94-b65e-c5e648c57753",
       "name": "Drift Audit (Core Architecture)",
       "enabled": true,
       "schedule": "0 1 * * * (America/New_York)",
-      "last_run": "2026-03-15T01:00:00Z",
+      "last_run": "2026-03-15T05:00:00Z",
       "last_status": "ok",
-      "next_run": "2026-03-16T01:00:00Z"
+      "next_run": "2026-03-16T05:00:00Z"
+    },
+    {
+      "id": "974f5f35-50aa-43fb-b76c-2c24b2a54bf0",
+      "name": "Personal Gmail Cleanup — Morning (7 AM)",
+      "enabled": true,
+      "schedule": "0 7 * * * (America/New_York)",
+      "last_run": "2026-03-15T11:00:11Z",
+      "last_status": "ok",
+      "next_run": "2026-03-16T11:00:00Z"
     }
   ]
 }
