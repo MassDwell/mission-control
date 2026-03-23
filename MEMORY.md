@@ -118,7 +118,7 @@ See: MassDwell email inbox + manual tracking for lead status
   - 5 expansion domains (AI Learning, AI Tooling, Vertical AI, Business Operations, Founder Tools)
   - Evidence-driven discovery (Reddit, Indie Hackers, founder communities)
   - Target: $10K-$100K+ MRR AI SaaS products
-  - Framework: canon/system/moonshot_discovery_framework_v2.md
+  - Framework: canon/system/moonshot-program.md (v3.0 — self-improving, Karpathy pattern)
   - Pipeline: Moonshot (propose 3 ideas) → Clawson (approve) → Codesmith (build) → Mission Control (track)
 
 Secondary focus:
@@ -217,7 +217,29 @@ All CRM integration suspended. Manual management only.
 
 ---
 
-## Lessons Learned
+## Standing Rules — Coding Agent Verification
+
+After any coding agent (Claude Code, Codex, etc.) completes a task:
+1. **Always verify `git status` AND `git log origin/main..HEAD`** — confirm 0 commits ahead of remote
+2. If commits are ahead: **push immediately before reporting done**
+3. Never tell Steve something is "deployed" or "live" until the push is confirmed
+4. Vercel deploy = push confirmed + check `vercel ls` for Ready status
+
+---
+
+## Lessons Learned (Week of 2026-03-16 to 2026-03-22)
+
+- **S3 is the ONLY storage layer** — Never use `@vercel/blob`. All file storage goes through `lib/s3.ts → uploadBuffer()`. Claude Code agents will try to import `@vercel/blob`; always strip it.
+- **Prisma relation names are PascalCase** — Generated code often uses lowercase (`project:`, `subContractor:`). Always check the schema, fix before pushing.
+- **Vercel GitHub integration can silently disconnect** — If `git push` succeeds but Vercel doesn't deploy, check Settings → Git. The app may need to be reinstalled on the GitHub org.
+- **Node 22 + Stripe SDK incompatibility** — Use raw `fetch()` for Stripe Checkout calls instead of the Stripe SDK. SDK breaks under Node 22 + Next.js 16.
+- **Resend account fragmentation** — drawstack.ai domain is registered in a Resend account NOT under massdwell. Likely vettoristeve@gmail.com. Need Steve to confirm. Clerk email delivery is blocked until resolved.
+- **macOS Storage "50GB Documents" miscategorization** — macOS sometimes miscounts; not a real disk problem. Verify with `df -h` before panicking.
+- **Window.location.reload is an anti-pattern** — Use React state updates + callback props to refresh data. `window.location.reload()` causes full page reloads and kills form state.
+- **Playwright test.use() placement** — `test.use({...deviceConfig})` must be at the top of the describe block, not inside. Misplacement silently blocks all specs in the block.
+- **Vitest + Playwright setup conflict** — `tests/setup.ts` calling Playwright's `setup()` inside Vitest runner causes all unit tests to crash. Keep test runners strictly separated.
+
+
 
 - OAuth flow works with manual code paste when running on remote machine
 - Kommo catches virtually all leads from Facebook ads
@@ -288,7 +310,99 @@ Purpose: Customer finish selection portal for ADU interior choices (flooring, ca
 
 ---
 
-_Last updated: 2026-03-08_
+_Last updated: 2026-03-14_
+
+---
+
+## DrawStack (Active Venture — March 2026 → SHIP-READY)
+
+**Status:** ✅ LIVE — drawstack.ai (DNS propagated)
+
+**Product:** Construction draw management & budget tracking SaaS for small-to-mid real estate developers  
+**Domains:** drawstack.ai (primary) · drawstack.io (redirect)  
+**Tech stack:** Next.js 15 · TypeScript · Clerk · Neon (PostgreSQL) · Prisma · Vercel · AWS S3  
+**Repo:** github.com/MassDwell/drawstack
+
+**As of 2026-03-22 (ship-ready):**
+- All 4 post-blitz gaps resolved: retainage ledger detail, doc hard-gating, pagination, mobile SOV
+- Safety infrastructure: Sentry, feature flags, smoke tests, PR workflow, migration docs
+- SEO stack: robots.txt, sitemap.xml, OG images, JSON-LD, page-level keywords (Rabbet alternative)
+- GA4 key events, PostHog analytics, admin revenue/trials dashboard
+- Landing page: fake dashboard mockup, how-it-works flow, features trimmed
+- Per-line retainage ledger, change orders, SOV over-budget warnings, invoice sub mapping
+- Sub portal: per-project dashboard, payment history, email notifications, mobile-first
+- Admin portal: user emails, delete user, plan override, org detail, activity feed, draw pipeline
+
+**As of 2026-03-15 (end of intensive build day):**
+- 6-branch blitz merge complete — 28/32 planned features built, 3 partial, 1 missing
+- AIA G702/G703-compatible PDF generation ✅
+- AI invoice parsing (Gemini) ✅
+- Lender invite + review flow ✅
+- Lender portfolio dashboard ✅
+- Stripe billing ✅
+- CSV/Excel budget upload (seeds SOV on project create) ✅
+- Burn rate chart ✅
+- Lien waiver tracking ✅
+- Settings edit ✅
+- Unified draw status model (7-step banking flow) ✅
+- Offline GC panels (advance without lender on platform) ✅
+- Full app audit queued (in progress as of 8 PM)
+
+**Draw status flow (7 steps, unified):**
+DRAFT → SUBMITTED → UNDER_REVIEW → INSPECTION_ASSIGNED → INSPECTION_COMPLETE → APPROVED → FUNDED
+- Display labels use real banking language
+- GC can self-advance every step when no active lender
+- Lender drives same steps from their dashboard when on platform
+
+**✅ Known Good Checkpoint — 2026-03-22 17:38 EDT (STABLE BASELINE)**
+- Git tag: `checkpoint-2026-03-22-stable` | SHA: `4e461d6`
+- Steve verified everything working at this timestamp
+- Neon DB snapshot near this time = safe restore point
+- To recover: `git checkout checkpoint-2026-03-22-stable` + Neon PITR to 2026-03-22 17:38 EDT
+
+**Known gaps (post-blitz audit):** ✅ ALL RESOLVED (2026-03-22)
+1. ✅ Retainage ledger detail — fixed
+2. ✅ Document hard-gating — now blocks submission
+3. ✅ Pagination on projects list — added
+4. ✅ Mobile responsive SOV tables — fixed at 375px
+
+**Key decisions locked:**
+- AIA G702/G703: Recreate layout (don't license) — label "AIA G702-compatible"
+- Budget model: 4-level hierarchy (Project → Division → Category → Line Item)
+- AI stack: Gemini 2.5 Pro (primary) + Claude Opus (low-confidence validation)
+- Invoice: Confidence-scored UX, user approval always required
+- Neon HTTP: no `$transaction` or `createMany` — use sequential creates
+
+**Key bugs fixed (2026-03-15):**
+- Draw detail page crashed — `workCompletedFromPrevious` (Column D) must be computed from prior approved/funded draws before passing to DrawDetail component
+- Both user accounts had `role=LENDER` in DB — fixed to `role=GC` (8 PM)
+- S3 presigned URL 403 — Content-Type must match exactly between sign and upload
+- Invoice upload S3 fix deployed, invoice list auto-refresh fixed
+
+**Project docs:**
+- `data/drawstack/PROJECT-PLAN.md`
+- `data/drawstack/BLITZ-AUDIT.md`
+- `data/drawstack/RABBET-DEEP-DIVE.md`
+- `ventures/drawstack/UNIFIED-STATUS-SPEC.md`
+
+---
+
+## MeritLayer — SHUT DOWN (2026-03-13)
+
+**Decision:** Steve cancelled the project. "I don't like the idea anymore."
+
+**Teardown completed:**
+- ✅ Vercel project deleted
+- ✅ GitHub repo (MassDwell/permitiq) archived
+- ✅ 29 CLA tickets cancelled in Paperclip
+- ✅ 6 Stripe products archived
+- ✅ Local repo archived to `archive/meritlayer_archived_20260313`
+
+**Still needs manual action:**
+- Neon DB — delete at console.neon.tech
+- Clerk app — delete at dashboard.clerk.com
+- Resend domain (meritlayer.ai) — remove at resend.com/domains (API key restricted)
+- GoDaddy domain (meritlayer.ai) — Steve wants to KEEP this domain
 
 ---
 
@@ -325,14 +439,10 @@ _Last updated: 2026-03-08_
 
 ---
 
-## GitHub Push Protection — Ongoing Issue (2026-03-06+)
+## GitHub Push Protection — RESOLVED (2026-03-08)
 
-Pre-existing secrets in repo block all pushes:
-- Supabase Secret Key in: `data/supabase/run-migration.js`, `data/supabase/run-sql.mjs`, `scripts/log-activity.sh`
-- OpenAI API Key in: `projects/ai-data-marketplace/frontend/.next/...`
-
-**Status:** Unresolved — requires Steve to rotate keys or clean repo history (BFG/filter-repo).
-**Impact:** All git pushes to mission-control repo fail.
+Pre-existing secrets (Supabase + OpenAI keys) were blocking all pushes to mission-control repo.
+**Status:** ✅ Resolved by Steve on 2026-03-08.
 
 ---
 
