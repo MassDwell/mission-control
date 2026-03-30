@@ -44,21 +44,15 @@ _Curated knowledge and lessons learned. Daily logs are in memory/YYYY-MM-DD.md_
 
 ---
 
-## VAPI Voice AI (Configured 2026-02-04)
+## VAPI Voice AI — DECOMMISSIONED (2026-03-28)
 
-**Assistant:** "Sarah" - MassDwell Lead Qualifier
-**ID:** ebac8e3e-5285-4e6c-a185-6e2698a24ca5
-**Phone:** VAPI number (ID: 5ea3a6d9-7333-4bdd-9fe6-73768bb53c4a)
-**Voice:** ElevenLabs (Rachel - professional female)
-**Status:** ✅ LIVE AND TESTED
+**Status:** ❌ RETIRED — Sarah (MassDwell lead qualifier) decommissioned per Steve's decision.
 
-Sarah can:
-- Qualify cold leads (interest, location, timeline, budget)
-- Handle objections naturally
-- Book follow-ups with Nick
-- Auto-end on "not interested"
-
-**Steve's verdict:** "Pretty darn good! Baby boomers won't know it's AI."
+All VAPI infrastructure removed:
+- `skills/vapi-calls/` deleted
+- `.env` VAPI keys removed (VAPI_API_KEY, VAPI_ASSISTANT_ID, VAPI_PHONE_NUMBER_ID, WEBHOOK_BASE_URL)
+- `credentials/twilio/massdwell-sarah.json` deleted
+- No active VAPI cron jobs (none existed in live scheduler)
 
 ---
 
@@ -217,6 +211,13 @@ All CRM integration suspended. Manual management only.
 
 ---
 
+## Standing Rules — Deployment
+
+> ⛔ **NEVER merge feature upgrades directly to production (main) without staging first.**
+> All feature work goes: `feature branch → staging → Steve reviews → main`
+> Hotfixes (bugs, rollbacks) may go direct to main. Features never do.
+> This rule exists because PR #9 merged unreleased AI features straight to production on 2026-03-23 — causing a scramble to remove them.
+
 ## Standing Rules — Coding Agent Verification
 
 After any coding agent (Claude Code, Codex, etc.) completes a task:
@@ -226,6 +227,17 @@ After any coding agent (Claude Code, Codex, etc.) completes a task:
 4. Vercel deploy = push confirmed + check `vercel ls` for Ready status
 
 ---
+
+## Lessons Learned (Week of 2026-03-23 to 2026-03-29)
+
+- **Neon HTTP: no nested Prisma includes beyond 1 level** — 2-level deep nested includes crash the Neon HTTP adapter silently. Always use sequential flat queries + JS merge. Applies to all routes using Neon serverless.
+- **Clerk `currentUser()` vs `auth()` in server components** — `currentUser()` returns the logged-in session user, not necessarily the userId in the request context. For GC approve/reject actions on behalf of a sub, use the `userId` passed in the request body, not `currentUser()`.
+- **S3 private buckets require presigned URLs everywhere** — raw S3 URLs return 403 for private buckets. Create a dedicated API route to generate presigned URLs. Never store or serve raw S3 URLs for private content.
+- **PR review discipline: staging before main** — PR #9 merged unreleased AI features straight to production (52 files, +4415 lines). Rule enforced: features go feature branch → staging → Steve review → main. Hotfixes only may go direct to main.
+- **Backup dirs must be archived outside node tree** — Old backup dirs sitting alongside live installations cause Node module resolution to walk the wrong tree. Rename with `.archived` suffix or move outside `tools/`.
+- **Clerk Org type matters for lender invite flow** — existing GC org record causes constraint violation when creating LenderProjectAccess. Must check org type and create a new LENDER org if the user already has a GC org.
+- **Cron jobs intended to be silent MUST start with "Execute silently:"** — without this prefix, systemEvent/main jobs with wakeMode:now relay output to Steve's Telegram. Always prefix automation crons.
+- **Watchdog "unresponsive" is a false positive** — scheduler health endpoint is unreliable; jobs execute fine regardless. Don't escalate unless jobs are actually not running.
 
 ## Lessons Learned (Week of 2026-03-16 to 2026-03-22)
 
@@ -246,6 +258,15 @@ After any coding agent (Claude Code, Codex, etc.) completes a task:
 - Gmail inbox is clean — no missed leads
 - Google Drive has competitive intel worth reviewing
 - Calendar is underutilized — opportunity for scheduling follow-ups
+
+---
+
+## DrawStack Analytics & Search
+
+**Google Search Console:** ✅ Live — vettoristeve@gmail.com, drawstack.ai property
+**Google Analytics GA4:** ✅ Live — drawstack.ai (already integrated)
+**X (Twitter):** @TheDrawStack — app registered as "drawstack" via xurl (2026-03-27)
+  - OAuth2 pending (Steve needs to run `xurl auth oauth2` in Terminal)
 
 ---
 
@@ -365,6 +386,22 @@ DRAFT → SUBMITTED → UNDER_REVIEW → INSPECTION_ASSIGNED → INSPECTION_COMP
 2. ✅ Document hard-gating — now blocks submission
 3. ✅ Pagination on projects list — added
 4. ✅ Mobile responsive SOV tables — fixed at 375px
+
+**Safety & Ops Infrastructure (2026-03-22):**
+- Sentry error monitoring ✅
+- Feature flags ✅
+- Smoke tests ✅
+- PR workflow ✅
+- Migration docs ✅
+- Staging environment (CLA-247) ✅
+- Neon PITR + DB backup script (CLA-251) ✅
+
+**Admin:**
+- Allowlist: vettoristeve@gmail.com, sales@massdwell.com, steve.vettori@massdwell.com
+- Revenue & Trials section in admin overview ✅
+- GA4 key events integrated ✅
+
+**🚀 Pre-launch status as of 2026-03-22:** ALL GAPS CLOSED — launch ready
 
 **Key decisions locked:**
 - AIA G702/G703: Recreate layout (don't license) — label "AIA G702-compatible"

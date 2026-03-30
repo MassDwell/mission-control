@@ -1,0 +1,41 @@
+SUBJECT LINE OPTIONS (A/B test):
+  A) "Try DrawStack free — 7 days, full Builder access"
+  B) "I built the draw management tool I always wanted — want to try it?"
+  C) "Faster draws, less chasing — 7-day free trial"
+
+---
+
+Hey [Name],
+
+I'm reaching out because I built something I wish existed when I was trying to get my first construction draw funded on time — and I want you to be one of the first to try it.
+
+It's called DrawStack. Construction draw management for GCs who are tired of chasing signatures, emailing PDFs back and forth, and wondering where their money is.
+
+The problem: getting a draw funded means you're the hub of a three-way juggling act. Your subs need to get you invoices. You need to package everything for the lender. The lender needs to review and approve before funds move. Everyone's on different spreadsheets and email threads. Things fall through the cracks. Draws get delayed. Carry costs add up.
+
+DrawStack pulls all three parties into one place:
+
+→ Your subs get a simple link to submit invoices directly — no account, no login
+→ AI reads the invoices and matches them to your SOV automatically
+→ You generate a bank-ready G702/G703 PDF in one click
+→ Your lender reviews and approves in their own portal — no email attachments, no phone tag
+→ Full audit trail: every approval, comment, and change order, timestamped
+
+It's $349/month for the Builder plan (up to 5 active projects) — a fraction of what Rabbet charges. And right now, every new signup gets a 7-day free trial on Builder with no credit card required.
+
+If you want to run a real project through it, go to drawstack.ai and start your free trial. You can be live and submitting your first draw in under an hour.
+
+Or just reply here and I'll get you set up personally.
+
+— Steve
+
+DrawStack · drawstack.ai · Built in Needham, MA
+
+---
+
+PERSONALIZATION NOTES:
+- Add 1 specific line above opener for each GC
+  Examples: "Saw you just broke ground on the Newton project" / "We've crossed paths on a few deals"
+- For active multi-project GCs: lead with the 5-project / $349 angle
+- For single-project / smaller GCs: lead with $199 Starter and upgrade path
+- Trial is 7 days, Builder tier, no credit card required

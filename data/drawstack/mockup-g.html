@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Option G (Craft/Notion inspired)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --bg:       #f5f6fa;
+    --surface:  #ffffff;
+    --surface2: #f0f1f7;
+    --surface3: #e8eaf3;
+    --sidebar:  #21253a;
+    --sb2:      #292e47;
+    --sb3:      #303658;
+    --border:   #e2e5f0;
+    --text:     #16192b;
+    --text2:    #3d4163;
+    --muted:    #8b90b0;
+    --s-text:   #dde2f5;
+    --s-muted:  #717ba8;
+    --violet:   #7c3aed;
+    --violet-lt:#f5f3ff;
+    --violet-md:#ede9fe;
+    --gold:     #b45309;
+    --gold-lt:  #fffbeb;
+    --gold-md:  #fef3c7;
+    --emerald:  #047857;
+    --em-lt:    #ecfdf5;
+    --sky:      #0369a1;
+    --sky-lt:   #e0f2fe;
+    --rose:     #be123c;
+    --rose-lt:  #fff1f2;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar {
+    width: 248px;
+    min-width: 248px;
+    background: var(--sidebar);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo { padding: 22px 18px 16px; }
+
+  .logo-inner { display: flex; align-items: center; gap: 10px; }
+
+  .logo-box {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    box-shadow: 0 0 20px #7c3aed35;
+  }
+
+  .logo-text { }
+  .logo-name {
+    font-size: 17px; font-weight: 800; letter-spacing: -0.6px;
+    color: white; line-height: 1.1;
+  }
+  .logo-name span { color: #c4b5fd; }
+  .logo-sub {
+    font-size: 9.5px; text-transform: uppercase;
+    letter-spacing: 1.2px; color: var(--s-muted); margin-top: 2px;
+  }
+
+  .team-select {
+    margin-top: 12px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 10px;
+    background: var(--sb2);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .team-logo {
+    width: 24px; height: 24px; border-radius: 6px;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; color: white; font-weight: 700; flex-shrink: 0;
+  }
+  .team-name { font-size: 12px; font-weight: 600; color: var(--s-text); flex: 1; }
+  .team-chev { font-size: 10px; color: var(--s-muted); }
+
+  .nav { padding: 10px 10px; flex: 1; overflow-y: auto; }
+  .nav-grp { margin-bottom: 16px; }
+  .ng-label {
+    font-size: 9.5px; text-transform: uppercase; letter-spacing: 1.2px;
+    color: var(--s-muted); padding: 0 8px 5px; font-weight: 700;
+  }
+  .ni {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 8px; border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    color: var(--s-muted); cursor: pointer; margin-bottom: 1px;
+    transition: all 0.1s;
+  }
+  .ni:hover { background: var(--sb2); color: var(--s-text); }
+  .ni.active { background: var(--sb3); color: white; font-weight: 600; }
+  .ni-icon { font-size: 13px; }
+  .ni-badge {
+    margin-left: auto;
+    background: #7c3aed30;
+    color: #c4b5fd;
+    border: 1px solid #7c3aed40;
+    font-size: 10px; font-weight: 700;
+    padding: 1px 6px; border-radius: 99px;
+  }
+
+  .proj-panel { border-top: 1px solid #2e3352; padding: 12px 10px 14px; }
+  .pp-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 8px 6px;
+  }
+  .pp-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--s-muted); font-weight: 700; }
+  .pp-add { font-size: 16px; color: var(--s-muted); cursor: pointer; line-height: 1; }
+  .pp-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 8px; border-radius: 8px;
+    cursor: pointer; margin-bottom: 1px;
+  }
+  .pp-item:hover { background: var(--sb2); }
+  .pp-item.active { background: var(--sb3); }
+  .pp-color { width: 9px; height: 9px; border-radius: 3px; flex-shrink: 0; }
+  .pp-body { flex: 1; min-width: 0; }
+  .pp-name { font-size: 12.5px; font-weight: 600; color: var(--s-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pp-meta { font-size: 10.5px; color: var(--s-muted); margin-top: 1px; }
+
+  /* ─── MAIN ─── */
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+  .topnav {
+    height: 56px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center;
+    padding: 0 30px; gap: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(22,25,43,0.04);
+  }
+
+  .breadcrumb {
+    font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; flex: 1;
+  }
+  .bc-link { cursor: pointer; }
+  .bc-link:hover { color: var(--text2); }
+  .bc-sep { color: var(--border); }
+  .bc-current { color: var(--text); font-weight: 600; }
+
+  .btn {
+    padding: 8px 16px;
+    border-radius: 9px; font-size: 13px; font-weight: 600;
+    cursor: pointer; border: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: all 0.15s;
+  }
+  .btn-primary {
+    background: var(--violet);
+    color: white;
+    box-shadow: 0 2px 8px #7c3aed30;
+  }
+  .btn-outline {
+    background: white; color: var(--text2);
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+
+  .scroll-area { flex: 1; overflow-y: auto; }
+
+  /* PAGE TITLE AREA */
+  .page-top {
+    padding: 28px 30px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-title-row { display: flex; align-items: flex-start; justify-content: space-between; }
+  .page-title { font-size: 26px; font-weight: 800; letter-spacing: -1px; color: var(--text); }
+  .page-chips { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 12px; border-radius: 99px;
+    font-size: 12px; font-weight: 600;
+    border: 1px solid transparent;
+  }
+  .chip-violet { background: var(--violet-md); color: var(--violet); border-color: #7c3aed25; }
+  .chip-gold   { background: var(--gold-md);   color: var(--gold);   border-color: #b4530925; }
+  .chip-green  { background: var(--em-lt);     color: var(--emerald); border-color: #04785725; }
+
+  .content { padding: 22px 30px; }
+
+  /* METRICS */
+  .metrics { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 22px; }
+
+  .metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(22,25,43,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metric-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; }
+  .metric-icon-wrap {
+    width: 40px; height: 40px;
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .mstat {
+    font-size: 11px; font-weight: 700;
+    padding: 3px 9px; border-radius: 99px;
+  }
+  .ms-v { background: var(--violet-md); color: var(--violet); }
+  .ms-g { background: var(--gold-md);   color: var(--gold);   }
+  .ms-e { background: var(--em-lt);     color: var(--emerald);}
+  .ms-s { background: var(--sky-lt);    color: var(--sky);    }
+
+  .metric-label { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+  .metric-value { font-size: 26px; font-weight: 800; letter-spacing: -1.5px; margin: 3px 0; line-height: 1.1; }
+  .metric-detail { font-size: 12px; color: var(--muted); }
+
+  .mbar { height: 3px; background: var(--surface3); border-radius: 99px; overflow: hidden; margin-top: 12px; }
+  .mbar-fill { height: 100%; border-radius: 99px; }
+
+  /* CONTENT GRID */
+  .cg { display: grid; grid-template-columns: 1fr 356px; gap: 16px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(22,25,43,0.04);
+  }
+
+  .ch {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .ch-t { font-size: 14px; font-weight: 700; }
+  .ch-s { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-size: 10.5px; font-weight: 700; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 10px 20px; text-align: left;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  th:not(:first-child) { text-align: right; }
+  tr { border-bottom: 1px solid var(--border); }
+  tr:last-child { border-bottom: none; }
+  tr:hover td { background: #f8f9ff; }
+  td { padding: 12px 20px; font-size: 13px; color: var(--text2); }
+  td:not(:first-child) { text-align: right; }
+  .tdn { font-weight: 700; color: var(--text); font-size: 13px; }
+  .tdd { font-size: 10.5px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.3px; }
+
+  .badge2 {
+    display: inline-flex; padding: 3px 9px;
+    border-radius: 7px; font-size: 11px; font-weight: 700;
+  }
+  .bg { background: var(--em-lt); color: var(--emerald); }
+  .ba { background: var(--gold-md); color: var(--gold); }
+  .bs { background: var(--sky-lt); color: var(--sky); }
+
+  .right { display: flex; flex-direction: column; gap: 14px; }
+
+  .step {
+    display: flex; gap: 11px; align-items: flex-start;
+    padding: 11px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-ico {
+    width: 26px; height: 26px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .si-done { background: var(--em-lt); color: var(--emerald); }
+  .si-now  { background: var(--violet); color: white; box-shadow: 0 2px 8px #7c3aed30; }
+  .si-wait { background: var(--surface3); color: var(--muted); }
+  .step-t { font-size: 13px; font-weight: 700; color: var(--text); }
+  .step-d { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .step-e { font-size: 13px; margin-left: auto; }
+
+  .cta-zone { padding: 14px 18px; background: var(--surface2); border-top: 1px solid var(--border); }
+
+  .ai-r {
+    display: flex; gap: 10px; padding: 11px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ai-r:last-child { border-bottom: none; }
+  .ai-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .ai-t { font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+  .ai-t strong { color: var(--text2); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">
+    <div class="logo-inner">
+      <div class="logo-box">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <rect x="2" y="10" width="4" height="8" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="7.5" y="6" width="4" height="12" rx="1.5" fill="rgba(255,255,255,0.7)"/>
+          <rect x="13" y="2" width="4" height="16" rx="1.5" fill="white"/>
+          <path d="M4 8.5 L9.5 4.5 L15 2" stroke="#c4b5fd" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">Draw<span>Stack</span></div>
+        <div class="logo-sub">Draw Management</div>
+      </div>
+    </div>
+    <div class="team-select">
+      <div class="team-logo">AP</div>
+      <div class="team-name">Alpine Property</div>
+      <div class="team-chev">⌄</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-grp">
+      <div class="ng-label">Overview</div>
+      <div class="ni active"><span class="ni-icon">⊞</span> Dashboard</div>
+      <div class="ni"><span class="ni-icon">📁</span> Projects <span class="ni-badge">3</span></div>
+    </div>
+    <div class="nav-grp">
+      <div class="ng-label">Workflow</div>
+      <div class="ni"><span class="ni-icon">📄</span> Draw Requests</div>
+      <div class="ni"><span class="ni-icon">🧾</span> Invoices <span class="ni-badge">2</span></div>
+      <div class="ni"><span class="ni-icon">📊</span> Budget Tracker</div>
+      <div class="ni"><span class="ni-icon">🔄</span> Change Orders</div>
+    </div>
+    <div class="nav-grp">
+      <div class="ng-label">Lender Output</div>
+      <div class="ni"><span class="ni-icon">🏦</span> G702 / G703</div>
+      <div class="ni"><span class="ni-icon">📋</span> Bank Templates</div>
+    </div>
+  </nav>
+
+  <div class="proj-panel">
+    <div class="pp-head">
+      <div class="pp-label">Projects</div>
+      <div class="pp-add">+</div>
+    </div>
+    <div class="pp-item active">
+      <div class="pp-color" style="background:#fbbf24"></div>
+      <div class="pp-body">
+        <div class="pp-name">14 Elm Street</div>
+        <div class="pp-meta">Draw #4 · Review</div>
+      </div>
+    </div>
+    <div class="pp-item">
+      <div class="pp-color" style="background:#34d399"></div>
+      <div class="pp-body">
+        <div class="pp-name">82 Harbor View</div>
+        <div class="pp-meta">Draw #2 · Funded</div>
+      </div>
+    </div>
+    <div class="pp-item">
+      <div class="pp-color" style="background:#a78bfa"></div>
+      <div class="pp-body">
+        <div class="pp-name">Condor Mixed-Use</div>
+        <div class="pp-meta">Draw #1 · Pending</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="topnav">
+    <div class="breadcrumb">
+      <span class="bc-link">Projects</span>
+      <span class="bc-sep">›</span>
+      <span class="bc-link">14 Elm Street</span>
+      <span class="bc-sep">›</span>
+      <span class="bc-current">Draw #4</span>
+    </div>
+    <button class="btn btn-outline">📤 Export G702</button>
+    <button class="btn btn-primary">+ New Draw Request</button>
+  </div>
+
+  <div class="scroll-area">
+    <div class="page-top">
+      <div class="page-title-row">
+        <div class="page-title">14 Elm Street ADU</div>
+      </div>
+      <div class="page-chips">
+        <span class="chip chip-violet">🏦 Eastern Bank</span>
+        <span class="chip chip-gold">💰 $1.24M Loan · 12-mo</span>
+        <span class="chip chip-green">✓ On Budget</span>
+        <span class="chip chip-violet" style="background:#f5f3ff;color:#6d28d9;border-color:#7c3aed25">📍 Needham, MA</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-top">
+            <div class="metric-icon-wrap" style="background:var(--violet-md)">💰</div>
+            <div class="mstat ms-v">Total</div>
+          </div>
+          <div class="metric-label">Loan Amount</div>
+          <div class="metric-value">$1.24M</div>
+          <div class="metric-detail">Eastern Bank</div>
+          <div class="mbar"><div class="mbar-fill" style="width:100%;background:var(--violet)"></div></div>
+        </div>
+        <div class="metric">
+          <div class="metric-top">
+            <div class="metric-icon-wrap" style="background:var(--gold-md)">📤</div>
+            <div class="mstat ms-g">68%</div>
+          </div>
+          <div class="metric-label">Total Drawn</div>
+          <div class="metric-value" style="color:var(--gold)">$843K</div>
+          <div class="metric-detail">+$187K Draw #4</div>
+          <div class="mbar"><div class="mbar-fill" style="width:68%;background:#d97706"></div></div>
+        </div>
+        <div class="metric">
+          <div class="metric-top">
+            <div class="metric-icon-wrap" style="background:var(--sky-lt)">🔒</div>
+            <div class="mstat ms-s">10%</div>
+          </div>
+          <div class="metric-label">Retainage Held</div>
+          <div class="metric-value" style="color:var(--sky)">$84.3K</div>
+          <div class="metric-detail">Releases at 50%</div>
+          <div class="mbar"><div class="mbar-fill" style="width:10%;background:var(--sky)"></div></div>
+        </div>
+        <div class="metric">
+          <div class="metric-top">
+            <div class="metric-icon-wrap" style="background:var(--em-lt)">✅</div>
+            <div class="mstat ms-e">On track</div>
+          </div>
+          <div class="metric-label">Budget Remaining</div>
+          <div class="metric-value" style="color:var(--emerald)">$397K</div>
+          <div class="metric-detail">32% · 3 draws left</div>
+          <div class="mbar"><div class="mbar-fill" style="width:32%;background:var(--emerald)"></div></div>
+        </div>
+      </div>
+
+      <div class="cg">
+        <div class="card">
+          <div class="ch">
+            <div><div class="ch-t">Schedule of Values — Draw #4</div><div class="ch-s">G703 · 7 of 16 line items</div></div>
+            <button class="btn btn-outline" style="font-size:12px;padding:6px 12px">Filter ▾</button>
+          </div>
+          <table>
+            <thead><tr><th>Line Item</th><th>Budget</th><th>Prior Draws</th><th>This Draw</th><th>Complete</th><th>Balance</th></tr></thead>
+            <tbody>
+              <tr><td><div class="tdn">Foundation & Concrete</div><div class="tdd">Div 03</div></td><td>$128,000</td><td>$128,000</td><td style="color:var(--muted)">—</td><td><span class="badge2 bg">✓ 100%</span></td><td style="color:var(--muted)">$0</td></tr>
+              <tr><td><div class="tdn">Structural Framing</div><div class="tdd">Div 06</div></td><td>$214,000</td><td>$160,500</td><td style="color:var(--gold);font-weight:700">$42,800</td><td><span class="badge2 ba">94%</span></td><td>$10,700</td></tr>
+              <tr><td><div class="tdn">Roofing</div><div class="tdd">Div 07</div></td><td>$48,500</td><td>$24,250</td><td style="color:var(--gold);font-weight:700">$24,250</td><td><span class="badge2 bg">✓ 100%</span></td><td style="color:var(--muted)">$0</td></tr>
+              <tr><td><div class="tdn">Electrical Rough-In</div><div class="tdd">Div 16</div></td><td>$62,000</td><td>$31,000</td><td style="color:var(--gold);font-weight:700">$18,600</td><td><span class="badge2 ba">80%</span></td><td>$12,400</td></tr>
+              <tr><td><div class="tdn">Plumbing Rough-In</div><div class="tdd">Div 15</div></td><td>$55,000</td><td>$27,500</td><td style="color:var(--gold);font-weight:700">$16,500</td><td><span class="badge2 ba">80%</span></td><td>$11,000</td></tr>
+              <tr><td><div class="tdn">HVAC</div><div class="tdd">Div 15</div></td><td>$72,000</td><td style="color:var(--muted)">—</td><td style="color:var(--muted)">—</td><td><span class="badge2 bs">Pending</span></td><td>$72,000</td></tr>
+              <tr><td><div class="tdn">Insulation & Drywall</div><div class="tdd">Div 09</div></td><td>$84,000</td><td style="color:var(--muted)">—</td><td style="color:var(--muted)">—</td><td><span class="badge2 bs">Pending</span></td><td>$84,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="right">
+          <div class="card">
+            <div class="ch"><div class="ch-t">Draw #4 — Workflow</div></div>
+            <div class="step"><div class="step-ico si-done">✓</div><div><div class="step-t">AI Invoice Parsing</div><div class="step-d">4 invoices · 91% confidence</div></div><div class="step-e">✅</div></div>
+            <div class="step"><div class="step-ico si-done">✓</div><div><div class="step-t">G702/G703 Generated</div><div class="step-d">Schedule of Values ready</div></div><div class="step-e">✅</div></div>
+            <div class="step"><div class="step-ico si-now">3</div><div><div class="step-t">Your Review</div><div class="step-d">Confirm amounts · approve</div></div></div>
+            <div class="step"><div class="step-ico si-wait">4</div><div><div class="step-t">Submit to Eastern Bank</div><div class="step-d">G702/G703 + invoices</div></div></div>
+            <div class="cta-zone"><button class="btn btn-primary" style="width:100%;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif">Review & Submit Draw →</button></div>
+          </div>
+          <div class="card">
+            <div class="ch"><div class="ch-t">✦ AI Insights</div></div>
+            <div class="ai-r"><div class="ai-dot" style="background:var(--gold)"></div><div class="ai-t"><strong>Framing 94%</strong> — final $10.7K next draw. Add note to G702.</div></div>
+            <div class="ai-r"><div class="ai-dot" style="background:var(--emerald)"></div><div class="ai-t"><strong>Roofing complete</strong> 8 days early. No retainage exception needed.</div></div>
+            <div class="ai-r"><div class="ai-dot" style="background:var(--violet)"></div><div class="ai-t"><strong>HVAC & Drywall</strong> not started — budget runway is sufficient.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Option C</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg:        #13192b;
+    --surface:   #1a2138;
+    --surface2:  #212a44;
+    --surface3:  #28344f;
+    --border:    #2d3a56;
+    --text:      #e8edf8;
+    --muted:     #7b88a8;
+    --accent:    #5b8af5;
+    --accent-lt: #5b8af520;
+    --gold:      #e8b84b;
+    --gold-lt:   #e8b84b20;
+    --emerald:   #34d399;
+    --emerald-lt:#34d39920;
+    --rose:      #fb7185;
+    --rose-lt:   #fb718520;
+  }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 230px;
+    min-width: 230px;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+  }
+
+  .logo {
+    padding: 22px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* LOGO C: Blueprint/architectural icon — clean geometric */
+  .logo-inner {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  .logo-mark {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  .logo-text-block { }
+  .logo-name {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .logo-name em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .logo-sub {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* NAV */
+  .nav { padding: 16px 10px; flex: 1; overflow-y: auto; }
+
+  .nav-group { margin-bottom: 6px; }
+  .nav-group-label {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    padding: 10px 12px 5px;
+    font-weight: 600;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 12px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    margin-bottom: 1px;
+    transition: all 0.12s;
+  }
+  .nav-item:hover { background: var(--surface2); color: var(--text); }
+  .nav-item.active {
+    background: var(--accent-lt);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .nav-icon { font-size: 14px; }
+
+  .badge {
+    margin-left: auto;
+    background: var(--gold);
+    color: #111;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 20px;
+  }
+
+  /* PROJECT LIST */
+  .project-panel {
+    border-top: 1px solid var(--border);
+    padding: 12px 10px 16px;
+  }
+  .pp-label {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    padding: 6px 12px 8px;
+    font-weight: 600;
+  }
+  .pp-item {
+    padding: 8px 12px;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .pp-item:hover { background: var(--surface2); }
+  .pp-item.active { background: var(--surface2); }
+  .pp-bullet { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+  .pp-info { flex: 1; }
+  .pp-name { font-size: 12.5px; font-weight: 600; }
+  .pp-meta { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .pp-status { font-size: 10px; font-weight: 700; }
+
+  /* MAIN */
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* HEADER */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header-left { flex: 1; }
+  .header-title { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; }
+  .header-meta { font-size: 12px; color: var(--muted); margin-top: 3px; display: flex; gap: 14px; }
+  .header-meta-item { display: flex; align-items: center; gap: 4px; }
+  .meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+  .btn {
+    padding: 9px 18px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-family: 'Sora', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .btn-accent { background: var(--accent); color: white; }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    gap: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 28px;
+  }
+  .tab {
+    padding: 12px 18px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  .tab:hover:not(.active) { color: var(--text); }
+
+  /* CONTENT */
+  .content { flex: 1; overflow-y: auto; padding: 24px 28px; }
+
+  /* METRICS ROW */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .metric-icon {
+    width: 44px; height: 44px;
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .metric-body { }
+  .metric-label { font-size: 11px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+  .metric-value { font-size: 22px; font-weight: 700; letter-spacing: -0.8px; margin-top: 3px; line-height: 1; }
+  .metric-change { font-size: 11.5px; margin-top: 4px; }
+  .pos { color: var(--emerald); }
+  .neg { color: var(--rose); }
+  .neu { color: var(--muted); }
+
+  /* CONTENT GRID */
+  .content-grid { display: grid; grid-template-columns: 1fr 340px; gap: 18px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .ch {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ch-left { }
+  .ch-title { font-size: 13.5px; font-weight: 700; }
+  .ch-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding: 10px 20px;
+    text-align: left;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  th:not(:first-child) { text-align: right; }
+  tr { border-bottom: 1px solid var(--border); }
+  tr:last-child { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  td { padding: 12px 20px; font-size: 13px; }
+  td:not(:first-child) { text-align: right; }
+
+  .item-name { font-weight: 600; font-size: 13px; }
+  .item-div { font-size: 10.5px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .tag-emerald { background: var(--emerald-lt); color: var(--emerald); }
+  .tag-gold    { background: var(--gold-lt);    color: var(--gold);    }
+  .tag-accent  { background: var(--accent-lt);  color: var(--accent);  }
+  .tag-rose    { background: var(--rose-lt);    color: var(--rose);    }
+
+  /* RIGHT PANEL */
+  .rpanel { display: flex; flex-direction: column; gap: 16px; }
+
+  /* DRAW PROGRESS */
+  .progress-steps { }
+  .ps-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ps-item:last-child { border-bottom: none; }
+
+  .ps-icon { font-size: 15px; width: 22px; text-align: center; flex-shrink: 0; }
+  .ps-body { flex: 1; }
+  .ps-title { font-size: 12.5px; font-weight: 600; }
+  .ps-detail { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .ps-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .ps-done { background: var(--emerald-lt); color: var(--emerald); }
+  .ps-active { background: var(--gold-lt); color: var(--gold); }
+  .ps-todo { background: var(--surface3); color: var(--muted); }
+
+  .cta-block {
+    padding: 16px 18px;
+    background: linear-gradient(135deg, var(--accent-lt), var(--surface2));
+    border-top: 1px solid var(--border);
+  }
+
+  /* AI */
+  .ai-row {
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .ai-row:last-child { border-bottom: none; }
+  .ai-bullet { width: 6px; height: 6px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .ai-msg { font-size: 12.5px; line-height: 1.55; color: var(--muted); }
+  .ai-msg b { color: var(--text); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">
+    <div class="logo-inner">
+      <!-- LOGO C: Blueprint grid / architectural mark -->
+      <svg class="logo-mark" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Blueprint grid lines -->
+        <rect x="2" y="2" width="34" height="34" rx="8" fill="#1a2138" stroke="#2d3a56" stroke-width="1"/>
+        <!-- Horizontal rules -->
+        <line x1="6" y1="13" x2="32" y2="13" stroke="#2d3a56" stroke-width="0.8"/>
+        <line x1="6" y1="20" x2="32" y2="20" stroke="#2d3a56" stroke-width="0.8"/>
+        <line x1="6" y1="27" x2="32" y2="27" stroke="#2d3a56" stroke-width="0.8"/>
+        <!-- Draw bars — the actual graphic -->
+        <rect x="6" y="24" width="5" height="3" rx="1" fill="#e8b84b" opacity="0.6"/>
+        <rect x="6" y="17" width="5" height="7" rx="1" fill="#e8b84b" opacity="0.75"/>
+        <rect x="6" y="9" width="5" height="15" rx="1" fill="#e8b84b"/>
+        <!-- Progress line -->
+        <path d="M6 22 L14 16 L22 11 L32 8" stroke="#5b8af5" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="32" cy="8" r="2" fill="#5b8af5"/>
+        <!-- Stack lines right side -->
+        <rect x="16" y="21" width="16" height="2" rx="1" fill="#5b8af5" opacity="0.4"/>
+        <rect x="16" y="25" width="11" height="2" rx="1" fill="#5b8af5" opacity="0.3"/>
+        <rect x="16" y="29" width="8" height="2" rx="1" fill="#5b8af5" opacity="0.2"/>
+      </svg>
+      <div class="logo-text-block">
+        <div class="logo-name">Draw<em>Stack</em></div>
+        <div class="logo-sub">Construction Finance</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-group">
+      <div class="nav-group-label">Main</div>
+      <div class="nav-item active"><span class="nav-icon">⊞</span> Dashboard</div>
+      <div class="nav-item"><span class="nav-icon">📁</span> Projects <span class="badge">3</span></div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Workflow</div>
+      <div class="nav-item"><span class="nav-icon">📄</span> Draw Requests</div>
+      <div class="nav-item"><span class="nav-icon">🧾</span> Invoices <span class="badge">2</span></div>
+      <div class="nav-item"><span class="nav-icon">📊</span> Budget</div>
+      <div class="nav-item"><span class="nav-icon">🔄</span> Change Orders</div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Output</div>
+      <div class="nav-item"><span class="nav-icon">🏦</span> G702 / G703</div>
+      <div class="nav-item"><span class="nav-icon">📋</span> Bank Templates</div>
+    </div>
+  </nav>
+
+  <div class="project-panel">
+    <div class="pp-label">Projects</div>
+    <div class="pp-item active">
+      <div class="pp-bullet" style="background:var(--gold)"></div>
+      <div class="pp-info">
+        <div class="pp-name">14 Elm Street</div>
+        <div class="pp-meta">Draw #4 · In Review</div>
+      </div>
+      <div class="pp-status" style="color:var(--gold)">→</div>
+    </div>
+    <div class="pp-item">
+      <div class="pp-bullet" style="background:var(--emerald)"></div>
+      <div class="pp-info">
+        <div class="pp-name">82 Harbor View</div>
+        <div class="pp-meta">Draw #2 · Funded</div>
+      </div>
+    </div>
+    <div class="pp-item">
+      <div class="pp-bullet" style="background:var(--accent)"></div>
+      <div class="pp-info">
+        <div class="pp-name">Condor Mixed-Use</div>
+        <div class="pp-meta">Draw #1 · Pending</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="header">
+    <div class="header-left">
+      <div class="header-title">14 Elm Street ADU</div>
+      <div class="header-meta">
+        <div class="header-meta-item"><div class="meta-dot"></div> Needham, MA</div>
+        <div class="header-meta-item"><div class="meta-dot" style="background:var(--accent)"></div> Eastern Bank · $1.24M</div>
+        <div class="header-meta-item"><div class="meta-dot" style="background:var(--emerald)"></div> On budget</div>
+      </div>
+    </div>
+    <button class="btn btn-outline">📤 Export G702</button>
+    <button class="btn btn-accent">＋ New Draw Request</button>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">Draw #4 — Current</div>
+    <div class="tab">Draw History</div>
+    <div class="tab">Budget Overview</div>
+    <div class="tab">Change Orders</div>
+    <div class="tab">Documents</div>
+  </div>
+
+  <div class="content">
+    <!-- METRICS -->
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-icon" style="background:var(--gold-lt)">💰</div>
+        <div class="metric-body">
+          <div class="metric-label">Loan Amount</div>
+          <div class="metric-value">$1.24M</div>
+          <div class="metric-change neu">Eastern Bank · 12-mo</div>
+        </div>
+      </div>
+      <div class="metric">
+        <div class="metric-icon" style="background:var(--accent-lt)">📤</div>
+        <div class="metric-body">
+          <div class="metric-label">Total Drawn</div>
+          <div class="metric-value" style="color:var(--accent)">$843K</div>
+          <div class="metric-change neu">68% · Draw #4 pending</div>
+        </div>
+      </div>
+      <div class="metric">
+        <div class="metric-icon" style="background:var(--rose-lt)">🔒</div>
+        <div class="metric-body">
+          <div class="metric-label">Retainage Held</div>
+          <div class="metric-value" style="color:var(--rose)">$84.3K</div>
+          <div class="metric-change neu">10% · releases at 50%</div>
+        </div>
+      </div>
+      <div class="metric">
+        <div class="metric-icon" style="background:var(--emerald-lt)">✅</div>
+        <div class="metric-body">
+          <div class="metric-label">Budget Remaining</div>
+          <div class="metric-value" style="color:var(--emerald)">$397K</div>
+          <div class="metric-change pos">↑ On track</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT GRID -->
+    <div class="content-grid">
+      <!-- TABLE -->
+      <div class="card">
+        <div class="ch">
+          <div class="ch-left">
+            <div class="ch-title">Schedule of Values</div>
+            <div class="ch-sub">G703 · Draw #4 · 7 of 16 line items</div>
+          </div>
+          <button class="btn btn-outline" style="font-size:11.5px;padding:6px 12px;font-family:'Sora',sans-serif">Filter ▾</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Line Item</th>
+              <th>Budget</th>
+              <th>Prior Draws</th>
+              <th>This Draw</th>
+              <th>Complete</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="item-name">Foundation & Concrete</div><div class="item-div">Div 03 · Concrete</div></td>
+              <td>$128,000</td><td>$128,000</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="tag tag-emerald">100%</span></td>
+              <td style="color:var(--muted)">$0</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Structural Framing</div><div class="item-div">Div 06 · Wood & Plastics</div></td>
+              <td>$214,000</td><td>$160,500</td>
+              <td style="color:var(--gold);font-weight:700">$42,800</td>
+              <td><span class="tag tag-gold">94%</span></td>
+              <td>$10,700</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Roofing</div><div class="item-div">Div 07 · Thermal & Moisture</div></td>
+              <td>$48,500</td><td>$24,250</td>
+              <td style="color:var(--gold);font-weight:700">$24,250</td>
+              <td><span class="tag tag-emerald">100%</span></td>
+              <td style="color:var(--muted)">$0</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Electrical Rough-In</div><div class="item-div">Div 16 · Electrical</div></td>
+              <td>$62,000</td><td>$31,000</td>
+              <td style="color:var(--gold);font-weight:700">$18,600</td>
+              <td><span class="tag tag-gold">80%</span></td>
+              <td>$12,400</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Plumbing Rough-In</div><div class="item-div">Div 15 · Mechanical</div></td>
+              <td>$55,000</td><td>$27,500</td>
+              <td style="color:var(--gold);font-weight:700">$16,500</td>
+              <td><span class="tag tag-gold">80%</span></td>
+              <td>$11,000</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">HVAC</div><div class="item-div">Div 15 · Mechanical</div></td>
+              <td>$72,000</td><td style="color:var(--muted)">—</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="tag tag-accent">Pending</span></td>
+              <td>$72,000</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Insulation & Drywall</div><div class="item-div">Div 09 · Finishes</div></td>
+              <td>$84,000</td><td style="color:var(--muted)">—</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="tag tag-accent">Pending</span></td>
+              <td>$84,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="rpanel">
+        <!-- Workflow -->
+        <div class="card">
+          <div class="ch">
+            <div class="ch-title">Draw #4 · Workflow</div>
+          </div>
+          <div class="progress-steps">
+            <div class="ps-item">
+              <div class="ps-icon">🤖</div>
+              <div class="ps-body">
+                <div class="ps-title">AI Invoice Parsing</div>
+                <div class="ps-detail">4 invoices · 91% avg confidence</div>
+              </div>
+              <div class="ps-badge ps-done">Done</div>
+            </div>
+            <div class="ps-item">
+              <div class="ps-icon">📋</div>
+              <div class="ps-body">
+                <div class="ps-title">G702 / G703 Generated</div>
+                <div class="ps-detail">Schedule of Values populated</div>
+              </div>
+              <div class="ps-badge ps-done">Done</div>
+            </div>
+            <div class="ps-item">
+              <div class="ps-icon">👁</div>
+              <div class="ps-body">
+                <div class="ps-title">Your Review</div>
+                <div class="ps-detail">Confirm amounts · approve</div>
+              </div>
+              <div class="ps-badge ps-active">Active</div>
+            </div>
+            <div class="ps-item">
+              <div class="ps-icon">🏦</div>
+              <div class="ps-body">
+                <div class="ps-title">Submit to Lender</div>
+                <div class="ps-detail">Eastern Bank draw package</div>
+              </div>
+              <div class="ps-badge ps-todo">Waiting</div>
+            </div>
+          </div>
+          <div class="cta-block">
+            <button class="btn btn-accent" style="width:100%;justify-content:center;font-family:'Sora',sans-serif">
+              Review & Submit Draw →
+            </button>
+          </div>
+        </div>
+
+        <!-- AI Flags -->
+        <div class="card">
+          <div class="ch">
+            <div class="ch-title">✦ AI Analysis</div>
+          </div>
+          <div class="ai-row">
+            <div class="ai-bullet" style="background:var(--gold)"></div>
+            <div class="ai-msg"><b>Framing note:</b> 94% complete. Final $10.7K billed next draw — consider adding a note on G702 to avoid lender questions.</div>
+          </div>
+          <div class="ai-row">
+            <div class="ai-bullet" style="background:var(--emerald)"></div>
+            <div class="ai-msg"><b>Roofing complete</b> — 8 days ahead of schedule. No retainage exception needed.</div>
+          </div>
+          <div class="ai-row">
+            <div class="ai-bullet" style="background:var(--accent)"></div>
+            <div class="ai-msg"><b>HVAC & Drywall</b> not started. Budget runway sufficient through draw completion at current pace.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

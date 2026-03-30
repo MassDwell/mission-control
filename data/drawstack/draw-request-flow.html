@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Draw Request Flow</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --bg:       #f7f8fc;
+    --surface:  #ffffff;
+    --surface2: #f0f2f8;
+    --sidebar:  #1a1f36;
+    --sidebar2: #242a48;
+    --sb-hover: #2a3155;
+    --border:   #e3e8f0;
+    --text:     #111827;
+    --text2:    #374151;
+    --muted:    #6b7280;
+    --s-text:   #e8ecf8;
+    --s-muted:  #7888b8;
+    --indigo:   #4f46e5;
+    --indigo-lt:#eef2ff;
+    --green:    #059669;
+    --green-lt: #ecfdf5;
+    --amber:    #d97706;
+    --amber-lt: #fffbeb;
+    --red:      #dc2626;
+    --red-lt:   #fef2f2;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #1a1f36;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px;
+  }
+
+  /* Layout container for stacking all 4 screens */
+  .screens { display: flex; flex-direction: column; gap: 32px; }
+
+  .screen-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: #5c6494; margin-bottom: 10px;
+  }
+
+  .app {
+    display: flex;
+    height: 820px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar {
+    width: 220px; min-width: 220px;
+    background: var(--sidebar);
+    display: flex; flex-direction: column;
+  }
+  .logo { padding: 18px 16px 14px; border-bottom: 1px solid #2a3155; }
+  .logo-inner { display: flex; align-items: center; gap: 10px; }
+  .logo-name { font-size: 16px; font-weight: 800; letter-spacing: -0.5px; color: white; line-height: 1.1; }
+  .logo-tagline { font-size: 9px; color: var(--s-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; font-weight: 600; }
+  .org-switch { margin: 10px 12px 0; padding: 7px 9px; background: var(--sidebar2); border-radius: 7px; display: flex; align-items: center; gap: 7px; cursor: pointer; }
+  .org-avatar { width: 20px; height: 20px; border-radius: 4px; background: linear-gradient(135deg, #4f46e5, #7c3aed); display: flex; align-items: center; justify-content: center; font-size: 9px; color: white; font-weight: 700; }
+  .org-name { font-size: 11px; font-weight: 600; color: var(--s-text); flex: 1; }
+  .nav { padding: 10px 8px; flex: 1; }
+  .nav-section-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--s-muted); padding: 6px 8px 3px; font-weight: 600; }
+  .nav-item { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 6px; font-size: 12.5px; font-weight: 500; color: var(--s-muted); cursor: pointer; margin-bottom: 1px; }
+  .nav-item:hover, .nav-item.active { background: var(--sb-hover); color: white; }
+  .nav-item .icon { width: 16px; text-align: center; font-size: 14px; opacity: 0.7; }
+  .nav-item.active .icon { opacity: 1; }
+  .nav-badge { margin-left: auto; background: var(--indigo); color: white; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 99px; }
+  .sidebar-footer { padding: 12px; border-top: 1px solid #2a3155; }
+  .user-row { display: flex; align-items: center; gap: 8px; }
+  .user-av { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #4f46e5, #06b6d4); display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; font-weight: 700; }
+  .user-info { flex: 1; }
+  .user-name { font-size: 12px; font-weight: 600; color: var(--s-text); }
+  .user-role { font-size: 10px; color: var(--s-muted); }
+
+  /* ─── MAIN CONTENT ─── */
+  .main { flex: 1; background: var(--bg); display: flex; flex-direction: column; overflow: hidden; }
+
+  /* Top bar */
+  .topbar { height: 52px; background: white; border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 24px; gap: 16px; flex-shrink: 0; }
+  .topbar-title { font-size: 14px; font-weight: 700; color: var(--text); }
+  .topbar-breadcrumb { font-size: 12px; color: var(--muted); }
+  .topbar-breadcrumb span { color: var(--indigo); font-weight: 500; }
+  .topbar-spacer { flex: 1; }
+  .topbar-btn { padding: 6px 14px; border-radius: 7px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; }
+  .btn-ghost { background: none; color: var(--muted); }
+  .btn-primary { background: var(--indigo); color: white; }
+  .btn-outline { background: white; color: var(--text2); border: 1px solid var(--border); }
+
+  /* Content area */
+  .content { flex: 1; overflow-y: auto; padding: 28px 32px; }
+
+  /* ─── WIZARD STEPPER ─── */
+  .wizard-header { margin-bottom: 28px; }
+  .wizard-title { font-size: 20px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; margin-bottom: 4px; }
+  .wizard-sub { font-size: 13px; color: var(--muted); }
+
+  .stepper { display: flex; align-items: center; margin-top: 20px; }
+  .step { display: flex; align-items: center; gap: 10px; }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  .step-num.done { background: var(--green); color: white; }
+  .step-num.active { background: var(--indigo); color: white; box-shadow: 0 0 0 3px #c7d2fe; }
+  .step-num.pending { background: var(--surface2); color: var(--muted); border: 1.5px solid var(--border); }
+  .step-label { font-size: 12px; font-weight: 600; }
+  .step-label.active { color: var(--indigo); }
+  .step-label.done { color: var(--green); }
+  .step-label.pending { color: var(--muted); }
+  .step-connector { flex: 1; height: 1.5px; background: var(--border); margin: 0 12px; }
+  .step-connector.done { background: var(--green); }
+
+  /* ─── FORM CARD ─── */
+  .form-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px; margin-bottom: 16px; }
+  .form-card-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .form-card-title .badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: var(--indigo-lt); color: var(--indigo); }
+
+  .form-grid { display: grid; gap: 16px; }
+  .form-grid-2 { grid-template-columns: 1fr 1fr; }
+  .form-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-label { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-label .req { color: var(--red); margin-left: 2px; }
+  .form-input {
+    padding: 9px 12px; border-radius: 8px; border: 1.5px solid var(--border);
+    font-size: 13px; color: var(--text); background: white; font-family: 'Inter',sans-serif;
+    outline: none;
+  }
+  .form-input.filled { background: #fafbff; border-color: #c7d2fe; }
+  .form-input.focus { border-color: var(--indigo); box-shadow: 0 0 0 3px #e0e7ff; }
+  .form-input.readonly { background: var(--surface2); color: var(--muted); cursor: default; }
+  .form-select { padding: 9px 12px; border-radius: 8px; border: 1.5px solid #c7d2fe; font-size: 13px; color: var(--text); background: #fafbff; font-family: 'Inter',sans-serif; }
+  .form-hint { font-size: 11px; color: var(--muted); }
+
+  /* Project selector card */
+  .project-card {
+    border: 1.5px solid #c7d2fe; border-radius: 10px; background: #fafbff;
+    padding: 14px 16px; display: flex; align-items: center; gap: 14px; cursor: pointer;
+  }
+  .proj-icon { width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #4f46e5, #7c3aed); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .proj-name { font-size: 14px; font-weight: 700; color: var(--text); }
+  .proj-meta { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .proj-change { margin-left: auto; font-size: 11px; font-weight: 600; color: var(--indigo); }
+
+  /* Progress summary */
+  .progress-row { display: flex; gap: 12px; }
+  .prog-chip { flex: 1; background: var(--surface2); border-radius: 8px; padding: 10px 14px; }
+  .prog-chip-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .prog-chip-value { font-size: 18px; font-weight: 800; color: var(--text); margin-top: 2px; letter-spacing: -0.5px; }
+  .prog-chip-value.green { color: var(--green); }
+  .prog-chip-value.indigo { color: var(--indigo); }
+  .prog-chip-value.amber { color: var(--amber); }
+
+  /* ─── SCHEDULE OF VALUES TABLE ─── */
+  .sov-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .sov-table th { text-align: left; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); padding: 0 10px 10px; border-bottom: 1.5px solid var(--border); }
+  .sov-table th.right { text-align: right; }
+  .sov-table td { padding: 10px; border-bottom: 1px solid #f3f4f6; vertical-align: middle; }
+  .sov-table tr:last-child td { border-bottom: none; }
+  .sov-table tr:hover td { background: #fafbff; }
+  .sov-num { width: 28px; height: 28px; border-radius: 6px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--muted); }
+  .sov-desc { font-size: 13px; font-weight: 600; color: var(--text); }
+  .sov-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .sov-input { width: 90px; padding: 5px 8px; border-radius: 6px; border: 1.5px solid var(--border); font-size: 12px; font-weight: 600; color: var(--text); text-align: right; font-family: 'Inter',sans-serif; background: white; }
+  .sov-input.filled { border-color: #c7d2fe; background: #f5f7ff; color: var(--indigo); }
+  .sov-pct { font-size: 12px; font-weight: 700; color: var(--indigo); }
+  .sov-total-row td { background: #f8faff; font-weight: 700; border-top: 2px solid var(--border); }
+  .text-right { text-align: right; }
+
+  /* Progress bar inline */
+  .mini-bar { height: 4px; border-radius: 99px; background: #e5e7eb; width: 80px; display: inline-block; overflow: hidden; vertical-align: middle; }
+  .mini-bar-fill { height: 100%; border-radius: 99px; background: var(--indigo); }
+
+  /* ─── ATTACHMENTS ─── */
+  .upload-zone {
+    border: 2px dashed var(--border); border-radius: 10px;
+    padding: 28px; text-align: center; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .upload-zone:hover { border-color: var(--indigo); background: var(--indigo-lt); }
+  .upload-icon { font-size: 32px; margin-bottom: 8px; }
+  .upload-title { font-size: 14px; font-weight: 700; color: var(--text); }
+  .upload-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .upload-btn-inline { display: inline-block; margin-top: 10px; padding: 6px 16px; background: var(--indigo); color: white; border-radius: 6px; font-size: 12px; font-weight: 600; }
+
+  .file-list { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .file-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--surface2); border-radius: 8px; border: 1px solid var(--border); }
+  .file-icon { font-size: 20px; }
+  .file-name { font-size: 12px; font-weight: 600; color: var(--text); flex: 1; }
+  .file-size { font-size: 11px; color: var(--muted); }
+  .file-status { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 99px; }
+  .file-status.ok { background: var(--green-lt); color: var(--green); }
+  .file-status.req { background: var(--amber-lt); color: var(--amber); }
+  .file-del { font-size: 14px; color: var(--muted); cursor: pointer; margin-left: 4px; }
+
+  .req-docs { margin-top: 12px; }
+  .req-doc-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .req-doc-item { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 12px; color: var(--text2); }
+  .req-check { font-size: 14px; }
+
+  /* ─── REVIEW SUMMARY ─── */
+  .review-section { margin-bottom: 20px; }
+  .review-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 10px; }
+  .review-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 13px; }
+  .review-row:last-child { border-bottom: none; }
+  .review-key { color: var(--muted); font-weight: 500; }
+  .review-val { font-weight: 600; color: var(--text); }
+  .review-val.big { font-size: 18px; font-weight: 800; color: var(--indigo); }
+  .review-val.green { color: var(--green); }
+
+  .submit-block { background: linear-gradient(135deg, #1e2253, #3730a3); border-radius: 12px; padding: 24px; color: white; text-align: center; margin-top: 16px; }
+  .submit-block-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .submit-block-sub { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+  .submit-btn { display: inline-block; padding: 12px 36px; background: white; color: #1e2253; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; letter-spacing: -0.3px; }
+  .submit-note { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 10px; }
+
+  /* Bottom nav */
+  .wizard-footer { padding: 16px 32px; background: white; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .step-counter { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .footer-spacer { flex: 1; }
+
+  /* Status chip */
+  .status-chip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+  .status-chip.draft { background: #f3f4f6; color: #6b7280; }
+  .status-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+</style>
+</head>
+<body>
+
+<div class="screens">
+
+<!-- ══════════════════════════════════════════════════════════════
+     STEP 1: PROJECT & PERIOD
+═══════════════════════════════════════════════════════════════ -->
+<div>
+  <div class="screen-label">Step 1 of 4 — Project & Period</div>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-inner">
+          <svg width="36" height="36" viewBox="0 0 80 80" fill="none">
+            <rect width="80" height="80" rx="18" fill="#1e2253"/>
+            <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+            <rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+            <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+            <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/>
+            <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+            <rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+          </svg>
+          <div>
+            <div class="logo-name">DrawStack</div>
+            <div class="logo-tagline">Construction Finance</div>
+          </div>
+        </div>
+        <div class="org-switch" style="margin-top:10px">
+          <div class="org-avatar">AP</div>
+          <div class="org-name">Alpine Property Group</div>
+          <div class="org-chev" style="font-size:10px;color:#5c6494">⌄</div>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="nav-section-label">Main</div>
+        <div class="nav-item"><span class="icon">⬛</span> Dashboard</div>
+        <div class="nav-item active"><span class="icon">📋</span> Draw Requests <span class="nav-badge">3</span></div>
+        <div class="nav-item"><span class="icon">🏗</span> Projects</div>
+        <div class="nav-item"><span class="icon">🏦</span> Lenders</div>
+        <div class="nav-section-label" style="margin-top:8px">Finance</div>
+        <div class="nav-item"><span class="icon">📊</span> Analytics</div>
+        <div class="nav-item"><span class="icon">📄</span> Documents</div>
+        <div class="nav-item"><span class="icon">⚙️</span> Settings</div>
+      </div>
+      <div class="sidebar-footer">
+        <div class="user-row">
+          <div class="user-av">SV</div>
+          <div class="user-info">
+            <div class="user-name">Steve Vettori</div>
+            <div class="user-role">General Contractor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-breadcrumb"><span>Draw Requests</span> › New Request</div>
+        <div class="topbar-spacer"></div>
+        <span class="status-chip draft">Draft</span>
+        <button class="topbar-btn btn-ghost">Save Draft</button>
+      </div>
+      <div class="content">
+        <div class="wizard-header">
+          <div class="wizard-title">New Draw Request</div>
+          <div class="wizard-sub">Submit your draw for lender review and disbursement approval.</div>
+          <div class="stepper">
+            <div class="step">
+              <div class="step-num active">1</div>
+              <div class="step-label active">Project & Period</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step"><div class="step-num pending">2</div><div class="step-label pending">Schedule of Values</div></div>
+            <div class="step-connector"></div>
+            <div class="step"><div class="step-num pending">3</div><div class="step-label pending">Attachments</div></div>
+            <div class="step-connector"></div>
+            <div class="step"><div class="step-num pending">4</div><div class="step-label pending">Review & Submit</div></div>
+          </div>
+        </div>
+
+        <!-- Project selector -->
+        <div class="form-card">
+          <div class="form-card-title">Select Project</div>
+          <div class="project-card">
+            <div class="proj-icon">🏗</div>
+            <div>
+              <div class="proj-name">101 Condor Street — Mixed Use</div>
+              <div class="proj-meta">East Boston, MA &nbsp;·&nbsp; $4,200,000 loan &nbsp;·&nbsp; First Republic Bank</div>
+            </div>
+            <div class="proj-change">Change ›</div>
+          </div>
+          <div class="progress-row" style="margin-top:14px">
+            <div class="prog-chip"><div class="prog-chip-label">Contract Value</div><div class="prog-chip-value">$4,200,000</div></div>
+            <div class="prog-chip"><div class="prog-chip-label">Drawn to Date</div><div class="prog-chip-value indigo">$1,890,000</div></div>
+            <div class="prog-chip"><div class="prog-chip-label">% Complete</div><div class="prog-chip-value green">45%</div></div>
+            <div class="prog-chip"><div class="prog-chip-label">Remaining</div><div class="prog-chip-value amber">$2,310,000</div></div>
+          </div>
+        </div>
+
+        <!-- Draw period -->
+        <div class="form-card">
+          <div class="form-card-title">Billing Period</div>
+          <div class="form-grid form-grid-3">
+            <div class="form-group">
+              <label class="form-label">Draw Number <span class="req">*</span></label>
+              <input class="form-input filled" value="Draw #4" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Period Start <span class="req">*</span></label>
+              <input class="form-input filled" value="March 1, 2026">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Period End <span class="req">*</span></label>
+              <input class="form-input focus" value="March 31, 2026">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Submission Date</label>
+              <input class="form-input filled" value="March 14, 2026" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Lender</label>
+              <input class="form-input readonly" value="First Republic Bank" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Loan Number</label>
+              <input class="form-input readonly" value="FRB-2024-0938" readonly>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="form-card">
+          <div class="form-card-title">Notes to Lender <span style="font-size:11px;color:var(--muted);font-weight:400">(optional)</span></div>
+          <textarea class="form-input" style="width:100%;height:72px;resize:none;line-height:1.5" placeholder="Add any context for this draw — site conditions, schedule updates, scope changes…"></textarea>
+          <div class="form-hint" style="margin-top:6px">This note will appear on the cover sheet of your draw package.</div>
+        </div>
+
+      </div>
+      <div class="wizard-footer">
+        <span class="step-counter">Step 1 of 4</span>
+        <div class="footer-spacer"></div>
+        <button class="topbar-btn btn-outline">Cancel</button>
+        <button class="topbar-btn btn-primary">Continue → Schedule of Values</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     STEP 2: SCHEDULE OF VALUES
+═══════════════════════════════════════════════════════════════ -->
+<div>
+  <div class="screen-label">Step 2 of 4 — Schedule of Values (G703)</div>
+  <div class="app">
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-inner">
+          <svg width="36" height="36" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/></svg>
+          <div><div class="logo-name">DrawStack</div><div class="logo-tagline">Construction Finance</div></div>
+        </div>
+        <div class="org-switch" style="margin-top:10px"><div class="org-avatar">AP</div><div class="org-name">Alpine Property Group</div><div style="font-size:10px;color:#5c6494">⌄</div></div>
+      </div>
+      <div class="nav">
+        <div class="nav-section-label">Main</div>
+        <div class="nav-item"><span class="icon">⬛</span> Dashboard</div>
+        <div class="nav-item active"><span class="icon">📋</span> Draw Requests <span class="nav-badge">3</span></div>
+        <div class="nav-item"><span class="icon">🏗</span> Projects</div>
+        <div class="nav-item"><span class="icon">🏦</span> Lenders</div>
+        <div class="nav-section-label" style="margin-top:8px">Finance</div>
+        <div class="nav-item"><span class="icon">📊</span> Analytics</div>
+        <div class="nav-item"><span class="icon">📄</span> Documents</div>
+        <div class="nav-item"><span class="icon">⚙️</span> Settings</div>
+      </div>
+      <div class="sidebar-footer"><div class="user-row"><div class="user-av">SV</div><div class="user-info"><div class="user-name">Steve Vettori</div><div class="user-role">General Contractor</div></div></div></div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-breadcrumb"><span>Draw Requests</span> › New Request</div>
+        <div class="topbar-spacer"></div>
+        <span class="status-chip draft">Draft</span>
+        <button class="topbar-btn btn-ghost">Save Draft</button>
+      </div>
+      <div class="content">
+        <div class="wizard-header">
+          <div class="wizard-title">New Draw Request</div>
+          <div class="wizard-sub">101 Condor Street — Draw #4 &nbsp;·&nbsp; March 1–31, 2026</div>
+          <div class="stepper">
+            <div class="step"><div class="step-num done">✓</div><div class="step-label done">Project & Period</div></div>
+            <div class="step-connector done"></div>
+            <div class="step"><div class="step-num active">2</div><div class="step-label active">Schedule of Values</div></div>
+            <div class="step-connector"></div>
+            <div class="step"><div class="step-num pending">3</div><div class="step-label pending">Attachments</div></div>
+            <div class="step-connector"></div>
+            <div class="step"><div class="step-num pending">4</div><div class="step-label pending">Review & Submit</div></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-card-title">
+            Schedule of Values <span class="badge">G703 Format</span>
+            <div style="margin-left:auto;font-size:11px;color:var(--muted);font-weight:500">Enter work completed <em>this period only</em></div>
+          </div>
+          <table class="sov-table">
+            <thead>
+              <tr>
+                <th style="width:32px">#</th>
+                <th>Description of Work</th>
+                <th class="right">Scheduled Value</th>
+                <th class="right">Prev. Billed</th>
+                <th class="right">This Period</th>
+                <th class="right">% Complete</th>
+                <th class="right">Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="sov-num">1</div></td>
+                <td><div class="sov-desc">General Conditions</div><div class="sov-sub">Mobilization, temp facilities, supervision</div></td>
+                <td class="text-right" style="font-weight:600;font-size:13px">$210,000</td>
+                <td class="text-right" style="color:var(--muted);font-size:12px">$168,000</td>
+                <td class="text-right"><input class="sov-input filled" value="$21,000"></td>
+                <td class="text-right"><span class="sov-pct">90%</span><br><div class="mini-bar" style="margin-top:4px"><div class="mini-bar-fill" style="width:90%"></div></div></td>
+                <td class="text-right" style="font-size:12px;color:var(--muted)">$21,000</td>
+              </tr>
+              <tr>
+                <td><div class="sov-num">2</div></td>
+                <td><div class="sov-desc">Site Work & Demo</div><div class="sov-sub">Excavation, grading, utilities</div></td>
+                <td class="text-right" style="font-weight:600;font-size:13px">$340,000</td>
+                <td class="text-right" style="color:var(--muted);font-size:12px">$340,000</td>
+                <td class="text-right"><input class="sov-input" value="$0" style="color:var(--muted)"></td>
+                <td class="text-right"><span class="sov-pct" style="color:var(--green)">100%</span><br><div class="mini-bar" style="margin-top:4px"><div class="mini-bar-fill" style="width:100%;background:var(--green)"></div></div></td>
+                <td class="text-right" style="font-size:12px;color:var(--green);font-weight:600">$0</td>
+              </tr>
+              <tr>
+                <td><div class="sov-num">3</div></td>
+                <td><div class="sov-desc">Foundation & Concrete</div><div class="sov-sub">Footings, slab, foundation walls</div></td>
+                <td class="text-right" style="font-weight:600;font-size:13px">$520,000</td>
+                <td class="text-right" style="color:var(--muted);font-size:12px">$520,000</td>
+                <td class="text-right"><input class="sov-input" value="$0" style="color:var(--muted)"></td>
+                <td class="text-right"><span class="sov-pct" style="color:var(--green)">100%</span><br><div class="mini-bar" style="margin-top:4px"><div class="mini-bar-fill" style="width:100%;background:var(--green)"></div></div></td>
+                <td class="text-right" style="font-size:12px;color:var(--green);font-weight:600">$0</td>
+              </tr>
+              <tr>
+                <td><div class="sov-num">4</div></td>
+                <td><div class="sov-desc">Structural Steel & Framing</div><div class="sov-sub">Steel erection, metal framing, blocking</div></td>
+                <td class="text-right" style="font-weight:600;font-size:13px">$680,000</td>
+                <td class="text-right" style="color:var(--muted);font-size:12px">$476,000</td>
+                <td class="text-right"><input class="sov-input filled" value="$136,000"></td>
+                <td class="text-right"><span class="sov-pct">90%</span><br><div class="mini-bar" style="margin-top:4px"><div class="mini-bar-fill" style="width:90%"></div></div></td>
+                <td class="text-right" style="font-size:12px;color:var(--muted)">$68,000</td>
+              </tr>
+              <tr>
+                <td><div class="sov-num">5</div></td>
+                <td><div class="sov-desc">Roofing & Waterproofing</div><div class="sov-sub">Membrane, insulation, flashing</div></td>
+                <td class="text-right" style="font-weight:600;font-size:13px">$195,000</td>
+                <td class="text-right" style="color:var(--muted);font-size:12px">$97,500</td>
+                <td class="text-right"><input class="sov-input filled" value="$58,500"></td>
+                <td class="text-right"><span class="sov-pct">80%</span><br><div class="mini-bar" style="margin-top:4px"><div class="mini-bar-fill" style="width:80%"></div></div></td>
+                <td class="text-right" style="font-size:12px;color:var(--muted)">$39,000</td>
+              </tr>
+              <tr>
+                <td><div class="sov-num">6</div></td>
+                <td><div class="sov-desc">MEP Rough-In</div><div class="sov-sub">Mechanical, electrical, plumbing</div></td>
+                <td class="text-right" style="font-weight:600;font-size:13px">$890,000</td>
+                <td class="text-right" style="color:var(--muted);font-size:12px">$267,000</td>
+                <td class="text-right"><input class="sov-input filled" value="$178,000"></td>
+                <td class="text-right"><span class="sov-pct">50%</span><br><div class="mini-bar" style="margin-top:4px"><div class="mini-bar-fill" style="width:50%"></div></div></td>
+                <td class="text-right" style="font-size:12px;color:var(--muted)">$445,000</td>
+              </tr>
+              <tr class="sov-total-row">
+                <td colspan="2" style="font-size:13px;font-weight:700;color:var(--text)">TOTAL THIS DRAW</td>
+                <td class="text-right" style="font-size:13px;color:var(--text)">$4,200,000</td>
+                <td class="text-right" style="color:var(--muted)">$1,868,500</td>
+                <td class="text-right" style="color:var(--indigo);font-size:14px;font-weight:800">$393,500</td>
+                <td class="text-right" style="color:var(--indigo)">54%</td>
+                <td class="text-right" style="color:var(--muted)">$1,938,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Retainage -->
+        <div class="form-card">
+          <div class="form-card-title">Retainage</div>
+          <div class="form-grid form-grid-3">
+            <div class="form-group">
+              <label class="form-label">Retainage Rate</label>
+              <input class="form-input filled" value="10%">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Retainage This Draw</label>
+              <input class="form-input readonly" value="$39,350" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Net Amount Requested</label>
+              <input class="form-input filled" value="$354,150" style="font-weight:800;color:var(--indigo)">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="wizard-footer">
+        <span class="step-counter">Step 2 of 4</span>
+        <div class="footer-spacer"></div>
+        <button class="topbar-btn btn-outline">← Back</button>
+        <button class="topbar-btn btn-primary">Continue → Attachments</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     STEP 3: ATTACHMENTS
+═══════════════════════════════════════════════════════════════ -->
+<div>
+  <div class="screen-label">Step 3 of 4 — Attachments</div>
+  <div class="app">
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-inner">
+          <svg width="36" height="36" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/></svg>
+          <div><div class="logo-name">DrawStack</div><div class="logo-tagline">Construction Finance</div></div>
+        </div>
+        <div class="org-switch" style="margin-top:10px"><div class="org-avatar">AP</div><div class="org-name">Alpine Property Group</div><div style="font-size:10px;color:#5c6494">⌄</div></div>
+      </div>
+      <div class="nav">
+        <div class="nav-section-label">Main</div>
+        <div class="nav-item"><span class="icon">⬛</span> Dashboard</div>
+        <div class="nav-item active"><span class="icon">📋</span> Draw Requests <span class="nav-badge">3</span></div>
+        <div class="nav-item"><span class="icon">🏗</span> Projects</div>
+        <div class="nav-item"><span class="icon">🏦</span> Lenders</div>
+        <div class="nav-section-label" style="margin-top:8px">Finance</div>
+        <div class="nav-item"><span class="icon">📊</span> Analytics</div>
+        <div class="nav-item"><span class="icon">📄</span> Documents</div>
+        <div class="nav-item"><span class="icon">⚙️</span> Settings</div>
+      </div>
+      <div class="sidebar-footer"><div class="user-row"><div class="user-av">SV</div><div class="user-info"><div class="user-name">Steve Vettori</div><div class="user-role">General Contractor</div></div></div></div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-breadcrumb"><span>Draw Requests</span> › New Request</div>
+        <div class="topbar-spacer"></div>
+        <span class="status-chip draft">Draft</span>
+        <button class="topbar-btn btn-ghost">Save Draft</button>
+      </div>
+      <div class="content">
+        <div class="wizard-header">
+          <div class="wizard-title">New Draw Request</div>
+          <div class="wizard-sub">101 Condor Street — Draw #4 &nbsp;·&nbsp; March 1–31, 2026</div>
+          <div class="stepper">
+            <div class="step"><div class="step-num done">✓</div><div class="step-label done">Project & Period</div></div>
+            <div class="step-connector done"></div>
+            <div class="step"><div class="step-num done">✓</div><div class="step-label done">Schedule of Values</div></div>
+            <div class="step-connector done"></div>
+            <div class="step"><div class="step-num active">3</div><div class="step-label active">Attachments</div></div>
+            <div class="step-connector"></div>
+            <div class="step"><div class="step-num pending">4</div><div class="step-label pending">Review & Submit</div></div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <!-- Upload zone -->
+          <div>
+            <div class="form-card" style="margin-bottom:16px">
+              <div class="form-card-title">Upload Documents</div>
+              <div class="upload-zone">
+                <div class="upload-icon">📎</div>
+                <div class="upload-title">Drop files here or browse</div>
+                <div class="upload-sub">PDF, JPG, PNG up to 50MB each</div>
+                <div class="upload-btn-inline">Choose Files</div>
+              </div>
+            </div>
+
+            <!-- Uploaded files -->
+            <div class="form-card">
+              <div class="form-card-title">Uploaded Files <span class="badge">4 files</span></div>
+              <div class="file-list">
+                <div class="file-item">
+                  <div class="file-icon">📄</div>
+                  <div class="file-name">G702-Coversheet-Draw4.pdf</div>
+                  <div class="file-size">182 KB</div>
+                  <div class="file-status ok">✓ Signed</div>
+                  <div class="file-del">×</div>
+                </div>
+                <div class="file-item">
+                  <div class="file-icon">📄</div>
+                  <div class="file-name">LienWaiver-Martinez-Framing.pdf</div>
+                  <div class="file-size">94 KB</div>
+                  <div class="file-status ok">✓ Notarized</div>
+                  <div class="file-del">×</div>
+                </div>
+                <div class="file-item">
+                  <div class="file-icon">📄</div>
+                  <div class="file-name">LienWaiver-BostonMEP.pdf</div>
+                  <div class="file-size">78 KB</div>
+                  <div class="file-status ok">✓ Notarized</div>
+                  <div class="file-del">×</div>
+                </div>
+                <div class="file-item">
+                  <div class="file-icon">🖼</div>
+                  <div class="file-name">SitePhotos-Mar14-2026.zip</div>
+                  <div class="file-size">8.4 MB</div>
+                  <div class="file-status ok">✓ Uploaded</div>
+                  <div class="file-del">×</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Required docs checklist -->
+          <div class="form-card" style="height:fit-content">
+            <div class="form-card-title">Required Documents</div>
+            <div class="form-hint" style="margin-bottom:14px">Your lender requires the following for each draw. Green = satisfied.</div>
+
+            <div class="req-doc-item">
+              <span class="req-check" style="color:var(--green)">✅</span>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text)">AIA G702 Cover Sheet</div>
+                <div style="font-size:11px;color:var(--muted)">Signed by contractor and notarized</div>
+              </div>
+            </div>
+            <div class="req-doc-item">
+              <span class="req-check" style="color:var(--green)">✅</span>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text)">Conditional Lien Waivers</div>
+                <div style="font-size:11px;color:var(--muted)">All subs billed this period</div>
+              </div>
+            </div>
+            <div class="req-doc-item">
+              <span class="req-check" style="color:var(--green)">✅</span>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text)">Site Progress Photos</div>
+                <div style="font-size:11px;color:var(--muted)">Minimum 10 photos required</div>
+              </div>
+            </div>
+            <div class="req-doc-item" style="border-bottom:none">
+              <span class="req-check" style="color:var(--amber)">⚠️</span>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--amber)">Inspector Certification</div>
+                <div style="font-size:11px;color:var(--muted)">Third-party inspector sign-off pending</div>
+              </div>
+            </div>
+
+            <div style="margin-top:16px;padding:12px;background:#fffbeb;border:1px solid #fde68a;border-radius:8px">
+              <div style="font-size:12px;font-weight:700;color:#92400e;margin-bottom:4px">⚠️ 1 item pending</div>
+              <div style="font-size:11px;color:#b45309">Inspector certification is optional for draws under $400K. You may proceed without it.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="wizard-footer">
+        <span class="step-counter">Step 3 of 4</span>
+        <div class="footer-spacer"></div>
+        <button class="topbar-btn btn-outline">← Back</button>
+        <button class="topbar-btn btn-primary">Continue → Review & Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     STEP 4: REVIEW & SUBMIT
+═══════════════════════════════════════════════════════════════ -->
+<div>
+  <div class="screen-label">Step 4 of 4 — Review & Submit</div>
+  <div class="app">
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-inner">
+          <svg width="36" height="36" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/></svg>
+          <div><div class="logo-name">DrawStack</div><div class="logo-tagline">Construction Finance</div></div>
+        </div>
+        <div class="org-switch" style="margin-top:10px"><div class="org-avatar">AP</div><div class="org-name">Alpine Property Group</div><div style="font-size:10px;color:#5c6494">⌄</div></div>
+      </div>
+      <div class="nav">
+        <div class="nav-section-label">Main</div>
+        <div class="nav-item"><span class="icon">⬛</span> Dashboard</div>
+        <div class="nav-item active"><span class="icon">📋</span> Draw Requests <span class="nav-badge">3</span></div>
+        <div class="nav-item"><span class="icon">🏗</span> Projects</div>
+        <div class="nav-item"><span class="icon">🏦</span> Lenders</div>
+        <div class="nav-section-label" style="margin-top:8px">Finance</div>
+        <div class="nav-item"><span class="icon">📊</span> Analytics</div>
+        <div class="nav-item"><span class="icon">📄</span> Documents</div>
+        <div class="nav-item"><span class="icon">⚙️</span> Settings</div>
+      </div>
+      <div class="sidebar-footer"><div class="user-row"><div class="user-av">SV</div><div class="user-info"><div class="user-name">Steve Vettori</div><div class="user-role">General Contractor</div></div></div></div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-breadcrumb"><span>Draw Requests</span> › New Request</div>
+        <div class="topbar-spacer"></div>
+        <span class="status-chip draft">Draft</span>
+        <button class="topbar-btn btn-ghost">Save Draft</button>
+      </div>
+      <div class="content">
+        <div class="wizard-header">
+          <div class="wizard-title">New Draw Request</div>
+          <div class="wizard-sub">101 Condor Street — Draw #4 &nbsp;·&nbsp; March 1–31, 2026</div>
+          <div class="stepper">
+            <div class="step"><div class="step-num done">✓</div><div class="step-label done">Project & Period</div></div>
+            <div class="step-connector done"></div>
+            <div class="step"><div class="step-num done">✓</div><div class="step-label done">Schedule of Values</div></div>
+            <div class="step-connector done"></div>
+            <div class="step"><div class="step-num done">✓</div><div class="step-label done">Attachments</div></div>
+            <div class="step-connector done"></div>
+            <div class="step"><div class="step-num active">4</div><div class="step-label active">Review & Submit</div></div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <!-- Left: Summary -->
+          <div>
+            <div class="form-card">
+              <div class="review-section">
+                <div class="review-section-title">Project</div>
+                <div class="review-row"><span class="review-key">Project</span><span class="review-val">101 Condor Street</span></div>
+                <div class="review-row"><span class="review-key">Draw Number</span><span class="review-val">Draw #4</span></div>
+                <div class="review-row"><span class="review-key">Billing Period</span><span class="review-val">March 1–31, 2026</span></div>
+                <div class="review-row"><span class="review-key">Lender</span><span class="review-val">First Republic Bank</span></div>
+                <div class="review-row"><span class="review-key">Loan Number</span><span class="review-val">FRB-2024-0938</span></div>
+              </div>
+              <div class="review-section">
+                <div class="review-section-title">Financials</div>
+                <div class="review-row"><span class="review-key">Gross This Draw</span><span class="review-val">$393,500</span></div>
+                <div class="review-row"><span class="review-key">Less Retainage (10%)</span><span class="review-val" style="color:var(--red)">−$39,350</span></div>
+                <div class="review-row"><span class="review-key">Net Requested</span><span class="review-val big">$354,150</span></div>
+                <div class="review-row"><span class="review-key">Project % Complete</span><span class="review-val green">54%</span></div>
+              </div>
+              <div class="review-section">
+                <div class="review-section-title">Attachments (4 files)</div>
+                <div class="review-row"><span class="review-key">📄 G702 Cover Sheet</span><span class="review-val" style="color:var(--green)">✓</span></div>
+                <div class="review-row"><span class="review-key">📄 Lien Waivers (2)</span><span class="review-val" style="color:var(--green)">✓</span></div>
+                <div class="review-row"><span class="review-key">🖼 Site Photos</span><span class="review-val" style="color:var(--green)">✓</span></div>
+                <div class="review-row"><span class="review-key">📋 Inspector Cert.</span><span class="review-val" style="color:var(--amber)">Waived</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Submit CTA -->
+          <div>
+            <div class="form-card" style="margin-bottom:14px">
+              <div class="review-section-title" style="margin-bottom:12px">Notify Lender</div>
+              <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:#f0f2f8;border-radius:8px;margin-bottom:10px">
+                <div style="width:32px;height:32px;border-radius:8px;background:#e0e7ff;display:flex;align-items:center;justify-content:center;font-size:16px">🏦</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--text)">Sarah Mitchell</div>
+                  <div style="font-size:11px;color:var(--muted)">First Republic Bank · Construction Lending</div>
+                </div>
+                <div style="margin-left:auto;font-size:11px;color:var(--green);font-weight:600">✓ Will notify</div>
+              </div>
+              <div style="font-size:11px;color:var(--muted)">Sarah will receive an email with your draw package attached and a link to review in the lender portal.</div>
+            </div>
+
+            <div class="submit-block">
+              <div class="submit-block-title">Ready to Submit</div>
+              <div class="submit-block-sub">Your draw package is complete. Submitting will notify your lender and lock this request for review.</div>
+              <div class="submit-btn">Submit Draw Request →</div>
+              <div class="submit-note">Estimated review time: 3–5 business days</div>
+            </div>
+
+            <div style="margin-top:14px;padding:12px 14px;background:white;border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;gap:10px">
+              <span style="font-size:18px">📥</span>
+              <div>
+                <div style="font-size:12px;font-weight:700;color:var(--text)">Download Draw Package</div>
+                <div style="font-size:11px;color:var(--muted)">Export as PDF before submitting</div>
+              </div>
+              <button class="topbar-btn btn-outline" style="margin-left:auto;font-size:11px">Export PDF</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="wizard-footer">
+        <span class="step-counter">Step 4 of 4 — Ready to submit</span>
+        <div class="footer-spacer"></div>
+        <button class="topbar-btn btn-outline">← Back</button>
+        <button class="topbar-btn btn-primary" style="background:var(--green);padding:8px 22px;font-size:13px">✓ Submit Draw Request</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /screens -->
+</body>
+</html>

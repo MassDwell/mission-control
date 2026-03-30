@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Option F (Mercury/Stripe inspired)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --bg:       #f7f8fc;
+    --surface:  #ffffff;
+    --surface2: #f0f2f8;
+    --sidebar:  #1a1f36;
+    --sidebar2: #242a48;
+    --sb-hover: #2a3155;
+    --border:   #e3e8f0;
+    --text:     #111827;
+    --text2:    #374151;
+    --muted:    #6b7280;
+    --s-text:   #e8ecf8;
+    --s-muted:  #7888b8;
+    --indigo:   #4f46e5;
+    --indigo-lt:#eef2ff;
+    --amber:    #d97706;
+    --amber-lt: #fffbeb;
+    --amber-md: #fef3c7;
+    --green:    #059669;
+    --green-lt: #ecfdf5;
+    --teal:     #0891b2;
+    --teal-lt:  #ecfeff;
+    --red:      #dc2626;
+    --red-lt:   #fef2f2;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--sidebar);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    padding: 20px 18px 16px;
+    border-bottom: 1px solid #2a3155;
+  }
+
+  .logo-inner { display: flex; align-items: center; gap: 10px; }
+
+  .logo-mark {
+    width: 36px; height: 36px;
+    flex-shrink: 0;
+  }
+
+  .logo-name {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    color: white;
+    line-height: 1.1;
+  }
+  .logo-tagline { font-size: 9.5px; color: var(--s-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; font-weight: 600; }
+
+  .org-switch {
+    margin-top: 12px;
+    padding: 8px 10px;
+    background: var(--sidebar2);
+    border-radius: 8px;
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer;
+  }
+  .org-avatar {
+    width: 22px; height: 22px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; color: white; font-weight: 700;
+  }
+  .org-name { font-size: 12px; font-weight: 600; color: var(--s-text); flex: 1; }
+  .org-chev { font-size: 10px; color: var(--s-muted); }
+
+  .nav { padding: 12px 10px; flex: 1; }
+  .nav-section { margin-bottom: 6px; }
+  .nav-section-label {
+    font-size: 9.5px; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--s-muted); padding: 8px 8px 4px; font-weight: 600;
+  }
+  .nav-item {
+    display: flex; align-items: center; gap: 9px;
+    padding: 7px 8px; border-radius: 7px;
+    font-size: 13px; font-weight: 500;
+    color: var(--s-muted); cursor: pointer; margin-bottom: 1px;
+    transition: all 0.1s;
+  }
+  .nav-item:hover { background: var(--sb-hover); color: var(--s-text); }
+  .nav-item.active { background: var(--sb-hover); color: white; }
+  .nav-icon { font-size: 13px; opacity: 0.8; }
+  .badge {
+    margin-left: auto;
+    background: #d9770625;
+    color: #fbbf24;
+    border: 1px solid #d9770640;
+    font-size: 10px; font-weight: 700;
+    padding: 1px 6px; border-radius: 99px;
+  }
+
+  .proj-section { border-top: 1px solid #2a3155; padding: 12px 10px 16px; }
+  .ps-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--s-muted); padding: 0 8px 6px; font-weight: 600; }
+  .proj {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 8px; border-radius: 7px;
+    cursor: pointer; margin-bottom: 1px;
+    transition: background 0.1s;
+  }
+  .proj:hover { background: var(--sb-hover); }
+  .proj.active { background: var(--sb-hover); }
+  .proj-ind { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .proj-body { flex: 1; min-width: 0; }
+  .proj-name { font-size: 12.5px; font-weight: 500; color: var(--s-text); }
+  .proj-meta { font-size: 10.5px; color: var(--s-muted); margin-top: 1px; }
+
+  /* ─── MAIN ─── */
+  .main { flex: 1; overflow-y: auto; }
+
+  /* page header — Mercury style */
+  .page-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex; align-items: flex-start;
+    justify-content: space-between;
+    box-shadow: 0 1px 0 var(--border);
+  }
+
+  .ph-left { }
+  .ph-eyebrow { font-size: 11px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .ph-title { font-size: 22px; font-weight: 800; letter-spacing: -0.8px; color: var(--text); }
+  .ph-meta { display: flex; align-items: center; gap: 12px; margin-top: 6px; }
+  .ph-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 10px; border-radius: 99px;
+    font-size: 11.5px; font-weight: 600;
+    background: var(--indigo-lt); color: var(--indigo);
+    border: 1px solid #4f46e520;
+  }
+
+  .btn {
+    padding: 9px 18px;
+    border-radius: 8px; font-size: 13px; font-weight: 600;
+    cursor: pointer; border: none;
+    font-family: 'Inter', sans-serif;
+    display: inline-flex; align-items: center; gap: 7px;
+    transition: all 0.15s;
+  }
+  .btn-primary {
+    background: var(--indigo);
+    color: white;
+    box-shadow: 0 1px 3px #4f46e540;
+  }
+  .btn-primary:hover { background: #4338ca; }
+  .btn-outline {
+    background: white; color: var(--text2);
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  .content { padding: 28px 32px; }
+
+  /* STATS */
+  .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 24px; }
+
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .stat-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .stat-icon { font-size: 18px; }
+  .stat-badge {
+    font-size: 11px; font-weight: 600;
+    padding: 3px 9px; border-radius: 99px;
+  }
+  .sb-green { background: var(--green-lt); color: var(--green); }
+  .sb-amber { background: var(--amber-md); color: var(--amber); }
+  .sb-teal  { background: var(--teal-lt);  color: var(--teal);  }
+  .sb-indigo{ background: var(--indigo-lt);color: var(--indigo);}
+
+  .stat-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .stat-value { font-size: 28px; font-weight: 800; letter-spacing: -1.5px; margin-top: 2px; line-height: 1.1; }
+  .stat-detail { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  .stat-bar { height: 3px; background: var(--surface2); border-radius: 99px; overflow: hidden; margin-top: 12px; }
+  .stat-bar-fill { height: 100%; border-radius: 99px; }
+
+  /* GRID */
+  .grid { display: grid; grid-template-columns: 1fr 360px; gap: 18px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .ch {
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .ch-title { font-size: 14px; font-weight: 700; }
+  .ch-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-size: 10.5px; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 10px 22px;
+    text-align: left;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  th:not(:first-child) { text-align: right; }
+  tr { border-bottom: 1px solid var(--border); }
+  tr:last-child { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  td { padding: 12px 22px; font-size: 13px; color: var(--text2); }
+  td:not(:first-child) { text-align: right; }
+  .tdname { font-weight: 600; color: var(--text); font-size: 13px; }
+  .tddiv { font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+
+  .pill {
+    display: inline-flex; padding: 3px 9px;
+    border-radius: 99px; font-size: 11px; font-weight: 600;
+  }
+  .pg { background: var(--green-lt); color: var(--green); }
+  .pa { background: var(--amber-md); color: var(--amber); }
+  .pt { background: var(--teal-lt);  color: var(--teal);  }
+
+  /* RIGHT */
+  .right { display: flex; flex-direction: column; gap: 16px; }
+
+  .wf { }
+  .wf-row {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .wf-row:last-child { border-bottom: none; }
+  .wf-circle {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .wc-done { background: var(--green-lt); color: var(--green); border: 1.5px solid #05966940; }
+  .wc-now  { background: var(--indigo); color: white; box-shadow: 0 2px 6px #4f46e540; }
+  .wc-wait { background: var(--surface2); color: var(--muted); border: 1.5px solid var(--border); }
+  .wf-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .wf-desc { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .wf-check { font-size: 13px; margin-left: auto; }
+
+  .cta-area { padding: 14px 20px; background: var(--surface2); border-top: 1px solid var(--border); }
+
+  .ai-row {
+    display: flex; gap: 10px; padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .ai-row:last-child { border-bottom: none; }
+  .ai-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .ai-body { }
+  .ai-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .ai-text { font-size: 12.5px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">
+    <div class="logo-inner">
+      <!-- DrawStack Mark — Final (D with stacked bars) -->
+      <svg class="logo-mark" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="80" height="80" rx="18" fill="#1e2253"/>
+        <!-- Vertical stroke -->
+        <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+        <!-- Stacked bars forming D -->
+        <rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+        <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+        <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/>
+        <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+        <rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+      </svg>
+      <div>
+        <div class="logo-name">DrawStack</div>
+        <div class="logo-tagline">Construction Finance</div>
+      </div>
+    </div>
+    <div class="org-switch">
+      <div class="org-avatar">AP</div>
+      <div class="org-name">Alpine Property Group</div>
+      <div class="org-chev">⌄</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-section">
+      <div class="nav-section-label">Main</div>
+      <div class="nav-item active"><span class="nav-icon">⊞</span> Dashboard</div>
+      <div class="nav-item"><span class="nav-icon">📁</span> Projects <span class="badge">3</span></div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">Workflow</div>
+      <div class="nav-item"><span class="nav-icon">📄</span> Draw Requests</div>
+      <div class="nav-item"><span class="nav-icon">🧾</span> Invoices <span class="badge">2</span></div>
+      <div class="nav-item"><span class="nav-icon">📊</span> Budget</div>
+      <div class="nav-item"><span class="nav-icon">🔄</span> Change Orders</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">Output</div>
+      <div class="nav-item"><span class="nav-icon">🏦</span> G702 / G703</div>
+      <div class="nav-item"><span class="nav-icon">📋</span> Bank Templates</div>
+    </div>
+  </nav>
+
+  <div class="proj-section">
+    <div class="ps-label">Projects</div>
+    <div class="proj active">
+      <div class="proj-ind" style="background:#fbbf24"></div>
+      <div class="proj-body">
+        <div class="proj-name">14 Elm Street</div>
+        <div class="proj-meta">Draw #4 · In Review</div>
+      </div>
+    </div>
+    <div class="proj">
+      <div class="proj-ind" style="background:#34d399"></div>
+      <div class="proj-body">
+        <div class="proj-name">82 Harbor View</div>
+        <div class="proj-meta">Draw #2 · Funded</div>
+      </div>
+    </div>
+    <div class="proj">
+      <div class="proj-ind" style="background:#818cf8"></div>
+      <div class="proj-body">
+        <div class="proj-name">Condor Mixed-Use</div>
+        <div class="proj-meta">Draw #1 · Pending</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-header">
+    <div class="ph-left">
+      <div class="ph-eyebrow">Project · Needham, MA</div>
+      <div class="ph-title">14 Elm Street ADU</div>
+      <div class="ph-meta">
+        <span class="ph-chip">🏦 Eastern Bank</span>
+        <span class="ph-chip" style="background:var(--amber-md);color:var(--amber);border-color:#d9770630">💰 $1.24M Loan</span>
+        <span class="ph-chip" style="background:var(--green-lt);color:var(--green);border-color:#05966930">✓ On Budget</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="btn btn-outline">📤 Export G702</button>
+      <button class="btn btn-primary">+ New Draw Request</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-top">
+          <div class="stat-icon">💰</div>
+          <div class="stat-badge sb-indigo">12-mo term</div>
+        </div>
+        <div class="stat-label">Loan Amount</div>
+        <div class="stat-value">$1.24M</div>
+        <div class="stat-detail">Eastern Bank</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:100%;background:var(--indigo)"></div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-top">
+          <div class="stat-icon">📤</div>
+          <div class="stat-badge sb-amber">+$187K</div>
+        </div>
+        <div class="stat-label">Total Drawn</div>
+        <div class="stat-value" style="color:var(--amber)">$843K</div>
+        <div class="stat-detail">68% · Draw #4 pending</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:68%;background:var(--amber)"></div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-top">
+          <div class="stat-icon">🔒</div>
+          <div class="stat-badge sb-teal">10%</div>
+        </div>
+        <div class="stat-label">Retainage Held</div>
+        <div class="stat-value" style="color:var(--teal)">$84.3K</div>
+        <div class="stat-detail">Releases at 50% complete</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:10%;background:var(--teal)"></div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-top">
+          <div class="stat-icon">✅</div>
+          <div class="stat-badge sb-green">On track</div>
+        </div>
+        <div class="stat-label">Budget Remaining</div>
+        <div class="stat-value" style="color:var(--green)">$397K</div>
+        <div class="stat-detail">32% · 3 draws remaining</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:32%;background:var(--green)"></div></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="ch">
+          <div>
+            <div class="ch-title">Schedule of Values — Draw #4</div>
+            <div class="ch-sub">G703 format · 7 of 16 line items</div>
+          </div>
+          <button class="btn btn-outline" style="font-size:12px;padding:7px 13px">Filter ▾</button>
+        </div>
+        <table>
+          <thead><tr><th>Line Item</th><th>Budget</th><th>Prior Draws</th><th>This Draw</th><th>% Done</th><th>Balance</th></tr></thead>
+          <tbody>
+            <tr><td><div class="tdname">Foundation & Concrete</div><div class="tddiv">Division 03</div></td><td>$128,000</td><td>$128,000</td><td style="color:var(--muted)">—</td><td><span class="pill pg">✓ 100%</span></td><td style="color:var(--muted)">$0</td></tr>
+            <tr><td><div class="tdname">Structural Framing</div><div class="tddiv">Division 06</div></td><td>$214,000</td><td>$160,500</td><td style="color:var(--amber);font-weight:600">$42,800</td><td><span class="pill pa">94%</span></td><td>$10,700</td></tr>
+            <tr><td><div class="tdname">Roofing</div><div class="tddiv">Division 07</div></td><td>$48,500</td><td>$24,250</td><td style="color:var(--amber);font-weight:600">$24,250</td><td><span class="pill pg">✓ 100%</span></td><td style="color:var(--muted)">$0</td></tr>
+            <tr><td><div class="tdname">Electrical Rough-In</div><div class="tddiv">Division 16</div></td><td>$62,000</td><td>$31,000</td><td style="color:var(--amber);font-weight:600">$18,600</td><td><span class="pill pa">80%</span></td><td>$12,400</td></tr>
+            <tr><td><div class="tdname">Plumbing Rough-In</div><div class="tddiv">Division 15</div></td><td>$55,000</td><td>$27,500</td><td style="color:var(--amber);font-weight:600">$16,500</td><td><span class="pill pa">80%</span></td><td>$11,000</td></tr>
+            <tr><td><div class="tdname">HVAC</div><div class="tddiv">Division 15</div></td><td>$72,000</td><td style="color:var(--muted)">—</td><td style="color:var(--muted)">—</td><td><span class="pill pt">Pending</span></td><td>$72,000</td></tr>
+            <tr><td><div class="tdname">Insulation & Drywall</div><div class="tddiv">Division 09</div></td><td>$84,000</td><td style="color:var(--muted)">—</td><td style="color:var(--muted)">—</td><td><span class="pill pt">Pending</span></td><td>$84,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="right">
+        <div class="card wf">
+          <div class="ch"><div class="ch-title">Draw #4 — Workflow</div></div>
+          <div class="wf-row"><div class="wf-circle wc-done">✓</div><div><div class="wf-title">AI Invoice Parsing</div><div class="wf-desc">4 invoices · 91% confidence</div></div><div class="wf-check">✅</div></div>
+          <div class="wf-row"><div class="wf-circle wc-done">✓</div><div><div class="wf-title">G702/G703 Generated</div><div class="wf-desc">Schedule of Values ready</div></div><div class="wf-check">✅</div></div>
+          <div class="wf-row"><div class="wf-circle wc-now">3</div><div><div class="wf-title">Your Review</div><div class="wf-desc">Confirm amounts · approve</div></div></div>
+          <div class="wf-row"><div class="wf-circle wc-wait">4</div><div><div class="wf-title">Submit to Eastern Bank</div><div class="wf-desc">G702/G703 + invoices</div></div></div>
+          <div class="cta-area">
+            <button class="btn btn-primary" style="width:100%;justify-content:center;font-family:'Inter',sans-serif">Review & Submit Draw →</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><div class="ch-title">✦ AI Insights</div></div>
+          <div class="ai-row">
+            <div class="ai-icon">⚠️</div>
+            <div class="ai-body">
+              <div class="ai-label" style="color:var(--amber)">Flag</div>
+              <div class="ai-text">Framing at 94% — final $10.7K billed next draw. Add note to G702.</div>
+            </div>
+          </div>
+          <div class="ai-row">
+            <div class="ai-icon">✅</div>
+            <div class="ai-body">
+              <div class="ai-label" style="color:var(--green)">Good</div>
+              <div class="ai-text">Roofing complete 8 days ahead of schedule. No retainage exception.</div>
+            </div>
+          </div>
+          <div class="ai-row">
+            <div class="ai-icon">💡</div>
+            <div class="ai-body">
+              <div class="ai-label" style="color:var(--indigo)">Note</div>
+              <div class="ai-text">HVAC & Drywall not started — budget runway is sufficient.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

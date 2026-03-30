@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Option B</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg:       #0f1117;
+    --surface:  #181c27;
+    --surface2: #1f2435;
+    --border:   #252d42;
+    --text:     #f0f2f8;
+    --muted:    #7a84a0;
+    --coral:    #ff6b47;
+    --coral-lt: #ff6b4720;
+    --blue:     #4d9fff;
+    --blue-lt:  #4d9fff20;
+    --green:    #3ecf8e;
+    --green-lt: #3ecf8e20;
+    --yellow:   #fbbf24;
+    --yellow-lt:#fbbf2420;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    padding: 24px 22px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* LOGO OPTION B: Wordmark with stacked bars icon */
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-icon-b {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .logo-icon-b svg { width: 36px; height: 36px; }
+
+  .logo-wordmark {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .logo-wordmark .draw { color: var(--text); }
+  .logo-wordmark .stack { color: var(--coral); }
+  .logo-tagline {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  .nav { padding: 18px 12px; flex: 1; }
+
+  .nav-section { margin-bottom: 24px; }
+  .nav-section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: var(--muted);
+    padding: 0 10px;
+    margin-bottom: 6px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    margin-bottom: 2px;
+  }
+  .nav-item:hover { background: var(--surface2); color: var(--text); }
+  .nav-item.active {
+    background: var(--coral-lt);
+    color: var(--coral);
+  }
+  .nav-icon { font-size: 14px; width: 20px; text-align: center; }
+
+  .badge {
+    margin-left: auto;
+    background: var(--coral);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 20px;
+  }
+
+  /* PROJECTS */
+  .projects-section {
+    padding: 14px 12px;
+    border-top: 1px solid var(--border);
+  }
+  .ps-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    padding: 0 10px 8px;
+  }
+  .proj {
+    padding: 9px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2px;
+  }
+  .proj:hover { background: var(--surface2); }
+  .proj.active { background: var(--surface2); }
+  .proj-row { display: flex; align-items: center; gap: 8px; }
+  .proj-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .proj-name { font-size: 13px; font-weight: 500; }
+  .proj-meta { font-size: 11px; color: var(--muted); margin-top: 2px; padding-left: 15px; }
+
+  /* MAIN */
+  .main { flex: 1; overflow-y: auto; background: var(--bg); }
+
+  /* TOP BAR */
+  .topbar {
+    height: 58px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    gap: 12px;
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .topbar-title { font-size: 15px; font-weight: 600; flex: 1; }
+  .topbar-sub { font-size: 12px; color: var(--muted); font-weight: 400; margin-left: 8px; }
+
+  .btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary { background: var(--coral); color: white; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { color: var(--text); }
+
+  /* CONTENT */
+  .content { padding: 26px 28px; }
+
+  /* KPI STRIP */
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kpi::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .kpi-coral::before { background: var(--coral); }
+  .kpi-blue::before  { background: var(--blue);  }
+  .kpi-green::before { background: var(--green); }
+  .kpi-yellow::before{ background: var(--yellow);}
+
+  .kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.7px; font-weight: 500; }
+  .kpi-value { font-size: 28px; font-weight: 700; letter-spacing: -1.5px; margin: 8px 0 4px; }
+  .kpi-detail { font-size: 11.5px; color: var(--muted); }
+  .kpi-up { color: var(--green); }
+  .kpi-warn { color: var(--yellow); }
+
+  /* MAIN GRID */
+  .grid { display: grid; grid-template-columns: 1fr 360px; gap: 18px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .card-head {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-head-title { font-size: 14px; font-weight: 600; }
+  .card-head-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 11px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  th:not(:first-child) { text-align: right; }
+  tr { border-bottom: 1px solid var(--border); }
+  tr:last-child { border-bottom: none; }
+  tr:hover { background: var(--surface2); }
+  td { padding: 12px 20px; font-size: 13px; }
+  td:not(:first-child) { text-align: right; }
+
+  .td-main { font-weight: 500; font-size: 13px; }
+  .td-div { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .pill-green { background: var(--green-lt); color: var(--green); }
+  .pill-yellow { background: var(--yellow-lt); color: var(--yellow); }
+  .pill-blue { background: var(--blue-lt); color: var(--blue); }
+  .pill-coral { background: var(--coral-lt); color: var(--coral); }
+
+  /* RIGHT */
+  .right { display: flex; flex-direction: column; gap: 18px; }
+
+  .draw-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .draw-step:last-child { border-bottom: none; }
+
+  .step-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-done { background: var(--green-lt); color: var(--green); }
+  .step-active { background: var(--coral); color: white; }
+  .step-todo { background: var(--border); color: var(--muted); }
+
+  .step-body { flex: 1; }
+  .step-title { font-size: 13px; font-weight: 600; }
+  .step-desc { font-size: 11.5px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+
+  .step-check { font-size: 14px; margin-left: auto; padding-top: 2px; }
+
+  .insight-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .insight-item:last-child { border-bottom: none; }
+  .insight-icon { font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+  .insight-text { font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+  .insight-text strong { color: var(--text); }
+
+  /* SUBMIT BTN */
+  .submit-area {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">
+    <div class="logo-wrap">
+      <!-- LOGO B: stacked bar chart icon in coral -->
+      <div class="logo-icon-b">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="20" width="6" height="12" rx="2" fill="#ff6b47" opacity="0.5"/>
+          <rect x="13" y="12" width="6" height="20" rx="2" fill="#ff6b47" opacity="0.75"/>
+          <rect x="22" y="6" width="6" height="26" rx="2" fill="#ff6b47"/>
+          <path d="M4 18 L10 12 L18 8 L28 4" stroke="#ff6b47" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2" opacity="0.5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-wordmark">
+          <span class="draw">Draw</span><span class="stack">Stack</span>
+        </div>
+        <div class="logo-tagline">Draw Management</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-section">
+      <div class="nav-section-label">Overview</div>
+      <div class="nav-item active"><span class="nav-icon">⊞</span> Dashboard</div>
+      <div class="nav-item"><span class="nav-icon">📁</span> All Projects <span class="badge">3</span></div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">Draw Workflow</div>
+      <div class="nav-item"><span class="nav-icon">📄</span> Draw Requests</div>
+      <div class="nav-item"><span class="nav-icon">🧾</span> Invoices <span class="badge">2</span></div>
+      <div class="nav-item"><span class="nav-icon">📊</span> Budget Tracker</div>
+      <div class="nav-item"><span class="nav-icon">🔄</span> Change Orders</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">Lender</div>
+      <div class="nav-item"><span class="nav-icon">🏦</span> AIA G702/G703</div>
+      <div class="nav-item"><span class="nav-icon">📋</span> Bank Templates</div>
+    </div>
+  </nav>
+
+  <div class="projects-section">
+    <div class="ps-label">Active Projects</div>
+    <div class="proj active">
+      <div class="proj-row">
+        <div class="proj-dot" style="background:var(--coral)"></div>
+        <div class="proj-name">14 Elm Street</div>
+      </div>
+      <div class="proj-meta">Draw #4 · In review</div>
+    </div>
+    <div class="proj">
+      <div class="proj-row">
+        <div class="proj-dot" style="background:var(--green)"></div>
+        <div class="proj-name">82 Harbor View</div>
+      </div>
+      <div class="proj-meta">Draw #2 · Funded</div>
+    </div>
+    <div class="proj">
+      <div class="proj-row">
+        <div class="proj-dot" style="background:var(--blue)"></div>
+        <div class="proj-name">Condor Mixed-Use</div>
+      </div>
+      <div class="proj-meta">Draw #1 · Pending</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-title">14 Elm Street <span class="topbar-sub">Needham, MA · Eastern Bank · $1.24M loan</span></div>
+    <button class="btn btn-ghost">📤 Export G702</button>
+    <button class="btn btn-primary">＋ New Draw</button>
+  </div>
+
+  <div class="content">
+    <!-- KPI STRIP -->
+    <div class="kpi-strip">
+      <div class="kpi kpi-coral">
+        <div class="kpi-label">Loan Amount</div>
+        <div class="kpi-value">$1.24M</div>
+        <div class="kpi-detail">Eastern Bank · 12-mo term</div>
+      </div>
+      <div class="kpi kpi-yellow">
+        <div class="kpi-label">Total Drawn</div>
+        <div class="kpi-value" style="color:var(--yellow)">$843K</div>
+        <div class="kpi-detail kpi-warn">68% of loan · Draw #4 pending</div>
+      </div>
+      <div class="kpi kpi-blue">
+        <div class="kpi-label">Retainage Held</div>
+        <div class="kpi-value" style="color:var(--blue)">$84.3K</div>
+        <div class="kpi-detail">10% · releases at 50% complete</div>
+      </div>
+      <div class="kpi kpi-green">
+        <div class="kpi-label">Remaining Budget</div>
+        <div class="kpi-value" style="color:var(--green)">$397K</div>
+        <div class="kpi-detail kpi-up">✓ On track</div>
+      </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="grid">
+      <!-- TABLE -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-head-title">Schedule of Values — Draw #4</div>
+            <div class="card-head-sub">G703 · Application for Payment · 7 of 16 line items shown</div>
+          </div>
+          <button class="btn btn-ghost" style="font-size:12px;padding:6px 12px">⚙ Filter</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Budget</th>
+              <th>Prior</th>
+              <th>This Draw</th>
+              <th>% Done</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="td-main">Foundation & Concrete</div><div class="td-div">Div 03</div></td>
+              <td>$128,000</td><td>$128,000</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="pill pill-green">✓ 100%</span></td>
+              <td style="color:var(--muted)">$0</td>
+            </tr>
+            <tr>
+              <td><div class="td-main">Structural Framing</div><div class="td-div">Div 06</div></td>
+              <td>$214,000</td><td>$160,500</td>
+              <td style="color:var(--coral);font-weight:600">$42,800</td>
+              <td><span class="pill pill-yellow">94%</span></td>
+              <td>$10,700</td>
+            </tr>
+            <tr>
+              <td><div class="td-main">Roofing</div><div class="td-div">Div 07</div></td>
+              <td>$48,500</td><td>$24,250</td>
+              <td style="color:var(--coral);font-weight:600">$24,250</td>
+              <td><span class="pill pill-green">✓ 100%</span></td>
+              <td style="color:var(--muted)">$0</td>
+            </tr>
+            <tr>
+              <td><div class="td-main">Electrical Rough-In</div><div class="td-div">Div 16</div></td>
+              <td>$62,000</td><td>$31,000</td>
+              <td style="color:var(--coral);font-weight:600">$18,600</td>
+              <td><span class="pill pill-yellow">80%</span></td>
+              <td>$12,400</td>
+            </tr>
+            <tr>
+              <td><div class="td-main">Plumbing Rough-In</div><div class="td-div">Div 15</div></td>
+              <td>$55,000</td><td>$27,500</td>
+              <td style="color:var(--coral);font-weight:600">$16,500</td>
+              <td><span class="pill pill-yellow">80%</span></td>
+              <td>$11,000</td>
+            </tr>
+            <tr>
+              <td><div class="td-main">HVAC</div><div class="td-div">Div 15</div></td>
+              <td>$72,000</td><td>$0</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="pill pill-blue">Not started</span></td>
+              <td>$72,000</td>
+            </tr>
+            <tr>
+              <td><div class="td-main">Insulation & Drywall</div><div class="td-div">Div 09</div></td>
+              <td>$84,000</td><td>$0</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="pill pill-blue">Not started</span></td>
+              <td>$84,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <!-- DRAW STEPS -->
+        <div class="card">
+          <div class="card-head">
+            <div class="card-head-title">Draw #4 — Workflow</div>
+          </div>
+          <div class="draw-step">
+            <div class="step-num step-done">1</div>
+            <div class="step-body">
+              <div class="step-title">Invoices parsed by AI</div>
+              <div class="step-desc">4 invoices · 91% avg confidence · all matched</div>
+            </div>
+            <div class="step-check">✅</div>
+          </div>
+          <div class="draw-step">
+            <div class="step-num step-done">2</div>
+            <div class="step-body">
+              <div class="step-title">Schedule of Values updated</div>
+              <div class="step-desc">G703 populated · line items reconciled</div>
+            </div>
+            <div class="step-check">✅</div>
+          </div>
+          <div class="draw-step">
+            <div class="step-num step-active">3</div>
+            <div class="step-body">
+              <div class="step-title">Your review</div>
+              <div class="step-desc">Confirm amounts, check AI flags, approve</div>
+            </div>
+          </div>
+          <div class="draw-step">
+            <div class="step-num step-todo">4</div>
+            <div class="step-body">
+              <div class="step-title">Submit to Eastern Bank</div>
+              <div class="step-desc">G702/G703 PDF + supporting invoices</div>
+            </div>
+          </div>
+          <div class="submit-area">
+            <button class="btn btn-primary" style="width:100%;justify-content:center;font-family:'DM Sans',sans-serif">Review Draw Package →</button>
+          </div>
+        </div>
+
+        <!-- AI -->
+        <div class="card">
+          <div class="card-head">
+            <div class="card-head-title">✦ AI Flags</div>
+          </div>
+          <div class="insight-item">
+            <div class="insight-icon">⚠️</div>
+            <div class="insight-text"><strong>Framing at 94%</strong> — final $10.7K billed next draw. Add note to lender to avoid confusion on G702 summary.</div>
+          </div>
+          <div class="insight-item">
+            <div class="insight-icon">✅</div>
+            <div class="insight-text"><strong>Roofing complete</strong> — finished 8 days ahead of schedule. No retainage exception needed.</div>
+          </div>
+          <div class="insight-item">
+            <div class="insight-icon">💡</div>
+            <div class="insight-text"><strong>HVAC & Drywall</strong> not started but 3 draws remain. Budget runway is sufficient at current pace.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

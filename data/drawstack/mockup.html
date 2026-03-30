@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg:       #161b2e;
+    --surface:  #1e2540;
+    --surface2: #242c4a;
+    --border:   #2e3a5c;
+    --text:     #e2e8f4;
+    --muted:    #8892b0;
+    --amber:    #f5a623;
+    --amber-lt: #ffd27033;
+    --teal:     #2dd4bf;
+    --teal-lt:  #2dd4bf22;
+    --green:    #4ade80;
+    --green-lt: #4ade8022;
+    --red:      #f87171;
+    --red-lt:   #f8717122;
+    --indigo:   #818cf8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+    background: #111628;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .logo {
+    padding: 22px 20px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--amber), #e8830a);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+
+  .logo-text { font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
+  .logo-text span { color: var(--amber); }
+
+  .nav { padding: 16px 10px; flex: 1; }
+
+  .nav-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    padding: 0 10px;
+    margin: 16px 0 6px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 7px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 1px;
+  }
+
+  .nav-item:hover { background: var(--surface2); color: var(--text); }
+  .nav-item.active { background: var(--amber-lt); color: var(--amber); }
+  .nav-item .icon { font-size: 15px; width: 18px; text-align: center; }
+
+  .nav-badge {
+    margin-left: auto;
+    background: var(--amber);
+    color: #111;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 20px;
+  }
+
+  .project-list { padding: 10px; border-top: 1px solid var(--border); }
+  .project-list-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    padding: 10px 10px 6px;
+  }
+
+  .project-item {
+    padding: 8px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-bottom: 1px;
+  }
+  .project-item:hover { background: var(--surface2); }
+  .project-item.active { background: var(--surface2); }
+  .project-name { font-size: 12.5px; font-weight: 500; color: var(--text); }
+  .project-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+  .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  .dot-green { background: var(--green); }
+  .dot-amber { background: var(--amber); }
+  .dot-teal  { background: var(--teal); }
+
+  /* ── MAIN ── */
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 32px;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  .page-title { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .page-subtitle { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+  .btn {
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .btn-primary { background: var(--amber); color: #111; }
+  .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+
+  /* ── STAT CARDS ── */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .stat-label { font-size: 11.5px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-value { font-size: 26px; font-weight: 700; letter-spacing: -1px; margin: 8px 0 4px; }
+  .stat-change { font-size: 12px; display: flex; align-items: center; gap: 4px; }
+  .up { color: var(--green); }
+  .warn { color: var(--amber); }
+  .neutral { color: var(--muted); }
+
+  .stat-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 99px;
+    margin-top: 14px;
+    overflow: hidden;
+  }
+  .stat-bar-fill { height: 100%; border-radius: 99px; }
+
+  /* ── TWO COL ── */
+  .two-col { display: grid; grid-template-columns: 1fr 380px; gap: 20px; }
+
+  /* ── DRAW TABLE ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-title { font-size: 14px; font-weight: 600; }
+  .card-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 22px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  thead th:not(:first-child) { text-align: right; }
+
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--surface2); }
+
+  td {
+    padding: 13px 22px;
+    font-size: 13px;
+  }
+  td:not(:first-child) { text-align: right; }
+
+  .td-name { font-weight: 500; }
+  .td-div { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .pct-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 600;
+  }
+  .pct-green { background: var(--green-lt); color: var(--green); }
+  .pct-amber { background: var(--amber-lt); color: var(--amber); }
+  .pct-red   { background: var(--red-lt);   color: var(--red);   }
+  .pct-teal  { background: var(--teal-lt);  color: var(--teal);  }
+
+  /* ── RIGHT PANEL ── */
+  .right-col { display: flex; flex-direction: column; gap: 20px; }
+
+  .draw-status-card { }
+
+  .draw-item {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .draw-item:last-child { border-bottom: none; }
+
+  .draw-icon {
+    width: 36px; height: 36px;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .draw-info { flex: 1; }
+  .draw-name { font-size: 13px; font-weight: 500; }
+  .draw-meta { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .draw-amount { font-size: 14px; font-weight: 700; text-align: right; }
+  .draw-status-badge { font-size: 10.5px; font-weight: 600; text-align: right; margin-top: 3px; }
+
+  /* ── AI PANEL ── */
+  .ai-card { }
+  .ai-item {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .ai-item:last-child { border-bottom: none; }
+  .ai-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+  .ai-text { font-size: 12.5px; line-height: 1.5; }
+  .ai-text strong { color: var(--amber); }
+
+  /* ── PROGRESS MINI ── */
+  .mini-bar { height: 4px; background: var(--border); border-radius: 99px; overflow: hidden; margin-top: 6px; }
+  .mini-fill { height: 100%; border-radius: 99px; }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .breadcrumb span { color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">
+    <div class="logo-icon">🏗</div>
+    <div class="logo-text">Draw<span>Stack</span></div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-label">Workspace</div>
+    <div class="nav-item active"><span class="icon">⊞</span> Dashboard</div>
+    <div class="nav-item"><span class="icon">📁</span> Projects <span class="nav-badge">3</span></div>
+    <div class="nav-item"><span class="icon">📄</span> Draw Requests</div>
+    <div class="nav-item"><span class="icon">🧾</span> Invoices <span class="nav-badge">2</span></div>
+
+    <div class="nav-label">Finance</div>
+    <div class="nav-item"><span class="icon">📊</span> Budget Tracker</div>
+    <div class="nav-item"><span class="icon">🔄</span> Change Orders</div>
+    <div class="nav-item"><span class="icon">🏦</span> Lender Portal</div>
+
+    <div class="nav-label">Admin</div>
+    <div class="nav-item"><span class="icon">⚙️</span> Settings</div>
+  </nav>
+
+  <div class="project-list">
+    <div class="project-list-label">Active Projects</div>
+    <div class="project-item active">
+      <div class="project-name"><span class="dot dot-amber"></span>14 Elm Street</div>
+      <div class="project-sub">Draw #4 · In Progress</div>
+    </div>
+    <div class="project-item">
+      <div class="project-name"><span class="dot dot-green"></span>82 Harbor View</div>
+      <div class="project-sub">Draw #2 · Funded</div>
+    </div>
+    <div class="project-item">
+      <div class="project-name"><span class="dot dot-teal"></span>Condor Mixed-Use</div>
+      <div class="project-sub">Draw #1 · Pending</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <div class="breadcrumb">Projects <span>›</span> <span>14 Elm Street</span></div>
+
+  <div class="page-header">
+    <div>
+      <div class="page-title">14 Elm Street ADU</div>
+      <div class="page-subtitle">Needham, MA · $1,240,000 construction loan · Eastern Bank</div>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn btn-ghost">📤 Export G702</button>
+      <button class="btn btn-primary">＋ New Draw Request</button>
+    </div>
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">Total Budget</div>
+      <div class="stat-value">$1.24M</div>
+      <div class="stat-change neutral">16 line items across 6 divisions</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:68%;background:var(--indigo)"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Drawn</div>
+      <div class="stat-value" style="color:var(--amber)">$843K</div>
+      <div class="stat-change warn">▲ $187K this draw</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:68%;background:var(--amber)"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Retainage Held</div>
+      <div class="stat-value" style="color:var(--teal)">$84,300</div>
+      <div class="stat-change neutral">10% · releases at 50% complete</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:10%;background:var(--teal)"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Budget Remaining</div>
+      <div class="stat-value" style="color:var(--green)">$397K</div>
+      <div class="stat-change up">✓ On budget</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:32%;background:var(--green)"></div></div>
+    </div>
+  </div>
+
+  <!-- TWO COL -->
+  <div class="two-col">
+
+    <!-- LINE ITEMS TABLE -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Schedule of Values — Draw #4</div>
+          <div class="card-sub">G703 format · 6 of 16 line items with activity this draw</div>
+        </div>
+        <button class="btn btn-ghost" style="font-size:12px;padding:7px 13px">Filter</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Line Item</th>
+            <th>Budget</th>
+            <th>Prior Draws</th>
+            <th>This Draw</th>
+            <th>% Complete</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="td-name">Foundation & Concrete</div>
+              <div class="td-div">Division 03</div>
+            </td>
+            <td>$128,000</td>
+            <td>$128,000</td>
+            <td style="color:var(--muted)">—</td>
+            <td><span class="pct-green pct-pill">100%</span></td>
+            <td style="color:var(--muted)">$0</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-name">Structural Framing</div>
+              <div class="td-div">Division 06</div>
+            </td>
+            <td>$214,000</td>
+            <td>$160,500</td>
+            <td style="color:var(--amber);font-weight:600">$42,800</td>
+            <td><span class="pct-amber pct-pill">94%</span></td>
+            <td>$10,700</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-name">Roofing</div>
+              <div class="td-div">Division 07</div>
+            </td>
+            <td>$48,500</td>
+            <td>$24,250</td>
+            <td style="color:var(--amber);font-weight:600">$24,250</td>
+            <td><span class="pct-green pct-pill">100%</span></td>
+            <td>$0</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-name">Electrical Rough-In</div>
+              <div class="td-div">Division 16</div>
+            </td>
+            <td>$62,000</td>
+            <td>$31,000</td>
+            <td style="color:var(--amber);font-weight:600">$18,600</td>
+            <td><span class="pct-amber pct-pill">80%</span></td>
+            <td>$12,400</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-name">Plumbing Rough-In</div>
+              <div class="td-div">Division 15</div>
+            </td>
+            <td>$55,000</td>
+            <td>$27,500</td>
+            <td style="color:var(--amber);font-weight:600">$16,500</td>
+            <td><span class="pct-amber pct-pill">80%</span></td>
+            <td>$11,000</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-name">HVAC</div>
+              <div class="td-div">Division 15</div>
+            </td>
+            <td>$72,000</td>
+            <td>$0</td>
+            <td style="color:var(--muted)">—</td>
+            <td><span class="pct-teal pct-pill">0%</span></td>
+            <td>$72,000</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-name">Insulation & Drywall</div>
+              <div class="td-div">Division 09</div>
+            </td>
+            <td>$84,000</td>
+            <td>$0</td>
+            <td style="color:var(--muted)">—</td>
+            <td><span class="pct-teal pct-pill">0%</span></td>
+            <td>$84,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="right-col">
+
+      <!-- DRAW STATUS -->
+      <div class="card draw-status-card">
+        <div class="card-header">
+          <div class="card-title">Draw #4 Status</div>
+        </div>
+        <div class="draw-item">
+          <div class="draw-icon" style="background:var(--green-lt)">✅</div>
+          <div class="draw-info">
+            <div class="draw-name">Invoices Parsed</div>
+            <div class="draw-meta">4 of 4 matched · AI confidence 91%</div>
+            <div class="mini-bar"><div class="mini-fill" style="width:100%;background:var(--green)"></div></div>
+          </div>
+        </div>
+        <div class="draw-item">
+          <div class="draw-icon" style="background:var(--amber-lt)">📋</div>
+          <div class="draw-info">
+            <div class="draw-name">G702 / G703 Generated</div>
+            <div class="draw-meta">Pending your review</div>
+            <div class="mini-bar"><div class="mini-fill" style="width:75%;background:var(--amber)"></div></div>
+          </div>
+        </div>
+        <div class="draw-item">
+          <div class="draw-icon" style="background:var(--border)">🏦</div>
+          <div class="draw-info">
+            <div class="draw-name">Submit to Eastern Bank</div>
+            <div class="draw-meta">Waiting on approval</div>
+            <div class="mini-bar"><div class="mini-fill" style="width:20%;background:var(--muted)"></div></div>
+          </div>
+        </div>
+        <div style="padding:16px 20px">
+          <button class="btn btn-primary" style="width:100%;justify-content:center">Review & Submit Draw →</button>
+        </div>
+      </div>
+
+      <!-- AI INSIGHTS -->
+      <div class="card ai-card">
+        <div class="card-header">
+          <div class="card-title">✦ AI Insights</div>
+        </div>
+        <div class="ai-item">
+          <div class="ai-dot" style="background:var(--amber)"></div>
+          <div class="ai-text"><strong>Framing at 94%</strong> but invoice shows final $10.7K will be billed next draw — flag for lender to avoid confusion.</div>
+        </div>
+        <div class="ai-item">
+          <div class="ai-dot" style="background:var(--green)"></div>
+          <div class="ai-text"><strong>Roofing completed</strong> 8 days ahead of schedule. Strong position heading into drywall phase.</div>
+        </div>
+        <div class="ai-item">
+          <div class="ai-dot" style="background:var(--teal)"></div>
+          <div class="ai-text"><strong>HVAC not started</strong> — 3 draws remain. At current draw pace, sufficient budget remains. No action needed.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

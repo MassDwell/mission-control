@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Logo Exploration</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f5f9;
+    -webkit-font-smoothing: antialiased;
+    padding: 48px 60px;
+  }
+
+  .page-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #9ca3af;
+    margin-bottom: 6px;
+  }
+  .page-sub {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #111827;
+    margin-bottom: 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .card-label {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cl-name { font-size: 12px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.5px; }
+  .cl-desc { font-size: 11.5px; color: #9ca3af; }
+
+  .card-stage {
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background: white;
+  }
+
+  /* on dark */
+  .on-dark {
+    background: #1a1f36;
+    padding: 32px 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .on-light {
+    background: #ffffff;
+    padding: 20px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .size-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .ctx-label {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #d1d5db;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .ctx-label-dark { color: #6b7280; }
+
+  /* ─── OPTION A: Rising Bars ─── */
+  .logo-a-mark {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+  }
+
+  /* ─── OPTION C: Layered Stack ─── */
+
+  /* ─── OPTION E: D-arrow ─── */
+
+</style>
+</head>
+<body>
+
+<div class="page-title">DrawStack · Brand Identity</div>
+<div class="page-sub">Logo Exploration — 5 Directions</div>
+
+<div class="grid">
+
+  <!-- OPTION A: Rising Bars -->
+  <div class="card">
+    <div class="card-label">
+      <div class="cl-name">Option A — "The Draw"</div>
+      <div class="cl-desc">Rising bars · literal, financial, memorable</div>
+    </div>
+    <div class="card-stage">
+
+      <!-- Primary on dark -->
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">On Dark (sidebar)</div>
+        <div class="on-dark">
+          <!-- Full lockup -->
+          <div style="display:flex;align-items:center;gap:12px">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect width="40" height="40" rx="10" fill="url(#a1)"/>
+              <defs>
+                <linearGradient id="a1" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0%" stop-color="#4f46e5"/>
+                  <stop offset="100%" stop-color="#6d28d9"/>
+                </linearGradient>
+              </defs>
+              <rect x="7" y="22" width="6" height="11" rx="2" fill="rgba(255,255,255,0.45)"/>
+              <rect x="15" y="16" width="6" height="17" rx="2" fill="rgba(255,255,255,0.7)"/>
+              <rect x="23" y="9" width="6" height="24" rx="2" fill="white"/>
+              <path d="M10 21 L18 15 L26 8" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="26" cy="8" r="2" fill="#a5b4fc"/>
+            </svg>
+            <div>
+              <div style="font-family:'Inter',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.8px;color:white;line-height:1">DrawStack</div>
+              <div style="font-size:10px;color:#7c85b8;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:600">Construction Finance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary on light -->
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">On Light (main area)</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:8px 0">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="10" fill="url(#a2)"/>
+            <defs>
+              <linearGradient id="a2" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#4f46e5"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+            </defs>
+            <rect x="7" y="22" width="6" height="11" rx="2" fill="rgba(255,255,255,0.45)"/>
+            <rect x="15" y="16" width="6" height="17" rx="2" fill="rgba(255,255,255,0.7)"/>
+            <rect x="23" y="9" width="6" height="24" rx="2" fill="white"/>
+            <path d="M10 21 L18 15 L26 8" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="26" cy="8" r="2" fill="#a5b4fc"/>
+          </svg>
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.8px;color:#111827;line-height:1">DrawStack</div>
+            <div style="font-size:10px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:600">Construction Finance</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sizes -->
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">Icon Sizes</div>
+        <div style="display:flex;align-items:flex-end;gap:20px">
+          <svg width="64" height="64" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="url(#a3)"/><defs><linearGradient id="a3" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient></defs><rect x="7" y="22" width="6" height="11" rx="2" fill="rgba(255,255,255,0.45)"/><rect x="15" y="16" width="6" height="17" rx="2" fill="rgba(255,255,255,0.7)"/><rect x="23" y="9" width="6" height="24" rx="2" fill="white"/><path d="M10 21 L18 15 L26 8" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="8" r="2" fill="#a5b4fc"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="url(#a4)"/><defs><linearGradient id="a4" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient></defs><rect x="7" y="22" width="6" height="11" rx="2" fill="rgba(255,255,255,0.45)"/><rect x="15" y="16" width="6" height="17" rx="2" fill="rgba(255,255,255,0.7)"/><rect x="23" y="9" width="6" height="24" rx="2" fill="white"/><path d="M10 21 L18 15 L26 8" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="8" r="2" fill="#a5b4fc"/></svg>
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="url(#a5)"/><defs><linearGradient id="a5" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient></defs><rect x="7" y="22" width="6" height="11" rx="2" fill="rgba(255,255,255,0.45)"/><rect x="15" y="16" width="6" height="17" rx="2" fill="rgba(255,255,255,0.7)"/><rect x="23" y="9" width="6" height="24" rx="2" fill="white"/></svg>
+          <svg width="16" height="16" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="url(#a6)"/><defs><linearGradient id="a6" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient></defs><rect x="7" y="22" width="6" height="11" rx="2" fill="rgba(255,255,255,0.5)"/><rect x="15" y="16" width="6" height="17" rx="2" fill="rgba(255,255,255,0.75)"/><rect x="23" y="9" width="6" height="24" rx="2" fill="white"/></svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OPTION B: Stacked Layers (floors/draws) -->
+  <div class="card">
+    <div class="card-label">
+      <div class="cl-name">Option B — "The Stack"</div>
+      <div class="cl-desc">Layered floors · construction, funding rounds</div>
+    </div>
+    <div class="card-stage">
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">On Dark (sidebar)</div>
+        <div class="on-dark">
+          <div style="display:flex;align-items:center;gap:12px">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect width="40" height="40" rx="10" fill="#1e2235"/>
+              <!-- floor 3 (top - full funded) -->
+              <rect x="6" y="8" width="28" height="7" rx="2.5" fill="url(#b1)"/>
+              <!-- floor 2 -->
+              <rect x="6" y="17" width="28" height="7" rx="2.5" fill="url(#b2)"/>
+              <!-- floor 1 (bottom - partial) -->
+              <rect x="6" y="26" width="28" height="7" rx="2.5" fill="#2a3155"/>
+              <rect x="6" y="26" width="17" height="7" rx="2.5" fill="url(#b3)"/>
+              <defs>
+                <linearGradient id="b1" x1="0" y1="0" x2="28" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#4f46e5"/>
+                  <stop offset="100%" stop-color="#7c3aed"/>
+                </linearGradient>
+                <linearGradient id="b2" x1="0" y1="0" x2="28" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#4f46e5"/>
+                  <stop offset="100%" stop-color="#7c3aed"/>
+                </linearGradient>
+                <linearGradient id="b3" x1="0" y1="0" x2="17" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#6366f1"/>
+                  <stop offset="100%" stop-color="#8b5cf6"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px;color:white;line-height:1">DrawStack</div>
+              <div style="font-size:10px;color:#7c85b8;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:600">Construction Finance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">On Light</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:8px 0">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="10" fill="#f0f0ff"/>
+            <rect x="6" y="8" width="28" height="7" rx="2.5" fill="url(#b4)"/>
+            <rect x="6" y="17" width="28" height="7" rx="2.5" fill="url(#b5)"/>
+            <rect x="6" y="26" width="28" height="7" rx="2.5" fill="#e8e9f8"/>
+            <rect x="6" y="26" width="17" height="7" rx="2.5" fill="url(#b6)"/>
+            <defs>
+              <linearGradient id="b4" x1="0" y1="0" x2="28" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
+              <linearGradient id="b5" x1="0" y1="0" x2="28" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
+              <linearGradient id="b6" x1="0" y1="0" x2="17" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+            </defs>
+          </svg>
+          <div>
+            <div style="font-family:'DM Sans',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px;color:#111827;line-height:1">DrawStack</div>
+            <div style="font-size:10px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:600">Construction Finance</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">Icon Sizes</div>
+        <div style="display:flex;align-items:flex-end;gap:20px">
+          <svg width="64" height="64" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#eef2ff"/><rect x="6" y="8" width="28" height="7" rx="2.5" fill="#4f46e5"/><rect x="6" y="17" width="28" height="7" rx="2.5" fill="#6366f1"/><rect x="6" y="26" width="28" height="7" rx="2.5" fill="#e0e7ff"/><rect x="6" y="26" width="17" height="7" rx="2.5" fill="#818cf8"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#eef2ff"/><rect x="6" y="8" width="28" height="7" rx="2.5" fill="#4f46e5"/><rect x="6" y="17" width="28" height="7" rx="2.5" fill="#6366f1"/><rect x="6" y="26" width="28" height="7" rx="2.5" fill="#e0e7ff"/><rect x="6" y="26" width="17" height="7" rx="2.5" fill="#818cf8"/></svg>
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#eef2ff"/><rect x="6" y="8" width="28" height="7" rx="2.5" fill="#4f46e5"/><rect x="6" y="17" width="28" height="7" rx="2.5" fill="#6366f1"/><rect x="6" y="26" width="17" height="7" rx="2.5" fill="#818cf8"/></svg>
+          <svg width="16" height="16" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#eef2ff"/><rect x="6" y="8" width="28" height="7" rx="2.5" fill="#4f46e5"/><rect x="6" y="17" width="28" height="7" rx="2.5" fill="#6366f1"/><rect x="6" y="26" width="17" height="7" rx="2.5" fill="#818cf8"/></svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OPTION C: DS Monogram -->
+  <div class="card">
+    <div class="card-label">
+      <div class="cl-name">Option C — "The Monogram"</div>
+      <div class="cl-desc">DS lettermark · elegant, scalable, brand-forward</div>
+    </div>
+    <div class="card-stage">
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">On Dark (sidebar)</div>
+        <div class="on-dark">
+          <div style="display:flex;align-items:center;gap:12px">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect width="40" height="40" rx="10" fill="url(#c1)"/>
+              <defs>
+                <linearGradient id="c1" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0%" stop-color="#4338ca"/>
+                  <stop offset="100%" stop-color="#5b21b6"/>
+                </linearGradient>
+              </defs>
+              <!-- D shape -->
+              <path d="M9 10 L9 30 L18 30 C24 30 28 26 28 20 C28 14 24 10 18 10 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+              <!-- Stack lines inside D -->
+              <line x1="13" y1="16" x2="23" y2="16" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="13" y1="20" x2="25" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="13" y1="24" x2="22" y2="24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;letter-spacing:-0.5px;color:white;line-height:1">DrawStack</div>
+              <div style="font-size:10px;color:#7c85b8;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:600">Construction Finance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">On Light</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:8px 0">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="10" fill="url(#c2)"/>
+            <defs><linearGradient id="c2" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#4338ca"/><stop offset="100%" stop-color="#5b21b6"/></linearGradient></defs>
+            <path d="M9 10 L9 30 L18 30 C24 30 28 26 28 20 C28 14 24 10 18 10 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+            <line x1="13" y1="16" x2="23" y2="16" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="13" y1="20" x2="25" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="13" y1="24" x2="22" y2="24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;letter-spacing:-0.5px;color:#111827;line-height:1">DrawStack</div>
+            <div style="font-size:10px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:600">Construction Finance</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">Icon Sizes</div>
+        <div style="display:flex;align-items:flex-end;gap:20px">
+          <svg width="64" height="64" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#4338ca"/><path d="M9 10 L9 30 L18 30 C24 30 28 26 28 20 C28 14 24 10 18 10 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="16" x2="23" y2="16" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="20" x2="25" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="24" x2="22" y2="24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#4338ca"/><path d="M9 10 L9 30 L18 30 C24 30 28 26 28 20 C28 14 24 10 18 10 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="16" x2="23" y2="16" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="20" x2="25" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="24" x2="22" y2="24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#4338ca"/><path d="M9 10 L9 30 L18 30 C24 30 28 26 28 20 C28 14 24 10 18 10 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#4338ca"/><path d="M10 10 L10 30 L18 30 C23 30 27 26 27 20 C27 14 23 10 18 10 Z" fill="white"/></svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OPTION D: Checkmark + Bars (draws approved) -->
+  <div class="card">
+    <div class="card-label">
+      <div class="cl-name">Option D — "The Approval"</div>
+      <div class="cl-desc">Progress bar + check · "draw approved" in one icon</div>
+    </div>
+    <div class="card-stage">
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">On Dark (sidebar)</div>
+        <div class="on-dark">
+          <div style="display:flex;align-items:center;gap:12px">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect width="40" height="40" rx="10" fill="url(#d1)"/>
+              <defs>
+                <linearGradient id="d1" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0%" stop-color="#0ea5e9"/>
+                  <stop offset="100%" stop-color="#4f46e5"/>
+                </linearGradient>
+              </defs>
+              <!-- 3 stacked rows, each with fill + check/dash -->
+              <!-- Row 1: full -->
+              <rect x="6" y="8" width="28" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+              <rect x="6" y="8" width="28" height="6" rx="3" fill="rgba(255,255,255,0.6)"/>
+              <path d="M28 11 L30 13 L34 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Row 2: full -->
+              <rect x="6" y="17" width="28" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+              <rect x="6" y="17" width="28" height="6" rx="3" fill="rgba(255,255,255,0.6)"/>
+              <path d="M28 20 L30 22 L34 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Row 3: partial -->
+              <rect x="6" y="26" width="28" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+              <rect x="6" y="26" width="16" height="6" rx="3" fill="rgba(255,255,255,0.4)"/>
+            </svg>
+            <div>
+              <div style="font-family:'Inter',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.8px;color:white;line-height:1">DrawStack</div>
+              <div style="font-size:10px;color:#7c85b8;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:600">Construction Finance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">On Light</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:8px 0">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="10" fill="url(#d2)"/>
+            <defs><linearGradient id="d2" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient></defs>
+            <rect x="6" y="8" width="28" height="6" rx="3" fill="rgba(255,255,255,0.6)"/>
+            <path d="M28 11 L30 13 L34 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="6" y="17" width="28" height="6" rx="3" fill="rgba(255,255,255,0.6)"/>
+            <path d="M28 20 L30 22 L34 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="6" y="26" width="28" height="6" rx="3" fill="rgba(255,255,255,0.2)"/>
+            <rect x="6" y="26" width="16" height="6" rx="3" fill="rgba(255,255,255,0.4)"/>
+          </svg>
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.8px;color:#111827;line-height:1">DrawStack</div>
+            <div style="font-size:10px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:600">Construction Finance</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">Icon Sizes</div>
+        <div style="display:flex;align-items:flex-end;gap:20px">
+          <svg width="64" height="64" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#0ea5e9"/><rect x="6" y="8" width="28" height="6" rx="3" fill="rgba(255,255,255,0.6)"/><path d="M28 11 L30 13 L34 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="17" width="28" height="6" rx="3" fill="rgba(255,255,255,0.6)"/><path d="M28 20 L30 22 L34 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="26" width="28" height="6" rx="3" fill="rgba(255,255,255,0.2)"/><rect x="6" y="26" width="16" height="6" rx="3" fill="rgba(255,255,255,0.4)"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#0ea5e9"/><rect x="6" y="8" width="28" height="6" rx="3" fill="rgba(255,255,255,0.6)"/><path d="M28 11 L30 13 L34 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="17" width="28" height="6" rx="3" fill="rgba(255,255,255,0.6)"/><path d="M28 20 L30 22 L34 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="26" width="16" height="6" rx="3" fill="rgba(255,255,255,0.4)"/></svg>
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#0ea5e9"/><rect x="6" y="8" width="28" height="6" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="6" y="17" width="28" height="6" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="6" y="26" width="16" height="6" rx="3" fill="rgba(255,255,255,0.4)"/></svg>
+          <svg width="16" height="16" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#0ea5e9"/><rect x="6" y="8" width="28" height="7" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="6" y="18" width="28" height="7" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="6" y="28" width="16" height="7" rx="3" fill="rgba(255,255,255,0.4)"/></svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OPTION E: Bold Wordmark only (no-icon approach) -->
+  <div class="card" style="grid-column: 1/-1">
+    <div class="card-label">
+      <div class="cl-name">Option E — "The Wordmark"</div>
+      <div class="cl-desc">Typographic logo — Stripe-style, no icon needed · works at every scale</div>
+    </div>
+    <div class="card-stage" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">Dark variant</div>
+        <div class="on-dark" style="padding:24px 28px">
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:26px;font-weight:800;letter-spacing:-1.5px;color:white">Draw<span style="color:#818cf8">Stack</span></div>
+            <div style="font-size:9.5px;color:#6b7280;letter-spacing:2px;text-transform:uppercase;margin-top:4px;font-weight:600">CONSTRUCTION FINANCE</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">Light variant</div>
+        <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:10px;padding:24px 28px">
+          <div style="font-family:'Syne',sans-serif;font-size:26px;font-weight:800;letter-spacing:-1.5px;color:#111827">Draw<span style="color:#4f46e5">Stack</span></div>
+          <div style="font-size:9.5px;color:#9ca3af;letter-spacing:2px;text-transform:uppercase;margin-top:4px;font-weight:600">CONSTRUCTION FINANCE</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-label-dark" style="font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin-bottom:12px;font-weight:600;">Compact / nav variant</div>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:8px 0">
+          <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;letter-spacing:-0.5px;color:#111827">Draw<span style="color:#4f46e5">Stack</span></div>
+          <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;letter-spacing:-0.3px;color:#374151">Draw<span style="color:#4f46e5">Stack</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

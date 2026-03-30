@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Option D</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    /* Warm slate — the "sweet spot" between light and dark */
+    --bg:        #e8ecf3;   /* warm blue-gray page bg */
+    --surface:   #f2f5fa;   /* card surface — near white but not */
+    --surface2:  #eaeff7;   /* hover / subtle emphasis */
+    --sidebar:   #1c2440;   /* dark sidebar for contrast */
+    --sidebar2:  #222c4e;
+    --border:    #d4dae8;
+    --border-dk: #2d3a5c;
+    --text:      #1a2035;   /* near-black, not pure black */
+    --text-mid:  #4a5578;
+    --muted:     #8792b0;
+    --s-text:    #e2e8f5;   /* sidebar text */
+    --s-muted:   #6e7fa8;   /* sidebar muted */
+    --amber:     #d97706;
+    --amber-bg:  #fef3c7;
+    --amber-lt:  #fbbf2430;
+    --blue:      #2563eb;
+    --blue-bg:   #dbeafe;
+    --blue-lt:   #2563eb18;
+    --green:     #059669;
+    --green-bg:  #d1fae5;
+    --green-lt:  #05966920;
+    --red:       #dc2626;
+    --red-bg:    #fee2e2;
+    --teal:      #0891b2;
+    --teal-bg:   #cffafe;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ─── SIDEBAR (dark contrast panel) ─── */
+  .sidebar {
+    width: 230px;
+    min-width: 230px;
+    background: var(--sidebar);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .logo {
+    padding: 22px 18px 18px;
+    border-bottom: 1px solid var(--border-dk);
+  }
+
+  .logo-inner { display: flex; align-items: center; gap: 11px; }
+
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, #d97706, #b45309);
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px #d9770640;
+  }
+
+  .logo-text { }
+  .logo-name {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .logo-name span { color: #fbbf24; }
+  .logo-tag {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--s-muted);
+    margin-top: 2px;
+  }
+
+  .nav { padding: 14px 10px; flex: 1; overflow-y: auto; }
+  .nav-label {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--s-muted);
+    padding: 10px 10px 5px;
+    font-weight: 600;
+  }
+  .nav-item {
+    display: flex; align-items: center; gap: 9px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--s-muted);
+    cursor: pointer;
+    margin-bottom: 1px;
+    transition: all 0.1s;
+  }
+  .nav-item:hover { background: var(--sidebar2); color: var(--s-text); }
+  .nav-item.active {
+    background: #d9770618;
+    color: #fbbf24;
+  }
+  .nav-icon { font-size: 14px; width: 18px; text-align: center; }
+  .nav-badge {
+    margin-left: auto;
+    background: var(--amber);
+    color: white;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 99px;
+  }
+
+  .proj-section {
+    border-top: 1px solid var(--border-dk);
+    padding: 10px 10px 14px;
+  }
+  .proj-label {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--s-muted);
+    padding: 8px 10px 6px;
+    font-weight: 600;
+  }
+  .proj-item {
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2px;
+  }
+  .proj-item:hover { background: var(--sidebar2); }
+  .proj-item.active { background: var(--sidebar2); }
+  .proj-row { display: flex; align-items: center; gap: 8px; }
+  .proj-dot { width: 7px; height: 7px; border-radius: 2px; flex-shrink: 0; }
+  .proj-name { font-size: 12.5px; font-weight: 600; color: var(--s-text); }
+  .proj-meta { font-size: 11px; color: var(--s-muted); margin-top: 1px; padding-left: 15px; }
+
+  /* ─── MAIN AREA ─── */
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: var(--bg); }
+
+  .topbar {
+    height: 60px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    gap: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .topbar-title { font-size: 16px; font-weight: 700; color: var(--text); flex: 1; letter-spacing: -0.3px; }
+  .topbar-sub { font-size: 12px; color: var(--text-mid); font-weight: 400; margin-left: 8px; }
+
+  .btn {
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.15s;
+  }
+  .btn-primary {
+    background: var(--amber);
+    color: white;
+    box-shadow: 0 2px 8px #d9770630;
+  }
+  .btn-primary:hover { background: #b45309; }
+  .btn-outline {
+    background: white;
+    color: var(--text-mid);
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .content { flex: 1; overflow-y: auto; padding: 24px 28px; }
+
+  /* ─── STAT CARDS ─── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-accent-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    border-radius: 12px 0 0 12px;
+  }
+
+  .stat-icon-area {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .stat-icon {
+    width: 38px; height: 38px;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+  }
+  .stat-change-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 99px;
+  }
+
+  .stat-label { font-size: 11px; color: var(--text-mid); font-weight: 500; text-transform: uppercase; letter-spacing: 0.6px; }
+  .stat-value { font-size: 26px; font-weight: 800; letter-spacing: -1.5px; margin-top: 4px; line-height: 1; }
+  .stat-detail { font-size: 11.5px; color: var(--muted); margin-top: 5px; }
+
+  .pbar { height: 4px; background: var(--border); border-radius: 99px; overflow: hidden; margin-top: 10px; }
+  .pbar-fill { height: 100%; border-radius: 99px; }
+
+  /* ─── MAIN GRID ─── */
+  .grid { display: grid; grid-template-columns: 1fr 360px; gap: 18px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .card-head {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+  }
+  .card-title { font-size: 14px; font-weight: 700; color: var(--text); }
+  .card-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--text-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 11px 20px;
+    text-align: left;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  th:not(:first-child) { text-align: right; }
+  tr { border-bottom: 1px solid var(--border); }
+  tr:last-child { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  td { padding: 12px 20px; font-size: 13px; color: var(--text); }
+  td:not(:first-child) { text-align: right; }
+
+  .item-name { font-weight: 600; font-size: 13px; }
+  .item-div { font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+
+  .pill {
+    display: inline-flex; align-items: center;
+    padding: 3px 9px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .pill-green  { background: var(--green-bg);  color: var(--green); }
+  .pill-amber  { background: var(--amber-bg);  color: var(--amber); }
+  .pill-blue   { background: var(--blue-bg);   color: var(--blue);  }
+  .pill-teal   { background: var(--teal-bg);   color: var(--teal);  }
+
+  /* RIGHT */
+  .right { display: flex; flex-direction: column; gap: 16px; }
+
+  .workflow-step {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .workflow-step:last-child { border-bottom: none; }
+
+  .step-circle {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .sc-done   { background: var(--green-bg);  color: var(--green); }
+  .sc-active { background: var(--amber);     color: white; box-shadow: 0 2px 8px #d9770640; }
+  .sc-todo   { background: var(--border);    color: var(--muted); }
+
+  .step-body { flex: 1; }
+  .step-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .step-desc { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .step-end { font-size: 12px; }
+
+  .cta-pad { padding: 16px 20px; background: var(--surface2); border-top: 1px solid var(--border); }
+
+  /* AI Panel */
+  .ai-item {
+    display: flex; gap: 11px; align-items: flex-start;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ai-item:last-child { border-bottom: none; }
+  .ai-tag {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-top: 1px;
+    white-space: nowrap;
+  }
+  .ai-flag   { background: var(--amber-bg); color: var(--amber); }
+  .ai-good   { background: var(--green-bg); color: var(--green); }
+  .ai-info   { background: var(--blue-bg);  color: var(--blue);  }
+  .ai-text   { font-size: 12.5px; line-height: 1.5; color: var(--text-mid); }
+  .ai-text strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">
+    <div class="logo-inner">
+      <div class="logo-mark">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <rect x="1" y="11" width="4" height="8" rx="1.5" fill="rgba(255,255,255,0.5)"/>
+          <rect x="7" y="7" width="4" height="12" rx="1.5" fill="rgba(255,255,255,0.75)"/>
+          <rect x="13" y="2" width="4" height="17" rx="1.5" fill="white"/>
+          <path d="M3 10 L9 6 L15 2" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 1.5"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">Draw<span>Stack</span></div>
+        <div class="logo-tag">Draw Management</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-label">Overview</div>
+    <div class="nav-item active"><span class="nav-icon">⊞</span> Dashboard</div>
+    <div class="nav-item"><span class="nav-icon">📁</span> Projects <span class="nav-badge">3</span></div>
+
+    <div class="nav-label">Workflow</div>
+    <div class="nav-item"><span class="nav-icon">📄</span> Draw Requests</div>
+    <div class="nav-item"><span class="nav-icon">🧾</span> Invoices <span class="nav-badge">2</span></div>
+    <div class="nav-item"><span class="nav-icon">📊</span> Budget Tracker</div>
+    <div class="nav-item"><span class="nav-icon">🔄</span> Change Orders</div>
+
+    <div class="nav-label">Lender Output</div>
+    <div class="nav-item"><span class="nav-icon">🏦</span> G702 / G703</div>
+    <div class="nav-item"><span class="nav-icon">📋</span> Bank Templates</div>
+  </nav>
+
+  <div class="proj-section">
+    <div class="proj-label">Active Projects</div>
+    <div class="proj-item active">
+      <div class="proj-row">
+        <div class="proj-dot" style="background:#fbbf24"></div>
+        <div class="proj-name">14 Elm Street</div>
+      </div>
+      <div class="proj-meta">Draw #4 · In Review</div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-row">
+        <div class="proj-dot" style="background:#34d399"></div>
+        <div class="proj-name">82 Harbor View</div>
+      </div>
+      <div class="proj-meta">Draw #2 · Funded</div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-row">
+        <div class="proj-dot" style="background:#60a5fa"></div>
+        <div class="proj-name">Condor Mixed-Use</div>
+      </div>
+      <div class="proj-meta">Draw #1 · Pending</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-title">
+      14 Elm Street ADU
+      <span class="topbar-sub">Needham, MA · Eastern Bank · $1.24M construction loan</span>
+    </div>
+    <button class="btn btn-outline">📤 Export G702</button>
+    <button class="btn btn-primary">＋ New Draw Request</button>
+  </div>
+
+  <div class="content">
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-accent-bar" style="background:var(--blue)"></div>
+        <div class="stat-icon-area">
+          <div class="stat-icon" style="background:var(--blue-bg)">💰</div>
+          <div class="stat-change-badge" style="background:var(--blue-bg);color:var(--blue)">12-mo term</div>
+        </div>
+        <div class="stat-label">Loan Amount</div>
+        <div class="stat-value" style="color:var(--text)">$1.24M</div>
+        <div class="stat-detail">Eastern Bank</div>
+        <div class="pbar"><div class="pbar-fill" style="width:68%;background:var(--blue)"></div></div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-accent-bar" style="background:var(--amber)"></div>
+        <div class="stat-icon-area">
+          <div class="stat-icon" style="background:var(--amber-bg)">📤</div>
+          <div class="stat-change-badge" style="background:var(--amber-bg);color:var(--amber)">68% drawn</div>
+        </div>
+        <div class="stat-label">Total Drawn</div>
+        <div class="stat-value" style="color:var(--amber)">$843K</div>
+        <div class="stat-detail">Draw #4 pending · +$187K</div>
+        <div class="pbar"><div class="pbar-fill" style="width:68%;background:var(--amber)"></div></div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-accent-bar" style="background:var(--teal)"></div>
+        <div class="stat-icon-area">
+          <div class="stat-icon" style="background:var(--teal-bg)">🔒</div>
+          <div class="stat-change-badge" style="background:var(--teal-bg);color:var(--teal)">10%</div>
+        </div>
+        <div class="stat-label">Retainage Held</div>
+        <div class="stat-value" style="color:var(--teal)">$84.3K</div>
+        <div class="stat-detail">Releases at 50% complete</div>
+        <div class="pbar"><div class="pbar-fill" style="width:10%;background:var(--teal)"></div></div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-accent-bar" style="background:var(--green)"></div>
+        <div class="stat-icon-area">
+          <div class="stat-icon" style="background:var(--green-bg)">✅</div>
+          <div class="stat-change-badge" style="background:var(--green-bg);color:var(--green)">On budget</div>
+        </div>
+        <div class="stat-label">Budget Remaining</div>
+        <div class="stat-value" style="color:var(--green)">$397K</div>
+        <div class="stat-detail">32% · 3 draws remaining</div>
+        <div class="pbar"><div class="pbar-fill" style="width:32%;background:var(--green)"></div></div>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid">
+
+      <!-- TABLE -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title">Schedule of Values — Draw #4</div>
+            <div class="card-sub">G703 · Application for Payment · 7 of 16 line items</div>
+          </div>
+          <button class="btn btn-outline" style="font-size:12px;padding:7px 13px">Filter ▾</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Line Item</th>
+              <th>Budget</th>
+              <th>Prior Draws</th>
+              <th>This Draw</th>
+              <th>% Complete</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="item-name">Foundation & Concrete</div><div class="item-div">Division 03</div></td>
+              <td>$128,000</td>
+              <td>$128,000</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="pill pill-green">✓ 100%</span></td>
+              <td style="color:var(--muted)">$0</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Structural Framing</div><div class="item-div">Division 06</div></td>
+              <td>$214,000</td>
+              <td>$160,500</td>
+              <td style="color:var(--amber);font-weight:700">$42,800</td>
+              <td><span class="pill pill-amber">94%</span></td>
+              <td>$10,700</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Roofing</div><div class="item-div">Division 07</div></td>
+              <td>$48,500</td>
+              <td>$24,250</td>
+              <td style="color:var(--amber);font-weight:700">$24,250</td>
+              <td><span class="pill pill-green">✓ 100%</span></td>
+              <td style="color:var(--muted)">$0</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Electrical Rough-In</div><div class="item-div">Division 16</div></td>
+              <td>$62,000</td>
+              <td>$31,000</td>
+              <td style="color:var(--amber);font-weight:700">$18,600</td>
+              <td><span class="pill pill-amber">80%</span></td>
+              <td>$12,400</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Plumbing Rough-In</div><div class="item-div">Division 15</div></td>
+              <td>$55,000</td>
+              <td>$27,500</td>
+              <td style="color:var(--amber);font-weight:700">$16,500</td>
+              <td><span class="pill pill-amber">80%</span></td>
+              <td>$11,000</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">HVAC</div><div class="item-div">Division 15</div></td>
+              <td>$72,000</td>
+              <td style="color:var(--muted)">—</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="pill pill-teal">Not started</span></td>
+              <td>$72,000</td>
+            </tr>
+            <tr>
+              <td><div class="item-name">Insulation & Drywall</div><div class="item-div">Division 09</div></td>
+              <td>$84,000</td>
+              <td style="color:var(--muted)">—</td>
+              <td style="color:var(--muted)">—</td>
+              <td><span class="pill pill-teal">Not started</span></td>
+              <td>$84,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <!-- WORKFLOW -->
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">Draw #4 — Workflow</div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-circle sc-done">✓</div>
+            <div class="step-body">
+              <div class="step-title">AI Invoice Parsing</div>
+              <div class="step-desc">4 invoices · 91% avg confidence</div>
+            </div>
+            <div class="step-end">✅</div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-circle sc-done">✓</div>
+            <div class="step-body">
+              <div class="step-title">G702 / G703 Generated</div>
+              <div class="step-desc">Schedule of Values populated</div>
+            </div>
+            <div class="step-end">✅</div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-circle sc-active">3</div>
+            <div class="step-body">
+              <div class="step-title">Your Review</div>
+              <div class="step-desc">Confirm amounts · approve package</div>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-circle sc-todo">4</div>
+            <div class="step-body">
+              <div class="step-title">Submit to Eastern Bank</div>
+              <div class="step-desc">G702/G703 PDF + invoices</div>
+            </div>
+          </div>
+          <div class="cta-pad">
+            <button class="btn btn-primary" style="width:100%;justify-content:center;font-family:'Inter',sans-serif">
+              Review & Submit Draw →
+            </button>
+          </div>
+        </div>
+
+        <!-- AI INSIGHTS -->
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">✦ AI Insights</div>
+          </div>
+          <div class="ai-item">
+            <div class="ai-tag ai-flag">Flag</div>
+            <div class="ai-text"><strong>Framing at 94%</strong> — final $10.7K will bill next draw. Add a note on G702 to pre-empt lender questions.</div>
+          </div>
+          <div class="ai-item">
+            <div class="ai-tag ai-good">Good</div>
+            <div class="ai-text"><strong>Roofing complete</strong> — 8 days ahead of schedule. No retainage exception needed.</div>
+          </div>
+          <div class="ai-item">
+            <div class="ai-tag ai-info">Note</div>
+            <div class="ai-text"><strong>HVAC & Drywall</strong> not started — budget runway is sufficient at current draw pace.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

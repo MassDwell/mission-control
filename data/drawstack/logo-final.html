@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Final Logo System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syne:wght@700;800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f5f9;
+    -webkit-font-smoothing: antialiased;
+    padding: 56px 64px;
+  }
+  .label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9ca3af;
+    margin-bottom: 10px;
+  }
+  .section { margin-bottom: 48px; }
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #6b7280;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .on-dark {
+    background: #1a1f36;
+    padding: 28px 36px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+  }
+  .on-light {
+    background: #ffffff;
+    padding: 28px 36px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+  }
+  .on-white {
+    background: #ffffff;
+    padding: 20px 28px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+  }
+  .color-swatch {
+    width: 80px; height: 80px; border-radius: 12px;
+    display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 10px;
+  }
+  .swatch-hex { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.8); letter-spacing: 0.5px; }
+  .swatch-name { font-size: 9px; color: rgba(255,255,255,0.6); margin-top: 1px; }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div style="margin-bottom:48px">
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#9ca3af;margin-bottom:6px">DrawStack · Brand Identity System</div>
+  <div style="font-size:32px;font-weight:900;letter-spacing:-1.5px;color:#111827">Logo & Mark — Final</div>
+</div>
+
+<!-- ═══ THE MARK ═══ -->
+<div class="section">
+  <div class="section-title">01 — The Mark</div>
+  <div class="row">
+
+    <!-- PRIMARY MARK: D with stacked lines -->
+    <div class="chip">
+      <div class="label">Primary Mark</div>
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background square with rounded corners -->
+        <rect width="80" height="80" rx="18" fill="#1e2253"/>
+        <!-- Vertical stroke of D -->
+        <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+        <!-- Stacked horizontal bars forming D curve -->
+        <!-- Bar 1 (top) -->
+        <rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+        <!-- Bar 2 -->
+        <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+        <!-- Bar 3 (widest - middle) -->
+        <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/>
+        <!-- Bar 4 -->
+        <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+        <!-- Bar 5 (bottom) -->
+        <rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+      </svg>
+    </div>
+
+    <!-- ICON ON GRADIENT -->
+    <div class="chip">
+      <div class="label">Gradient Variant</div>
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad1" x1="0" y1="0" x2="80" y2="80">
+            <stop offset="0%" stop-color="#3730a3"/>
+            <stop offset="100%" stop-color="#5b21b6"/>
+          </linearGradient>
+        </defs>
+        <rect width="80" height="80" rx="18" fill="url(#grad1)"/>
+        <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+        <rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+        <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+        <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/>
+        <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+        <rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+      </svg>
+    </div>
+
+    <!-- ICON ON LIGHT BG -->
+    <div class="chip">
+      <div class="label">Light Background</div>
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="80" height="80" rx="18" fill="#eef2ff"/>
+        <rect x="16" y="14" width="10" height="52" rx="3" fill="#3730a3"/>
+        <rect x="26" y="14" width="22" height="8" rx="3" fill="#4338ca"/>
+        <rect x="26" y="25" width="32" height="8" rx="3" fill="#4f46e5"/>
+        <rect x="26" y="36" width="36" height="8" rx="3" fill="#6366f1"/>
+        <rect x="26" y="47" width="32" height="8" rx="3" fill="#4f46e5"/>
+        <rect x="26" y="58" width="22" height="8" rx="3" fill="#4338ca"/>
+      </svg>
+    </div>
+
+    <!-- ICON FLAT DARK -->
+    <div class="chip">
+      <div class="label">Flat / Monochrome</div>
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="80" height="80" rx="18" fill="#111827"/>
+        <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+        <rect x="26" y="14" width="22" height="8" rx="3" fill="white"/>
+        <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.7)"/>
+        <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.5)"/>
+        <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.7)"/>
+        <rect x="26" y="58" width="22" height="8" rx="3" fill="white"/>
+      </svg>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ LOCKUP — DARK ═══ -->
+<div class="section">
+  <div class="section-title">02 — Lockup · Dark Background (Sidebar)</div>
+  <div class="row">
+
+    <div class="chip">
+      <div class="label">Full Lockup</div>
+      <div class="on-dark">
+        <div style="display:flex;align-items:center;gap:14px">
+          <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
+            <rect width="80" height="80" rx="18" fill="#1e2253"/>
+            <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+            <rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+            <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+            <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/>
+            <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+            <rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+          </svg>
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:22px;font-weight:800;letter-spacing:-1px;color:white;line-height:1">DrawStack</div>
+            <div style="font-size:9.5px;color:#5c6494;letter-spacing:2px;text-transform:uppercase;margin-top:3px;font-weight:700">Construction Finance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chip">
+      <div class="label">Compact (collapsed nav)</div>
+      <div class="on-dark" style="padding:20px 24px">
+        <svg width="36" height="36" viewBox="0 0 80 80" fill="none">
+          <rect width="80" height="80" rx="18" fill="#1e2253"/>
+          <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+          <rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+          <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+          <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/>
+          <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+          <rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ LOCKUP — LIGHT ═══ -->
+<div class="section">
+  <div class="section-title">03 — Lockup · Light Background (Main Area / Marketing)</div>
+  <div class="row">
+
+    <div class="chip">
+      <div class="label">Full Lockup</div>
+      <div class="on-light">
+        <div style="display:flex;align-items:center;gap:14px">
+          <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
+            <defs>
+              <linearGradient id="grad2" x1="0" y1="0" x2="80" y2="80">
+                <stop offset="0%" stop-color="#3730a3"/>
+                <stop offset="100%" stop-color="#5b21b6"/>
+              </linearGradient>
+            </defs>
+            <rect width="80" height="80" rx="18" fill="url(#grad2)"/>
+            <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+            <rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+            <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+            <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/>
+            <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+            <rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+          </svg>
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:22px;font-weight:800;letter-spacing:-1px;color:#111827;line-height:1">DrawStack</div>
+            <div style="font-size:9.5px;color:#9ca3af;letter-spacing:2px;text-transform:uppercase;margin-top:3px;font-weight:700">Construction Finance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chip">
+      <div class="label">Nav / App Header</div>
+      <div class="on-light" style="padding:16px 22px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+            <rect width="80" height="80" rx="18" fill="#1e2253"/>
+            <rect x="16" y="14" width="10" height="52" rx="3" fill="white"/>
+            <rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+            <rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+            <rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/>
+            <rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/>
+            <rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/>
+          </svg>
+          <div style="font-family:'Inter',sans-serif;font-size:16px;font-weight:800;letter-spacing:-0.5px;color:#111827">DrawStack</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SIZES ═══ -->
+<div class="section">
+  <div class="section-title">04 — Scale Test</div>
+  <div style="background:white;border:1px solid #e5e7eb;border-radius:14px;padding:32px">
+    <div style="display:flex;align-items:flex-end;gap:28px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <svg width="96" height="96" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/></svg>
+        <div style="font-size:9px;color:#9ca3af;font-weight:600">96px</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <svg width="64" height="64" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/></svg>
+        <div style="font-size:9px;color:#9ca3af;font-weight:600">64px</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <svg width="48" height="48" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/></svg>
+        <div style="font-size:9px;color:#9ca3af;font-weight:600">48px</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <svg width="32" height="32" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/></svg>
+        <div style="font-size:9px;color:#9ca3af;font-weight:600">32px</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <svg width="24" height="24" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.9)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.8)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.8)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.9)"/></svg>
+        <div style="font-size:9px;color:#9ca3af;font-weight:600">24px</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <svg width="16" height="16" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="14" y="12" width="12" height="56" rx="3" fill="white"/><rect x="26" y="12" width="22" height="9" rx="2" fill="rgba(255,255,255,0.95)"/><rect x="26" y="24" width="32" height="9" rx="2" fill="rgba(255,255,255,0.8)"/><rect x="26" y="36" width="36" height="9" rx="2" fill="rgba(255,255,255,0.65)"/><rect x="26" y="48" width="32" height="9" rx="2" fill="rgba(255,255,255,0.8)"/><rect x="26" y="60" width="22" height="9" rx="2" fill="rgba(255,255,255,0.95)"/></svg>
+        <div style="font-size:9px;color:#9ca3af;font-weight:600">16px</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <svg width="12" height="12" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="16" fill="#1e2253"/><rect x="14" y="12" width="12" height="56" rx="3" fill="white"/><rect x="26" y="12" width="40" height="10" rx="2" fill="rgba(255,255,255,0.9)"/><rect x="26" y="35" width="40" height="10" rx="2" fill="rgba(255,255,255,0.7)"/><rect x="26" y="58" width="26" height="10" rx="2" fill="rgba(255,255,255,0.9)"/></svg>
+        <div style="font-size:9px;color:#9ca3af;font-weight:600">12px</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COLORS ═══ -->
+<div class="section">
+  <div class="section-title">05 — Color System</div>
+  <div class="row">
+    <div class="chip">
+      <div class="label">Brand Navy</div>
+      <div class="color-swatch" style="background:#1e2253">
+        <div class="swatch-hex">#1E2253</div>
+        <div class="swatch-name">Icon BG / Sidebar</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="label">Brand Indigo</div>
+      <div class="color-swatch" style="background:#3730a3">
+        <div class="swatch-hex">#3730A3</div>
+        <div class="swatch-name">Primary Action</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="label">Brand Mid</div>
+      <div class="color-swatch" style="background:#4f46e5">
+        <div class="swatch-hex">#4F46E5</div>
+        <div class="swatch-name">Links / Accents</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="label">Brand Violet</div>
+      <div class="color-swatch" style="background:#5b21b6">
+        <div class="swatch-hex">#5B21B6</div>
+        <div class="swatch-name">Gradient End</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="label">Surface</div>
+      <div class="color-swatch" style="background:#f8fafc;border:1px solid #e5e7eb">
+        <div class="swatch-hex" style="color:#6b7280">#F8FAFC</div>
+        <div class="swatch-name" style="color:#9ca3af">Main BG</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="label">Text Primary</div>
+      <div class="color-swatch" style="background:#111827">
+        <div class="swatch-hex">#111827</div>
+        <div class="swatch-name">Headings</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

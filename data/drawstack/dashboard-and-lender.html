@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>DrawStack — Dashboard + Lender Portal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --bg:       #f7f8fc;
+    --surface:  #ffffff;
+    --surface2: #f0f2f8;
+    --sidebar:  #1a1f36;
+    --sidebar2: #242a48;
+    --sb-hover: #2a3155;
+    --border:   #e3e8f0;
+    --text:     #111827;
+    --text2:    #374151;
+    --muted:    #6b7280;
+    --s-text:   #e8ecf8;
+    --s-muted:  #7888b8;
+    --indigo:   #4f46e5;
+    --indigo-lt:#eef2ff;
+    --green:    #059669;
+    --green-lt: #ecfdf5;
+    --amber:    #d97706;
+    --amber-lt: #fffbeb;
+    --red:      #dc2626;
+    --red-lt:   #fef2f2;
+    --teal:     #0891b2;
+    --teal-lt:  #ecfeff;
+    --purple:   #7c3aed;
+    --purple-lt:#f5f3ff;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #1a1f36;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px;
+  }
+
+  .screens { display: flex; flex-direction: column; gap: 40px; }
+  .screen-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #5c6494; margin-bottom: 10px; }
+
+  .app { display: flex; height: 860px; border-radius: 16px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.5); }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar { width: 220px; min-width: 220px; background: var(--sidebar); display: flex; flex-direction: column; }
+  .logo { padding: 18px 16px 14px; border-bottom: 1px solid #2a3155; }
+  .logo-inner { display: flex; align-items: center; gap: 10px; }
+  .logo-name { font-size: 16px; font-weight: 800; letter-spacing: -0.5px; color: white; line-height: 1.1; }
+  .logo-tagline { font-size: 9px; color: var(--s-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; font-weight: 600; }
+  .org-switch { margin: 10px 12px 0; padding: 7px 9px; background: var(--sidebar2); border-radius: 7px; display: flex; align-items: center; gap: 7px; cursor: pointer; }
+  .org-avatar { width: 20px; height: 20px; border-radius: 4px; background: linear-gradient(135deg, #4f46e5, #7c3aed); display: flex; align-items: center; justify-content: center; font-size: 9px; color: white; font-weight: 700; }
+  .org-name { font-size: 11px; font-weight: 600; color: var(--s-text); flex: 1; }
+  .nav { padding: 10px 8px; flex: 1; }
+  .nav-section-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--s-muted); padding: 6px 8px 3px; font-weight: 600; }
+  .nav-item { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 6px; font-size: 12.5px; font-weight: 500; color: var(--s-muted); cursor: pointer; margin-bottom: 1px; }
+  .nav-item:hover, .nav-item.active { background: var(--sb-hover); color: white; }
+  .nav-item .icon { width: 16px; text-align: center; font-size: 14px; opacity: 0.7; }
+  .nav-item.active .icon { opacity: 1; }
+  .nav-badge { margin-left: auto; background: var(--indigo); color: white; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 99px; }
+  .sidebar-footer { padding: 12px; border-top: 1px solid #2a3155; }
+  .user-row { display: flex; align-items: center; gap: 8px; }
+  .user-av { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #4f46e5, #06b6d4); display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; font-weight: 700; }
+  .user-info { flex: 1; }
+  .user-name { font-size: 12px; font-weight: 600; color: var(--s-text); }
+  .user-role { font-size: 10px; color: var(--s-muted); }
+
+  /* ─── MAIN ─── */
+  .main { flex: 1; background: var(--bg); display: flex; flex-direction: column; overflow: hidden; }
+  .topbar { height: 52px; background: white; border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 24px; gap: 16px; flex-shrink: 0; }
+  .topbar-title { font-size: 15px; font-weight: 800; color: var(--text); letter-spacing: -0.3px; }
+  .topbar-spacer { flex: 1; }
+  .topbar-btn { padding: 7px 16px; border-radius: 7px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; font-family: 'Inter', sans-serif; }
+  .btn-primary { background: var(--indigo); color: white; }
+  .btn-outline { background: white; color: var(--text2); border: 1px solid var(--border); }
+  .content { flex: 1; overflow-y: auto; padding: 28px 32px; }
+
+  /* ─── STAT CARDS ─── */
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+  .stat-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px 20px; }
+  .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 8px; }
+  .stat-value { font-size: 26px; font-weight: 900; letter-spacing: -1px; color: var(--text); line-height: 1; }
+  .stat-value.indigo { color: var(--indigo); }
+  .stat-value.green { color: var(--green); }
+  .stat-value.amber { color: var(--amber); }
+  .stat-sub { font-size: 11px; color: var(--muted); margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+  .stat-sub .up { color: var(--green); font-weight: 700; }
+  .stat-sub .down { color: var(--red); font-weight: 700; }
+
+  /* ─── DRAWS TABLE ─── */
+  .section-header { display: flex; align-items: center; margin-bottom: 14px; gap: 12px; }
+  .section-title { font-size: 14px; font-weight: 800; color: var(--text); letter-spacing: -0.3px; }
+  .section-spacer { flex: 1; }
+  .filter-tabs { display: flex; gap: 2px; background: var(--surface2); padding: 3px; border-radius: 8px; }
+  .filter-tab { padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer; color: var(--muted); }
+  .filter-tab.active { background: white; color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
+  .draws-table { width: 100%; background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+  .draws-table table { width: 100%; border-collapse: collapse; }
+  .draws-table th { text-align: left; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); padding: 12px 16px; border-bottom: 1.5px solid var(--border); background: #fafbff; }
+  .draws-table td { padding: 14px 16px; border-bottom: 1px solid #f3f4f6; font-size: 13px; vertical-align: middle; }
+  .draws-table tr:last-child td { border-bottom: none; }
+  .draws-table tr:hover td { background: #fafbff; cursor: pointer; }
+
+  .proj-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .draw-proj { display: flex; align-items: center; gap: 10px; }
+  .draw-proj-name { font-size: 13px; font-weight: 700; color: var(--text); }
+  .draw-proj-meta { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .draw-num { font-size: 12px; font-weight: 700; color: var(--indigo); background: var(--indigo-lt); padding: 2px 8px; border-radius: 99px; }
+  .draw-amount { font-size: 14px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+  .draw-date { font-size: 12px; color: var(--muted); }
+
+  /* Status chips */
+  .status { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+  .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .status.draft { background: #f3f4f6; color: #6b7280; }
+  .status.submitted { background: #eff6ff; color: #2563eb; }
+  .status.reviewing { background: var(--amber-lt); color: var(--amber); }
+  .status.approved { background: #f0fdf4; color: #16a34a; }
+  .status.funded { background: var(--green-lt); color: var(--green); }
+  .status.info-req { background: var(--purple-lt); color: var(--purple); }
+  .status.rejected { background: var(--red-lt); color: var(--red); }
+
+  /* Timeline dots */
+  .timeline-bar { display: flex; align-items: center; gap: 0; width: 120px; }
+  .tl-step { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--border); background: white; flex-shrink: 0; }
+  .tl-step.done { background: var(--green); border-color: var(--green); }
+  .tl-step.active { background: var(--indigo); border-color: var(--indigo); box-shadow: 0 0 0 2px #c7d2fe; }
+  .tl-line { flex: 1; height: 2px; background: var(--border); }
+  .tl-line.done { background: var(--green); }
+
+  .action-btn { padding: 5px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: white; color: var(--text2); font-family: 'Inter',sans-serif; }
+  .action-btn:hover { background: var(--surface2); }
+
+  /* ─── RIGHT PANEL: ACTIVITY ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 16px; }
+  .activity-feed { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px 20px; }
+  .activity-title { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 16px; }
+  .activity-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f3f4f6; }
+  .activity-item:last-child { border-bottom: none; }
+  .act-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+  .act-icon.green { background: var(--green-lt); }
+  .act-icon.indigo { background: var(--indigo-lt); }
+  .act-icon.amber { background: var(--amber-lt); }
+  .act-icon.purple { background: var(--purple-lt); }
+  .act-text { font-size: 12px; color: var(--text2); line-height: 1.5; flex: 1; }
+  .act-text strong { color: var(--text); font-weight: 700; }
+  .act-time { font-size: 10px; color: var(--muted); margin-top: 3px; }
+
+  /* ═══════════════════════════════════════════════
+     LENDER PORTAL
+  ═══════════════════════════════════════════════ */
+  .lender-app { display: flex; height: 860px; border-radius: 16px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.5); }
+
+  /* Lender sidebar - lighter, bank-y */
+  .lender-sidebar { width: 240px; min-width: 240px; background: #0f172a; display: flex; flex-direction: column; }
+  .lender-logo { padding: 20px 18px 16px; border-bottom: 1px solid #1e293b; }
+  .bank-name { font-size: 14px; font-weight: 800; color: white; letter-spacing: -0.3px; }
+  .bank-sub { font-size: 10px; color: #475569; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 2px; }
+  .lender-nav { padding: 12px 10px; flex: 1; }
+  .lender-nav-item { display: flex; align-items: center; gap: 9px; padding: 7px 10px; border-radius: 7px; font-size: 12.5px; font-weight: 500; color: #64748b; cursor: pointer; margin-bottom: 2px; }
+  .lender-nav-item.active { background: #1e293b; color: #e2e8f0; }
+  .lender-nav-item .icon { font-size: 14px; width: 16px; text-align: center; }
+  .lender-badge { margin-left: auto; background: #ef4444; color: white; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 99px; }
+  .lender-user { padding: 14px 16px; border-top: 1px solid #1e293b; }
+  .lender-user-name { font-size: 12px; font-weight: 700; color: #e2e8f0; }
+  .lender-user-role { font-size: 10px; color: #475569; margin-top: 1px; }
+
+  /* Lender main */
+  .lender-main { flex: 1; background: #f8fafc; display: flex; flex-direction: column; overflow: hidden; }
+  .lender-topbar { height: 56px; background: white; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; padding: 0 28px; gap: 16px; flex-shrink: 0; }
+  .lender-topbar-title { font-size: 15px; font-weight: 800; color: #0f172a; letter-spacing: -0.3px; }
+  .lender-topbar-spacer { flex: 1; }
+  .lender-topbar-btn { padding: 8px 18px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; border: none; font-family: 'Inter', sans-serif; }
+  .lender-btn-approve { background: #059669; color: white; }
+  .lender-btn-info { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+  .lender-btn-reject { background: white; color: #dc2626; border: 1px solid #fca5a5; }
+  .lender-content { flex: 1; overflow-y: auto; padding: 24px 28px; }
+
+  /* Draw header card */
+  .draw-header-card { background: white; border-radius: 14px; border: 1px solid #e2e8f0; padding: 22px 24px; margin-bottom: 18px; display: flex; align-items: flex-start; gap: 20px; }
+  .draw-header-left { flex: 1; }
+  .draw-header-title { font-size: 20px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; }
+  .draw-header-meta { font-size: 12px; color: #64748b; margin-top: 4px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .draw-header-meta span { display: flex; align-items: center; gap: 4px; }
+  .draw-header-amount { text-align: right; }
+  .draw-header-amount-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; }
+  .draw-header-amount-value { font-size: 32px; font-weight: 900; color: #0f172a; letter-spacing: -1px; line-height: 1.1; }
+  .draw-header-amount-sub { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+  .review-status-bar { display: flex; align-items: center; gap: 0; margin-top: 14px; }
+  .rs-step { display: flex; align-items: center; gap: 8px; }
+  .rs-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .rs-dot.done { background: #059669; }
+  .rs-dot.active { background: #2563eb; box-shadow: 0 0 0 3px #bfdbfe; }
+  .rs-dot.pending { background: #e2e8f0; }
+  .rs-label { font-size: 11px; font-weight: 600; color: #64748b; }
+  .rs-label.active { color: #2563eb; }
+  .rs-label.done { color: #059669; }
+  .rs-line { flex: 1; height: 2px; background: #e2e8f0; margin: 0 8px; }
+  .rs-line.done { background: #059669; }
+
+  /* Two-col lender layout */
+  .lender-grid { display: grid; grid-template-columns: 1fr 340px; gap: 16px; }
+
+  /* SOV review table */
+  .lender-card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; margin-bottom: 16px; }
+  .lender-card-title { font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .lender-card-title .badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: #eff6ff; color: #2563eb; }
+
+  .lender-sov { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .lender-sov th { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; padding: 0 10px 10px; border-bottom: 1.5px solid #e2e8f0; text-align: left; }
+  .lender-sov th.right { text-align: right; }
+  .lender-sov td { padding: 11px 10px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+  .lender-sov tr:last-child td { border-bottom: none; }
+  .lender-sov .flag { background: #fffbeb; }
+  .sov-flag-icon { font-size: 14px; margin-left: 6px; }
+  .lender-sov .total-row td { background: #f8fafc; font-weight: 700; border-top: 2px solid #e2e8f0; }
+  .lender-pct { font-size: 12px; font-weight: 700; }
+  .lender-pct.good { color: #059669; }
+  .lender-pct.warn { color: #d97706; }
+  .variance-chip { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 99px; }
+  .variance-chip.ok { background: #f0fdf4; color: #16a34a; }
+  .variance-chip.warn { background: #fffbeb; color: #b45309; }
+
+  /* Documents panel */
+  .doc-item { display: flex; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px solid #f1f5f9; }
+  .doc-item:last-child { border-bottom: none; }
+  .doc-icon { font-size: 20px; flex-shrink: 0; }
+  .doc-name { font-size: 12px; font-weight: 600; color: #0f172a; flex: 1; }
+  .doc-sub { font-size: 10px; color: #94a3b8; margin-top: 1px; }
+  .doc-status { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 99px; }
+  .doc-status.ok { background: #f0fdf4; color: #16a34a; }
+  .doc-status.warn { background: #fffbeb; color: #b45309; }
+  .doc-view { font-size: 11px; font-weight: 600; color: #2563eb; cursor: pointer; }
+
+  /* Timeline/Comments */
+  .comment-thread { display: flex; flex-direction: column; gap: 14px; }
+  .comment-item { display: flex; gap: 10px; }
+  .comment-av { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; flex-shrink: 0; }
+  .comment-av.bank { background: #1e3a5f; }
+  .comment-av.gc { background: linear-gradient(135deg, #4f46e5, #7c3aed); }
+  .comment-av.sys { background: #e2e8f0; font-size: 14px; }
+  .comment-bubble { flex: 1; }
+  .comment-meta { font-size: 10px; color: #94a3b8; margin-bottom: 4px; }
+  .comment-meta strong { color: #334155; font-weight: 700; }
+  .comment-text { font-size: 12px; color: #334155; line-height: 1.5; background: #f8fafc; border-radius: 0 8px 8px 8px; padding: 9px 11px; border: 1px solid #e2e8f0; }
+  .comment-text.bank-bubble { background: #eff6ff; border-color: #bfdbfe; }
+  .comment-input-row { display: flex; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid #e2e8f0; }
+  .comment-input { flex: 1; padding: 9px 12px; border-radius: 8px; border: 1.5px solid #e2e8f0; font-size: 12px; font-family: 'Inter',sans-serif; color: #334155; }
+  .comment-send { padding: 8px 14px; background: #2563eb; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'Inter',sans-serif; }
+
+  /* Action buttons */
+  .action-bar { display: flex; gap: 10px; }
+  .action-bar-big { padding: 11px 20px; border-radius: 9px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; font-family: 'Inter',sans-serif; flex: 1; text-align: center; }
+  .abb-approve { background: #059669; color: white; }
+  .abb-info { background: #eff6ff; color: #2563eb; border: 1.5px solid #bfdbfe; }
+  .abb-reject { background: white; color: #dc2626; border: 1.5px solid #fca5a5; }
+
+  /* Project summary card in lender */
+  .proj-summary-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 12px; }
+  .proj-summary-row:last-child { border-bottom: none; }
+  .pskey { color: #64748b; font-weight: 500; }
+  .psval { font-weight: 700; color: #0f172a; }
+  .psval.green { color: #059669; }
+  .psval.indigo { color: #2563eb; }
+
+  .lender-progress-bar { height: 8px; border-radius: 99px; background: #e2e8f0; overflow: hidden; margin-top: 10px; }
+  .lender-progress-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #2563eb, #059669); }
+
+  /* Inspection note */
+  .inspection-banner { background: #fffbeb; border: 1px solid #fde68a; border-radius: 9px; padding: 12px 14px; margin-bottom: 14px; font-size: 12px; color: #92400e; display: flex; gap: 10px; align-items: flex-start; }
+  .inspection-banner strong { display: block; font-weight: 700; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+<div class="screens">
+
+<!-- ══════════════════════════════════════════════════════════════
+     SCREEN A: GC DASHBOARD — ALL DRAWS
+═══════════════════════════════════════════════════════════════ -->
+<div>
+  <div class="screen-label">GC Dashboard — All Active Draws + Status Tracking</div>
+  <div class="app">
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-inner">
+          <svg width="36" height="36" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#1e2253"/><rect x="16" y="14" width="10" height="52" rx="3" fill="white"/><rect x="26" y="14" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/><rect x="26" y="25" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="36" width="36" height="8" rx="3" fill="rgba(255,255,255,0.75)"/><rect x="26" y="47" width="32" height="8" rx="3" fill="rgba(255,255,255,0.85)"/><rect x="26" y="58" width="22" height="8" rx="3" fill="rgba(255,255,255,0.95)"/></svg>
+          <div><div class="logo-name">DrawStack</div><div class="logo-tagline">Construction Finance</div></div>
+        </div>
+        <div class="org-switch" style="margin-top:10px"><div class="org-avatar">AP</div><div class="org-name">Alpine Property Group</div><div style="font-size:10px;color:#5c6494">⌄</div></div>
+      </div>
+      <div class="nav">
+        <div class="nav-section-label">Main</div>
+        <div class="nav-item active"><span class="icon">⬛</span> Dashboard</div>
+        <div class="nav-item"><span class="icon">📋</span> Draw Requests <span class="nav-badge">3</span></div>
+        <div class="nav-item"><span class="icon">🏗</span> Projects</div>
+        <div class="nav-item"><span class="icon">🏦</span> Lenders</div>
+        <div class="nav-section-label" style="margin-top:8px">Finance</div>
+        <div class="nav-item"><span class="icon">📊</span> Analytics</div>
+        <div class="nav-item"><span class="icon">📄</span> Documents</div>
+        <div class="nav-item"><span class="icon">⚙️</span> Settings</div>
+      </div>
+      <div class="sidebar-footer"><div class="user-row"><div class="user-av">SV</div><div class="user-info"><div class="user-name">Steve Vettori</div><div class="user-role">General Contractor</div></div></div></div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-title">Dashboard</div>
+        <div class="topbar-spacer"></div>
+        <button class="topbar-btn btn-outline">Export Report</button>
+        <button class="topbar-btn btn-primary">+ New Draw Request</button>
+      </div>
+      <div class="content">
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">In Pipeline</div>
+            <div class="stat-value indigo">$1.84M</div>
+            <div class="stat-sub">Across <strong>5</strong> active draws</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Awaiting Approval</div>
+            <div class="stat-value amber">$747K</div>
+            <div class="stat-sub"><span class="down">⚠</span> 3 draws pending lender</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Funded This Month</div>
+            <div class="stat-value green">$612K</div>
+            <div class="stat-sub"><span class="up">↑ 18%</span> vs last month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Avg. Approval Time</div>
+            <div class="stat-value">4.2d</div>
+            <div class="stat-sub"><span class="up">↓ 0.8d</span> faster than avg</div>
+          </div>
+        </div>
+
+        <!-- Draws table -->
+        <div class="section-header">
+          <div class="section-title">Active Draw Requests</div>
+          <div class="filter-tabs">
+            <div class="filter-tab active">All</div>
+            <div class="filter-tab">Pending</div>
+            <div class="filter-tab">Under Review</div>
+            <div class="filter-tab">Approved</div>
+            <div class="filter-tab">Funded</div>
+          </div>
+          <div class="section-spacer"></div>
+          <div style="font-size:11px;color:var(--muted)">5 draws · 4 projects</div>
+        </div>
+
+        <div class="draws-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Draw</th>
+                <th>Period</th>
+                <th style="text-align:right">Amount</th>
+                <th>Status</th>
+                <th>Progress</th>
+                <th>Submitted</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 - Info Requested -->
+              <tr>
+                <td>
+                  <div class="draw-proj">
+                    <div class="proj-dot" style="background:#f59e0b"></div>
+                    <div>
+                      <div class="draw-proj-name">55 Derby Street</div>
+                      <div class="draw-proj-meta">Salem, MA · First Republic</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="draw-num">Draw #6</span></td>
+                <td><div class="draw-date">Feb 1–28, 2026</div></td>
+                <td style="text-align:right"><div class="draw-amount">$284,500</div></td>
+                <td><span class="status info-req">Info Requested</span></td>
+                <td>
+                  <div class="timeline-bar">
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step active"></div><div class="tl-line"></div>
+                    <div class="tl-step pending"></div>
+                  </div>
+                </td>
+                <td><div class="draw-date">Mar 2, 2026</div></td>
+                <td><button class="action-btn" style="background:#fff7ed;color:#c2410c;border-color:#fed7aa">Respond →</button></td>
+              </tr>
+              <!-- Row 2 - Under Review -->
+              <tr>
+                <td>
+                  <div class="draw-proj">
+                    <div class="proj-dot" style="background:#4f46e5"></div>
+                    <div>
+                      <div class="draw-proj-name">101 Condor Street</div>
+                      <div class="draw-proj-meta">East Boston, MA · First Republic</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="draw-num">Draw #4</span></td>
+                <td><div class="draw-date">Mar 1–31, 2026</div></td>
+                <td style="text-align:right"><div class="draw-amount">$354,150</div></td>
+                <td><span class="status reviewing">Under Review</span></td>
+                <td>
+                  <div class="timeline-bar">
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step active"></div><div class="tl-line"></div>
+                    <div class="tl-step pending"></div>
+                  </div>
+                </td>
+                <td><div class="draw-date">Mar 14, 2026</div></td>
+                <td><button class="action-btn">View</button></td>
+              </tr>
+              <!-- Row 3 - Approved -->
+              <tr>
+                <td>
+                  <div class="draw-proj">
+                    <div class="proj-dot" style="background:#059669"></div>
+                    <div>
+                      <div class="draw-proj-name">1114 Beacon Street</div>
+                      <div class="draw-proj-meta">Brookline, MA · Rockland Trust</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="draw-num">Draw #3</span></td>
+                <td><div class="draw-date">Feb 1–28, 2026</div></td>
+                <td style="text-align:right"><div class="draw-amount">$198,000</div></td>
+                <td><span class="status approved">Approved</span></td>
+                <td>
+                  <div class="timeline-bar">
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step active"></div>
+                  </div>
+                </td>
+                <td><div class="draw-date">Mar 8, 2026</div></td>
+                <td><button class="action-btn" style="background:#f0fdf4;color:#15803d;border-color:#bbf7d0">Wire Soon</button></td>
+              </tr>
+              <!-- Row 4 - Funded -->
+              <tr>
+                <td>
+                  <div class="draw-proj">
+                    <div class="proj-dot" style="background:#0891b2"></div>
+                    <div>
+                      <div class="draw-proj-name">3 Bellflower Street</div>
+                      <div class="draw-proj-meta">Somerville, MA · Eastern Bank</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="draw-num">Draw #5</span></td>
+                <td><div class="draw-date">Feb 1–28, 2026</div></td>
+                <td style="text-align:right"><div class="draw-amount">$412,000</div></td>
+                <td><span class="status funded">Funded ✓</span></td>
+                <td>
+                  <div class="timeline-bar">
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step done"></div><div class="tl-line done"></div>
+                    <div class="tl-step done"></div>
+                  </div>
+                </td>
+                <td><div class="draw-date">Mar 10, 2026</div></td>
+                <td><button class="action-btn">Receipt</button></td>
+              </tr>
+              <!-- Row 5 - Draft -->
+              <tr>
+                <td>
+                  <div class="draw-proj">
+                    <div class="proj-dot" style="background:#9ca3af"></div>
+                    <div>
+                      <div class="draw-proj-name">41 Chesley Road</div>
+                      <div class="draw-proj-meta">Newton, MA · Needham Bank</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="draw-num">Draw #2</span></td>
+                <td><div class="draw-date">Mar 1–31, 2026</div></td>
+                <td style="text-align:right"><div class="draw-amount" style="color:var(--muted)">—</div></td>
+                <td><span class="status draft">Draft</span></td>
+                <td>
+                  <div class="timeline-bar">
+                    <div class="tl-step active"></div><div class="tl-line"></div>
+                    <div class="tl-step pending"></div><div class="tl-line"></div>
+                    <div class="tl-step pending"></div><div class="tl-line"></div>
+                    <div class="tl-step pending"></div>
+                  </div>
+                </td>
+                <td><div class="draw-date" style="color:var(--muted)">Not submitted</div></td>
+                <td><button class="action-btn" style="background:var(--indigo-lt);color:var(--indigo);border-color:#c7d2fe">Continue →</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Activity feed -->
+        <div style="margin-top:20px">
+          <div class="section-header"><div class="section-title">Recent Activity</div></div>
+          <div class="activity-feed">
+            <div class="comment-thread" style="gap:0">
+              <div class="activity-item">
+                <div class="act-icon purple">💬</div>
+                <div>
+                  <div class="act-text"><strong>First Republic Bank</strong> requested additional info on 55 Derby St Draw #6 — "Please provide updated lien waivers for all subs over $50K."</div>
+                  <div class="act-time">Today at 10:22 AM</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="act-icon green">✅</div>
+                <div>
+                  <div class="act-text"><strong>Eastern Bank</strong> funded Draw #5 for 3 Bellflower St. Wire of <strong>$412,000</strong> initiated.</div>
+                  <div class="act-time">Mar 10 at 2:45 PM</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="act-icon indigo">📋</div>
+                <div>
+                  <div class="act-text"><strong>Draw #4</strong> for 101 Condor St submitted to First Republic Bank. Estimated review: 3–5 days.</div>
+                  <div class="act-time">Today at 4:00 PM</div>
+                </div>
+              </div>
+              <div class="activity-item" style="border-bottom:none">
+                <div class="act-icon amber">⏰</div>
+                <div>
+                  <div class="act-text"><strong>1114 Beacon St Draw #3</strong> approved by Rockland Trust. Wire expected within 2 business days.</div>
+                  <div class="act-time">Mar 8 at 11:15 AM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SCREEN B: LENDER PORTAL — WHAT THE BANK SEES
+═══════════════════════════════════════════════════════════════ -->
+<div>
+  <div class="screen-label">Lender Portal — What the Bank Sees (First Republic Bank)</div>
+  <div class="lender-app">
+
+    <!-- Lender Sidebar -->
+    <div class="lender-sidebar">
+      <div class="lender-logo">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:34px;height:34px;border-radius:8px;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:16px">🏦</div>
+          <div>
+            <div class="bank-name">First Republic</div>
+            <div class="bank-sub">Construction Lending</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;padding:6px 9px;background:#1e293b;border-radius:6px;font-size:10px;color:#64748b;display:flex;align-items:center;gap:6px">
+          <div style="width:6px;height:6px;border-radius:50%;background:#22c55e"></div>
+          Powered by DrawStack
+        </div>
+      </div>
+      <div class="lender-nav">
+        <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#334155;padding:6px 10px 3px;font-weight:600">Review Queue</div>
+        <div class="lender-nav-item active"><span class="icon">📋</span> Draw Requests <span class="lender-badge">7</span></div>
+        <div class="lender-nav-item"><span class="icon">🏗</span> Projects</div>
+        <div class="lender-nav-item"><span class="icon">👥</span> Borrowers</div>
+        <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#334155;padding:12px 10px 3px;font-weight:600">Tools</div>
+        <div class="lender-nav-item"><span class="icon">📊</span> Portfolio</div>
+        <div class="lender-nav-item"><span class="icon">📄</span> Compliance</div>
+        <div class="lender-nav-item"><span class="icon">📈</span> Reports</div>
+        <div class="lender-nav-item"><span class="icon">⚙️</span> Settings</div>
+      </div>
+      <div class="lender-user">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:28px;height:28px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#94a3b8;font-weight:700">SM</div>
+          <div>
+            <div class="lender-user-name">Sarah Mitchell</div>
+            <div class="lender-user-role">Construction Loan Officer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lender Main -->
+    <div class="lender-main">
+      <div class="lender-topbar">
+        <div>
+          <div class="lender-topbar-title">Draw Review — 101 Condor Street</div>
+          <div style="font-size:11px;color:#64748b;margin-top:1px">Alpine Property Group · Loan FRB-2024-0938 · Draw #4</div>
+        </div>
+        <div class="lender-topbar-spacer"></div>
+        <button class="lender-topbar-btn lender-btn-reject">Reject</button>
+        <button class="lender-topbar-btn lender-btn-info">Request Info</button>
+        <button class="lender-topbar-btn lender-btn-approve">✓ Approve Draw</button>
+      </div>
+
+      <div class="lender-content">
+
+        <!-- Draw header -->
+        <div class="draw-header-card">
+          <div class="draw-header-left">
+            <div class="draw-header-title">Draw #4 — March 2026</div>
+            <div class="draw-header-meta">
+              <span>🏗 101 Condor Street, East Boston</span>
+              <span>📅 Submitted Mar 14, 2026</span>
+              <span>👤 Steve Vettori, GC</span>
+            </div>
+            <div class="review-status-bar" style="margin-top:16px">
+              <div class="rs-step"><div class="rs-dot done"></div><div class="rs-label done" style="margin-left:6px">Received</div></div>
+              <div class="rs-line done"></div>
+              <div class="rs-step"><div class="rs-dot done"></div><div class="rs-label done" style="margin-left:6px">Docs Verified</div></div>
+              <div class="rs-line done"></div>
+              <div class="rs-step"><div class="rs-dot active"></div><div class="rs-label active" style="margin-left:6px">Under Review</div></div>
+              <div class="rs-line"></div>
+              <div class="rs-step"><div class="rs-dot pending"></div><div class="rs-label" style="margin-left:6px">Decision</div></div>
+              <div class="rs-line"></div>
+              <div class="rs-step"><div class="rs-dot pending"></div><div class="rs-label" style="margin-left:6px">Funded</div></div>
+            </div>
+          </div>
+          <div class="draw-header-amount">
+            <div class="draw-header-amount-label">Amount Requested</div>
+            <div class="draw-header-amount-value">$354,150</div>
+            <div class="draw-header-amount-sub">Net of 10% retainage ($39,350)</div>
+            <div style="margin-top:10px;font-size:11px;color:#64748b">Gross draw: $393,500</div>
+          </div>
+        </div>
+
+        <div class="lender-grid">
+          <!-- Left column -->
+          <div>
+            <!-- Project snapshot -->
+            <div class="lender-card">
+              <div class="lender-card-title">Loan Summary</div>
+              <div class="proj-summary-row"><span class="pskey">Loan Amount</span><span class="psval">$4,200,000</span></div>
+              <div class="proj-summary-row"><span class="pskey">Drawn to Date (incl. this draw)</span><span class="psval indigo">$2,283,500</span></div>
+              <div class="proj-summary-row"><span class="pskey">Remaining Availability</span><span class="psval green">$1,916,500</span></div>
+              <div class="proj-summary-row"><span class="pskey">% Complete</span><span class="psval">54%</span></div>
+              <div class="proj-summary-row" style="border-bottom:none"><span class="pskey">Retainage Held</span><span class="psval">$228,350</span></div>
+              <div class="lender-progress-bar"><div class="lender-progress-fill" style="width:54%"></div></div>
+              <div style="font-size:10px;color:#94a3b8;margin-top:6px;text-align:right">54% of project complete · 46% remaining</div>
+            </div>
+
+            <!-- SOV review -->
+            <div class="lender-card">
+              <div class="lender-card-title">Schedule of Values Review <span class="badge">G703</span></div>
+              <div class="inspection-banner">
+                <span style="font-size:16px">⚠️</span>
+                <div>
+                  <strong>Inspector Certification Waived</strong>
+                  Draw amount ($393,500) is under the $400K inspection threshold per loan agreement §4.2.
+                </div>
+              </div>
+              <table class="lender-sov">
+                <thead>
+                  <tr>
+                    <th>Line Item</th>
+                    <th class="right">Scheduled</th>
+                    <th class="right">Prev. Billed</th>
+                    <th class="right">This Draw</th>
+                    <th class="right">% Done</th>
+                    <th class="right">Variance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight:600;font-size:12px;color:#0f172a">General Conditions</td>
+                    <td style="text-align:right;font-size:12px">$210,000</td>
+                    <td style="text-align:right;font-size:12px;color:#64748b">$168,000</td>
+                    <td style="text-align:right;font-size:12px;font-weight:700">$21,000</td>
+                    <td style="text-align:right"><span class="lender-pct good">90%</span></td>
+                    <td style="text-align:right"><span class="variance-chip ok">On Track</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:600;font-size:12px;color:#0f172a">Site Work & Demo</td>
+                    <td style="text-align:right;font-size:12px">$340,000</td>
+                    <td style="text-align:right;font-size:12px;color:#64748b">$340,000</td>
+                    <td style="text-align:right;font-size:12px;color:#94a3b8">$0</td>
+                    <td style="text-align:right"><span class="lender-pct good">100%</span></td>
+                    <td style="text-align:right"><span class="variance-chip ok">Complete</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:600;font-size:12px;color:#0f172a">Foundation & Concrete</td>
+                    <td style="text-align:right;font-size:12px">$520,000</td>
+                    <td style="text-align:right;font-size:12px;color:#64748b">$520,000</td>
+                    <td style="text-align:right;font-size:12px;color:#94a3b8">$0</td>
+                    <td style="text-align:right"><span class="lender-pct good">100%</span></td>
+                    <td style="text-align:right"><span class="variance-chip ok">Complete</span></td>
+                  </tr>
+                  <tr class="flag">
+                    <td style="font-weight:600;font-size:12px;color:#0f172a">Structural Steel & Framing <span class="sov-flag-icon">⚠️</span></td>
+                    <td style="text-align:right;font-size:12px">$680,000</td>
+                    <td style="text-align:right;font-size:12px;color:#64748b">$476,000</td>
+                    <td style="text-align:right;font-size:12px;font-weight:700">$136,000</td>
+                    <td style="text-align:right"><span class="lender-pct warn">90%</span></td>
+                    <td style="text-align:right"><span class="variance-chip warn">+2% over</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:600;font-size:12px;color:#0f172a">MEP Rough-In</td>
+                    <td style="text-align:right;font-size:12px">$890,000</td>
+                    <td style="text-align:right;font-size:12px;color:#64748b">$267,000</td>
+                    <td style="text-align:right;font-size:12px;font-weight:700">$178,000</td>
+                    <td style="text-align:right"><span class="lender-pct good">50%</span></td>
+                    <td style="text-align:right"><span class="variance-chip ok">On Track</span></td>
+                  </tr>
+                  <tr class="total-row">
+                    <td style="font-weight:800;font-size:13px;color:#0f172a">TOTAL</td>
+                    <td style="text-align:right;font-size:13px;font-weight:700">$4,200,000</td>
+                    <td style="text-align:right;color:#64748b">$1,868,500</td>
+                    <td style="text-align:right;font-size:14px;font-weight:900;color:#2563eb">$393,500</td>
+                    <td style="text-align:right;font-weight:800;color:#0f172a">54%</td>
+                    <td style="text-align:right;font-size:11px;color:#64748b">1 flagged</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Right column -->
+          <div>
+            <!-- Documents -->
+            <div class="lender-card" style="margin-bottom:14px">
+              <div class="lender-card-title">Submitted Documents</div>
+              <div class="doc-item">
+                <div class="doc-icon">📄</div>
+                <div style="flex:1">
+                  <div class="doc-name">G702-Coversheet-Draw4.pdf</div>
+                  <div class="doc-sub">182 KB · Signed & Notarized</div>
+                </div>
+                <span class="doc-status ok">✓ Verified</span>
+                <span class="doc-view">View</span>
+              </div>
+              <div class="doc-item">
+                <div class="doc-icon">📄</div>
+                <div style="flex:1">
+                  <div class="doc-name">LienWaiver-Martinez.pdf</div>
+                  <div class="doc-sub">94 KB · Conditional</div>
+                </div>
+                <span class="doc-status ok">✓ Notarized</span>
+                <span class="doc-view">View</span>
+              </div>
+              <div class="doc-item">
+                <div class="doc-icon">📄</div>
+                <div style="flex:1">
+                  <div class="doc-name">LienWaiver-BostonMEP.pdf</div>
+                  <div class="doc-sub">78 KB · Conditional</div>
+                </div>
+                <span class="doc-status ok">✓ Notarized</span>
+                <span class="doc-view">View</span>
+              </div>
+              <div class="doc-item">
+                <div class="doc-icon">🖼</div>
+                <div style="flex:1">
+                  <div class="doc-name">SitePhotos-Mar14.zip</div>
+                  <div class="doc-sub">8.4 MB · 24 photos</div>
+                </div>
+                <span class="doc-status ok">✓ Uploaded</span>
+                <span class="doc-view">View</span>
+              </div>
+              <div class="doc-item" style="border-bottom:none">
+                <div class="doc-icon">📋</div>
+                <div style="flex:1">
+                  <div class="doc-name">Inspector Certification</div>
+                  <div class="doc-sub">Not required this draw</div>
+                </div>
+                <span class="doc-status warn">Waived</span>
+              </div>
+            </div>
+
+            <!-- Comments thread -->
+            <div class="lender-card">
+              <div class="lender-card-title">Review Notes</div>
+              <div class="comment-thread">
+                <div class="comment-item">
+                  <div class="comment-av sys">🤖</div>
+                  <div class="comment-bubble">
+                    <div class="comment-meta"><strong>DrawStack</strong> · Auto-check · Mar 14, 4:01 PM</div>
+                    <div class="comment-text">All required documents received. 1 SOV line flagged: Structural Steel billing pace +2% ahead of schedule. Within tolerance.</div>
+                  </div>
+                </div>
+                <div class="comment-item">
+                  <div class="comment-av bank">SM</div>
+                  <div class="comment-bubble">
+                    <div class="comment-meta"><strong>Sarah Mitchell</strong> · First Republic · Mar 14, 4:45 PM</div>
+                    <div class="comment-text bank-bubble">Noted on the framing overage — will confirm against the inspector report on final draw. Docs look clean. Moving to approval.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="comment-input-row">
+                <input class="comment-input" placeholder="Add a review note…">
+                <button class="comment-send">Send</button>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="action-bar" style="margin-top:14px">
+              <button class="action-bar-big abb-reject">✕ Reject</button>
+              <button class="action-bar-big abb-info">💬 Request Info</button>
+              <button class="action-bar-big abb-approve">✓ Approve</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /screens -->
+</body>
+</html>
