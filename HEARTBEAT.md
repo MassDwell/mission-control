@@ -4,7 +4,8 @@
 1. **CHECK DATE/TIME** — Run `session_status` to get current date, day of week, time
 2. **READ `SESSION-STATE.md`** — Hot working memory: active tasks, decisions, open loops
 3. **READ `clawson/priority-map.md`** — What matters and in what order
-4. **READ `memory/WORKING.md`** — Active context, current state
+4. **READ `clawson/tasks.md`** — Live task list, what's due today
+5. **READ `memory/WORKING.md`** — Active context, current state
 5. **READ `memory/YYYY-MM-DD.md`** (today's date) — What happened today
 6. **Check `data/global/mentions.json`** — Am I @mentioned?
 7. Only THEN respond to user
