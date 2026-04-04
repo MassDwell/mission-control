@@ -25,8 +25,6 @@
 | Claude Code subprocess | Worker executor | ✅ Used per-job |
 | Paperclip | UI/tracking layer (downstream only) | ✅ Running (ports 3100/3101) |
 | Job Ledger | SSOT for all job state | ✅ `data/runtime/job-ledger.jsonl` |
-| Hermes (v2) | Rolling task log | ✅ `scripts/hermes-log.js` |
-| Hermes Monitor | Infra monitoring (GitHub/Vercel/Sentry/PostHog) | ✅ Cron active |
 
 ### What Is NOT Real (Execution Modes, Not Agents)
 
@@ -62,7 +60,6 @@ Codesmith, Moonshot, and Personal Assistant are **execution modes** — task pro
 | Gateway Auto-Recovery | Every 10 min | Reliability: gateway health |
 | Paperclip Stack Keepalive | Every 30 min | Paperclip API + adapter + notifier |
 | Auto-start Chrome | Every 30 min | Debug port 9222 |
-| Hermes Monitor | Every 30 min | GitHub CI, Vercel, Sentry, PostHog |
 | Paperclip Stale Run Recovery | Every 30 min | Reset orphaned in_progress issues |
 | DrawStack PostHog Monitor | Every 1 hour | New signups/metrics |
 | DrawStack Sentry Monitor | Every 30 min | New errors |

@@ -18,7 +18,7 @@ import fs from 'fs';
 
 const CONFIG_PATH = '/Users/openclaw/.openclaw/openclaw.json';
 const CRON_PATH = '/Users/openclaw/.openclaw/cron/jobs.json';
-const EVENT_BUS = '/Users/openclaw/.openclaw/workspace/data/hermes/event-bus.jsonl';
+const EVENT_BUS = '/Users/openclaw/.openclaw/workspace/data/task-records/event-bus.jsonl';
 
 const REQUIRED_KEYS = ['agents', 'gateway'];
 const MAX_AGENTS = 20;
@@ -28,7 +28,7 @@ const KNOWN_MODELS = [
   'google/gemini', 'openai/gpt', 'nous/', 'meta/',
 ];
 
-fs.mkdirSync('/Users/openclaw/.openclaw/workspace/data/hermes', { recursive: true });
+fs.mkdirSync('/Users/openclaw/.openclaw/workspace/data/task-records', { recursive: true });
 
 function emitEvent(type, status, detail, data = {}) {
   const event = { ts: new Date().toISOString(), source: 'config-audit', type, status, detail, data };

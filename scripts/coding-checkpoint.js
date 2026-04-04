@@ -26,13 +26,13 @@ import fs from 'fs';
 import path from 'path';
 
 const STATE_DIR = '/Users/openclaw/.openclaw/workspace/data/coding-checkpoints';
-const EVENT_BUS = '/Users/openclaw/.openclaw/workspace/data/hermes/event-bus.jsonl';
+const EVENT_BUS = '/Users/openclaw/.openclaw/workspace/data/task-records/event-bus.jsonl';
 const STALL_THRESHOLD_MS = 10 * 60 * 1000; // 10 minutes
 
 const STAGES = ['understand', 'inspect', 'plan', 'implement', 'verify', 'summarize', 'complete'];
 
 fs.mkdirSync(STATE_DIR, { recursive: true });
-fs.mkdirSync('/Users/openclaw/.openclaw/workspace/data/hermes', { recursive: true });
+fs.mkdirSync('/Users/openclaw/.openclaw/workspace/data/task-records', { recursive: true });
 
 function stateFile(task_id) {
   return path.join(STATE_DIR, `${task_id}.json`);

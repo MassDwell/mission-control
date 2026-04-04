@@ -67,11 +67,9 @@ _Last updated: 2026-03-29_
 
 ---
 
-## Hermes Monitoring
 
 | ID | Name | Schedule | Target | Notes |
 |----|------|----------|--------|-------|
-| 84f8585e | Hermes Monitor — Active Polling | Every 30m (cron */30, stagger 15s) | main | hermes-monitor.js — polls GitHub CI, Vercel, Sentry, PostHog signups. Created 2026-04-01. |
 
 ---
 

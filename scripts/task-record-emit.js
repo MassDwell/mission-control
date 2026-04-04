@@ -37,7 +37,7 @@ import fs from 'fs';
 import path from 'path';
 
 const TASK_RECORDS_DIR = '/Users/openclaw/.openclaw/workspace/data/task-records';
-const EVENT_BUS        = '/Users/openclaw/.openclaw/workspace/data/hermes/event-bus.jsonl';
+const EVENT_BUS        = '/Users/openclaw/.openclaw/workspace/data/task-records/event-bus.jsonl';
 
 const REQUIRED = ['task_id', 'terminal_state', 'workflow_type', 'objective'];
 const VALID_STATES = ['completed_verified', 'completed_unverified', 'partial', 'blocked', 'failed', 'timed_out'];

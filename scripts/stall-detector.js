@@ -13,7 +13,7 @@ import fs from 'fs';
 import path from 'path';
 
 const STATE_DIR = '/Users/openclaw/.openclaw/workspace/data/coding-checkpoints';
-const EVENT_BUS = '/Users/openclaw/.openclaw/workspace/data/hermes/event-bus.jsonl';
+const EVENT_BUS = '/Users/openclaw/.openclaw/workspace/data/task-records/event-bus.jsonl';
 const STALL_THRESHOLD_MS = 10 * 60 * 1000;      // 10 min
 const CRITICAL_THRESHOLD_MS = 60 * 60 * 1000;    // 60 min = critical
 
@@ -22,7 +22,7 @@ const COMPANY_ID = '6e53f2a5-1a3f-4557-99d6-790eeb70ce67';
 const PAPERCLIP_STALL_MS = 30 * 60 * 1000; // 30 min for Paperclip in_progress
 
 fs.mkdirSync(STATE_DIR, { recursive: true });
-fs.mkdirSync('/Users/openclaw/.openclaw/workspace/data/hermes', { recursive: true });
+fs.mkdirSync('/Users/openclaw/.openclaw/workspace/data/task-records', { recursive: true });
 
 function emitEvent(type, status, detail, data = {}) {
   const event = { ts: new Date().toISOString(), source: 'stall-detector', type, status, detail, data };

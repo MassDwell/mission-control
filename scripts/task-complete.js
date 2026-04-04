@@ -38,7 +38,7 @@
 
 import fs from 'fs';
 
-const EVENT_BUS = '/Users/openclaw/.openclaw/workspace/data/hermes/event-bus.jsonl';
+const EVENT_BUS = '/Users/openclaw/.openclaw/workspace/data/task-records/event-bus.jsonl';
 const MAX_LINES = 500;
 
 const VALID_STATES = [
@@ -133,7 +133,7 @@ function determineDowngrade(requested_state, task_type, evidence, blockers) {
 }
 
 function emitEvent(event) {
-  fs.mkdirSync('/Users/openclaw/.openclaw/workspace/data/hermes', { recursive: true });
+  fs.mkdirSync('/Users/openclaw/.openclaw/workspace/data/task-records', { recursive: true });
 
   try {
     const existing = fs.existsSync(EVENT_BUS)
