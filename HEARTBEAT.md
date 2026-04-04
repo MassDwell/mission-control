@@ -2,11 +2,13 @@
 
 ## 🚀 SESSION STARTUP (Do this FIRST on every new session!)
 1. **CHECK DATE/TIME** — Run `session_status` to get current date, day of week, time
-2. **MARKET AWARENESS** — Is it a weekday? Are markets open/closed? Pre-market? After-hours?
-3. **READ `memory/WORKING.md`** — Active context, trade positions, current state
+2. **READ `SESSION-STATE.md`** — Hot working memory: active tasks, decisions, open loops
+3. **READ `memory/WORKING.md`** — Active context, current state
 4. **READ `memory/YYYY-MM-DD.md`** (today's date) — What happened today
 5. **Check `data/global/mentions.json`** — Am I @mentioned?
 6. Only THEN respond to user
+
+**WRITE-AHEAD RULE:** Update SESSION-STATE.md BEFORE starting any non-trivial task, not after.
 
 **CRITICAL:** Never assume the day or date. Always verify. Trading decisions depend on accurate time awareness.
 

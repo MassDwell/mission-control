@@ -12,10 +12,31 @@ Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+3. **Read `SESSION-STATE.md`** — hot working memory, current tasks, active decisions
+4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+5. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
 
 Don't ask permission. Just do it.
+
+## ✍️ Write-Ahead Protocol (MANDATORY)
+
+**Before responding to any task that changes state, write to SESSION-STATE.md first.**
+
+This is the WAL (write-ahead log) rule. If you crash or the session ends before saving, the last-written state survives. If you write after responding, state is lost on failure.
+
+```
+User: "Merge the PR and deploy"
+You (internal): 1. Update SESSION-STATE.md → "Active: merging PR #X, deploying to Vercel"
+                 2. THEN do the work and respond
+```
+
+Update SESSION-STATE.md:
+- When starting any non-trivial task
+- When making a significant decision
+- When something is blocked or pending Steve's action
+- At the end of any substantive session
+
+Keep it current. It's the one file that tells future-you what was happening.
 
 ## Memory
 
