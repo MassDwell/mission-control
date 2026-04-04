@@ -1,0 +1,26 @@
+{
+  "task_id": "TEST-001",
+  "objective": "Smoke test the checkpoint system",
+  "created_at": "2026-03-29T20:27:43.527Z",
+  "current_stage": "plan",
+  "stages_completed": [
+    "understand",
+    "inspect"
+  ],
+  "stage_history": [
+    {
+      "stage": "understand",
+      "completed_at": "2026-03-29T20:27:43.554Z",
+      "notes": "Task parsed, objective clear"
+    },
+    {
+      "stage": "inspect",
+      "completed_at": "2026-03-29T20:27:43.582Z",
+      "notes": "Checked scripts directory"
+    }
+  ],
+  "terminal_state": "completed_verified",
+  "last_heartbeat": "2026-03-29T20:27:43.583Z",
+  "closed_at": "2026-03-29T20:27:43.656Z",
+  "summary": "All scripts created and smoke tested"
+}

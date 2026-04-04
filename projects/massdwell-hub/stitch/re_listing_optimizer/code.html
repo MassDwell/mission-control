@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MassDwell Hub | Re-Listing Optimizer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-container": "#051d31",
+                        "surface-container-low": "#eef4ff",
+                        "surface-tint": "#4c5f7d",
+                        "primary-container": "#051c36",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#485f7e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e4efff",
+                        "inverse-on-surface": "#e9f1ff",
+                        "on-primary-fixed-variant": "#344864",
+                        "on-tertiary-fixed": "#051d31",
+                        "surface": "#f8f9ff",
+                        "surface-container-highest": "#d0e4ff",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d0e4ff",
+                        "error-container": "#ffdad6",
+                        "primary": "#000000",
+                        "secondary-fixed": "#d3e3ff",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#33485f",
+                        "primary-fixed-dim": "#b3c8ea",
+                        "secondary-fixed-dim": "#b1c8ed",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-variant": "#d0e4ff",
+                        "on-background": "#051d31",
+                        "on-surface-variant": "#44474d",
+                        "outline": "#74777e",
+                        "tertiary-fixed-dim": "#b3c9e4",
+                        "secondary": "#49607f",
+                        "on-surface": "#051d31",
+                        "inverse-surface": "#1c3247",
+                        "on-tertiary-container": "#70869f",
+                        "on-secondary-fixed": "#001c39",
+                        "background": "#f8f9ff",
+                        "on-primary-container": "#7185a4",
+                        "on-secondary-fixed-variant": "#314866",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-header {
+            background: rgba(208, 228, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-[#011832] dark:bg-slate-950 flex-col gap-2 py-8 shadow-2xl z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+<img alt="Logo" class="w-6 h-6" data-alt="Geometric minimalist M shape logo in navy blue on a crisp white square background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9G8YYhRHbf2aPR4QSOh4fB0QKzhgEbnNlUhAkTVBrU4UgXV08UAmkx4uYdPwWFRP788PslPqOSh4XI-WG064AV1jWYBWalojIpbJgu_Kl0IfjTwnlPEcAIzd449aP54e4Ot7XJ0tf0fd64ryPpZ_60orWXmPEdQfne4OX-KiQ2AaRqs642Gsi5P4Z_YeoF2uZEF_pxtG9RwVajAvFg3WDdkBSx3z-vViNGRrCVAoXZUoH4xobRoks7Z_rJ7JFtLt578WLi9rQAPG0"/>
+</div>
+<span class="text-white uppercase tracking-tighter font-black text-sm">MassDwell Hub Logo</span>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 transition-all duration-300 ease-in-out hover:bg-[#051C36]" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Dashboard</span>
+</div>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 transition-all duration-300 ease-in-out hover:bg-[#051C36]" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">calculate</span>
+<span class="text-xs font-bold uppercase tracking-widest">COGS Calculator</span>
+</div>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 transition-all duration-300 ease-in-out hover:bg-[#051C36]" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">map</span>
+<span class="text-xs font-bold uppercase tracking-widest">ADU Permit Navigator</span>
+</div>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 transition-all duration-300 ease-in-out hover:bg-[#051C36]" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Lead Pipeline</span>
+</div>
+</a>
+<a class="bg-[#C1D9FE] text-[#011832] rounded-r-full font-bold ml-0 mr-4 py-3 px-6 transition-all duration-300 ease-in-out" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">settings_backup_restore</span>
+<span class="text-xs font-bold uppercase tracking-widest">Re-Listing Optimizer</span>
+</div>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar (Mobile & Content Anchor) -->
+<header class="fixed top-0 z-40 w-full md:pl-64 h-16 bg-[#F8F9FF] dark:bg-slate-950 flex justify-between items-center px-6 shadow-sm">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-[#011832] transition-colors hover:bg-[#D0E4FF] p-2 rounded-lg">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-black text-[#011832] dark:text-white tracking-tighter">MassDwell Hub</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-6 mr-6">
+<span class="text-[#011832] font-semibold text-sm">Optimizer</span>
+<span class="text-[#49607F] text-sm cursor-pointer hover:text-[#011832]">Analytics</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border-2 border-white overflow-hidden shadow-sm">
+<img alt="Executive User" data-alt="professional corporate headshot of a smiling executive in business attire with a clean soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgJ7z8Deolhv3NNX0LYOjNW6zDKVqxtGfy1SXSwujRTKDtoY-yddZLw84p8913Szd6ZHV5eL1LTsQmyxT5b4LxqlFQ0IDnByQ_3uSMd9QfDDIFPHtSrjSb-hiBMsayE8tSjHyt3PHKlnfAurfP3N04KtkyVYWMb0jz7n3IronoOIJGwm6HWOKnrL6P-4k9mPH6Eh8Y4O8TENQpSS7jJ0bAiFAXNlChgv45QxT3pMmRuO4AmWx4PXgy9rWI4Tuuhw5m-GdV437t5jLi"/>
+</div>
+</div>
+</header>
+<!-- Main Content Stage -->
+<main class="md:pl-64 pt-16 pb-24 md:pb-8 min-h-screen">
+<div class="max-w-7xl mx-auto px-6 py-10">
+<!-- Page Header Section -->
+<div class="mb-12">
+<h2 class="text-4xl font-extrabold text-on-background tracking-tight mb-2">Re-Listing Optimizer</h2>
+<p class="text-secondary text-lg max-w-2xl">Transform stagnant listings into high-converting architectural narratives using AI-driven editorial enhancement.</p>
+</div>
+<!-- Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Input Form Column -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Property Details Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/15 shadow-[0_24px_40px_-4px_rgba(5,29,49,0.06)]">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-sm font-bold uppercase tracking-widest text-secondary">Property Intelligence</h3>
+<button class="flex items-center gap-2 text-primary text-xs font-bold border border-outline-variant/30 px-4 py-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-sm">auto_fix_high</span>
+                                ENHANCE MODE
+                            </button>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-full">
+<label class="block text-[10px] font-bold text-secondary uppercase tracking-wider mb-2">Property Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-surface-tint text-on-surface placeholder:text-outline" placeholder="e.g. 124 Beacon Street, Boston, MA" type="text"/>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-secondary uppercase tracking-wider mb-2">Property Type</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-surface-tint text-on-surface">
+<option>Single Family</option>
+<option>Condominium</option>
+<option>Multi-Family</option>
+<option>Luxury Estate</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-secondary uppercase tracking-wider mb-2">List Price</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-surface-tint text-on-surface" placeholder="$0.00" type="text"/>
+</div>
+<div class="grid grid-cols-3 gap-4 col-span-full">
+<div>
+<label class="block text-[10px] font-bold text-secondary uppercase tracking-wider mb-2">Beds</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-surface-tint text-on-surface" type="number"/>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-secondary uppercase tracking-wider mb-2">Baths</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-surface-tint text-on-surface" type="number"/>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-secondary uppercase tracking-wider mb-2">SqFt</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-surface-tint text-on-surface" type="number"/>
+</div>
+</div>
+<div class="col-span-full">
+<label class="block text-[10px] font-bold text-secondary uppercase tracking-wider mb-2">Key Features</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-surface-tint text-on-surface" placeholder="Gourmet kitchen, smart home tech, floor-to-ceiling windows..." rows="3"></textarea>
+</div>
+<div class="col-span-full">
+<label class="block text-[10px] font-bold text-secondary uppercase tracking-wider mb-2">Neighborhood Notes</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-surface-tint text-on-surface" placeholder="Walking distance to transit, historic district, top-rated schools..." rows="2"></textarea>
+</div>
+</div>
+<button class="w-full bg-gradient-to-br from-[#011832] to-[#051c36] text-white font-bold py-4 rounded-xl shadow-lg hover:scale-[0.98] transition-transform flex items-center justify-center gap-3" type="button">
+<span class="material-symbols-outlined">colors_spark</span>
+                                GENERATE DESCRIPTION
+                            </button>
+</form>
+</div>
+</div>
+<!-- Results & History Column -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Result Section (AI Output) -->
+<div class="bg-surface-container-high rounded-xl p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-[#C1D9FE]/20 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-background">Editorial Result</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-white/50 rounded-lg transition-colors text-secondary"><span class="material-symbols-outlined">content_copy</span></button>
+<button class="p-2 hover:bg-white/50 rounded-lg transition-colors text-secondary"><span class="material-symbols-outlined">edit_square</span></button>
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 text-on-surface leading-relaxed text-base italic border border-white/40">
+                            "Exquisitely perched in the heart of the historic district, this meticulously reimagined residence at 124 Beacon Street offers a rare synthesis of period charm and avant-garde luxury. Spanning 3,200 square feet of curated living space, the interior is flooded with natural light from expansive floor-to-ceiling windows, highlighting the artisanal gourmet kitchen and bespoke smart-home integrations..."
+                        </div>
+<div class="mt-6 flex justify-end gap-4">
+<button class="text-primary text-xs font-bold px-4 py-2 hover:underline">Regenerate Alternative</button>
+<button class="bg-[#011832] text-white text-xs font-bold px-6 py-2 rounded-full">Save to History</button>
+</div>
+</div>
+<!-- History Section -->
+<div class="space-y-4">
+<h3 class="text-[10px] font-bold uppercase tracking-widest text-secondary px-2">Generated History</h3>
+<!-- History Item 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img alt="Property" data-alt="Modern upscale house exterior with glass windows and neat landscaping under a blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXiYdziRmijz0kBHKMc1MBWdfTXyp-Ze0UlDR6ItZAXHurFDJ3HOhoECcKIiuEJTFt48yKI1LCUYktyILhiflcXlsylMB9gA7WXHkeVoirZ5ygYcfx7GeMdqbis-yY7K84bH9mlFZQzPsDb_FW5NpQC4Wsk4q4ZTN-dsO98PEX7OLwZkVmJolq9L7FxylwUtQCKl9Xr6P0AsJVmgLJ9vImpcLwFhXKNlyiNYtpfYnzOmViCOHcOxOF5hzvJSxb9mDOQMDo91QR6LC8"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-background">88 Commonwealth Ave</p>
+<p class="text-[10px] text-secondary">Saved 2 days ago • Condominium</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+</div>
+<!-- History Item 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img alt="Property" data-alt="Minimalist luxury interior with neutral tones and soft morning light hitting a designer chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0RgAypovO9NxlS3hhARNx9RqUgHGGO7mqgalz3Zv7byW40_i_fDgISo7NwK-a0MH9MJOUFV5fa6LBzfTldIj0zmQacYeZqaBp5FEfvgu9B0Jo_8UDWohBST2AxML0gjobIUdC-qbpnBwIeQ_DTk5FCtgl07ffkPj17zS6GTGCLwg8evv4UGZroQdCWWx8Vz1KUx71tgKkaDzKZM3UUpesWSBjgkA3MPRTaQA0ES7nQSYPpV7WYyZOA6S-02yZCFgAJLD1drW7LBU_"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-background">15 Seaport Blvd #402</p>
+<p class="text-[10px] text-secondary">Saved 5 days ago • Luxury Estate</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+</div>
+<button class="w-full py-3 text-xs font-bold text-secondary hover:text-primary transition-colors flex items-center justify-center gap-2">
+                            VIEW ALL SAVED LISTINGS
+                            <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-[#C4C6CE]/15 shadow-[0_-4px_24px_-4px_rgba(5,29,49,0.06)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Dash</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined">calculate</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">COGS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Permits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Leads</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#011832] bg-[#C1D9FE] rounded-xl px-3 py-1 scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">settings_backup_restore</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Relist</span>
+</a>
+</nav>
+</body></html>

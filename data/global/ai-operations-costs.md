@@ -10,7 +10,7 @@
 | Service | Plan | Cost/Month | Purpose | Started |
 |---------|------|------------|---------|---------|
 | **Synth Data** | Pro | $49 | Volatility forecasts for trading | 2026-02-04 |
-| **VAPI** | Pay-as-you-go | ~$0.10-0.15/min | AI phone calls (Sarah) | 2026-02-04 |
+| ~~**VAPI**~~ | ~~Pay-as-you-go~~ | ~~$0.10-0.15/min~~ | ~~AI phone calls (Sarah)~~ | ❌ RETIRED 2026-03-28 |
 | **Anthropic (Claude)** | API | Variable | Core AI (Clawson) | 2026-02-02 |
 
 ---

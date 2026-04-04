@@ -1,7 +1,7 @@
-# CLAWSON CANONICAL CONFIGURATION
+# CLAWSON CANONICAL CONFIGURATION — Runtime v1
 
-**Date:** 2026-03-04 13:55 EST  
-**Status:** Single-Agent Reset Complete
+**Last Updated:** 2026-04-02  
+**Status:** Single Orchestrator + Structured Worker Runs (Runtime v1)
 
 ---
 
@@ -11,145 +11,101 @@
 **Role:** Chief of Staff / Master Agent / COO  
 **Creature:** 🦅  
 **Session:** agent:main:telegram:direct:7002178651  
-**Status:** ✅ ACTIVE (ONLY ACTIVE AGENT)
+**Status:** ✅ ACTIVE — ONLY REAL AGENT
+
+---
+
+## RUNTIME ARCHITECTURE
+
+### What Is Real
+
+| Component | Type | Status |
+|-----------|------|--------|
+| Clawson | Orchestrator (persistent session) | ✅ Active |
+| Claude Code subprocess | Worker executor | ✅ Used per-job |
+| Paperclip | UI/tracking layer (downstream only) | ✅ Running (ports 3100/3101) |
+| Job Ledger | SSOT for all job state | ✅ `data/runtime/job-ledger.jsonl` |
+| Hermes (v2) | Rolling task log | ✅ `scripts/hermes-log.js` |
+| Hermes Monitor | Infra monitoring (GitHub/Vercel/Sentry/PostHog) | ✅ Cron active |
+
+### What Is NOT Real (Execution Modes, Not Agents)
+
+Codesmith, Moonshot, and Personal Assistant are **execution modes** — task profiles that configure how a Claude Code subprocess is scoped. They are NOT persistent agents with their own sessions, memory, or autonomous execution.
+
+**Mode definitions:** `canon/system/runtime-v1/execution-modes.json`  
+**Archived agent configs:** `canon/agents/_archive/`
 
 ---
 
 ## CANONICAL FILES
 
-All Clawson identity/ops files are canonical versions in this directory:
-
-| File | Purpose | Source |
-|------|---------|--------|
-| SOUL.md.canon | Persona & operating principles | Clawson identity |
-| IDENTITY.md.canon | Identity framework | Clawson identity |
-| HEARTBEAT.md.canon | Heartbeat protocol (Clawson-only) | Operations |
-| MEMORY.md.canon | Long-term memory | Knowledge base |
-| USER.md.canon | Steve Vettori context | Reference |
-
-Root-level versions are mirrors of these canonical files.
-
----
-
-## CRON JOBS (4 Total, All Clawson)
-
-All cron jobs target `agentId: "main"` (Clawson only):
-
-1. **Gmail Token Auto-Refresh** (Every 30 min)
-   - Critical: Maintains OAuth tokens for Google Workspace
-   - Scope: 3 Gmail accounts (sales, personal, Atlantic Laser)
-
-2. **Mission Control Cron Export** (Every 2 hours)
-   - Updates mission-control/data/crons.json
-   - Syncs with Mission Control dashboard
-
-3. **Weekly Memory Maintenance** (Sundays 8 PM)
-   - Compacts memory files
-   - Archives old daily logs
-   - Generates review report
-
-4. **Bi-Weekly Memory Audit** (1st/15th @ 10 AM)
-   - Health check on WORKING.md and MEMORY.md
-   - Pattern extraction and promotion
-   - Compaction of oversized files
+| File | Purpose |
+|------|---------|
+| `SOUL.md` | Persona & operating principles |
+| `USER.md` | Steve Vettori context |
+| `MEMORY.md` | Long-term curated memory |
+| `HEARTBEAT.md` | Heartbeat protocol |
+| `canon/registry.json` | Agent registry (Clawson only) |
+| `canon/system/runtime-v1/execution-modes.json` | Execution mode definitions |
+| `canon/system/runtime-v1/job-spec.schema.json` | Job spec schema |
+| `canon/system/runtime-v1/GOVERNANCE.md` | Governance reference |
+| `canon/clawson/reporting-rules.md` | Reporting language rules |
+| `data/runtime/job-ledger.jsonl` | SSOT job ledger (append-only) |
 
 ---
 
-## DISABLED SYSTEMS
+## ACTIVE CRON JOBS
 
-### Removed Agents
-❌ All other agents (deleted or archived)  
-❌ Antfarm multi-agent system (archived)  
-❌ Subagent spawning infrastructure (preserved but not used)
-
-### Removed Integrations
-❌ Kommo CRM (credentials deleted, scripts removed)  
-❌ Money Printer trading (9 cron jobs deleted)  
-❌ Email-to-CRM automation (scripts deleted)  
-❌ Old sales bot automation (scripts archived)
-
-### Archived Configurations
-❌ AGENT-REBUILD-BLUEPRINT.md  
-❌ AGENTS.md (old agent framework)  
-❌ WORKFLOW_AUTO.md (bot protocols)  
-❌ All audit/status reference files
+| Name | Schedule | Purpose |
+|------|----------|---------|
+| Cron Watchdog Loop | Every 15 min | Reliability: cron health |
+| Gateway Auto-Recovery | Every 10 min | Reliability: gateway health |
+| Paperclip Stack Keepalive | Every 30 min | Paperclip API + adapter + notifier |
+| Auto-start Chrome | Every 30 min | Debug port 9222 |
+| Hermes Monitor | Every 30 min | GitHub CI, Vercel, Sentry, PostHog |
+| Paperclip Stale Run Recovery | Every 30 min | Reset orphaned in_progress issues |
+| DrawStack PostHog Monitor | Every 1 hour | New signups/metrics |
+| DrawStack Sentry Monitor | Every 30 min | New errors |
+| Drift Audit (Core Architecture) | Daily 1 AM | Architecture drift check |
+| Runtime v1 Nightly Audit | Daily 2:30 AM | Fake agent refs, ledger integrity |
+| Daily log rotation | Daily 2 AM | Log cleanup |
+| Daily browser screenshot purge | Daily 2:15 AM | Media cleanup |
+| Personal Gmail Cleanup | Daily 7 AM | Inbox maintenance |
+| DrawStack Daily KPI Report | M-F 8 AM | KPI snapshot to Steve |
+| DrawStack Signup Watcher | Daily 9 AM | New trial signups |
+| Weekly node_modules cleanup | Sundays 3 AM | Disk space |
+| Weekly system cache purge | Sundays 3:30 AM | Disk space |
+| Weekly Skill Health Review | Sundays 9 AM | Skill fail rate audit |
+| Weekly Memory Maintenance | Sundays 8 PM | Memory compaction |
+| Bi-Weekly Memory Audit | 1st/15th 10 AM | Memory health check |
 
 ---
 
 ## ACTIVE INTEGRATIONS
 
-### Gmail (via gog CLI)
-- ✅ `credentials/google/` (3 tokens)
-- ✅ `scripts/google/refresh-all-tokens.js`
-- ✅ Read/send/modify access to sales@massdwell.com, vettoristeve@gmail.com, team@atlanticlasersolutions.com
-
-### Credentials (36 files)
-- ✅ Google (active)
-- ✅ Alpaca (preserved, not actively traded)
-- ✅ Instagram, X, Gemini (available)
-- ❌ Kommo (deleted)
-
-### Scripts (42 active)
-- ✅ Core infrastructure
-- ✅ Memory maintenance
-- ✅ Mission Control sync
-- ❌ Email/CRM automation (archived)
-- ❌ Sales bot (archived)
+| Integration | Status | Credentials |
+|-------------|--------|-------------|
+| Gmail (sales@massdwell.com) | ✅ Active | `credentials/google/` |
+| Gmail (vettoristeve@gmail.com) | ✅ Active | `credentials/google/` |
+| Gmail (team@atlanticlasersolutions.com) | ✅ Active | `credentials/google/` |
+| Google Analytics / GSC | ✅ Active | `credentials/google/` |
+| Instagram Graph API (@massdwell) | ✅ Read access | `credentials/meta/` |
+| X / Twitter (@veto6040, @TheDrawStack) | ✅ Active | `credentials/x/` |
+| Alpaca API | ✅ Preserved (not trading) | `credentials/alpaca/` |
+| Kommo CRM | ❌ NO ACCESS | Deleted 2026-03-04 |
 
 ---
 
-## DATA STRUCTURE
+## GOVERNANCE
 
-### Preserved
-- ✅ `memory/` — Daily logs + WORKING.md
-- ✅ `data/massdwell/` — Sales collateral, DNC list
-- ✅ `data/alpine/` — Real estate data
-- ✅ `data/atlantic_laser/` — Atlantic Laser data
+**Single source of truth for job state:** `data/runtime/job-ledger.jsonl`  
+**Single source of truth for Clawson config:** This file  
+**Reporting rules:** `canon/clawson/reporting-rules.md`  
+**Architecture governance:** `canon/system/runtime-v1/GOVERNANCE.md`  
 
-### Archived
-- ❌ `archive/config_disabled_20260304/` — Non-canonical configs
-- ❌ `archive/antfarm_disabled_20260304/` — Antfarm workflows
-- ❌ `archive/orphaned-agents-2026-03-04/` — Old agent directories
-- ❌ `archive/scripts-deprecated-2026-03-04/` — Dead scripts
-- ❌ `archive/money-printer-2026-03-04/` — Trading data
+**The Single Agent Rule:** Clawson is the only real agent. Claude Code subprocesses are worker runs selected by execution mode. This is the architecture — not a temporary state.
 
 ---
 
-## VERIFICATION CHECKLIST
-
-✅ **Agent Routes:** Only "main" can be invoked  
-✅ **Cron Jobs:** 4 total, all target main agent  
-✅ **Identity Files:** SOUL.md, HEARTBEAT.md, IDENTITY.md, MEMORY.md canonical  
-✅ **Credentials:** No Kommo access, 36 active files  
-✅ **Scripts:** 42 active, bot automation archived  
-✅ **Backup:** openclaw_reset_20260304_133520.tar.gz verified  
-✅ **Antfarm:** Archived (no active workflows)  
-
----
-
-## CANONICAL REFERENCE
-
-**Single source of truth for Clawson configuration:**  
-`~/.openclaw/workspace/canon/CLAWSON_CANONICAL.md`
-
-**Daily operations state:**  
-`~/.openclaw/workspace/memory/WORKING.md`
-
-**Long-term memory:**  
-`~/.openclaw/workspace/MEMORY.md`
-
----
-
-## NEXT STEPS
-
-Clawson is fully operational as solo agent. To rebuild agents:
-1. Define agent specifications
-2. Create agent directories under /agents/ (currently empty)
-3. Create corresponding cron jobs with explicit approval gates
-4. Document in new canonical files
-
----
-
-**Status:** LOCKED & CANONICAL — Single Agent (Clawson) Only
-
-_Configuration validated: 2026-03-04 13:55 EST_
+_Configuration validated: 2026-04-02_  
+_Runtime: v1 (Single Orchestrator + Structured Worker Runs)_

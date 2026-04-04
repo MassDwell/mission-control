@@ -43,7 +43,6 @@
       "Gmail Token Auto-Refresh (Preventive)",
       "Nightly Learning - Rotating Agent",
       "Atlantic Laser QB→Pipedrive Sync",
-      "Kommo CRM Sync",
       "Mission Control Cron Export",
       "MassDwell Master Morning Briefing - CONSOLIDATED",
       "MassDwell Execution Cycles - Midday",
@@ -68,6 +67,7 @@
   },
   
   "deprecated": [
+    "DISABLED - Kommo CRM Sync (Kommo access revoked 2026-03-04)",
     "Cold Lead Reply Monitor",
     "DISABLED - Cold Lead Reply Monitor (duplicate of Sales Reply Monitor)",
     "Sales Reply Monitor - Every 15 Min",

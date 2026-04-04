@@ -1,0 +1,23 @@
+{
+  "task_id": "massdwell-hub-mobile-layout-fix",
+  "workflow_type": "code",
+  "objective": "Fix mobile layout: sidebar overlay, tabs overflow, content padding",
+  "terminal_state": "completed_verified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "lesson_candidate": "Mobile sidebars need translate-x pattern with backdrop overlay + nav link onClose callbacks — flex-wrap tabs must be flex-nowrap overflow-x-auto for horizontal scroll on mobile",
+  "files_touched": [
+    "components/app-shell.tsx",
+    "components/sidebar.tsx",
+    "app/(app)/layout.tsx",
+    "app/(app)/dashboard/page.tsx"
+  ],
+  "evidence": {
+    "output_tail": "Build clean, deployed to massdwell-hub.vercel.app"
+  },
+  "end_ts": "2026-04-02T02:19:50.424Z",
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

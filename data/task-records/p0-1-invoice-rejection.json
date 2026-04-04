@@ -1,0 +1,18 @@
+{
+  "task_id": "p0-1-invoice-rejection",
+  "workflow_type": "code",
+  "objective": "P0-1: Invoice rejection — capture reason + fire sub notification email",
+  "start_ts": "2026-04-03T11:32:37Z",
+  "end_ts": "2026-04-03T11:38:52Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "All done. Here's what was shipped:  **Schema** — `rejectionNote String?` added to `Invoice` model, pushed to DB, migration file created.  **API** (`approve-subcontractor` PATCH) — accepts `rejectionNote` from request body, stores it on the invoice, then calls `sendSubInvoiceRejectedEmail()` with the reason and a portal link.  **GC Invoice Inbox** (`dashboard/invoices/page.tsx`) — Reject button now opens a modal requiring a reason before the request fires. Both the list-row quick-reject and"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

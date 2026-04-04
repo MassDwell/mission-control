@@ -1,0 +1,18 @@
+{
+  "task_id": "p3-16-qb-sync-status-ui",
+  "workflow_type": "code",
+  "objective": "P3-16: QuickBooks sync status UI in GC settings",
+  "start_ts": "2026-04-03T12:42:24Z",
+  "end_ts": "2026-04-03T12:46:12Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "Done. Here's a summary of what was changed:  **`app/api/integrations/quickbooks/status/route.ts`** - Added `lastSyncAt` — queries the most recent `qbSyncedAt` across the org's invoices - Added `configured` flag — checks `QB_CLIENT_ID` + `QB_CLIENT_SECRET` env vars so the frontend knows if OAuth is live  **`app/api/integrations/quickbooks/sync/route.ts`** - Now accepts an empty body — if no `invoiceIds` provided, syncs all unsynced invoices for the org (max 50 at a time)  **`app/dashboard/s"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

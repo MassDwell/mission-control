@@ -1,0 +1,18 @@
+{
+  "task_id": "p0-3-draw-submission-atomic",
+  "workflow_type": "code",
+  "objective": "P0-3: Consolidate draw submission + lender package delivery into one atomic action",
+  "start_ts": "2026-04-03T11:32:37Z",
+  "end_ts": "2026-04-03T11:42:10Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "All done. Here's what was shipped:  **PR #188** — https://github.com/MassDwell/drawstack/pull/188  ### Changes made  | File | Change | |---|---| | `prisma/schema.prisma` | Added `packageLastSentAt DateTime?` to `Draw` | | `prisma/migrations/20260403100000_draw_submission_timestamps/migration.sql` | New migration (applied to DB) | | `lib/draw-notifications.ts` | New shared `sendDrawPackageToLender(drawId, gcOrgName)` function | | `app/api/draws/[drawId]/route.ts` | PATCH DRAFT→SUBMITTED now s"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

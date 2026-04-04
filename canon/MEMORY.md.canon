@@ -44,21 +44,14 @@ _Curated knowledge and lessons learned. Daily logs are in memory/YYYY-MM-DD.md_
 
 ---
 
-## VAPI Voice AI (Configured 2026-02-04)
+## VAPI Voice AI — DECOMMISSIONED (2026-03-28)
 
-**Assistant:** "Sarah" - MassDwell Lead Qualifier
-**ID:** ebac8e3e-5285-4e6c-a185-6e2698a24ca5
-**Phone:** VAPI number (ID: 5ea3a6d9-7333-4bdd-9fe6-73768bb53c4a)
-**Voice:** ElevenLabs (Rachel - professional female)
-**Status:** ✅ LIVE AND TESTED
+**Status:** ❌ RETIRED — Sarah (MassDwell lead qualifier) decommissioned per Steve's decision.
 
-Sarah can:
-- Qualify cold leads (interest, location, timeline, budget)
-- Handle objections naturally
-- Book follow-ups with Nick
-- Auto-end on "not interested"
-
-**Steve's verdict:** "Pretty darn good! Baby boomers won't know it's AI."
+All VAPI infrastructure removed:
+- `skills/vapi-calls/` deleted
+- `.env` VAPI keys removed
+- `credentials/twilio/massdwell-sarah.json` deleted
 
 ---
 

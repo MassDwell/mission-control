@@ -1,0 +1,48 @@
+{
+  "_comment": "DrawStack QA surface — 5 pages selected for post-deploy visual regression",
+  "baseUrl": "https://drawstack.ai",
+  "windowWidth": 1440,
+  "windowHeight": 900,
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "label": "Marketing Home",
+      "url": "https://drawstack.ai",
+      "why": "First impression + SEO anchor. Layout breaks here are immediately user-facing and conversion-killing.",
+      "check": "Hero headline, CTA button, nav bar, pricing CTA present and not broken"
+    },
+    {
+      "id": "pricing",
+      "path": "/pricing",
+      "label": "Pricing Page",
+      "url": "https://drawstack.ai/pricing",
+      "why": "Conversion-critical. Pricing table layout, plan names, and CTA buttons are visually sensitive.",
+      "check": "Plan cards visible, prices correct, upgrade CTAs present, no overflow/clipping"
+    },
+    {
+      "id": "vs-rabbet",
+      "path": "/vs-rabbet",
+      "label": "Rabbet Comparison Page",
+      "url": "https://drawstack.ai/vs-rabbet",
+      "why": "High-intent SEO landing page. Comparison table layout is fragile and differentiates DrawStack.",
+      "check": "Comparison table intact, feature rows aligned, CTA visible"
+    },
+    {
+      "id": "sign-in",
+      "path": "/sign-in",
+      "label": "Sign In Page",
+      "url": "https://drawstack.ai/sign-in",
+      "why": "Auth gate for all users. A broken sign-in page = 100% of users locked out.",
+      "check": "Clerk sign-in widget rendered, no blank page, email/password fields present"
+    },
+    {
+      "id": "blog-index",
+      "path": "/blog",
+      "label": "Blog Index",
+      "url": "https://drawstack.ai/blog",
+      "why": "SEO traffic entry point. Post cards must render correctly; layout breaks hurt crawlability.",
+      "check": "Blog post cards visible, titles readable, images loading"
+    }
+  ]
+}

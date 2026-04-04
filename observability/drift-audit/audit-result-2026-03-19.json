@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-03-19T05:00:05Z",
+  "status": "drift_detected",
+  "checks": {
+    "canonical_integrity": "✅ PASS",
+    "generated_configs": "✅ PASS",
+    "forbidden_changes": "❌ FAIL",
+    "directory_structure": "✅ PASS",
+    "cron_job_alignment": "✅ PASS"
+  },
+  "auto_fixes_applied": 0,
+  "manual_flags": 1,
+  "drift_count": 0
+}

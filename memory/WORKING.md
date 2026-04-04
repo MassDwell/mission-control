@@ -1,4 +1,4 @@
-# WORKING.md - Active Context (Updated 2026-03-28 08:25 AM EDT)
+# WORKING.md - Active Context (Updated 2026-04-01 10:00 AM EDT)
 
 ## Active Trades
 **None.** Money Printer was deactivated 2026-03-04. No active trading strategy.
@@ -40,21 +40,29 @@ Steve cancelled the project. All resources wiped.
 - PR #39: Hero copy (anti-enterprise, "Start free — no sales call") ✅
 - PR #40: /vs-rabbet SEO comparison page ✅
 
-**Active bugs (as of 2026-03-29):**
-- Lender invite redeem `/invite/[token]/redeem` crashes when user already has OrgMember record
-  - Root cause: existing GC org being used for LenderProjectAccess → constraint violation
-  - Fix in progress: check org type, create new LENDER org if needed
+**Major work completed 2026-03-31 (HEAVY PR DAY):**
+- PR #146 — PR B merged ✅
+- PR #147 — Immutable Audit Log (DrawEvent model, activity tab) ✅
+- PR #148 — Full UI overhaul: Stitch dark design system across all portals (85 files) ✅
+- PR #149 — S3 presigned URL download route (fixed XML access-denied on private bucket docs) ✅
+- PR #150 — SEO/OG image standardization + static asset caching headers ✅
+- PR #152 — Lender portal dark theme badge fixes ✅
+- PR #153 — Invoice parse route → gemini-2.5-flash ✅
+- PR #154 — All AI routes → gemini-2.5-flash (bulk upgrade, 17 routes total) ✅
+- PR #155 — cost-predict route gemini-1.5-flash → gemini-2.5-flash ✅
+- PR #140 — Historical cost predictor (CLA-285) ✅
+- PR #139 — Sub portal per-project dashboard (CLA-283) ✅
+- Migration audit: PR #140 squash dropped `constructionType` + `ProjectSnapshot` table — manual ALTERs applied ✅
+- **Hermes Supervisor v2** built & tested — review queue live, pre-send gate active, 4-marker protocol documented ✅
+- OpenClaw maintenance: doctor clean, 136 orphan transcripts archived, WhatsApp disabled in config
 
-**Major work completed 2026-03-29:**
-- Subs tab 3-bug fix: nested Neon HTTP includes, GC auth mismatch, sub portal Access Denied (S3 presigned URLs) ✅
-- SubInvoice → Invoice unification (Option B — unified model, SubInvoice model deprecated) — branch: feature/unified-invoice-model (Claude Code in progress)
-- Project archive UI bug fixed (was hidden but not inaccessible) ✅
-- Project cascade delete added (OWNER-only, confirmation modal) ✅
-- UX audit (3 portals) completed — 9 P0 launch blockers documented ✅
-  - Saved to: data/drawstack/drawstack-ux-audit-march-2026.md
-- Hermes independent UX audit spawned (cross-reference pending) 🔄
-- System stabilization: watchdog false positives fixed, Paperclip lockfile, zombie agents purged, Telegram adapter backoff ✅
-- Hermes agent deployed — reliability governor + post-run learning layer ✅
+**Pending Steve actions:**
+- ✅ **Gateway restart** — completed 2026-04-01 7:08 PM EDT (WhatsApp channel disable applied)
+- Upload twitter-profile-photo.png to @TheDrawStack X profile
+- Fix xurl tweet posting (OAuth 1.0 configured, but {} error on post)
+- Submit sitemap.xml to Google Search Console
+- Verify domain in GSC via GoDaddy DNS TXT record
+- Manual cleanup: Neon DB, Clerk app, Resend domain (MeritLayer remnants)
 
 **Logo work (2026-03-27):**
 - Logo SVG redesigned: 3 horizontal pills (D-shape) in cyan-teal gradient on dark navy bg

@@ -20,6 +20,8 @@ Automated email prospecting engine with:
 
 ## MassDwell Configuration
 
+> ⚠️ **[DEPRECATED - No CRM access as of 2026-03-04]** Kommo CRM integration no longer functional. Stage IDs below are historical reference only. Lead data must be sourced from local cache files — no live CRM queries possible.
+
 ### Callable Leads: ~589 Total ($15.3M)
 
 | Stage | Kommo ID | Count | Value | Priority |
@@ -140,11 +142,10 @@ Great that you're open to learning more. A few quick questions:
 **Cron Job:** `117cb3eb-43e2-426f-b317-9925858520a1`
 
 **MassDwell:**
-- Query Kommo CRM for all 6 callable stages (88661695, 94100935, etc.)
+- ~~Query Kommo CRM for all 6 callable stages~~ **[DEPRECATED - No CRM access as of 2026-03-04]** — Use existing `kommo-prospects-cache.json` (last valid snapshot)
 - Extract: email, phone, first/last name, property address (street, city, state, zip)
 - Validate: skip any prospect missing email or complete address
 - Count by stage + total value
-- Save to `kommo-prospects-cache.json` with timestamp
 
 **Atlantic Laser:**
 - Query Pipedrive for prospected contacts

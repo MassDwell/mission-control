@@ -54,17 +54,19 @@
 
 ---
 
-## SECTION 5: KOMMO CRM INTEGRATION ✅
+## SECTION 5: KOMMO CRM INTEGRATION ❌ [DEPRECATED - No CRM access as of 2026-03-04]
 
-**Script:** `email-to-kommo-integration.js`  
-**Runs Every:** 15 minutes
+> ⚠️ **This workflow relied on Kommo CRM which is no longer accessible.** Email-to-CRM sync is non-functional. Leads are not being created/updated in any CRM.
 
-**Pipeline:**
+**Script:** `email-to-kommo-integration.js` (DEAD — Kommo access revoked)
+**Runs Every:** ~~15 minutes~~ DISABLED
+
+**Pipeline (non-functional):**
 1. Email classified as SALES_LEAD
-2. Contact looked up or created in Kommo
-3. Deal created/updated with email details
-4. Deal moved to "Incoming Leads" stage
-5. Sync logged for tracking
+2. ~~Contact looked up or created in Kommo~~ NOT POSSIBLE
+3. ~~Deal created/updated with email details~~ NOT POSSIBLE
+4. ~~Deal moved to "Incoming Leads" stage~~ NOT POSSIBLE
+5. ~~Sync logged for tracking~~ NOT POSSIBLE
 
 **Fields Mapped:**
 - Contact: Name, Email, Phone

@@ -1,0 +1,18 @@
+{
+  "task_id": "massdwell-hub-sales-upgrade",
+  "workflow_type": "code",
+  "objective": "Upgrade MassDwell Hub sales section with real product images, updated specs, ICPs, and Resources tab",
+  "start_ts": "2026-04-02T11:09:12Z",
+  "end_ts": "2026-04-02T11:12:06Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "Done. Here's what was shipped:  **Changes committed and pushed (`a7f0616`):**  1. **Product images** — Both `.svg` references replaced with `.png` (Products tab + Precision Models section)  2. **PRODUCT_MODELS updated** — Correct sqft (470/565/594/892), beds, tags, bestFor descriptions, plus new `deck` field displayed in both card locations  3. **Resources tab** — Added to TABS array with:    - **Downloads grid**: Lookbook 2026 (PDF), Sales Packet v3 (PDF + DOCX), ADU Town Cheat Sheet (XLS"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

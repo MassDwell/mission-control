@@ -2,7 +2,17 @@
 
 **Version:** 1.0.0  
 **Date:** 2026-03-04  
+**Status:** ⚠️ **DESIGN SPECIFICATION — PARTIAL IMPLEMENTATION**  
 **Purpose:** Define and enforce fine-grained access control for all agents
+
+> **Implementation Status (as of 2026-03-28):**
+> - ✅ Permission profiles defined (this document + `canon/permissions.schema.json`)
+> - ✅ Compile-time validation script exists (`scripts/deploy/validate-permissions.sh`)
+> - ❌ Runtime enforcement interceptor: **NOT BUILT** — no active checks during agent execution
+> - ❌ Audit logs: **NOT ACTIVE** — `observability/permissions/access-log.json` does not exist
+> - ❌ Escalation logs: **NOT ACTIVE** — `observability/permissions/escalations.json` does not exist
+>
+> This document describes the **intended design**. Sections marked ⚠️ below describe behavior that is not yet implemented.
 
 ---
 
@@ -224,9 +234,11 @@ When you run `bash scripts/deploy/compile-configs.sh`:
 bash scripts/deploy/validate-permissions.sh
 ```
 
-### Runtime Enforcement
+### Runtime Enforcement ⚠️ NOT YET IMPLEMENTED
 
-During execution:
+**Current state:** No runtime interceptor exists. Agents are not actively checked against permission profiles during execution. The flow below is the intended design when built.
+
+Intended behavior (when implemented):
 
 1. Agent attempts action
 2. System checks permission profile
@@ -234,9 +246,11 @@ During execution:
 4. If escalation required: **QUEUE FOR APPROVAL**
 5. Audit trail logged to `observability/permissions/access-log.json`
 
-### Audit Trail
+### Audit Trail ⚠️ NOT YET ACTIVE
 
-All permission-related actions logged:
+**Current state:** `observability/permissions/access-log.json` does not exist. No access events are being logged. The format below is the intended schema when the runtime interceptor is built.
+
+Intended audit entry format (when implemented):
 ```json
 {
   "timestamp": "2026-03-04T14:05:00Z",
@@ -333,12 +347,12 @@ cat observability/permissions/escalations.json | jq '.[] | select(.status=="pend
 
 ## SAFETY GUARANTEES
 
-✅ **Only Clawson unrestricted** — All others have defined boundaries  
-✅ **Escalation rules enforced** — High-risk actions blocked by default  
-✅ **No silent failures** — Denied actions logged & alerted  
-✅ **Audit trail complete** — All access recorded  
-✅ **Reversible** — Permissions can be changed via registry  
-✅ **No privilege escalation** — Agents cannot exceed their profile  
+✅ **Only Clawson unrestricted** — All others have defined boundaries *(in spec)*  
+⚠️ **Escalation rules enforced** — Defined in spec; **runtime enforcement not yet built**  
+⚠️ **No silent failures** — Intended design; **logging not yet active**  
+⚠️ **Audit trail complete** — Intended design; **audit log does not yet exist**  
+✅ **Reversible** — Permissions can be changed via registry + recompile  
+⚠️ **No privilege escalation** — Intended guarantee; **no active runtime check prevents this today**  
 
 ---
 
@@ -348,19 +362,19 @@ cat observability/permissions/escalations.json | jq '.[] | select(.status=="pend
 A: No. Only Clawson can modify `canon/permissions.schema.json`. Requests must go through Clawson.
 
 **Q: What if an agent tries to access a forbidden resource?**  
-A: DENIED. Action logged. Clawson alerted. Audit trail updated.
+A: *(Intended behavior when implemented)* DENIED. Action logged. Clawson alerted. Audit trail updated. **Currently: no runtime interceptor exists; this behavior is not active.**
 
 **Q: Can Clawson temporarily grant an agent more access?**  
 A: Yes. Edit `canon/registry.json`, recompile, deploy. Changes are reversible.
 
 **Q: Are escalation approvals logged?**  
-A: Yes. All in `observability/permissions/escalations.json` with timestamp & decision.
+A: *(Intended behavior when implemented)* Yes, in `observability/permissions/escalations.json`. **Currently: that file does not exist; escalation logging is not active.**
 
 **Q: What if a disabled agent gets enabled without permission update?**  
-A: Compile step catches it. Validation will fail until profile assigned.
+A: Compile-time validation (`validate-permissions.sh`) will flag it. This check is implemented.
 
 ---
 
-**Status:** ✅ **ENFORCED**
+**Status:** ⚠️ **DESIGN SPECIFICATION — PARTIAL IMPLEMENTATION**
 
-_All agents locked to their profiles. No exceptions._
+_Permission profiles and compile-time validation are defined. Runtime enforcement, audit logging, and escalation logging are not yet built. Treat this document as a design specification and implementation guide, not a description of active behavior._

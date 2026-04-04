@@ -1,0 +1,18 @@
+{
+  "task_id": "massdwell-hub-login-fix",
+  "workflow_type": "debug",
+  "objective": "Fix Clerk login access issue on massdwellhub.com",
+  "start_ts": "2026-04-03T21:54:56Z",
+  "end_ts": "2026-04-03T21:57:06Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "Done. Here's what was broken and what changed:  **Root cause (two bugs):** 1. `sessionClaims?.email` is never populated — Clerk's default JWT doesn't include email, so Steve's bypass was always dead code 2. The original middleware (before this session) was blocking ALL users whose `role` wasn't `'admin'` or `'user'` — which is every new Google OAuth user → infinite redirect loop back to `/sign-in`  **Fix in `middleware.ts`:** - Removed the broken `sessionClaims?.email` / `isSteve` check - "
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

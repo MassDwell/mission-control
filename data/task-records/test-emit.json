@@ -1,0 +1,15 @@
+{
+  "task_id": "test-emit",
+  "workflow_type": "ops",
+  "objective": "test hermes wiring",
+  "terminal_state": "completed_verified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "end_ts": "2026-04-02T02:16:29.031Z",
+  "failures_encountered": [],
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": [],
+  "evidence": {}
+}

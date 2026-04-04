@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Canonical job spec schema for Runtime v1. Every dispatched job must conform to this schema before execution begins.",
+  "authored": "2026-04-02",
+
+  "status_lifecycle": ["queued", "claimed", "running", "validating", "completed", "failed", "blocked", "cancelled"],
+
+  "required_fields": [
+    "job_id",
+    "requested_by",
+    "request_text",
+    "mode",
+    "executor",
+    "repo_or_workspace",
+    "started_at",
+    "status"
+  ],
+
+  "schema": {
+    "job_id": {
+      "type": "string",
+      "format": "slug-YYYYMMDD-HHMMSS or descriptive-slug",
+      "description": "Unique identifier for this job",
+      "example": "drawstack-invoice-fix-20260402-201500"
+    },
+    "requested_by": {
+      "type": "string",
+      "description": "Who initiated the job",
+      "values": ["steve", "clawson", "cron", "system"]
+    },
+    "request_text": {
+      "type": "string",
+      "description": "Original request or triggering prompt, verbatim or summarized"
+    },
+    "mode": {
+      "type": "string",
+      "description": "Execution mode selected by Clawson",
+      "values": ["codesmith_mode", "moonshot_mode", "audit_mode", "research_mode", "fix_mode"]
+    },
+    "executor": {
+      "type": "string",
+      "description": "Actual executor used",
+      "values": ["claude_code_subprocess", "clawson_internal", "research_worker"]
+    },
+    "target_context": {
+      "type": "string",
+      "description": "What system, product, or codebase this affects",
+      "example": "drawstack production app"
+    },
+    "repo_or_workspace": {
+      "type": "string",
+      "description": "Absolute path to working directory",
+      "example": "/Users/openclaw/Projects/drawstack"
+    },
+    "inputs": {
+      "type": "object",
+      "description": "Mode-specific inputs (see execution-modes.json)"
+    },
+    "planned_steps": {
+      "type": "array",
+      "items": "string",
+      "description": "Ordered list of planned actions before execution starts"
+    },
+    "validation_requirements": {
+      "type": "array",
+      "items": "string",
+      "description": "What must be true for this job to count as completed"
+    },
+    "artifact_targets": {
+      "type": "array",
+      "items": "string",
+      "description": "Expected output files or locations"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "ISO-8601"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "ISO-8601",
+      "nullable": true
+    },
+    "status": {
+      "type": "string",
+      "values": ["queued", "claimed", "running", "validating", "completed", "failed", "blocked", "cancelled"]
+    },
+    "summary": {
+      "type": "string",
+      "description": "Human-readable outcome summary using mode report_phrasing template"
+    },
+    "files_changed": {
+      "type": "array",
+      "items": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": "string",
+      "description": "Paths to produced artifacts"
+    },
+    "next_action": {
+      "type": "string",
+      "nullable": true,
+      "description": "What should happen next, if anything"
+    },
+    "error_details": {
+      "type": "string",
+      "nullable": true,
+      "description": "Error output, exit code, and failure reason if status=failed"
+    },
+    "paperclip_issue_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "Paperclip issue ID if synced — downstream only, not authoritative"
+    }
+  }
+}

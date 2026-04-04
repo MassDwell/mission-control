@@ -22,7 +22,7 @@
 - **Product:** Modular ADUs (Accessory Dwelling Units)
 - **Target Customer:** Homeowners, property owners, real estate investors
 - **Geographic Focus:** Massachusetts
-- **CRM:** Kommo (massdwellcrm)
+- **CRM:** ~~Kommo (massdwellcrm)~~ **[DEPRECATED - No CRM access as of 2026-03-04]** — Manual tracking only (local contact files)
 - **Price Range:** $141,000 - $270,000
 
 ### Atlantic Laser Solutions
@@ -46,7 +46,7 @@
 **Step 2: MassDwell Email Check**
 ```
 REQUIRED CHECKS:
-✅ Contact is in Kommo CRM (MassDwell leads database)
+✅ Contact is in MassDwell leads database (manual check — Kommo no longer accessible)
 ✅ Contact inquiry is about ADUs, housing, or real estate
 ✅ Contact is NOT in Atlantic Laser prospect/customer list
 ✅ Email content mentions MassDwell products (ADUs)
@@ -63,14 +63,14 @@ PROHIBITED:
 REQUIRED CHECKS:
 ✅ Contact is in Pipedrive CRM (Atlantic Laser prospects)
 ✅ Contact inquiry is about welding, fabrication, or manufacturing
-✅ Contact is NOT in MassDwell/Kommo CRM
+✅ Contact is NOT in MassDwell leads database
 ✅ Email content mentions Atlantic Laser products (Theo MA1 series)
 
 PROHIBITED:
 ❌ Sending to homeowners
 ❌ Sending to property investors
 ❌ Sending to real estate contacts
-❌ Sending to anyone in MassDwell/Kommo CRM
+❌ Sending to anyone in MassDwell leads database
 ```
 
 ---
@@ -78,7 +78,7 @@ PROHIBITED:
 ## 🔒 Contact Database Separation
 
 ### MassDwell Contacts
-**Source:** Kommo CRM  
+**Source:** ~~Kommo CRM~~ Local contact files (Kommo no longer accessible as of 2026-03-04)
 **File:** `~/.openclaw/workspace/crm-dashboard/data/leads.json`
 
 **Contact Types:**
@@ -156,7 +156,7 @@ def validate_email_separation(sender_email, recipient_email, recipient_name, con
             return (False, "BLOCKED: Contact appears to be business/industrial (should use Atlantic Laser)")
         
         # Check if contact is in MassDwell CRM
-        if not is_in_kommo_crm(recipient_email):
+        if not is_in_massdwell_leads(recipient_email):  # NOTE: is_in_kommo_crm deprecated 2026-03-04; use local leads file
             return (False, "WARNING: Contact not in MassDwell CRM - verify before sending")
         
         return (True, "OK: MassDwell email validated")
@@ -165,7 +165,7 @@ def validate_email_separation(sender_email, recipient_email, recipient_name, con
         # Atlantic Laser validation
         
         # Check if contact is in MassDwell database
-        if is_in_kommo_crm(recipient_email):
+        if is_in_massdwell_leads(recipient_email):  # NOTE: is_in_kommo_crm deprecated 2026-03-04; use local leads file
             return (False, "BLOCKED: Contact is MassDwell prospect/customer")
         
         # Check if contact context is residential/homeowner related
@@ -188,7 +188,7 @@ def validate_email_separation(sender_email, recipient_email, recipient_name, con
 
 **MassDwell Sales Bot:**
 - [ ] Read EMAIL-SEPARATION-POLICY.md before every email
-- [ ] Verify contact is in Kommo CRM
+- [ ] Verify contact is in MassDwell leads database (manual — Kommo no longer accessible)
 - [ ] Verify contact is NOT in Atlantic Laser prospect list
 - [ ] Verify inquiry context is residential/ADU-related
 - [ ] Only send from sales@massdwell.com
@@ -196,7 +196,7 @@ def validate_email_separation(sender_email, recipient_email, recipient_name, con
 **Atlantic Laser Sales Bot:**
 - [ ] Read EMAIL-SEPARATION-POLICY.md before every email
 - [ ] Verify contact is business/fabrication-related
-- [ ] Verify contact is NOT in Kommo/MassDwell CRM
+- [ ] Verify contact is NOT in MassDwell leads database
 - [ ] Verify inquiry context is welding/manufacturing-related
 - [ ] Only send from team@atlanticlasersolutions.com
 
@@ -222,10 +222,10 @@ def validate_email_separation(sender_email, recipient_email, recipient_name, con
 
 ### ✅ CORRECT: MassDwell Email
 
-**To:** john.homeowner@gmail.com (Kommo CRM, inquired about ADUs)  
-**From:** sales@massdwell.com  
-**Subject:** Your ADU Inquiry - MassDwell Options  
-**Status:** ✅ PASS - Residential contact, ADU inquiry, in Kommo CRM
+**To:** john.homeowner@gmail.com (MassDwell leads, inquired about ADUs)
+**From:** sales@massdwell.com
+**Subject:** Your ADU Inquiry - MassDwell Options
+**Status:** ✅ PASS - Residential contact, ADU inquiry, in MassDwell leads database
 
 ### ❌ WRONG: MassDwell Email to Business
 
@@ -243,10 +243,10 @@ def validate_email_separation(sender_email, recipient_email, recipient_name, con
 
 ### ❌ WRONG: Atlantic Laser Email to Homeowner
 
-**To:** sarah.jones@gmail.com (MassDwell customer)  
-**From:** team@atlanticlasersolutions.com  
-**Subject:** Laser Welding Demo  
-**Status:** ❌ BLOCKED - Contact in MassDwell CRM, residential customer
+**To:** sarah.jones@gmail.com (MassDwell customer)
+**From:** team@atlanticlasersolutions.com
+**Subject:** Laser Welding Demo
+**Status:** ❌ BLOCKED - Contact in MassDwell leads database, residential customer
 
 ---
 

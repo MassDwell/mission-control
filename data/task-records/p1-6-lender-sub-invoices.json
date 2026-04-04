@@ -1,0 +1,18 @@
+{
+  "task_id": "p1-6-lender-sub-invoices",
+  "workflow_type": "code",
+  "objective": "P1-6: Lender draw review — show underlying sub invoices",
+  "start_ts": "2026-04-03T11:44:46Z",
+  "end_ts": "2026-04-03T11:49:35Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "Done. Here's what was implemented:  **API (`app/api/draws/[drawId]/route.ts`):** - Added a separate `prisma.invoice.findMany({ where: { drawId } })` query after the draw is fetched - Returns `invoices[]` in the GET response with: `id`, `vendorName`, `invoiceNumber`, `amount`, `sovLineDescription` (from first line item's SOV line) - Auth guard inherits from the parent draw query (lender access via `LenderProjectAccess`)  **Lender UI (`app/lender/draws/[drawId]/page.tsx`):** - Added `invoices` arr"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

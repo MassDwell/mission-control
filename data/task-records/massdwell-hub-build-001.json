@@ -1,0 +1,18 @@
+{
+  "task_id": "massdwell-hub-build-001",
+  "workflow_type": "code",
+  "objective": "Build MassDwell Hub full Next.js app from spec",
+  "start_ts": "2026-04-01T23:54:17Z",
+  "end_ts": "2026-04-02T00:12:12Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "| Sales Cheat Sheet | `/dashboard` | 9 tabs, full content | | COGS Calculator | `/cogs`, `/cogs/[id]` | Supabase-backed, auto-save | | Permit Navigator | `/permits` | 10 towns, Kommo search | | Lead Pipeline | `/leads` | Kommo + scoring + DNC | | Re-Listing Optimizer | `/re-listing` | GPT-4 + Supabase save |  ## To Go Live  1. **Fill in `.env.local`** — copy from `.env.local.example`, replace all `placeholder` values with real keys (Clerk, Supabase, Kommo, OpenAI)  2. **Run Supabase schema** �"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

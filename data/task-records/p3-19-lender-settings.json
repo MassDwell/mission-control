@@ -1,0 +1,18 @@
+{
+  "task_id": "p3-19-lender-settings",
+  "workflow_type": "code",
+  "objective": "P3-19: Lender settings and notification preferences page",
+  "start_ts": "2026-04-03T12:42:24Z",
+  "end_ts": "2026-04-03T13:04:33Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "P3-19 is complete. Commit `53446a2` — 8 files, 393 insertions:  - `lib/lender-settings.ts` — `getLenderNotifSettings()` helper with all-on defaults - `lib/notifications.ts` — 3 new lender email functions (funded, project access, inspection report) - `app/api/lender/settings/route.ts` — GET + PATCH endpoint - `app/lender/settings/page.tsx` — settings UI with profile section + 4 notification toggles - `app/lender/_components/LenderHeader.tsx` — Settings nav link added - `app/api/draws/"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

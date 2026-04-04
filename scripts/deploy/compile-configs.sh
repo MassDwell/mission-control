@@ -28,7 +28,8 @@ echo "   Enabled agents: $(jq '.agents | length' "$CANONICAL_DIR/registry.json")
 
 # Step 3: Generate integrations.json
 echo "✅ Step 3: Generating integrations manifest..."
-cat > "$CONFIG_DIR/integrations.json" << 'EOF'
+COMPILE_DATE=$(date +%Y-%m-%d)
+cat > "$CONFIG_DIR/integrations.json" << EOF
 {
   "integrations": {
     "google_workspace": {
@@ -55,7 +56,7 @@ cat > "$CONFIG_DIR/integrations.json" << 'EOF'
   },
   "credentials_total": 36,
   "credentials_active": ["google", "alpaca", "instagram", "x", "gemini", "brave"],
-  "compiled": "2026-03-04"
+  "compiled": "$COMPILE_DATE"
 }
 EOF
 echo "   Generated: config/integrations.json"

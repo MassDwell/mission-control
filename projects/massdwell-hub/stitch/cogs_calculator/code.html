@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MassDwell Hub | COGS Calculator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f8f9ff",
+              "tertiary-container": "#051d31",
+              "surface-container-low": "#eef4ff",
+              "surface-tint": "#4c5f7d",
+              "primary-container": "#051c36",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#485f7e",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#e4efff",
+              "inverse-on-surface": "#e9f1ff",
+              "on-primary-fixed-variant": "#344864",
+              "on-tertiary-fixed": "#051d31",
+              "surface": "#f8f9ff",
+              "surface-container-highest": "#d0e4ff",
+              "error": "#ba1a1a",
+              "on-primary-fixed": "#051c36",
+              "surface-dim": "#c6dcf8",
+              "secondary-container": "#c1d9fe",
+              "outline-variant": "#c4c6ce",
+              "inverse-primary": "#b3c8ea",
+              "surface-container-high": "#daeaff",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#d0e4ff",
+              "error-container": "#ffdad6",
+              "primary": "#000000",
+              "secondary-fixed": "#d3e3ff",
+              "tertiary": "#000000",
+              "on-tertiary-fixed-variant": "#33485f",
+              "primary-fixed-dim": "#b3c8ea",
+              "secondary-fixed-dim": "#b1c8ed",
+              "primary-fixed": "#d4e3ff",
+              "surface-variant": "#d0e4ff",
+              "on-background": "#051d31",
+              "on-surface-variant": "#44474d",
+              "outline": "#74777e",
+              "tertiary-fixed-dim": "#b3c9e4",
+              "secondary": "#49607f",
+              "on-surface": "#051d31",
+              "inverse-surface": "#1c3247",
+              "on-tertiary-container": "#70869f",
+              "on-secondary-fixed": "#001c39",
+              "background": "#f8f9ff",
+              "on-primary-container": "#7185a4",
+              "on-secondary-fixed-variant": "#314866",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        /* Hide scrollbar but keep functionality */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex flex-col gap-2 py-8 bg-[#011832] dark:bg-slate-950 h-screen w-64 fixed left-0 top-0 shadow-2xl z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<img class="w-8 h-8 rounded" data-alt="minimalist architectural logo with geometric M shape in white and navy blue professional luxury style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxXoy3VvUEO9q8NKusnAHkgo8xmfelp0M0T0TnG_qYAdX43ISykV58Py-XrrutUM34iF8B-35qRK-xVf2siyo6qUO5jV-oTyJqxz83rrddu9-uHaUfebY9ThQHv61meQBLNLlux4zJggfVK-J7FEanGY2DJXimq5UPCDgxP-gnd9Uepo5XwNsDnegV0jsGc57q9A0vmy6tP_ddx2wU0epJxB24uB84ZeimknM3zlYD5F_nrRw5OvLkLlkr8gi42Yv4NoP8nWKjRJ1z"/>
+<span class="text-white uppercase tracking-tighter font-black text-sm">MassDwell Hub Logo</span>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 transition-all duration-300 ease-in-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="bg-[#C1D9FE] text-[#011832] rounded-r-full font-bold ml-0 mr-4 py-3 px-6 transition-all duration-300 ease-in-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="calculate" style="font-variation-settings: 'FILL' 1;">calculate</span>
+<span class="text-xs font-bold uppercase tracking-widest">COGS Calculator</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 transition-all duration-300 ease-in-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-xs font-bold uppercase tracking-widest">ADU Permit Navigator</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 transition-all duration-300 ease-in-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Lead Pipeline</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 transition-all duration-300 ease-in-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="settings_backup_restore">settings_backup_restore</span>
+<span class="text-xs font-bold uppercase tracking-widest">Re-Listing Optimizer</span>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar -->
+<header class="bg-gradient-to-b from-[#EEF4FF] to-[#F8F9FF] dark:from-slate-900 shadow-sm dark:shadow-none flex justify-between items-center px-6 h-16 w-full docked full-width top-0 sticky z-40 md:pl-72">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-[#011832]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-black text-[#011832] dark:text-white tracking-tighter">MassDwell Hub</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:bg-[#D0E4FF] p-2 rounded-full transition-colors">search</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:bg-[#D0E4FF] p-2 rounded-full transition-colors">notifications</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center border-2 border-white shadow-sm overflow-hidden">
+<img alt="Executive User" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6q0wEPyPxtItApCLfd_uMuYpN80b3WI9Abyxj2XwOwivNaVUdJHkukbXvaPOOI6wK2a-0iwOnveuPxOGlL5YqIoIr2hdXTQYwUxSnMv46yi3Zq-B6DWyXgiHtFInluoW6Ntmwsq4xZwEJcZb1_MK5v_zjJ9hOPdZyG8bKdpRSAHbhSwtPkmiTMIbqrhKJWNT73e6U2gz7YEiXtbiK-DmzNC5TI7azTX7Vjf_j40yfZlPp2KaygY5fPVb7GUBS11kIsBFZ9H0-dsZD"/>
+</div>
+</div>
+</header>
+<!-- Main Content Stage -->
+<main class="md:ml-64 p-6 md:p-10 lg:p-20 min-h-screen">
+<!-- Hero Analytics Header -->
+<section class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-12">
+<div class="lg:col-span-3">
+<h2 class="text-4xl font-extrabold tracking-tight text-on-background mb-2">COGS Calculator</h2>
+<p class="text-secondary text-base leading-6">Analyze project profitability and manage construction costs with architectural precision.</p>
+</div>
+<div class="flex items-end justify-start lg:justify-end">
+<button class="bg-gradient-to-br from-[#011832] to-[#051C36] text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 shadow-lg hover:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+                    Create New Project
+                </button>
+</div>
+</section>
+<!-- KPI Bento Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15">
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">Total Portfolio COGS</p>
+<p class="text-2xl font-black tracking-tight text-on-background">$2,840,000</p>
+<div class="mt-4 flex items-center gap-2 text-error font-semibold text-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                    +4.2% vs Last Quarter
+                </div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15">
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">Average Gross Margin</p>
+<p class="text-2xl font-black tracking-tight text-on-background">22.4%</p>
+<div class="mt-4 flex items-center gap-2 text-on-secondary-container font-semibold text-xs bg-secondary-container/30 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                    Above Target (20%)
+                </div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15">
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">Variance Alert</p>
+<p class="text-2xl font-black tracking-tight text-on-background">-$42,300</p>
+<div class="mt-4 flex items-center gap-2 text-error font-semibold text-xs">
+<span class="material-symbols-outlined text-sm">warning</span>
+                    High Variance: Site Prep
+                </div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15">
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">Active Projects</p>
+<p class="text-2xl font-black tracking-tight text-on-background">12</p>
+<div class="mt-4 flex items-center gap-2 text-secondary font-semibold text-xs">
+<span class="material-symbols-outlined text-sm">timeline</span>
+                    3 Completing this month
+                </div>
+</div>
+</section>
+<!-- Active Project Focus: Interactive Table & Tracking -->
+<section class="bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden mb-12 border border-outline-variant/15">
+<div class="p-8 border-b border-surface-container-low flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-2xl font-bold tracking-tight">The Cambridge Modern ADU</h3>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase">In Progress</span>
+</div>
+<p class="text-secondary text-sm">Model: XL-2 Studio Loft • Started Jan 12, 2024</p>
+</div>
+<div class="flex gap-4">
+<div class="text-right">
+<p class="text-secondary text-[10px] font-bold uppercase">Projected Margin</p>
+<p class="text-xl font-black text-on-background">24.5%</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-surface-container-high flex items-center justify-center relative">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="transparent" r="20" stroke="#C1D9FE" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="transparent" r="20" stroke="#011832" stroke-dasharray="125.6" stroke-dashoffset="31.4" stroke-width="4"></circle>
+</svg>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto no-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-secondary">Cost Category</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-secondary">Estimated</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-secondary">Actual</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-secondary">Variance</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-secondary">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-on-background">Site Preparation &amp; Foundations</td>
+<td class="px-8 py-5 text-secondary">$24,500</td>
+<td class="px-8 py-5 text-on-background font-medium">$28,200</td>
+<td class="px-8 py-5 text-error font-bold">+$3,700</td>
+<td class="px-8 py-5">
+<span class="bg-error-container/20 text-error px-2 py-1 rounded text-[10px] font-bold uppercase">Over Budget</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low/20 hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-on-background">Structural Framing</td>
+<td class="px-8 py-5 text-secondary">$42,000</td>
+<td class="px-8 py-5 text-on-background font-medium">$41,500</td>
+<td class="px-8 py-5 text-on-primary-container font-bold">-$500</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container/20 text-on-secondary-container px-2 py-1 rounded text-[10px] font-bold uppercase">Under Budget</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-on-background">Electrical &amp; Smart Home</td>
+<td class="px-8 py-5 text-secondary">$12,800</td>
+<td class="px-8 py-5 text-on-background font-medium">$12,800</td>
+<td class="px-8 py-5 text-secondary font-bold">$0</td>
+<td class="px-8 py-5">
+<span class="bg-surface-container text-secondary px-2 py-1 rounded text-[10px] font-bold uppercase">On Track</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low/20 hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-on-background">Plumbing &amp; HVAC</td>
+<td class="px-8 py-5 text-secondary">$18,500</td>
+<td class="px-8 py-5 text-on-background font-medium">$19,100</td>
+<td class="px-8 py-5 text-error font-bold">+$600</td>
+<td class="px-8 py-5">
+<span class="bg-error-container/20 text-error px-2 py-1 rounded text-[10px] font-bold uppercase">Over Budget</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-on-background">Interior Finishing &amp; Cabinetry</td>
+<td class="px-8 py-5 text-secondary">$35,000</td>
+<td class="px-8 py-5 text-on-background font-medium">$0</td>
+<td class="px-8 py-5 text-secondary font-bold">-</td>
+<td class="px-8 py-5">
+<span class="bg-surface-container-high text-on-secondary-container px-2 py-1 rounded text-[10px] font-bold uppercase">Pending</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface-container-low p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-2">Total Project COGS</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-on-background">$132,800</span>
+<span class="text-sm text-secondary font-medium">of $185,000 est.</span>
+</div>
+</div>
+<div>
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-2">Calculated Gross Margin</p>
+<div class="flex items-center gap-3">
+<span class="text-3xl font-black text-on-background">24.5%</span>
+<div class="h-8 w-8 bg-green-500 rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-end gap-3">
+<button class="bg-white text-primary border border-outline-variant px-6 py-3 rounded-lg font-bold text-sm hover:bg-surface-container-low transition-colors">Export Report</button>
+<button class="bg-primary text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-primary-container transition-colors shadow-md">Update Actuals</button>
+</div>
+</div>
+</section>
+<!-- Project Pipeline List -->
+<section class="mb-20">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold tracking-tight text-on-background">Recent Projects</h3>
+<div class="flex items-center gap-2 text-secondary text-sm">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Filter by Status
+                </div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Project Item 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex flex-wrap items-center justify-between gap-6 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="modern small architectural home exterior with wood cladding and glass walls minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIKClGg2RnpxwRhPpXWc8QuQ4k2FS0OCjwk0_KnP_iAs1ektfoXgexPAaLehiqfL_AE9bbMAReR6hNFnEKuAREDUybpsoThZX4TGu1Z7gOtixlrpC9w1yuJPdAaZim8t4ZipQ7XTdexokebWY15pRfOS5PJSYfPror9RwCdPiyw2-ldGt9lb3vQhVj2rErfYPitF0AjWlfcui6pF6KddU77nkjGTe_IgOY33u_s00MtivNoCiJamHkAZBqGw9uiww3sJjri9xxJ90"/>
+</div>
+<div>
+<p class="font-bold text-on-background">Beacon Hill Carriage House</p>
+<p class="text-xs text-secondary">ID: MD-2024-001 • Model: Heritage Luxe</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Status</p>
+<span class="text-sm font-semibold text-on-background">Completed</span>
+</div>
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Margin</p>
+<span class="text-sm font-black text-green-600">28.2%</span>
+</div>
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Final COGS</p>
+<span class="text-sm font-semibold text-on-background">$212,400</span>
+</div>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Project Item 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex flex-wrap items-center justify-between gap-6 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="contemporary modular home in forest setting dark metal and wood details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbdlJa9xXzbFuv13d-EQzlB1deW1s-JCtrzGIAYQIie78BCnl5JDeLW_-ZxKuQ8ATxQHnU7SqIALyZGla5MWe05gNT13bk_JS-qJRkpeq6Pw8SW96oQD6pbWy2csRoCuPFuj2-knGsmxmNEvMn-rCMB1Hm0Q12dl9kb6dTqBPxA_t4sBmZ94nNuI4r4306QfzVpRIxEfhIcoxtK5q4FdO-4w5QgFePk6RaAWz9bdnlIamCVhQRSpR0TXjUgEmggPhLhcPVwca7XHoZ"/>
+</div>
+<div>
+<p class="font-bold text-on-background">Somerville Dual-Unit</p>
+<p class="text-xs text-secondary">ID: MD-2024-004 • Model: DuoConnect</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Status</p>
+<span class="text-sm font-semibold text-on-background">Estimated</span>
+</div>
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Est. Margin</p>
+<span class="text-sm font-black text-yellow-600">18.5%</span>
+</div>
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Est. COGS</p>
+<span class="text-sm font-semibold text-on-background">$345,000</span>
+</div>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Project Item 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex flex-wrap items-center justify-between gap-6 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="modern pool house or ADU with large glass doors and white walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYttSbvTtGJ2aeoFPt8o8b3tIrA5UvaPMvB4XcTFKwIbGn0nLYAwta7YBxp8GxqATs3guan16fmH9TEPwvIG46DcsORbffQfv68yTJz0SkwQdWDc5v3r06uRRxMYtyGAhqYTpozGyZAE0XuLD6xpSxwzk9mWEShucautUqGOFoexE4NVfNxmWm_HTPCfom7vXdGvPNu8G2E-WwI4sxXPg0JbLd_-p3VqqxC6Vgx7dYUExYlflTGfKc4F1yWYWh7Z0LZjlBH3m7tq4_"/>
+</div>
+<div>
+<p class="font-bold text-on-background">Newton Studio ADU</p>
+<p class="text-xs text-secondary">ID: MD-2024-012 • Model: MicroFlow</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Status</p>
+<span class="text-sm font-semibold text-on-background text-error">Warning</span>
+</div>
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Margin</p>
+<span class="text-sm font-black text-error">9.2%</span>
+</div>
+<div class="text-center">
+<p class="text-[10px] font-bold text-secondary uppercase">Actual COGS</p>
+<span class="text-sm font-semibold text-on-background">$158,000</span>
+</div>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-[#C4C6CE]/15 rounded-t-2xl shadow-[0_-4px_24px_-4px_rgba(5,29,49,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#49607F] dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold uppercase">Dash</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#011832] dark:text-white bg-[#C1D9FE] rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calculate</span>
+<span class="text-[10px] font-bold uppercase">COGS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F] dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-bold uppercase">Permits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F] dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-bold uppercase">Leads</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F] dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">settings_backup_restore</span>
+<span class="text-[10px] font-bold uppercase">Relist</span>
+</a>
+</nav>
+<!-- Modal Background Overlay (Hidden by Default) -->
+<div class="hidden fixed inset-0 bg-[#011832]/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden">
+<div class="p-8 border-b border-surface-container-low flex justify-between items-center">
+<h3 class="text-xl font-bold tracking-tight">Create New Project</h3>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-8 space-y-6">
+<div>
+<label class="text-[10px] font-bold uppercase text-secondary tracking-widest mb-2 block">Project Title</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary-container" placeholder="e.g. Cambridge Modern Loft" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="text-[10px] font-bold uppercase text-secondary tracking-widest mb-2 block">ADU Model</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg p-3 text-sm">
+<option>Studio Loft XL</option>
+<option>DualConnect 2-Bedroom</option>
+<option>Heritage Carriage House</option>
+</select>
+</div>
+<div>
+<label class="text-[10px] font-bold uppercase text-secondary tracking-widest mb-2 block">Client</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-3 text-sm" placeholder="Search leads..." type="text"/>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-xs font-semibold mb-3">Model Defaults Loaded:</p>
+<div class="grid grid-cols-2 gap-x-8 gap-y-2">
+<div class="flex justify-between text-xs text-secondary">
+<span>Structure:</span>
+<span class="font-bold">$42,000</span>
+</div>
+<div class="flex justify-between text-xs text-secondary">
+<span>Electrical:</span>
+<span class="font-bold">$12,800</span>
+</div>
+<div class="flex justify-between text-xs text-secondary">
+<span>HVAC:</span>
+<span class="font-bold">$18,500</span>
+</div>
+<div class="flex justify-between text-xs text-secondary">
+<span>Permits:</span>
+<span class="font-bold">$8,400</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low flex justify-end gap-3">
+<button class="text-sm font-bold px-6 py-2">Cancel</button>
+<button class="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm shadow-lg">Initialize Project</button>
+</div>
+</div>
+</div>
+</body></html>

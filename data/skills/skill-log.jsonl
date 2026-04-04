@@ -1,0 +1,6 @@
+{"ts":"2026-03-29T01:58:15.187Z","skill":"coding-agent","status":"success","notes":"neon-http-comprehensive PR opened — all 25 unsafe Prisma patterns fixed"}
+{"ts":"2026-03-29T10:02:45.291Z","skill":"coding-agent","status":"success","notes":"PR #108 opened: fix lender invite redeem crash for existing users"}
+{"ts":"2026-03-29T11:18:11.165Z","skill":"coding-agent","status":"success","notes":"Subs tab redesign built and pushed to feat/subs-tab-redesign"}
+{"ts":"2026-03-29T23:58:39.997Z","skill":"peekaboo","status":"success","notes":"UX audit screenshots captured for drawstack - all 3 portals"}
+{"ts":"2026-03-30T09:46:20.613Z","skill":"coding-agent","status":"success","notes":"PR #120 merged — 13 conflict resolution, Phase 1 staging→main"}
+{"ts":"2026-03-30T09:59:38.292Z","skill":"coding-agent","status":"success","notes":"P0 launch blockers complete — 8 fixes + email layer, PR #122 against staging"}

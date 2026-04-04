@@ -1,0 +1,18 @@
+{
+  "task_id": "drawstack-audit-2026-04-03",
+  "workflow_type": "audit",
+  "objective": "Full DrawStack app audit — workflow, feature, and functionality gaps; unified status component spec",
+  "start_ts": "2026-04-03T11:11:04Z",
+  "end_ts": "2026-04-03T11:21:10Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": " Here's a summary of what the audit found:  ---  ### Top Findings  **P0 Correctness Bugs (fix now):** - **Silent invoice rejections** — When a GC rejects a sub's invoice, no email notification fires and no reason is captured. The `sendSubInvoiceRejectedEmail()` function exists but is never called. - **`APPROVED_WITH_CONDITIONS` is a dead-end** — The status exists in the schema and enum, `conditionalApprovalNote`/`heldAmount`/`conditionsMetAt` fields are on `Draw`, but the API transition is u"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "hermes-upgrade-1775070990",
+  "workflow_type": "ops",
+  "objective": "Build Hermes active monitoring + context enrichment",
+  "start_ts": "2026-04-01T19:16:31Z",
+  "end_ts": "2026-04-01T19:20:43Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "{   'name': 'Hermes Monitor — Active Polling (30 min)',   'schedule': {     'kind': 'cron',     'expr': '*/30 * * * *',     'tz': 'America/New_York',     'staggerMs': 15000   },   'sessionTarget': 'main',   'wakeMode': 'now',   'payload': {     'kind': 'systemEvent',     'text': 'Execute silently: node /Users/openclaw/.openclaw/workspace/scripts/hermes-monitor.js >> /tmp/hermes-monitor.log 2>&1'   },   'enabled': true,   'description': 'Hermes active monitoring: polls GitHub CI, Vercel deploym"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

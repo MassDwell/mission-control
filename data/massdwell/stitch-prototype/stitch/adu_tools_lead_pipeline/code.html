@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MassDwell Hub | Lead Pipeline</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(208, 228, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-container": "#051d31",
+                        "surface-container-low": "#eef4ff",
+                        "surface-tint": "#4c5f7d",
+                        "primary-container": "#051c36",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#485f7e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e4efff",
+                        "inverse-on-surface": "#e9f1ff",
+                        "on-primary-fixed-variant": "#344864",
+                        "on-tertiary-fixed": "#051d31",
+                        "surface": "#f8f9ff",
+                        "surface-container-highest": "#d0e4ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#051c36",
+                        "surface-dim": "#c6dcf8",
+                        "secondary-container": "#c1d9fe",
+                        "outline-variant": "#c4c6ce",
+                        "inverse-primary": "#b3c8ea",
+                        "surface-container-high": "#daeaff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d0e4ff",
+                        "error-container": "#ffdad6",
+                        "primary": "#011832",
+                        "secondary-fixed": "#d3e3ff",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#33485f",
+                        "primary-fixed-dim": "#b3c8ea",
+                        "secondary-fixed-dim": "#b1c8ed",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-variant": "#d0e4ff",
+                        "on-background": "#051d31",
+                        "on-surface-variant": "#44474d",
+                        "outline": "#74777e",
+                        "tertiary-fixed-dim": "#b3c9e4",
+                        "secondary": "#49607f",
+                        "on-surface": "#051d31",
+                        "inverse-surface": "#1c3247",
+                        "on-tertiary-container": "#70869f",
+                        "on-secondary-fixed": "#001c39",
+                        "background": "#f8f9ff",
+                        "on-primary-container": "#7185a4",
+                        "on-secondary-fixed-variant": "#314866",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-[#011832] dark:bg-slate-950 flex-col gap-2 py-8 shadow-2xl z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center overflow-hidden">
+<img alt="MassDwell Hub Brand" class="w-full h-full object-cover" data-alt="minimalist geometric logo for a real estate technology company using architectural lines and professional blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCreXJrMJsYZczICWcpprAf0JzDcZmB0Dlp2fK9KRDKzEEk29hsiCUtt2An2vrAUaognMhFCxBSGU_a-IABzq1NL6_v3t4ZAciMXWWq77vkbnzSlWHcTHaOhDPyGyLZdAPiFq7lk4unsm7XYZM7lG42yyRKIKYZp42hZ7kSg-pY2PK6TLub9VGCsOPUcXhdVU2fzar4IAmbNYLeSe8hHBaEKOtMdyDEQOO2vws1_apJ4zmLqMpdSLPGUzaygVxiJ9hqlVbmKR4LL3_X"/>
+</div>
+<span class="text-white uppercase tracking-tighter font-black text-sm">MassDwell Hub Logo</span>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 hover:bg-[#051C36] transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 hover:bg-[#051C36] transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">calculate</span>
+<span class="text-xs font-bold uppercase tracking-widest">COGS Calculator</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 hover:bg-[#051C36] transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-xs font-bold uppercase tracking-widest">ADU Permit Navigator</span>
+</a>
+<a class="bg-[#C1D9FE] text-[#011832] rounded-r-full font-bold ml-0 mr-4 py-3 px-6 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Lead Pipeline</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 hover:bg-[#051C36] transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">settings_backup_restore</span>
+<span class="text-xs font-bold uppercase tracking-widest">Re-Listing Optimizer</span>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 left-0 md:left-64 bg-white/80 backdrop-blur-md z-40 shadow-sm">
+<div class="flex justify-between items-center px-8 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-[#011832]">Lead Pipeline</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-surface-container-low px-4 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-sm text-secondary mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48" placeholder="Search leads..." type="text"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-[#011832] font-bold text-xs">EU</div>
+</div>
+</div>
+</header>
+<!-- Main Content Stage -->
+<main class="pt-20 pb-24 md:pb-8 md:pl-72 px-4 md:px-8 bg-surface min-h-screen">
+<!-- Dashboard Header Summary -->
+<section class="mb-10 mt-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">Total Active Leads</p>
+<h2 class="text-3xl font-black text-on-background tracking-tighter">142</h2>
+<div class="mt-2 text-[10px] text-green-600 font-bold">+12% vs last week</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">High Intent (12+)</p>
+<h2 class="text-3xl font-black text-on-background tracking-tighter">28</h2>
+<div class="mt-2 text-[10px] text-blue-600 font-bold">Needs immediate follow-up</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-2 border-primary-container/5">
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">Pipeline Velocity</p>
+<h2 class="text-3xl font-black text-on-background tracking-tighter">4.2d</h2>
+<div class="mt-2 text-[10px] text-on-surface-variant font-medium">Avg stage movement</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<p class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">Conversion Rate</p>
+<h2 class="text-3xl font-black text-on-background tracking-tighter">18.4%</h2>
+<div class="mt-2 text-[10px] text-secondary font-medium">From initial intake</div>
+</div>
+</div>
+</section>
+<!-- Pipeline Header & Views -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+<div class="flex items-center gap-2 bg-surface-container p-1 rounded-full">
+<button class="px-6 py-1.5 bg-white shadow-sm rounded-full text-xs font-bold text-primary">Kanban</button>
+<button class="px-6 py-1.5 text-xs font-bold text-secondary hover:text-primary">List View</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-xs font-bold border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                </button>
+<button class="flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-xl text-xs font-bold shadow-lg hover:shadow-primary/20 transition-all">
+<span class="material-symbols-outlined text-sm">person_add</span> Add New Lead
+                </button>
+</div>
+</div>
+<!-- Kanban Board -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+<!-- Column: Initial Intake -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="text-xs font-black uppercase tracking-widest text-secondary">Initial Intake <span class="ml-2 px-2 py-0.5 bg-surface-container-high rounded-full">8</span></h3>
+<span class="material-symbols-outlined text-outline">more_horiz</span>
+</div>
+<!-- Lead Card 1 -->
+<div class="bg-white rounded-2xl shadow-sm p-5 border-l-4 border-primary group hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-on-background text-sm mb-0.5">Robert Mitchell</h4>
+<p class="text-[10px] text-secondary font-medium">robert.m@gmail.com</p>
+</div>
+<span class="bg-secondary-container text-[#011832] text-[9px] font-black px-2 py-1 rounded-md">14/15</span>
+</div>
+<div class="mb-4 space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-outline">home_work</span>
+<span class="text-[11px] font-medium text-on-surface-variant">The "Arlington" Suite</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-outline">schedule</span>
+<span class="text-[11px] font-medium text-on-surface-variant">Last Active: 2h ago</span>
+</div>
+</div>
+<!-- Cadence Tracker -->
+<div class="mb-4">
+<p class="text-[9px] font-bold uppercase tracking-tighter text-secondary mb-2">12-Day Cadence Progress</p>
+<div class="flex gap-1">
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full"></div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full"></div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full"></div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full"></div>
+</div>
+<div class="flex justify-between mt-1 text-[8px] font-bold text-secondary">
+<span>DAY 2 OF 12</span>
+<span>NEXT: POST-CALL</span>
+</div>
+</div>
+<div class="flex items-center gap-1 pt-3 border-t border-surface-container">
+<button class="p-2 rounded-lg hover:bg-surface-container-low text-secondary" title="Log Note"><span class="material-symbols-outlined text-sm">note_add</span></button>
+<button class="p-2 rounded-lg hover:bg-surface-container-low text-secondary" title="Email Templates"><span class="material-symbols-outlined text-sm">mail</span></button>
+<button class="flex-1 text-[10px] font-bold text-primary text-right">View Detail</button>
+</div>
+</div>
+<!-- Lead Card 2 (DNC) -->
+<div class="bg-white rounded-2xl shadow-sm p-5 border-l-4 border-outline-variant opacity-80">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-on-background text-sm mb-0.5">Linda Zhang</h4>
+<span class="bg-error-container text-on-error-container text-[8px] font-black px-1.5 py-0.5 rounded uppercase">DNC</span>
+</div>
+<span class="bg-surface-container text-secondary text-[9px] font-black px-2 py-1 rounded-md">3/15</span>
+</div>
+<div class="flex items-center gap-1 pt-3 border-t border-surface-container">
+<span class="text-[10px] text-outline italic">Contact suspended - Do not dial</span>
+</div>
+</div>
+</div>
+<!-- Column: Analysis/Proposal -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="text-xs font-black uppercase tracking-widest text-secondary">Proposal Phase <span class="ml-2 px-2 py-0.5 bg-surface-container-high rounded-full">12</span></h3>
+<span class="material-symbols-outlined text-outline">more_horiz</span>
+</div>
+<!-- Lead Card 3 -->
+<div class="bg-white rounded-2xl shadow-sm p-5 border-l-4 border-secondary-container group">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-on-background text-sm mb-0.5">David K. Emerson</h4>
+<p class="text-[10px] text-secondary font-medium">d.emerson@icloud.com</p>
+</div>
+<span class="bg-secondary-container text-[#011832] text-[9px] font-black px-2 py-1 rounded-md">11/15</span>
+</div>
+<div class="mb-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[14px] text-outline">home_work</span>
+<span class="text-[11px] font-medium text-on-surface-variant">Custom Detached ADU</span>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg">
+<p class="text-[10px] text-secondary leading-tight italic">"Sent initial feasibility report. Waiting for site survey confirmation."</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-4">
+<button class="py-2 bg-surface-container rounded-lg text-[9px] font-bold text-primary flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">edit</span> Log Note
+                        </button>
+<button class="py-2 bg-primary text-white rounded-lg text-[9px] font-bold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Contacted
+                        </button>
+</div>
+<div class="flex gap-1 pt-3 border-t border-surface-container overflow-x-auto no-scrollbar">
+<span class="whitespace-nowrap px-2 py-1 bg-surface-container-high rounded text-[8px] font-bold text-secondary">Follow-up: Tom</span>
+<span class="whitespace-nowrap px-2 py-1 bg-surface-container-high rounded text-[8px] font-bold text-secondary">Urgency Play</span>
+</div>
+</div>
+</div>
+<!-- Column: Contract Negotiation -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="text-xs font-black uppercase tracking-widest text-secondary">Contracting <span class="ml-2 px-2 py-0.5 bg-surface-container-high rounded-full">5</span></h3>
+<span class="material-symbols-outlined text-outline">more_horiz</span>
+</div>
+<!-- Lead Card 4 -->
+<div class="bg-white rounded-2xl shadow-sm p-5 border-l-4 border-on-secondary-container">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-on-background text-sm mb-0.5">Sarah Lofton</h4>
+<p class="text-[10px] text-secondary font-medium">sara.loft@firm.co</p>
+</div>
+<span class="bg-secondary-container text-[#011832] text-[9px] font-black px-2 py-1 rounded-md">15/15</span>
+</div>
+<div class="mb-4">
+<div class="flex items-center gap-2 mb-2 text-green-700 font-bold">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span class="text-[11px]">Agreement Out for Signature</span>
+</div>
+</div>
+<div class="mb-4">
+<p class="text-[9px] font-bold uppercase tracking-tighter text-secondary mb-2">12-Day Cadence Progress</p>
+<div class="flex gap-1">
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+</div>
+<div class="flex justify-between mt-1 text-[8px] font-bold text-green-700">
+<span>COMPLETED</span>
+<span>WINNER</span>
+</div>
+</div>
+<button class="w-full py-2 bg-on-tertiary-fixed text-white rounded-xl text-xs font-bold shadow-md">
+                        Mark as Closed Won
+                    </button>
+</div>
+</div>
+<!-- Column: Closing -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="text-xs font-black uppercase tracking-widest text-secondary">Ready to Build <span class="ml-2 px-2 py-0.5 bg-surface-container-high rounded-full">3</span></h3>
+<span class="material-symbols-outlined text-outline">more_horiz</span>
+</div>
+<div class="h-32 border-2 border-dashed border-outline-variant/30 rounded-2xl flex items-center justify-center">
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">Drop Here</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Email Template Sidebar Overlay (Example State) -->
+<div class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-[60] transform translate-x-full md:translate-x-0 hidden md:block border-l border-outline-variant/10">
+<div class="h-full flex flex-col">
+<div class="p-6 bg-[#011832] text-white">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-sm font-black uppercase tracking-widest">Email Templates</h3>
+<span class="material-symbols-outlined text-white/50 cursor-pointer">close</span>
+</div>
+<p class="text-[10px] text-white/70">Select a pre-filled sequence for <strong>Robert Mitchell</strong></p>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-3">
+<button class="w-full p-4 text-left border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-colors group">
+<h5 class="text-xs font-bold text-on-background mb-1">Initial Response</h5>
+<p class="text-[10px] text-secondary leading-normal">Introduce the Arlington Suite and set expectations.</p>
+</button>
+<button class="w-full p-4 text-left border-2 border-primary-container bg-surface-container-low rounded-xl relative">
+<h5 class="text-xs font-bold text-on-background mb-1">Value Drop</h5>
+<p class="text-[10px] text-secondary leading-normal">Send latest market data and ADU ROI calculations.</p>
+<div class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></div>
+</button>
+<button class="w-full p-4 text-left border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-colors group">
+<h5 class="text-xs font-bold text-on-background mb-1">Urgency Play</h5>
+<p class="text-[10px] text-secondary leading-normal">Limited time build slots and permit deadline warning.</p>
+</button>
+<button class="w-full p-4 text-left border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-colors group">
+<h5 class="text-xs font-bold text-on-background mb-1">Final Attempt</h5>
+<p class="text-[10px] text-secondary leading-normal">Soft break-up email to determine if they are still interested.</p>
+</button>
+<button class="w-full p-4 text-left border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-colors group">
+<h5 class="text-xs font-bold text-on-background mb-1">Post-Call Summary</h5>
+<p class="text-[10px] text-secondary leading-normal">Recap of discussion points and next actionable steps.</p>
+</button>
+</div>
+<div class="p-6 border-t border-outline-variant/10">
+<button class="w-full py-3 bg-[#011832] text-white rounded-xl text-xs font-black uppercase tracking-widest">
+                    Launch Template
+                </button>
+</div>
+</div>
+</div>
+<!-- Bottom Nav Bar (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-white/80 backdrop-blur-md border-t border-[#C4C6CE]/15 md:hidden">
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Dash</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined">calculate</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">COGS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Permits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#011832] bg-[#C1D9FE] rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Leads</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined">settings_backup_restore</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Relist</span>
+</a>
+</nav>
+<!-- Floating Action Button (Contextual) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-2xl shadow-2xl flex items-center justify-center md:hidden z-40">
+<span class="material-symbols-outlined">add</span>
+</button>
+</body></html>

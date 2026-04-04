@@ -1,0 +1,22 @@
+{
+  "task_id": "massdwell-hub-brand-colors",
+  "workflow_type": "code",
+  "objective": "Wire MassDwell brand colors into shadcn CSS vars, fix sidebar active state",
+  "terminal_state": "completed_verified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "lesson_candidate": "shadcn CSS vars must be overridden in the @layer base block — defining custom CSS vars elsewhere does not affect shadcn component styling",
+  "files_touched": [
+    "app/globals.css",
+    "components/sidebar.tsx",
+    "app/(app)/layout.tsx"
+  ],
+  "evidence": {
+    "output_tail": "commit f201f68, deployed clean"
+  },
+  "end_ts": "2026-04-02T02:17:25.514Z",
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

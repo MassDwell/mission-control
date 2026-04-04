@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-04-04T06:30:06.609Z",
+  "overall_status": "clean",
+  "critical": [],
+  "warnings": [],
+  "info": [
+    {
+      "check": "banned_phrases",
+      "message": "Scanned 7 paths, found 0 banned phrases"
+    },
+    {
+      "check": "registry_fake_agents",
+      "message": "Active agents: Clawson — no fake agents"
+    },
+    {
+      "check": "job_ledger",
+      "message": "0 jobs in ledger. Invalid status: 0. Orphaned: 0."
+    },
+    {
+      "check": "execution_modes",
+      "message": "5 modes defined. Missing fields: 0."
+    },
+    {
+      "check": "archive",
+      "message": "Archived agent dirs: codesmith, moonshot, personal-assistant"
+    }
+  ],
+  "checks": {
+    "banned_phrases": {
+      "hits": 0
+    },
+    "fake_agent_refs": {
+      "active_agents": [
+        "Clawson"
+      ],
+      "fake_found": 0
+    },
+    "job_ledger": {
+      "total": 0,
+      "invalid_status": 0,
+      "orphaned": 0
+    },
+    "execution_modes": {
+      "mode_count": 5,
+      "missing_fields": 0
+    },
+    "archive": {
+      "agents_archived": [
+        "codesmith",
+        "moonshot",
+        "personal-assistant"
+      ]
+    }
+  }
+}

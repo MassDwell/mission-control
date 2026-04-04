@@ -1,0 +1,12 @@
+{
+  "seenIds": [
+    "7382472892",
+    "7380048470",
+    "7357168415",
+    "7354774469",
+    "7354249074"
+  ],
+  "lastCheck": "2026-04-04T10:10:04.277Z",
+  "totalIssues": 5,
+  "lastAttemptResult": "OK — curl polled Sentry API successfully. All-zero recent stats across hourly buckets. Last issue activity: 2026-03-21. No new errors detected."
+}

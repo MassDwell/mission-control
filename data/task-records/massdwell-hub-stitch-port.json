@@ -1,0 +1,18 @@
+{
+  "task_id": "massdwell-hub-stitch-port",
+  "workflow_type": "code",
+  "objective": "Port MassDwell Hub from Stitch HTML to Next.js — 3 modules: Dashboard, COGS, Permit Navigator",
+  "start_ts": "2026-04-02T02:34:58Z",
+  "end_ts": "2026-04-02T02:51:41Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "Pushed. Commit `ead8771` — 11 files changed, 1431 insertions, 1739 deletions. Stitch port is live on main. "
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

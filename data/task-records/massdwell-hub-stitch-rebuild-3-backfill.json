@@ -1,0 +1,28 @@
+{
+  "task_id": "massdwell-hub-stitch-rebuild-3-backfill",
+  "workflow_type": "code",
+  "objective": "Full MassDwell Hub UI rebuild to Stitch spec — 9-tab dashboard, COGS detail, Permit Navigator, Re-Listing",
+  "terminal_state": "completed_verified",
+  "retries": 2,
+  "human_intervention_required": false,
+  "failures_encountered": [
+    "SIGKILL on first run (gateway restart)",
+    "mktemp collision on second run"
+  ],
+  "lesson_candidate": "claude-code-run.sh wrapper needs signal trap — SIGKILL during gateway restart kills wrapper before emit step, producing empty evidence records",
+  "root_cause_guess": "set -e + SIGKILL = no trap fires, tmp log is empty at emit time",
+  "files_touched": [
+    "app/(app)/dashboard/page.tsx",
+    "app/(app)/cogs/new/page.tsx",
+    "app/(app)/re-listing/page.tsx",
+    "app/data/towns.json",
+    "app/api/generate-description/route.ts"
+  ],
+  "evidence": {
+    "output_tail": "Build clean, 15 routes, commit d576380, deployed to massdwell-hub.vercel.app"
+  },
+  "end_ts": "2026-04-02T02:17:25.466Z",
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

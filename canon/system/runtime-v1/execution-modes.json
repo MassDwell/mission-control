@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Canonical execution mode definitions for Runtime v1. These are task profiles, NOT agents. Clawson selects a mode per job and spawns a Claude Code subprocess configured accordingly.",
+  "authored": "2026-04-02",
+
+  "modes": {
+    "codesmith_mode": {
+      "mode_id": "codesmith_mode",
+      "description": "Software implementation, debugging, refactoring, and deployment tasks",
+      "intended_use": "Any coding work: features, bug fixes, migrations, scripts, CI/CD, infra",
+      "executor_type": "claude_code_subprocess",
+      "default_tools": ["Read", "Write", "Edit", "Bash", "Glob", "Grep"],
+      "input_schema": {
+        "required": ["objective", "repo_or_workspace", "planned_steps"],
+        "optional": ["target_files", "acceptance_criteria", "constraints"]
+      },
+      "output_schema": {
+        "required": ["terminal_state", "files_changed", "summary"],
+        "optional": ["artifacts", "test_results", "error_details"]
+      },
+      "validation_rules": [
+        "git status must show 0 uncommitted changes on success",
+        "git log must confirm push to remote if deploy was in scope",
+        "test suite must pass if tests exist"
+      ],
+      "fail_conditions": [
+        "Exit code non-zero from Claude Code subprocess",
+        "Required files not written",
+        "Push not confirmed when deploy was scoped"
+      ],
+      "report_phrasing": {
+        "on_success": "Claude Code subprocess executed in codesmith mode. [summary]. Files changed: [list]. Pushed: [yes/no].",
+        "on_failure": "Claude Code subprocess (codesmith mode) failed. Exit: [code]. Error: [detail]. No changes committed."
+      },
+      "artifact_expectations": ["Modified source files", "Optional: test output", "Optional: deployment confirmation"]
+    },
+
+    "moonshot_mode": {
+      "mode_id": "moonshot_mode",
+      "description": "Venture research, opportunity analysis, product ideation, and market validation",
+      "intended_use": "Idea discovery, competitive research, PRD drafting, opportunity scoring",
+      "executor_type": "clawson_internal_or_research_worker",
+      "default_tools": ["web_search", "web_fetch", "read", "write"],
+      "input_schema": {
+        "required": ["objective", "research_domain"],
+        "optional": ["target_market", "constraints", "comparison_set"]
+      },
+      "output_schema": {
+        "required": ["terminal_state", "summary", "artifacts"],
+        "optional": ["opportunity_score", "next_steps"]
+      },
+      "validation_rules": [
+        "Output must be written to a file in data/ventures/ or data/massdwell/ or equivalent",
+        "Claims must cite sources (URLs or named documents)"
+      ],
+      "fail_conditions": [
+        "No artifact produced",
+        "Unsourced factual claims in output"
+      ],
+      "report_phrasing": {
+        "on_success": "Research worker run executed in moonshot mode. [summary]. Artifacts: [paths].",
+        "on_failure": "Research worker run (moonshot mode) failed. Reason: [detail]."
+      },
+      "artifact_expectations": ["Written research doc", "Optional: scored opportunity brief", "Optional: PRD draft"]
+    },
+
+    "audit_mode": {
+      "mode_id": "audit_mode",
+      "description": "Code review, security audit, architecture review, regression testing",
+      "intended_use": "Reviewing PRs, auditing security posture, QA passes, schema drift checks",
+      "executor_type": "claude_code_subprocess",
+      "default_tools": ["Read", "Bash", "Glob", "Grep"],
+      "input_schema": {
+        "required": ["objective", "repo_or_workspace", "audit_scope"],
+        "optional": ["checklist", "pass_criteria"]
+      },
+      "output_schema": {
+        "required": ["terminal_state", "findings", "summary"],
+        "optional": ["risk_level", "recommended_actions"]
+      },
+      "validation_rules": [
+        "Findings must reference specific files/lines",
+        "No code changes unless explicitly in scope"
+      ],
+      "fail_conditions": [
+        "Audit scope not fully covered",
+        "Code modified without explicit scope authorization"
+      ],
+      "report_phrasing": {
+        "on_success": "Audit worker run executed in audit mode. Scope: [scope]. Findings: [count]. Risk: [level]. Report: [path].",
+        "on_failure": "Audit worker run (audit mode) failed. Reason: [detail]."
+      },
+      "artifact_expectations": ["Written audit report", "Optional: annotated findings file"]
+    },
+
+    "research_mode": {
+      "mode_id": "research_mode",
+      "description": "Web research, data gathering, competitive intel, summarization",
+      "intended_use": "Market research, technology evaluation, news monitoring, summarization tasks",
+      "executor_type": "clawson_internal",
+      "default_tools": ["web_search", "web_fetch", "read", "write"],
+      "input_schema": {
+        "required": ["objective", "research_question"],
+        "optional": ["source_list", "depth", "output_format"]
+      },
+      "output_schema": {
+        "required": ["terminal_state", "summary", "artifacts"],
+        "optional": ["source_list"]
+      },
+      "validation_rules": [
+        "All factual claims must cite source",
+        "Artifact must be written to disk"
+      ],
+      "fail_conditions": [
+        "No artifact produced",
+        "Sources not cited"
+      ],
+      "report_phrasing": {
+        "on_success": "Research worker run executed in research mode. Question: [question]. Artifact: [path]. Sources: [count].",
+        "on_failure": "Research worker run (research mode) failed. Reason: [detail]."
+      },
+      "artifact_expectations": ["Written research summary or brief"]
+    },
+
+    "fix_mode": {
+      "mode_id": "fix_mode",
+      "description": "Targeted hotfix — single bug, single file, minimal blast radius",
+      "intended_use": "Production bugs, urgent one-line fixes, rollback execution, migration repairs",
+      "executor_type": "claude_code_subprocess",
+      "default_tools": ["Read", "Write", "Edit", "Bash"],
+      "input_schema": {
+        "required": ["objective", "repo_or_workspace", "target_files", "fix_description"],
+        "optional": ["rollback_plan"]
+      },
+      "output_schema": {
+        "required": ["terminal_state", "files_changed", "summary"],
+        "optional": ["verification_steps"]
+      },
+      "validation_rules": [
+        "Exactly the described files must be changed — no scope creep",
+        "Must push immediately on success",
+        "Vercel deploy status must be confirmed if web app in scope"
+      ],
+      "fail_conditions": [
+        "Files changed outside declared scope",
+        "Push not confirmed",
+        "Regression introduced"
+      ],
+      "report_phrasing": {
+        "on_success": "Claude Code subprocess executed in fix mode. Fix: [description]. Files: [list]. Pushed: yes. Verified: [yes/no].",
+        "on_failure": "Claude Code subprocess (fix mode) failed. No changes pushed. Error: [detail]. Rollback: [status]."
+      },
+      "artifact_expectations": ["Diff of changed files", "Push confirmation", "Optional: verification screenshot"]
+    }
+  }
+}

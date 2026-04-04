@@ -1,0 +1,18 @@
+{
+  "task_id": "p0-2-approved-with-conditions",
+  "workflow_type": "code",
+  "objective": "P0-2: APPROVED_WITH_CONDITIONS — fully implement",
+  "start_ts": "2026-04-03T11:32:37Z",
+  "end_ts": "2026-04-03T11:42:49Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "- `PATCH /api/draws/[drawId]` with `status: APPROVED_WITH_CONDITIONS`: stores `conditionalApprovalNote`, `heldAmount`, sets `approvedAt`, emails GC - `PATCH` with `action: MARK_CONDITIONS_MET` (GC-only): sets `conditionsMetAt`, emails lender - `GET` now returns `conditionalApprovalNote`, `heldAmount`, `conditionsMetAt`  **Emails:** - `sendDrawConditionallyApprovedEmail` — GC notified with conditions note and CTA - `sendDrawConditionsMetEmail` — lender notified with Fund Draw CTA  **Schema/Mi"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

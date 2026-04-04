@@ -58,8 +58,13 @@ All VAPI infrastructure removed:
 
 ## Active Integrations
 
-### Kommo CRM
-- **Status:** ❌ NO ACCESS (credentials deleted 2026-03-04)
+### CRM — GoHighLevel (switched 2026-04-03)
+- **Platform:** GoHighLevel
+- **URL:** https://app.gohighlevel.com
+- **Status:** Active — MassDwell migrated from Kommo to GHL
+
+### Kommo CRM (RETIRED)
+- **Status:** ❌ REPLACED by GoHighLevel (2026-04-03)
 
 ### Google Workspace (sales@massdwell.com)
 - **Connected:** 2026-02-02
@@ -107,13 +112,13 @@ See: MassDwell email inbox + manual tracking for lead status
 - Atlantic Laser Solutions (laser welding equipment distribution)
 - Alpine Property Group (real estate investment & development)
 
-**Secondary focus (New - 2026-03-04):**
-- **Moonshot Venture Discovery v2.0** — Global AI SaaS opportunity scanning
+**Secondary focus (New - 2026-03-04, updated 2026-04-02):**
+- **Moonshot research** — Global AI SaaS opportunity scanning executed as `moonshot_mode` research worker runs
   - 5 expansion domains (AI Learning, AI Tooling, Vertical AI, Business Operations, Founder Tools)
   - Evidence-driven discovery (Reddit, Indie Hackers, founder communities)
   - Target: $10K-$100K+ MRR AI SaaS products
-  - Framework: canon/system/moonshot-program.md (v3.0 — self-improving, Karpathy pattern)
-  - Pipeline: Moonshot (propose 3 ideas) → Clawson (approve) → Codesmith (build) → Mission Control (track)
+  - Execution: Clawson dispatches research worker run in moonshot_mode → produces opportunity brief → Steve approves → Clawson dispatches build via codesmith_mode Claude Code subprocess
+  - NOTE: Moonshot is an execution MODE, not a persistent agent. No autonomous session or memory.
 
 Secondary focus:
 - Optimize operations
@@ -138,27 +143,29 @@ Secondary focus:
 
 ---
 
-## Agent Architecture (Updated 2026-03-04)
+## Runtime Architecture (Updated 2026-04-02 — Runtime v1)
 
-**Status:** CLEAN SLATE — All agents deleted as of March 4, 2026
+**Status:** Single Orchestrator + Structured Worker Runs
 
-**Previously deployed (ARCHIVED):**
-- Personal Life CoS
-- Sales Chief
-- Marketing Head  
-- Codesmith
-- Admin Assistant
-- Finance Director
-- Ops Director
-- Marketing Content
-- Atlantic Laser Sales
-- Alpine Permitting
-- And others
+**What is real and running:**
+- **Clawson** — sole orchestrator, main session, Telegram-facing
+- **Claude Code subprocess** — worker tool for heavy coding/implementation tasks
+- **Execution modes** — task profiles that configure how a worker run is scoped (NOT agents)
 
-**Current state:** 
-- Only Clawson (main session) operational
-- Ready for fresh architecture rebuild
-- See: AGENT-REBUILD-BLUEPRINT.md for options
+**Execution modes (defined in canon/system/runtime-v1/execution-modes.json):**
+- `codesmith_mode` — software implementation, debugging, deployment
+- `moonshot_mode` — venture research, opportunity analysis, ideation
+- `audit_mode` — code review, security audit, QA passes
+- `research_mode` — web research, market intel, summarization
+- `fix_mode` — targeted hotfix, minimal blast radius
+
+**What is NOT real:**
+- Codesmith, Moonshot, Personal Assistant are archived mode definitions, not persistent agents
+- No multi-agent dispatch. No agent swarm. No autonomous subagents.
+
+**Job ledger (SSOT):** `data/runtime/job-ledger.jsonl`
+**Governance:** `canon/system/runtime-v1/GOVERNANCE.md`
+**Reporting rules:** `canon/clawson/reporting-rules.md`
 
 ---
 
@@ -211,6 +218,24 @@ All CRM integration suspended. Manual management only.
 
 ---
 
+## Hermes — REMOVED (2026-04-04)
+
+**Status:** ❌ FULLY DELETED — all scripts, data, cron jobs, and architecture removed.
+
+---
+
+## MetaClaw — REMOVED (2026-04-02)
+
+**Status:** ❌ DELETED — tools/metaclaw/ removed (freed 690MB)
+
+**Reason:** Been stopped since March 21 with no impact. OpenClaw's native skill system (ClawHub + workspace skills) does the same job better. The keepalive cron was firing every 30 min and silently failing.
+
+**Cron removed:** "Auto-start MetaClaw" (d41e1b15)
+
+---
+
+---
+
 ## Standing Rules — Deployment
 
 > ⛔ **NEVER merge feature upgrades directly to production (main) without staging first.**
@@ -227,6 +252,10 @@ After any coding agent (Claude Code, Codex, etc.) completes a task:
 4. Vercel deploy = push confirmed + check `vercel ls` for Ready status
 
 ---
+
+## Lessons Learned (Week of 2026-03-30+)
+
+- **Squash merges silently drop Prisma migration folders** — Hit 3 times in one day (PR #126 dropped DrawEvent table; PR #126 dropped paidAt/paidByUserId on Invoice; PR #135 dropped lenderContactName/submittedToLenderAt). Each time: dashboard crashes immediately post-deploy, Neon missing columns. **Prevention: run `node scripts/audit-migrations.js` from /Users/openclaw/Projects/drawstack immediately after every production merge. Script compares schema.prisma scalars against live Neon and exits 1 with a list of missing columns.**
 
 ## Lessons Learned (Week of 2026-03-23 to 2026-03-29)
 
@@ -278,6 +307,14 @@ After any coding agent (Claude Code, Codex, etc.) completes a task:
 **Monitoring:** Daily at 9 AM
 
 ---
+
+## MassDwell Hub
+
+**Domain:** massdwellhub.com (purchased April 1, 2026)
+**Purpose:** Internal sales & ops tool — 5 modules: Dashboard/Sales Cheat Sheet, COGS Calculator, ADU Permit Navigator, Lead Pipeline, Re-Listing Optimizer
+**Build prompt:** `data/massdwell/STITCH-MASSDWELL-HUB.md`
+**Stack:** Next.js 14, Tailwind + shadcn/ui, Supabase, Clerk (invite-only), Kommo CRM, OpenAI
+**Deploy:** Vercel → point massdwellhub.com DNS there when ready
 
 ## Customer Design Portal
 
@@ -443,23 +480,21 @@ DRAFT → SUBMITTED → UNDER_REVIEW → INSPECTION_ASSIGNED → INSPECTION_COMP
 
 ---
 
-## Paperclip Orchestration (March 2026)
+## Paperclip (Updated 2026-04-02 — Runtime v1)
 
-**Status:** ✅ OPERATIONAL — Phase 1 observation complete, Phase 2 pending approval
+**Status:** ✅ OPERATIONAL — Demoted to presentation layer (downstream view only)
 
 **Architecture:**
 - Paperclip frontend: ports 3100/3101
-- 4 agents deployed: Clawson, Codesmith, Moonshot, Personal Assistant
-- Claude Code adapter: operational
-- Phase 1 executor + polling loop: live (10s interval)
-- Whitelist: spawn_workstream, assign_agent (sandbox: LeadScore.ai only)
+- Keepalive cron: healthy (every 30 min)
+- Agent records in Paperclip: Clawson (real), Codesmith/Moonshot/PA (labels only, no executors)
 
-**Files:**
-- `canon/system/clawson-queue-executor.js` — executor with claim-lock, validation, SSOT mutation
-- `canon/agents/clawson/clawson-integration.js` — polling loop
-- `canon/system/PHASE1_COMPLETION_REPORT.md` — completion doc
+**State authority:**
+- **SSOT:** `data/runtime/job-ledger.jsonl` — canonical job state
+- **Paperclip:** downstream view, best-effort sync. If it conflicts with job-ledger, job-ledger wins.
+- Stale-run-recovery patched: will not re-queue issues assigned to non-Clawson agent IDs
 
-**Known Issue:** Agent runs succeed (exit 0) but issue status sometimes stays `in_progress` — task completion state transition is inconsistent.
+**Known limitation:** `in_progress` → `completed` status transition unreliable. This is why Paperclip is NOT the SSOT.
 
 ---
 
@@ -503,3 +538,15 @@ Pre-existing secrets (Supabase + OpenAI keys) were blocking all pushes to missio
 > ClawHub downloads require vetting. Before installing any skill: check author reputation, review scripts for wallet/transfer/exfil code, confirm it matches the request. When in doubt, don't install.
 
 ---
+
+## MassDwell Hub — Allowlist Contacts (2026-04-03)
+
+| Name | Email |
+|------|-------|
+| Steve Vettori | steve.vettori@massdwell.com |
+| Nick Ferreira | nick.ferreira@massdwell.com |
+| Jon Proctor | jon.proctor@massdwell.com |
+| Chris Bradley | chris.bradley@massdwell.com |
+| Carlos Ferreira | carlos.ferreira@aacsteel.com |
+| Thayana Fernandes | thayana.fernandes@aacsteel.com |
+| Patricia Luna | patricia.luna@aacsteel.com |

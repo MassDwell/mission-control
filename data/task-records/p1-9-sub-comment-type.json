@@ -1,0 +1,18 @@
+{
+  "task_id": "p1-9-sub-comment-type",
+  "workflow_type": "code",
+  "objective": "P1-9: Add SUBCONTRACTOR to CommentAuthorType",
+  "start_ts": "2026-04-03T11:45:19Z",
+  "end_ts": "2026-04-03T11:57:48Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "Done. Here's a summary of what was implemented:  **P1-9: Sub draw comments (CLA a13c2813)**  - **Schema**: `SUBCONTRACTOR` was already in `CommentAuthorType` from a prior commit; confirmed in Neon via `db execute IF NOT EXISTS` - **Comments API** (`app/api/draws/[drawId]/comments/route.ts`):   - New `GET` handler with `?visibility=sub_safe` to strip `LENDER` comments for sub views   - `POST` now detects sub users (no orgMember → look up by Clerk email in `ProjectSubcontractor`) and sets `autho"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

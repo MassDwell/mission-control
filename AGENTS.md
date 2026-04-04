@@ -23,6 +23,7 @@ You wake up fresh each session. These files are your continuity:
 
 - **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
 - **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
+- **Lessons:** `memory/LESSONS.md` — confirmed root causes, failure patterns, and prevention rules. **Write here after any debugging session where you confirm root cause.** Schema: Date / What failed / Why it failed / Signal that predicted it / Prevention.
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
 
@@ -65,6 +66,10 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Sending emails, tweets, public posts
 - Anything that leaves the machine
 - Anything you're uncertain about
+- **Cron create, update, or delete** — any addition, modification, or removal of cron jobs
+- **Gateway restart** — `openclaw gateway restart` or any equivalent
+- **Direct file edits to operational files** — `config/`, `canon/`, `jobs.json`, or any file that drives live system behavior
+- **Bulk operations** — any action affecting more than 1 item (jobs, configs, agents) without explicit per-item authorization from Steve
 
 ## Group Chats
 
@@ -113,6 +118,8 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 **Don't overdo it:** One reaction per message max. Pick the one that fits best.
 
+---
+
 ## Tools
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
@@ -150,6 +157,16 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 - You want a different model or thinking level for the task
 - One-shot reminders ("remind me in 20 minutes")
 - Output should deliver directly to a channel without main session involvement
+
+### 🔇 Silent Prefix — Required for All New Cron Jobs
+
+**All new `systemEvent/main` cron jobs MUST begin with `Execute silently:` in the payload text unless relay to Steve is explicitly intended.**
+
+This prevents the LLM relay loop from forwarding routine automation output to Steve's Telegram. Without this prefix, any `systemEvent/main` job with `wakeMode: "now"` will prompt the assistant to "relay this reminder to the user in a helpful and friendly way."
+
+- ✅ Correct: `"Execute silently: pgrep -f 'my-process' > /dev/null || ..."`
+- ❌ Wrong: `"Auto-start my process: pgrep -f 'my-process' > /dev/null || ..."`
+- ✅ Exception: Jobs deliberately intended to notify Steve (e.g., alerts, briefings) may omit the prefix.
 
 **Tip:** Batch similar periodic checks into `HEARTBEAT.md` instead of creating multiple cron jobs. Use cron for precise schedules and standalone tasks.
 

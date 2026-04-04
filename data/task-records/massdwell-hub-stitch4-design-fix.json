@@ -1,0 +1,18 @@
+{
+  "task_id": "massdwell-hub-stitch4-design-fix",
+  "workflow_type": "code",
+  "objective": "Apply Stitch-4 design system fixes: no-line rule, button gradients, typography utilities, 80px spacing, surface hierarchy, glassmorphism, badge tokens, accordion chevron",
+  "start_ts": "2026-04-02T03:31:54Z",
+  "end_ts": "2026-04-02T03:40:18Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "DONE — commit SHA: `66be886`  Changes applied across 10 files:  - **globals.css** — Added `@layer utilities` with `.display-lg`, `.display-md`, `.headline-sm`, `.body-md`, `.label-sm`, `.label-md`, `.btn-primary` (gradient), `.ambient-shadow` - **card.tsx** — Removed `ring-1 ring-foreground/10`, removed `border-t` on CardFooter, added ambient shadow inline style, set `bg-white` - **button.tsx** — Primary: gradient via `.btn-primary`; Secondary: transparent + ghost outline - **badge.tsx**"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

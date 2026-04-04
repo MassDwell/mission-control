@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "created": "2026-03-28",
+  "note": "Biz Reporter configuration for MassDwell and Atlantic Laser. See BLOCKED items below.",
+
+  "businesses": {
+    "massdwell": {
+      "name": "MassDwell",
+      "website": "massdwell.com",
+      "data_sources": {
+        "google_analytics_ga4": {
+          "status": "BLOCKED",
+          "reason": "GA4 property ID for massdwell.com not known. massdwell.com not found in Search Console under vettoristeve@gmail.com. Action needed: Steve must verify which Google account owns massdwell.com GA4 property and share property ID (format: G-XXXXXXXXXX or numeric property ID).",
+          "token_file": "credentials/google/analytics-token.json",
+          "account": "vettoristeve@gmail.com"
+        },
+        "google_search_console": {
+          "status": "BLOCKED",
+          "reason": "massdwell.com not registered in Search Console under vettoristeve@gmail.com. Only drawstack.ai, adu-tools.vercel.app, adu-permit-navigator.vercel.app found. Action needed: Steve must add massdwell.com to Search Console or confirm which account holds it.",
+          "token_file": "credentials/google/analytics-token.json",
+          "account": "vettoristeve@gmail.com"
+        },
+        "gmail_leads": {
+          "status": "READY",
+          "account": "sales@massdwell.com",
+          "token_file": "credentials/google/gmail-token.json",
+          "use": "Lead inbox monitoring, inbound inquiry counting"
+        }
+      },
+      "report_template": "weekly_web_traffic",
+      "delivery": "telegram",
+      "blocked_until": "GA4 property ID confirmed by Steve"
+    },
+
+    "atlantic_laser": {
+      "name": "Atlantic Laser Solutions",
+      "website": "atlanticlasersolutions.com",
+      "data_sources": {
+        "google_analytics_ga4": {
+          "status": "BLOCKED",
+          "reason": "GA4 property ID for atlanticlasersolutions.com not known. Site not in Search Console under vettoristeve@gmail.com. Action needed: Steve must verify which account owns atlanticlasersolutions.com GA4 and provide property ID.",
+          "token_file": "credentials/google/analytics-token.json",
+          "account": "vettoristeve@gmail.com"
+        },
+        "google_search_console": {
+          "status": "BLOCKED",
+          "reason": "atlanticlasersolutions.com not registered in Search Console under vettoristeve@gmail.com. Action needed: same as above.",
+          "token_file": "credentials/google/analytics-token.json",
+          "account": "vettoristeve@gmail.com"
+        },
+        "pipedrive": {
+          "status": "READY",
+          "company_domain": "atlanticlasersolutions",
+          "token_file": "credentials/pipedrive/api-token.json",
+          "pipeline_id": 1,
+          "pipeline_name": "Atlantic Laser Pipeline",
+          "use": "Pipeline summary, deal counts by stage, stall detection"
+        }
+      },
+      "report_template": "weekly_pipeline_plus_web",
+      "delivery": "telegram",
+      "blocked_until": "GA4 property ID confirmed by Steve",
+      "pipedrive_report_ready": true,
+      "note": "Pipedrive pipeline reporting is fully ready NOW — can run independently of GA4 block."
+    }
+  },
+
+  "what_works_today": [
+    "Atlantic Laser Pipedrive pipeline summary (deal counts, stage breakdown, pipeline value)",
+    "MassDwell Gmail inbound lead count",
+    "Manual GA4 queries once property IDs are provided"
+  ],
+
+  "blocked_items": [
+    {
+      "item": "massdwell.com GA4 web traffic report",
+      "action_needed": "Steve: which Google account has massdwell.com in GA4? Provide property ID (G-XXXXXXXXXX format)."
+    },
+    {
+      "item": "atlanticlasersolutions.com GA4 web traffic report",
+      "action_needed": "Steve: which Google account has atlanticlasersolutions.com in GA4? Provide property ID."
+    },
+    {
+      "item": "Search Console for both sites",
+      "action_needed": "If not yet registered, visit search.google.com/search-console and add both domains. Once added under vettoristeve@gmail.com, reports can run immediately."
+    }
+  ]
+}

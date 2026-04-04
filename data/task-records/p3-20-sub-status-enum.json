@@ -1,0 +1,18 @@
+{
+  "task_id": "p3-20-sub-status-enum",
+  "workflow_type": "code",
+  "objective": "P3-20: ProjectSubcontractor.status migrate String to enum",
+  "start_ts": "2026-04-03T12:42:24Z",
+  "end_ts": "2026-04-03T12:59:21Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "**Migration** (`20260404200000_migrate_subcontractor_status_to_enum/migration.sql`) - Idempotent `CREATE TYPE` via `DO $$` block (handles partial prior state) - `UPDATE ... SET status = UPPER(status)` to normalize existing lowercase values - `DROP DEFAULT` before `ALTER COLUMN TYPE` (PostgreSQL requirement) - `ALTER COLUMN status TYPE 'SubcontractorStatus' USING status::'SubcontractorStatus'` - Restores `DEFAULT 'INVITED'::'SubcontractorStatus'`  **Code changes** — all raw string comparisons r"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

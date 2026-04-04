@@ -31,10 +31,10 @@
 │   └── VERSION.compiled           (build timestamp)
 │
 ├── runtime/                        [LIVE STATE (runtime-only)]
-│   ├── WORKING.md                 (current operational state, MUTABLE)
 │   ├── cron-active.json           (current cron job state)
 │   ├── session-state.json         (active sessions)
 │   └── metrics.json               (real-time metrics)
+│                                   NOTE: WORKING.md lives at memory/WORKING.md (see below)
 │
 ├── observability/                 [LOGS, HEALTH, MONITORING]
 │   ├── drift-audit/
@@ -63,7 +63,7 @@
 │       └── cron-compiled-20260304.json
 │
 └── memory/                         [OPERATIONAL LOGS (mutable)]
-    ├── WORKING.md                 (daily ops state)
+    ├── WORKING.md                 (current operational state — actual location, not runtime/)
     ├── 2026-03-04.md              (daily log)
     ├── archive/
     │   └── (old daily logs)
@@ -101,7 +101,7 @@
 
 | File | Purpose | Mutability | Owner |
 |------|---------|-----------|-------|
-| `runtime/WORKING.md` | Current operational state, tasks, focus | ✅ Highly mutable | Clawson |
+| `memory/WORKING.md` | Current operational state, tasks, focus | ✅ Highly mutable | Clawson |
 | `runtime/cron-active.json` | Active cron job state (from API) | ✅ Auto-synced | Gateway |
 | `runtime/session-state.json` | Active sessions, connections | ✅ Auto-synced | Gateway |
 | `runtime/metrics.json` | Real-time metrics (CPU, tokens, cost) | ✅ Auto-synced | Observability |
@@ -127,7 +127,7 @@
 canon/SOUL.md        |   ❌     |    ✅     |   ⚠️    |   ⚠️    |
 canon/HEARTBEAT.md   |   ✅     |    ✅     |   ✅    |   ✅    |
 canon/cron.manifest  |   ✅     |    ✅     |   ✅    |   ✅    |
-runtime/WORKING.md   |   ✅     |    ❌     |   ❌    |   ❌    |
+memory/WORKING.md    |   ✅     |    ❌     |   ❌    |   ❌    |
 config/*.json        |   ❌     |    ✅     |   ✅    |   ✅    |
 memory/*.md          |   ✅     |    ❌     |   ❌    |   ❌    |
 ```
@@ -135,7 +135,7 @@ memory/*.md          |   ✅     |    ❌     |   ❌    |   ❌    |
 ### EDITING RULES
 
 **Tier 1: Free to Edit (No Approval Needed)**
-- `runtime/WORKING.md` — Operational state, can change freely
+- `memory/WORKING.md` — Operational state, can change freely (actual path; spec previously said runtime/WORKING.md)
 - `memory/YYYY-MM-DD.md` — Daily logs, auto-managed
 - `observability/*.log` — Audit trail, auto-managed
 
@@ -491,7 +491,7 @@ Example: `1.0.0-20260304-150000`
 - **Canonical:** `canon/VERSION.canon` (source of truth, IMMUTABLE)
 - **Compiled:** `config/VERSION.compiled` (generated, timestamp)
 - **History:** `observability/version-history.json` (complete changelog)
-- **Runtime:** `runtime/WORKING.md` (reference only)
+- **Runtime:** `memory/WORKING.md` (reference only — actual path; not runtime/)
 
 ---
 

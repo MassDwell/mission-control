@@ -1,0 +1,3056 @@
+{
+  "lastPollAt": "2026-04-04T10:37:53.609Z",
+  "issueStates": {
+    "9f8715d3-dbd6-4c09-aeb6-24fb17ba3ca2": {
+      "status": "todo",
+      "priority": "critical",
+      "assigneeAgentId": null,
+      "title": "🚨 URGENT: DrawStack Production Down - Need Neon DB Credentials",
+      "updatedAt": "2026-04-03T15:31:25.727Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3c9576b1-a7a2-40b9-8e28-f783e82bd402": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "🚨 URGENT: DrawStack Production Down - Need Neon DB Credentials",
+      "updatedAt": "2026-04-01T16:35:43.823Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "24855aa8-73ca-4965-85c3-a754161f530e": {
+      "status": "todo",
+      "priority": "critical",
+      "assigneeAgentId": null,
+      "title": "Phase 1: Invoice full billing by default",
+      "updatedAt": "2026-04-01T14:05:00.198Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3bfa5d3f-681f-4169-b265-85a9de9b256c": {
+      "status": "todo",
+      "priority": "critical",
+      "assigneeAgentId": null,
+      "title": "CRITICAL: Document download Access Denied - need presigned URLs",
+      "updatedAt": "2026-04-01T11:43:32.213Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7ecda8fb-9a19-4ce7-9695-cd6dc8b12771": {
+      "status": "todo",
+      "priority": "critical",
+      "assigneeAgentId": null,
+      "title": "Document upload broken - image not displaying",
+      "updatedAt": "2026-04-01T11:09:16.074Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "573b00fd-1a06-456a-b9b0-6d1fc0a1c0c9": {
+      "status": "todo",
+      "priority": "critical",
+      "assigneeAgentId": null,
+      "title": "CRITICAL: Document upload broken - S3 Access Denied",
+      "updatedAt": "2026-04-01T09:49:25.256Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "67de8616-79e6-43a1-bd2f-dc9469704d0a": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Fix: Missing DB migrations caused production 500s after Phase 2 deploy",
+      "updatedAt": "2026-03-30T20:15:03.729Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b518eb5c-d9e7-4679-ae00-dfb98336e635": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Enable Neon PITR and automated DB backups",
+      "updatedAt": "2026-03-23T01:12:32.127Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7d8f9df7-de0e-4d70-a03d-e5f755f1e820": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Enforce PR-only workflow — no direct pushes to main",
+      "updatedAt": "2026-03-22T22:07:31.263Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d94f0808-3bfd-43b7-8904-a44a69f2e0fb": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Branch protection rules on main (GitHub)",
+      "updatedAt": "2026-03-22T22:07:20.148Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "20fcec7d-f2ac-4595-9698-dc3d081e636e": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Enforce Prisma migrate deploy in production (not db push)",
+      "updatedAt": "2026-03-22T21:45:24.681Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f7cee190-0963-4fba-af72-de63d6058155": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P1] Wire sendPaymentRecordedEmail — function exists, never fires",
+      "updatedAt": "2026-03-21T22:12:39.128Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "cf824c06-dc13-4223-b497-ad62a2bb79e6": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P1] Wire Stripe billing portal — upgrade, plan view, payment",
+      "updatedAt": "2026-03-21T22:12:39.118Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e3ae5f04-89da-4827-bcda-abdc59ce4036": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Bug: S3 presigned URL ContentType too strict",
+      "updatedAt": "2026-03-19T22:24:46.981Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b3b6ba91-d291-436a-8d43-915fcf522cd8": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Bug: Hardcoded admin email list in AdminLayout",
+      "updatedAt": "2026-03-19T22:22:43.221Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5847e0cf-6c64-4904-8f22-1ce7176988d0": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Bug: Atomic DB transactions on draw creation",
+      "updatedAt": "2026-03-19T22:18:46.742Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5fc85099-e84e-45eb-95a3-e8fed6cb6dd5": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P1: Kill empty dashboard — guided 3-step onboarding flow for new signups",
+      "updatedAt": "2026-03-19T11:41:21.822Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "45e73ca1-c258-41f4-aab8-0d936712ac9f": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "EPIC: DrawStack Launch Audit — Full Fix Sprint (9 Groups)",
+      "updatedAt": "2026-03-18T07:46:55.585Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "56eeddd5-de35-4973-a64d-c13c69a9d595": {
+      "status": "cancelled",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "EPIC: DrawStack Launch Audit — Full Fix Sprint (9 Groups)",
+      "updatedAt": "2026-03-17T22:32:04.034Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "cc392533-0b08-4a29-a4bb-d535ff9d0cb9": {
+      "status": "cancelled",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Stripe: Switch to live keys + test end-to-end checkout",
+      "updatedAt": "2026-03-13T23:07:21.201Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "37503d48-286d-4787-9e81-e0bb2b3b81af": {
+      "status": "cancelled",
+      "priority": "critical",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Stripe: Switch to live keys + test end-to-end checkout",
+      "updatedAt": "2026-03-13T23:07:21.184Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0a166549-2e87-44eb-88b6-bedecc96af52": {
+      "status": "cancelled",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P1: Landing page — headline, value prop, trust signals rewrite",
+      "updatedAt": "2026-03-13T23:07:21.166Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3c93e7ca-4670-4177-9c0f-3dea9d3e66b1": {
+      "status": "cancelled",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P1: Auto-trigger requirements research on project creation",
+      "updatedAt": "2026-03-13T23:07:21.149Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8170763a-9f5b-4538-85ea-85fd4f88287d": {
+      "status": "cancelled",
+      "priority": "critical",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "EPIC: MeritLayer UX & Competitive Parity Overhaul (Sprint 001)",
+      "updatedAt": "2026-03-13T23:07:21.130Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c56e77f9-2e17-4fde-a487-b2f8a42baa52": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Complete Telegram adapter setup and validation",
+      "updatedAt": "2026-03-10T23:47:59.841Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "02c6b217-b1d1-429e-b1b6-ab9d78368808": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Implement dueal-intake behavor for telegram and paperclip",
+      "updatedAt": "2026-03-10T23:47:59.836Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c8e47358-b39b-4409-8e86-5bef97cbe933": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Build Telegram → Paperclip intake adapter",
+      "updatedAt": "2026-03-10T13:12:51.102Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "1088343b-7b58-4a7d-965d-4ea9b471491d": {
+      "status": "done",
+      "priority": "critical",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Implement Dual-intake workflow for telegram and paperclip",
+      "updatedAt": "2026-03-10T13:00:07.806Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6393a717-3a08-42bc-bad1-3a7770bc0ec3": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Implement SUBCONTRACTOR CommentAuthorType + sub draw discussion API/UI",
+      "updatedAt": "2026-04-03T12:30:49.371Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e8302814-c545-48a3-b57f-bd9943a50590": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Implement draw status visibility on sub portal invoices and SOV lines",
+      "updatedAt": "2026-04-03T12:12:28.633Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "82442165-c896-4938-bfe5-594d6893437a": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P1-6: Lender draw review — show underlying sub invoices",
+      "updatedAt": "2026-04-03T12:11:41.851Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "18e9b0ac-334c-43b8-b204-fd56c50c55f4": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P1-5: GC invoice inbox — approved invoices awaiting draw queue",
+      "updatedAt": "2026-04-03T12:07:31.322Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4f25f2a5-10fd-4d4c-846b-6e5e1e5c28a7": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P1-4: DrawApprovalTimeline — unified role-aware status component",
+      "updatedAt": "2026-04-03T11:58:38.595Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a13c2813-1c31-409f-acb9-99ce4ff100a7": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P1-9: Add SUBCONTRACTOR to CommentAuthorType — enable sub draw discussion",
+      "updatedAt": "2026-04-03T11:58:38.557Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c62ac04c-1d8c-4280-9e70-ac0df56b523c": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P1-10: Token-based sub submission to authenticated portal account linkage",
+      "updatedAt": "2026-04-03T11:56:34.983Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "33deba5e-8edc-4518-aa7e-c1f3613aca97": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Build DrawApprovalTimeline component",
+      "updatedAt": "2026-04-03T11:55:00.638Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "708836a6-e57d-41b8-92f5-f7a64d9e9ddf": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P1-7: Store rejectionNote + infoRequestNote as structured fields on Draw",
+      "updatedAt": "2026-04-03T11:53:47.946Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6ea9622a-d000-4a09-9431-8393bca363dc": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "P1-8: Sub portal — draw status visibility on invoices and SOV lines",
+      "updatedAt": "2026-04-03T11:53:47.883Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2ffd5845-7698-47b0-b800-8e1edcc669e2": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P0-2: APPROVED_WITH_CONDITIONS — fully implement or cleanly remove",
+      "updatedAt": "2026-04-03T11:50:28.855Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b831e728-8094-4b17-8de7-3387cc86e80f": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Implement atomic draw submission + lender package delivery (CLA-308)",
+      "updatedAt": "2026-04-03T11:49:07.470Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e50a2ee5-1e33-4949-96c7-cc439b9698f9": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P1-6: Lender draw review — show underlying sub invoices",
+      "updatedAt": "2026-04-03T11:47:25.825Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0534b7be-4f58-4789-b855-6a810d106572": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P0-3: Consolidate draw submission + lender package delivery into one atomic action",
+      "updatedAt": "2026-04-03T11:42:40.265Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b8b56fa8-0526-41b2-97f4-9ee9546496b5": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P0-1: Invoice rejection — capture reason + fire sub notification email",
+      "updatedAt": "2026-04-03T11:39:39.666Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d3a17ea6-aa5d-4c00-9b96-55f6f84f38c3": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Full App Audit — Workflow, Feature & Functionality Gaps",
+      "updatedAt": "2026-04-03T11:19:06.819Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b1c86e6f-f75b-4f46-b37f-d47f3c051246": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Build MassDwell Hub web app (5 modules)",
+      "updatedAt": "2026-04-02T02:32:29.719Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5ad67173-ff90-471b-acf9-bfde8687ad76": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "MassDwell Hub — Full App Build",
+      "updatedAt": "2026-04-02T00:01:09.208Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e7e5b22e-f0d3-42e7-b113-a6d8ce9f42c6": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Feature 4: Stored materials workflow",
+      "updatedAt": "2026-04-01T14:51:25.320Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "036745fe-8b47-4da4-b4fb-7ed77cfdf661": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Feature 2: Cash flow forecasting",
+      "updatedAt": "2026-04-01T14:45:29.241Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3537abf8-6a25-4bd4-855f-474bedafd21b": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Feature: Conditional draw releases",
+      "updatedAt": "2026-04-01T14:35:32.641Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "1ed79e20-f780-43d9-8174-1f9b539d3719": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Comprehensive QA Test - All DrawStack Features & Workflows",
+      "updatedAt": "2026-04-01T14:29:17.395Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5b39996d-dbe5-48ef-aae4-b1469260e676": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Phase 3: Inspector workflow - flag line items",
+      "updatedAt": "2026-04-01T14:23:38.397Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "52c5e4cb-13fa-44e8-9e0d-6bcde4bd9d1d": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Phase 2: GC override controls for invoice amounts",
+      "updatedAt": "2026-04-01T14:21:31.716Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f1624c7c-d2c4-4d9a-97c5-77ea2e60fc20": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Simplify sidebar navigation + add workflow help",
+      "updatedAt": "2026-04-01T13:26:31.158Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "964bba00-af3c-4f1a-bdfc-3f5b92169484": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Improve status labels for multi-party workflow clarity",
+      "updatedAt": "2026-04-01T10:40:40.583Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "771979cf-3cd5-41aa-a28b-b421d15d24c6": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Invoice count inaccurate + UI lacks visual separation",
+      "updatedAt": "2026-04-01T09:56:14.570Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0db9621b-b4d5-4c96-bea1-288736d10adf": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Investigate recurring 500 server error",
+      "updatedAt": "2026-04-01T09:28:05.114Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "bac35edd-fd69-4cb3-8f23-6d592c5af17b": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Create custom 404 page",
+      "updatedAt": "2026-04-01T09:26:45.164Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ea61ebe2-5377-4c57-8e95-c1a62b4c502b": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Make blog content publicly accessible (SEO fix)",
+      "updatedAt": "2026-04-01T09:17:59.495Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "9faef418-dd19-4c7e-9941-a53677de45c5": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Comprehensive QA Test - All DrawStack Features & Workflows",
+      "updatedAt": "2026-04-01T08:58:17.337Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f37934a0-7675-4d30-822a-0cbb695a4a12": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Staging QA pass — 8 AI features before merge to production",
+      "updatedAt": "2026-03-30T21:54:41.965Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6ffa56d1-384e-48d2-a026-b62f2f1178ae": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Strategic Questions: DrawStack Phase 2 Decision Points",
+      "updatedAt": "2026-03-30T21:54:24.663Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "173bbd0a-d7da-484d-a098-a021f6bfaa98": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Phase 2: Draw Submission Portal — email draw package to lender from app",
+      "updatedAt": "2026-03-30T21:48:28.436Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "de612c10-99d6-4277-a4cb-54506cbb3403": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Validate: Change Orders UI — end-to-end functional audit",
+      "updatedAt": "2026-03-30T21:48:28.406Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b61e3b2c-59b3-4789-9487-85d6f99da400": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Validate: Lien Waiver workflow — upload, extract, track per draw",
+      "updatedAt": "2026-03-30T21:48:28.379Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2ed5c7e3-2e79-42a1-b5cf-1205b10b68f9": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Phase 2: QuickBooks / Xero Integration — sync approved invoices",
+      "updatedAt": "2026-03-30T21:00:20.103Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "bce889fa-271b-4fb1-9d3c-e3b02a67752d": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Fix: Duplicate invoice detection — block double payments (GH #111)",
+      "updatedAt": "2026-03-30T20:18:46.670Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4bd7511e-09d0-43cc-a21d-a894bdfc4b4f": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Fix: Block zero-dollar invoice submission and funding (GH #110)",
+      "updatedAt": "2026-03-30T20:17:47.939Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8ab3b514-47c5-40fe-acae-058de3ca5eec": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Fix: AI chat widget broken — nested Prisma include (Neon HTTP incompatible)",
+      "updatedAt": "2026-03-30T20:16:40.690Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f07e10fd-dfcb-49bd-96e8-b5dd0a3e1b2a": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Phase 2 — Photo-to-SOV AI Inspector Flow",
+      "updatedAt": "2026-03-30T20:13:42.602Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8af9b324-b11d-4903-9d39-ce9bc8546698": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "GC Subs Tab: Sub status stuck on Invited after activation",
+      "updatedAt": "2026-03-27T16:47:27.138Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0a96f0e6-04e9-4b0a-9119-c89d45af8ebf": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "DrawStack Logo Design — Generate & Deploy Final Logo",
+      "updatedAt": "2026-03-26T11:31:38.073Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b256ea06-1487-49a1-844a-59a212d77b62": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Analytics: Retainage Tracker + Cost-to-Complete Projection",
+      "updatedAt": "2026-03-25T11:17:55.122Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "20e354ac-da41-4f94-801a-4e77e176cf4f": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "AI Budget Anomaly Detection",
+      "updatedAt": "2026-03-23T01:27:16.722Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "348962b2-a53d-4f46-b4cf-21527529f07d": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Integrate Sentry error monitoring",
+      "updatedAt": "2026-03-23T01:27:16.706Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "17e470ca-e35b-4c6d-8544-513d056046d2": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Set up staging environment (Neon branch + Vercel staging)",
+      "updatedAt": "2026-03-23T01:12:32.108Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5fdafcbe-2ce4-4d83-89b6-5d852dff9579": {
+      "status": "todo",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Sub Portal: Per-project dashboard",
+      "updatedAt": "2026-03-23T01:00:27.934Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4a97b1bb-ce20-4ee9-8260-3ce1b9b9aa80": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub Portal: Invoice submission (SOV-linked + freeform)",
+      "updatedAt": "2026-03-23T00:35:31.155Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "661d764b-3a41-4111-acb9-bc88686fa6a3": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Tech Planning: AI Document-to-SOV Generator Architecture",
+      "updatedAt": "2026-03-22T23:39:59.095Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8906743e-9323-437c-803e-e31dd95374ae": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Smart SOV Generator",
+      "updatedAt": "2026-03-22T23:06:56.179Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fbdb5645-fb35-468e-a2d4-c61480ae634b": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "AI Draw Risk Scorer",
+      "updatedAt": "2026-03-22T22:24:01.824Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "247e9fb6-af8c-4b7f-ba95-9d7370e41b03": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Implement feature flags for new AI features",
+      "updatedAt": "2026-03-22T22:11:14.689Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "eed05287-add8-45d2-8afd-d5a07ade7109": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Research: Competitive Analysis for DrawStack Phase 2 Features",
+      "updatedAt": "2026-03-22T13:20:16.578Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "269fc2d9-2a58-4ddf-a79f-8c21a367dbad": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Tech Planning: QuickBooks Online Integration Architecture",
+      "updatedAt": "2026-03-22T13:15:17.130Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c815bab7-e65d-4821-806d-e6e14b05ffd9": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub Portal: Project switcher + multi-GC support",
+      "updatedAt": "2026-03-22T03:57:53.238Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ff40411f-b14d-4ecd-86ab-3b6eb9a9351d": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub Portal — Full Rebuild (Epic)",
+      "updatedAt": "2026-03-22T03:55:42.355Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "251c84c3-f22d-4373-803f-e726a5ab556b": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Manual workflow advancement for offline lender flow",
+      "updatedAt": "2026-03-22T01:33:08.413Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ab0a0089-aec6-4897-8a82-24940acbc0c8": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Delete draft draw still failing — investigate root cause",
+      "updatedAt": "2026-03-22T01:30:51.738Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0508ece8-1ff4-4397-8f70-628056a80760": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[High] Approve Draw and Confirm Funding buttons are same green color — differentiate",
+      "updatedAt": "2026-03-22T00:10:09.495Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2ae8e750-8faf-4c77-8664-e90de446c10b": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P4] Lender draw history / audit trail per project",
+      "updatedAt": "2026-03-22T00:10:00.631Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2e9e27d8-05d4-4942-b8e8-d59830d5ae6e": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P3] Project edit page — retainage, lender, loan amount",
+      "updatedAt": "2026-03-22T00:10:00.610Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "02b2bfe0-4f74-4c25-901a-f34062520529": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P4] Lender project summary — loan amount, funded to date, % complete",
+      "updatedAt": "2026-03-22T00:10:00.588Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3871d00b-929d-4cec-ae7e-1742bcb4845c": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[High] sendNewSubInvoiceEmail links to /dashboard root — fix to deep link to invoice",
+      "updatedAt": "2026-03-21T23:44:10.505Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2e01af8c-beff-459d-955d-69012603d5e0": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[High] SOV CSV import should be available on Solo plan (remove gate or set row limit)",
+      "updatedAt": "2026-03-21T23:39:04.983Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c1460391-835c-4d7d-8024-ac1ce4f77a8d": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P2] Add support@drawstack.ai contact link in-app",
+      "updatedAt": "2026-03-21T22:30:18.416Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "cf140dc5-c170-486b-8f9d-c63eb5494351": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P2] Trial expiry warning emails (day 11 + day 13)",
+      "updatedAt": "2026-03-21T22:30:18.389Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "78f43eb0-e1cb-40d6-9926-bbf5ce953615": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P2] First-run empty state — Lender guided flow",
+      "updatedAt": "2026-03-21T22:30:18.363Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "bf40fdce-0c6d-498e-aabd-b016431363d8": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P2] First-run empty state — GC guided onboarding flow",
+      "updatedAt": "2026-03-21T22:30:18.338Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "881f26f2-d399-49dc-922f-0557672a106e": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[GC] Add project archive / soft delete",
+      "updatedAt": "2026-03-21T19:19:42.308Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "bf5c0bd0-d93c-4145-b1d7-8e90f632702d": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Lender] Fix empty state — add guidance copy for uninvited lenders",
+      "updatedAt": "2026-03-21T19:19:42.266Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2ef49492-979e-41af-808c-ea9dccc6beda": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Lender] Email lender when draw is submitted — ensure delivery even pre-redeem",
+      "updatedAt": "2026-03-21T19:19:42.239Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c9999eb8-7c0e-4bf9-b27b-e461855f8d6a": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Sub] Sub invite email must include project name and GC company name",
+      "updatedAt": "2026-03-21T19:19:42.209Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "964faf5a-3c88-4da2-92bd-fcd8d2fa7e46": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Sub] Mobile responsive audit and fix for /sub/ pages",
+      "updatedAt": "2026-03-21T19:19:42.183Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e7dad598-618a-4b89-8872-eab17aa8043a": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Sub] Send email notification to sub when invoice is approved or payment recorded",
+      "updatedAt": "2026-03-21T19:19:42.152Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "9df6822b-c3a9-4071-bc6e-cdc42a0f2b97": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Analytics] Confirm PostHog is loading in production after env var fix",
+      "updatedAt": "2026-03-21T19:19:42.117Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "9509c89c-3491-4e10-8238-352fd1408b83": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Trust] Replace 'Mike R.' placeholder testimonial with real quote or remove",
+      "updatedAt": "2026-03-21T19:01:52.505Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5c132dd6-992c-48cf-9a60-e9f89f01a419": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Fix DrawStack Prisma relation casing and TypeScript errors",
+      "updatedAt": "2026-03-21T19:01:24.781Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4ee791a8-400e-4822-9c6f-1d2e31c14105": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Fix DrawStack build: Prisma relation casing + TypeScript errors",
+      "updatedAt": "2026-03-21T19:01:24.766Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d7e2e4f2-a1d3-4180-ae22-3ea26d701045": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Trust] Verify support@drawstack.ai routes to a real inbox",
+      "updatedAt": "2026-03-21T18:53:35.714Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "9468e3eb-0ca6-4188-8e6a-50f8f6a9385e": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[GC] Add delete for DRAFT draws",
+      "updatedAt": "2026-03-21T17:31:25.075Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "9171ce1b-a2cc-44a9-a0d4-21690cba5593": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Onboarding] Lender direct signup routes to GC flow — fix lender path",
+      "updatedAt": "2026-03-21T17:28:18.578Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "214e5adb-e45f-4bea-bbf5-fabddb6fcb1a": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Onboarding] Extend trial from 7 to 14 days",
+      "updatedAt": "2026-03-21T17:25:44.829Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6e7751b4-6b50-4a42-8c34-350ebd09c0f9": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Project overview: workflow status bar + draw pipeline",
+      "updatedAt": "2026-03-20T23:30:40.816Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "05fd441f-90cd-4da0-9143-05615a61b927": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub invite — Phase 1: Invite from project + assign SOV lines",
+      "updatedAt": "2026-03-20T20:30:40.923Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "1c6caf33-02e5-4878-b6c7-9fe39d320619": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Invoice Review: Manual SOV mapping for unmatched lines",
+      "updatedAt": "2026-03-20T16:43:10.886Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d645b5a8-8e4b-4b1e-a59e-bbe3560791f3": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Feature: Payment tracking — GC marks invoices paid, sub gets notified",
+      "updatedAt": "2026-03-20T12:51:52.519Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "26e690f9-bfaa-4bbc-ae8c-4b4c83dac155": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Feature: Budget guard — warn when invoice approval exceeds SOV line budget",
+      "updatedAt": "2026-03-20T12:51:52.499Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "919ac128-b05e-4458-a267-7378259a0cb4": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": null,
+      "title": "Bug: Floating point math on financial calculations",
+      "updatedAt": "2026-03-20T12:51:52.483Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e6f13c31-d772-40a1-8b6f-113778a7081e": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Job costing dashboard — real-time budget vs actual",
+      "updatedAt": "2026-03-20T09:40:00.251Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6eb2c63e-3b8c-468d-a781-89fcef079aa0": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Retainage tracking per subcontractor",
+      "updatedAt": "2026-03-20T07:35:04.826Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7320a1d3-7b63-4edf-97d2-1bc7c47394a8": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: GC invoice management inbox",
+      "updatedAt": "2026-03-20T05:50:45.525Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "549b8217-da14-4f4f-a59a-1caadfae170c": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: AI auto-parse sub invoice PDF into form fields",
+      "updatedAt": "2026-03-20T05:44:25.356Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7344e1f9-d640-4691-a849-edf97fe3c963": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Compliance Vault — insurance tracking and alerts",
+      "updatedAt": "2026-03-20T02:34:07.679Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5662d8cb-abfc-4d1f-b294-0a51900c1c09": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Automated lien waiver generation and e-sign loop",
+      "updatedAt": "2026-03-20T01:41:20.825Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c36f9be1-6188-4986-8a2a-9a0d585ce327": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Change Order Management module",
+      "updatedAt": "2026-03-20T01:36:04.409Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4ef0e1db-8aa6-49c0-989c-b28673985edd": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Line-item level dispute/flagging on draws",
+      "updatedAt": "2026-03-20T00:08:23.846Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5a4df433-f3cc-43c0-af2a-3ab4670d2025": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Bug: Number inputs not accepting typed values (project details + budget fields)",
+      "updatedAt": "2026-03-19T22:06:32.614Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "34cd5cfb-2b2b-4e5c-9bbb-16ae6f9b7cf0": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Draw Detail — Status Stepper, Summary Cards, SOV Table",
+      "updatedAt": "2026-03-19T15:45:42.012Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "038261d3-7b32-49fe-bdea-c3867dae5f3f": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Lender Portal — Portfolio Dashboard + Draw Review",
+      "updatedAt": "2026-03-19T14:36:08.789Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6f360641-f6a1-4bee-ab85-8141e5800019": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Global Layout, Sidebar Nav & Top Bar — Dark Theme",
+      "updatedAt": "2026-03-19T14:06:41.852Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8319287b-f5ee-432e-b499-44aac0c9e001": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Dashboard — KPI Cards, Project Table, Activity Feed",
+      "updatedAt": "2026-03-19T14:06:18.178Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e5803895-c655-49b5-adde-fd1187382aca": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Invoice Upload — Drag-and-Drop Zone, AI Parsing Panel",
+      "updatedAt": "2026-03-19T14:00:02.122Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7d45ac69-bd37-447c-8fd6-0aebd2c618d2": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack UI: Invoice Upload — Drag-and-Drop Zone & AI Parsing Panel",
+      "updatedAt": "2026-03-19T11:42:28.379Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "248bc833-2406-484d-b4e4-0f8c9eaedafd": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack UI: Lender Portal — Portfolio Dashboard & Draw Review",
+      "updatedAt": "2026-03-19T11:40:32.208Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8ee277d4-c845-43aa-adc9-48161280f977": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack UI: Draw Detail — Status Stepper, Summary Cards & SOV Table",
+      "updatedAt": "2026-03-19T11:38:35.852Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e380fe08-f80d-4843-8370-53afd116f708": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack UI: Dashboard — KPI Cards, Project Table & Activity Feed",
+      "updatedAt": "2026-03-19T03:00:40.074Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6ec00e20-152e-4eca-82f3-9fde69dd802f": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack UI: Global Layout, Sidebar Nav & Top Bar",
+      "updatedAt": "2026-03-19T02:55:57.145Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0eb1a706-7e55-4e13-9482-278a686613b3": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G1: Critical fixes — draft draws, retainage from project, remove fake inspection steps, fund/reject confirmations",
+      "updatedAt": "2026-03-18T05:16:50.198Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c26020df-4648-4186-89fc-f355272d1019": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G6: Copy rewrites — per spec in drawstack-full-audit-fix.md",
+      "updatedAt": "2026-03-18T04:46:06.985Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e799895b-1846-4559-8b2c-b59be24dece3": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G8: Analytics & monitoring — PostHog event tracking + Sentry error monitoring",
+      "updatedAt": "2026-03-18T04:46:06.985Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0746f79d-ab33-4aa8-9327-df1161d9e7ca": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G9: Polish — SOV mobile overflow, column headers, dedupe formatCurrency, accessibility",
+      "updatedAt": "2026-03-18T04:46:06.985Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "47f63240-d828-4216-90c1-9599cb883234": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G7: SEO — OG meta tags in layout.tsx, trust signals on landing page",
+      "updatedAt": "2026-03-18T04:46:06.984Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d761de7d-2e6f-48d5-8501-faf493bb759f": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G5: UX gaps — project edit, draw recall/edit, SOV running total, lien waiver, comment validation",
+      "updatedAt": "2026-03-18T01:31:00.233Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b1c8d4b6-3d46-46ed-ac34-ced76c802509": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G2: Trust & legal — Privacy Policy + Terms of Service pages, footer links, remove AIA trademark",
+      "updatedAt": "2026-03-18T00:46:02.986Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "590e5fb4-28df-4939-b1e7-5c7b30a0f8fd": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G3: Billing & settings — Stripe Customer Portal, trial countdown banner, set trialEndsAt on org create",
+      "updatedAt": "2026-03-18T00:46:02.985Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "31ab1e15-3c4d-4369-8a33-856c60aea184": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack Audit: G4: Onboarding — guided project creation post-signup, better empty states, fix logo",
+      "updatedAt": "2026-03-17T22:45:54.343Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "cd146ceb-a8e7-439a-8cd7-390e01c0ab9f": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack — Phase 1: Repo Scaffold",
+      "updatedAt": "2026-03-14T20:30:11.622Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ea3aec12-ab51-4693-9bc0-84bf412506fd": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Enable Gmail access for Steve personal inbox cleanup workflow[paperclip] No project or prior session workspace was available. Using fallback workspace \"/Users/openclaw/.paperclip/instances/default/workspaces/1b26ac48-4866-4db5-9a87-f0535f775d6f\" for this run.\n[paperclip] Skipping saved session resume for task \"a7166a7c-3676-4886-8785-cde77cf7f462\" because wake reason is issue_assigned.\nInvocation\nAdapter: claude_local\nWorking dir: /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace\nCommand: /Users/openclaw/.npm-global/bin/claude --print - --output-format stream-json --verbose --dangerously-skip-permissions --model claude-sonnet-4-5-20250929 --max-turns 15 --append-system-prompt-file /var/folders/6v/m7k2v7292ys29h4cnn9rsd_c0000gn/T/paperclip-skills-GN02zo/agent-instructions.md --add-dir /var/folders/6v/m7k2v7292ys29h4cnn9rsd_c0000gn/T/paperclip-skills-GN02zo\nCommand notes\nInjected agent instructions via --append-system-prompt-file /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/agents/personal/AGENTS.md (with path directive appended)\nPrompt\nTASK OR HEARTBEAT PERSONAL EXECUTOR\n\nAgent: Personal Assistant\n\nRole: general\n\nAgent ID: 1b26ac48-4866-4db5-9a87-f0535f775d6f\n\nIf this run is triggered by an assigned issue or task:\n\n1\\. use the Paperclip API/skill to fetch your assigned issue(s)\n\n2\\. if PAPERCLIP\\_TASK\\_ID is set, prioritize that issue\n\n3\\. checkout the issue before doing work\n\n4\\. read the issue details and comments\n\n5\\. execute the personal task exactly as requested\n\n6\\. produce the requested personal note, reminder, checklist, or planning artifact\n\n7\\. add a completion or blocker comment\n\n8\\. update the issue status appropriately\n\nIf this run is a true heartbeat with no assigned task, respond with only:\n\n\\- status\n\n\\- blockers\n\n\\- reminders\n\nDo not ask for the task again if it already exists in Paperclip.\n\nDo not interact with business workflows unless explicitly instructed.\nContext\n{\n  \"source\": \"issue.create\",\n  \"taskId\": \"a7166a7c-3676-4886-8785-cde77cf7f462\",\n  \"issueId\": \"a7166a7c-3676-4886-8785-cde77cf7f462\",\n  \"taskKey\": \"a7166a7c-3676-4886-8785-cde77cf7f462\",\n  \"wakeReason\": \"issue_assigned\",\n  \"wakeSource\": \"assignment\",\n  \"wakeTriggerDetail\": \"system\",\n  \"paperclipWorkspace\": {\n    \"cwd\": \"/Users/openclaw/.paperclip/instances/default/workspaces/1b26ac48-4866-4db5-9a87-f0535f775d6f\",\n    \"source\": \"agent_home\",\n    \"repoRef\": null,\n    \"repoUrl\": null,\n    \"projectId\": null,\n    \"workspaceId\": null\n  },\n  \"paperclipWorkspaces\": []\n}\nEnvironment\nCLAUDECODE=\nPAPERCLIP_AGENT_ID=1b26ac48-4866-4db5-9a87-f0535f775d6f\nPAPERCLIP_API_KEY=***REDACTED***\nPAPERCLIP_API_URL=http://127.0.0.1:3100\nPAPERCLIP_COMPANY_ID=6e53f2a5-1a3f-4557-99d6-790eeb70ce67\nPAPERCLIP_RUN_ID=24fe29d2-f84a-4b2f-9b51-edd8797ae96a\nPAPERCLIP_TASK_ID=a7166a7c-3676-4886-8785-cde77cf7f462\nPAPERCLIP_WAKE_REASON=issue_assigned\nPAPERCLIP_WORKSPACE_SOURCE=agent_home\nTranscript (51)\nstderr\n[paperclip] No project or prior session workspace was available. Using fallback workspace \"/Users/openclaw/.paperclip/instances/default/workspaces/1b26ac48-4866-4db5-9a87-f0535f775d6f\" for this run.\nstderr\n[paperclip] Skipping saved session resume for task \"a7166a7c-3676-4886-8785-cde77cf7f462\" because wake reason is issue_assigned.\ninit\nmodel: claude-sonnet-4-5-20250929, session: 478b88d6-e79d-4a85-adbe-62078e8cedde\nthinking\nThis is a heartbeat or task execution trigger for the Personal Assistant agent. Let me break down what I need to do:\n\n1. First, I need to check if there are any assigned tasks using the Paperclip API\n2. Check if PAPERCLIP_TASK_ID is set (I should look for this in the environment or context)\n3. If there's a task, I need to:\n   - Checkout the issue\n   - Read details and comments\n   - Execute the personal task\n   - Add completion/blocker comment\n   - Update status\n4. If no task (true heartbeat), just report status/blockers/reminders\n\nLet me start by using the Paperclip skill to check for assigned tasks.\nassistant\nI'll check for any assigned tasks using the Paperclip API.\ntool_call\nSkill\n{\n  \"skill\": \"paperclip\",\n  \"args\": \"fetch my assigned issues\"\n}\ntool_result\nLaunching skill: paperclip\nuser\nBase directory for this skill: /Users/openclaw/.openclaw/workspace/tools/paperclip/.claude/skills/paperclip\n\n# Paperclip Skill\n\nYou run in **heartbeats** — short execution windows triggered by Paperclip. Each heartbeat, you wake up, check your work, do something useful, and exit. You do not run continuously.\n\n## Authentication\n\nEnv vars auto-injected: `PAPERCLIP_AGENT_ID`, `PAPERCLIP_COMPANY_ID`, `PAPERCLIP_API_URL`, `PAPERCLIP_RUN_ID`. Optional wake-context vars may also be present: `PAPERCLIP_TASK_ID` (issue/task that triggered this wake), `PAPERCLIP_WAKE_REASON` (why this run was triggered), `PAPERCLIP_WAKE_COMMENT_ID` (specific comment that triggered this wake), `PAPERCLIP_APPROVAL_ID`, `PAPERCLIP_APPROVAL_STATUS`, and `PAPERCLIP_LINKED_ISSUE_IDS` (comma-separated). For local adapters, `PAPERCLIP_API_KEY` is auto-injected as a short-lived run JWT. For non-local adapters, your operator should set `PAPERCLIP_API_KEY` in adapter config. All requests use `Authorization: Bearer $PAPERCLIP_API_KEY`. All endpoints under `/api`, all JSON. Never hard-code the API URL.\n\n**Run audit trail:** You MUST include `-H 'X-Paperclip-Run-Id: $PAPERCLIP_RUN_ID'` on ALL API requests that modify issues (checkout, update, comment, create subtask, release). This links your actions to the current heartbeat run for traceability.\n\n## The Heartbeat Procedure\n\nFollow these steps every time you wake up:\n\n**Step 1 — Identity.** If not already in context, `GET /api/agents/me` to get your id, companyId, role, chainOfCommand, and budget.\n\n**Step 2 — Approval follow-up (when triggered).** If `PAPERCLIP_APPROVAL_ID` is set (or wake reason indicates approval resolution), review the approval first:\n\n- `GET /api/approvals/{approvalId}`\n- `GET /api/approvals/{approvalId}/issues`\n- For each linked issue:\n  - close it (`PATCH` status to `done`) if the approval fully resolves requested work, or\n  - add a markdown comment explaining why it remains open and what happens next.\n    Always include links to the approval and issue in that comment.\n\n**Step 3 — Get assignments.** `GET /api/companies/{companyId}/issues?assigneeAgentId={your-agent-id}&status=todo,in_progress,blocked`. Results sorted by priority. This is your inbox.\n\n**Step 4 — Pick work (with mention exception).** Work on `in_progress` first, then `todo`. Skip `blocked` unless you can unblock it.\n**Blocked-task dedup:** Before working on a `blocked` task, fetch its comment thread. If your most recent comment was a blocked-status update AND no new comments from other agents or users have been posted since, skip the task entirely — do not checkout, do not post another comment. Exit the heartbeat (or move to the next task) instead. Only re-engage with a blocked task when new context exists (a new comment, status change, or event-based wake like `PAPERCLIP_WAKE_COMMENT_ID`).\nIf `PAPERCLIP_TASK_ID` is set and that task is assigned to you, prioritize it first for this heartbeat.\nIf this run was triggered by a comment mention (`PAPERCLIP_WAKE_COMMENT_ID` set; typically `PAPERCLIP_WAKE_REASON=issue_comment_mentioned`), you MUST read that comment thread first, even if the task is not currently assigned to you.\nIf that mentioned comment explicitly asks you to take the task, you may self-assign by checking out `PAPERCLIP_TASK_ID` as yourself, then proceed normally.\nIf the comment asks for input/review but not ownership, respond in comments if useful, then continue with assigned work.\nIf the comment does not direct you to take ownership, do not self-assign.\nIf nothing is assigned and there is no valid mention-based ownership handoff, exit the heartbeat.\n\n**Step 5 — Checkout.** You MUST checkout before doing any work. Include the run ID header:\n\n```\nPOST /api/issues/{issueId}/checkout\nHeaders: Authorization: Bearer $PAPERCLIP_API_KEY, X-Paperclip-Run-Id: $PAPERCLIP_RUN_ID\n{ \"agentId\": \"{your-agent-id}\", \"expectedStatuses\": [\"todo\", \"backlog\", \"blocked\"] }\n```\n\nIf already checked out by you, returns normally. If owned by another agent: `409 Conflict` — stop, pick a different task. **Never retry a 409.**\n\n**Step 6 — Understand context.** `GET /api/issues/{issueId}` (includes `project` + `ancestors` parent chain, and project workspace details when configured). `GET /api/issues/{issueId}/comments`. Read ancestors to understand _why_ this task exists.\nIf `PAPERCLIP_WAKE_COMMENT_ID` is set, find that specific comment first and treat it as the immediate trigger you must respond to. Still read the full comment thread (not just one comment) before deciding what to do next.\n\n**Step 7 — Do the work.** Use your tools and capabilities.\n\n**Step 8 — Update status and communicate.** Always include the run ID header.\nIf you are blocked at any point, you MUST update the issue to `blocked` before exiting the heartbeat, with a comment that explains the blocker and who needs to act.\n\n```json\nPATCH /api/issues/{issueId}\nHeaders: X-Paperclip-Run-Id: $PAPERCLIP_RUN_ID\n{ \"status\": \"done\", \"comment\": \"What was done and why.\" }\n\nPATCH /api/issues/{issueId}\nHeaders: X-Paperclip-Run-Id: $PAPERCLIP_RUN_ID\n{ \"status\": \"blocked\", \"comment\": \"What is blocked, why, and who needs to unblock it.\" }\n```\n\nStatus values: `backlog`, `todo`, `in_progress`, `in_review`, `done`, `blocked`, `cancelled`. Priority values: `critical`, `high`, `medium`, `low`. Other updatable fields: `title`, `description`, `priority`, `assigneeAgentId`, `projectId`, `goalId`, `parentId`, `billingCode`.\n\n**Step 9 — Delegate if needed.** Create subtasks with `POST /api/companies/{companyId}/issues`. Always set `parentId` and `goalId`. Set `billingCode` for cross-team work.\n\n## Project Setup Workflow (CEO/Manager Common Path)\n\nWhen asked to set up a new project with workspace config (local folder and/or GitHub repo), use:\n\n1. `POST /api/companies/{companyId}/projects` with project fields.\n2. Optionally include `workspace` in that same create call, or call `POST /api/projects/{projectId}/workspaces` right after create.\n\nWorkspace rules:\n\n- Provide at least one of `cwd` (local folder) or `repoUrl` (remote repo).\n- For repo-only setup, omit `cwd` and provide `repoUrl`.\n- Include both `cwd` + `repoUrl` when local and remote references should both be tracked.\n\n## Critical Rules\n\n- **Always checkout** before working. Never PATCH to `in_progress` manually.\n- **Never retry a 409.** The task belongs to someone else.\n- **Never look for unassigned work.**\n- **Self-assign only for explicit @-mention handoff.** This requires a mention-triggered wake with `PAPERCLIP_WAKE_COMMENT_ID` and a comment that clearly directs you to do the task. Use checkout (never direct assignee patch). Otherwise, no assignments = exit.\n- **Honor \"send it back to me\" requests from board users.** If a board/user asks for review handoff (e.g. \"let me review it\", \"assign it back to me\"), reassign the issue to that user with `assigneeAgentId: null` and `assigneeUserId: \"<requesting-user-id>\"`, and typically set status to `in_review` instead of `done`.\n  Resolve requesting user id from the triggering comment thread (`authorUserId`) when available; otherwise use the issue's `createdByUserId` if it matches the requester context.\n- **Always comment** on `in_progress` work before exiting a heartbeat — **except** for blocked tasks with no new context (see blocked-task dedup in Step 4).\n- **Always set `parentId`** on subtasks (and `goalId` unless you're CEO/manager creating top-level work).\n- **Never cancel cross-team tasks.** Reassign to your manager with a comment.\n- **Always update blocked issues explicitly.** If blocked, PATCH status to `blocked` with a blocker comment before exiting, then escalate. On subsequent heartbeats, do NOT repeat the same blocked comment — see blocked-task dedup in Step 4.\n- **@-mentions** (`@AgentName` in comments) trigger heartbeats — use sparingly, they cost budget.\n- **Budget**: auto-paused at 100%. Above 80%, focus on critical tasks only.\n- **Escalate** via `chainOfCommand` when stuck. Reassign to manager or create a task for them.\n- **Hiring**: use `paperclip-create-agent` skill for new agent creation workflows.\n\n## Comment Style (Required)\n\nWhen posting issue comments, use concise markdown with:\n\n- a short status line\n- bullets for what changed / what is blocked\n- links to related entities when available\n\n**Company-prefixed URLs (required):** All internal links MUST include the company prefix. Derive the prefix from any issue identifier you have (e.g., `PAP-315` → prefix is `PAP`). Use this prefix in all UI links:\n\n- Issues: `/<prefix>/issues/<issue-identifier>` (e.g., `/PAP/issues/PAP-224`)\n- Issue comments: `/<prefix>/issues/<issue-identifier>#comment-<comment-id>` (deep link to a specific comment)\n- Agents: `/<prefix>/agents/<agent-url-key>` (e.g., `/PAP/agents/claudecoder`)\n- Projects: `/<prefix>/projects/<project-url-key>` (id fallback allowed)\n- Approvals: `/<prefix>/approvals/<approval-id>`\n- Runs: `/<prefix>/agents/<agent-url-key-or-id>/runs/<run-id>`\n\nDo NOT use unprefixed paths like `/issues/PAP-123` or `/agents/cto` — always include the company prefix.\n\nExample:\n\n```md\n## Update\n\nSubmitted CTO hire request and linked it for board review.\n\n- Approval: [ca6ba09d](/PAP/approvals/ca6ba09d-b558-4a53-a552-e7ef87e54a1b)\n- Pending agent: [CTO draft](/PAP/agents/cto)\n- Source issue: [PC-142](/PAP/issues/PC-142)\n```\n\n## Planning (Required when planning requested)\n\nIf you're asked to make a plan, create that plan in your regular way (e.g. if you normally would use planning mode and then make a local file, do that first), but additionally update the Issue description to have your plan appended to the existing issue in `<plan/>` tags. You MUST keep the original Issue description exactly in tact. ONLY add/edit your plan. If you're asked for plan revisions, update your `<plan/>` with the revision. In both cases, leave a comment as your normally would and mention that you updated the plan.\n\nIf you're asked to make a plan, _do not mark the issue as done_. Re-assign the issue to whomever asked you to make the plan and leave it in progress.\n\nExample:\n\nOriginal Issue Description:\n\n```\npls show the costs in either token or dollars on the /issues/{id} page. Make a plan first.\n```\n\nAfter:\n\n```\npls show the costs in either token or dollars on the /issues/{id} page. Make a plan first.\n\n<plan>\n\n[your plan here]\n\n</plan>\n```\n\n\\*make sure to have a newline after/before your <plan/> tags\n\n## Setting Agent Instructions Path\n\nUse the dedicated route instead of generic `PATCH /api/agents/:id` when you need to set an agent's instructions markdown path (for example `AGENTS.md`).\n\n```bash\nPATCH /api/agents/{agentId}/instructions-path\n{\n  \"path\": \"agents/cmo/AGENTS.md\"\n}\n```\n\nRules:\n- Allowed for: the target agent itself, or an ancestor manager in that agent's reporting chain.\n- For `codex_local` and `claude_local`, default config key is `instructionsFilePath`.\n- Relative paths are resolved against the target agent's `adapterConfig.cwd`; absolute paths are accepted as-is.\n- To clear the path, send `{ \"path\": null }`.\n- For adapters with a different key, provide it explicitly:\n\n```bash\nPATCH /api/agents/{agentId}/instructions-path\n{\n  \"path\": \"/absolute/path/to/AGENTS.md\",\n  \"adapterConfigKey\": \"yourAdapterSpecificPathField\"\n}\n```\n\n## Key Endpoints (Quick Reference)\n\n| Action               | Endpoint                                                                                   |\n| -------------------- | ------------------------------------------------------------------------------------------ |\n| My identity          | `GET /api/agents/me`                                                                       |\n| My assignments       | `GET /api/companies/:companyId/issues?assigneeAgentId=:id&status=todo,in_progress,blocked` |\n| Checkout task        | `POST /api/issues/:issueId/checkout`                                                       |\n| Get task + ancestors | `GET /api/issues/:issueId`                                                                 |\n| Get comments         | `GET /api/issues/:issueId/comments`                                                        |\n| Get specific comment | `GET /api/issues/:issueId/comments/:commentId`                                              |\n| Update task          | `PATCH /api/issues/:issueId` (optional `comment` field)                                    |\n| Add comment          | `POST /api/issues/:issueId/comments`                                                       |\n| Create subtask       | `POST /api/companies/:companyId/issues`                                                    |\n| Create project       | `POST /api/companies/:companyId/projects`                                                  |\n| Create project workspace | `POST /api/projects/:projectId/workspaces`                                             |\n| Set instructions path | `PATCH /api/agents/:agentId/instructions-path`                                            |\n| Release task         | `POST /api/issues/:issueId/release`                                                        |\n| List agents          | `GET /api/companies/:companyId/agents`                                                     |\n| Dashboard            | `GET /api/companies/:companyId/dashboard`                                                  |\n| Search issues        | `GET /api/companies/:companyId/issues?q=search+term`                                       |\n\n## Searching Issues\n\nUse the `q` query parameter on the issues list endpoint to search across titles, identifiers, descriptions, and comments:\n\n```\nGET /api/companies/{companyId}/issues?q=dockerfile\n```\n\nResults are ranked by relevance: title matches first, then identifier, description, and comments. You can combine `q` with other filters (`status`, `assigneeAgentId`, `projectId`, `labelId`).\n\n## Full Reference\n\nFor detailed API tables, JSON response schemas, worked examples (IC and Manager heartbeats), governance/approvals, cross-team delegation rules, error codes, issue lifecycle diagram, and the common mistakes table, read: `skills/paperclip/references/api-reference.md`\n\n\nARGUMENTS: fetch my assigned issues\nthinking\nThe user wants me to fetch my assigned issues using the Paperclip API. I need to:\n\n1. First get my identity (agent ID, company ID)\n2. Then fetch my assigned issues\n\nLet me follow the Paperclip skill's heartbeat procedure:\n\nStep 1 - Identity: Get my agent info\nStep 2 - Approval follow-up: Check if PAPERCLIP_APPROVAL_ID is set\nStep 3 - Get assignments: Fetch my assigned issues\n\nI should check the environment variables first to see what context I have, then make the appropriate API calls.\n\nLet me start by checking my identity and then fetching assigned issues.\nassistant\nI'll fetch your assigned issues from Paperclip. Let me first get your agent identity and then check for assignments.\ntool_call\nBash\n{\n  \"command\": \"echo \\\"Agent ID: $PAPERCLIP_AGENT_ID\\\"\\necho \\\"Company ID: $PAPERCLIP_COMPANY_ID\\\"\\necho \\\"API URL: $PAPERCLIP_API_URL\\\"\\necho \\\"Run ID: $PAPERCLIP_RUN_ID\\\"\\necho \\\"Task ID: $PAPERCLIP_TASK_ID\\\"\\necho \\\"Wake Reason: $PAPERCLIP_WAKE_REASON\\\"\",\n  \"description\": \"Check Paperclip environment variables\"\n}\ntool_result\nAgent ID: 1b26ac48-4866-4db5-9a87-f0535f775d6f\nCompany ID: 6e53f2a5-1a3f-4557-99d6-790eeb70ce67\nAPI URL: http://127.0.0.1:3100\nRun ID: 24fe29d2-f84a-4b2f-9b51-edd8797ae96a\nTask ID: a7166a7c-3676-4886-8785-cde77cf7f462\nWake Reason: issue_assigned\nthinking\nGood! I have:\n- Agent ID: 1b26ac48-4866-4db5-9a87-f0535f775d6f\n- Company ID: 6e53f2a5-1a3f-4557-99d6-790eeb70ce67\n- API URL: http://127.0.0.1:3100\n- Run ID: 24fe29d2-f84a-4b2f-9b51-edd8797ae96a\n- Task ID: a7166a7c-3676-4886-8785-cde77cf7f462\n- Wake Reason: issue_assigned\n\nSo I was woken up because an issue was assigned to me, and I have a specific task ID. Following the heartbeat procedure:\n\nStep 1 - Get my identity (optional, but useful to confirm my role)\nStep 3 - Get assignments (prioritize the PAPERCLIP_TASK_ID)\nStep 5 - Checkout the task\nStep 6 - Understand context (get the issue details and comments)\nStep 7 - Do the work\nStep 8 - Update status\n\nLet me fetch my assignments now.\ntool_call\nBash\n{\n  \"command\": \"curl -s -X GET \\\\\\n  \\\"${PAPERCLIP_API_URL}/api/companies/${PAPERCLIP_COMPANY_ID}/issues?assigneeAgentId=${PAPERCLIP_AGENT_ID}&status=todo,in_progress,blocked\\\" \\\\\\n  -H \\\"Authorization: Bearer ${PAPERCLIP_API_KEY}\\\" \\\\\\n  -H \\\"Content-Type: application/json\\\" | jq '.'\",\n  \"description\": \"Fetch assigned issues from Paperclip\"\n}\ntool_result\nthinking\nHmm, no output. Let me check if there's an error or if the result is empty. Let me try without jq to see the raw response.\ntool_call\nBash\n{\n  \"command\": \"curl -s -X GET \\\\\\n  \\\"${PAPERCLIP_API_URL}/api/companies/${PAPERCLIP_COMPANY_ID}/issues?assigneeAgentId=${PAPERCLIP_AGENT_ID}&status=todo,in_progress,blocked\\\" \\\\\\n  -H \\\"Authorization: Bearer ${PAPERCLIP_API_KEY}\\\" \\\\\\n  -H \\\"Content-Type: application/json\\\"\",\n  \"description\": \"Fetch assigned issues (raw response)\"\n}\ntool_result\n[\n  {\n    \"id\": \"a7166a7c-3676-4886-8785-cde77cf7f462\",\n    \"companyId\": \"6e53f2a5-1a3f-4557-99d6-790eeb70ce67\",\n    \"projectId\": null,\n    \"goalId\": null,\n    \"parentId\": \"e54f5eb9-1300-4927-8545-afefbcbfacda\",\n    \"title\": \"Execute personal inbox cleanup workflow setup\",\n    \"description\": \"Set up the recurring personal inbox cleanup workflow for vettoristeve@gmail.com as specified in the parent task.\\n\\n**Required deliverables:**\\n\\n1. Create policy document at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\\n   - Document deletion authority for spam/junk/promo emails\\n   - Document conservative approach for ambiguous emails\\n   - Document triage categories (urgent, important, follow-up needed, FYI, low priority)\\n   - Document recurring schedule (7:00 AM, 1:00 PM, 6:00 PM)\\n\\n2. Create summary template at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\\n   - Template for recurring inbox summaries\\n   - Sections for each triage category\\n   - Section for deleted items count\\n   - Section for recommended follow-ups\\n\\n3. Create first live summary at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\\n   - IF Gmail access is available: produce real summary from vettoristeve@gmail.com\\n   - IF Gmail access is NOT available: document the blocker explicitly\\n\\n4. Document the recurring workflow cadence (3x daily: 7 AM, 1 PM, 6 PM)\\n\\n**Deletion authority:**\\n- You are authorized to delete obvious spam, junk, promotional blasts, and mass marketing emails\\n- DO NOT delete: personal, financial, legal, real estate, vendor/client, contracts, payments, meetings, permits, scheduling, family, medical, travel, or tax-related emails\\n- If uncertain, classify as low priority instead of deleting\\n\\n**Output requirements:**\\n- All three artifact files created\\n- Clear blocker documentation if Gmail access unavailable\\n- Confirmation of whether deletion authority was exercised\\n- Recommended safeguards for avoiding accidental deletion\\n\\nComplete this work according to the parent task specifications.\",\n    \"status\": \"todo\",\n    \"priority\": \"medium\",\n    \"assigneeAgentId\": \"1b26ac48-4866-4db5-9a87-f0535f775d6f\",\n    \"assigneeUserId\": null,\n    \"checkoutRunId\": null,\n    \"executionRunId\": \"24fe29d2-f84a-4b2f-9b51-edd8797ae96a\",\n    \"executionAgentNameKey\": \"personal assistant\",\n    \"executionLockedAt\": \"2026-03-08T13:33:48.672Z\",\n    \"createdByAgentId\": \"b81862ce-f532-489d-8613-a08ceacc6906\",\n    \"createdByUserId\": null,\n    \"issueNumber\": 66,\n    \"identifier\": \"CLA-66\",\n    \"requestDepth\": 0,\n    \"billingCode\": null,\n    \"assigneeAdapterOverrides\": null,\n    \"startedAt\": null,\n    \"completedAt\": null,\n    \"cancelledAt\": null,\n    \"hiddenAt\": null,\n    \"createdAt\": \"2026-03-08T13:33:48.656Z\",\n    \"updatedAt\": \"2026-03-08T13:33:48.672Z\",\n    \"labels\": [],\n    \"labelIds\": [],\n    \"activeRun\": {\n      \"id\": \"24fe29d2-f84a-4b2f-9b51-edd8797ae96a\",\n      \"status\": \"running\",\n      \"agentId\": \"1b26ac48-4866-4db5-9a87-f0535f775d6f\",\n      \"invocationSource\": \"assignment\",\n      \"triggerDetail\": \"system\",\n      \"startedAt\": \"2026-03-08T13:33:48.674Z\",\n      \"finishedAt\": null,\n      \"createdAt\": \"2026-03-08T13:33:48.662Z\"\n    }\n  }\n]\nthinking\nPerfect! I have one assigned task (CLA-66) which matches the PAPERCLIP_TASK_ID. The task is to:\n\n\"Execute personal inbox cleanup workflow setup\"\n\nThe task description is very clear with specific deliverables:\n\n1. Create policy document at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\n2. Create summary template at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\n3. Create first live summary at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\n4. Document the recurring workflow cadence (3x daily: 7 AM, 1 PM, 6 PM)\n\nThe task has clear deletion authority and output requirements.\n\nNow I need to follow the heartbeat procedure:\n- Step 5: Checkout the task\n- Step 6: Get issue details and comments to understand context\n- Step 7: Do the work (create the three files)\n- Step 8: Update status and communicate\n\nLet me proceed with checking out the task first.\nassistant\nFound your assigned task. Let me checkout the issue and review its full context.\ntool_call\nBash\n{\n  \"command\": \"curl -s -X POST \\\\\\n  \\\"${PAPERCLIP_API_URL}/api/issues/${PAPERCLIP_TASK_ID}/checkout\\\" \\\\\\n  -H \\\"Authorization: Bearer ${PAPERCLIP_API_KEY}\\\" \\\\\\n  -H \\\"X-Paperclip-Run-Id: ${PAPERCLIP_RUN_ID}\\\" \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -d \\\"{\\\\\\\"agentId\\\\\\\": \\\\\\\"${PAPERCLIP_AGENT_ID}\\\\\\\", \\\\\\\"expectedStatuses\\\\\\\": [\\\\\\\"todo\\\\\\\", \\\\\\\"backlog\\\\\\\", \\\\\\\"blocked\\\\\\\"]}\\\"\",\n  \"description\": \"Checkout issue CLA-66\"\n}\ntool_result\n{\n  \"id\": \"a7166a7c-3676-4886-8785-cde77cf7f462\",\n  \"companyId\": \"6e53f2a5-1a3f-4557-99d6-790eeb70ce67\",\n  \"projectId\": null,\n  \"goalId\": null,\n  \"parentId\": \"e54f5eb9-1300-4927-8545-afefbcbfacda\",\n  \"title\": \"Execute personal inbox cleanup workflow setup\",\n  \"description\": \"Set up the recurring personal inbox cleanup workflow for vettoristeve@gmail.com as specified in the parent task.\\n\\n**Required deliverables:**\\n\\n1. Create policy document at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\\n   - Document deletion authority for spam/junk/promo emails\\n   - Document conservative approach for ambiguous emails\\n   - Document triage categories (urgent, important, follow-up needed, FYI, low priority)\\n   - Document recurring schedule (7:00 AM, 1:00 PM, 6:00 PM)\\n\\n2. Create summary template at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\\n   - Template for recurring inbox summaries\\n   - Sections for each triage category\\n   - Section for deleted items count\\n   - Section for recommended follow-ups\\n\\n3. Create first live summary at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\\n   - IF Gmail access is available: produce real summary from vettoristeve@gmail.com\\n   - IF Gmail access is NOT available: document the blocker explicitly\\n\\n4. Document the recurring workflow cadence (3x daily: 7 AM, 1 PM, 6 PM)\\n\\n**Deletion authority:**\\n- You are authorized to delete obvious spam, junk, promotional blasts, and mass marketing emails\\n- DO NOT delete: personal, financial, legal, real estate, vendor/client, contracts, payments, meetings, permits, scheduling, family, medical, travel, or tax-related emails\\n- If uncertain, classify as low priority instead of deleting\\n\\n**Output requirements:**\\n- All three artifact files created\\n- Clear blocker documentation if Gmail access unavailable\\n- Confirmation of whether deletion authority was exercised\\n- Recommended safeguards for avoiding accidental deletion\\n\\nComplete this work according to the parent task specifications.\",\n  \"status\": \"in_progress\",\n  \"priority\": \"medium\",\n  \"assigneeAgentId\": \"1b26ac48-4866-4db5-9a87-f0535f775d6f\",\n  \"assigneeUserId\": null,\n  \"checkoutRunId\": \"24fe29d2-f84a-4b2f-9b51-edd8797ae96a\",\n  \"executionRunId\": \"24fe29d2-f84a-4b2f-9b51-edd8797ae96a\",\n  \"executionAgentNameKey\": \"personal assistant\",\n  \"executionLockedAt\": \"2026-03-08T13:33:48.672Z\",\n  \"createdByAgentId\": \"b81862ce-f532-489d-8613-a08ceacc6906\",\n  \"createdByUserId\": null,\n  \"issueNumber\": 66,\n  \"identifier\": \"CLA-66\",\n  \"requestDepth\": 0,\n  \"billingCode\": null,\n  \"assigneeAdapterOverrides\": null,\n  \"startedAt\": \"2026-03-08T13:34:22.064Z\",\n  \"completedAt\": null,\n  \"cancelledAt\": null,\n  \"hiddenAt\": null,\n  \"createdAt\": \"2026-03-08T13:33:48.656Z\",\n  \"updatedAt\": \"2026-03-08T13:34:22.064Z\",\n  \"labels\": [],\n  \"labelIds\": []\n}\ntool_call\nBash\n{\n  \"command\": \"curl -s -X GET \\\\\\n  \\\"${PAPERCLIP_API_URL}/api/issues/${PAPERCLIP_TASK_ID}\\\" \\\\\\n  -H \\\"Authorization: Bearer ${PAPERCLIP_API_KEY}\\\" \\\\\\n  -H \\\"Content-Type: application/json\\\"\",\n  \"description\": \"Get full issue details with ancestors\"\n}\ntool_result\n{\n  \"id\": \"a7166a7c-3676-4886-8785-cde77cf7f462\",\n  \"companyId\": \"6e53f2a5-1a3f-4557-99d6-790eeb70ce67\",\n  \"projectId\": null,\n  \"goalId\": null,\n  \"parentId\": \"e54f5eb9-1300-4927-8545-afefbcbfacda\",\n  \"title\": \"Execute personal inbox cleanup workflow setup\",\n  \"description\": \"Set up the recurring personal inbox cleanup workflow for vettoristeve@gmail.com as specified in the parent task.\\n\\n**Required deliverables:**\\n\\n1. Create policy document at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\\n   - Document deletion authority for spam/junk/promo emails\\n   - Document conservative approach for ambiguous emails\\n   - Document triage categories (urgent, important, follow-up needed, FYI, low priority)\\n   - Document recurring schedule (7:00 AM, 1:00 PM, 6:00 PM)\\n\\n2. Create summary template at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\\n   - Template for recurring inbox summaries\\n   - Sections for each triage category\\n   - Section for deleted items count\\n   - Section for recommended follow-ups\\n\\n3. Create first live summary at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\\n   - IF Gmail access is available: produce real summary from vettoristeve@gmail.com\\n   - IF Gmail access is NOT available: document the blocker explicitly\\n\\n4. Document the recurring workflow cadence (3x daily: 7 AM, 1 PM, 6 PM)\\n\\n**Deletion authority:**\\n- You are authorized to delete obvious spam, junk, promotional blasts, and mass marketing emails\\n- DO NOT delete: personal, financial, legal, real estate, vendor/client, contracts, payments, meetings, permits, scheduling, family, medical, travel, or tax-related emails\\n- If uncertain, classify as low priority instead of deleting\\n\\n**Output requirements:**\\n- All three artifact files created\\n- Clear blocker documentation if Gmail access unavailable\\n- Confirmation of whether deletion authority was exercised\\n- Recommended safeguards for avoiding accidental deletion\\n\\nComplete this work according to the parent task specifications.\",\n  \"status\": \"in_progress\",\n  \"priority\": \"medium\",\n  \"assigneeAgentId\": \"1b26ac48-4866-4db5-9a87-f0535f775d6f\",\n  \"assigneeUserId\": null,\n  \"checkoutRunId\": \"24fe29d2-f84a-4b2f-9b51-edd8797ae96a\",\n  \"executionRunId\": \"24fe29d2-f84a-4b2f-9b51-edd8797ae96a\",\n  \"executionAgentNameKey\": \"personal assistant\",\n  \"executionLockedAt\": \"2026-03-08T13:33:48.672Z\",\n  \"createdByAgentId\": \"b81862ce-f532-489d-8613-a08ceacc6906\",\n  \"createdByUserId\": null,\n  \"issueNumber\": 66,\n  \"identifier\": \"CLA-66\",\n  \"requestDepth\": 0,\n  \"billingCode\": null,\n  \"assigneeAdapterOverrides\": null,\n  \"startedAt\": \"2026-03-08T13:34:22.064Z\",\n  \"completedAt\": null,\n  \"cancelledAt\": null,\n  \"hiddenAt\": null,\n  \"createdAt\": \"2026-03-08T13:33:48.656Z\",\n  \"updatedAt\": \"2026-03-08T13:34:22.064Z\",\n  \"labels\": [],\n  \"labelIds\": [],\n  \"ancestors\": [\n    {\n      \"id\": \"e54f5eb9-1300-4927-8545-afefbcbfacda\",\n      \"identifier\": \"CLA-65\",\n      \"title\": \"Launch recurring personal inbox cleanup workflow\",\n      \"description\": \"Set up Personal Assistant to manage recurring cleanup and triage for Steve’s personal inbox:\\n\\n[vettoristeve@gmail.com](mailto:vettoristeve@gmail.com)\\n\\n\\n\\nObjective:\\n\\nCreate a repeatable multiple-times-daily inbox review workflow that reduces inbox noise, removes junk, and surfaces only what matters.\\n\\n\\n\\nRequired schedule:\\n\\nRun 3 times daily at:\\n\\n\\\\- 7:00 AM\\n\\n\\\\- 1:00 PM\\n\\n\\\\- 6:00 PM\\n\\n\\n\\nPrimary goals:\\n\\n1\\\\. Review new incoming emails in [vettoristeve@gmail.com](mailto:vettoristeve@gmail.com) at each scheduled run\\n\\n2\\\\. Triage messages into:\\n\\n&#x20;  \\\\- urgent\\n\\n&#x20;  \\\\- important\\n\\n&#x20;  \\\\- follow-up needed\\n\\n&#x20;  \\\\- FYI\\n\\n&#x20;  \\\\- low priority\\n\\n3\\\\. Delete obvious junk, spam, and promotional emails as they come in\\n\\n4\\\\. Surface anything that requires Steve’s personal attention\\n\\n5\\\\. Produce a clean recurring inbox summary artifact\\n\\n6\\\\. Recommend follow-up actions on non-junk email\\n\\n\\n\\nDeletion policy:\\n\\nPersonal Assistant is authorized to delete obvious low-value inbox noise, including:\\n\\n\\\\- spam\\n\\n\\\\- junk\\n\\n\\\\- obvious promotional blasts\\n\\n\\\\- generic marketing emails\\n\\n\\\\- mass email promotions\\n\\n\\\\- repetitive low-value newsletter/promo traffic\\n\\n\\n\\nPersonal Assistant must be conservative and should NOT delete by default:\\n\\n\\\\- personal emails\\n\\n\\\\- deal-related emails\\n\\n\\\\- financial emails\\n\\n\\\\- legal emails\\n\\n\\\\- real estate/project emails\\n\\n\\\\- vendor/client emails\\n\\n\\\\- anything ambiguous or potentially important\\n\\n\\\\- anything involving contracts, payments, meetings, permits, scheduling, family, medical, travel, or taxes\\n\\n\\n\\nIf uncertain, do not delete. Instead classify as low priority and include it in the summary.\\n\\n\\n\\nWhat Personal Assistant should do:\\n\\n1\\\\. Review new emails multiple times daily\\n\\n2\\\\. Delete obvious junk/spam/promo emails\\n\\n3\\\\. Triage the rest into:\\n\\n&#x20;  \\\\- urgent\\n\\n&#x20;  \\\\- important\\n\\n&#x20;  \\\\- follow-up needed\\n\\n&#x20;  \\\\- FYI\\n\\n&#x20;  \\\\- low priority\\n\\n4\\\\. Identify anything time-sensitive or requiring Steve’s direct attention\\n\\n5\\\\. Produce a recurring inbox summary artifact\\n\\n6\\\\. Track patterns like repeated spam sources, promo-heavy senders, and recurring low-value senders\\n\\n\\n\\nRequired deliverables:\\n\\n1\\\\. Create a markdown operating policy for Steve personal inbox cleanup\\n\\n2\\\\. Create a recurring inbox summary template\\n\\n3\\\\. Create the first live inbox cleanup summary\\n\\n4\\\\. Document the recurring run cadence of 7:00 AM, 1:00 PM, and 6:00 PM\\n\\n\\n\\nArtifact locations:\\n\\n\\\\- /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal\\\\_inbox\\\\_cleanup\\\\_policy.md\\n\\n\\\\- /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal\\\\_inbox\\\\_summary\\\\_template.md\\n\\n\\\\- /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal\\\\_inbox\\\\_summary.md\\n\\n\\n\\nWorkflow requirements:\\n\\n\\\\- route through Clawson first\\n\\n\\\\- delegate execution to Personal Assistant if appropriate\\n\\n\\\\- if Gmail access is not available, explicitly state the blocker and still create the policy and template artifacts\\n\\n\\\\- if Gmail access is available, produce the first real inbox summary and confirm whether deletion authority was exercised\\n\\n\\n\\nOutput requirements:\\n\\nWhen complete, provide:\\n\\n\\\\- what was created\\n\\n\\\\- file paths\\n\\n\\\\- whether Gmail access is confirmed\\n\\n\\\\- whether junk/spam/promo deletion is operational\\n\\n\\\\- recommended safeguards for avoiding accidental deletion\\n\\n\\n\\nDo not mark complete unless:\\n\\n\\\\- the policy artifact exists\\n\\n\\\\- the summary template exists\\n\\n\\\\- and either the first live summary exists or a clear access blocker is documented\",\n      \"status\": \"in_progress\",\n      \"priority\": \"medium\",\n      \"assigneeAgentId\": \"b81862ce-f532-489d-8613-a08ceacc6906\",\n      \"projectId\": null,\n      \"goalId\": null,\n      \"project\": null,\n      \"goal\": null\n    }\n  ],\n  \"project\": null,\n  \"goal\": null,\n  \"mentionedProjects\": []\n}\ntool_call\nBash\n{\n  \"command\": \"curl -s -X GET \\\\\\n  \\\"${PAPERCLIP_API_URL}/api/issues/${PAPERCLIP_TASK_ID}/comments\\\" \\\\\\n  -H \\\"Authorization: Bearer ${PAPERCLIP_API_KEY}\\\" \\\\\\n  -H \\\"Content-Type: application/json\\\"\",\n  \"description\": \"Get issue comments\"\n}\ntool_result\n[]\nthinking\nGood! I've checked out the issue successfully (status changed to `in_progress`). I have no comments yet. Let me review what I need to do:\n\n**Task: CLA-66 - Execute personal inbox cleanup workflow setup**\n\nThe parent task (CLA-65) provides context: this is about setting up a recurring inbox cleanup workflow for Steve's personal inbox (vettoristeve@gmail.com).\n\n**Required deliverables:**\n1. Policy document at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\n2. Summary template at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\n3. First live summary at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\n4. Document the recurring workflow cadence (3x daily: 7 AM, 1 PM, 6 PM)\n\n**Key points:**\n- Deletion authority for spam/junk/promo emails\n- Conservative approach for ambiguous emails\n- Triage categories: urgent, important, follow-up needed, FYI, low priority\n- Recurring schedule: 7:00 AM, 1:00 PM, 6:00 PM\n- If Gmail access is NOT available, document the blocker explicitly\n- Confirm whether deletion authority was exercised\n- Recommend safeguards for avoiding accidental deletion\n\nLet me check if I have Gmail access, and then create the three required files. First, let me check if the artifacts directory exists.\nassistant\nTask checked out successfully. I need to create three artifacts for the personal inbox cleanup workflow. Let me verify the artifacts directory and create the required files.\ntool_call\nBash\n{\n  \"command\": \"ls -la /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/ 2>&1 || echo \\\"Directory does not exist\\\"\",\n  \"description\": \"Check if artifacts directory exists\"\n}\ntool_result\ntotal 240\ndrwx------  18 openclaw  staff    576 Mar  7 07:13 .\ndrwx------   7 openclaw  staff    224 Mar  6 14:06 ..\n-rw-------   1 openclaw  staff   1656 Mar  6 20:06 clawson_system_summary.md\n-rw-------   1 openclaw  staff  11843 Mar  7 06:51 first_operational_sprint.md\n-rw-------   1 openclaw  staff   9587 Mar  7 07:13 first_sprint_launch.md\n-rw-------   1 openclaw  staff   1741 Mar  6 20:27 initial_operating_map.md\n-rw-------   1 openclaw  staff   6022 Mar  6 20:29 massdwell_venture_ideas.md\n-rw-------   1 openclaw  staff   5210 Mar  6 20:08 moonshot_opportunity_brief.md\n-rw-------   1 openclaw  staff   1972 Mar  6 20:25 operating_map.md\n-rw-------   1 openclaw  staff  21543 Mar  7 06:44 paperclip_operational_model_v2.md\n-rw-------   1 openclaw  staff  11554 Mar  7 06:44 paperclip_operational_rollout_plan.md\n-rw-------   1 openclaw  staff     19 Mar  7 07:54 proof.txt\n-rw-------   1 openclaw  staff     20 Mar  6 20:24 proof2.txt\n-rw-------   1 openclaw  staff     27 Mar  6 19:53 proof3.txt\n-rw-------   1 openclaw  staff    919 Mar  6 15:05 runtime_check.md\n-rw-------   1 openclaw  staff   4282 Mar  6 15:06 system_architecture.md\n-rw-------   1 openclaw  staff    789 Mar  6 14:06 test_artifact.md\n-rw-------   1 openclaw  staff    308 Mar  6 20:17 weekly_planning_template.md\nthinking\nGood, the artifacts directory exists. Now I need to create the three files as specified. Let me check if I have Gmail access first. I'll search for any available tools or environment variables that might indicate Gmail access.\n\nActually, looking at the task requirements, it says:\n- \"IF Gmail access is available: produce real summary from vettoristeve@gmail.com\"\n- \"IF Gmail access is NOT available: document the blocker explicitly\"\n\nI should check if there are any Gmail-related tools available. Let me search for deferred tools that might provide Gmail access.\n\nBut first, let me create the policy document and summary template, which I can do regardless of Gmail access. Then I'll check for Gmail access and create the live summary accordingly.\nassistant\nGood, the artifacts directory exists. Now I'll create the three required documents. Let me start with the policy document.\ntool_call\nWrite\n{\n  \"file_path\": \"/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md\",\n  \"content\": \"# Personal Inbox Cleanup Policy\\n\\n**Owner:** Personal Assistant\\n**Target Inbox:** vettoristeve@gmail.com\\n**Effective Date:** March 8, 2026\\n\\n## Recurring Schedule\\n\\nPersonal Assistant reviews and triages Steve's personal inbox **three times daily**:\\n\\n- **7:00 AM** — Morning review\\n- **1:00 PM** — Midday review\\n- **6:00 PM** — Evening review\\n\\n## Deletion Authority\\n\\nPersonal Assistant is authorized to **delete without review**:\\n\\n- Obvious spam and phishing attempts\\n- Junk mail and malicious content\\n- Generic promotional blasts and mass marketing emails\\n- Repetitive low-value newsletter/promo traffic from known senders\\n- Marketing emails with no personal relevance\\n\\n## Conservative Approach — DO NOT Delete\\n\\nPersonal Assistant must **never delete** the following categories without explicit approval:\\n\\n- Personal correspondence (family, friends, colleagues)\\n- Financial communications (banks, investments, credit cards, tax)\\n- Legal emails (contracts, notices, attorney correspondence)\\n- Real estate and property-related emails\\n- Vendor and client communications\\n- Deal-related correspondence\\n- Contract and payment-related emails\\n- Meeting invitations and scheduling requests\\n- Permit, licensing, and regulatory notices\\n- Medical, health insurance, and healthcare communications\\n- Travel bookings and reservations\\n- Tax-related documents\\n- **Any ambiguous or uncertain messages**\\n\\n**Default rule:** If uncertain about an email's importance, **do not delete**. Instead, classify it as `low priority` and include it in the summary for review.\\n\\n## Triage Categories\\n\\nAll non-deleted emails are classified into one of five categories:\\n\\n1. **Urgent** — Requires immediate attention within hours (time-sensitive deals, critical scheduling, emergencies)\\n2. **Important** — Requires attention within 1-2 days (business opportunities, meaningful correspondence, key updates)\\n3. **Follow-up needed** — Requires a response or action but not immediately urgent\\n4. **FYI** — Informational, no action required, but worth noting\\n5. **Low priority** — Can be safely ignored or reviewed at leisure\\n\\n## Safeguards\\n\\nTo avoid accidental deletion:\\n\\n1. **Never delete emails from unknown senders** that might be important (e.g., first-time contacts, new business inquiries)\\n2. **Pattern matching only** — Only delete emails that match known spam/promo patterns\\n3. **Track deleted items** — Maintain a count of deleted items in each summary\\n4. **Conservative bias** — When in doubt, keep and classify as low priority\\n5. **No bulk operations** — Review emails individually, never delete in bulk\\n6. **Manual review of edge cases** — Surface any borderline cases in the summary for Steve's review\\n\\n## Output\\n\\nEach triage session produces:\\n\\n- A count of emails deleted (spam/junk/promo)\\n- A categorized list of non-deleted emails\\n- Recommended follow-up actions\\n- Any patterns observed (repeat spam sources, high-volume senders)\\n\\nSee `personal_inbox_summary_template.md` for the standard output format.\\n\\n---\\n\\n**Policy Version:** 1.0\\n**Last Updated:** March 8, 2026\\n\"\n}\ntool_result\nFile created successfully at: /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md\nthinking\nGreat! The policy document is created. Now let me create the summary template.\ntool_call\nWrite\n{\n  \"file_path\": \"/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md\",\n  \"content\": \"# Personal Inbox Summary\\n\\n**Date:** [YYYY-MM-DD]\\n**Time:** [HH:MM AM/PM]\\n**Inbox:** vettoristeve@gmail.com\\n**Review Period:** [time range or \\\"new messages since last review\\\"]\\n\\n---\\n\\n## Summary Statistics\\n\\n- **Total new messages:** [count]\\n- **Deleted (spam/junk/promo):** [count]\\n- **Triaged for review:** [count]\\n\\n---\\n\\n## Urgent\\n\\n> Requires immediate attention within hours\\n\\n[List urgent emails with:\\n- Sender\\n- Subject\\n- Brief context\\n- Recommended action\\n- Time sensitivity]\\n\\n*Example:*\\n- **From:** Jane Doe (jane@example.com)\\n- **Subject:** Contract signature needed by EOD\\n- **Context:** Real estate contract requires signature before 5 PM today\\n- **Action:** Review and sign immediately\\n\\n---\\n\\n## Important\\n\\n> Requires attention within 1-2 days\\n\\n[List important emails with:\\n- Sender\\n- Subject\\n- Brief context\\n- Recommended action]\\n\\n---\\n\\n## Follow-Up Needed\\n\\n> Requires response or action, not immediately urgent\\n\\n[List follow-up emails with:\\n- Sender\\n- Subject\\n- Brief context\\n- Suggested timeline for response]\\n\\n---\\n\\n## FYI\\n\\n> Informational, no action required\\n\\n[List FYI emails with:\\n- Sender\\n- Subject\\n- Brief summary]\\n\\n---\\n\\n## Low Priority\\n\\n> Can be safely ignored or reviewed at leisure\\n\\n[List low-priority emails with:\\n- Sender\\n- Subject (optional brief note if context needed)]\\n\\n---\\n\\n## Deleted Items\\n\\n**Count:** [number of emails deleted]\\n\\n**Categories deleted:**\\n- Spam: [count]\\n- Promotional: [count]\\n- Junk: [count]\\n\\n**Repeat offenders (if any):**\\n- [Sender or domain that sent multiple spam/promo emails]\\n\\n---\\n\\n## Recommended Actions\\n\\n1. [Specific recommended action based on triaged emails]\\n2. [Any follow-up suggestions]\\n3. [Any patterns or observations worth noting]\\n\\n---\\n\\n## Notes\\n\\n[Any additional context, observations, or edge cases to flag]\\n\\n---\\n\\n**Next Review:** [time of next scheduled review]\\n\"\n}\ntool_result\nFile created successfully at: /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md\nthinking\nExcellent! Now I need to create the first live summary. The task says:- \"IF Gmail access is available: produce real summary from vettoristeve@gmail.com\"\n- \"IF Gmail access is NOT available: document the blocker explicitly\"\n\nLet me check if I have access to Gmail tools. I should search for any Gmail-related deferred tools.\nassistant\nNow let me check if Gmail access is available to produce a live summary.\ntool_call\nToolSearch\n{\n  \"query\": \"gmail email inbox\",\n  \"max_results\": 5\n}\ntool_result\nNo matching deferred tools found\nthinking\nNo Gmail tools are available. I should document this blocker explicitly in the live summary file, as instructed in the task requirements.\ntool_call\nWrite\n{\n  \"file_path\": \"/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md\",\n  \"content\": \"# Personal Inbox Summary\\n\\n**Date:** 2026-03-08\\n**Time:** 1:34 PM\\n**Inbox:** vettoristeve@gmail.com\\n**Review Period:** Initial setup review\\n\\n---\\n\\n## ⚠️ Access Blocker\\n\\n**Status:** Gmail API access is not currently available.\\n\\n**Details:**\\n- No Gmail integration tools detected in current environment\\n- Unable to access vettoristeve@gmail.com inbox directly\\n- Cannot perform live triage or deletion operations at this time\\n\\n**Required to enable:**\\n- Gmail API credentials or OAuth token\\n- Gmail integration tool/adapter for Paperclip\\n- Appropriate read/write/delete permissions for vettoristeve@gmail.com\\n\\n**Workaround options:**\\n1. Configure Gmail API access via Google Cloud Console\\n2. Add Gmail adapter/tool to Personal Assistant environment\\n3. Use alternative email management integration (if available)\\n\\n---\\n\\n## Current Status\\n\\n✅ **Policy document created:** `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\\n\\n✅ **Summary template created:** `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\\n\\n❌ **Live inbox access:** Not available (blocker documented above)\\n\\n---\\n\\n## Next Steps\\n\\n1. **Resolve Gmail API access blocker**\\n   - Configure Gmail integration\\n   - Validate read/write/delete permissions\\n   - Test authentication with vettoristeve@gmail.com\\n\\n2. **Once access is enabled:**\\n   - Perform first live inbox review\\n   - Apply triage categories per policy\\n   - Delete obvious spam/junk/promo emails (with safeguards)\\n   - Generate first real summary using template\\n\\n3. **Schedule recurring reviews:**\\n   - 7:00 AM — Morning review\\n   - 1:00 PM — Midday review\\n   - 6:00 PM — Evening review\\n\\n---\\n\\n## Deletion Authority Status\\n\\n**Not yet exercised** — Gmail access required before deletion operations can begin.\\n\\nDeletion authority is defined and documented in the policy, ready to apply once access is enabled.\\n\\n---\\n\\n## Safeguards Confirmed\\n\\nPer `personal_inbox_cleanup_policy.md`, the following safeguards are in place:\\n\\n1. Conservative bias: When in doubt, keep and classify as low priority\\n2. Pattern matching only: Delete only known spam/promo patterns\\n3. No bulk operations: Individual email review required\\n4. Protected categories: Personal, financial, legal, real estate, vendor/client, contracts, payments, meetings, permits, family, medical, travel, tax\\n5. Tracked deletions: All deleted items counted and logged\\n\\n---\\n\\n**This summary will be replaced with live data once Gmail access is configured.**\\n\\n**Next scheduled review:** Pending Gmail access resolution\\n\"\n}\ntool_result\nFile created successfully at: /Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md\nthinking\nPerfect! I've created all three required files:\n\n1. ✅ Policy document - `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\n2. ✅ Summary template - `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\n3. ✅ Live summary with blocker documentation - `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\n\nAll files include:\n- Deletion authority for spam/junk/promo\n- Conservative approach for ambiguous emails\n- Triage categories (urgent, important, follow-up needed, FYI, low priority)\n- Recurring schedule (7:00 AM, 1:00 PM, 6:00 PM)\n- Clear blocker documentation (Gmail access not available)\n- Confirmation that deletion authority has not been exercised yet\n- Recommended safeguards\n\nNow I need to update the issue status to `done` and add a comment with the required run ID header.\nassistant\nAll three artifacts have been created successfully. Let me now mark the task as complete and provide a summary.\ntool_call\nBash\n{\n  \"command\": \"curl -s -X PATCH \\\\\\n  \\\"${PAPERCLIP_API_URL}/api/issues/${PAPERCLIP_TASK_ID}\\\" \\\\\\n  -H \\\"Authorization: Bearer ${PAPERCLIP_API_KEY}\\\" \\\\\\n  -H \\\"X-Paperclip-Run-Id: ${PAPERCLIP_RUN_ID}\\\" \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -d '{\\n    \\\"status\\\": \\\"done\\\",\\n    \\\"comment\\\": \\\"## Personal inbox cleanup workflow setup complete\\\\n\\\\nAll required artifacts created successfully.\\\\n\\\\n**Deliverables:**\\\\n\\\\n✅ Policy document: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\\\\n- Deletion authority defined for spam/junk/promo emails\\\\n- Conservative approach documented for ambiguous messages\\\\n- Triage categories: urgent, important, follow-up needed, FYI, low priority\\\\n- Recurring schedule: 7:00 AM, 1:00 PM, 6:00 PM\\\\n- Safeguards to prevent accidental deletion\\\\n\\\\n✅ Summary template: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\\\\n- Structured format for all triage categories\\\\n- Statistics section for deleted items count\\\\n- Recommended actions section\\\\n- Ready to use for recurring reviews\\\\n\\\\n✅ Live summary: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\\\\n- **Blocker documented:** Gmail API access not currently available\\\\n- No Gmail integration tools detected in environment\\\\n- Requires Gmail API credentials/OAuth and appropriate permissions\\\\n- Deletion authority NOT exercised (access required first)\\\\n\\\\n**Recurring workflow cadence:** 3x daily (7:00 AM, 1:00 PM, 6:00 PM)\\\\n\\\\n**Safeguards confirmed:**\\\\n- Conservative bias (when uncertain, keep and classify as low priority)\\\\n- Pattern matching only (no bulk deletion)\\\\n- Protected categories (personal, financial, legal, real estate, vendor/client, etc.)\\\\n- Individual email review required\\\\n- Tracked deletion counts\\\\n\\\\n**Next step:** Configure Gmail API access to enable live inbox triage and deletion operations.\\\"\\n  }'\",\n  \"description\": \"Mark issue as done with completion comment\"\n}\ntool_result\n{\n  \"id\": \"a7166a7c-3676-4886-8785-cde77cf7f462\",\n  \"companyId\": \"6e53f2a5-1a3f-4557-99d6-790eeb70ce67\",\n  \"projectId\": null,\n  \"goalId\": null,\n  \"parentId\": \"e54f5eb9-1300-4927-8545-afefbcbfacda\",\n  \"title\": \"Execute personal inbox cleanup workflow setup\",\n  \"description\": \"Set up the recurring personal inbox cleanup workflow for vettoristeve@gmail.com as specified in the parent task.\\n\\n**Required deliverables:**\\n\\n1. Create policy document at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\\n   - Document deletion authority for spam/junk/promo emails\\n   - Document conservative approach for ambiguous emails\\n   - Document triage categories (urgent, important, follow-up needed, FYI, low priority)\\n   - Document recurring schedule (7:00 AM, 1:00 PM, 6:00 PM)\\n\\n2. Create summary template at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\\n   - Template for recurring inbox summaries\\n   - Sections for each triage category\\n   - Section for deleted items count\\n   - Section for recommended follow-ups\\n\\n3. Create first live summary at: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\\n   - IF Gmail access is available: produce real summary from vettoristeve@gmail.com\\n   - IF Gmail access is NOT available: document the blocker explicitly\\n\\n4. Document the recurring workflow cadence (3x daily: 7 AM, 1 PM, 6 PM)\\n\\n**Deletion authority:**\\n- You are authorized to delete obvious spam, junk, promotional blasts, and mass marketing emails\\n- DO NOT delete: personal, financial, legal, real estate, vendor/client, contracts, payments, meetings, permits, scheduling, family, medical, travel, or tax-related emails\\n- If uncertain, classify as low priority instead of deleting\\n\\n**Output requirements:**\\n- All three artifact files created\\n- Clear blocker documentation if Gmail access unavailable\\n- Confirmation of whether deletion authority was exercised\\n- Recommended safeguards for avoiding accidental deletion\\n\\nComplete this work according to the parent task specifications.\",\n  \"status\": \"done\",\n  \"priority\": \"medium\",\n  \"assigneeAgentId\": \"1b26ac48-4866-4db5-9a87-f0535f775d6f\",\n  \"assigneeUserId\": null,\n  \"checkoutRunId\": null,\n  \"executionRunId\": \"24fe29d2-f84a-4b2f-9b51-edd8797ae96a\",\n  \"executionAgentNameKey\": \"personal assistant\",\n  \"executionLockedAt\": \"2026-03-08T13:33:48.672Z\",\n  \"createdByAgentId\": \"b81862ce-f532-489d-8613-a08ceacc6906\",\n  \"createdByUserId\": null,\n  \"issueNumber\": 66,\n  \"identifier\": \"CLA-66\",\n  \"requestDepth\": 0,\n  \"billingCode\": null,\n  \"assigneeAdapterOverrides\": null,\n  \"startedAt\": \"2026-03-08T13:34:22.064Z\",\n  \"completedAt\": \"2026-03-08T13:35:45.702Z\",\n  \"cancelledAt\": null,\n  \"hiddenAt\": null,\n  \"createdAt\": \"2026-03-08T13:33:48.656Z\",\n  \"updatedAt\": \"2026-03-08T13:35:45.702Z\",\n  \"labels\": [],\n  \"labelIds\": [],\n  \"comment\": {\n    \"id\": \"5d74ad07-f1bb-42a2-a7c0-69d5263e8d48\",\n    \"companyId\": \"6e53f2a5-1a3f-4557-99d6-790eeb70ce67\",\n    \"issueId\": \"a7166a7c-3676-4886-8785-cde77cf7f462\",\n    \"authorAgentId\": \"1b26ac48-4866-4db5-9a87-f0535f775d6f\",\n    \"authorUserId\": null,\n    \"body\": \"## Personal inbox cleanup workflow setup complete\\n\\nAll required artifacts created successfully.\\n\\n**Deliverables:**\\n\\n✅ Policy document: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_cleanup_policy.md`\\n- Deletion authority defined for spam/junk/promo emails\\n- Conservative approach documented for ambiguous messages\\n- Triage categories: urgent, important, follow-up needed, FYI, low priority\\n- Recurring schedule: 7:00 AM, 1:00 PM, 6:00 PM\\n- Safeguards to prevent accidental deletion\\n\\n✅ Summary template: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary_template.md`\\n- Structured format for all triage categories\\n- Statistics section for deleted items count\\n- Recommended actions section\\n- Ready to use for recurring reviews\\n\\n✅ Live summary: `/Users/openclaw/.openclaw/workspace/tools/paperclip/workspace/artifacts/personal_inbox_summary.md`\\n- **Blocker documented:** Gmail API access not currently available\\n- No Gmail integration tools detected in environment\\n- Requires Gmail API credentials/OAuth and appropriate permissions\\n- Deletion authority NOT exercised (access required first)\\n\\n**Recurring workflow cadence:** 3x daily (7:00 AM, 1:00 PM, 6:00 PM)\\n\\n**Safeguards confirmed:**\\n- Conservative bias (when uncertain, keep and classify as low priority)\\n- Pattern matching only (no bulk deletion)\\n- Protected categories (personal, financial, legal, real estate, vendor/client, etc.)\\n- Individual email review required\\n- Tracked deletion counts\\n\\n**Next step:** Configure Gmail API access to enable live inbox triage and deletion operations.\",\n    \"createdAt\": \"2026-03-08T13:35:45.706Z\",\n    \"updatedAt\": \"2026-03-08T13:35:45.706Z\"\n  }\n}\nthinking\nPerfect! The task has been completed successfully. I've:\n\n1. ✅ Created the policy document with all required elements\n2. ✅ Created the summary template with all required sections\n3. ✅ Created the live summary with explicit blocker documentation (Gmail access not available)\n4. ✅ Documented the recurring workflow cadence (3x daily)\n5. ✅ Confirmed deletion authority definition and safeguards\n6. ✅ Marked the issue as done with a comprehensive comment\n\nThe task is now complete. All deliverables have been created as specified, and the Gmail access blocker has been clearly documented as instructed.\nassistant\n## Task Complete\n\nSuccessfully completed **CLA-66: Execute personal inbox cleanup workflow setup**.\n\n**Created artifacts:**\n\n1. ✅ **Policy document** — Deletion authority, triage categories, and safeguards defined\n2. ✅ **Summary template** — Ready-to-use format for recurring reviews\n3. ✅ **Live summary** — Gmail access blocker explicitly documented\n\n**Status:**\n- Recurring workflow cadence: 3x daily (7:00 AM, 1:00 PM, 6:00 PM)\n- Deletion authority: Defined but not exercised (Gmail access required)\n- Safeguards: Conservative approach, pattern matching only, protected categories\n\n**Blocker:** Gmail API access not available. Requires configuration before live triage operations can begin.\nresult\ntokens in=151 out=6.5k cached=268.2k cost=$0.437001\nsubtype=success is_error=false\n## Task Complete\n\nSuccessfully completed **CLA-66: Execute personal inbox cleanup workflow setup**.\n\n**Created artifacts:**\n\n1. ✅ **Policy document** — Deletion authority, triage categories, and safeguards defined\n2. ✅ **Summary template** — Ready-to-use format for recurring reviews\n3. ✅ **Live summary** — Gmail access blocker explicitly documented\n\n**Status:**\n- Recurring workflow cadence: 3x daily (7:00 AM, 1:00 PM, 6:00 PM)\n- Deletion authority: Defined but not exercised (Gmail access required)\n- Safeguards: Conservative approach, pattern matching only, protected categories\n\n**Blocker:** Gmail API access not available. Requires configuration before live triage operations can begin.\nEvents (3)\n[system]\nrun started\n[system]\nadapter invocation\n[system]\nrun succeeded",
+      "updatedAt": "2026-03-13T23:07:21.392Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3c27850e-857a-4a96-9dbf-e2f89d64fd9e": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Enterprise-Grade COGS Calculator Overhaul",
+      "updatedAt": "2026-03-13T23:07:21.376Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "61173d0e-2e3e-455e-a126-58ee2e1365c8": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Build PermitIQ MVP",
+      "updatedAt": "2026-03-13T23:07:21.361Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "cabbea48-38bd-4e00-b21e-d79521cc4225": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Email notifications: Verify Resend integration is live",
+      "updatedAt": "2026-03-13T23:07:21.344Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "636f4822-2782-49e5-b6c8-ff3f4138018b": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Light → dark theme: all public permit guides + tool pages",
+      "updatedAt": "2026-03-13T23:07:21.327Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e8888cf2-891b-47a5-aa57-9299ec55c01a": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Onboarding flow: Guided first-run experience for new signups",
+      "updatedAt": "2026-03-13T23:07:21.311Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8098d69a-b6f1-4786-8584-b3ce711815c8": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P1: Persistent Next Action banner on every project page",
+      "updatedAt": "2026-03-13T23:07:21.294Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "03b1cd5e-a8a0-4684-8459-0c0587144aa1": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P2: Full language audit — rename all UI vocabulary to contractor language",
+      "updatedAt": "2026-03-13T23:07:21.276Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "04fdf5bb-0090-4e87-b35a-d7a37effbefb": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P2: Trust signals — data provenance, security, social proof on landing page",
+      "updatedAt": "2026-03-13T23:07:21.259Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "70d4b780-5605-45b8-8cc8-4cd261ecc0e6": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P2: Document to requirement linkage — attach docs directly to permit steps",
+      "updatedAt": "2026-03-13T23:07:21.240Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "178dab37-9e5b-44dd-8685-6ad13713b791": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P2: AHJ submission guide — how-to-file cards per jurisdiction on project page",
+      "updatedAt": "2026-03-13T23:07:21.220Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "be0e0f83-3d1f-49be-83a8-a4fc2cdb2366": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Billing portal: Subscription management + cancellation",
+      "updatedAt": "2026-03-13T01:19:42.255Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f5d7b07b-2d31-4588-bb20-877afae50e83": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Plan enforcement: Gate features by subscription tier",
+      "updatedAt": "2026-03-13T01:19:39.127Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "76e9e9a6-49c5-45f1-9066-65e60b7cfc4b": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Compliance checklist: In Progress status + inline notes",
+      "updatedAt": "2026-03-13T01:04:47.708Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "34b75e2e-915a-4a94-b07d-97ba2370aff4": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Build Founder Command Center MVP",
+      "updatedAt": "2026-03-11T15:12:29.564Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fdcc6f20-a37a-4675-bd4c-e6855bdfe459": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Generate 3 Moonshot AI SaaS ideas for Steve to select",
+      "updatedAt": "2026-03-11T14:28:06.279Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2c81cbe4-8af4-4e27-ab25-4cabf68f21b9": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Define PRD format and standards",
+      "updatedAt": "2026-03-10T23:47:59.933Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5bc0e9b5-4b5e-489b-ba38-5abbe1f1ae7f": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "1b26ac48-4866-4db5-9a87-f0535f775d6f",
+      "title": "Run initial Gmail inbox triage for vettoristeve@gmail.com",
+      "updatedAt": "2026-03-10T23:47:59.859Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "030b2c7a-a291-48d6-8324-b45edd35a45a": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Budget tracking UI",
+      "updatedAt": "2026-03-10T23:47:59.855Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a490143f-ffe4-4414-ace4-97a80dd28f4f": {
+      "status": "cancelled",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Dashboard filtering by project, agent, priority",
+      "updatedAt": "2026-03-10T23:47:59.850Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b9618a36-6a2b-4960-9835-a5e3f271b832": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Finalize opportunity brief template",
+      "updatedAt": "2026-03-09T13:05:44.882Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "9007720b-7d89-43d2-8c3b-ec6f503b71d8": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Customer persona definition for modular ADU buyers",
+      "updatedAt": "2026-03-09T13:02:13.449Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "de2c9999-f60e-4d9c-8396-bf03b65d14be": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Quoting automation system",
+      "updatedAt": "2026-03-09T13:01:41.854Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "532014b3-a9aa-4f93-ac48-0ed7e9ead242": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Marketing channel analysis for laser engraving business",
+      "updatedAt": "2026-03-08T00:02:43.626Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "72d8973a-e7e1-4d18-aab3-0c2f8e0f408b": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Build Outputs Hub - browseable artifact library",
+      "updatedAt": "2026-03-07T22:37:38.211Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f232faec-fbf9-492c-86b2-ec703c9a8c39": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Market research: modular ADU and housing systems competitive landscape",
+      "updatedAt": "2026-03-07T12:59:42.902Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2aff4851-2c8c-4669-a440-060d93f5f3a9": {
+      "status": "done",
+      "priority": "high",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Research Boston-area multifamily acquisition opportunities",
+      "updatedAt": "2026-03-07T12:58:47.665Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "bc7b3e3e-2700-4cb2-a693-e092af70061f": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P2-14: Inspector report visibility for GC and lender",
+      "updatedAt": "2026-04-03T13:18:24.384Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e2676a6f-5d48-40fc-b282-68eaf3f0cf57": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P2-12: Retainage UI — GC release flow + sub held retainage view",
+      "updatedAt": "2026-04-03T13:15:20.066Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "71f04e78-4a35-443b-9cb5-021af38f5536": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Build notification center UI component for DrawStack",
+      "updatedAt": "2026-04-03T13:09:49.970Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7134ca1b-2a9f-4943-ad73-68387e7c6c97": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P2-13: SOV table shows approved change order impact on scheduled values",
+      "updatedAt": "2026-04-03T13:09:11.424Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "cf62f110-e779-4f5c-8d88-7a9bac608186": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Implement inspector visibility in GC and lender draw views",
+      "updatedAt": "2026-04-03T13:02:03.548Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "98a15660-6f66-495d-9942-a179280b2504": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P2-11: In-app notification center UI",
+      "updatedAt": "2026-04-03T12:53:34.645Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8c398825-cd76-479c-9a31-eb2da8bf42b6": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P2-15: Sub cross-project aggregate dashboard",
+      "updatedAt": "2026-04-03T12:37:45.322Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ce55779a-b1d6-4c74-bcd6-ec71c594a524": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Engineering] Implement SOV + Change Order calculation and UI columns",
+      "updatedAt": "2026-04-03T12:28:53.771Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0dfab815-493b-4dc3-9161-07b0673d6514": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Implement Retainage UI — GC release flow + sub held retainage view",
+      "updatedAt": "2026-04-03T12:24:19.773Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "529953c6-f408-4a2f-8d8f-37f7550c6c3c": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Phase 2: Historical Project Database + AI Cost Predictor",
+      "updatedAt": "2026-04-02T02:39:33.507Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "92eb121b-4046-4114-a418-046e2902f4b8": {
+      "status": "todo",
+      "priority": "medium",
+      "assigneeAgentId": null,
+      "title": "Feature 5: Inspection scheduling",
+      "updatedAt": "2026-04-01T14:52:46.930Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fec91513-3db8-4247-93b8-1bac1e6faf74": {
+      "status": "todo",
+      "priority": "medium",
+      "assigneeAgentId": null,
+      "title": "Feature 3: Budget reallocation flow",
+      "updatedAt": "2026-04-01T14:49:56.866Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "44482044-773d-4a55-9917-5bf703eb864d": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": null,
+      "title": "Add DrawStack logo/icon to app pages",
+      "updatedAt": "2026-04-01T08:53:55.420Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "73541bce-72e8-46f1-9acc-1bdd18026590": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Google Ads 7-day report pulled — negative keywords identified",
+      "updatedAt": "2026-03-30T21:54:41.996Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "255e92d2-5c58-4c52-85fb-09654ff7523f": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Validate: Portfolio view — multi-project dashboard accuracy",
+      "updatedAt": "2026-03-30T20:57:54.826Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7d426293-889a-40e9-8f9e-cbf50454a41d": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Phase 2: Lender Integration Templates — bank-specific draw sheet auto-fill",
+      "updatedAt": "2026-03-30T20:31:08.998Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b976f0b7-3f93-460c-a563-57a5e29de5e1": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Admin dashboard cleanup — trials page, expiring highlights, invoice count fix",
+      "updatedAt": "2026-03-30T20:19:44.906Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3438c8ba-495c-4d6d-90ce-40835e5945e4": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack: Subs Tab Redesign — Sub-centric progress cards + invoice slide-over",
+      "updatedAt": "2026-03-29T11:42:06.107Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "57a6f3e0-5ffe-4822-ae0f-7b05dc3b930f": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "GC Interface: Remove Sub Access + Resend Invite",
+      "updatedAt": "2026-03-27T16:48:06.174Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "1a1e7f99-3b6f-4c52-b34e-d3e37038fca6": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub Portal UI Polish Pass",
+      "updatedAt": "2026-03-27T16:37:30.730Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c533f81f-dec0-416a-b5fa-b12178f01af0": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub Portal: Email notifications",
+      "updatedAt": "2026-03-23T02:06:06.456Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5cb33bea-da19-4210-8266-70fecba08ba5": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub Portal: Status visibility + payment history",
+      "updatedAt": "2026-03-23T02:05:59.186Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "34e01123-3fc8-4a23-a817-dcf7213956f1": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Inspector Report Parser",
+      "updatedAt": "2026-03-23T01:27:16.768Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "62cc692b-98db-4314-b14c-29ee03431ce7": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Funding Predictor",
+      "updatedAt": "2026-03-23T01:27:16.754Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a904e7d8-ab09-4eec-9fcf-3ec384e640da": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "AI Lien Waiver Extractor",
+      "updatedAt": "2026-03-23T01:27:16.739Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a7c6af4c-8213-4619-879f-0ab7ba10b5ea": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub Portal: Mobile-first polish + UX cleanup",
+      "updatedAt": "2026-03-23T01:07:00.352Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b7ff82b4-946d-4f36-9649-927ad7af6ce2": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Build post-deploy smoke test script",
+      "updatedAt": "2026-03-22T23:36:01.103Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2fc6a8d0-8393-4731-acb8-2b71e781820e": {
+      "status": "todo",
+      "priority": "medium",
+      "assigneeAgentId": null,
+      "title": "EPIC: DrawStack Phase 2 — Pre-Project Planning Suite (AI Budget Prediction, Doc-to-SOV, QuickBooks, Scope Builder)",
+      "updatedAt": "2026-03-22T13:30:27.031Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "00e7abf2-f14d-4c4f-a22d-74617b96c302": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Lender portfolio page — add aggregate stats (total draw volume, pending reviews)",
+      "updatedAt": "2026-03-22T00:32:04.069Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "32da9849-2c0a-4e9d-89c0-3ca6008113dd": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Consolidate dual sub portals — add redirect/detection so subs land correctly",
+      "updatedAt": "2026-03-22T00:32:04.048Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4a22dab6-0bc5-4a39-87cb-97c7750aa03e": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Add Subcontractor as third org type in onboarding (or redirect to sub flow)",
+      "updatedAt": "2026-03-22T00:32:04.025Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fdefb531-a7f1-4523-950f-f1d9320caed4": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P6] Rate limiting on subcontractor token endpoints",
+      "updatedAt": "2026-03-22T00:31:56.482Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6b5b3400-cbcc-4bbc-b785-e6247a4630d4": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P6] Server-side budget overage policy — define and enforce",
+      "updatedAt": "2026-03-22T00:31:56.462Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "8f241a2a-6473-48a9-96c8-9484a0d22993": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P7] Full copy audit — buttons, empty states, error messages",
+      "updatedAt": "2026-03-22T00:31:56.443Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c4d05f63-c6e9-47ec-8dfe-c070f0c27865": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P8] E2E auth tokens for auth-gated Playwright specs",
+      "updatedAt": "2026-03-22T00:31:56.423Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "37c9f260-c326-410e-aa55-420ff0cc97f1": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P8] Mobile sanity pass — GC dashboard",
+      "updatedAt": "2026-03-22T00:31:56.402Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "84471751-cbbf-400b-b553-863bce432832": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P3] Draw period date smart default (month start/end)",
+      "updatedAt": "2026-03-22T00:10:00.747Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "39113a15-46f9-46e3-9913-a240ca5a1d4e": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P3] Dashboard Needs Attention — improve prioritization",
+      "updatedAt": "2026-03-22T00:10:00.728Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3fdcedf5-c1da-4957-8181-4d1f57c09bc9": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P3] Payment history visible to GC on draw detail",
+      "updatedAt": "2026-03-22T00:10:00.709Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "95cc15b6-9cfc-41ae-881d-3b15397c3043": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P4] Fund button modal — clarify record-keeping vs wire transfer",
+      "updatedAt": "2026-03-22T00:10:00.689Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "00bd3491-1194-4cc8-ad52-7d2ec2da4057": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P5] Subcontractor payment history — total paid, per invoice",
+      "updatedAt": "2026-03-22T00:10:00.671Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "833d988c-9095-49c0-a084-dd67e84b757f": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P5] Reduce Clerk friction for subcontractor onboarding",
+      "updatedAt": "2026-03-22T00:10:00.652Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3dc35891-1b51-457a-b350-dc3128f8c934": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[GC] Dashboard 'Needs Attention' shows nothing when all draws are DRAFT",
+      "updatedAt": "2026-03-21T19:19:42.411Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c7af5a5e-d522-4618-86de-9d14ebd0917f": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Lender] Add tooltip to 'Fund' button clarifying it does not transfer money",
+      "updatedAt": "2026-03-21T19:19:42.386Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "25998e7f-6ea2-434e-808d-c10387c259f6": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Tests] Fix vitest/Playwright setup conflict — unit tests can't run",
+      "updatedAt": "2026-03-21T19:19:42.361Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "06b78487-769a-4f5a-aa9b-3f44ab2afa1b": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Tests] Fix responsive.spec.ts Playwright config error blocking all mobile tests",
+      "updatedAt": "2026-03-21T19:19:42.334Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "482ec9d6-bb32-486a-9ce2-e586733bc469": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[Tests] Set up E2E auth tokens for auth-gated Playwright specs",
+      "updatedAt": "2026-03-21T18:53:35.687Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f4b5e892-14dd-4028-bb95-2e55488295a1": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub portal — Phase 3: Direct invoice submission by sub",
+      "updatedAt": "2026-03-21T00:30:45.522Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7a9b33a8-86b5-42b3-8778-a81c0f65bb6d": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Sub portal — Phase 2: Read-only sub dashboard (lines + payment status)",
+      "updatedAt": "2026-03-20T21:03:09.455Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ec443dbc-d6f0-4f8f-bb03-6a5de8379c7e": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": null,
+      "title": "AIA G703: Add Column F (Materials Stored) + Column J (Retainage) to SOV",
+      "updatedAt": "2026-03-20T20:41:06.049Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e121f770-7d86-49d5-8eb0-89adc9278b9a": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "AIA G703: Add Column F (Materials Stored) + Column J (Retainage) to SOV",
+      "updatedAt": "2026-03-20T16:33:19.047Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "54b8aa01-263f-4986-a2b0-c2ce66def600": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Add API-level plan gates for UI-only features",
+      "updatedAt": "2026-03-20T13:10:50.412Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ab35bf50-adb9-4e06-8018-63e90ee256fc": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": null,
+      "title": "Feature: Frictionless sub invoice submission portal",
+      "updatedAt": "2026-03-20T12:51:52.537Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6a54976e-ae24-458c-844c-cbbff9ef1934": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Document hub — central repository per project with compliance tracking",
+      "updatedAt": "2026-03-20T10:07:06.232Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "59e5986b-7b88-4df7-89f2-c187c14c26ba": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Duplicate invoice detection",
+      "updatedAt": "2026-03-20T07:02:09.702Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0a6bbb3e-6638-4f3b-a0cb-023293e50346": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Subcontractor direct-upload portal",
+      "updatedAt": "2026-03-20T04:37:49.670Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fc616343-da5b-4649-b899-168a252f0695": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Gemini AI draw risk scoring",
+      "updatedAt": "2026-03-20T04:03:33.747Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "eaa7d977-f52b-48b1-a912-525035711ba8": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: AI cost anomaly detection on draw submission",
+      "updatedAt": "2026-03-20T03:39:43.874Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "97fca920-a989-434c-b565-e0e42499756b": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: SOV project templates for fast setup",
+      "updatedAt": "2026-03-20T03:34:43.373Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c5d5b1d9-91b2-419b-8aad-3c5c5d058145": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Inspector / Third-Party role and portal",
+      "updatedAt": "2026-03-20T02:40:45.775Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fc7d03a9-bbb8-4302-bab8-40d371adb7b8": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Draft auto-save for New Draw wizard",
+      "updatedAt": "2026-03-20T00:37:02.375Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f337302a-d24c-4d71-9cad-542d012ec82e": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "UX: Context-aware New Draw — auto-inject Project ID",
+      "updatedAt": "2026-03-19T23:43:27.886Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "6ede4ca4-910a-4c39-9d33-a7ef0deac0df": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Multi-user teams: Full team workspace with roles + permissions",
+      "updatedAt": "2026-03-19T21:23:01.519Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "41725f57-ec04-4667-b5d4-f0a2b21575fe": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Portfolio page: Real project portfolio view with analytics",
+      "updatedAt": "2026-03-19T17:33:56.185Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "358f122b-c0e6-421f-a297-7b2398bdbe53": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack UI Refresh — Apply Stitch Design System",
+      "updatedAt": "2026-03-19T17:06:34.379Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c54856e1-e5a6-420e-af8f-d560ec8b1cdf": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Mobile responsiveness audit + fixes",
+      "updatedAt": "2026-03-19T15:45:48.022Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e0df2642-63df-45fb-992b-1d73ae398f48": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "DrawStack: Budget vs. Actual Analytics Tab",
+      "updatedAt": "2026-03-19T11:42:11.349Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a7166a7c-3676-4886-8785-cde77cf7f462": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "1b26ac48-4866-4db5-9a87-f0535f775d6f",
+      "title": "Execute personal inbox cleanup workflow setup",
+      "updatedAt": "2026-03-13T23:07:21.550Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e54f5eb9-1300-4927-8545-afefbcbfacda": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Launch recurring personal inbox cleanup workflow",
+      "updatedAt": "2026-03-13T23:07:21.534Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "45a44856-2143-48d6-8775-6a632e75e7a6": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Unified logo across all pages (Building2 → Logo component)",
+      "updatedAt": "2026-03-13T23:07:21.518Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "01234c0f-f4b3-41d2-aabb-b2d011824af7": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Add 5+ new MA jurisdictions to permit guides",
+      "updatedAt": "2026-03-13T23:07:21.503Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "432b9092-5d76-46d7-9661-26619bb316fb": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "SEO: Meta tags, OG images, structured data for all public pages",
+      "updatedAt": "2026-03-13T23:07:21.486Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3cfd828e-1c75-42b7-b352-0441051dc21a": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P2: Portfolio dashboard redesign — sortable table view with urgency indicators",
+      "updatedAt": "2026-03-13T23:07:21.471Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a20bdd7e-2d60-428d-be4d-95a129c746d2": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P2: Submission tracking and follow-up reminder prompts",
+      "updatedAt": "2026-03-13T23:07:21.456Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f1a0444a-15a9-439b-ae30-83f3960ba264": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P3: Public REST API and webhooks for permit intelligence (extends CLA-98)",
+      "updatedAt": "2026-03-13T23:07:21.440Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fe34ca21-a0e0-4d72-a2b2-c49dbb230e15": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P3: Shareable compliance report — PDF and link export for investors and lenders",
+      "updatedAt": "2026-03-13T23:07:21.423Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5eb87935-d9ae-47a7-8274-b80d2f62fd24": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P3: Mobile PWA — installable app with photo capture and push notifications",
+      "updatedAt": "2026-03-13T23:07:21.408Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f0530e16-1615-4ab3-a772-076131239e24": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Empty states: All pages need real empty state UI",
+      "updatedAt": "2026-03-13T01:19:39.199Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "429250ed-3ce7-4c1e-88b8-ba3672a89a01": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Fix broken sidebar nav links (Zoning Lookup + ADU Tools → 404)",
+      "updatedAt": "2026-03-13T01:09:15.845Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e1a7be25-372b-4b11-9de1-dbe75196d102": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Add Sign Out button to sidebar and mobile nav",
+      "updatedAt": "2026-03-13T01:08:44.968Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4337c2b9-8143-477c-9878-db6c9c63ae72": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Fix project detail page stuck on loading skeleton",
+      "updatedAt": "2026-03-13T01:08:07.944Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "91a30042-6f7e-41f3-90ce-e4224174b077": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Create Moonshot workspace and artifact structure",
+      "updatedAt": "2026-03-10T23:47:59.927Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4a360fb2-3853-447b-89f8-3b79f7bb1234": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Document handoff process to implementation",
+      "updatedAt": "2026-03-10T23:47:59.922Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3af18591-2772-41df-8554-ccc941e1762a": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Create validation experiment playbook",
+      "updatedAt": "2026-03-10T23:47:59.918Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c8fafc72-14f1-447b-9b1b-17b705d59f7d": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Customer segmentation research (B2B vs B2C)",
+      "updatedAt": "2026-03-10T23:47:59.914Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3f00481e-a021-4723-939d-383fe1bbf054": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Property acquisition pipeline tracker",
+      "updatedAt": "2026-03-10T23:47:59.911Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b0b88016-5b3c-445b-9208-924603b82225": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Identify automation opportunities in property operations",
+      "updatedAt": "2026-03-10T23:47:59.906Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fac2dcc8-e8f5-4684-a08c-fc68bd3fd106": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Analyze financing structures for small multifamily deals",
+      "updatedAt": "2026-03-10T23:47:59.895Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ebbc6fff-70a0-4ffb-88c8-5160399f873d": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Pricing model validation for modular ADU systems",
+      "updatedAt": "2026-03-10T23:47:59.886Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "39657039-40ee-44fe-8b9b-ccd4778b30fe": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Interview 10 ADU buyers/homeowners about pain points",
+      "updatedAt": "2026-03-10T23:47:59.878Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "3a9e942b-4b52-491a-a4ee-4f8a58a39d75": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Label system for issue categorization",
+      "updatedAt": "2026-03-10T23:47:59.867Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c464f0dc-6158-4251-bc88-809cb0342a61": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Create Proof File",
+      "updatedAt": "2026-03-10T23:47:59.847Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "02a6f0af-346f-4bf7-9e75-82846c03fc3b": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Create a proof file through Clawson",
+      "updatedAt": "2026-03-09T12:59:38.190Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2219484b-e271-4db9-8119-39214636d2e5": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Clean up unassigned tasks",
+      "updatedAt": "2026-03-09T12:58:30.844Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a6bac599-b7da-4330-9bc5-9220d4203105": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Next Prodution Sprint",
+      "updatedAt": "2026-03-07T22:46:33.402Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "63756f49-6bca-489b-81ae-79109b7ef626": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "outputs hub still not working",
+      "updatedAt": "2026-03-07T22:01:12.343Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a943c8ba-c383-4bb6-a47f-940beb6c8466": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "test test",
+      "updatedAt": "2026-03-07T21:57:22.026Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "aba13e47-5b17-41ce-a372-62718a9ff692": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Verify status of CLA-32",
+      "updatedAt": "2026-03-07T13:09:55.304Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c65347e0-9b30-4dac-b399-849fa5044288": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Create Proof File",
+      "updatedAt": "2026-03-07T12:55:08.035Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "397de04d-7780-4dca-86cf-44bba324e600": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Create Proof File",
+      "updatedAt": "2026-03-07T12:54:56.992Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c8af1b50-76cf-4d0d-88b8-298bd9fe2826": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "proceed with these tasks",
+      "updatedAt": "2026-03-07T12:51:28.910Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fd7e3f3c-77ae-4ab2-9661-974942afad56": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Launch first operational sprint — wave 1",
+      "updatedAt": "2026-03-07T12:27:40.642Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a2d9149f-6f22-478b-b408-b5985f8add04": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "sprint task assignment",
+      "updatedAt": "2026-03-07T12:27:33.656Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7765c5db-cf5c-43d7-98df-6e1a5188604f": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Launch first operational sprint",
+      "updatedAt": "2026-03-07T12:13:50.528Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5fa9a5b6-a5c6-492c-a650-328c5335e9ed": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Correct MassDwell Project Description",
+      "updatedAt": "2026-03-07T12:07:59.936Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a104bfa1-354f-4969-9d09-7321897edef8": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Purpose: correct MassDwell description + rescope CLA-36 to CLA-39 around ADUs/modular housing",
+      "updatedAt": "2026-03-07T12:07:49.046Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "81708cf2-67ef-4d99-bd2c-32c1e8554dc2": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Prioritize first operational sprint across all five tracks",
+      "updatedAt": "2026-03-07T11:52:17.327Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "1740ef9b-3d8d-44e9-820d-21c6ed18c472": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "MassDwell Project description correction",
+      "updatedAt": "2026-03-07T11:44:37.069Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "90533761-a3cb-484b-b547-5bb5a191fe90": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Implement Paperclip operational model v2 structure",
+      "updatedAt": "2026-03-07T11:30:28.050Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "46fb303b-e9a0-4705-922d-a8cbd32a5dd9": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Revise operational model and set up projects, lanes, backlogs, and Moonshot rollout",
+      "updatedAt": "2026-03-07T09:26:26.939Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a940d4a3-6d1c-40a4-a828-ad24041ef83c": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Revise Paperclip operational rollout plan to v1.1",
+      "updatedAt": "2026-03-07T09:14:41.668Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "27edb683-2d27-4c9f-8c18-585cec366ed5": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Build Paperclip operational rollout plan",
+      "updatedAt": "2026-03-07T09:07:32.300Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d1b92cdc-ff71-45b7-a256-0da6e582214e": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Moonshot: 3 venture ideas for MassDwell",
+      "updatedAt": "2026-03-07T02:31:28.457Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "bcaed91f-cb34-46fb-ab4a-ed6b30fc0376": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Generate 3 MassDwell venture ideas",
+      "updatedAt": "2026-03-07T01:29:30.450Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "eb76dc73-8694-4a0b-a796-edc005bde28d": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Create initial operating map",
+      "updatedAt": "2026-03-07T01:28:17.099Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d6c5269e-9d92-40b1-a056-bdc4471b03c4": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Delete CLA-7 issue",
+      "updatedAt": "2026-03-07T01:28:16.785Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "fc94aa05-05fe-4e15-8365-4d999b47ada4": {
+      "status": "cancelled",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Build initial agent operating map",
+      "updatedAt": "2026-03-07T01:28:12.438Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4681d23e-f1dd-4cac-ab26-839a0948a604": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Create proof file",
+      "updatedAt": "2026-03-07T01:27:35.389Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "516ab7df-dc36-4f54-b6aa-c175642a2d62": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Create a proof file",
+      "updatedAt": "2026-03-07T01:27:24.282Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "9e901fc9-2734-4411-a295-2f3b7ccf6809": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Generate 3 MassDwell venture ideas",
+      "updatedAt": "2026-03-07T01:25:46.014Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "83fe1267-b7a1-4245-a097-25de82f67925": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Create OpenClaw operating map artifact",
+      "updatedAt": "2026-03-07T01:25:10.614Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "56c51bfa-da99-4345-8f95-dabec2dcefa1": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Create Proof File Through Clawson",
+      "updatedAt": "2026-03-07T01:24:41.848Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "bc5b9128-1bb0-4769-964a-0196a2de7d9f": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "1b26ac48-4866-4db5-9a87-f0535f775d6f",
+      "title": "Create a weekly planning template",
+      "updatedAt": "2026-03-07T01:17:27.711Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "02bb8c9d-3d00-468e-9458-fea1c515cf44": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Create a Venture Opportunity Brief",
+      "updatedAt": "2026-03-07T01:08:15.248Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "13f2695d-42fa-4c07-b859-314c9f3dcddb": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Route system summary task",
+      "updatedAt": "2026-03-07T01:06:48.727Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b56183b8-d06a-4bc7-aed5-b9aa580d7eb0": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Create engineering checklist",
+      "updatedAt": "2026-03-07T01:06:25.442Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "9440e5aa-718a-4114-982a-110ef8cb0b5a": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "create a proof file through clawson",
+      "updatedAt": "2026-03-07T00:53:24.355Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "61bfab5d-9d0c-4acd-b83b-b02f12be3fa2": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "create a proof file",
+      "updatedAt": "2026-03-06T23:21:40.531Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5ae3e0cc-2c3d-4b01-a44a-26d363e95aa1": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "create a proof file",
+      "updatedAt": "2026-03-06T23:17:41.733Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2cdfb0ec-5934-4c2d-8876-80948f1ab5c5": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Verify Paperclip runtime isolation",
+      "updatedAt": "2026-03-06T20:07:22.918Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b5f62544-10bc-4a19-bf6d-90d1ad1ac981": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Explore Paperclip agent workspace",
+      "updatedAt": "2026-03-06T20:07:10.496Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "67b9b693-a35e-429b-b5ff-6b78d77f0fd2": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Create system architecture artifact",
+      "updatedAt": "2026-03-06T20:06:37.000Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "36f025c1-1671-428c-a887-ffd6ddd17b5a": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Document Paperclip workspace",
+      "updatedAt": "2026-03-06T19:12:33.806Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b869889d-535c-4071-a7bf-bd31b2c9f2cc": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Inspect Paperclip workspace",
+      "updatedAt": "2026-03-06T19:09:08.336Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c7df24a6-61f8-4820-b511-ee2bccc595a3": {
+      "status": "done",
+      "priority": "medium",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "Create workspace test artifact",
+      "updatedAt": "2026-03-06T19:07:24.896Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "64497585-99ac-4682-b440-19853ece7b29": {
+      "status": "todo",
+      "priority": "low",
+      "assigneeAgentId": null,
+      "title": "P3-20: ProjectSubcontractor.status — migrate String to enum",
+      "updatedAt": "2026-04-03T13:56:00.781Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "0ff0cbd5-ca8e-4779-bdae-06e5b8af0dc1": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Implement ProjectSubcontractor.status enum migration",
+      "updatedAt": "2026-04-03T13:28:26.236Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d60d884f-57e8-4967-bb5b-9d67552eff8c": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P3-19: Lender settings and notification preferences page",
+      "updatedAt": "2026-04-03T13:24:48.830Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d610dfa8-4c01-4a4e-aaea-fadd007752ba": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P3-16: QuickBooks sync status UI in GC settings",
+      "updatedAt": "2026-04-03T13:20:02.054Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "45be2e59-6bb0-4c28-b929-520c619db4d1": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P3-18: G702/G703 PDF accessible from sub portal",
+      "updatedAt": "2026-04-03T12:55:46.439Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e9cf83e9-d8d2-45b6-b588-1102ae4f1bf2": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "P3-17: Sub document compliance portal — upload and GC compliance dashboard",
+      "updatedAt": "2026-04-03T12:54:32.606Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d5c7c2c7-33e0-41ae-9921-91597988dc75": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Build sub document compliance portal UI",
+      "updatedAt": "2026-04-03T12:47:35.022Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "c774687a-e9d5-4267-9b70-0437c024af03": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Implement QuickBooks sync status UI in GC settings/billing page",
+      "updatedAt": "2026-04-03T12:41:02.836Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f6dc0bee-1c88-4654-843a-c3b97f59403c": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": null,
+      "title": "Conversational Draw Assistant",
+      "updatedAt": "2026-03-30T22:07:34.904Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "4dfd7570-a13a-4e31-a109-27dbad0ad089": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "b81862ce-f532-489d-8613-a08ceacc6906",
+      "title": "DrawStack signup watcher cron — daily 9 AM via Hermes",
+      "updatedAt": "2026-03-30T20:22:30.417Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "73ffaf89-23f5-46cb-8f5f-7b069a0a5b73": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Lender Intelligence Layer",
+      "updatedAt": "2026-03-23T01:27:16.796Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "5a0c2457-f45b-4411-956a-1d3c2c4be92b": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Cost Benchmarking",
+      "updatedAt": "2026-03-23T01:27:16.780Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2a7c63c7-7e61-4701-835e-0e5cfaa7252b": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Lender draw detail — inline PDF viewer for documents (no download required)",
+      "updatedAt": "2026-03-22T00:32:04.186Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "a48264dc-3ffc-4bc7-aa11-c0467c5ed58f": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Lender portfolio — add search/filter for lenders with many projects",
+      "updatedAt": "2026-03-22T00:32:04.166Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "17f24c5e-bf34-4e2d-9cc0-8f0c2b777718": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Sign-up page — add back to pricing link",
+      "updatedAt": "2026-03-22T00:32:04.147Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "e87ddf2d-1db4-4e5c-8588-e83b3fe1362f": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Draw wizard Step 1 — auto-select project if user has only one project",
+      "updatedAt": "2026-03-22T00:32:04.126Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "10f5f04f-2254-403b-97e0-f57a2a32310f": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Lender first-login welcome/orientation state after invite redemption",
+      "updatedAt": "2026-03-22T00:32:04.108Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "d0c2d8cc-7ab0-4c12-a5cf-978f09da1040": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[NTH] Dashboard KPIs — add refresh indicator for real-time draw status changes",
+      "updatedAt": "2026-03-22T00:32:04.088Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "7dddcfc5-3a65-4585-9475-529d8fe611a4": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P7] Status names audit for lender-facing clarity",
+      "updatedAt": "2026-03-22T00:31:56.539Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "529f97dd-87e9-4637-9d54-b4be4c13d5ee": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P7] Verify G702/G703 FAQ references are descriptive use only",
+      "updatedAt": "2026-03-22T00:31:56.521Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "35f0ac66-588e-4768-91a1-c7fbc5d45591": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[P8] Cross-browser sanity check — Safari + Firefox",
+      "updatedAt": "2026-03-22T00:31:56.502Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ee8bdedb-f668-429c-a510-f588b5f31de8": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[GC] Draw wizard Step 2 — add AI parsing value explainer on skip button",
+      "updatedAt": "2026-03-21T19:19:42.461Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "1afb0eca-8669-4de0-b4ff-45ecaa25d58c": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "[GC] Rename 'Lenders' sidebar nav to 'Lender Access'",
+      "updatedAt": "2026-03-21T19:19:42.436Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "bbc92b89-0458-4036-aa6a-edb3081abef4": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": null,
+      "title": "Referral system: Invite-a-colleague flow",
+      "updatedAt": "2026-03-21T00:45:51.763Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "176563c2-41f4-4a59-bb63-5e72fe75c2e6": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Feature: Funding predictor — expected payment date",
+      "updatedAt": "2026-03-20T04:08:42.095Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "ce65274a-90bf-4bb8-8ea2-4a8d29451c33": {
+      "status": "cancelled",
+      "priority": "low",
+      "assigneeAgentId": null,
+      "title": "Performance: Loading states, suspense boundaries, caching",
+      "updatedAt": "2026-03-19T22:12:10.048Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "627ffaaf-5e35-4f12-9569-49570c251a11": {
+      "status": "cancelled",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Build referral system MVP",
+      "updatedAt": "2026-03-13T23:07:21.599Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "47a47ff3-46c0-4161-96c0-fad35c451b9e": {
+      "status": "cancelled",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Public API: REST API for enterprise integrations",
+      "updatedAt": "2026-03-13T23:07:21.583Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "f4e6318f-9c56-4909-b339-60b438d0e943": {
+      "status": "cancelled",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "P3: Procore integration — native embedded MeritLayer inside Procore",
+      "updatedAt": "2026-03-13T23:07:21.567Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "2eccfb17-1ce3-4e81-a9f9-4b91299924bd": {
+      "status": "done",
+      "priority": "low",
+      "assigneeAgentId": "e46c7338-089e-4b9e-a419-41ff8a612ffc",
+      "title": "Custom dark 404 page",
+      "updatedAt": "2026-03-13T01:08:44.985Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    },
+    "b0595806-c5ef-4a21-b854-6d22242e4ba3": {
+      "status": "cancelled",
+      "priority": "low",
+      "assigneeAgentId": "e2a4b07c-a096-46f7-9cab-07b5c83b11e4",
+      "title": "Product line expansion opportunities",
+      "updatedAt": "2026-03-10T23:47:59.935Z",
+      "latestCommentAt": null,
+      "blockedReason": null
+    }
+  }
+}

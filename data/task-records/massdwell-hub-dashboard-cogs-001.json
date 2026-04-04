@@ -1,0 +1,18 @@
+{
+  "task_id": "massdwell-hub-dashboard-cogs-001",
+  "workflow_type": "code",
+  "objective": "Build Dashboard sales cheat sheet and COGS Calculator modules",
+  "start_ts": "2026-04-02T01:02:20Z",
+  "end_ts": "2026-04-02T01:10:25Z",
+  "terminal_state": "completed_unverified",
+  "retries": 0,
+  "human_intervention_required": false,
+  "failures_encountered": [],
+  "evidence": {
+    "output_tail": "Done. Here's what was built and committed:  **Dashboard (`app/(app)/dashboard/page.tsx`)** — full rewrite with 9 tabs: - **The Pitch**: exact spec script + 6 numbered value props with icons - **Product Line**: 4 model cards with 'Best for' text - **Qualifying**: 5 session-resettable checkboxes with Reset button - **Objections**: 8 accordion items with exact spec text, 'Never accept' badge on design objection, amber callout - **ROI Calc**: live-updating (no button), Cash/HELOC toggle, home valu"
+  },
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": []
+}

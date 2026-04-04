@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MassDwell Hub | ADU Permit Navigator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-container": "#051d31",
+                        "surface-container-low": "#eef4ff",
+                        "surface-tint": "#4c5f7d",
+                        "primary-container": "#051c36",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#485f7e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e4efff",
+                        "inverse-on-surface": "#e9f1ff",
+                        "on-primary-fixed-variant": "#344864",
+                        "on-tertiary-fixed": "#051d31",
+                        "surface": "#f8f9ff",
+                        "surface-container-highest": "#d0e4ff",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d0e4ff",
+                        "error-container": "#ffdad6",
+                        "primary": "#011832",
+                        "secondary-fixed": "#d3e3ff",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#33485f",
+                        "background": "#f8f9ff",
+                        "on-surface": "#051d31",
+                        "outline-variant": "#c4c6ce",
+                        "secondary": "#49607f",
+                        "secondary-container": "#c1d9fe",
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .glass-header {
+            background: rgba(208, 228, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#011832] dark:bg-slate-950 shadow-2xl z-50 hidden md:flex flex-col gap-2 py-8">
+<div class="px-6 mb-8 flex items-center gap-3">
+<img alt="MassDwell Hub Brand Logo" class="h-8 w-8 rounded" data-alt="Minimalist geometric architectural logo featuring interlocking navy blue and white lines on a dark professional background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCiKuTQJpJbqYqpnrkkdrgRoLw6uQ9clpnADegIZ6c0UL53h_nm1rgSH0qJnDeY3vshD3X0m3mb7E6wBm9Smq2C3hzKw1_Q_MN7emwFh3QUTyiw8K8BKNhuwmVW4ngEVj9w0pu62DhdW91IL1tN63WN2ATkwwH5ERl0KnmOXsVGZteVtZF2ZdU2o8wLIViQpS2x7shbXLH47w_lAk2IEXhq7JgVuLWohNPJ9aM6wjV7a4AR_JCo5woLu9NherOCbWryjlmTBFZWxSx"/>
+<span class="text-white uppercase tracking-tighter font-black text-sm">MassDwell Hub Logo</span>
+</div>
+<nav class="flex-1">
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 flex items-center gap-4 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="dashboard">dashboard</span>
+<span class="text-xs font-bold uppercase tracking-widest Inter">Dashboard</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 flex items-center gap-4 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="calculate">calculate</span>
+<span class="text-xs font-bold uppercase tracking-widest Inter">COGS Calculator</span>
+</a>
+<a class="bg-[#C1D9FE] text-[#011832] rounded-r-full font-bold ml-0 mr-4 py-3 px-6 flex items-center gap-4 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="text-xs font-bold uppercase tracking-widest Inter">ADU Permit Navigator</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 flex items-center gap-4 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="leaderboard">leaderboard</span>
+<span class="text-xs font-bold uppercase tracking-widest Inter">Lead Pipeline</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 flex items-center gap-4 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="settings_backup_restore">settings_backup_restore</span>
+<span class="text-xs font-bold uppercase tracking-widest Inter">Re-Listing Optimizer</span>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar -->
+<header class="bg-[#F8F9FF] dark:bg-slate-950 shadow-sm dark:shadow-none sticky top-0 z-40 flex justify-between items-center px-6 h-16 w-full md:pl-72">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#011832] md:hidden" data-icon="menu">menu</span>
+<h1 class="text-lg font-bold tracking-tight Inter text-[#011832]">ADU Permit Navigator</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex flex-col items-end">
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">Active Region</span>
+<span class="text-xs font-bold text-primary">Massachusetts</span>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="Executive User" data-alt="professional headshot of an executive in a business suit with a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5EOtPjUxUsryLc7ReKpuS56Y5nokwlb56JNUDtdqJc56OgnkKtsVcSBapdwmguC6bHhDZLMIJ8J9qh_obytjrP3h5dLoq6O4m3g10wgOBW3loyWUhc2x0GdYww9AmitdsuP-EYIONnJF14O_KLBzO-X87y2fEgEtI94fToDyvj7gHyJY42_LQJMGX0oWUWl_UoIPx-VvB7l2R-TWacpF5wBzf76g47EL6UZHYfpGYBoayXUuCHiLq2ql4NlVXIIr8bDUQ5pbEm3wR"/>
+</div>
+</div>
+</header>
+<!-- Main Content Stage -->
+<main class="md:ml-64 p-6 lg:p-10 min-h-screen">
+<!-- Collapsible Banner: MA ADU Law -->
+<section class="mb-10">
+<div class="bg-primary-container rounded-xl p-6 text-white relative overflow-hidden shadow-lg border-l-4 border-secondary-container">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary-container" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Policy Update</span>
+</div>
+<h2 class="text-xl font-bold mb-2">MA ADU Law (February 2025) Reference</h2>
+<p class="text-sm text-surface-container opacity-90 max-w-2xl leading-relaxed">
+                        The Affordable Homes Act now mandates municipalities to allow ADUs by-right in single-family zones. Local setbacks and parking requirements are significantly limited under this new framework.
+                    </p>
+<button class="mt-4 text-xs font-bold underline decoration-secondary-container underline-offset-4 hover:text-secondary-container transition-colors">
+                        VIEW FULL STATUTE DETAILS
+                    </button>
+</div>
+<!-- Abstract Geometric Background Pattern -->
+<div class="absolute right-[-20px] top-[-20px] opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[12rem]" data-icon="domain">domain</span>
+</div>
+</div>
+</section>
+<!-- Search & Discovery -->
+<div class="mb-8 flex flex-col md:flex-row gap-4">
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary" data-icon="location_on">location_on</span>
+<input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/30 rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary transition-all text-sm font-medium shadow-sm" placeholder="Enter Address or Municipality (e.g., Needham, Newton...)" type="text"/>
+</div>
+<button class="bg-primary-container text-white px-8 py-4 rounded-xl font-bold text-sm shadow-md hover:shadow-xl transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+                NAVIGATE PERMIT
+            </button>
+</div>
+<!-- Town Permit Data Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+<!-- Newton Card (Active Highlight) -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-2xl p-8 shadow-sm border border-outline-variant/10 relative overflow-hidden group">
+<div class="flex justify-between items-start mb-8">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-3xl font-black tracking-tight text-primary">Newton</h3>
+<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">Easy</span>
+</div>
+<p class="text-secondary text-sm font-medium">Middlesex County • Updated 3d ago</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-tighter text-secondary">MassDwell Experience</p>
+<p class="text-xs font-black text-primary">12 ACTIVE PROJECTS</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-surface-container-low p-5 rounded-xl">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest block mb-2">Timeline</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-black text-primary">4-6</span>
+<span class="text-sm font-bold text-secondary">Months</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest block mb-2">Setbacks</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-black text-primary">5'</span>
+<span class="text-sm font-bold text-secondary">Side/Rear</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest block mb-2">Max Height</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-black text-primary">25'</span>
+<span class="text-sm font-bold text-secondary">Stories</span>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-10">
+<div>
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-4 text-primary">Required Docs Checklist</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-green-600 text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Certified Plot Plan (1:20)
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-green-600 text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Structural Engineering Stamp
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-green-600 text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                MWRA Connection Permit
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium text-on-surface-variant opacity-50">
+<span class="material-symbols-outlined text-lg" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                Historical Commission Waiver
+                            </li>
+</ul>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant/10">
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-4 text-primary">Strategy Notes</h4>
+<p class="text-sm text-secondary leading-relaxed italic">
+                            "Newton ISD has recently streamlined detached ADU reviews. Recommend utilizing Pre-Approved plan sets to reduce review time by 3 weeks."
+                        </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/10 flex items-center justify-between">
+<span class="text-[10px] font-bold text-secondary uppercase">Lead Architect</span>
+<span class="text-xs font-bold text-primary">Marcus V.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lead Lookup Integration Card -->
+<div class="bg-primary shadow-2xl rounded-2xl p-8 text-white flex flex-col">
+<div class="flex items-center justify-between mb-8">
+<div class="bg-white/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-secondary-container" data-icon="hub">hub</span>
+</div>
+<span class="bg-secondary-container text-primary text-[10px] font-black px-2 py-1 rounded">KOMMO CRM LIVE</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Matching Lead Found</h3>
+<p class="text-sm text-surface-container-highest/80 mb-8">Matching Newton ADU inquiry from your pipeline.</p>
+<div class="flex-1 space-y-6">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full border-2 border-secondary-container overflow-hidden">
+<img alt="Lead" data-alt="abstract profile placeholder with initials JD in navy and light blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ2pZbcr9WqEOtEJKvYqNlKYGnM2faxiSTiDE7Eq0oQ7ljWcc6rDU2O81EthFvUHKJabXtmAINJGOh5UbOAu0qKotheiz9Bzliu9PNHwbvVWDmIC_nQOtKdLXQB2HaqZkTsTWSA3_SDNSGcVHexYWDdVkKoHRyuwVc3zR8-irkmIkqBG_0jxfVk1SZxglDgby7r-yz2KyGSkTj3mfsZWsIrrX7JQqVcovYaXnrFLJNAyNrBU7aInshQDCPaW-0HSDNmizAa3FCSUMx"/>
+</div>
+<div>
+<p class="text-sm font-bold">Jonathan Doe</p>
+<p class="text-xs text-surface-container-highest/60">122 Commonwealth Ave, Newton</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between text-xs">
+<span class="text-surface-container-highest/60 font-bold uppercase">Budget</span>
+<span class="font-bold">$280k - $320k</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-3/4"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 bg-white text-primary font-black text-xs uppercase tracking-widest py-4 rounded-xl hover:bg-secondary-container transition-colors">
+                    SYNC PROJECT DATA
+                </button>
+</div>
+</div>
+<!-- Other Municipalities Horizontal Scroll -->
+<div>
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-sm font-black uppercase tracking-[0.2em] text-primary">Neighboring Municipalities</h3>
+<button class="text-xs font-bold text-secondary hover:text-primary transition-colors flex items-center gap-1">
+                    VIEW ALL <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-6 no-scrollbar">
+<!-- Needham -->
+<div class="min-w-[300px] bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-lg font-bold text-primary">Needham</h4>
+<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Moderate</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs">
+<span class="text-secondary">Avg. Permit Fee</span>
+<span class="font-bold text-primary">$1,250</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-secondary">Max ADU Size</span>
+<span class="font-bold text-primary">900 sqft</span>
+</div>
+</div>
+<div class="flex items-center gap-2 group-hover:gap-3 transition-all text-xs font-black text-primary uppercase">
+                        Detail Navigator <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Brookline -->
+<div class="min-w-[300px] bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-lg font-bold text-primary">Brookline</h4>
+<span class="bg-red-100 text-red-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Complex</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs">
+<span class="text-secondary">Avg. Permit Fee</span>
+<span class="font-bold text-primary">$3,400</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-secondary">Max ADU Size</span>
+<span class="font-bold text-primary">800 sqft</span>
+</div>
+</div>
+<div class="flex items-center gap-2 group-hover:gap-3 transition-all text-xs font-black text-primary uppercase">
+                        Detail Navigator <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Wellesley -->
+<div class="min-w-[300px] bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-lg font-bold text-primary">Wellesley</h4>
+<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Moderate</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs">
+<span class="text-secondary">Avg. Permit Fee</span>
+<span class="font-bold text-primary">$2,100</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-secondary">Max ADU Size</span>
+<span class="font-bold text-primary">1,000 sqft</span>
+</div>
+</div>
+<div class="flex items-center gap-2 group-hover:gap-3 transition-all text-xs font-black text-primary uppercase">
+                        Detail Navigator <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-[#C4C6CE]/15 rounded-t-2xl shadow-[0_-4px_24px_-4px_rgba(5,29,49,0.06)]">
+<div class="flex flex-col items-center justify-center text-[#49607F] dark:text-slate-400">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold Inter uppercase">Dash</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#49607F] dark:text-slate-400">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+<span class="text-[10px] font-bold Inter uppercase">COGS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#011832] dark:text-white bg-[#C1D9FE] rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="text-[10px] font-bold Inter uppercase">Permits</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#49607F] dark:text-slate-400">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-[10px] font-bold Inter uppercase">Leads</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#49607F] dark:text-slate-400">
+<span class="material-symbols-outlined" data-icon="settings_backup_restore">settings_backup_restore</span>
+<span class="text-[10px] font-bold Inter uppercase">Relist</span>
+</div>
+</nav>
+<!-- FAB Contextual Action -->
+<button class="fixed bottom-24 right-6 md:bottom-10 md:right-10 bg-primary-container text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all z-40 group flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="add_location">add_location</span>
+<span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 font-bold text-sm whitespace-nowrap px-0 group-hover:px-2">New Site Assessment</span>
+</button>
+</body></html>

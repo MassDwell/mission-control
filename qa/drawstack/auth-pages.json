@@ -1,0 +1,58 @@
+{
+  "_comment": "DrawStack authenticated QA surface — 5 pages requiring active Clerk session",
+  "_role": "gc",
+  "_note": "All pages require GC (General Contractor) role. Log in as steve@alpinepropertygroupllc.com before running.",
+  "baseUrl": "https://drawstack.ai",
+  "windowWidth": 1440,
+  "windowHeight": 900,
+  "authCheckUrl": "https://drawstack.ai/dashboard",
+  "authCheckIndicator": "Projects",
+  "pages": [
+    {
+      "id": "projects-list",
+      "path": "/dashboard/projects",
+      "label": "Projects List",
+      "url": "https://drawstack.ai/dashboard/projects",
+      "role": "gc",
+      "why": "The primary GC landing page after login. Layout regressions here are immediately visible to every user on every session. Project cards, nav sidebar, and header are visually sensitive.",
+      "check": "Left sidebar present, projects grid/list rendered with cards, 'New Project' button visible, no blank panels"
+    },
+    {
+      "id": "dashboard-draws",
+      "path": "/dashboard/draws",
+      "label": "Draws List",
+      "url": "https://drawstack.ai/dashboard/draws",
+      "role": "gc",
+      "why": "Core product surface. The draws list is the primary operational view for GCs. Status badges, amounts, and action buttons must render correctly — regressions here affect active billing flows.",
+      "check": "Draws table/list present, status columns visible, amounts formatted, filter controls intact"
+    },
+    {
+      "id": "dashboard-invoices",
+      "path": "/dashboard/invoices",
+      "label": "Invoices",
+      "url": "https://drawstack.ai/dashboard/invoices",
+      "role": "gc",
+      "why": "Subcontractor payment tracking. Invoice upload/parse UI and the invoice table are high-risk for visual regressions after any payment or file-handling changes.",
+      "check": "Invoice list visible, upload UI present, amount columns formatted, status badges intact"
+    },
+    {
+      "id": "dashboard-settings",
+      "path": "/dashboard/settings",
+      "label": "Settings",
+      "url": "https://drawstack.ai/dashboard/settings",
+      "role": "gc",
+      "why": "Company profile, billing, and white-label settings. Regressions here can silently break user configuration flows. Settings forms are often broken by Clerk or Stripe component updates.",
+      "check": "Settings form fields visible, save buttons present, billing section renders, no blank sections"
+    },
+    {
+      "id": "lender-portfolio",
+      "path": "/dashboard/portfolio",
+      "label": "Lender Portfolio",
+      "url": "https://drawstack.ai/dashboard/portfolio",
+      "role": "gc",
+      "why": "The lender-facing portfolio view. This page uses a different data layout and is the most likely to have visual regressions when lender features ship. Covers the lender side of the product.",
+      "check": "Portfolio cards or table visible, project summary panels render, no empty state errors where data exists",
+      "_note": "URL is /dashboard/portfolio — accessible from GC account but renders lender-style portfolio view"
+    }
+  ]
+}

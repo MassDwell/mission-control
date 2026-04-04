@@ -46,25 +46,38 @@ Approval required before:
 
 ---
 
-### Rule 2: All Canon Files Live in /canon/ Only
+### Rule 2: Identity Files — Root is Operational, Canon is Versioned Backup
 
-**REQUIREMENT:** SOUL.md, HEARTBEAT.md, IDENTITY.md, MEMORY.md templates ONLY in `/canon/`
+**ACTUAL LAYOUT (corrected 2026-03-28):**
 
-**What this means:**
-- ✅ `canon/SOUL.md.canon` (canonical)
-- ✅ `canon/agents/sales_processor/SOUL.md` (agent-specific, in agent folder)
-- ❌ `SOUL.md` in root
-- ❌ `SOUL.md` in `/data/`
-- ❌ Multiple SOUL.md files anywhere
+Root-level identity files are the **operational copies** loaded by the agent at runtime:
+- ✅ `SOUL.md` — workspace root (operational, loaded by agent)
+- ✅ `HEARTBEAT.md` — workspace root (operational, loaded by agent)
+- ✅ `IDENTITY.md` — workspace root (operational, loaded by agent)
+- ✅ `MEMORY.md` — workspace root (operational, loaded by agent)
+- ✅ `USER.md` — workspace root (operational, loaded by agent)
+
+Canon files are **versioned backups**, promoted from the operational copies:
+- ✅ `canon/SOUL.md.canon` — versioned backup (updated when root changes)
+- ✅ `canon/HEARTBEAT.md.canon` — versioned backup
+- ✅ `canon/IDENTITY.md.canon` — versioned backup
+- ✅ `canon/MEMORY.md.canon` — versioned backup
+- ✅ `canon/USER.md.canon` — versioned backup
+
+**What is still prohibited:**
+- ❌ `SOUL.md` in `/data/` or any non-root non-canon location
+- ❌ Multiple SOUL.md files outside the root + canon/ pattern
+- ❌ Agent-specific identity files outside `canon/agents/{id}/` directories
 
 **Enforcement:**
-- Preflight checks for orphaned files
-- Any found = QUARANTINE + REPORT
-- Startup blocked if critical canon files missing
+- Preflight checks for unexpected locations (non-root, non-canon, non-agent-dir)
+- Any found in unexpected locations = QUARANTINE + REPORT
+- Root-level copies are authoritative; canon/ copies are their mirrors
 
 **Implementation:**
-- Preflight Check #3: Scan for unauthorized canon files
-- Violation action: Auto-quarantine to `/archive/quarantine/<timestamp>/`
+- Preflight Check #3: Scan for identity files in unexpected locations
+- Violation action: Quarantine unexpected copies to `/archive/quarantine/<timestamp>/`
+- Canon sync: After editing root-level files, promote to canon/ via compile-configs.sh or manual copy
 
 ---
 

@@ -1,0 +1,20 @@
+{
+  "task_id": "migration-squash-drop-2026-03-30b",
+  "workflow_type": "deploy",
+  "objective": "Deploy Draw Submission Portal (PR #135) to production",
+  "terminal_state": "completed_verified",
+  "lesson_candidate": "Squash merges silently drop Prisma migration folders — always run a migration audit script after every production merge to catch missing columns before users hit errors",
+  "root_cause_guess": "Squash merge collapses feature branch commits into one, dropping migration folder files that were not cleanly represented in the squash diff. Prisma never errors at startup — it only fails at query time when a column is missing.",
+  "failures_encountered": [
+    "Dashboard crashed immediately after PR #135 merge — Neon missing Project.lenderContactName and Draw.submittedToLenderAt",
+    "Same pattern occurred after PR #126 (Phase 2) — paidAt/paidByUserId were missing from Invoice table"
+  ],
+  "retries": 1,
+  "human_intervention_required": true,
+  "end_ts": "2026-03-30T20:55:35.185Z",
+  "files_touched": [],
+  "commands_run": [],
+  "artifacts_created": [],
+  "acceptance_criteria": [],
+  "evidence": {}
+}

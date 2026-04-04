@@ -187,21 +187,12 @@
       "id": "77833d5e-2e6f-49a6-8852-da8e18d19d97",
       "name": "Kommo CRM Sync",
       "agentId": "main",
-      "enabled": true,
+      "enabled": false,
       "schedule": "cron: 0 8,13,18 * * * (EST)",
-      "nextRun": "2026-03-01T18:00:00.000Z",
+      "nextRun": null,
       "lastRun": "2026-03-01T13:01:32.273Z",
-      "status": "ok"
-    },
-    {
-      "id": "1d6d3730-8265-492e-b64e-3ae8c27a4f97",
-      "name": "Sarah Cold Calls - Afternoon",
-      "agentId": "sales_followup",
-      "enabled": true,
-      "schedule": "cron: 0 14 * * * (EST)",
-      "nextRun": "2026-03-03T19:00:00.000Z",
-      "lastRun": "2026-02-29T14:00:08.173Z",
-      "status": "ok"
+      "status": "disabled",
+      "_deprecated": "Kommo access revoked 2026-03-04"
     },
     {
       "id": "b78e08c7-1334-4039-879b-7eaf6ecfc400",
@@ -284,7 +275,7 @@
     },
     {
       "id": "39f273c3-b425-4e66-9203-14010ee2d77c",
-      "name": "Atlantic Laser QB→Pipedrive Sync",
+      "name": "Atlantic Laser QB\u2192Pipedrive Sync",
       "agentId": "main",
       "enabled": true,
       "schedule": "cron: 0 6 * * * (EST)",

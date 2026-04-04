@@ -29,4 +29,16 @@ This ensures situational awareness survives compaction and session restarts.
 - If you have knowledge of active trades/decisions NOT in WORKING.md → WRITE THEM NOW
 - Compaction can happen any time. If it's not on disk, it doesn't exist.
 
+## 🔧 Skill Health (Weekly — Sundays)
+- Run: `node ~/.openclaw/workspace/scripts/skill-logger.js review`
+- Flag any skill with fail rate ≥ 30% or unused for 30+ days to Steve
+- Report saved to: `data/skills/skill-review.md`
+
+## 📝 Skill Logging (When Using Skills)
+After invoking any skill, log the outcome:
+```
+node ~/.openclaw/workspace/scripts/skill-logger.js log <skill-name> <success|failure|partial> [brief note]
+```
+Keep notes short: "worked as expected", "API key missing", "output format wrong", etc.
+
 # Add other periodic checks below:

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MassDwell Hub - Executive Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-container": "#051d31",
+                        "surface-container-low": "#eef4ff",
+                        "surface-tint": "#4c5f7d",
+                        "primary-container": "#051c36",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#485f7e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e4efff",
+                        "inverse-on-surface": "#e9f1ff",
+                        "on-primary-fixed-variant": "#344864",
+                        "on-tertiary-fixed": "#051d31",
+                        "surface": "#f8f9ff",
+                        "surface-container-highest": "#d0e4ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#051c36",
+                        "surface-dim": "#c6dcf8",
+                        "secondary-container": "#c1d9fe",
+                        "outline-variant": "#c4c6ce",
+                        "inverse-primary": "#b3c8ea",
+                        "surface-container-high": "#daeaff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d0e4ff",
+                        "error-container": "#ffdad6",
+                        "primary": "#011832",
+                        "secondary-fixed": "#d3e3ff",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#33485f",
+                        "primary-fixed-dim": "#b3c8ea",
+                        "secondary-fixed-dim": "#b1c8ed",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-variant": "#d0e4ff",
+                        "on-background": "#051d31",
+                        "on-surface-variant": "#44474d",
+                        "outline": "#74777e",
+                        "tertiary-fixed-dim": "#b3c9e4",
+                        "secondary": "#49607f",
+                        "on-surface": "#051d31",
+                        "inverse-surface": "#1c3247",
+                        "on-tertiary-container": "#70869f",
+                        "on-secondary-fixed": "#001c39",
+                        "background": "#f8f9ff",
+                        "on-primary-container": "#7185a4",
+                        "on-secondary-fixed-variant": "#314866",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-hidden">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-[#011832] z-50 flex-col gap-2 py-8 shadow-2xl">
+<div class="px-6 mb-8 flex items-center gap-3">
+<img alt="MassDwell Hub architectural logo with geometric blue lines and modern serif typography" class="h-10 w-10 object-contain" data-alt="professional modern real estate developer logo with abstract geometric architecture icon in deep navy and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj-A85w2n5UlzhpBABPuYmyRMuaOEz_P2iMHYHf5U-PfGoFe3yaztnWhllFHEb_KzdbK18qg0ZBO-yeMNXuW9uN4vTtcj7ndYgk672T_3Nv4gscOf_jwO90j93EJIjQpEQd1Y88p_hIk0WvsbU_LZDLEwp2wzZjt3FoMb2zKHw7rTnBBPJ7ee3JFIgIPk68mq_p8B8LnHCHnygWvOlHC0533G-mLAR3GV-RYovhBzgQeFjPRG7ncFcjmYutLxpvqFFCaf_BtSCXvQL"/>
+<span class="text-white uppercase tracking-tighter font-black text-sm">MassDwell Hub Logo</span>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="bg-[#C1D9FE] text-[#011832] rounded-r-full font-bold ml-0 mr-4 py-3 px-6 flex items-center gap-4 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 flex items-center gap-4 transition-all duration-300 ease-in-out hover:bg-[#051C36]" href="#">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+<span class="text-xs font-bold uppercase tracking-widest">COGS Calculator</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 flex items-center gap-4 transition-all duration-300 ease-in-out hover:bg-[#051C36]" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-xs font-bold uppercase tracking-widest">ADU Permit Navigator</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 flex items-center gap-4 transition-all duration-300 ease-in-out hover:bg-[#051C36]" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Lead Pipeline</span>
+</a>
+<a class="text-[#D3E3FF] hover:text-white py-3 px-6 ml-4 flex items-center gap-4 transition-all duration-300 ease-in-out hover:bg-[#051C36]" href="#">
+<span class="material-symbols-outlined" data-icon="settings_backup_restore">settings_backup_restore</span>
+<span class="text-xs font-bold uppercase tracking-widest">Re-Listing Optimizer</span>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar (Mobile & Header) -->
+<header class="bg-gradient-to-b from-[#EEF4FF] to-[#F8F9FF] text-[#011832] docked full-width top-0 sticky z-40 flex justify-between items-center px-6 h-16 w-full shadow-sm md:pl-72">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined md:hidden" data-icon="menu">menu</span>
+<h1 class="text-lg font-bold tracking-tight Inter">MassDwell Hub</h1>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold text-secondary hidden lg:block">Welcome, Executive User</span>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content Stage -->
+<main class="md:ml-64 p-6 lg:p-12 min-h-screen pb-24 md:pb-12">
+<!-- Quick Stats / Editorial Header -->
+<section class="mb-12">
+<p class="text-secondary label-sm uppercase tracking-[0.2em] mb-2">Operations Intelligence</p>
+<h2 class="text-4xl font-black text-on-surface tracking-tighter mb-8">Sales Velocity Dashboard</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<p class="text-secondary text-xs font-bold uppercase mb-4">Total Active Leads</p>
+<div class="text-5xl font-black tracking-tighter text-on-surface">128</div>
+<div class="mt-4 flex items-center text-emerald-600 gap-1 text-sm font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+14% vs last month</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<p class="text-secondary text-xs font-bold uppercase mb-4">Avg. ADU Permit Velocity</p>
+<div class="text-5xl font-black tracking-tighter text-on-surface">42<span class="text-xl ml-1 font-normal text-secondary">days</span></div>
+<div class="mt-4 flex items-center text-secondary gap-1 text-sm font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span>Target: 35 days</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<p class="text-secondary text-xs font-bold uppercase mb-4">Pipeline Value</p>
+<div class="text-5xl font-black tracking-tighter text-on-surface">$4.2M</div>
+<div class="mt-4 flex items-center text-on-surface gap-1 text-sm font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="rocket_launch">rocket_launch</span>
+<span>8 new conversions today</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section A: Sales Cheat Sheet (Bento-style Tabs) -->
+<section class="mb-16">
+<div class="bg-surface-container-low rounded-2xl p-1 overflow-hidden">
+<div class="flex overflow-x-auto hide-scrollbar bg-surface-container-low px-4 pt-4 gap-2">
+<button class="bg-surface-container-lowest text-primary font-bold px-6 py-3 rounded-t-xl text-xs uppercase tracking-widest whitespace-nowrap">The Pitch</button>
+<button class="text-secondary hover:bg-white/40 px-6 py-3 rounded-t-xl text-xs uppercase tracking-widest transition-colors whitespace-nowrap">Product Line</button>
+<button class="text-secondary hover:bg-white/40 px-6 py-3 rounded-t-xl text-xs uppercase tracking-widest transition-colors whitespace-nowrap">ROI Calc</button>
+<button class="text-secondary hover:bg-white/40 px-6 py-3 rounded-t-xl text-xs uppercase tracking-widest transition-colors whitespace-nowrap">5-Step Process</button>
+<button class="text-secondary hover:bg-white/40 px-6 py-3 rounded-t-xl text-xs uppercase tracking-widest transition-colors whitespace-nowrap">Objections</button>
+</div>
+<div class="bg-surface-container-lowest p-8 lg:p-12 rounded-xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<h3 class="text-3xl font-black text-primary tracking-tight mb-6">The 30-Second Authority Pitch</h3>
+<p class="text-lg leading-relaxed text-secondary italic mb-8">
+                                "MassDwell doesn't just build ADUs; we unlock the architectural and financial equity hidden in your backyard. We manage everything from MassHousing compliance to the final trim, delivering a high-yield asset that looks like an editorial home and functions like a premium rental—all in 12 weeks."
+                            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-bold">End-to-End Permitting</span>
+</div>
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-bold">Guaranteed COGS Pricing</span>
+</div>
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-bold">Steel-Frame Durability</span>
+</div>
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-bold">Net-Zero Energy Ready</span>
+</div>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden aspect-video lg:aspect-auto shadow-2xl">
+<img alt="Contemporary accessory dwelling unit with large glass panels and sustainable wood siding in a suburban backyard at dusk" class="absolute inset-0 w-full h-full object-cover" data-alt="ultra modern architectural guest house in backyard with floor to ceiling windows glowing with warm interior light at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxSTgONNXfaUNEuew0FXxZElQFBalnejyXy2LHB6SmwMM4ONufZadtOO6-e_XJ7E7aivpRdeDx2OfhhGys9qsj_36gtwaXak7q63JAiE4P4LqrH0i7iEDIo1OtFv4_Z5SlP3QwGhCVC0fb4KqjbZZ3up78h_O3IcaU5HRVnGpYTp0ScOX9lO6xItA74BOaJ4NSz10yxqDh4t1PfyvEls8sxXOhBhLtXk9LqqY7xkCVscjtU6e5wY6BTDOIxVdfPU5ecs-W6AlzNDuC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8">
+<p class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-2">Featured Model</p>
+<h4 class="text-white text-2xl font-black">The Dwell Deluxe</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section B: Model Pricing Cards -->
+<section class="mb-16">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="text-secondary label-sm uppercase tracking-widest mb-1">Product Lineup</p>
+<h3 class="text-3xl font-black text-on-surface">Precision Models</h3>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:underline">
+                    Download Spec Sheet <span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Model 1 -->
+<div class="bg-surface-container-lowest group cursor-pointer overflow-hidden rounded-xl border border-outline-variant/15 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img alt="Compact minimalist studio tiny home with matte black metal exterior and large windows" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="sleek compact tiny house with black metal siding and minimalist glass doors in a lush forest setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBERhXBEHmq1RuJGaNqBNvx--wW5tAHsquNgoHyPEMFUrzUXsDQfF2wT5D_Dyq_NvsLZhZXe2S8dd95V-3PTHluYotuzS7wMmnA7W4qilPlL96Uaunu5CcDTzzlfJUOwDBognS_sy2kkRXnlRZol4k7mpnP8Kl6R_SP-GzsSno7oFMn-7_As4JLpVbS4iraea_DFa_rmMOlTM-1KtcdtOGCnMev3t209gFk87Z-oSf4CCTbA8ysjq2HP6qo4FVRTG5XXB0Uz2rf9_xE"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-xl font-black tracking-tight">Essential</h4>
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold rounded uppercase">Studio</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-secondary">Starting At</span>
+<span class="font-bold">$125k</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-secondary">Sq Ft</span>
+<span class="font-bold">380</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg text-xs uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-colors">Configure</button>
+</div>
+</div>
+<!-- Model 2 -->
+<div class="bg-surface-container-lowest group cursor-pointer overflow-hidden rounded-xl border border-outline-variant/15 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img alt="One bedroom ADU with vertical cedar planking and sliding glass doors" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="modern one bedroom guest house with natural wood siding and black architectural accents in a sunny suburban backyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDObM6iZolLbKQjTFSS8Da0hs6hgiutw4mkK6VCY2URqBNPvXdu6a6C-HftWM28H9S26_4-K_tkY_vgJw7BhbBeUlyRtTtwarzMf0oGpllb_RRNws6hpEy-Cuvpyjph9DrKr2v3lCnkCNoP4k_dIxxTFx4pzql3GEWqJn0bWiepzlypXr7PCeQDwP5rjY6INrnrKnDGz_WyKQFrAkBhd356k8uXOa0npKQFCsTIggioQ0_Lbaf2P51D1oz8eK17vokfvb2_YIGZDPVj"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-xl font-black tracking-tight">Classic</h4>
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold rounded uppercase">1 BR</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-secondary">Starting At</span>
+<span class="font-bold">$185k</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-secondary">Sq Ft</span>
+<span class="font-bold">620</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg text-xs uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-colors">Configure</button>
+</div>
+</div>
+<!-- Model 3 -->
+<div class="bg-primary text-white group cursor-pointer overflow-hidden rounded-xl shadow-2xl transition-all duration-300 hover:-translate-y-1">
+<div class="h-48 overflow-hidden opacity-90">
+<img alt="Two bedroom modern dwelling with wrap around deck and outdoor seating" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="luxurious two bedroom modern accessory dwelling with a spacious wooden deck and outdoor furniture at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2qEj8SgcLtPwNXVFVZUDlqY8cTpKqpnkcJt4lbIXwi8g5SmHQpOt7LcUfT9wqfeoOJImcNV6rwCLLWDfm-osHzHf6faWdfuEWvbkzj6tCxXp2xxmMHX6rXHDqG6C-F38fnwZDBzZ2HmK8Cicvrp4lXI1Bmt245Q0NQHD52CGB5er6haD3GR8_aV9asYMuZhIg-yu7eqd_N7ex5EdsWT9RkcvH5SNrngaeQig3yt6WjIY1rmfqWIYyE759LKnt8kFpOA5LbpxJwH8f"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-xl font-black tracking-tight">Deluxe</h4>
+<span class="bg-white/20 px-2 py-1 text-[10px] font-bold rounded uppercase">2 BR</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-secondary-fixed-dim">Starting At</span>
+<span class="font-bold">$245k</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-secondary-fixed-dim">Sq Ft</span>
+<span class="font-bold">850</span>
+</div>
+</div>
+<button class="w-full py-3 bg-white text-primary font-bold rounded-lg text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors">Configure</button>
+</div>
+</div>
+<!-- Model 4 -->
+<div class="bg-surface-container-lowest group cursor-pointer overflow-hidden rounded-xl border border-outline-variant/15 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img alt="Large two-story ADU with balcony and premium stone finishes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="stunning two-story modern house with limestone facade and private balcony overlooking a pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmW5tkPL7xWhbTz9fPwQf9OWIHb3-4kHpG7FuBh0KqNkkOxsquhMj3L37B47l-gnFfUPtbOfF9f2dgzGCmrXWaFMYE4uFnFHyfpFk2B4NAFxunkS5CHTMMXTgTdPH-IAuVLBfbMLfEq16aU6Y4rvINptbyawYxX7n7DZvvuQlusBuosMWNZOKLRJz_HSn4dzCqhCWiuzYZM5tENMa7DbR1XkiDPNJ7fheh6T9yzMa46aywmtfP9W6lm1V91JgQ7VLL7BjCe3bhPrtU"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-xl font-black tracking-tight">Prime</h4>
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold rounded uppercase">Luxe</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-secondary">Starting At</span>
+<span class="font-bold">$395k+</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-secondary">Sq Ft</span>
+<span class="font-bold">1200</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg text-xs uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-colors">Configure</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section C: Quick Links (Module Access) -->
+<section class="mb-16">
+<h3 class="text-xl font-black text-on-surface uppercase tracking-widest mb-8 border-b border-outline-variant/15 pb-4">Executive Modules</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="p-6 bg-surface-container-low rounded-xl flex flex-col items-center gap-3 transition-transform hover:scale-[1.02]" href="#">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="calculate">calculate</span>
+<span class="text-xs font-black uppercase tracking-tighter">COGS Engine</span>
+</a>
+<a class="p-6 bg-surface-container-low rounded-xl flex flex-col items-center gap-3 transition-transform hover:scale-[1.02]" href="#">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="map">map</span>
+<span class="text-xs font-black uppercase tracking-tighter">Permit Map</span>
+</a>
+<a class="p-6 bg-surface-container-low rounded-xl flex flex-col items-center gap-3 transition-transform hover:scale-[1.02]" href="#">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="rocket_launch">rocket_launch</span>
+<span class="text-xs font-black uppercase tracking-tighter">Sales Portal</span>
+</a>
+<a class="p-6 bg-surface-container-low rounded-xl flex flex-col items-center gap-3 transition-transform hover:scale-[1.02]" href="#">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="analytics">analytics</span>
+<span class="text-xs font-black uppercase tracking-tighter">ROI Builder</span>
+</a>
+</div>
+</section>
+<!-- Section D: Company Footer -->
+<footer class="border-t border-outline-variant/20 pt-12 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<span class="text-primary text-2xl font-black tracking-tighter uppercase">MassDwell Hub</span>
+</div>
+<p class="text-secondary text-sm max-w-md leading-relaxed">
+                        Leading the Massachusetts housing revolution through intelligent modular architecture and streamlined regulatory navigation. We turn yard space into living space.
+                    </p>
+</div>
+<div>
+<h5 class="font-bold text-xs uppercase tracking-widest mb-6">Compliance</h5>
+<ul class="text-secondary text-sm space-y-4">
+<li><a class="hover:text-primary transition-colors" href="#">MA ADU Bylaw 2024</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">MassHousing Grants</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Safety Standards</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-xs uppercase tracking-widest mb-6">Support</h5>
+<ul class="text-secondary text-sm space-y-4">
+<li><a class="hover:text-primary transition-colors" href="#">Sales Hotline</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Technical Specs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Training Portal</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/10 text-[10px] font-bold uppercase tracking-[0.2em] text-outline">
+<p>© 2024 MassDwell Architecture &amp; Development Corp. All Rights Reserved.</p>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a href="#">Privacy Policy</a>
+<a href="#">Operational Agreement</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md flex justify-around items-center px-4 py-3 rounded-t-2xl shadow-[0_-4px_24px_-4px_rgba(5,29,49,0.06)] border-t border-[#C4C6CE]/15">
+<a class="flex flex-col items-center justify-center text-[#011832] bg-[#C1D9FE] rounded-xl px-3 py-1 scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold uppercase mt-1">Dash</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+<span class="text-[10px] font-bold uppercase mt-1">COGS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-[10px] font-bold uppercase mt-1">Permits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-[10px] font-bold uppercase mt-1">Leads</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49607F]" href="#">
+<span class="material-symbols-outlined" data-icon="settings_backup_restore">settings_backup_restore</span>
+<span class="text-[10px] font-bold uppercase mt-1">Relist</span>
+</a>
+</nav>
+</body></html>
