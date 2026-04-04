@@ -153,4 +153,10 @@ EOF
 echo "Report saved: observability/drift-audit/audit-result-$TIMESTAMP.json"
 echo ""
 
+# Ghost agent check
+echo "=== Ghost Agent Check ==="
+node "$WORKSPACE/scripts/ghost-agent-check.js" 2>/dev/null \
+  && echo "✅ No ghost agents" \
+  || echo "⚠️  Ghost agent references found — check ghost-agent-check.js output"
+
 exit 0
