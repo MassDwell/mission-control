@@ -1,35 +1,38 @@
-# SESSION-STATE.md — Hot Working Memory
+# SESSION-STATE.md
+_Last updated: 2026-04-05 19:05 EDT_
 
-_Write this BEFORE responding to any task that changes state. Never after._
-_Last updated: 2026-04-04 07:22 EDT_
+## Active Context
 
----
+### LinkedIn / Social Media Pipeline — RESOLVED
+**Status:** ✅ Decision made — manual draft flow
+- LinkedIn API: Community Management API blocked (Marketing Partners only)
+- Buffer API: Closed to new developer apps
+- **Final:** Clawson drafts weekly post every Tuesday 9 AM ET → sends to Steve on Telegram → Steve posts manually to MassDwell LinkedIn company page
+- CLA-349 updated to reflect decision
 
-## 🔴 Active Task
-None — clean session start.
+### MassDwell Hub Team Invites
+**Status:** ✅ Done — Steve emailed all allowlist contacts (Nick, Jon, Chris, Carlos, Thayana, Patricia)
+- Awaiting them to accept Clerk invites and log in
 
-## 📋 Open Loops
-- massdwellhub.com — deployed and redirecting to /sign-in ✅ (fixed 2026-04-03)
-- Supabase cogs_projects save fix — deployed (margin rounding + service role key) ✅
-- MassDwell Hub team invites sent (6 people) ✅
-- Hermes removed from system ✅
-- SOUL.md rewritten ✅
+### Humanoid Robotics Outreach — NEW (2026-04-05)
+**Status:** 🟡 Pending responses
+- Steve emailed Agility Robotics, Figure, and Apptronik re: purchasing or piloting humanoid robots for MassDwell factory floor
+- Awaiting BD responses
+- Potential CLA + use case brief to be created
 
-## 🚧 Blockers / Pending
-- WORKING.md is stale (last updated 2026-04-01) — needs refresh
-- SESSION-STATE.md just initialized (this is it)
+### Self-Improving Agent — COMPLETED (2026-04-05 19:03 EDT)
+**Status:** ✅ Installed + wired
+- Skill installed to `~/.openclaw/skills/self-improving-agent/`
+- `.learnings/` initialized (LEARNINGS.md, ERRORS.md, FEATURE_REQUESTS.md)
+- Claude Code hooks wired in drawstack + massdwell-hub
+- HEARTBEAT.md + AGENTS.md updated with two-tier memory flow
+- LESSONS.md demoted to promoted-highlights-only role
+- CLA-351 closed
 
-## 🧠 Active Decisions (in force)
-- No Hermes. No event-bus emit. Removed 2026-04-04.
-- SESSION-STATE write-ahead protocol now active.
-- All Supabase API routes use supabaseAdmin (service role key).
-- massdwellhub.com middleware: explicit redirect to /sign-in for unauthenticated users.
-- CRM: GoHighLevel (replaced Kommo 2026-04-03).
+### Global Sourcing Guide — COMPLETED (2026-04-05 18:55 EDT)
+**Status:** ✅ Done
+- PDF delivered to Steve via Telegram and saved to Downloads
+- Source: `data/massdwell/GLOBAL-SOURCING-GUIDE.md`
+- Next: draft supplier outreach emails (pending Steve's go-ahead)
 
-## 📅 Last Significant Events
-- 2026-04-04: Hermes fully removed; SOUL.md rewritten; SESSION-STATE.md initialized
-- 2026-04-03: massdwellhub.com launched, team invited, Google OAuth fixed, CRM switched to GHL
-- 2026-04-02: MassDwell Hub built, Clerk auth configured, Runtime v1 established
-
----
-_This file is hot RAM. Keep it current. Archive to daily log when session ends._
+## No blocked tasks.

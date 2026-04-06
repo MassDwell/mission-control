@@ -1,7 +1,10 @@
-# LESSONS.md — Clawson Operational Lessons
+# LESSONS.md — Promoted Highlights
 
-Explicit write path for recurring failures, corrections, and learned patterns.
-Updated after any debugging session where root cause is confirmed.
+**This is the promoted tier.** Do not write raw errors or unresolved issues here.
+Capture new lessons in `.learnings/` first. Promote here during weekly memory maintenance when:
+- Entry is resolved + broadly applicable (not project-specific)
+- Category is `correction` or `best_practice`
+- Has 2+ See Also links (recurring pattern)
 
 **Schema per entry:**
 - **Date** — when the lesson was confirmed

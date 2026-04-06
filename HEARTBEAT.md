@@ -6,9 +6,9 @@
 3. **READ `clawson/priority-map.md`** — What matters and in what order
 4. **READ `clawson/tasks.md`** — Live task list, what's due today
 5. **READ `memory/WORKING.md`** — Active context, current state
-5. **READ `memory/YYYY-MM-DD.md`** (today's date) — What happened today
-6. **Check `data/global/mentions.json`** — Am I @mentioned?
-7. Only THEN respond to user
+6. **READ `memory/YYYY-MM-DD.md`** (today's date) — What happened today
+7. **Check `data/global/mentions.json`** — Am I @mentioned?
+8. Only THEN respond to user
 
 **WRITE-AHEAD RULE:** Update SESSION-STATE.md BEFORE starting any non-trivial task, not after.
 **DECISION RULE:** When uncertain whether to act or ask, consult `clawson/auto-resolver.md`.
@@ -68,5 +68,19 @@ node /Users/openclaw/Projects/drawstack/scripts/audit-migrations.js
 - Exit 0 = clean, no action needed
 - Exit 1 = ALERT STEVE — list missing columns, apply ALTERs to Neon before users notice
 - Pattern: squash merges silently drop migration folders. This has happened 3 times. Always audit.
+
+## 🧠 Self-Improvement Sync (Weekly — during memory maintenance)
+
+`.learnings/` = working capture layer (raw, structured, tagged, full detail)  
+`LESSONS.md` = promoted highlights only (confirmed root causes worth keeping forever)
+
+During weekly memory maintenance:
+1. Review `~/.openclaw/workspace/.learnings/LEARNINGS.md` for entries with Status: `resolved`
+2. Promote entries meeting ANY criteria to `memory/LESSONS.md`:
+   - Category `correction` or `best_practice` + Status `resolved`
+   - 2+ `See Also` links (recurring issue)
+   - User-flagged entries
+3. Review `.learnings/FEATURE_REQUESTS.md` monthly — mark implemented ones, surface still-valid ones to Steve
+4. Do NOT promote: unresolved, project-specific one-offs, or already-obvious errors
 
 ## 🔔 PENDING ALERTS (clear when done)

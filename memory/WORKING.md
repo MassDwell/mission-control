@@ -1,18 +1,8 @@
-# WORKING.md - Active Context (Updated 2026-04-01 10:00 AM EDT)
+# WORKING.md - Active Context
+_Updated: 2026-04-05 20:00 EDT_
 
 ## Active Trades
-**None.** Money Printer was deactivated 2026-03-04. No active trading strategy.
-
----
-
-## MeritLayer — SHUT DOWN (2026-03-13)
-Steve cancelled the project. All resources wiped.
-
-**Still needs manual browser cleanup:**
-- Neon DB → console.neon.tech (delete `ep-crimson-field` project)
-- Resend domain → resend.com/domains (remove meritlayer.ai)
-- Clerk app → dashboard.clerk.com (delete app entirely)
-**Domain:** meritlayer.ai stays on GoDaddy (Steve wants to keep it)
+**None.** No active trading strategy.
 
 ---
 
@@ -22,85 +12,62 @@ Steve cancelled the project. All resources wiped.
 **Repo:** github.com/MassDwell/drawstack  
 **Local:** ~/Projects/drawstack  
 
-### Status: ✅ LIVE — Post-launch polish ongoing
+### Status: ✅ LIVE
 
-**Key working flows:**
-- Onboarding (3-step GC setup) ✅
-- Project creation + SOV ✅
-- Draw wizard → PDF export ✅
-- Stripe checkout LIVE (cs_live_) ✅
-- Lender portal + invite flow ✅
-- Mobile responsive ✅
-- Per-line retainage ledger (held/released breakdown) ✅
-- Analytics: Retainage Tracker + Cost-to-Complete Projection (CLA-262) ✅
-
-**Landing page (merged 2026-03-26):**
-- PR #37: Navy/cyan redesign, two-column hero ✅
-- PR #38: Hotfix server component onMouseOver crash ✅
-- PR #39: Hero copy (anti-enterprise, "Start free — no sales call") ✅
-- PR #40: /vs-rabbet SEO comparison page ✅
-
-**Major work completed 2026-03-31 (HEAVY PR DAY):**
-- PR #146 — PR B merged ✅
-- PR #147 — Immutable Audit Log (DrawEvent model, activity tab) ✅
-- PR #148 — Full UI overhaul: Stitch dark design system across all portals (85 files) ✅
-- PR #149 — S3 presigned URL download route (fixed XML access-denied on private bucket docs) ✅
-- PR #150 — SEO/OG image standardization + static asset caching headers ✅
-- PR #152 — Lender portal dark theme badge fixes ✅
-- PR #153 — Invoice parse route → gemini-2.5-flash ✅
-- PR #154 — All AI routes → gemini-2.5-flash (bulk upgrade, 17 routes total) ✅
-- PR #155 — cost-predict route gemini-1.5-flash → gemini-2.5-flash ✅
-- PR #140 — Historical cost predictor (CLA-285) ✅
-- PR #139 — Sub portal per-project dashboard (CLA-283) ✅
-- Migration audit: PR #140 squash dropped `constructionType` + `ProjectSnapshot` table — manual ALTERs applied ✅
-- **Hermes Supervisor v2** built & tested — review queue live, pre-send gate active, 4-marker protocol documented ✅
-- OpenClaw maintenance: doctor clean, 136 orphan transcripts archived, WhatsApp disabled in config
+**Open PRs:**
+- **PR #203** — `feature/cc-required-trial` — Credit card required trial + onboarding email sequence. Open against staging, awaiting Steve review/merge.
 
 **Pending Steve actions:**
-- ✅ **Gateway restart** — completed 2026-04-01 7:08 PM EDT (WhatsApp channel disable applied)
-- Upload twitter-profile-photo.png to @TheDrawStack X profile
-- Fix xurl tweet posting (OAuth 1.0 configured, but {} error on post)
+- Review + merge PR #203 (CC-required trial)
+- Enable DATABASE_URL "Build" checkbox in Vercel env vars (auto-run migrations on deploy)
+  URL: vercel.com/steve-vettoris-projects/drawstack/settings/environment-variables
+- Upload twitter-profile-photo.png to @TheDrawStack X profile (public/twitter-profile-photo.png ready)
+- Fix xurl tweet posting ({} error on OAuth 1.0 post)
 - Submit sitemap.xml to Google Search Console
-- Verify domain in GSC via GoDaddy DNS TXT record
-- Manual cleanup: Neon DB, Clerk app, Resend domain (MeritLayer remnants)
-
-**Logo work (2026-03-27):**
-- Logo SVG redesigned: 3 horizontal pills (D-shape) in cyan-teal gradient on dark navy bg
-- logo.svg, logo-dark.svg updated in /public
-- Twitter/X profile photo generated: public/twitter-profile-photo.png (400x400, dark navy + D mark)
-- X (Twitter) account: @TheDrawStack — OAuth 1.0 configured in xurl (app: drawstack)
-- xurl credentials saved but tweet test returned empty {} error — needs debugging
-- Steve wants to post to X; profile photo ready to upload manually
-
-**Google Ads (launched 2026-03-27):**
-- Campaign LIVE at $50/day budget
-- Ad strength: 95.3% (Excellent)
-- First impression received on launch day
-- Conversion tracking flagged as having issues — needs investigation (GA4 event linkage or tag firing)
-- Check-in reminder set for 2026-03-30 9 AM EDT
+- Verify GSC domain via GoDaddy DNS TXT record
+- Manual MeritLayer cleanup: Neon DB (ep-crimson-field), Clerk app, Resend domain (meritlayer.ai)
 
 **Stable checkpoint:** `checkpoint-2026-03-22-stable` | SHA: `4e461d6`
-Recovery: `git checkout checkpoint-2026-03-22-stable` + Neon PITR to 2026-03-22 17:38 EDT
+
+---
+
+## MassDwell Hub — PRODUCTION (Live at massdwellhub.com)
+
+**Stack:** Next.js 14 · Tailwind + shadcn/ui · Supabase · Clerk (restricted/allowlist) · Vercel  
+**Repo:** github.com/MassDwell/massdwell-hub  
+**Local:** ~/Projects/massdwell-hub  
+
+### Status: ✅ LIVE — Restricted access (allowlist only)
+
+**Modules live:** Dashboard/Sales Cheat Sheet, Build Cost Tracker, ADU Permit Navigator, Contracts, Trade Partner Program (in progress)
+
+**Allowlist (Clerk):** steve.vettori, nick.ferreira, jon.proctor, chris.bradley@massdwell.com; carlos.ferreira, thayana.fernandes, patricia.luna@aacsteel.com
+
+**In progress:**
+- Trade Partner Program page being built by Claude Code (session: salty-pine)
 
 **Pending Steve actions:**
-- Upload twitter-profile-photo.png to @TheDrawStack X profile
-- Fix xurl tweet posting (OAuth 1.0 configured, but {} error on post)
-- Submit sitemap.xml to Google Search Console
-- Verify domain in GSC via GoDaddy DNS TXT record
-- Manual cleanup: Neon DB, Clerk app, Resend domain (MeritLayer remnants)
+- Test login at massdwellhub.com (confirm it works)
+- Invite team members once confirmed working
 
 ---
 
 ## Credentials Status
-- **Gmail massdwell tokens:** ❌ EXPIRED — all 3 refresh tokens revoked (2026-03-26)
-  - gog CLI (vettoristeve@gmail.com) still works fine
-  - massdwell Gmail needs reauth when Steve is available
-- **Google Workspace (sales@massdwell.com):** credentials/google/gmail-token.json — needs refresh
+- **Gmail massdwell (sales@massdwell.com):** ❌ EXPIRED — tokens revoked. Needs Steve to re-run OAuth flow.
+- **Gmail vettoristeve:** gog CLI works fine
+- **Google OAuth (MassDwell Hub / Clerk):** ✅ Fixed — Web app client configured in GCP
+
+---
+
+## Open Steve Actions Summary
+1. Gmail OAuth reauth (sales@massdwell.com)
+2. DrawStack PR #203 review
+3. DrawStack Vercel DATABASE_URL build checkbox
+4. @TheDrawStack X profile photo upload
+5. MeritLayer manual cleanup (Neon, Clerk, Resend)
+6. massdwellhub.com login test
 
 ---
 
 ## Paperclip Orchestration
-**Status:** OPERATIONAL
-- Paperclip frontend: ports 3100/3101
-- Auto-start crons running every 30 min, all healthy
-- Services: PaperclipAI ✅ Telegram Adapter ✅ Paperclip Notifier ✅ Chrome ✅ Metaclaw ✅
+**Status:** OPERATIONAL — ports 3100/3101, keepalive + stale-run-recovery crons running every 30 min

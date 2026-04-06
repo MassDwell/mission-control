@@ -44,7 +44,12 @@ You wake up fresh each session. These files are your continuity:
 
 - **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
 - **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
-- **Lessons:** `memory/LESSONS.md` — confirmed root causes, failure patterns, and prevention rules. **Write here after any debugging session where you confirm root cause.** Schema: Date / What failed / Why it failed / Signal that predicted it / Prevention.
+- **Lessons:** `memory/LESSONS.md` — **promoted highlights only** (confirmed root causes worth keeping forever). Do NOT write raw errors here — promote from `.learnings/` instead.
+- **Capture layer:** `.learnings/` — working capture layer for errors, corrections, and feature requests (structured, tagged, full detail):
+  - `.learnings/LEARNINGS.md` — corrections, insights, best practices (categories: correction | insight | knowledge_gap | best_practice)
+  - `.learnings/ERRORS.md` — command failures, API errors, integration issues
+  - `.learnings/FEATURE_REQUESTS.md` — capabilities requested by Steve that don't exist yet
+  - **Write here first** after any failure, correction, or non-obvious lesson. Promote to `LESSONS.md` during weekly memory maintenance when entry is resolved + broadly applicable.
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
 

@@ -17,10 +17,16 @@ _Curated knowledge and lessons learned. Daily logs are in memory/YYYY-MM-DD.md_
 
 **Steve Vettori** — Principal of three businesses, all based in **Needham, MA**:
 
-1. **MassDwell** (Primary) — Modular ADU manufacturer
+1. **MassDwell Solutions** (Primary) — Modular ADU manufacturer
    - Website: massdwell.com
-   - CRM: Kommo (massdwellcrm)
+   - HQ: 109 Highland Ave, Suite 203, Needham, MA 02494
+   - Tagline: "Stress Less. Dwell More." / "Where Life Fits"
+   - Founded: 2025 | Employees: 9
+   - CRM: GoHighLevel (switched Apr 2026)
    - Email: sales@massdwell.com
+   - Factory: Woonsocket, RI — 870 Park East Drive (substantially complete June 2026)
+   - Entity structure: MassDwell Solutions + AAC Steel (factory assets) + Atomic Ant Construction (financed equipment ~$400K payoff) — AAC Steel merging into MassDwell pre-investment
+   - Founder investment to date: ~$1.1M (not being reimbursed)
 
 2. **Atlantic Laser Solutions** (Secondary) — Laser welding equipment
    - Website: atlanticlasersolutions.com
@@ -84,22 +90,104 @@ All VAPI infrastructure removed:
 
 ---
 
+## MassDwell — Current State (April 2026)
+
+### Raise
+- **Instrument:** Post-Money SAFE (YC Standard)
+- **Raising:** $1M–$5M | **Valuation Cap:** $20M post-money | **No discount**
+- **Min investment:** $100K
+- Ownership at cap: $100K→0.5%, $250K→1.25%, $500K→2.5%, $1M→5%
+- If Series A at $100M → 5x return for SAFE holders
+- Founders invested ~$1.1M to date; not being reimbursed
+
+### Traction (Q1 2026)
+- **Q1 Revenue:** $979K (4 closed deals)
+- **Pipeline:** 739 active opportunities, $25.3M total value
+- **Hot prospects:** Mattapoisett $205K (waiting on lawyer), Andover $307K (verbal), Brookline $340K (verbal), Lexington $200K (closed), Westwood $150K (3-6 mo), Town of Sudbury $4M RFP
+- **Marketing efficiency:** $14.26 CPL on Meta, $20.04 CPA, 4.41% CTR, $561 total ad spend in March
+- 70%+ web traffic from Massachusetts
+
+### Product Line (InHabit System)
+- **1,296+ configurations** across 12 base floor plans
+- Shapes: Box, L, Square | Floors: Basement, Garage, 2-Floor | Styles: Modern, New England, Cottage
+- 4 base models: Essential (471sf 1/1 $141K), Classic (575sf 2/1 $172K), Deluxe (600sf 2/1 $186K), Prime (900sf 2/2 $270K)
+- All at ~$300/sqft, all-in turnkey (design, permit, factory, install)
+- **The Vault:** Stores structural drawings from every build → design cost near zero on repeats
+- Customer ROI: $2,500–3,500/mo rental income, 12–15% cash-on-cash, $100K+ property value increase
+
+### Technology Stack
+- **InHabit:** AI configurator — natural language input → floor plan → BOM → factory production order
+- **Zoning intelligence layer:** municipal permitting navigator (live at massdwellhub.com/permits)
+- **CFS framing:** CNC roll-formed cold-formed steel studs, ±0.5mm tolerance
+- **Vitrus robotics:** VLM-controlled robotic wall assembly (see Smart Factory section)
+
+### Factory Phases
+| Phase | Status | GM | Notes |
+|-------|--------|----|-------|
+| 1A Panelized | ✅ Current | 33% | Panels ship flat, MEP/finish on-site |
+| 1B Full Volumetric | 🎯 Target Jul-Aug 2026 | 50% | BBRS certification required |
+| 2 Vitrus Robotics | 🎯 2028 | 60% | 300–400+ units/yr capacity |
+
+**BBRS Certification** (780 CMR 110.R3) is the gating item for Phase 1A→1B transition. QA Manual QAM-2026-001 filed.
+
+### Financial Projections
+| Year | Units | Revenue | Gross Margin | EBITDA |
+|------|-------|---------|--------------|--------|
+| 2026 | 28 | $5M | 33% | ~Breakeven |
+| 2027 | 40 | $8M | 50% | $1.5M |
+| 2028 | 100 | $20M | 60% | $6M |
+| 2029 | 200 | $50M | 60% | $18M |
+| 2029 upside | 400+ | $78M | 60% | — |
+
+### Team (9 people)
+- Steve Vettori — Co-Founder & CEO (10+ yrs RE dev, Alpine Property Group)
+- Carlos Ferreira — Co-Founder & CTO (PE #15727, 30+ yrs structural/construction)
+- Patricia Ferreira — Founding Partner (woman-owned minority lead)
+- 3 Production, 2 Sales, 2 Operations
+
+### Use of Funds ($5M SAFE)
+- 50% — Factory & Vitrus Robotics
+- 25% (13-15%) — InHabit AI platform
+- 25% (15-20%) — Team & Ops + working capital
+
+### Competitive Moats
+1. **Geographic** — National players (Boxabl, Villa, Abodu) are 3,000+ miles away; shipping economics make them uncompetitive in MA
+2. **Technology** — First Northeast manufacturer with robotic assembly
+3. **Regulatory** — Permitting intelligence layer as municipal knowledge moat
+4. **Vertical integration** — Design + permit + factory + install under one roof
+
+### Market Context
+- MA Affordable Homes Act (2024): ADUs by-right in 177 MBTA communities
+- 1,224 ADUs approved in first year across 217 communities
+- State projects 8,000–10,000 new ADUs over 5 years
+- $30M+ in state programs: MassHousing $20M ADU loan (Spring 2026), MHP $10M incentive
+- Global ADU market: $18B (2024) → $43.35B (2034) at 9.19% CAGR
+
 ## Sales Pipeline
 
-**Status:** Manual tracking only (no CRM access)
+**Status:** GoHighLevel CRM (switched Apr 3, 2026)
 
-See: MassDwell email inbox + manual tracking for lead status
+See hot prospects in "MassDwell — Current State" section above
 
 ---
 
-## Key Documents
+## Key Documents (Updated April 2026)
 
 | Document | Version | Location |
 |----------|---------|----------|
-| Investor Deck | v2.2 | data/massdwell/decks/ |
+| Investor Deck | v5 | Telegram inbound PDF |
+| Investment Thesis | v2 | Telegram inbound PDF |
+| Due Diligence Packet | v2 | Telegram inbound PDF |
+| SAFE Explainer | Mar 2026 | Telegram inbound PDF |
+| Investor Reference / Talk Track | Mar 2026 | Telegram inbound PDF |
+| Smart Factory / Vitrus Deck | Mar 2026 | Telegram inbound PDF |
+| Factory Master Plan | v2 Apr 2026 | Telegram inbound PDF |
+| Factory Operations Training | v1.1 Apr 2026 | Telegram inbound PDF |
+| QA Manual (BBRS) | QAM-2026-001 | Telegram inbound PDF |
+| CFS Assembly Best Practices Guide | Apr 2026 | Telegram inbound DOCX |
+| InHabit Slide Deck | Apr 2026 | Telegram inbound PDF |
 | Lookbook | 2026 | Google Drive |
 | Contract Template | Jan 2026 | Google Drive |
-| Catalogue | - | data/massdwell/decks/ |
 
 ---
 
@@ -216,6 +304,78 @@ All CRM integration suspended. Manual management only.
 
 **3D Modeling:** GPI Models — Creating 3D visualizations for MassDwell ADUs. Carlos providing CAD drawings.
 
+**Robotics / Automation:** Vitrus — AI-powered robotic arms for factory wall assembly. See full section below.
+
+---
+
+## MassDwell Smart Factory — Vitrus Robotics (2026-04)
+
+**Deck:** "Smart Factory: AI-Powered Robotic Manufacturing" — Investor Deep Dive, March 2026
+
+### The Strategy
+Factory manufacturing with AI-controlled robotics = structural competitive moat. Every unit produced makes the next cheaper and faster. Goal: 80-100 units/year capacity, ±0.5mm precision, 1-month production vs. 6-7 months for competitors.
+
+### Vitrus (Robotic Partner)
+- **Founder:** Lucas Cassiano — ex-Google, ex-Vicarious AI, South Park Commons Founder Fellow (SF)
+- **Product:** Custom VLM-controlled robotic arms trained on human movements. Closed-loop: hardware + software + AI + maintenance.
+- **Why Vitrus:** Purpose-built for HIGH-MIX / LOW-VOLUME — perfect for MassDwell's 4 ADU models. Adapts to different wall configurations (unlike rigid industrial robots).
+- **Hardware built in California** — no overseas dependencies
+- **Current platform:** R-04 (20 motors, 8 lb payload, in use at Vitrus labs)
+- **Next platform:** RT-4 (26 motors, 12+ lb payload, 100+ lb total) — deploying to MassDwell Woonsocket
+
+### Factory Location
+**Woonsocket, RI** — Phase 1 factory. Manual assembly from day one; Vitrus automation is an upgrade layer, not a prerequisite. Units ship regardless.
+
+### Deployment Roadmap
+| Phase | Timeline | Cost |
+|-------|----------|------|
+| Initial Consultancy (industrial design + conceptual) | Feb-Mar 2026 | $35K |
+| Proof of Concept (factory POC at Woonsocket) | June 2026 | $300K |
+| Evaluation (onsite eval + training) | Nov 2026 | $150K |
+| **Phase 1 Total** | | **$350K** (parts/procurement) + **$100K** (install) + **$150K** (1yr service + cloud) = **$1.05M** |
+| Phase 2: Storage Automation (AMRs) | Est. 2027 | $250-300K + AMRs <$50K each |
+
+### Full-Stack Factory Intelligence
+- CAD + BOM from InHabit → Vitrus cloud orchestration → robotic assembly
+- Digital twins for planning/testing
+- Real-time telemetry (position, torque, temperature)
+- Condition-based predictive maintenance
+- Computer vision QC
+- AMR (Autonomous Mobile Robot) storage
+
+### InHabit → Factory Loop
+Customer configures ADU in InHabit → InHabit generates BOM + CFS cut lists → Vitrus receives CAD + BOM → cloud schedules production → studs cut (CNC) → walls assembled (Vitrus arms) → QC (computer vision) → AMR storage → shipped to site → crane installation.
+
+### Margin Expansion Thesis
+| Year | Units | Gross Margin |
+|------|-------|--------------|
+| 2026 | 15 | 25% |
+| 2027 | 40 | 30% |
+| 2028 | 100 | 35% |
+| 2029 | 200 | 45% |
+20-point margin improvement = ~$10M additional profit at $50M revenue (2029).
+
+### Seed Capital Allocation
+- **50%** — Factory & Vitrus Robotics ($500K-$2.5M depending on raise size)
+- **25%** — InHabit AI platform (design AI, zoning engine, BOM generation)
+- **25%** — Team & Ops
+
+**Key Milestones:** Woonsocket operational | 15+ units delivered | $3M+ revenue | Path to Series A
+
+### CFS Assembly Best Practices (Apr 2026)
+- **Connection method:** Bolted inter-module connections via factory-prepared tie plates (NO field welding — protects thin-gauge members and galvanizing)
+- **Vertical (stacking):** Aligned corner posts + base/end plates, high-strength bolts, 10-20mm construction gap for shimming
+- **Horizontal (side-by-side):** Bolted tie plates/cleats, min 30 kN resistance against disproportionate collapse
+- **Erection rate:** 8-12 modules/day with experienced crew + crane
+- **Module weight:** 15,000-25,000 lbs typical, dedicated rated lifting points required
+- **Joint performance:** Neoprene/acoustic gaskets + mineral wool (acoustics), intumescent firestopping (fire 60-90+ min), overlapping cladding/membranes (weatherproofing)
+- **Code:** AISI S240 + 780 CMR Chapter 22; MA wind/snow/seismic loads required
+- **DfMA principle:** Pre-punch all bolt holes + attach plates in factory; self-aligning features (pins/lugs) minimize field adjustments
+- **Module types:** Four-sided cellular = most stable starting point for apartments
+
+### Humanoid Robot Outreach (2026-04-05)
+Steve emailed **Agility Robotics**, **Figure**, and **Apptronik** to explore purchasing or piloting humanoid robots for the MassDwell factory floor. Awaiting BD responses.
+
 ---
 
 ## Hermes — REMOVED (2026-04-04)
@@ -253,7 +413,19 @@ After any coding agent (Claude Code, Codex, etc.) completes a task:
 
 ---
 
-## Lessons Learned (Week of 2026-03-30+)
+## Lessons Learned (Week of 2026-03-30 to 2026-04-05)
+
+- **MassDwell Hub CRM switch: Kommo → GoHighLevel (2026-04-03)** — Hub now references GHL at app.gohighlevel.com. Kommo is fully retired. Any CRM integrations should target GHL API.
+
+- **Clerk v7 auth.protect() in allowlistOnly mode returns 404 (not redirect)** — Must explicitly set `NEXT_PUBLIC_CLERK_SIGN_IN_URL` and `NEXT_PUBLIC_CLERK_SIGN_UP_URL` env vars or unauthenticated users hit a 404 instead of being redirected to sign-in.
+
+- **Supabase API routes must use service role key, not anon key** — Anon key is blocked by Row Level Security (RLS) on server-side routes. Always use `SUPABASE_SERVICE_ROLE_KEY` in `/api/` routes. Anon key is only for client-side unauthenticated access.
+
+- **GCP OAuth client type matters for web apps** — Desktop app OAuth clients don't support web redirect URIs. For Clerk or any web auth integration, always create a "Web application" client type in GCP, not Desktop.
+
+- **GoDaddy API restricts automated DNS to accounts with 10+ domains** — Cannot programmatically update GoDaddy DNS on accounts with fewer than 10 domains. Manual DNS update required. Use this as a standing constraint for all GoDaddy-hosted domains.
+
+- **Self-improving agent capture layer installed (2026-04-05)** — `.learnings/` directory is the new first-write destination for errors, corrections, and feature requests. `memory/LESSONS.md` is promotion-only tier. See AGENTS.md for full two-tier memory flow.
 
 - **Squash merges silently drop Prisma migration folders** — Hit 3 times in one day (PR #126 dropped DrawEvent table; PR #126 dropped paidAt/paidByUserId on Invoice; PR #135 dropped lenderContactName/submittedToLenderAt). Each time: dashboard crashes immediately post-deploy, Neon missing columns. **Prevention: run `node scripts/audit-migrations.js` from /Users/openclaw/Projects/drawstack immediately after every production merge. Script compares schema.prisma scalars against live Neon and exits 1 with a list of missing columns.**
 
@@ -311,10 +483,24 @@ After any coding agent (Claude Code, Codex, etc.) completes a task:
 ## MassDwell Hub
 
 **Domain:** massdwellhub.com (purchased April 1, 2026)
-**Purpose:** Internal sales & ops tool — 5 modules: Dashboard/Sales Cheat Sheet, COGS Calculator, ADU Permit Navigator, Lead Pipeline, Re-Listing Optimizer
-**Build prompt:** `data/massdwell/STITCH-MASSDWELL-HUB.md`
-**Stack:** Next.js 14, Tailwind + shadcn/ui, Supabase, Clerk (invite-only), Kommo CRM, OpenAI
-**Deploy:** Vercel → point massdwellhub.com DNS there when ready
+**Status:** ✅ LIVE — https://massdwellhub.com
+**Purpose:** Internal sales & ops tool
+**Stack:** Next.js 14, Tailwind + shadcn/ui, Supabase (service role for API routes), Clerk (restricted/allowlist), Vercel
+**Auth:** Clerk restricted mode — allowlist only (see Allowlist Contacts section)
+**CRM:** GoHighLevel (switched from Kommo 2026-04-03) — app.gohighlevel.com
+
+**Live modules:**
+- Dashboard / Sales Cheat Sheet
+- Build Cost Tracker (COGS)
+- ADU Permit Navigator (Massachusetts towns)
+- Contracts
+- Trade Partner Program (adding 2026-04-05)
+
+**Key fixes applied (2026-04-03/04):**
+- GCP OAuth: Web app client (not Desktop) required for Clerk redirect URIs
+- Clerk 404 fix: NEXT_PUBLIC_CLERK_SIGN_IN_URL env var required for redirect
+- COGS save: float margin rounded before writing to integer DB column
+- All API routes use Supabase service role key (not anon key — blocked by RLS)
 
 ## Customer Design Portal
 
