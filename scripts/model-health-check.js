@@ -26,7 +26,7 @@ const PROVIDERS = [
     name: 'Google Gemini 2.5 Flash (primary AI)',
     critical: true,
     check: async () => {
-      const key = 'AIzaSyCbgeBiGv3YZOrNl9ipo1clILdtgrW1Fis';
+      const key = process.env.GEMINI_API_KEY || (() => { try { const cfg = JSON.parse(require('fs').readFileSync(process.env.HOME + '/.openclaw/openclaw.json', 'utf8')); return cfg.env?.GEMINI_API_KEY || ''; } catch { return ''; } })();
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,
         {
@@ -45,7 +45,7 @@ const PROVIDERS = [
     name: 'Google Gemma 3 27B (utility/extraction)',
     critical: false, // non-critical: only used in batch scripts
     check: async () => {
-      const key = 'AIzaSyCbgeBiGv3YZOrNl9ipo1clILdtgrW1Fis';
+      const key = process.env.GEMINI_API_KEY || (() => { try { const cfg = JSON.parse(require('fs').readFileSync(process.env.HOME + '/.openclaw/openclaw.json', 'utf8')); return cfg.env?.GEMINI_API_KEY || ''; } catch { return ''; } })();
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemma-3-27b-it:generateContent?key=${key}`,
         {
@@ -73,7 +73,7 @@ const PROVIDERS = [
     name: 'Google Gemini API (key validity)',
     critical: true,
     check: async () => {
-      const key = 'AIzaSyCbgeBiGv3YZOrNl9ipo1clILdtgrW1Fis';
+      const key = process.env.GEMINI_API_KEY || (() => { try { const cfg = JSON.parse(require('fs').readFileSync(process.env.HOME + '/.openclaw/openclaw.json', 'utf8')); return cfg.env?.GEMINI_API_KEY || ''; } catch { return ''; } })();
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${key}`, { signal: AbortSignal.timeout(5000) });
       const d = await res.json();
       if (!d.models) throw new Error(d.error?.message || `HTTP ${res.status}`);

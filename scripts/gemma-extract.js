@@ -27,7 +27,7 @@
 
 import fs from 'fs';
 
-const API_KEY = 'AIzaSyCbgeBiGv3YZOrNl9ipo1clILdtgrW1Fis';
+const API_KEY = process.env.GEMINI_API_KEY || (() => { try { const cfg = JSON.parse(require('fs').readFileSync(process.env.HOME + '/.openclaw/openclaw.json', 'utf8')); return cfg.env?.GEMINI_API_KEY || ''; } catch { return ''; } })();
 const MODEL   = 'gemma-3-27b-it';
 const BASE_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
 const LOG_FILE = '/Users/openclaw/.openclaw/workspace/data/logs/gemma-extract.log';
